@@ -15,45 +15,51 @@ int current_line_indent = 0;   /* indentation of the current line */
 int indent_level = 0;          /* indentation level passed to the parser */
 %}
 
-%x indent 
+%x INDENT 
 /* start state for parsing the indentation */
-%s normal 
+%s NORMAL 
 /* normal start state for everything else */
 
 %%
 
-<indent>" "      { 
-                    Console.WriteLine("<indent>\" \""); 
+"@" {
+  Console.WriteLine("."); BEGIN(INDENT); // kostil na vremya 
+}
+
+<INDENT>" "      { 
+                    Console.WriteLine("<INDENT>\" \""); 
                     current_line_indent++; 
                   }
-<indent>"\t"     { 
-                    Console.WriteLine("<indent>\"\t\""); 
+<INDENT>"\t"     { 
+                    Console.WriteLine("<INDENT>\"\\t\""); 
                     current_line_indent = (current_line_indent + 8) & (-8); 
                     }
-<indent>"\n"     { 
-                    Console.WriteLine("<indent>\"\n\"");  
+<INDENT>"\n"     { 
+                    Console.WriteLine("<INDENT>\"\\n\"");  
                     current_line_indent = 0; /*ignoring blank line */
                   }
-<indent>.        {
-                    Console.WriteLine("<indent>.");  
+<INDENT>.        {
+                    Console.WriteLine("<INDENT>.");  
                    //unput(*yytext);  problems finding an analogue (returns the read symbol to the stream)
                    Console.WriteLine(yytext);
                    if (current_line_indent > indent_level) {
                        indent_level++;
+                       Console.WriteLine("TokenINDENT");
                        return (int)Tokens.INDENT;
                    } else if (current_line_indent < indent_level) {
                        indent_level--;
+                       Console.WriteLine("TokenUNINDENT");
                        return (int)Tokens.UNINDENT;
                    } else {
-                       BEGIN(normal);
+                       BEGIN(NORMAL);
                    }
                  }
 
-<normal>"\n"     {  Console.WriteLine("<normal>\"\n\""); current_line_indent = 0; BEGIN(indent);  }
+<NORMAL>"\n"     {  Console.WriteLine("<NORMAL>\"\\n\""); current_line_indent = 0; BEGIN(INDENT);  }
 
-<normal>";" {  Console.WriteLine("<normal>\";\""); return (int)Tokens.SEMICOLON; }
+<NORMAL>";" {  Console.WriteLine("TokenSEMICOLON"); return (int)Tokens.SEMICOLON; }
 
-<normal>{ID} { Console.WriteLine("<normal>{ID}"); return (int)Tokens.STUFF; }
+<NORMAL>{ID} { Console.WriteLine("TokenSTUFF"); return (int)Tokens.STUFF; }
 
 [^ \r\n] {
 	LexError();
