@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 26.10.2023 21:25:47
+// DateTime: 27.10.2023 20:45:35
 // UserName: ????
 // Input file <PythonYacc.y>
 
@@ -21,7 +21,7 @@ using PythonProgramTree;
 namespace PythonParser
 {
 public enum Tokens {
-    error=1,EOF=2,INDENT=3,UNINDENT=4,STUFF=5,SEMICOLON=6};
+    error=1,EOF=2,INDENT=3,UNINDENT=4,STUFF=5,REST=6};
 
 public struct ValueType
 { 
@@ -49,34 +49,29 @@ public class Parser: ShiftReduceParser<ValueType, LexLocation>
 #pragma warning disable 649
   private static Dictionary<int, string> aliasses;
 #pragma warning restore 649
-  private static Rule[] rules = new Rule[9];
-  private static State[] states = new State[13];
+  private static Rule[] rules = new Rule[8];
+  private static State[] states = new State[9];
   private static string[] nonTerms = new string[] {
-      "progr", "stuff", "block", "stlst", "$accept", };
+      "root", "stuff", "$accept", };
 
   static Parser() {
-    states[0] = new State(new int[]{5,4,3,6},new int[]{-1,1,-2,3,-3,5});
-    states[1] = new State(new int[]{2,2});
+    states[0] = new State(new int[]{5,4,3,6,4,7},new int[]{-1,1,-2,8});
+    states[1] = new State(new int[]{2,2,5,4,3,6,4,7},new int[]{-2,3});
     states[2] = new State(-1);
     states[3] = new State(-2);
-    states[4] = new State(-8);
-    states[5] = new State(-3);
-    states[6] = new State(new int[]{5,4,3,6},new int[]{-4,7,-2,11,-3,12});
-    states[7] = new State(new int[]{4,8,6,9});
-    states[8] = new State(-4);
-    states[9] = new State(new int[]{5,4},new int[]{-2,10});
-    states[10] = new State(-5);
-    states[11] = new State(-6);
-    states[12] = new State(-7);
+    states[4] = new State(new int[]{6,5,2,-4,5,-4,3,-4,4,-4});
+    states[5] = new State(-5);
+    states[6] = new State(-6);
+    states[7] = new State(-7);
+    states[8] = new State(-3);
 
-    rules[1] = new Rule(-5, new int[]{-1,2});
-    rules[2] = new Rule(-1, new int[]{-2});
-    rules[3] = new Rule(-1, new int[]{-3});
-    rules[4] = new Rule(-3, new int[]{3,-4,4});
-    rules[5] = new Rule(-4, new int[]{-4,6,-2});
-    rules[6] = new Rule(-4, new int[]{-2});
-    rules[7] = new Rule(-4, new int[]{-3});
-    rules[8] = new Rule(-2, new int[]{5});
+    rules[1] = new Rule(-3, new int[]{-1,2});
+    rules[2] = new Rule(-1, new int[]{-1,-2});
+    rules[3] = new Rule(-1, new int[]{-2});
+    rules[4] = new Rule(-2, new int[]{5});
+    rules[5] = new Rule(-2, new int[]{5,6});
+    rules[6] = new Rule(-2, new int[]{3});
+    rules[7] = new Rule(-2, new int[]{4});
   }
 
   protected override void Initialize() {
@@ -90,6 +85,18 @@ public class Parser: ShiftReduceParser<ValueType, LexLocation>
   {
     switch (action)
     {
+      case 4: // stuff -> STUFF
+{ Console.WriteLine("STUFF"); }
+        break;
+      case 5: // stuff -> STUFF, REST
+{ Console.WriteLine("STUFF REST"); }
+        break;
+      case 6: // stuff -> INDENT
+{ Console.WriteLine("INDENT"); }
+        break;
+      case 7: // stuff -> UNINDENT
+{ Console.WriteLine("UNINDENT"); }
+        break;
     }
   }
 

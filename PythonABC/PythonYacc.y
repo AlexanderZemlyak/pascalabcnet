@@ -19,29 +19,28 @@
 
 %namespace PythonParser
 
-%start progr
+%start root
 
-%token INDENT UNINDENT STUFF SEMICOLON
+%token INDENT UNINDENT STUFF REST
 
 %type <stVal> stuff
-%type <blVal> block stlst
+%type <blVal> root
 
 %%
 
-progr	: stuff
-		| block
-		;
-
-block	: INDENT stlst UNINDENT
-		;
-
-stlst	: stlst SEMICOLON stuff
+root	: root stuff
 		| stuff
-		| block
 		;
 
-stuff	: STUFF
-		;
+stuff	: STUFF 
+		{ Console.WriteLine("STUFF"); }
+     	| STUFF REST 
+		{ Console.WriteLine("STUFF REST"); }
+     	| INDENT 
+		{ Console.WriteLine("INDENT"); }
+     	| UNINDENT 
+		{ Console.WriteLine("UNINDENT"); }
+    ;
 
 %%
 

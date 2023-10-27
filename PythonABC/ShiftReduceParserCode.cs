@@ -689,7 +689,7 @@ namespace QUT.Gppg
         /// <summary>
         /// The column at which the text span starts.
         /// </summary>
-        public int StartColumn { get { return startColumn; } }
+        public int StartColumn { get { return startColumn; } set { StartColumn = value; } }
 
         /// <summary>
         /// The line on which the text span ends.
@@ -700,7 +700,7 @@ namespace QUT.Gppg
         /// The column of the first character
         /// beyond the end of the text span.
         /// </summary>
-        public int EndColumn { get { return endColumn; } }
+        public int EndColumn { get { return endColumn; } set { EndColumn = value; } }
 
         /// <summary>
         /// Default no-arg constructor.
