@@ -4,7 +4,8 @@ using System;
 using System.IO;
 using PascalABCCompiler.ParserTools;
 using PascalABCCompiler.Errors;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace PascalABCCompiler.Parsers
 {
@@ -45,6 +46,8 @@ namespace PascalABCCompiler.Parsers
             	//	continue;
                 if (Path.GetFileName(fi.FullName) == "VBNETParser.dll" || Path.GetFileName(fi.FullName) == "PascalABCPartParser.dll")
                     continue;
+                //if (Path.GetFileName(fi.FullName) == "VeryBasicParser.dll")
+                //    continue;
             	asssembly = System.Reflection.Assembly.LoadFile(fi.FullName);
                 try
                 {
