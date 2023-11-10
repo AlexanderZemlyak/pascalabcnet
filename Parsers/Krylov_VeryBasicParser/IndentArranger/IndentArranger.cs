@@ -9,26 +9,37 @@ namespace IndentArranger
 {   
     public class IndentArranger
     {
-        private string path;
+        private string programFilePath;
         private int currentLineSpaceCounter = 0;
         private int currentLineIndentCounter = 0;
         private int lineCounter = 0;
         private int previousIndentLevel = -1;
 
+        public string CreatedFileName { get; private set; }
+        public string CreatedFilePath { get; private set; }
+
         // количество пробелов соответствующее одному \t (в одном отступе)
         private const int indentSpaceNumber = 4;
         private const string indentLiteral = "Indent";
         private const string unindentLiteral = "Unindent";
+        public const string createdFileNameAddition = "_indented";
 
         public IndentArranger(string path)
         {
-            this.path = path;
+            programFilePath = path;
+
+            CreatedFileName =
+                Path.GetFileNameWithoutExtension(path) + 
+                createdFileNameAddition + Path.GetExtension(path);
+
+            CreatedFilePath = Path.GetDirectoryName(path) + "\\" + CreatedFileName;
         }
 
         public void ArrangeIndents()
         {
-            var lines = File.ReadLines(path);
-            foreach (var line in lines)
+            string[] programLines = File.ReadAllLines(programFilePath);
+
+            foreach (var line in programLines)
             {
                 lineCounter++;
                 bool isEmptyLine = true; // строка не содержит символов кроме 'space'\t\n\r
@@ -104,6 +115,8 @@ namespace IndentArranger
             for (int i = 0; i <= currentLineIndentCounter; ++i)
                 Console.Write("Unindent ");
             Console.WriteLine();
+
+            File.WriteAllLines(CreatedFilePath, programLines);
         }
     }
 
