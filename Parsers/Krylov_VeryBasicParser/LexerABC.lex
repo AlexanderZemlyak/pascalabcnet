@@ -50,7 +50,7 @@ ID {Alpha}{AlphaDigit}*
 //"*"  { yylval.sVal = yytext; return (int)Tokens.MULTIPLY; }
 //"/"  { yylval.sVal = yytext; return (int)Tokens.DIVIDE; }
 //"<"  { yylval.sVal = yytext; return (int)Tokens.LOWER; }
-//">"  { yylval.sVal = yytext; return (int)Tokens.GREATER; }
+">"  { yylval.op = new op_type_node(Operators.Greater); return (int)Tokens.GREATER; }
 
 "{"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.LBRACE; }
 "}"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.RBRACE; }

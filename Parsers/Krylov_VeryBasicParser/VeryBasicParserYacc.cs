@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  LAPTOP-MPBGOA9N
-// DateTime: 12.11.2023 11:39:47
+// DateTime: 12.11.2023 13:03:05
 // UserName: krylo
 // Input file <ParserABC.y>
 
@@ -63,21 +63,22 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
 #pragma warning disable 649
   private static Dictionary<int, string> aliasses;
 #pragma warning restore 649
-  private static Rule[] rules = new Rule[26];
-  private static State[] states = new State[46];
+  private static Rule[] rules = new Rule[30];
+  private static State[] states = new State[49];
   private static string[] nonTerms = new string[] {
-      "ident", "expr", "exprlist", "assign", "ifstatement", "stmt", "proccall", 
-      "stlist", "block", "progr", "$accept", };
+      "ident", "expr", "var_reference", "variable", "proc_func_call", "exprlist", 
+      "assign", "ifstatement", "stmt", "proccall", "stlist", "block", "progr", 
+      "$accept", };
 
   static VeryBasicGPPGParser() {
-    states[0] = new State(new int[]{24,21,12,34,6,39},new int[]{-10,1,-8,3,-6,37,-4,6,-1,7,-9,33,-5,38,-7,45});
+    states[0] = new State(new int[]{24,21,12,34,6,39},new int[]{-13,1,-11,3,-9,37,-7,6,-1,7,-12,33,-8,38,-10,45,-3,46,-4,47,-5,48});
     states[1] = new State(new int[]{2,2});
     states[2] = new State(-1);
     states[3] = new State(new int[]{18,4,2,-2});
-    states[4] = new State(new int[]{24,21,12,34,6,39},new int[]{-6,5,-4,6,-1,7,-9,33,-5,38,-7,45});
+    states[4] = new State(new int[]{24,21,12,34,6,39},new int[]{-9,5,-7,6,-1,7,-12,33,-8,38,-10,45,-3,46,-4,47,-5,48});
     states[5] = new State(-4);
     states[6] = new State(-5);
-    states[7] = new State(new int[]{19,8,10,27});
+    states[7] = new State(new int[]{19,8,10,27,18,-26,2,-26,13,-26});
     states[8] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-2,9,-1,20});
     states[9] = new State(new int[]{20,10,22,12,21,14,25,16,26,18,18,-10,2,-10,13,-10});
     states[10] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-2,11,-1,20});
@@ -97,36 +98,39 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
     states[24] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-2,25,-1,20});
     states[25] = new State(new int[]{11,26,20,10,22,12,21,14,25,16,26,18});
     states[26] = new State(-19);
-    states[27] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-3,28,-2,32,-1,20});
+    states[27] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-6,28,-2,32,-1,20});
     states[28] = new State(new int[]{11,29,17,30});
-    states[29] = new State(-24);
+    states[29] = new State(-28);
     states[30] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-2,31,-1,20});
     states[31] = new State(new int[]{20,10,22,12,21,14,25,16,26,18,11,-21,17,-21});
     states[32] = new State(new int[]{20,10,22,12,21,14,25,16,26,18,11,-20,17,-20});
     states[33] = new State(-6);
-    states[34] = new State(new int[]{24,21,12,34,6,39},new int[]{-8,35,-6,37,-4,6,-1,7,-9,33,-5,38,-7,45});
+    states[34] = new State(new int[]{24,21,12,34,6,39},new int[]{-11,35,-9,37,-7,6,-1,7,-12,33,-8,38,-10,45,-3,46,-4,47,-5,48});
     states[35] = new State(new int[]{13,36,18,4});
-    states[36] = new State(-25);
+    states[36] = new State(-29);
     states[37] = new State(-3);
     states[38] = new State(-7);
     states[39] = new State(new int[]{24,21,8,22,9,23,10,24},new int[]{-2,40,-1,20});
-    states[40] = new State(new int[]{20,10,22,12,21,14,25,16,26,18,24,21,12,34,6,39},new int[]{-6,41,-9,42,-4,6,-1,7,-5,38,-7,45});
+    states[40] = new State(new int[]{20,10,22,12,21,14,25,16,26,18,24,21,12,34,6,39},new int[]{-9,41,-12,42,-7,6,-1,7,-8,38,-10,45,-3,46,-4,47,-5,48});
     states[41] = new State(-22);
     states[42] = new State(new int[]{7,43,18,-6,2,-6,13,-6});
-    states[43] = new State(new int[]{24,21,12,34,6,39},new int[]{-6,44,-4,6,-1,7,-9,33,-5,38,-7,45});
+    states[43] = new State(new int[]{24,21,12,34,6,39},new int[]{-9,44,-7,6,-1,7,-12,33,-8,38,-10,45,-3,46,-4,47,-5,48});
     states[44] = new State(-23);
     states[45] = new State(-8);
+    states[46] = new State(-24);
+    states[47] = new State(-25);
+    states[48] = new State(-27);
 
-    rules[1] = new Rule(-11, new int[]{-10,2});
-    rules[2] = new Rule(-10, new int[]{-8});
-    rules[3] = new Rule(-8, new int[]{-6});
-    rules[4] = new Rule(-8, new int[]{-8,18,-6});
-    rules[5] = new Rule(-6, new int[]{-4});
-    rules[6] = new Rule(-6, new int[]{-9});
-    rules[7] = new Rule(-6, new int[]{-5});
-    rules[8] = new Rule(-6, new int[]{-7});
+    rules[1] = new Rule(-14, new int[]{-13,2});
+    rules[2] = new Rule(-13, new int[]{-11});
+    rules[3] = new Rule(-11, new int[]{-9});
+    rules[4] = new Rule(-11, new int[]{-11,18,-9});
+    rules[5] = new Rule(-9, new int[]{-7});
+    rules[6] = new Rule(-9, new int[]{-12});
+    rules[7] = new Rule(-9, new int[]{-8});
+    rules[8] = new Rule(-9, new int[]{-10});
     rules[9] = new Rule(-1, new int[]{24});
-    rules[10] = new Rule(-4, new int[]{-1,19,-2});
+    rules[10] = new Rule(-7, new int[]{-1,19,-2});
     rules[11] = new Rule(-2, new int[]{-2,20,-2});
     rules[12] = new Rule(-2, new int[]{-2,22,-2});
     rules[13] = new Rule(-2, new int[]{-2,21,-2});
@@ -136,12 +140,16 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
     rules[17] = new Rule(-2, new int[]{8});
     rules[18] = new Rule(-2, new int[]{9});
     rules[19] = new Rule(-2, new int[]{10,-2,11});
-    rules[20] = new Rule(-3, new int[]{-2});
-    rules[21] = new Rule(-3, new int[]{-3,17,-2});
-    rules[22] = new Rule(-5, new int[]{6,-2,-6});
-    rules[23] = new Rule(-5, new int[]{6,-2,-9,7,-6});
-    rules[24] = new Rule(-7, new int[]{-1,10,-3,11});
-    rules[25] = new Rule(-9, new int[]{12,-8,13});
+    rules[20] = new Rule(-6, new int[]{-2});
+    rules[21] = new Rule(-6, new int[]{-6,17,-2});
+    rules[22] = new Rule(-8, new int[]{6,-2,-9});
+    rules[23] = new Rule(-8, new int[]{6,-2,-12,7,-9});
+    rules[24] = new Rule(-10, new int[]{-3});
+    rules[25] = new Rule(-3, new int[]{-4});
+    rules[26] = new Rule(-4, new int[]{-1});
+    rules[27] = new Rule(-4, new int[]{-5});
+    rules[28] = new Rule(-5, new int[]{-1,10,-6,11});
+    rules[29] = new Rule(-12, new int[]{12,-11,13});
   }
 
   protected override void Initialize() {
@@ -163,12 +171,9 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
 			var un = new unit_or_namespace(new ident_list("SF"),null);
 			uses_list ul = null;
 			if (ul == null)
-			//var un1 = new unit_or_namespace(new ident_list("School"),null);
 				ul = new uses_list(un,null);
 			else ul.Insert(0,un);
-			//ul.Add(un1);
 			root = CurrentSemanticValue.stn = NewProgramModule(null, null, ul, new block(null, stl, CurrentLocationSpan), new token_info(""), CurrentLocationSpan);
-
 	}
         break;
       case 3: // stlist -> stmt
@@ -194,8 +199,9 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
         break;
       case 10: // assign -> ident, ASSIGN, expr
 {
-			CurrentSemanticValue.stn = new assign(ValueStack[ValueStack.Depth-3].id as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
-        }
+			var vds = new var_def_statement(new ident_list(ValueStack[ValueStack.Depth-3].id, LocationStack[LocationStack.Depth-3]), null, ValueStack[ValueStack.Depth-1].ex, definition_attribute.None, false, CurrentLocationSpan);
+			CurrentSemanticValue.stn = new var_statement(vds, CurrentLocationSpan);
+		}
         break;
       case 11: // expr -> expr, PLUS, expr
 { CurrentSemanticValue.ex = new bin_expr(ValueStack[ValueStack.Depth-3].ex, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan); }
@@ -236,12 +242,24 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
       case 23: // ifstatement -> IF, expr, block, ELSE, stmt
 { CurrentSemanticValue.stn = new if_node(ValueStack[ValueStack.Depth-4].ex, ValueStack[ValueStack.Depth-3].stn as statement, ValueStack[ValueStack.Depth-1].stn as statement, CurrentLocationSpan); }
         break;
-      case 24: // proccall -> ident, LPAR, exprlist, RPAR
+      case 24: // proccall -> var_reference
 {
-				CurrentSemanticValue.stn = new method_call(ValueStack[ValueStack.Depth-4].id as addressed_value, ValueStack[ValueStack.Depth-2].stn as expression_list, CurrentLocationSpan);
+				CurrentSemanticValue.stn = new procedure_call(ValueStack[ValueStack.Depth-1].ex as addressed_value, ValueStack[ValueStack.Depth-1].ex is ident, CurrentLocationSpan);
 			}
         break;
-      case 25: // block -> LBRACE, stlist, RBRACE
+      case 25: // var_reference -> variable
+{ CurrentSemanticValue.ex = ValueStack[ValueStack.Depth-1].ex; }
+        break;
+      case 26: // variable -> ident
+{ CurrentSemanticValue.ex = ValueStack[ValueStack.Depth-1].id; }
+        break;
+      case 27: // variable -> proc_func_call
+{ CurrentSemanticValue.ex = ValueStack[ValueStack.Depth-1].ex; }
+        break;
+      case 28: // proc_func_call -> ident, LPAR, exprlist, RPAR
+{ CurrentSemanticValue.ex = new method_call(ValueStack[ValueStack.Depth-4].id as addressed_value,ValueStack[ValueStack.Depth-2].stn as expression_list, CurrentLocationSpan); }
+        break;
+      case 29: // block -> LBRACE, stlist, RBRACE
 { CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-2].stn; }
         break;
     }

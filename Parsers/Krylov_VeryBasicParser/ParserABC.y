@@ -44,7 +44,7 @@
 %left MULTIPLY DIVIDE
 
 %type <id> ident
-%type <ex> expr
+%type <ex> expr, var_reference, variable, proc_func_call
 %type <stn> exprlist
 %type <stn> assign ifstatement stmt proccall
 %type <stn> stlist block
@@ -81,8 +81,9 @@ ident 	: ID { $$ = $1; }
 		;
 
 assign 	: ident ASSIGN expr         {
-			$$ = new assign($1 as addressed_value, $3, $2.type, @$);
-        }
+			var vds = new var_def_statement(new ident_list($1, @1), null, $3, definition_attribute.None, false, @$);
+			$$ = new var_statement(vds, @$);
+		}
 		;
 
 expr 	: expr PLUS expr { $$ = new bin_expr($1, $3, $2.type, @$); }
@@ -104,11 +105,21 @@ ifstatement	: IF expr stmt { $$ = new if_node($2, $3 as statement, null, @$); }
 			| IF expr block ELSE stmt { $$ = new if_node($2, $3 as statement, $5 as statement, @$); }
 			;
 
-proccall	: ident LPAR exprlist RPAR
+proccall	:  var_reference
         	{
-				$$ = new method_call($1 as addressed_value, $3 as expression_list, @$);
+				$$ = new procedure_call($1 as addressed_value, $1 is ident, @$);
 			}
-    ;
+			;
+
+var_reference	: variable { $$ = $1; }
+				;
+
+variable	: ident { $$ = $1; }
+			| proc_func_call { $$ = $1; }
+			;
+
+proc_func_call	: ident LPAR exprlist RPAR { $$ = new method_call($1 as addressed_value,$3 as expression_list, @$); }
+				;
 
 block	: LBRACE stlist RBRACE { $$ = $2; }
 		;
