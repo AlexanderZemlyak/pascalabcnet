@@ -145,6 +145,7 @@ namespace PascalABCCompiler.Parsers
                 return null;
             if (cu is SyntaxTree.compilation_unit)
                 return cu as SyntaxTree.compilation_unit;
+
             Errors.Add(new Errors.UnexpectedNodeType(FileName, cu.source_context,null));
             return null;
             //throw new Errors.CompilerInternalError("Parsers.Controller.GetComilationUnit", new Exception("bad node type"));

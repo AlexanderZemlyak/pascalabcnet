@@ -48,13 +48,24 @@
 %type <stn> exprlist
 %type <stn> assign ifstatement stmt proccall
 %type <stn> stlist block
+%type <stn> progr
 
 %start progr
 
 %%
-
-progr   : stlist { root = $1; }
+progr   : stlist {
+		var stl = $1 as statement_list;
+			stl.left_logical_bracket = new token_info("");
+			stl.right_logical_bracket = new token_info("");
+			var un = new unit_or_namespace(new ident_list("SF"),null);
+			uses_list ul = null;
+			if (ul == null)
+				ul = new uses_list(un,null);
+			else ul.Insert(0,un);
+			root = $$ = NewProgramModule(null, null, ul, new block(null, stl, @$), new token_info(""), @$);
+	}
 		;
+
 
 stlist	: stmt { $$ = new statement_list($1 as statement, @1); }
 		| stlist SEMICOLON stmt { $$ = ($1 as statement_list).Add($3 as statement, @$); }
@@ -103,3 +114,18 @@ block	: LBRACE stlist RBRACE { $$ = $2; }
 		;
 
 %%
+
+        public program_module NewProgramModule(program_name progName, Object optHeadCompDirs, uses_list mainUsesClose, syntax_tree_node progBlock, Object optPoint, LexLocation loc)
+        {
+            var progModule = new program_module(progName, mainUsesClose, progBlock as block, null, loc);
+            progModule.Language = LanguageId.PascalABCNET;
+            if (optPoint == null && progBlock != null)
+            {
+                var fp = progBlock.source_context.end_position;
+                var err_stn = progBlock;
+			    if ((progBlock is block) && (progBlock as block).program_code != null && (progBlock as block).program_code.subnodes != null && (progBlock as block).program_code.subnodes.Count > 0)
+                    err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
+                parsertools.errors.Add(new PABCNETUnexpectedToken(parsertools.CurrentFileName, StringResources.Get("TKPOINT"), new SourceContext(fp.line_num, fp.column_num + 1, fp.line_num, fp.column_num + 1, 0, 0), err_stn));
+            }
+            return progModule;
+        }

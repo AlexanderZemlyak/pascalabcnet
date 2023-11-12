@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  LAPTOP-MPBGOA9N
-// DateTime: 06.11.2023 17:26:10
+// DateTime: 12.11.2023 11:39:47
 // UserName: krylo
 // Input file <ParserABC.y>
 
@@ -156,7 +156,20 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
     switch (action)
     {
       case 2: // progr -> stlist
-{ root = ValueStack[ValueStack.Depth-1].stn; }
+{
+		var stl = ValueStack[ValueStack.Depth-1].stn as statement_list;
+			stl.left_logical_bracket = new token_info("");
+			stl.right_logical_bracket = new token_info("");
+			var un = new unit_or_namespace(new ident_list("SF"),null);
+			uses_list ul = null;
+			if (ul == null)
+			//var un1 = new unit_or_namespace(new ident_list("School"),null);
+				ul = new uses_list(un,null);
+			else ul.Insert(0,un);
+			//ul.Add(un1);
+			root = CurrentSemanticValue.stn = NewProgramModule(null, null, ul, new block(null, stl, CurrentLocationSpan), new token_info(""), CurrentLocationSpan);
+
+	}
         break;
       case 3: // stlist -> stmt
 { CurrentSemanticValue.stn = new statement_list(ValueStack[ValueStack.Depth-1].stn as statement, LocationStack[LocationStack.Depth-1]); }
@@ -244,5 +257,20 @@ public partial class VeryBasicGPPGParser: ShiftReduceParser<ValueType, LexLocati
         return CharToString((char)terminal);
   }
 
+
+        public program_module NewProgramModule(program_name progName, Object optHeadCompDirs, uses_list mainUsesClose, syntax_tree_node progBlock, Object optPoint, LexLocation loc)
+        {
+            var progModule = new program_module(progName, mainUsesClose, progBlock as block, null, loc);
+            progModule.Language = LanguageId.PascalABCNET;
+            if (optPoint == null && progBlock != null)
+            {
+                var fp = progBlock.source_context.end_position;
+                var err_stn = progBlock;
+			    if ((progBlock is block) && (progBlock as block).program_code != null && (progBlock as block).program_code.subnodes != null && (progBlock as block).program_code.subnodes.Count > 0)
+                    err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
+                parsertools.errors.Add(new PABCNETUnexpectedToken(parsertools.CurrentFileName, StringResources.Get("TKPOINT"), new SourceContext(fp.line_num, fp.column_num + 1, fp.line_num, fp.column_num + 1, 0, 0), err_stn));
+            }
+            return progModule;
+        }
 }
 }
