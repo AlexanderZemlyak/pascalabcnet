@@ -11,8 +11,8 @@ namespace IndentArranger
     {
         private string programFilePath;
         private int currentLineSpaceCounter = 0;
-        private int currentLineIndentCounter = 0;
-        private int lineCounter = 0;
+        private int currentLineIndentLevel = 0;
+        private int lineCounter = -1;
         private int previousIndentLevel = -1;
 
         public string CreatedFileName { get; private set; }
@@ -37,8 +37,9 @@ namespace IndentArranger
 
         public void ArrangeIndents()
         {
+            File.Delete(CreatedFilePath);
             string[] programLines = File.ReadAllLines(programFilePath);
-
+            int lastNotEmptyLine = -1;
             foreach (var line in programLines)
             {
                 lineCounter++;
@@ -65,17 +66,17 @@ namespace IndentArranger
                 }
 
                 // вывод номера текущей строки для дебага
-                Console.Write($"{lineCounter}:\t");
+                //Console.Write($"{lineCounter + 1}:\t");
 
                 // пропуск строки не содержащей код 
                 if (isEmptyLine)
                 {
-                    Console.WriteLine("EmptyLine");
+                    //Console.WriteLine("EmptyLine");
                     continue;
                 }
 
                 // количество отступов в текущей строке 
-                currentLineIndentCounter = currentLineSpaceCounter / indentSpaceNumber;
+                currentLineIndentLevel = currentLineSpaceCounter / indentSpaceNumber;
 
                 // количество пробелов в строке является некорректным 
                 // (не соответствует количеству пробелов в строке с любым отступом) 
@@ -84,39 +85,48 @@ namespace IndentArranger
                     throw new NotPossibleIndentException();
                 }
                 // текущий отступ соответствует увеличению на больше чем один отступ 
-                else if (currentLineIndentCounter > previousIndentLevel + 1)
+                else if (currentLineIndentLevel > previousIndentLevel + 1)
                 {
                     throw new ManyIndentsAdditionException();
                 }
                 // текущий отступ соответствует увеличению на один отступ 
-                else if (currentLineIndentCounter == previousIndentLevel + 1)
+                else if (currentLineIndentLevel == previousIndentLevel + 1)
                 {
-                    Console.Write(indentLiteral);
-                    previousIndentLevel = currentLineIndentCounter;
+                    //Console.Write(indentLiteral);
+                    if (lastNotEmptyLine != -1)
+                        programLines[lastNotEmptyLine] += " " + indentLiteral;
+                    // закомментировать ветку else если нет блока оборачивающего всю программу
+                    else
+                        File.AppendAllText(CreatedFilePath, indentLiteral + "\n");
                 }
                 // текущий отступ соответствует уменьшению на один или несколько отступов
-                else if (currentLineIndentCounter < previousIndentLevel)
+                else if (currentLineIndentLevel < previousIndentLevel)
                 {
-                    for (int i = currentLineIndentCounter; i < previousIndentLevel; ++i)
-                        Console.Write(unindentLiteral + " ");
-                    previousIndentLevel = currentLineIndentCounter;
+                    //Console.Write(
+                        //string.Concat(Enumerable.Repeat(unindentLiteral + " ", previousIndentLevel - currentLineIndentCounter)));
+                    programLines[lastNotEmptyLine] +=
+                        string.Concat(Enumerable.Repeat(" " + unindentLiteral, previousIndentLevel - currentLineIndentLevel));
                 }
                 // текущий отступ  соответствует предыдущему отступу 
-                else if (currentLineIndentCounter == previousIndentLevel)
+                else if (currentLineIndentLevel == previousIndentLevel)
                 {
-                    Console.Write("Nothing");
+                    //Console.Write("Nothing");
                 }
 
-                Console.WriteLine();
+                previousIndentLevel = currentLineIndentLevel;
+                lastNotEmptyLine = lineCounter;
+                //Console.WriteLine();
             }
 
-            Console.Write("EOF:\t");
             // закрытие всех отступов в конце файла
-            for (int i = 0; i <= currentLineIndentCounter; ++i)
-                Console.Write("Unindent ");
-            Console.WriteLine();
+            // (убрать "+ 1" если нет блока оборачивающего всю программу)
+            programLines[lastNotEmptyLine] +=
+                string.Concat(Enumerable.Repeat(" " + unindentLiteral, currentLineIndentLevel + 1));
 
-            File.WriteAllLines(CreatedFilePath, programLines);
+            //Console.WriteLine("EOF:\t" + 
+            //    string.Concat(Enumerable.Repeat(unindentLiteral + " ", currentLineIndentCounter + 1)));
+
+            File.AppendAllLines(CreatedFilePath, programLines);
         }
     }
 
