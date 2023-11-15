@@ -33,7 +33,7 @@
 
 %token <ti> FOR, IN, WHILE, IF, ELSE
 %token <ex> INTNUM, REALNUM
-%token <ti> LPAR, RPAR, LBRACE, RBRACE, LBRACKET, RBRACKET, DOT, COMMA, SEMICOLON
+%token <ti> LPAR, RPAR, LBRACE, RBRACE, LBRACKET, RBRACKET, DOT, COMMA, COLON, SEMICOLON, INDENT, UNINDENT
 %token <op> ASSIGN
 %token <op> PLUS, MINUS, MULTIPLY, DIVIDE
 %token <id> ID
@@ -53,13 +53,12 @@
 %start progr
 
 %%
-progr   : stlist {
+progr   : block {
 		var stl = $1 as statement_list;
 		var decl = new declarations();
 		root = $$ = NewProgramModule(null, null, null, new block(decl, stl, @$), new token_info(""), @$);
-	}
+		}
 		;
-
 
 stlist	: stmt { $$ = new statement_list($1 as statement, @1); }
 		| stlist SEMICOLON stmt { $$ = ($1 as statement_list).Add($3 as statement, @$); }
@@ -95,8 +94,8 @@ exprlist	: expr { $$ = new expression_list($1, @$); }
 			| exprlist COMMA expr { $$ = ($1 as expression_list).Add($3, @$);  }
 			;
 
-ifstatement	: IF expr stmt { $$ = new if_node($2, $3 as statement, null, @$); }
-			| IF expr block ELSE stmt { $$ = new if_node($2, $3 as statement, $5 as statement, @$); }
+ifstatement	: IF expr COLON block { $$ = new if_node($2, $4 as statement, null, @$); }
+			| IF expr COLON block ELSE COLON block { $$ = new if_node($2, $4 as statement, $7 as statement, @$); }
 			;
 
 proccall	:  var_reference
@@ -112,11 +111,11 @@ variable	: ident { $$ = $1; }
 			| proc_func_call { $$ = $1; }
 			;
 
+block	: INDENT stlist SEMICOLON UNINDENT { $$ = $2 as statement_list; }
+		;
+
 proc_func_call	: ident LPAR exprlist RPAR { $$ = new method_call($1 as addressed_value,$3 as expression_list, @$); }
 				;
-
-block	: LBRACE stlist RBRACE { $$ = $2; }
-		;
 
 %%
 

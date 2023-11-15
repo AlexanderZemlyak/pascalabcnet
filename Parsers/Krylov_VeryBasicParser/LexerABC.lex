@@ -13,6 +13,8 @@ AlphaDigit {Alpha}|{Digit}
 INTNUM  {Digit}+
 REALNUM {INTNUM}\.{INTNUM}
 ID {Alpha}{AlphaDigit}*
+INDENT "@Indent"
+UNINDENT "@Unindent"
 
 %{
   public VeryBasicParserTools parsertools;
@@ -32,6 +34,14 @@ ID {Alpha}{AlphaDigit}*
   currentLexLocation = CurrentLexLocation;
   yylval.ex = parsertools.create_double_const(yytext,currentLexLocation);
   return (int)Tokens.REALNUM;
+}
+
+{INDENT} {
+  return (int)Tokens.INDENT;
+}
+
+{UNINDENT} {
+  return (int)Tokens.UNINDENT;
 }
 
 {ID}  {
@@ -59,6 +69,7 @@ ID {Alpha}{AlphaDigit}*
 
 "."  { currentLexLocation = CurrentLexLocation; return (int)Tokens.DOT; }
 ","  { currentLexLocation = CurrentLexLocation; return (int)Tokens.COMMA; }
+":"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.COLON; }
 ";"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.SEMICOLON; }
 "("  { currentLexLocation = CurrentLexLocation; return (int)Tokens.LPAR; }
 ")"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.RPAR; }
