@@ -113,9 +113,11 @@ namespace VeryBasicParser
             errors.Add(new SyntaxError(message, CurrentFileName, loc, null));
         }
 
-        public string CreateErrorString(string yytext, params object[] args)
+        public string CreateErrorString(string yytext, LexLocation yyloc, params object[] args)
         {
-            return $"LEXER ERROR ALARM at {yytext} !";
+            string expected = String.Join(" ", args.Skip(1).Select(x => x.ToString()));
+            string err = $"PARSER ERROR \"{yytext}\" AT LINE #{yyloc.StartLine}: EXPECTED  {expected}, FOUND {args[0]}";
+            return err;
         }
     }
 }

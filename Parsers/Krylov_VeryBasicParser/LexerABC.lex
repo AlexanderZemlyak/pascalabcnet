@@ -85,7 +85,7 @@ public LexLocation CurrentLexLocation
 
 public override void yyerror(string format, params object[] args)
 {
-	string errorMsg = parsertools.CreateErrorString(yytext,args);
+	string errorMsg = parsertools.CreateErrorString(yytext, yylloc, args);
 	parsertools.AddError(errorMsg,CurrentLexLocation);
 }
 

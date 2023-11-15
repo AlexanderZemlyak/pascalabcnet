@@ -55,14 +55,8 @@
 %%
 progr   : stlist {
 		var stl = $1 as statement_list;
-			stl.left_logical_bracket = new token_info("");
-			stl.right_logical_bracket = new token_info("");
-			var un = new unit_or_namespace(new ident_list("SF"),null);
-			uses_list ul = null;
-			if (ul == null)
-				ul = new uses_list(un,null);
-			else ul.Insert(0,un);
-			root = $$ = NewProgramModule(null, null, ul, new block(null, stl, @$), new token_info(""), @$);
+		var decl = new declarations();
+		root = $$ = NewProgramModule(null, null, null, new block(decl, stl, @$), new token_info(""), @$);
 	}
 		;
 
@@ -91,7 +85,7 @@ expr 	: expr PLUS expr { $$ = new bin_expr($1, $3, $2.type, @$); }
 		| expr MINUS expr { $$ = new bin_expr($1, $3, $2.type, @$); }
   		| expr LOWER expr { $$ = new bin_expr($1, $3, $2.type, @$); }
 		| expr GREATER expr { $$ = new bin_expr($1, $3, $2.type, @$); }
-		| ident { $$ = $1; }
+		| variable { $$ = $1;}
 		| INTNUM { $$ = $1; }
 		| REALNUM { $$ = $1; }
 		| LPAR expr RPAR { $$ = $2; }
