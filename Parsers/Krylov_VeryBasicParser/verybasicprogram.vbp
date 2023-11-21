@@ -1,9 +1,0 @@
-﻿@Indent
-a = 5;
-if a > 3: @Indent
-  if a > 4: @Indent 
-     print(4); @Unindent 
-  else: @Indent
-    print(2); @Unindent; @Unindent;
-  
-@Unindent
