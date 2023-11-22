@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.IO;
 
 namespace IndentArranger
-
 {   
     public class IndentArranger
     {
