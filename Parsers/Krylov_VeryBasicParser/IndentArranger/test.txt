@@ -1,23 +1,12 @@
-int func (x):
-	first line
-	cycle
-		cyclebody1
-				
-	
-		cyclebody2
-		
-	another line
-	
-	
-	
-void something ():
-	line1
-	line2
-	line3
-		block1
-			block2
-				block3
-	line4
-	return val
-	
-print(10)
+a = 1
+b = 2
+c = 3
+d = 4
+if a == b:
+	if b == c:
+		if c == d:
+			print(d)
+		else:
+			print(c)
+else:
+	print(b)

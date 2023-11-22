@@ -3808,6 +3808,15 @@ namespace PascalABCCompiler
                 currentUnit = new CompilationUnit();
                 if (firstCompilationUnit == null)
                     firstCompilationUnit = currentUnit;
+
+                // Если файл .vbp то надо заменить исходный файл на другой с предварительной обработкой
+                if (Path.GetExtension(UnitFileName) == ".vbp")
+                {
+                    IndentArranger.IndentArranger ia = new IndentArranger.IndentArranger(UnitFileName);
+                    ia.ArrangeIndents();
+                    UnitFileName = ia.CreatedFilePath;
+                }
+
                 OnChangeCompilerState(this, CompilerState.BeginCompileFile, UnitFileName); // начало компиляции модуля
 
                 string sourceText = GetSourceCode(currentUnitNode, UnitFileName, currentUnit);
