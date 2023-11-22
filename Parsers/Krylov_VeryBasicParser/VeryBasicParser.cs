@@ -71,7 +71,7 @@ namespace PascalABCCompiler.VeryBasicParser
         //public Preprocessor2.Preprocessor2 preprocessor2 = new PascalABCCompiler.Preprocessor2.Preprocessor2(null);
 
         public VeryBasicLanguageParser()
-            : base("VeryBasic", "0.0.1", "Copyright © 2023-2023 by Vladislav Krylov", false, new string[] { ".vbp" })
+            : base("VeryBasic", "0.0.1", "Copyright © 2023-2023 by Vladislav Krylov", false, new string[] { ".yavb" })
         {
         }
 

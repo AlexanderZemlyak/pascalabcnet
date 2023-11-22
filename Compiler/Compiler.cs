@@ -3810,7 +3810,7 @@ namespace PascalABCCompiler
                     firstCompilationUnit = currentUnit;
 
                 // Если файл .vbp то надо заменить исходный файл на другой с предварительной обработкой
-                if (Path.GetExtension(UnitFileName) == ".vbp")
+                if (Path.GetExtension(UnitFileName) == ".yavb")
                 {
                     IndentArranger.IndentArranger ia = new IndentArranger.IndentArranger(UnitFileName);
                     ia.ArrangeIndents();
