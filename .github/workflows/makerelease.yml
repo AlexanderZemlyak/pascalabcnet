@@ -44,7 +44,7 @@ jobs:
                     const { repo: { owner, repo }, sha } = context;
                     console.log({ owner, repo, sha });
 
-                    const tag = "refactoring-build";
+                    const tag = "refactoring-build-tag";
 
                     // Check if the release already exists
                     const existingReleases = await github.rest.repos.listReleases({ owner, repo });
