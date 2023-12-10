@@ -138,11 +138,14 @@ namespace VisualPascalABC
 
         private void InternalParsing()
         {
+#if DEBUG
+#else
             while (true)
             {
                 ParseInThread();
                 System.Threading.Thread.Sleep(2000);
             }
+#endif
         }
 
         private long mem_delta = 0;
@@ -172,7 +175,7 @@ namespace VisualPascalABC
                         open_files[FileName] = false;
                         if (dc.is_compiled)
                         {
-                            //CodeCompletion.CodeCompletionController.comp_modules.Remove(FileName);
+                            //CodeCompletion.CodeCompletionController.comp_modules.Remove(file_name);
                             if (tmp != null && tmp.visitor.entry_scope != null)
                             {
                                 tmp.visitor.entry_scope.Clear();
