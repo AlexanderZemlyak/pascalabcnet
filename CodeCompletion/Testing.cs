@@ -8,6 +8,8 @@ using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.Parsers;
 using PascalABCCompiler.Errors;
 using System.IO;
+using PascalABCCompiler;
+using PascalABCCompiler.TreeConverter;
 //using ICSharpCode.SharpDevelop.Dom;
 
 namespace CodeCompletion
@@ -30,7 +32,7 @@ namespace CodeCompletion
             var controller = new CodeCompletion.CodeCompletionController();
             CodeCompletion.DomSyntaxTreeVisitor.use_semantic_for_intellisense = true;
             CodeCompletion.CodeCompletionController.comp = comp;
-            CodeCompletion.CodeCompletionController.SetParser(".pas");
+            CodeCompletion.CodeCompletionController.SetParser(compiler_string_consts.pascalSourceFileExtension);
             CodeCompletion.CodeCompletionController.ParsersController = comp.ParsersController;
             var files = Directory.GetFiles(dir, "*.pas");
             var parser = comp.ParsersController;
@@ -102,7 +104,7 @@ namespace CodeCompletion
             var comp = new PascalABCCompiler.Compiler();
             var controller = new CodeCompletion.CodeCompletionController();
             CodeCompletion.CodeCompletionController.comp = comp;
-            CodeCompletion.CodeCompletionController.SetParser(".pas");
+            CodeCompletion.CodeCompletionController.SetParser(compiler_string_consts.pascalSourceFileExtension);
             CodeCompletion.CodeCompletionController.ParsersController = comp.ParsersController;
             var files = Directory.GetFiles(dir, "*.pas");
             var parser = comp.ParsersController;
@@ -339,7 +341,7 @@ namespace CodeCompletion
     		int col=0;
     		PascalABCCompiler.Parsers.KeywordKind keyw;
             CodeCompletionController.ParsersController.Reload();
-    		PascalABCCompiler.Parsers.IParser parser = CodeCompletionController.ParsersController.selectParser(".pas");
+    		PascalABCCompiler.Parsers.IParser parser = CodeCompletionController.ParsersController.selectParser(compiler_string_consts.pascalSourceFileExtension);
     		
     		string test_str = "System.Console";
     		off = test_str.Length;

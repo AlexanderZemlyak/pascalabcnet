@@ -171,6 +171,7 @@
     <Compile Include="IndentArranger.cs" />
     <Compile Include="IndentArrangerException.cs" />
     <Compile Include="IProjectInfo.cs" />
+    <Compile Include="LanguagesData.cs" />
     <Compile Include="ProjectInfo.cs" />
     <Compile Include="RemoteCompiler.cs" />
     <Compile Include="SemanticTreeConverters\ISemanticTreeConverter.cs" />
@@ -184,9 +185,6 @@
     <Compile Include="PCU\PCUWrappers.cs" />
     <Compile Include="..\Configuration\GlobalAssemblyInfo.cs">
       <Link>Config\GlobalAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="string_constants.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="SyntaxTreeConvertersController\SyntaxTreeConvertersController.cs" />
   </ItemGroup>
