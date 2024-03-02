@@ -40,6 +40,8 @@ function abs(x: integer): integer;
 
 function abs(x: single): single;
 
+function stype(o: object): System.Type;
+
 implementation
 
 function input(): string;
@@ -78,6 +80,11 @@ end;
 function range(e: integer): sequence of integer;
 begin
   Result := PABCSystem.Range(0, e-1);
+end;
+
+function stype(o: object): System.Type;
+begin
+  Result := o.GetType();
 end;
 
 //function all<T>(seq: sequence of T): boolean := seq.All(x -> x);
