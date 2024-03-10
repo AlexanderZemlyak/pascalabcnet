@@ -44,13 +44,17 @@ namespace PascalABCCompiler.TreeConverter
 
 		public statement_node visit(SyntaxTree.statement st)
 		{
-            st.visit(syntax_tree_visitor);
+            // ProccessNodeVisitProblem EVA
+            syntax_tree_visitor.ProcessNode(st);
+            //st.visit(syntax_tree_visitor);
             return ret_semantic as statement_node;
 		}
 
 		public expression_node visit(SyntaxTree.expression expr)
 		{
-            expr.visit(syntax_tree_visitor);
+            // ProccessNodeVisitProblem EVA
+            syntax_tree_visitor.ProcessNode(expr);
+            //expr.visit(syntax_tree_visitor);
 
             /*addressed_expression ad = ret_semantic as addressed_expression;
             if (ad != null && ad.is_addressed)

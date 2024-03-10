@@ -107,7 +107,8 @@ namespace PascalABCCompiler.TreeConverter
 
             stv.DirectivesToNodesLinks = CompilerDirectivesToSyntaxTreeNodesLinker.BuildLinks(SyntaxUnit, ErrorsList);  //MikhailoMMX добавил передачу списка ошибок (02.10.10)
 
-            SyntaxUnit.visit(stv);
+            // ProccessNodeVisitProblem EVA
+            stv.ProcessNode(SyntaxUnit);
             
             CompiledVariables.AddRange(stv.CompiledVariables);
             /*SyntaxTree.program_module pmod=SyntaxUnit as SyntaxTree.program_module;

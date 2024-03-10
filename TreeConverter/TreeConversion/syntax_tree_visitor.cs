@@ -873,6 +873,7 @@ namespace PascalABCCompiler.TreeConverter
             //ssyy
             motivation_keeper.reset(); // Это можно закомментировать - все тесты проходят SSM 2/1/17
             //\ssyy
+            // ProccessNodeVisitProblem EVA
             expression_node en = ret.visit(expr);
 
             //if (lambdaProcessingState == LambdaProcessingState.FinishPhase)
@@ -981,7 +982,10 @@ namespace PascalABCCompiler.TreeConverter
             convertion_data_and_alghoritms.check_node_parser_error(tn);
             if (is_direct_type_decl && !(tn is SyntaxTree.ref_type))
                 is_direct_type_decl = false;
-            tn.visit(this);
+
+            // ProccessNodeVisitProblem EVA
+            ProcessNode(tn);
+
             /*#if (DEBUG)
                         }
                         catch (Exception e)
