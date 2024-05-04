@@ -3583,7 +3583,7 @@ namespace PascalABCCompiler
             }
 
             // temp for SPython | Movchan
-            var sfvugv = new SyntaxVisitors.SPythonFindVariablesUsedGlobalVisitor();
+            var sfvugv = new SyntaxVisitors.SPythonRetainUsedGlobalVariablesVisitor();
             sfvugv.ProcessNode(unitSyntaxTree);
 
             return unitSyntaxTree;
