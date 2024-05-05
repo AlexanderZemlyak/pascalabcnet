@@ -68,6 +68,7 @@
 %type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
 %type <td> proc_func_header form_param_type simple_type_identifier
 %type <stn> import_clause import_clause_one
+%type <ti> optional_semicolon
 
 %start program
 
@@ -88,7 +89,7 @@ act		= actual
 
 %%
 program
-	: import_clause decl_and_stmt_list
+	: import_clause decl_and_stmt_list optional_semicolon
 		{
 			// main program
 			if (!is_unit_to_be_parsed) {
@@ -172,7 +173,7 @@ decl
 		}
 	;
 
-decl_and_stmt_list
+decl_and_stmt_list 
 	: decl_or_stmt
 		{
 			if ($1 is statement st)
@@ -739,6 +740,13 @@ optional_act_param_list
 			$$ = null;
 		}
     ;
+
+optional_semicolon
+	: SEMICOLON
+		{ $$ = null; }
+	|
+		{ $$ = null; }
+	;
 
 %%
 
