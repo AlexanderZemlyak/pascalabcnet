@@ -13,7 +13,6 @@ namespace SyntaxVisitors
     {
         private HashSet<string> VariablesDeclaredGlobal { get; set; }
         private HashSet<string> VariablesUsedGlobal { get; set; }
-        private HashSet<string> VariablesUnusedGlobal { get; set; }
         private HashSet<string> LocalVariables { get; set; }
         private Dictionary<string, variable_definitions> VariablesToDefinitions{ get; set; }
         private bool IsInFunctionBody { get; set; }
@@ -26,7 +25,6 @@ namespace SyntaxVisitors
             VariablesUsedGlobal = new HashSet<string>();
             LocalVariables = new HashSet<string>();
             VariablesToDefinitions = new Dictionary<string, variable_definitions>();
-            DeclarationsNode = null;
 
             IsInFunctionBody = false;
             IsInProgramCode = false;
@@ -39,14 +37,8 @@ namespace SyntaxVisitors
                 ProcessNode(n[i]);
         }
 
-        private void InitVariablesUnusedGlobal()
-        {
-            VariablesUnusedGlobal = new HashSet<string>(VariablesDeclaredGlobal.Except(VariablesUsedGlobal));
-        }
-
-        private void Clear()
-        {
-            LocalVariables = new HashSet<string>();
+        private bool IsUnusedGlobalVariable(string name) {
+            return VariablesDeclaredGlobal.Contains(name) && !VariablesUsedGlobal.Contains(name);
         }
 
         public override void Enter(syntax_tree_node stn)
@@ -58,10 +50,7 @@ namespace SyntaxVisitors
             if (stn is statement_list _statement_list)
             {
                 if (!IsInFunctionBody)
-                {
                     IsInProgramCode = true;
-                    InitVariablesUnusedGlobal();
-                }
             }
             if (stn is declarations _declarations)
             {
@@ -76,7 +65,7 @@ namespace SyntaxVisitors
             if (stn is procedure_definition _procedure_definition)
             {
                 IsInFunctionBody = false;
-                Clear();
+                LocalVariables.Clear();
             }
 
             base.Exit(stn);
@@ -120,9 +109,9 @@ namespace SyntaxVisitors
 
         public override void visit(assign _assign)
         {
-            if (IsInProgramCode && _assign.to is ident _ident && VariablesUnusedGlobal.Contains(_ident.name))
+            if (IsInProgramCode && _assign.to is ident _ident && IsUnusedGlobalVariable(_ident.name))
             {
-                VariablesUnusedGlobal.Remove(_ident.name);
+                VariablesDeclaredGlobal.Remove(_ident.name);
                 DeclarationsNode.Remove(VariablesToDefinitions[_ident.name]);
 
                 var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
