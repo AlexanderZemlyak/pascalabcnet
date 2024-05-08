@@ -631,11 +631,16 @@ proc_func_call
 			if ($3 is expression_list exprl) {
 				expression_list args = new expression_list();
 				expression_list kvargs = new expression_list();
+
 				foreach (var expr in exprl.expressions) {
-					if (expr is name_assign_expr)
-						kvargs.Add(expr as name_assign_expr);
-					else if (kvargs.expressions.Count() == 0)
+					if (expr is name_assign_expr) {
+						kvargs.Add(expr);
+						kvargs.source_context = new SourceContext(kvargs.source_context, expr.source_context);
+					}
+					else if (kvargs.expressions.Count() == 0) {
 						args.Add(expr);
+						args.source_context = new SourceContext(args.source_context, expr.source_context);
+					}
 					else parsertools.AddErrorFromResource("Arg after Kvarg", @$);
 				}
 
