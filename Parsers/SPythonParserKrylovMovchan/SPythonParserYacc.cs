@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 13.04.2024 20:44:46
+// DateTime: 08.05.2024 13:00:12
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -911,7 +911,27 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 91: // proc_func_call -> variable, LPAR, optional_act_param_list, RPAR
 {
-			CurrentSemanticValue.ex = new method_call(ValueStack[ValueStack.Depth-4].ex as addressed_value, ValueStack[ValueStack.Depth-2].stn as expression_list, CurrentLocationSpan);
+			if (ValueStack[ValueStack.Depth-2].stn is expression_list exprl) {
+				expression_list args = new expression_list();
+				expression_list kvargs = new expression_list();
+				foreach (var expr in exprl.expressions) {
+					if (expr is name_assign_expr)
+						kvargs.Add(expr);
+					else
+						args.Add(expr);
+				}
+
+				if (kvargs.expressions.Count() == 0)
+					CurrentSemanticValue.ex = new method_call(ValueStack[ValueStack.Depth-4].ex as addressed_value, args, CurrentLocationSpan);
+				else {
+					named_type_reference ntr = new named_type_reference(new ident("`" + (ValueStack[ValueStack.Depth-4].ex as ident).name), LocationStack[LocationStack.Depth-4]);
+					new_expr ne = new new_expr(ntr, kvargs, false, null, CurrentLocationSpan);
+					dot_node dn = new dot_node(ne as addressed_value, ValueStack[ValueStack.Depth-4].ex as addressed_value, CurrentLocationSpan);
+					CurrentSemanticValue.ex = new method_call(dn as addressed_value, args, CurrentLocationSpan);
+				}
+			}
+			else
+				CurrentSemanticValue.ex = new method_call(ValueStack[ValueStack.Depth-4].ex as addressed_value, null, CurrentLocationSpan);
 		}
         break;
       case 92: // simple_type_identifier -> ident

@@ -628,7 +628,27 @@ proc_func_header
 proc_func_call
 	: variable LPAR optional_act_param_list RPAR
 		{
-			$$ = new method_call($1 as addressed_value, $3 as expression_list, @$);
+			if ($3 is expression_list exprl) {
+				expression_list args = new expression_list();
+				expression_list kvargs = new expression_list();
+				foreach (var expr in exprl.expressions) {
+					if (expr is name_assign_expr)
+						kvargs.Add(expr);
+					else
+						args.Add(expr);
+				}
+
+				if (kvargs.expressions.Count() == 0)
+					$$ = new method_call($1 as addressed_value, args, @$);
+				else {
+					named_type_reference ntr = new named_type_reference(new ident("`" + ($1 as ident).name), @1);
+					new_expr ne = new new_expr(ntr, kvargs, false, null, @$);
+					dot_node dn = new dot_node(ne as addressed_value, $1 as addressed_value, @$);
+					$$ = new method_call(dn as addressed_value, args, @$);
+				}
+			}
+			else
+				$$ = new method_call($1 as addressed_value, null, @$);
 		}
 	;
 
