@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 08.05.2024 14:13:39
+// DateTime: 08.05.2024 14:22:04
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -917,8 +917,9 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 				foreach (var expr in exprl.expressions) {
 					if (expr is name_assign_expr)
 						kvargs.Add(expr as name_assign_expr);
-					else
+					else if (kvargs.expressions.Count() == 0)
 						args.Add(expr);
+					else parsertools.AddErrorFromResource("Arg after Kvarg", CurrentLocationSpan);
 				}
 
 				if (kvargs.expressions.Count() == 0)

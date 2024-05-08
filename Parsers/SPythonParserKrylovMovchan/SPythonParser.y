@@ -634,8 +634,9 @@ proc_func_call
 				foreach (var expr in exprl.expressions) {
 					if (expr is name_assign_expr)
 						kvargs.Add(expr as name_assign_expr);
-					else
+					else if (kvargs.expressions.Count() == 0)
 						args.Add(expr);
+					else parsertools.AddErrorFromResource("Arg after Kvarg", @$);
 				}
 
 				if (kvargs.expressions.Count() == 0)
