@@ -10,22 +10,22 @@ uses PABCSystem;
 function input(): string;
 
 type 
-    `Print = class
+    `Print = record
     public
-        `sep: string;
-        `end:string;
-        constructor Create(sep:string := ' '; &end: string := #10);
+        sep: string;
+        &end:string;
+        static function Get(sep:string := ' '; &end: string := #10): `Print;
         begin
-          `sep := sep;
-          `end := &end;
+          Result.sep := sep;
+          Result.&end := &end;
         end;
         procedure Print(params args: array of object);
         begin
           for var i := 0 to args.length - 2 do
-            Write(args[i], `sep);
+            Write(args[i], sep);
           if args.length <> 0 then 
             Write(args[^1]);
-          Write(`end);
+          Write(&end);
         end;
     end;
 
@@ -83,7 +83,7 @@ end;
   
 procedure Print(params args: array of object);
 begin
-  (new `Print()).Print(args);
+  `Print.Get().Print(args);
 end;
 
 function int(val: string): integer := integer.Parse(val);

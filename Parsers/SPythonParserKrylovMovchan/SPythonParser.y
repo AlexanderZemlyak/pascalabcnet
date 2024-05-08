@@ -633,7 +633,7 @@ proc_func_call
 				expression_list kvargs = new expression_list();
 				foreach (var expr in exprl.expressions) {
 					if (expr is name_assign_expr)
-						kvargs.Add(expr);
+						kvargs.Add(expr as name_assign_expr);
 					else
 						args.Add(expr);
 				}
@@ -641,9 +641,8 @@ proc_func_call
 				if (kvargs.expressions.Count() == 0)
 					$$ = new method_call($1 as addressed_value, args, @$);
 				else {
-					named_type_reference ntr = new named_type_reference(new ident("`" + ($1 as ident).name), @1);
-					new_expr ne = new new_expr(ntr, kvargs, false, null, @$);
-					dot_node dn = new dot_node(ne as addressed_value, $1 as addressed_value, @$);
+					method_call mc = new method_call(new ident("`" + ($1 as ident).name + ".Get"), kvargs, @$);
+					dot_node dn = new dot_node(mc as addressed_value, $1 as addressed_value, @$);
 					$$ = new method_call(dn as addressed_value, args, @$);
 				}
 			}
