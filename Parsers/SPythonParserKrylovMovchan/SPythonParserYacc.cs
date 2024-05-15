@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 15.05.2024 15:08:53
+// DateTime: 15.05.2024 15:57:06
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -407,9 +407,12 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 			if (!is_unit_to_be_parsed) {
 				var ul = ValueStack[ValueStack.Depth-3].stn as uses_list;
 				var stl = ValueStack[ValueStack.Depth-2].stn as statement_list;
+				stl.left_logical_bracket = new token_info("");
+				stl.right_logical_bracket = new token_info("");
+				var bl = new block(decl, stl, LocationStack[LocationStack.Depth-2]);
 				decl.AddFirst(decl_forward.defs);
-				root = CurrentSemanticValue.stn = NewProgramModule(null, null, ul, new block(decl, stl, LocationStack[LocationStack.Depth-2]), new token_info(""), CurrentLocationSpan);
-				CurrentSemanticValue.stn.source_context = CurrentLocationSpan;
+				root = CurrentSemanticValue.stn = NewProgramModule(null, null, ul, bl, ValueStack[ValueStack.Depth-1].ob, CurrentLocationSpan);
+				root.source_context = bl.source_context;
 			}
 			// unit
 			else {
@@ -879,8 +882,8 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 {
 			CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-4].stn as statement_list;
 			(CurrentSemanticValue.stn as statement_list).left_logical_bracket = ValueStack[ValueStack.Depth-5].ti;
-			(CurrentSemanticValue.stn as statement_list).right_logical_bracket = ValueStack[ValueStack.Depth-2].ti;
-			CurrentSemanticValue.stn.source_context = CurrentLocationSpan;
+			(CurrentSemanticValue.stn as statement_list).right_logical_bracket = ValueStack[ValueStack.Depth-3].ti;
+			CurrentSemanticValue.stn.source_context = LexLocation.MergeAll(LocationStack[LocationStack.Depth-5],LocationStack[LocationStack.Depth-4],LocationStack[LocationStack.Depth-3]);
 		}
         break;
       case 85: // NestedSymbolTableBegin -> /* empty */
@@ -1054,10 +1057,10 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 		}
         break;
       case 107: // optional_semicolon -> SEMICOLON
-{ CurrentSemanticValue.ti = null; }
+{ CurrentSemanticValue.ob = ValueStack[ValueStack.Depth-1].ti; }
         break;
       case 108: // optional_semicolon -> /* empty */
-{ CurrentSemanticValue.ti = null; }
+{ CurrentSemanticValue.ob = null; }
         break;
     }
   }
@@ -1083,7 +1086,7 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
                 var err_stn = progBlock;
 			    if ((progBlock is block) && (progBlock as block).program_code != null && (progBlock as block).program_code.subnodes != null && (progBlock as block).program_code.subnodes.Count > 0)
                     err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
-                parsertools.errors.Add(new SPythonUnexpectedToken(parsertools.CurrentFileName, StringResources.Get("TKPOINT"), new SourceContext(fp.line_num, fp.column_num + 1, fp.line_num, fp.column_num + 1, 0, 0), err_stn));
+                //parsertools.errors.Add(new SPythonUnexpectedToken(parsertools.CurrentFileName, StringResources.Get("TKPOINT"), new SourceContext(fp.line_num, fp.column_num + 1, fp.line_num, fp.column_num + 1, 0, 0), err_stn));
             }
             return progModule;
         }
