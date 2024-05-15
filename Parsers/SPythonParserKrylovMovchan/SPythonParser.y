@@ -46,7 +46,7 @@
 %token <ex> INTNUM REALNUM TRUE FALSE
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON INDENT UNINDENT ARROW
 %token <stn> STRINGNUM
-%token <op> ASSIGN
+%token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL
 %token <op> PLUS MINUS STAR DIVIDE SLASHSLASH PERCENTAGE
 %token <id> ID
 %token <op> LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
@@ -69,6 +69,7 @@
 %type <td> proc_func_header form_param_type simple_type_identifier optional_type
 %type <stn> import_clause import_clause_one
 %type <ob> optional_semicolon
+%type <op> assign_type
 
 %start program
 
@@ -321,7 +322,24 @@ assign_stmt
 				$$ = new assign($1 as addressed_value, $4, $3.type, @$);
 			}
 		}
+	| variable assign_type expr
+		{
+			if (!($1 is addressed_value))
+        		parsertools.AddErrorFromResource("LEFT_SIDE_CANNOT_BE_ASSIGNED_TO",@$);
+			$$ = new assign($1 as addressed_value, $3, $2.type, @$);
+		}
 	;
+
+assign_type
+	: PLUSEQUAL
+		{ $$ = $1; }
+    | MINUSEQUAL
+		{ $$ = $1; }
+    | STAREQUAL
+		{ $$ = $1; }
+    | DIVEQUAL
+		{ $$ = $1; }
+    ;
 
 optional_type
 	: COLON simple_type_identifier
