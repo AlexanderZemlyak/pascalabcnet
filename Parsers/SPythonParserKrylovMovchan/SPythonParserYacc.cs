@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 15.05.2024 14:24:41
+// DateTime: 15.05.2024 15:08:53
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -582,20 +582,25 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 
 					// об�?явление глобал�?ной пе�?еменной
 					if (symbolTable.OuterScope == null) {
-						var ass = new assign(id as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
-						globalVariables.Add(id.name);
-
-						named_type_reference ntr;
-
-						if (ValueStack[ValueStack.Depth-3].td == null) {
-							ntr = new named_type_reference(new ident("integer"));
-							ass.first_assignment_defines_type = true;
+						if (globalVariables.Contains(id.name)) {
+							parsertools.AddErrorFromResource("This variable is declared before", CurrentLocationSpan);
 						}
-						else ntr = ValueStack[ValueStack.Depth-3].td as named_type_reference;
+						else {
+							var ass = new assign(id as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
+							globalVariables.Add(id.name);
 
-						var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-4]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
-						decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
-						CurrentSemanticValue.stn = ass;
+							named_type_reference ntr;
+
+							if (ValueStack[ValueStack.Depth-3].td == null) {
+								ntr = new named_type_reference(new ident("integer"));
+								ass.first_assignment_defines_type = true;
+							}
+							else ntr = ValueStack[ValueStack.Depth-3].td as named_type_reference;
+
+							var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-4]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
+							decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
+							CurrentSemanticValue.stn = ass;
+						}
 					}
 					// об�?явление локал�?ной пе�?еменной
 					else {
