@@ -293,13 +293,14 @@ assign_stmt
 							var ass = new assign(id as addressed_value, $4, $3.type, @$);
 							globalVariables.Add(id.name);
 
-							named_type_reference ntr;
+							type_definition ntr;
 
 							if ($2 == null) {
-								ntr = new named_type_reference(new ident("integer"));
+								// ntr = new named_type_reference(new ident("integer"));
+								ntr = (new same_type_node($4) as type_definition);
 								ass.first_assignment_defines_type = true;
 							}
-							else ntr = $2 as named_type_reference;
+							else ntr = $2 as type_definition;
 
 							var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
 							decl.Add(new variable_definitions(vds, @$), @$);
