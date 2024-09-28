@@ -3,7 +3,7 @@ using PascalABCCompiler.SyntaxTree;
 
 namespace Languages.SPython.Frontend.Converters
 {
-    public class SPythonRetainUsedGlobalVariablesVisitor : BaseChangeVisitor
+    public class RetainUsedGlobalVariablesVisitor : BaseChangeVisitor
     {
         private HashSet<string> VariablesDeclaredGlobal { get; set; }
         private HashSet<string> VariablesUsedGlobal { get; set; }
@@ -13,7 +13,7 @@ namespace Languages.SPython.Frontend.Converters
         private bool IsInProgramCode { get; set; }
         private declarations DeclarationsNode { get; set; }
 
-        public SPythonRetainUsedGlobalVariablesVisitor() 
+        public RetainUsedGlobalVariablesVisitor() 
         {
             VariablesDeclaredGlobal = new HashSet<string>();
             VariablesUsedGlobal = new HashSet<string>();

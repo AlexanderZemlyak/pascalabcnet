@@ -11,8 +11,8 @@ namespace Languages.SPython.Frontend.Converters
         {
             // замена узлов assign на узлы var внутри функций
             // основываясь на узлах global
-            var sgsv = new SPythonGlobalStatementVisitor();
-            sgsv.ProcessNode(root);
+            var atvcv = new AssignToVarConverterVisitor();
+            atvcv.ProcessNode(root);
 
             // удаление узлов global
             var egnv = new EraseGlobalNodesVisitor();
@@ -20,8 +20,8 @@ namespace Languages.SPython.Frontend.Converters
 
             // вынос переменных самого внешнего уровня на глобальный
             // если они используются в функциях (являются глобальными)
-            var sfvugv = new SPythonRetainUsedGlobalVariablesVisitor();
-            sfvugv.ProcessNode(root);
+            var fvugv = new RetainUsedGlobalVariablesVisitor();
+            fvugv.ProcessNode(root);
 
             return root;
         }
