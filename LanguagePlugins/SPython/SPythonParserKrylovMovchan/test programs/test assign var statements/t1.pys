@@ -1,0 +1,12 @@
+﻿a = 2
+print(a)
+if True:
+    b = 5
+    print(b)
+    if True:
+        b = 8
+        a = 4
+        print(a)
+#print(b)
+b = 4
+print(b)
