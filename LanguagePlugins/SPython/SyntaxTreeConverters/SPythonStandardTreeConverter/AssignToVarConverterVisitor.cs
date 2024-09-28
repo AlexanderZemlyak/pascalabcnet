@@ -10,7 +10,6 @@ namespace Languages.SPython.Frontend.Converters
         HashSet<string> functionGlobalVariables = new HashSet<string>();
         HashSet<string> functionParameters = new HashSet<string>();
         SymbolTable localVariables = new SymbolTable();
-        bool isInFunctionBody = false;
 
         public AssignToVarConverterVisitor() {}
 
@@ -23,23 +22,22 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void Enter(syntax_tree_node stn)
         {
-            if (stn is procedure_definition _procedure_definition)
-            {
-                isInFunctionBody = true;
-            }
+            if (stn is statement_list)
+                localVariables = new SymbolTable(localVariables);
 
             base.Enter(stn);
         }
 
         public override void Exit(syntax_tree_node stn)
         {
-            if (stn is procedure_definition _procedure_definition)
+            if (stn is procedure_definition)
             {
-                isInFunctionBody = false;
                 functionGlobalVariables.Clear();
                 functionParameters.Clear();
-                localVariables.ClearScope();
             }
+            if (stn is statement_list)
+                localVariables.ClearScope();
+
 
             base.Exit(stn);
         }
@@ -63,9 +61,14 @@ namespace Languages.SPython.Frontend.Converters
             base.visit(_typed_parameters);
         }
 
+        public override void visit(var_statement _var_statement)
+        {
+            localVariables.Add(_var_statement.var_def.vars.idents[0].name);
+        }
+
         public override void visit(assign _assign)
         {
-            if (isInFunctionBody && _assign.to is ident _ident &&
+            if (_assign.to is ident _ident &&
                 !functionParameters.Contains(_ident.name) &&
                 !localVariables.Contains(_ident.name) &&
                 !functionGlobalVariables.Contains(_ident.name))
@@ -118,6 +121,12 @@ namespace Languages.SPython.Frontend.Converters
                     symbols = outerScope.symbols;
                     outerScope = outerScope.outerScope;
                 }
+            }
+
+            public void NewScope()
+            {
+                SymbolTable newScope = new SymbolTable(this);
+                outerScope = newScope.outerScope;
             }
         }
     }

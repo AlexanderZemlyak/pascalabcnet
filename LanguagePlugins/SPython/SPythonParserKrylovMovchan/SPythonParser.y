@@ -68,11 +68,11 @@
 %type <id> ident dotted_ident range_ident func_name_ident
 %type <ex> expr proc_func_call const_value complex_variable variable complex_variable_or_ident optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt
-%type <stn> assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
+%type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
 %type <stn> decl_or_stmt decl_and_stmt_list expr_list
 %type <stn> stmt_list block
 %type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
-%type <td> proc_func_header form_param_type simple_type_identifier optional_type
+%type <td> proc_func_header form_param_type simple_type_identifier
 %type <stn> import_clause import_clause_one
 %type <ob> optional_semicolon
 %type <op> assign_type
@@ -216,6 +216,8 @@ stmt
 		{ $$ = $1; }
 	//| block
 	//	{ $$ = $1; }
+	| var_stmt
+		{ $$ = $1; }
 	| if_stmt
 		{ $$ = $1; }
 	| proc_func_call_stmt
@@ -284,10 +286,19 @@ dotted_ident_list
 		}
     ;
 
-assign_stmt
-	: variable optional_type ASSIGN expr
+var_stmt
+	: variable COLON simple_type_identifier ASSIGN expr
 		{
-			if ($1 is ident id) {
+			var vds = new var_def_statement(new ident_list($1 as ident, @1), $3, $5, definition_attribute.None, false, @$);
+			$$ = new var_statement(vds, @$);
+		}
+	;
+
+assign_stmt
+	: variable ASSIGN expr
+		{
+			$$ = new assign($1 as addressed_value, $3, $2.type, @$);
+			/*if ($1 is ident id) {
 				// объявление
 				if (!isInsideFunction && ($2 != null || (!symbolTable.Contains(id.name) && (isInsideFunction || !globalVariables.Contains(id.name))))) {
 
@@ -297,14 +308,14 @@ assign_stmt
 							parserTools.AddErrorFromResource("This variable is declared before", @$);
 						}
 						else {
-							var ass = new assign(id as addressed_value, $4, $3.type, @$);
+							var ass = new assign(id as addressed_value, $3, $2.type, @$);
 							globalVariables.Add(id.name);
 
 							type_definition ntr;
 
 							if ($2 == null) {
 								ntr = new named_type_reference(new ident("integer"));
-								// ntr = (new same_type_node($4) as type_definition);
+								// ntr = (new same_type_node($3) as type_definition);
 								ass.first_assignment_defines_type = true;
 							}
 							else ntr = $2 as type_definition;
@@ -316,19 +327,19 @@ assign_stmt
 					}
 					// объявление локальной переменной
 					else {
-						var vds = new var_def_statement(new ident_list(id, @1), $2, $4, definition_attribute.None, false, @$);
+						var vds = new var_def_statement(new ident_list(id, @1), $2, $3, definition_attribute.None, false, @$);
 						symbolTable.Add(id.name);
 						$$ = new var_statement(vds, @$);
 					}
 				}
 				// присваивание
 				else {
-					$$ = new assign(id as addressed_value, $4, $3.type, @$);
+					$$ = new assign(id as addressed_value, $3, $2.type, @$);
 				}
 			}
 			else {
-				$$ = new assign($1 as addressed_value, $4, $3.type, @$);
-			}
+				$$ = new assign($1 as addressed_value, $3, $2.type, @$);
+			}*/
 		}
 	| variable assign_type expr
 		{
@@ -348,13 +359,6 @@ assign_type
     | DIVEQUAL
 		{ $$ = $1; }
     ;
-
-optional_type
-	: COLON simple_type_identifier
-		{ $$ = $2; }
-	|
-		{ $$ = null; }
-	;
 
 expr
 	: expr PLUS 		expr

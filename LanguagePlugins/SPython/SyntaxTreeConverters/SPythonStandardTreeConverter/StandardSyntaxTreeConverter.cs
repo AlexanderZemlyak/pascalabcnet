@@ -9,8 +9,9 @@ namespace Languages.SPython.Frontend.Converters
 
         protected override syntax_tree_node ApplyConcreteConversions(syntax_tree_node root)
         {
-            // замена узлов assign на узлы var внутри функций
-            // основываясь на узлах global
+            // замена узлов assign на узлы var
+            // (внутри ф-й основываясь на узлах global,
+            // вне ф-й по первому появлению в symbolTable)
             var atvcv = new AssignToVarConverterVisitor();
             atvcv.ProcessNode(root);
 

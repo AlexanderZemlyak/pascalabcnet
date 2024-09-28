@@ -1,4 +1,4 @@
-﻿a = 2
+﻿a: float = 2
 print(a)
 if True:
     b = 5
