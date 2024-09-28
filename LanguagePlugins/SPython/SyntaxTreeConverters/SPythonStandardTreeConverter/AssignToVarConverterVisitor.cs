@@ -10,6 +10,7 @@ namespace Languages.SPython.Frontend.Converters
         HashSet<string> functionGlobalVariables = new HashSet<string>();
         HashSet<string> functionParameters = new HashSet<string>();
         SymbolTable localVariables = new SymbolTable();
+        bool isInFunctionBody = false;
 
         public AssignToVarConverterVisitor() {}
 
@@ -25,6 +26,9 @@ namespace Languages.SPython.Frontend.Converters
             if (stn is statement_list)
                 localVariables = new SymbolTable(localVariables);
 
+            if (stn is procedure_definition)
+                isInFunctionBody = true;
+
             base.Enter(stn);
         }
 
@@ -32,6 +36,7 @@ namespace Languages.SPython.Frontend.Converters
         {
             if (stn is procedure_definition)
             {
+                isInFunctionBody = false;
                 functionGlobalVariables.Clear();
                 functionParameters.Clear();
             }
@@ -57,8 +62,6 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(typed_parameters _typed_parameters)
         {
             functionParameters.Add(_typed_parameters.idents.idents[0].name);
-
-            base.visit(_typed_parameters);
         }
 
         public override void visit(var_statement _var_statement)
@@ -73,16 +76,22 @@ namespace Languages.SPython.Frontend.Converters
                 !localVariables.Contains(_ident.name) &&
                 !functionGlobalVariables.Contains(_ident.name))
             {
-                var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
-                //if (!_assign.first_assignment_defines_type)
+                localVariables.Add(_ident.name);
+
+                if (!isInFunctionBody && localVariables.IsGlobalScope())
+                {
+
+                }
+                else {
+                    var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
+                    //if (!_assign.first_assignment_defines_type)
                     //_var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
 
-                ReplaceStatement(_assign, _var_statement);
-                localVariables.Add(_ident.name);
+                    ReplaceStatement(_assign, _var_statement);
+                }
+                
                 return;
             }
-
-            base.visit(_assign);
         }
 
 
@@ -123,11 +132,7 @@ namespace Languages.SPython.Frontend.Converters
                 }
             }
 
-            public void NewScope()
-            {
-                SymbolTable newScope = new SymbolTable(this);
-                outerScope = newScope.outerScope;
-            }
+            public bool IsGlobalScope() { return outerScope.outerScope == null; }
         }
     }
 }
