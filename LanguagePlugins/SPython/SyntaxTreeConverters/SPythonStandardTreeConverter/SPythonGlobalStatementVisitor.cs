@@ -11,7 +11,6 @@ namespace Languages.SPython.Frontend.Converters
         HashSet<string> FunctionLocalVariables;
         HashSet<string> FunctionParameters;
         private bool IsInFunctionBody { get; set; }
-        List<global_statement> globalStatements = new List<global_statement>();
 
         public SPythonGlobalStatementVisitor() {
             FunctionGlobalVariables = new HashSet<string>();
@@ -46,14 +45,6 @@ namespace Languages.SPython.Frontend.Converters
                 FunctionLocalVariables.Clear();
                 FunctionParameters.Clear();
             }
-            if (stn is statement_list stm_lst)
-            {
-                for (var i = globalStatements.Count - 1; i >= 0; --i)
-                {
-                    stm_lst.Remove(globalStatements[i]);
-                    globalStatements.RemoveAt(globalStatements.Count - 1);
-                }
-            }
 
             base.Exit(stn);
         }
@@ -68,8 +59,6 @@ namespace Languages.SPython.Frontend.Converters
                     throw new SyntaxVisitorError("Variable declared global has the same name as function parameter", 
                         _global_statement.source_context);
                 else FunctionGlobalVariables.Add(_ident.name);
-            globalStatements.Add(_global_statement);
-            //DeleteInStatementList(_global_statement);
         }
 
         public override void visit(typed_parameters _typed_parameters)
