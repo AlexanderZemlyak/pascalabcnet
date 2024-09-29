@@ -7,7 +7,9 @@ namespace Languages.SPython.Frontend.Converters
 {
     public class AssignToVarConverterVisitor : BaseChangeVisitor
     {
+        // переменные используемые в функции и не являющиеся локальными для неё
         HashSet<string> functionGlobalVariables = new HashSet<string>();
+        // параметры текущей просматриваемой функции
         HashSet<string> functionParameters = new HashSet<string>();
         SymbolTable localVariables = new SymbolTable();
         bool isInFunctionBody = false;
@@ -69,6 +71,14 @@ namespace Languages.SPython.Frontend.Converters
             localVariables.Add(_var_statement.var_def.vars.idents[0].name);
         }
 
+        public override void visit(variable_definitions _variable_definitions)
+        {
+            string variable_name = _variable_definitions.var_definitions[0].vars.idents[0].name;
+            localVariables.Add(variable_name);
+
+            base.visit(_variable_definitions);
+        }
+
         public override void visit(assign _assign)
         {
             if (_assign.to is ident _ident &&
@@ -82,13 +92,12 @@ namespace Languages.SPython.Frontend.Converters
                 {
 
                 }
-                else {
                     var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
                     //if (!_assign.first_assignment_defines_type)
                     //_var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
 
                     ReplaceStatement(_assign, _var_statement);
-                }
+                
                 
                 return;
             }

@@ -1,5 +1,6 @@
 ﻿a: float = 2
 print(a)
+b = 34
 if True:
     b = 5
     print(b)
@@ -8,5 +9,5 @@ if True:
         a = 4
         print(a)
 #print(b)
-b = 4
-print(b)
+c = 4
+print(c)

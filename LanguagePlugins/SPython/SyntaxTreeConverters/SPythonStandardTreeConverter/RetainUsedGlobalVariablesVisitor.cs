@@ -5,24 +5,15 @@ namespace Languages.SPython.Frontend.Converters
 {
     public class RetainUsedGlobalVariablesVisitor : BaseChangeVisitor
     {
-        private HashSet<string> VariablesDeclaredGlobal { get; set; }
-        private HashSet<string> VariablesUsedGlobal { get; set; }
-        private HashSet<string> LocalVariables { get; set; }
-        private Dictionary<string, variable_definitions> VariablesToDefinitions{ get; set; }
-        private bool IsInFunctionBody { get; set; }
-        private bool IsInProgramCode { get; set; }
-        private declarations DeclarationsNode { get; set; }
+        private HashSet<string> variablesDeclaredGlobal = new HashSet<string>();
+        private HashSet<string> variablesUsedGlobal = new HashSet<string>();
+        private HashSet<string> localVariables = new HashSet<string>();
+        private Dictionary<string, variable_definitions> variablesToDefinitions = new Dictionary<string, variable_definitions>();
+        private bool isInFunctionBody = false;
+        private bool isInProgramCode = false;
+        private declarations declarationsNode;
 
-        public RetainUsedGlobalVariablesVisitor() 
-        {
-            VariablesDeclaredGlobal = new HashSet<string>();
-            VariablesUsedGlobal = new HashSet<string>();
-            LocalVariables = new HashSet<string>();
-            VariablesToDefinitions = new Dictionary<string, variable_definitions>();
-
-            IsInFunctionBody = false;
-            IsInProgramCode = false;
-        }
+        public RetainUsedGlobalVariablesVisitor() {}
 
         // нужны методы из BaseChangeVisitor, но порядок обхода из WalkingVisitorNew
         public override void DefaultVisit(syntax_tree_node n)
@@ -32,23 +23,23 @@ namespace Languages.SPython.Frontend.Converters
         }
 
         private bool IsUnusedGlobalVariable(string name) {
-            return VariablesDeclaredGlobal.Contains(name) && !VariablesUsedGlobal.Contains(name);
+            return variablesDeclaredGlobal.Contains(name) && !variablesUsedGlobal.Contains(name);
         }
 
         public override void Enter(syntax_tree_node stn)
         {
             if (stn is procedure_definition _procedure_definition)
             {
-                IsInFunctionBody = true;
+                isInFunctionBody = true;
             }
             if (stn is statement_list _statement_list)
             {
-                if (!IsInFunctionBody)
-                    IsInProgramCode = true;
+                if (!isInFunctionBody)
+                    isInProgramCode = true;
             }
             if (stn is declarations _declarations)
             {
-                DeclarationsNode = _declarations;
+                declarationsNode = _declarations;
             }
 
             base.Enter(stn);
@@ -58,8 +49,8 @@ namespace Languages.SPython.Frontend.Converters
         {
             if (stn is procedure_definition _procedure_definition)
             {
-                IsInFunctionBody = false;
-                LocalVariables.Clear();
+                isInFunctionBody = false;
+                localVariables.Clear();
             }
 
             base.Exit(stn);
@@ -68,49 +59,49 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(variable_definitions _variable_definitions)
         {
             string variable_name = _variable_definitions.var_definitions[0].vars.idents[0].name;
-            VariablesDeclaredGlobal.Add(variable_name);
-            VariablesToDefinitions[variable_name] = _variable_definitions;
+            variablesDeclaredGlobal.Add(variable_name);
+            variablesToDefinitions[variable_name] = _variable_definitions;
             
             base.visit(_variable_definitions);
         }
 
         public override void visit(var_statement _var_statement)
         {
-            if (IsInFunctionBody)
-                LocalVariables.Add(_var_statement.var_def.vars.idents[0].name);
+            if (isInFunctionBody)
+                localVariables.Add(_var_statement.var_def.vars.idents[0].name);
 
             base.visit(_var_statement);
         }
 
         public override void visit(typed_parameters _typed_parameters)
         {
-            LocalVariables.Add(_typed_parameters.idents.idents[0].name);
+            localVariables.Add(_typed_parameters.idents.idents[0].name);
 
             base.visit(_typed_parameters);
         }
 
         public override void visit(ident _ident)
         {
-            if (IsInFunctionBody &&
-                VariablesDeclaredGlobal.Contains(_ident.name) &&
-                !LocalVariables.Contains(_ident.name)
-                && !VariablesUsedGlobal.Contains(_ident.name) // для дебага
+            if (isInFunctionBody &&
+                variablesDeclaredGlobal.Contains(_ident.name) &&
+                !localVariables.Contains(_ident.name) && 
+                !variablesUsedGlobal.Contains(_ident.name) // для дебага
                 )
-                VariablesUsedGlobal.Add(_ident.name);
+                variablesUsedGlobal.Add(_ident.name);
 
             base.visit(_ident);
         }
 
         public override void visit(assign _assign)
         {
-            if (IsInProgramCode && _assign.to is ident _ident && IsUnusedGlobalVariable(_ident.name))
+            if (isInProgramCode && _assign.to is ident _ident && IsUnusedGlobalVariable(_ident.name))
             {
                 var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
                 if (!_assign.first_assignment_defines_type)
-                    _var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
+                    _var_statement.var_def.vars_type = variablesToDefinitions[_ident.name].var_definitions[0].vars_type;
 
-                VariablesDeclaredGlobal.Remove(_ident.name);
-                DeclarationsNode.Remove(VariablesToDefinitions[_ident.name]);
+                variablesDeclaredGlobal.Remove(_ident.name);
+                declarationsNode.Remove(variablesToDefinitions[_ident.name]);
 
                 ReplaceStatement(_assign, _var_statement);
                 return;

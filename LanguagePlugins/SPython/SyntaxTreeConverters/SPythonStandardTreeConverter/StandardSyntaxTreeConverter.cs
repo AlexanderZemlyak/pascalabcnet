@@ -21,8 +21,8 @@ namespace Languages.SPython.Frontend.Converters
 
             // вынос переменных самого внешнего уровня на глобальный
             // если они используются в функциях (являются глобальными)
-            var fvugv = new RetainUsedGlobalVariablesVisitor();
-            fvugv.ProcessNode(root);
+            var rugvv = new RetainUsedGlobalVariablesVisitor();
+            rugvv.ProcessNode(root);
 
             return root;
         }
