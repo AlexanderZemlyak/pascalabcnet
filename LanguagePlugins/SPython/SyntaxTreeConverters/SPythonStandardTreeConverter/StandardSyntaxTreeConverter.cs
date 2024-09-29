@@ -9,8 +9,9 @@ namespace Languages.SPython.Frontend.Converters
 
         protected override syntax_tree_node ApplyConcreteConversions(syntax_tree_node root)
         {
-            var a = new ListGeneratorNodesVisitor();
-            a.ProcessNode(root);
+            // замена генерации списков на Select.Where.ToArray
+            var lgnv = new ListGeneratorNodesVisitor();
+            lgnv.ProcessNode(root);
 
             // замена узлов assign на узлы var
             // (внутри ф-й основываясь на узлах global,
