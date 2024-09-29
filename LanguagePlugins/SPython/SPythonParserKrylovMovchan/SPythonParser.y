@@ -7,8 +7,8 @@
     public List<compiler_directive> CompilerDirectives;
 	public ParserLambdaHelper lambdaHelper = new ParserLambdaHelper();
 
-	private SymbolTable symbolTable = new SymbolTable();
-	private SymbolTable globalVariables = new SymbolTable();
+	private int ScopeCounter = 0;
+	private HashSet<string> globalVariables = new HashSet<string>();
 	private declarations decl_forward = new declarations();
 	private declarations decl = new declarations();
 	private bool isInsideFunction = false;
@@ -65,8 +65,8 @@
 %left STAR DIVIDE SLASHSLASH PERCENTAGE
 %left NOT
 
-%type <id> ident dotted_ident range_ident func_name_ident
-%type <ex> expr proc_func_call const_value complex_variable variable complex_variable_or_ident optional_condition act_param
+%type <id> ident dotted_ident func_name_ident
+%type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
 %type <stn> decl_or_stmt decl_and_stmt_list expr_list
@@ -291,7 +291,7 @@ var_stmt
 		{
 			var vds = new var_def_statement(new ident_list($1 as ident, @1), $3, $5, definition_attribute.None, false, @$);
 
-			if ($1 is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 					globalVariables.Add(id.name);
 					$$ = new assign(id as addressed_value, $5, $4.type, @$);
 					decl.Add(new variable_definitions(vds, @$), @$);
@@ -306,7 +306,7 @@ assign_stmt
 		{
 			var ass = new assign($1 as addressed_value, $3, $2.type, @$);
 
-			if ($1 is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
 				ass.first_assignment_defines_type = true;
 				type_definition ntr = new named_type_reference(new ident("integer"));
@@ -411,20 +411,12 @@ expr
 		{ $$ = new un_expr($2, $1.type, @$); }
 	| NOT	expr
 		{ $$ = new un_expr($2, $1.type, @$); }
-	| complex_variable
+	| variable
 		{ $$ = $1; }
 	| const_value
 		{ $$ = $1; }
 	| LPAR expr RPAR
 		{ $$ = $2; }
-	| ident
-		{
-			// Проверка на то что пытаемся считать не инициализированную переменную
-			//if (!symbolTable.Contains($1.name) && !globalVariables.Contains($1.name))
-					//parserTools.AddErrorFromResource("USING_VARIABLE_{0}_BEFORE_ASSIGNMENT", @$, $1.name);
-
-			$$ = $1;
-		}
 	;
 
 const_value
@@ -482,17 +474,9 @@ while_stmt
 	;
 
 for_stmt
-	: FOR range_ident IN expr COLON block
+	: FOR ident IN expr COLON block
 		{
 			$$ = new foreach_stmt($2, new no_type_foreach(), $4, (statement)$6, null, @$);
-		}
-	;
-
-range_ident
-	: ident
-		{
-			symbolTable.Add($1.name);
-			$$ = $1;
 		}
 	;
 
@@ -543,14 +527,9 @@ proc_func_call_stmt
 variable
 	: ident
 		{ $$ = $1; }
-	| complex_variable
+	| proc_func_call
 		{ $$ = $1; }
-	;
-
-complex_variable
-	: proc_func_call
-		{ $$ = $1; }
-	| complex_variable_or_ident DOT ident
+	| variable DOT ident
 		{ $$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); }
 	| const_value DOT ident
 		{ $$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); }
@@ -563,7 +542,7 @@ complex_variable
 			$$ = new method_call(dn as addressed_value, null, @$);
 		}
 	// index property
-	| complex_variable_or_ident LBRACKET expr RBRACKET
+	| variable LBRACKET expr RBRACKET
 		{
 			var el = new expression_list($3 as expression);
 			$$ = new indexer($1 as addressed_value, el, @$);
@@ -624,13 +603,6 @@ optional_condition
 		{ $$ = $2; }
 	;
 
-complex_variable_or_ident
-	: ident
-		{ $$ = $1; }
-	| complex_variable
-		{ $$ = $1; }
-	;
-
 block
 	: NestedSymbolTableBegin INDENT stmt_list SEMICOLON UNINDENT NestedSymbolTableEnd
 		{
@@ -644,14 +616,14 @@ block
 NestedSymbolTableBegin
 	:
 		{
-			symbolTable = new SymbolTable(symbolTable);
+			ScopeCounter++;
 		}
 	;
 
 NestedSymbolTableEnd
 	:
 		{
-			symbolTable = symbolTable.OuterScope;
+			ScopeCounter--;
 		}
 	;
 
@@ -767,7 +739,6 @@ form_param_type
 param_name
 	: ident
 		{
-			symbolTable.Add($1.name);
 			$$ = new ident_list($1, @$);
 		}
     ;

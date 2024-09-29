@@ -83,23 +83,25 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void visit(assign _assign)
         {
+            if (_assign.to is ident _ident) { 
+                if (
+                    !functionParameters.Contains(_ident.name) &&
+                    !localVariables.Contains(_ident.name) &&
+                    !functionGlobalVariables.Contains(_ident.name) &&
+                    (!globalVariables.Contains(_ident.name) || isInFunctionBody)) {
+                    localVariables.Add(_ident.name);
 
-            if (_assign.to is ident _ident &&
-                !functionParameters.Contains(_ident.name) &&
-                !localVariables.Contains(_ident.name) &&
-                !functionGlobalVariables.Contains(_ident.name) &&
-                (!globalVariables.Contains(_ident.name) || isInFunctionBody) ) {
-                localVariables.Add(_ident.name);
-
-                var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
-                //if (!_assign.first_assignment_defines_type)
+                    var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
+                    //if (!_assign.first_assignment_defines_type)
                     //_var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
 
-                ReplaceStatement(_assign, _var_statement);
-                
-                return;
+                    ReplaceStatement(_assign, _var_statement);
+
+                    return;
+                }
+                localVariables.Add(_ident.name);
             }
-            localVariables.Add((_assign.to as ident).name);
+                
         }
 
 
