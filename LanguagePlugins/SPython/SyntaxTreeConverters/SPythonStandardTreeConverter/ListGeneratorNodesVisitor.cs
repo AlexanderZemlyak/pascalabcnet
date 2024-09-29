@@ -7,11 +7,11 @@ namespace Languages.SPython.Frontend.Converters
 {
     internal class ListGeneratorNodesVisitor : BaseChangeVisitor
     {
-        public ListGeneratorNodesVisitor() { }
+        ParserLambdaHelper lambdaHelper = new ParserLambdaHelper();
+        public ListGeneratorNodesVisitor() {  }
 
         public override void visit(list_generator _list_generator)
         {
-            ParserLambdaHelper lambdaHelper = new ParserLambdaHelper();
             dot_node dn;
             ident_list idList;
             formal_parameters formalPars;
