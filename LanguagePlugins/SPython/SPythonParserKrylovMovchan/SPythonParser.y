@@ -536,7 +536,6 @@ variable
 	// list constant
 	| LBRACKET expr_list RBRACKET
 		{
-
 			var acn = new array_const_new($2 as expression_list, @$);
 			var dn = new dot_node(acn as addressed_value, (new ident("ToList")) as addressed_value, @$);
 			$$ = new method_call(dn as addressed_value, null, @$);
