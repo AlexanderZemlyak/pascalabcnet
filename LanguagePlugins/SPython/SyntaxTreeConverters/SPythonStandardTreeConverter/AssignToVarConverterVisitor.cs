@@ -94,7 +94,7 @@ namespace Languages.SPython.Frontend.Converters
                 }
                     var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
                     //if (!_assign.first_assignment_defines_type)
-                    //_var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
+                        //_var_statement.var_def.vars_type = VariablesToDefinitions[_ident.name].var_definitions[0].vars_type;
 
                     ReplaceStatement(_assign, _var_statement);
                 

@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 29.09.2024 10:59:10
+// DateTime: 29.09.2024 11:25:50
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -603,23 +603,26 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
       case 29: // var_stmt -> variable, COLON, simple_type_identifier, ASSIGN, expr
 {
 			var vds = new var_def_statement(new ident_list(ValueStack[ValueStack.Depth-5].ex as ident, LocationStack[LocationStack.Depth-5]), ValueStack[ValueStack.Depth-3].td, ValueStack[ValueStack.Depth-1].ex, definition_attribute.None, false, CurrentLocationSpan);
-			CurrentSemanticValue.stn = new var_statement(vds, CurrentLocationSpan);
-			if (symbolTable.OuterScope == null)
-				globalVariables.Add((ValueStack[ValueStack.Depth-5].ex as ident).name);
+
+			if (ValueStack[ValueStack.Depth-5].ex is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+					globalVariables.Add(id.name);
+					CurrentSemanticValue.stn = new assign(id as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
+					decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
+			}
+			else
+				CurrentSemanticValue.stn = new var_statement(vds, CurrentLocationSpan);
 		}
         break;
       case 30: // assign_stmt -> variable, ASSIGN, expr
 {
 			var ass = new assign(ValueStack[ValueStack.Depth-3].ex as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
 
-			if (ValueStack[ValueStack.Depth-3].ex is ident id) {
-				if (symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
-					globalVariables.Add(id.name);
-					ass.first_assignment_defines_type = true;
-					type_definition ntr = new named_type_reference(new ident("integer"));
-					var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
-					decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
-				}
+			if (ValueStack[ValueStack.Depth-3].ex is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+				globalVariables.Add(id.name);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
+				decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
 			}
 			
 			CurrentSemanticValue.stn = ass;

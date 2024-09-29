@@ -290,16 +290,14 @@ var_stmt
 	: variable COLON simple_type_identifier ASSIGN expr
 		{
 			var vds = new var_def_statement(new ident_list($1 as ident, @1), $3, $5, definition_attribute.None, false, @$);
-			$$ = new var_statement(vds, @$);
 
-			/*if ($1 is ident id) {
-				if (symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+			if ($1 is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
 					globalVariables.Add(id.name);
-					ass.first_assignment_defines_type = true;
-					var vds = new var_def_statement(new ident_list(id, @1), $3, $5, definition_attribute.None, false, @$);
+					$$ = new assign(id as addressed_value, $5, $4.type, @$);
 					decl.Add(new variable_definitions(vds, @$), @$);
-				}
-			}*/
+			}
+			else
+				$$ = new var_statement(vds, @$);
 		}
 	;
 
@@ -308,14 +306,12 @@ assign_stmt
 		{
 			var ass = new assign($1 as addressed_value, $3, $2.type, @$);
 
-			if ($1 is ident id) {
-				if (symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
-					globalVariables.Add(id.name);
-					ass.first_assignment_defines_type = true;
-					type_definition ntr = new named_type_reference(new ident("integer"));
-					var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
-					decl.Add(new variable_definitions(vds, @$), @$);
-				}
+			if ($1 is ident id && symbolTable.OuterScope == null && !globalVariables.Contains(id.name)) {
+				globalVariables.Add(id.name);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
+				decl.Add(new variable_definitions(vds, @$), @$);
 			}
 			
 			$$ = ass;

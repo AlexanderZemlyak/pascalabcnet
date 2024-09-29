@@ -82,10 +82,10 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void visit(ident _ident)
         {
-            if (isInFunctionBody &&
-                variablesDeclaredGlobal.Contains(_ident.name) &&
-                !localVariables.Contains(_ident.name) && 
-                !variablesUsedGlobal.Contains(_ident.name) // для дебага
+            if (isInFunctionBody                                &&
+                variablesDeclaredGlobal.Contains(_ident.name)   &&
+                !localVariables.Contains(_ident.name)           && 
+                !variablesUsedGlobal.Contains(_ident.name)
                 )
                 variablesUsedGlobal.Add(_ident.name);
 

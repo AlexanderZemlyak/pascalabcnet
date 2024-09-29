@@ -11,3 +11,6 @@ if True:
 #print(b)
 c = 4
 print(c)
+
+def f():
+    print(a)
