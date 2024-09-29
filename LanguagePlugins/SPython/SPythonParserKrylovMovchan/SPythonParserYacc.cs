@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 29.09.2024 12:18:10
+// DateTime: 29.09.2024 13:47:43
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -838,7 +838,6 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 79: // variable -> LBRACKET, expr_list, RBRACKET
 {
-
 			var acn = new array_const_new(ValueStack[ValueStack.Depth-2].stn as expression_list, CurrentLocationSpan);
 			var dn = new dot_node(acn as addressed_value, (new ident("ToList")) as addressed_value, CurrentLocationSpan);
 			CurrentSemanticValue.ex = new method_call(dn as addressed_value, null, CurrentLocationSpan);
@@ -852,6 +851,8 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 81: // variable -> LBRACKET, expr, FOR, ident, IN, expr, optional_condition, RBRACKET
 {
+			CurrentSemanticValue.ex = new list_generator(ValueStack[ValueStack.Depth-7].ex, ValueStack[ValueStack.Depth-5].id, ValueStack[ValueStack.Depth-3].ex, ValueStack[ValueStack.Depth-2].ex);
+			/*
 			dot_node dn;
 			ident_list idList;
 			formal_parameters formalPars;
@@ -860,41 +861,42 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 			method_call mc;
 
 			// [ expr1 for ident in expr2 if expr3 ] -> expr2.Where(ident -> expr3).Select(ident -> expr1).ToList()
-			if (ValueStack[ValueStack.Depth-2].ex != null) {
-				string ident_name = ValueStack[ValueStack.Depth-5].id.name;
-				idList = new ident_list(new ident(ident_name), LocationStack[LocationStack.Depth-5]);
-				formalPars = new formal_parameters(new typed_parameters(idList, new lambda_inferred_type(new lambda_any_type_node_syntax(), LocationStack[LocationStack.Depth-5]), parametr_kind.none, null, LocationStack[LocationStack.Depth-5]), LocationStack[LocationStack.Depth-5]);
+			if ($7 != null) {
+				string ident_name = $4.name;
+				idList = new ident_list(new ident(ident_name), @4);
+				formalPars = new formal_parameters(new typed_parameters(idList, new lambda_inferred_type(new lambda_any_type_node_syntax(), @4), parametr_kind.none, null, @4), @4);
 
-				dn = new dot_node(ValueStack[ValueStack.Depth-3].ex as addressed_value, (new ident("Where")) as addressed_value, CurrentLocationSpan);
+				dn = new dot_node($6 as addressed_value, (new ident("Where")) as addressed_value, @$);
 
-				sl = new statement_list(new assign("result",ValueStack[ValueStack.Depth-2].ex,LocationStack[LocationStack.Depth-1]),LocationStack[LocationStack.Depth-1]);
+				sl = new statement_list(new assign("result",$7,@8),@8);
 				sl.expr_lambda_body = true;
 				lambda = new function_lambda_definition(
 				lambdaHelper.CreateLambdaName(), formalPars,
-				new lambda_inferred_type(new lambda_any_type_node_syntax(), LocationStack[LocationStack.Depth-5]), sl, CurrentLocationSpan);
+				new lambda_inferred_type(new lambda_any_type_node_syntax(), @4), sl, @$);
 
-				mc = new method_call(dn as addressed_value, new expression_list(lambda as expression), CurrentLocationSpan);
-				dn = new dot_node(mc as addressed_value, (new ident("Select")) as addressed_value, CurrentLocationSpan);
+				mc = new method_call(dn as addressed_value, new expression_list(lambda as expression), @$);
+				dn = new dot_node(mc as addressed_value, (new ident("Select")) as addressed_value, @$);
 			}
 			// [ expr1 for ident in expr2 ] -> expr2.Select(ident -> expr1).ToList()
 			else
-				dn = new dot_node(ValueStack[ValueStack.Depth-3].ex as addressed_value, (new ident("Select")) as addressed_value, CurrentLocationSpan);
+				dn = new dot_node($6 as addressed_value, (new ident("Select")) as addressed_value, @$);
 
 
-			idList = new ident_list(ValueStack[ValueStack.Depth-5].id, LocationStack[LocationStack.Depth-5]);
-			formalPars = new formal_parameters(new typed_parameters(idList, new lambda_inferred_type(new lambda_any_type_node_syntax(), LocationStack[LocationStack.Depth-5]), parametr_kind.none, null, LocationStack[LocationStack.Depth-5]), LocationStack[LocationStack.Depth-5]);
+			idList = new ident_list($4, @4);
+			formalPars = new formal_parameters(new typed_parameters(idList, new lambda_inferred_type(new lambda_any_type_node_syntax(), @4), parametr_kind.none, null, @4), @4);
 
-			sl = new statement_list(new assign("result",ValueStack[ValueStack.Depth-7].ex,LocationStack[LocationStack.Depth-7]),LocationStack[LocationStack.Depth-7]);
+			sl = new statement_list(new assign("result",$2,@2),@2);
 			sl.expr_lambda_body = true;
 
 			lambda = new function_lambda_definition(
 				lambdaHelper.CreateLambdaName(), formalPars,
-				new lambda_inferred_type(new lambda_any_type_node_syntax(), LocationStack[LocationStack.Depth-5]), sl, CurrentLocationSpan);
+				new lambda_inferred_type(new lambda_any_type_node_syntax(), @4), sl, @$);
 
 
-			mc = new method_call(dn as addressed_value, new expression_list(lambda as expression), CurrentLocationSpan);
-			dn = new dot_node(mc as addressed_value, (new ident("ToList")) as addressed_value, CurrentLocationSpan);
-			CurrentSemanticValue.ex = new method_call(dn as addressed_value, null, CurrentLocationSpan);
+			mc = new method_call(dn as addressed_value, new expression_list(lambda as expression), @$);
+			dn = new dot_node(mc as addressed_value, (new ident("ToList")) as addressed_value, @$);
+			$$ = new method_call(dn as addressed_value, null, @$);
+			*/
 		}
         break;
       case 82: // optional_condition -> /* empty */
