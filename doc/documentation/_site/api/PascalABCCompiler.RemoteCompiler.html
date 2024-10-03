@@ -1,0 +1,2111 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class RemoteCompiler </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RemoteCompiler ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PascalABCCompiler.RemoteCompiler">
+
+
+
+  <h1 id="PascalABCCompiler_RemoteCompiler" data-uid="PascalABCCompiler.RemoteCompiler" class="text-break">
+Class RemoteCompiler  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="PascalABCCompiler.html">PascalABCCompiler</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Compiler.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RemoteCompiler : ICompiler</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">RemoteCompiler</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="PascalABCCompiler.ICompiler.html">ICompiler</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldsetter">object.FieldSetter(string, string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldgetter">object.FieldGetter(string, string, ref object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo">object.GetFieldInfo(string, string)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PascalABCCompiler_RemoteCompiler__ctor_" data-uid="PascalABCCompiler.RemoteCompiler.#ctor*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler__ctor_System_Int32_PascalABCCompiler_ChangeCompilerStateEventDelegate_PascalABCCompiler_SourceFilesProviderDelegate_" data-uid="PascalABCCompiler.RemoteCompiler.#ctor(System.Int32,PascalABCCompiler.ChangeCompilerStateEventDelegate,PascalABCCompiler.SourceFilesProviderDelegate)">
+  RemoteCompiler(int, ChangeCompilerStateEventDelegate, SourceFilesProviderDelegate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RemoteCompiler(int maxProcessMemoryMB, ChangeCompilerStateEventDelegate ChangeCompilerState, SourceFilesProviderDelegate sourceFilesProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxProcessMemoryMB</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ChangeCompilerState</code> <a class="xref" href="PascalABCCompiler.ChangeCompilerStateEventDelegate.html">ChangeCompilerStateEventDelegate</a></dt>
+    <dd></dd>
+    <dt><code>sourceFilesProvider</code> <span class="xref">SourceFilesProviderDelegate</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_beginOffset" data-uid="PascalABCCompiler.RemoteCompiler.beginOffset">
+  beginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private int beginOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_compilationSatarted" data-uid="PascalABCCompiler.RemoteCompiler.compilationSatarted">
+  compilationSatarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private bool compilationSatarted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_compilerOptions" data-uid="PascalABCCompiler.RemoteCompiler.compilerOptions">
+  compilerOptions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private CompilerOptions compilerOptions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerOptions.html">CompilerOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_compilerReloading" data-uid="PascalABCCompiler.RemoteCompiler.compilerReloading">
+  compilerReloading
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private bool compilerReloading</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_compilerState" data-uid="PascalABCCompiler.RemoteCompiler.compilerState">
+  compilerState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public volatile CompilerState compilerState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerState.html">CompilerState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_errorsList" data-uid="PascalABCCompiler.RemoteCompiler.errorsList">
+  errorsList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private List&lt;Error&gt; errorsList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Error</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_inputEncoding" data-uid="PascalABCCompiler.RemoteCompiler.inputEncoding">
+  inputEncoding
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Encoding inputEncoding</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_inputId" data-uid="PascalABCCompiler.RemoteCompiler.inputId">
+  inputId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string inputId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_internalDebug" data-uid="PascalABCCompiler.RemoteCompiler.internalDebug">
+  internalDebug
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private CompilerInternalDebug internalDebug</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerInternalDebug.html">CompilerInternalDebug</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_linesCompiled" data-uid="PascalABCCompiler.RemoteCompiler.linesCompiled">
+  linesCompiled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private uint linesCompiled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_maxProcessMemoryMB" data-uid="PascalABCCompiler.RemoteCompiler.maxProcessMemoryMB">
+  maxProcessMemoryMB
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private int maxProcessMemoryMB</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_pABCCodeHealth" data-uid="PascalABCCompiler.RemoteCompiler.pABCCodeHealth">
+  pABCCodeHealth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private int pABCCodeHealth</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_pabcnetcFileName" data-uid="PascalABCCompiler.RemoteCompiler.pabcnetcFileName">
+  pabcnetcFileName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string pabcnetcFileName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_pabcnetcProcess" data-uid="PascalABCCompiler.RemoteCompiler.pabcnetcProcess">
+  pabcnetcProcess
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Process pabcnetcProcess</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process">Process</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_pabcnetcStreamReader" data-uid="PascalABCCompiler.RemoteCompiler.pabcnetcStreamReader">
+  pabcnetcStreamReader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private EventedStreamReaderList pabcnetcStreamReader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EventedStreamReaderList</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_remoteCompilerWorkingSet" data-uid="PascalABCCompiler.RemoteCompiler.remoteCompilerWorkingSet">
+  remoteCompilerWorkingSet
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private long remoteCompilerWorkingSet</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendCommandStartNumber" data-uid="PascalABCCompiler.RemoteCompiler.sendCommandStartNumber">
+  sendCommandStartNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int sendCommandStartNumber = 100</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sourceFilesProvider" data-uid="PascalABCCompiler.RemoteCompiler.sourceFilesProvider">
+  sourceFilesProvider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private SourceFilesProviderDelegate sourceFilesProvider</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SourceFilesProviderDelegate</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_varBeginOffset" data-uid="PascalABCCompiler.RemoteCompiler.varBeginOffset">
+  varBeginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private int varBeginOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_warnings" data-uid="PascalABCCompiler.RemoteCompiler.warnings">
+  warnings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CompilerWarning&gt; warnings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_BeginOffset_" data-uid="PascalABCCompiler.RemoteCompiler.BeginOffset*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_BeginOffset" data-uid="PascalABCCompiler.RemoteCompiler.BeginOffset">
+  BeginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BeginOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_CompilerOptions_" data-uid="PascalABCCompiler.RemoteCompiler.CompilerOptions*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_CompilerOptions" data-uid="PascalABCCompiler.RemoteCompiler.CompilerOptions">
+  CompilerOptions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompilerOptions CompilerOptions { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerOptions.html">CompilerOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_CompilerType_" data-uid="PascalABCCompiler.RemoteCompiler.CompilerType*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_CompilerType" data-uid="PascalABCCompiler.RemoteCompiler.CompilerType">
+  CompilerType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompilerType CompilerType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerType.html">CompilerType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_ErrorsList_" data-uid="PascalABCCompiler.RemoteCompiler.ErrorsList*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_ErrorsList" data-uid="PascalABCCompiler.RemoteCompiler.ErrorsList">
+  ErrorsList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Error&gt; ErrorsList { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Error</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_InternalDebug_" data-uid="PascalABCCompiler.RemoteCompiler.InternalDebug*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_InternalDebug" data-uid="PascalABCCompiler.RemoteCompiler.InternalDebug">
+  InternalDebug
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompilerInternalDebug InternalDebug { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerInternalDebug.html">CompilerInternalDebug</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_LinesCompiled_" data-uid="PascalABCCompiler.RemoteCompiler.LinesCompiled*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_LinesCompiled" data-uid="PascalABCCompiler.RemoteCompiler.LinesCompiled">
+  LinesCompiled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint LinesCompiled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_MaxProcessMemoryMB_" data-uid="PascalABCCompiler.RemoteCompiler.MaxProcessMemoryMB*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_MaxProcessMemoryMB" data-uid="PascalABCCompiler.RemoteCompiler.MaxProcessMemoryMB">
+  MaxProcessMemoryMB
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxProcessMemoryMB { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_PABCCodeHealth_" data-uid="PascalABCCompiler.RemoteCompiler.PABCCodeHealth*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_PABCCodeHealth" data-uid="PascalABCCompiler.RemoteCompiler.PABCCodeHealth">
+  PABCCodeHealth
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Здоровье кода на всякий случай выносим в интерфейс компилятора
+Реально оно будет использоваться только при запуске из под оболочки (Remote Compiler)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PABCCodeHealth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_RemoteCompilerWorkingSet_" data-uid="PascalABCCompiler.RemoteCompiler.RemoteCompilerWorkingSet*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_RemoteCompilerWorkingSet" data-uid="PascalABCCompiler.RemoteCompiler.RemoteCompilerWorkingSet">
+  RemoteCompilerWorkingSet
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long RemoteCompilerWorkingSet { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_SemanticTree_" data-uid="PascalABCCompiler.RemoteCompiler.SemanticTree*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_SemanticTree" data-uid="PascalABCCompiler.RemoteCompiler.SemanticTree">
+  SemanticTree
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IProgramNode SemanticTree { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IProgramNode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_SemanticTreeConvertersController_" data-uid="PascalABCCompiler.RemoteCompiler.SemanticTreeConvertersController*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_SemanticTreeConvertersController" data-uid="PascalABCCompiler.RemoteCompiler.SemanticTreeConvertersController">
+  SemanticTreeConvertersController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SemanticTreeConvertersController SemanticTreeConvertersController { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html">SemanticTreeConvertersController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_SourceFilesProvider_" data-uid="PascalABCCompiler.RemoteCompiler.SourceFilesProvider*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_SourceFilesProvider" data-uid="PascalABCCompiler.RemoteCompiler.SourceFilesProvider">
+  SourceFilesProvider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SourceFilesProviderDelegate SourceFilesProvider { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SourceFilesProviderDelegate</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_State_" data-uid="PascalABCCompiler.RemoteCompiler.State*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_State" data-uid="PascalABCCompiler.RemoteCompiler.State">
+  State
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompilerState State { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerState.html">CompilerState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_SupportedProjectFiles_" data-uid="PascalABCCompiler.RemoteCompiler.SupportedProjectFiles*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_SupportedProjectFiles" data-uid="PascalABCCompiler.RemoteCompiler.SupportedProjectFiles">
+  SupportedProjectFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SupportedSourceFile[] SupportedProjectFiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SupportedSourceFile.html">SupportedSourceFile</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_SupportedSourceFiles_" data-uid="PascalABCCompiler.RemoteCompiler.SupportedSourceFiles*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_SupportedSourceFiles" data-uid="PascalABCCompiler.RemoteCompiler.SupportedSourceFiles">
+  SupportedSourceFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SupportedSourceFile[] SupportedSourceFiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SupportedSourceFile.html">SupportedSourceFile</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_UnitTable_" data-uid="PascalABCCompiler.RemoteCompiler.UnitTable*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_UnitTable" data-uid="PascalABCCompiler.RemoteCompiler.UnitTable">
+  UnitTable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompilationUnitHashTable UnitTable { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilationUnitHashTable.html">CompilationUnitHashTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_VarBeginOffset_" data-uid="PascalABCCompiler.RemoteCompiler.VarBeginOffset*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_VarBeginOffset" data-uid="PascalABCCompiler.RemoteCompiler.VarBeginOffset">
+  VarBeginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VarBeginOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_Warnings_" data-uid="PascalABCCompiler.RemoteCompiler.Warnings*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_Warnings" data-uid="PascalABCCompiler.RemoteCompiler.Warnings">
+  Warnings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CompilerWarning&gt; Warnings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_AddWarnings_" data-uid="PascalABCCompiler.RemoteCompiler.AddWarnings*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_AddWarnings_System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__" data-uid="PascalABCCompiler.RemoteCompiler.AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})">
+  AddWarnings(List&lt;CompilerWarning&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddWarnings(List&lt;CompilerWarning&gt; WarningList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>WarningList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_ChangeCompilerState_" data-uid="PascalABCCompiler.RemoteCompiler.ChangeCompilerState*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_ChangeCompilerState_PascalABCCompiler_CompilerState_System_String_" data-uid="PascalABCCompiler.RemoteCompiler.ChangeCompilerState(PascalABCCompiler.CompilerState,System.String)">
+  ChangeCompilerState(CompilerState, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void ChangeCompilerState(CompilerState State, string FileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>State</code> <a class="xref" href="PascalABCCompiler.CompilerState.html">CompilerState</a></dt>
+    <dd></dd>
+    <dt><code>FileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_CheckProcessMemory_" data-uid="PascalABCCompiler.RemoteCompiler.CheckProcessMemory*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_CheckProcessMemory" data-uid="PascalABCCompiler.RemoteCompiler.CheckProcessMemory">
+  CheckProcessMemory()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private bool CheckProcessMemory()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_Compile_" data-uid="PascalABCCompiler.RemoteCompiler.Compile*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_Compile" data-uid="PascalABCCompiler.RemoteCompiler.Compile">
+  Compile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Compile()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_Finalize_" data-uid="PascalABCCompiler.RemoteCompiler.Finalize*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_Finalize" data-uid="PascalABCCompiler.RemoteCompiler.Finalize">
+  ~RemoteCompiler()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ~RemoteCompiler()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_Free_" data-uid="PascalABCCompiler.RemoteCompiler.Free*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_Free" data-uid="PascalABCCompiler.RemoteCompiler.Free">
+  Free()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Free()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_GetSourceFileText_" data-uid="PascalABCCompiler.RemoteCompiler.GetSourceFileText*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_GetSourceFileText_System_String_" data-uid="PascalABCCompiler.RemoteCompiler.GetSourceFileText(System.String)">
+  GetSourceFileText(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSourceFileText(string FileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_IsUnix_" data-uid="PascalABCCompiler.RemoteCompiler.IsUnix*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_IsUnix" data-uid="PascalABCCompiler.RemoteCompiler.IsUnix">
+  IsUnix()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsUnix()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_ParseText_" data-uid="PascalABCCompiler.RemoteCompiler.ParseText*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_ParseText_System_String_System_String_System_Collections_Generic_List_PascalABCCompiler_Errors_Error__System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__" data-uid="PascalABCCompiler.RemoteCompiler.ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})">
+  ParseText(string, string, List&lt;Error&gt;, List&lt;CompilerWarning&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public compilation_unit ParseText(string FileName, string Text, List&lt;Error&gt; ErrorList, List&lt;CompilerWarning&gt; Warnings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>Text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ErrorList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Error</span>&gt;</dt>
+    <dd></dd>
+    <dt><code>Warnings</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">compilation_unit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_Reload_" data-uid="PascalABCCompiler.RemoteCompiler.Reload*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_Reload" data-uid="PascalABCCompiler.RemoteCompiler.Reload">
+  Reload()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reload()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_StartCompile_" data-uid="PascalABCCompiler.RemoteCompiler.StartCompile*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_StartCompile" data-uid="PascalABCCompiler.RemoteCompiler.StartCompile">
+  StartCompile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartCompile()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_pabcnetcProcess_Exited_" data-uid="PascalABCCompiler.RemoteCompiler.pabcnetcProcess_Exited*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_pabcnetcProcess_Exited_System_Object_System_EventArgs_" data-uid="PascalABCCompiler.RemoteCompiler.pabcnetcProcess_Exited(System.Object,System.EventArgs)">
+  pabcnetcProcess_Exited(object, EventArgs)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void pabcnetcProcess_Exited(object sender, EventArgs e)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>e</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventargs">EventArgs</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendCommand_" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendCommand_System_Int32_" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand(System.Int32)">
+  sendCommand(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendCommand(int command)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendCommand_" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendCommand_System_Int32_System_Object_" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand(System.Int32,System.Object)">
+  sendCommand(int, object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendCommand(int command, object arg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>arg</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendCommand_" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendCommand_System_Int32_System_Object___" data-uid="PascalABCCompiler.RemoteCompiler.sendCommand(System.Int32,System.Object[])">
+  sendCommand(int, params object[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendCommand(int command, params object[] args)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendCompilerOptions_" data-uid="PascalABCCompiler.RemoteCompiler.sendCompilerOptions*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendCompilerOptions" data-uid="PascalABCCompiler.RemoteCompiler.sendCompilerOptions">
+  sendCompilerOptions()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendCompilerOptions()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendObject_" data-uid="PascalABCCompiler.RemoteCompiler.sendObject*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendObject_System_Int32_System_Object_" data-uid="PascalABCCompiler.RemoteCompiler.sendObject(System.Int32,System.Object)">
+  sendObject(int, object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendObject(int id, object o)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>o</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_sendObjectAsByteArray_" data-uid="PascalABCCompiler.RemoteCompiler.sendObjectAsByteArray*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_sendObjectAsByteArray_System_Int32_System_String_" data-uid="PascalABCCompiler.RemoteCompiler.sendObjectAsByteArray(System.Int32,System.String)">
+  sendObjectAsByteArray(int, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void sendObjectAsByteArray(int command, string obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_stopCompiler_" data-uid="PascalABCCompiler.RemoteCompiler.stopCompiler*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_stopCompiler" data-uid="PascalABCCompiler.RemoteCompiler.stopCompiler">
+  stopCompiler()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void stopCompiler()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_stringRecived_" data-uid="PascalABCCompiler.RemoteCompiler.stringRecived*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_stringRecived_System_String_System_String_" data-uid="PascalABCCompiler.RemoteCompiler.stringRecived(System.String,System.String)">
+  stringRecived(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void stringRecived(string id, string line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>line</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_RemoteCompiler_waitCompilerReloading_" data-uid="PascalABCCompiler.RemoteCompiler.waitCompilerReloading*"></a>
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_waitCompilerReloading" data-uid="PascalABCCompiler.RemoteCompiler.waitCompilerReloading">
+  waitCompilerReloading()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void waitCompilerReloading()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_EnvorimentIdle" data-uid="PascalABCCompiler.RemoteCompiler.EnvorimentIdle">
+  EnvorimentIdle
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event RemoteCompiler.EnvorimentIdleDelegate EnvorimentIdle</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.RemoteCompiler.html">RemoteCompiler</a>.<a class="xref" href="PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html">EnvorimentIdleDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_RemoteCompiler_OnChangeCompilerState" data-uid="PascalABCCompiler.RemoteCompiler.OnChangeCompilerState">
+  OnChangeCompilerState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event ChangeCompilerStateEventDelegate OnChangeCompilerState</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.ChangeCompilerStateEventDelegate.html">ChangeCompilerStateEventDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

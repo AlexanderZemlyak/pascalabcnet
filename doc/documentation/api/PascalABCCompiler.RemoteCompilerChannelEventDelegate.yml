@@ -1,0 +1,234 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  id: RemoteCompilerChannelEventDelegate
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor(System.Object,System.IntPtr)
+  - PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String,System.AsyncCallback,System.Object)
+  - PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke(System.IAsyncResult)
+  - PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String)
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerChannelEventDelegate
+  nameWithType: RemoteCompilerChannelEventDelegate
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  type: Delegate
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public delegate void RemoteCompilerChannelEventDelegate(RemoteCompilerChannelEventType eventType, string text)
+    parameters:
+    - id: eventType
+      type: PascalABCCompiler.RemoteCompilerChannelEventType
+    - id: text
+      type: System.String
+    content.vb: Public Delegate Sub RemoteCompilerChannelEventDelegate(eventType As RemoteCompilerChannelEventType, text As String)
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor(System.Object,System.IntPtr)
+  commentId: M:PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerChannelEventDelegate(object, IntPtr)
+  nameWithType: RemoteCompilerChannelEventDelegate.RemoteCompilerChannelEventDelegate(object, IntPtr)
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.RemoteCompilerChannelEventDelegate(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public RemoteCompilerChannelEventDelegate(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor*
+  nameWithType.vb: RemoteCompilerChannelEventDelegate.New(Object, IntPtr)
+  fullName.vb: PascalABCCompiler.RemoteCompilerChannelEventDelegate.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String)
+  commentId: M:PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String)
+  id: Invoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String)
+  parent: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: Invoke(RemoteCompilerChannelEventType, string)
+  nameWithType: RemoteCompilerChannelEventDelegate.Invoke(RemoteCompilerChannelEventType, string)
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke(PascalABCCompiler.RemoteCompilerChannelEventType, string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void Invoke(RemoteCompilerChannelEventType eventType, string text)
+    parameters:
+    - id: eventType
+      type: PascalABCCompiler.RemoteCompilerChannelEventType
+    - id: text
+      type: System.String
+    content.vb: Public Overridable Sub Invoke(eventType As RemoteCompilerChannelEventType, text As String)
+  overload: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke*
+  nameWithType.vb: RemoteCompilerChannelEventDelegate.Invoke(RemoteCompilerChannelEventType, String)
+  fullName.vb: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke(PascalABCCompiler.RemoteCompilerChannelEventType, String)
+  name.vb: Invoke(RemoteCompilerChannelEventType, String)
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String,System.AsyncCallback,System.Object)
+  commentId: M:PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String,System.AsyncCallback,System.Object)
+  id: BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType,System.String,System.AsyncCallback,System.Object)
+  parent: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(RemoteCompilerChannelEventType, string, AsyncCallback, object)
+  nameWithType: RemoteCompilerChannelEventDelegate.BeginInvoke(RemoteCompilerChannelEventType, string, AsyncCallback, object)
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType, string, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(RemoteCompilerChannelEventType eventType, string text, AsyncCallback callback, object @object)
+    parameters:
+    - id: eventType
+      type: PascalABCCompiler.RemoteCompilerChannelEventType
+    - id: text
+      type: System.String
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(eventType As RemoteCompilerChannelEventType, text As String, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke*
+  nameWithType.vb: RemoteCompilerChannelEventDelegate.BeginInvoke(RemoteCompilerChannelEventType, String, AsyncCallback, Object)
+  fullName.vb: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke(PascalABCCompiler.RemoteCompilerChannelEventType, String, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(RemoteCompilerChannelEventType, String, AsyncCallback, Object)
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke(System.IAsyncResult)
+  commentId: M:PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: RemoteCompilerChannelEventDelegate.EndInvoke(IAsyncResult)
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventType.html
+  name: RemoteCompilerChannelEventType
+  nameWithType: RemoteCompilerChannelEventType
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerChannelEventDelegate.#ctor
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html#PascalABCCompiler_RemoteCompilerChannelEventDelegate__ctor_System_Object_System_IntPtr_
+  name: RemoteCompilerChannelEventDelegate
+  nameWithType: RemoteCompilerChannelEventDelegate.RemoteCompilerChannelEventDelegate
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.RemoteCompilerChannelEventDelegate
+  nameWithType.vb: RemoteCompilerChannelEventDelegate.New
+  fullName.vb: PascalABCCompiler.RemoteCompilerChannelEventDelegate.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html#PascalABCCompiler_RemoteCompilerChannelEventDelegate_Invoke_PascalABCCompiler_RemoteCompilerChannelEventType_System_String_
+  name: Invoke
+  nameWithType: RemoteCompilerChannelEventDelegate.Invoke
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.Invoke
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html#PascalABCCompiler_RemoteCompilerChannelEventDelegate_BeginInvoke_PascalABCCompiler_RemoteCompilerChannelEventType_System_String_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: RemoteCompilerChannelEventDelegate.BeginInvoke
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html#PascalABCCompiler_RemoteCompilerChannelEventDelegate_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: RemoteCompilerChannelEventDelegate.EndInvoke
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate.EndInvoke

@@ -1,0 +1,2306 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.RemoteCompilerError
+  commentId: T:PascalABCCompiler.RemoteCompilerError
+  id: RemoteCompilerError
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.RemoteCompilerError.#ctor(System.String,PascalABCCompiler.TreeRealization.location)
+  - PascalABCCompiler.RemoteCompilerError.ToString
+  - PascalABCCompiler.RemoteCompilerError.msg
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerError
+  nameWithType: RemoteCompilerError
+  fullName: PascalABCCompiler.RemoteCompilerError
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: 'public class RemoteCompilerError : CompilationErrorWithLocation, ISerializable, _Exception'
+    content.vb: Public Class RemoteCompilerError Inherits CompilationErrorWithLocation Implements ISerializable, _Exception
+  inheritance:
+  - System.Object
+  - System.Exception
+  - PascalABCCompiler.Errors.Error
+  - PascalABCCompiler.Errors.LocatedError
+  - PascalABCCompiler.Errors.SemanticError
+  - PascalABCCompiler.TreeConverter.CompilationError
+  - PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  implements:
+  - System.Runtime.Serialization.ISerializable
+  - System.Runtime.InteropServices._Exception
+  inheritedMembers:
+  - PascalABCCompiler.TreeConverter.CompilationErrorWithLocation._loc
+  - PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.loc
+  - PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.Location
+  - PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+  - PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+  - PascalABCCompiler.TreeConverter.CompilationError.Message
+  - PascalABCCompiler.Errors.SemanticError.SourceLocation
+  - PascalABCCompiler.Errors.LocatedError.source_context
+  - PascalABCCompiler.Errors.LocatedError.sourceLocation
+  - PascalABCCompiler.Errors.LocatedError.fileName
+  - PascalABCCompiler.Errors.LocatedError.SourceContext
+  - PascalABCCompiler.Errors.LocatedError.FileName
+  - PascalABCCompiler.Errors.Error.MustThrow
+  - System.Exception.s_EDILock
+  - System.Exception._className
+  - System.Exception._exceptionMethod
+  - System.Exception._exceptionMethodString
+  - System.Exception._message
+  - System.Exception._data
+  - System.Exception._innerException
+  - System.Exception._helpURL
+  - System.Exception._stackTrace
+  - System.Exception._watsonBuckets
+  - System.Exception._stackTraceString
+  - System.Exception._remoteStackTraceString
+  - System.Exception._remoteStackIndex
+  - System.Exception._dynamicMethods
+  - System.Exception._HResult
+  - System.Exception._source
+  - System.Exception._xptrs
+  - System.Exception._xcode
+  - System.Exception._ipForWatsonBuckets
+  - System.Exception._safeSerializationManager
+  - System.Exception._COMPlusExceptionCode
+  - System.Exception.Init
+  - System.Exception.IsImmutableAgileException(System.Exception)
+  - System.Exception.AddExceptionDataForRestrictedErrorInfo(System.String,System.String,System.String,System.Object,System.Boolean)
+  - System.Exception.TryGetRestrictedLanguageErrorObject(System.Object@)
+  - System.Exception.GetClassName
+  - System.Exception.GetBaseException
+  - System.Exception.GetMethodFromStackTrace(System.Object)
+  - System.Exception.GetExceptionMethodFromStackTrace
+  - System.Exception.GetTargetSiteInternal
+  - System.Exception.GetStackTrace(System.Boolean)
+  - System.Exception.SetErrorCode(System.Int32)
+  - System.Exception.ToString(System.Boolean,System.Boolean)
+  - System.Exception.GetExceptionMethodString
+  - System.Exception.GetExceptionMethodFromString
+  - System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - System.Exception.PrepForRemoting
+  - System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+  - System.Exception.InternalPreserveStackTrace
+  - System.Exception.PrepareForForeignExceptionRaise
+  - System.Exception.GetStackTracesDeepCopy(System.Exception,System.Object@,System.Object@)
+  - System.Exception.SaveStackTracesFromDeepCopy(System.Exception,System.Object,System.Object)
+  - System.Exception.CopyStackTrace(System.Object)
+  - System.Exception.CopyDynamicMethods(System.Object)
+  - System.Exception.StripFileInfo(System.String,System.Boolean)
+  - System.Exception.DeepCopyStackTrace(System.Object)
+  - System.Exception.DeepCopyDynamicMethods(System.Object)
+  - System.Exception.GetStackTracesDeepCopy(System.Object@,System.Object@)
+  - System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+  - System.Exception.InternalToString
+  - System.Exception.GetType
+  - System.Exception.nIsTransient(System.Int32)
+  - System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+  - System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind,System.Runtime.CompilerServices.StringHandleOnStack)
+  - System.Exception.Data
+  - System.Exception.InnerException
+  - System.Exception.TargetSite
+  - System.Exception.StackTrace
+  - System.Exception.HelpLink
+  - System.Exception.Source
+  - System.Exception.IPForWatsonBuckets
+  - System.Exception.WatsonBuckets
+  - System.Exception.RemoteStackTrace
+  - System.Exception.HResult
+  - System.Exception.IsTransient
+  - System.Exception.SerializeObjectState
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.RemoteCompilerError.msg
+  commentId: F:PascalABCCompiler.RemoteCompilerError.msg
+  id: msg
+  parent: PascalABCCompiler.RemoteCompilerError
+  langs:
+  - csharp
+  - vb
+  name: msg
+  nameWithType: RemoteCompilerError.msg
+  fullName: PascalABCCompiler.RemoteCompilerError.msg
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private string msg
+    return:
+      type: System.String
+    content.vb: Private msg As String
+- uid: PascalABCCompiler.RemoteCompilerError.#ctor(System.String,PascalABCCompiler.TreeRealization.location)
+  commentId: M:PascalABCCompiler.RemoteCompilerError.#ctor(System.String,PascalABCCompiler.TreeRealization.location)
+  id: '#ctor(System.String,PascalABCCompiler.TreeRealization.location)'
+  parent: PascalABCCompiler.RemoteCompilerError
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerError(string, location)
+  nameWithType: RemoteCompilerError.RemoteCompilerError(string, location)
+  fullName: PascalABCCompiler.RemoteCompilerError.RemoteCompilerError(string, PascalABCCompiler.TreeRealization.location)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public RemoteCompilerError(string msg, location loc)
+    parameters:
+    - id: msg
+      type: System.String
+    - id: loc
+      type: PascalABCCompiler.TreeRealization.location
+    content.vb: Public Sub New(msg As String, loc As location)
+  overload: PascalABCCompiler.RemoteCompilerError.#ctor*
+  nameWithType.vb: RemoteCompilerError.New(String, location)
+  fullName.vb: PascalABCCompiler.RemoteCompilerError.New(String, PascalABCCompiler.TreeRealization.location)
+  name.vb: New(String, location)
+- uid: PascalABCCompiler.RemoteCompilerError.ToString
+  commentId: M:PascalABCCompiler.RemoteCompilerError.ToString
+  id: ToString
+  parent: PascalABCCompiler.RemoteCompilerError
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: RemoteCompilerError.ToString()
+  fullName: PascalABCCompiler.RemoteCompilerError.ToString()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: PascalABCCompiler.Errors.SemanticError.ToString
+  overload: PascalABCCompiler.RemoteCompilerError.ToString*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: PascalABCCompiler.Errors.Error
+  commentId: T:PascalABCCompiler.Errors.Error
+  parent: PascalABCCompiler.Errors
+  isExternal: true
+  name: Error
+  nameWithType: Error
+  fullName: PascalABCCompiler.Errors.Error
+- uid: PascalABCCompiler.Errors.LocatedError
+  commentId: T:PascalABCCompiler.Errors.LocatedError
+  parent: PascalABCCompiler.Errors
+  isExternal: true
+  name: LocatedError
+  nameWithType: LocatedError
+  fullName: PascalABCCompiler.Errors.LocatedError
+- uid: PascalABCCompiler.Errors.SemanticError
+  commentId: T:PascalABCCompiler.Errors.SemanticError
+  parent: PascalABCCompiler.Errors
+  isExternal: true
+  name: SemanticError
+  nameWithType: SemanticError
+  fullName: PascalABCCompiler.Errors.SemanticError
+- uid: PascalABCCompiler.TreeConverter.CompilationError
+  commentId: T:PascalABCCompiler.TreeConverter.CompilationError
+  parent: PascalABCCompiler.TreeConverter
+  isExternal: true
+  name: CompilationError
+  nameWithType: CompilationError
+  fullName: PascalABCCompiler.TreeConverter.CompilationError
+- uid: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  commentId: T:PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  parent: PascalABCCompiler.TreeConverter
+  isExternal: true
+  name: CompilationErrorWithLocation
+  nameWithType: CompilationErrorWithLocation
+  fullName: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Runtime.InteropServices._Exception
+  commentId: T:System.Runtime.InteropServices._Exception
+  parent: System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._exception
+  name: _Exception
+  nameWithType: _Exception
+  fullName: System.Runtime.InteropServices._Exception
+- uid: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation._loc
+  commentId: F:PascalABCCompiler.TreeConverter.CompilationErrorWithLocation._loc
+  parent: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  isExternal: true
+  name: _loc
+  nameWithType: CompilationErrorWithLocation._loc
+  fullName: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation._loc
+- uid: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.loc
+  commentId: P:PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.loc
+  parent: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  isExternal: true
+  name: loc
+  nameWithType: CompilationErrorWithLocation.loc
+  fullName: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.loc
+- uid: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.Location
+  commentId: P:PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.Location
+  parent: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation
+  isExternal: true
+  name: Location
+  nameWithType: CompilationErrorWithLocation.Location
+  fullName: PascalABCCompiler.TreeConverter.CompilationErrorWithLocation.Location
+- uid: PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+  commentId: M:PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+  parent: PascalABCCompiler.TreeConverter.CompilationError
+  isExternal: true
+  name: loc_to_string(ILocation)
+  nameWithType: CompilationError.loc_to_string(ILocation)
+  fullName: PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+    name: loc_to_string
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ILocation
+    name: ILocation
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeConverter.CompilationError.loc_to_string(PascalABCCompiler.SemanticTree.ILocation)
+    name: loc_to_string
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ILocation
+    name: ILocation
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+  commentId: M:PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+  parent: PascalABCCompiler.TreeConverter.CompilationError
+  isExternal: true
+  name: get_location(semantic_node)
+  nameWithType: CompilationError.get_location(semantic_node)
+  fullName: PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+    name: get_location
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.semantic_node
+    name: semantic_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeConverter.CompilationError.get_location(PascalABCCompiler.TreeRealization.semantic_node)
+    name: get_location
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.semantic_node
+    name: semantic_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeConverter.CompilationError.Message
+  commentId: P:PascalABCCompiler.TreeConverter.CompilationError.Message
+  parent: PascalABCCompiler.TreeConverter.CompilationError
+  isExternal: true
+  name: Message
+  nameWithType: CompilationError.Message
+  fullName: PascalABCCompiler.TreeConverter.CompilationError.Message
+- uid: PascalABCCompiler.Errors.SemanticError.SourceLocation
+  commentId: P:PascalABCCompiler.Errors.SemanticError.SourceLocation
+  parent: PascalABCCompiler.Errors.SemanticError
+  isExternal: true
+  name: SourceLocation
+  nameWithType: SemanticError.SourceLocation
+  fullName: PascalABCCompiler.Errors.SemanticError.SourceLocation
+- uid: PascalABCCompiler.Errors.LocatedError.source_context
+  commentId: F:PascalABCCompiler.Errors.LocatedError.source_context
+  parent: PascalABCCompiler.Errors.LocatedError
+  isExternal: true
+  name: source_context
+  nameWithType: LocatedError.source_context
+  fullName: PascalABCCompiler.Errors.LocatedError.source_context
+- uid: PascalABCCompiler.Errors.LocatedError.sourceLocation
+  commentId: F:PascalABCCompiler.Errors.LocatedError.sourceLocation
+  parent: PascalABCCompiler.Errors.LocatedError
+  isExternal: true
+  name: sourceLocation
+  nameWithType: LocatedError.sourceLocation
+  fullName: PascalABCCompiler.Errors.LocatedError.sourceLocation
+- uid: PascalABCCompiler.Errors.LocatedError.fileName
+  commentId: F:PascalABCCompiler.Errors.LocatedError.fileName
+  parent: PascalABCCompiler.Errors.LocatedError
+  isExternal: true
+  name: fileName
+  nameWithType: LocatedError.fileName
+  fullName: PascalABCCompiler.Errors.LocatedError.fileName
+- uid: PascalABCCompiler.Errors.LocatedError.SourceContext
+  commentId: P:PascalABCCompiler.Errors.LocatedError.SourceContext
+  parent: PascalABCCompiler.Errors.LocatedError
+  isExternal: true
+  name: SourceContext
+  nameWithType: LocatedError.SourceContext
+  fullName: PascalABCCompiler.Errors.LocatedError.SourceContext
+- uid: PascalABCCompiler.Errors.LocatedError.FileName
+  commentId: P:PascalABCCompiler.Errors.LocatedError.FileName
+  parent: PascalABCCompiler.Errors.LocatedError
+  isExternal: true
+  name: FileName
+  nameWithType: LocatedError.FileName
+  fullName: PascalABCCompiler.Errors.LocatedError.FileName
+- uid: PascalABCCompiler.Errors.Error.MustThrow
+  commentId: P:PascalABCCompiler.Errors.Error.MustThrow
+  parent: PascalABCCompiler.Errors.Error
+  isExternal: true
+  name: MustThrow
+  nameWithType: Error.MustThrow
+  fullName: PascalABCCompiler.Errors.Error.MustThrow
+- uid: System.Exception.s_EDILock
+  commentId: F:System.Exception.s_EDILock
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.s_edilock
+  name: s_EDILock
+  nameWithType: Exception.s_EDILock
+  fullName: System.Exception.s_EDILock
+- uid: System.Exception._className
+  commentId: F:System.Exception._className
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._classname
+  name: _className
+  nameWithType: Exception._className
+  fullName: System.Exception._className
+- uid: System.Exception._exceptionMethod
+  commentId: F:System.Exception._exceptionMethod
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._exceptionmethod
+  name: _exceptionMethod
+  nameWithType: Exception._exceptionMethod
+  fullName: System.Exception._exceptionMethod
+- uid: System.Exception._exceptionMethodString
+  commentId: F:System.Exception._exceptionMethodString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._exceptionmethodstring
+  name: _exceptionMethodString
+  nameWithType: Exception._exceptionMethodString
+  fullName: System.Exception._exceptionMethodString
+- uid: System.Exception._message
+  commentId: F:System.Exception._message
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._message
+  name: _message
+  nameWithType: Exception._message
+  fullName: System.Exception._message
+- uid: System.Exception._data
+  commentId: F:System.Exception._data
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._data
+  name: _data
+  nameWithType: Exception._data
+  fullName: System.Exception._data
+- uid: System.Exception._innerException
+  commentId: F:System.Exception._innerException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._innerexception
+  name: _innerException
+  nameWithType: Exception._innerException
+  fullName: System.Exception._innerException
+- uid: System.Exception._helpURL
+  commentId: F:System.Exception._helpURL
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._helpurl
+  name: _helpURL
+  nameWithType: Exception._helpURL
+  fullName: System.Exception._helpURL
+- uid: System.Exception._stackTrace
+  commentId: F:System.Exception._stackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._stacktrace
+  name: _stackTrace
+  nameWithType: Exception._stackTrace
+  fullName: System.Exception._stackTrace
+- uid: System.Exception._watsonBuckets
+  commentId: F:System.Exception._watsonBuckets
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._watsonbuckets
+  name: _watsonBuckets
+  nameWithType: Exception._watsonBuckets
+  fullName: System.Exception._watsonBuckets
+- uid: System.Exception._stackTraceString
+  commentId: F:System.Exception._stackTraceString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._stacktracestring
+  name: _stackTraceString
+  nameWithType: Exception._stackTraceString
+  fullName: System.Exception._stackTraceString
+- uid: System.Exception._remoteStackTraceString
+  commentId: F:System.Exception._remoteStackTraceString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._remotestacktracestring
+  name: _remoteStackTraceString
+  nameWithType: Exception._remoteStackTraceString
+  fullName: System.Exception._remoteStackTraceString
+- uid: System.Exception._remoteStackIndex
+  commentId: F:System.Exception._remoteStackIndex
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._remotestackindex
+  name: _remoteStackIndex
+  nameWithType: Exception._remoteStackIndex
+  fullName: System.Exception._remoteStackIndex
+- uid: System.Exception._dynamicMethods
+  commentId: F:System.Exception._dynamicMethods
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._dynamicmethods
+  name: _dynamicMethods
+  nameWithType: Exception._dynamicMethods
+  fullName: System.Exception._dynamicMethods
+- uid: System.Exception._HResult
+  commentId: F:System.Exception._HResult
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._hresult
+  name: _HResult
+  nameWithType: Exception._HResult
+  fullName: System.Exception._HResult
+- uid: System.Exception._source
+  commentId: F:System.Exception._source
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._source
+  name: _source
+  nameWithType: Exception._source
+  fullName: System.Exception._source
+- uid: System.Exception._xptrs
+  commentId: F:System.Exception._xptrs
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._xptrs
+  name: _xptrs
+  nameWithType: Exception._xptrs
+  fullName: System.Exception._xptrs
+- uid: System.Exception._xcode
+  commentId: F:System.Exception._xcode
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._xcode
+  name: _xcode
+  nameWithType: Exception._xcode
+  fullName: System.Exception._xcode
+- uid: System.Exception._ipForWatsonBuckets
+  commentId: F:System.Exception._ipForWatsonBuckets
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._ipforwatsonbuckets
+  name: _ipForWatsonBuckets
+  nameWithType: Exception._ipForWatsonBuckets
+  fullName: System.Exception._ipForWatsonBuckets
+- uid: System.Exception._safeSerializationManager
+  commentId: F:System.Exception._safeSerializationManager
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._safeserializationmanager
+  name: _safeSerializationManager
+  nameWithType: Exception._safeSerializationManager
+  fullName: System.Exception._safeSerializationManager
+- uid: System.Exception._COMPlusExceptionCode
+  commentId: F:System.Exception._COMPlusExceptionCode
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception._complusexceptioncode
+  name: _COMPlusExceptionCode
+  nameWithType: Exception._COMPlusExceptionCode
+  fullName: System.Exception._COMPlusExceptionCode
+- uid: System.Exception.Init
+  commentId: M:System.Exception.Init
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.init
+  name: Init()
+  nameWithType: Exception.Init()
+  fullName: System.Exception.Init()
+  spec.csharp:
+  - uid: System.Exception.Init
+    name: Init
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.init
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.Init
+    name: Init
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.init
+  - name: (
+  - name: )
+- uid: System.Exception.IsImmutableAgileException(System.Exception)
+  commentId: M:System.Exception.IsImmutableAgileException(System.Exception)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.isimmutableagileexception
+  name: IsImmutableAgileException(Exception)
+  nameWithType: Exception.IsImmutableAgileException(Exception)
+  fullName: System.Exception.IsImmutableAgileException(System.Exception)
+  spec.csharp:
+  - uid: System.Exception.IsImmutableAgileException(System.Exception)
+    name: IsImmutableAgileException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.isimmutableagileexception
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+  spec.vb:
+  - uid: System.Exception.IsImmutableAgileException(System.Exception)
+    name: IsImmutableAgileException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.isimmutableagileexception
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: System.Exception.AddExceptionDataForRestrictedErrorInfo(System.String,System.String,System.String,System.Object,System.Boolean)
+  commentId: M:System.Exception.AddExceptionDataForRestrictedErrorInfo(System.String,System.String,System.String,System.Object,System.Boolean)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.addexceptiondataforrestrictederrorinfo
+  name: AddExceptionDataForRestrictedErrorInfo(string, string, string, object, bool)
+  nameWithType: Exception.AddExceptionDataForRestrictedErrorInfo(string, string, string, object, bool)
+  fullName: System.Exception.AddExceptionDataForRestrictedErrorInfo(string, string, string, object, bool)
+  nameWithType.vb: Exception.AddExceptionDataForRestrictedErrorInfo(String, String, String, Object, Boolean)
+  fullName.vb: System.Exception.AddExceptionDataForRestrictedErrorInfo(String, String, String, Object, Boolean)
+  name.vb: AddExceptionDataForRestrictedErrorInfo(String, String, String, Object, Boolean)
+  spec.csharp:
+  - uid: System.Exception.AddExceptionDataForRestrictedErrorInfo(System.String,System.String,System.String,System.Object,System.Boolean)
+    name: AddExceptionDataForRestrictedErrorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.addexceptiondataforrestrictederrorinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Exception.AddExceptionDataForRestrictedErrorInfo(System.String,System.String,System.String,System.Object,System.Boolean)
+    name: AddExceptionDataForRestrictedErrorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.addexceptiondataforrestrictederrorinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Exception.TryGetRestrictedLanguageErrorObject(System.Object@)
+  commentId: M:System.Exception.TryGetRestrictedLanguageErrorObject(System.Object@)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.trygetrestrictedlanguageerrorobject
+  name: TryGetRestrictedLanguageErrorObject(out object)
+  nameWithType: Exception.TryGetRestrictedLanguageErrorObject(out object)
+  fullName: System.Exception.TryGetRestrictedLanguageErrorObject(out object)
+  nameWithType.vb: Exception.TryGetRestrictedLanguageErrorObject(Object)
+  fullName.vb: System.Exception.TryGetRestrictedLanguageErrorObject(Object)
+  name.vb: TryGetRestrictedLanguageErrorObject(Object)
+  spec.csharp:
+  - uid: System.Exception.TryGetRestrictedLanguageErrorObject(System.Object@)
+    name: TryGetRestrictedLanguageErrorObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.trygetrestrictedlanguageerrorobject
+  - name: (
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.TryGetRestrictedLanguageErrorObject(System.Object@)
+    name: TryGetRestrictedLanguageErrorObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.trygetrestrictedlanguageerrorobject
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.GetClassName
+  commentId: M:System.Exception.GetClassName
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getclassname
+  name: GetClassName()
+  nameWithType: Exception.GetClassName()
+  fullName: System.Exception.GetClassName()
+  spec.csharp:
+  - uid: System.Exception.GetClassName
+    name: GetClassName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getclassname
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetClassName
+    name: GetClassName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getclassname
+  - name: (
+  - name: )
+- uid: System.Exception.GetBaseException
+  commentId: M:System.Exception.GetBaseException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  name: GetBaseException()
+  nameWithType: Exception.GetBaseException()
+  fullName: System.Exception.GetBaseException()
+  spec.csharp:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+- uid: System.Exception.GetMethodFromStackTrace(System.Object)
+  commentId: M:System.Exception.GetMethodFromStackTrace(System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getmethodfromstacktrace
+  name: GetMethodFromStackTrace(object)
+  nameWithType: Exception.GetMethodFromStackTrace(object)
+  fullName: System.Exception.GetMethodFromStackTrace(object)
+  nameWithType.vb: Exception.GetMethodFromStackTrace(Object)
+  fullName.vb: System.Exception.GetMethodFromStackTrace(Object)
+  name.vb: GetMethodFromStackTrace(Object)
+  spec.csharp:
+  - uid: System.Exception.GetMethodFromStackTrace(System.Object)
+    name: GetMethodFromStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmethodfromstacktrace
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetMethodFromStackTrace(System.Object)
+    name: GetMethodFromStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmethodfromstacktrace
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.GetExceptionMethodFromStackTrace
+  commentId: M:System.Exception.GetExceptionMethodFromStackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstacktrace
+  name: GetExceptionMethodFromStackTrace()
+  nameWithType: Exception.GetExceptionMethodFromStackTrace()
+  fullName: System.Exception.GetExceptionMethodFromStackTrace()
+  spec.csharp:
+  - uid: System.Exception.GetExceptionMethodFromStackTrace
+    name: GetExceptionMethodFromStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstacktrace
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetExceptionMethodFromStackTrace
+    name: GetExceptionMethodFromStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstacktrace
+  - name: (
+  - name: )
+- uid: System.Exception.GetTargetSiteInternal
+  commentId: M:System.Exception.GetTargetSiteInternal
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.gettargetsiteinternal
+  name: GetTargetSiteInternal()
+  nameWithType: Exception.GetTargetSiteInternal()
+  fullName: System.Exception.GetTargetSiteInternal()
+  spec.csharp:
+  - uid: System.Exception.GetTargetSiteInternal
+    name: GetTargetSiteInternal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettargetsiteinternal
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetTargetSiteInternal
+    name: GetTargetSiteInternal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettargetsiteinternal
+  - name: (
+  - name: )
+- uid: System.Exception.GetStackTrace(System.Boolean)
+  commentId: M:System.Exception.GetStackTrace(System.Boolean)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktrace
+  name: GetStackTrace(bool)
+  nameWithType: Exception.GetStackTrace(bool)
+  fullName: System.Exception.GetStackTrace(bool)
+  nameWithType.vb: Exception.GetStackTrace(Boolean)
+  fullName.vb: System.Exception.GetStackTrace(Boolean)
+  name.vb: GetStackTrace(Boolean)
+  spec.csharp:
+  - uid: System.Exception.GetStackTrace(System.Boolean)
+    name: GetStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktrace
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetStackTrace(System.Boolean)
+    name: GetStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktrace
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Exception.SetErrorCode(System.Int32)
+  commentId: M:System.Exception.SetErrorCode(System.Int32)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.seterrorcode
+  name: SetErrorCode(int)
+  nameWithType: Exception.SetErrorCode(int)
+  fullName: System.Exception.SetErrorCode(int)
+  nameWithType.vb: Exception.SetErrorCode(Integer)
+  fullName.vb: System.Exception.SetErrorCode(Integer)
+  name.vb: SetErrorCode(Integer)
+  spec.csharp:
+  - uid: System.Exception.SetErrorCode(System.Int32)
+    name: SetErrorCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.seterrorcode
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Exception.SetErrorCode(System.Int32)
+    name: SetErrorCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.seterrorcode
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Exception.ToString(System.Boolean,System.Boolean)
+  commentId: M:System.Exception.ToString(System.Boolean,System.Boolean)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.tostring#system-exception-tostring(system-boolean-system-boolean)
+  name: ToString(bool, bool)
+  nameWithType: Exception.ToString(bool, bool)
+  fullName: System.Exception.ToString(bool, bool)
+  nameWithType.vb: Exception.ToString(Boolean, Boolean)
+  fullName.vb: System.Exception.ToString(Boolean, Boolean)
+  name.vb: ToString(Boolean, Boolean)
+  spec.csharp:
+  - uid: System.Exception.ToString(System.Boolean,System.Boolean)
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring#system-exception-tostring(system-boolean-system-boolean)
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Exception.ToString(System.Boolean,System.Boolean)
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring#system-exception-tostring(system-boolean-system-boolean)
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Exception.GetExceptionMethodString
+  commentId: M:System.Exception.GetExceptionMethodString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodstring
+  name: GetExceptionMethodString()
+  nameWithType: Exception.GetExceptionMethodString()
+  fullName: System.Exception.GetExceptionMethodString()
+  spec.csharp:
+  - uid: System.Exception.GetExceptionMethodString
+    name: GetExceptionMethodString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodstring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetExceptionMethodString
+    name: GetExceptionMethodString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodstring
+  - name: (
+  - name: )
+- uid: System.Exception.GetExceptionMethodFromString
+  commentId: M:System.Exception.GetExceptionMethodFromString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstring
+  name: GetExceptionMethodFromString()
+  nameWithType: Exception.GetExceptionMethodFromString()
+  fullName: System.Exception.GetExceptionMethodFromString()
+  spec.csharp:
+  - uid: System.Exception.GetExceptionMethodFromString
+    name: GetExceptionMethodFromString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetExceptionMethodFromString
+    name: GetExceptionMethodFromString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getexceptionmethodfromstring
+  - name: (
+  - name: )
+- uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: Exception.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata
+  - name: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata
+  - name: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+- uid: System.Exception.PrepForRemoting
+  commentId: M:System.Exception.PrepForRemoting
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.prepforremoting
+  name: PrepForRemoting()
+  nameWithType: Exception.PrepForRemoting()
+  fullName: System.Exception.PrepForRemoting()
+  spec.csharp:
+  - uid: System.Exception.PrepForRemoting
+    name: PrepForRemoting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.prepforremoting
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.PrepForRemoting
+    name: PrepForRemoting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.prepforremoting
+  - name: (
+  - name: )
+- uid: System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+  commentId: M:System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.ondeserialized
+  name: OnDeserialized(StreamingContext)
+  nameWithType: Exception.OnDeserialized(StreamingContext)
+  fullName: System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+    name: OnDeserialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.ondeserialized
+  - name: (
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+  spec.vb:
+  - uid: System.Exception.OnDeserialized(System.Runtime.Serialization.StreamingContext)
+    name: OnDeserialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.ondeserialized
+  - name: (
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+- uid: System.Exception.InternalPreserveStackTrace
+  commentId: M:System.Exception.InternalPreserveStackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.internalpreservestacktrace
+  name: InternalPreserveStackTrace()
+  nameWithType: Exception.InternalPreserveStackTrace()
+  fullName: System.Exception.InternalPreserveStackTrace()
+  spec.csharp:
+  - uid: System.Exception.InternalPreserveStackTrace
+    name: InternalPreserveStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.internalpreservestacktrace
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.InternalPreserveStackTrace
+    name: InternalPreserveStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.internalpreservestacktrace
+  - name: (
+  - name: )
+- uid: System.Exception.PrepareForForeignExceptionRaise
+  commentId: M:System.Exception.PrepareForForeignExceptionRaise
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.prepareforforeignexceptionraise
+  name: PrepareForForeignExceptionRaise()
+  nameWithType: Exception.PrepareForForeignExceptionRaise()
+  fullName: System.Exception.PrepareForForeignExceptionRaise()
+  spec.csharp:
+  - uid: System.Exception.PrepareForForeignExceptionRaise
+    name: PrepareForForeignExceptionRaise
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.prepareforforeignexceptionraise
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.PrepareForForeignExceptionRaise
+    name: PrepareForForeignExceptionRaise
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.prepareforforeignexceptionraise
+  - name: (
+  - name: )
+- uid: System.Exception.GetStackTracesDeepCopy(System.Exception,System.Object@,System.Object@)
+  commentId: M:System.Exception.GetStackTracesDeepCopy(System.Exception,System.Object@,System.Object@)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-exception-system-object@-system-object@)
+  name: GetStackTracesDeepCopy(Exception, out object, out object)
+  nameWithType: Exception.GetStackTracesDeepCopy(Exception, out object, out object)
+  fullName: System.Exception.GetStackTracesDeepCopy(System.Exception, out object, out object)
+  nameWithType.vb: Exception.GetStackTracesDeepCopy(Exception, Object, Object)
+  fullName.vb: System.Exception.GetStackTracesDeepCopy(System.Exception, Object, Object)
+  name.vb: GetStackTracesDeepCopy(Exception, Object, Object)
+  spec.csharp:
+  - uid: System.Exception.GetStackTracesDeepCopy(System.Exception,System.Object@,System.Object@)
+    name: GetStackTracesDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-exception-system-object@-system-object@)
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetStackTracesDeepCopy(System.Exception,System.Object@,System.Object@)
+    name: GetStackTracesDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-exception-system-object@-system-object@)
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.SaveStackTracesFromDeepCopy(System.Exception,System.Object,System.Object)
+  commentId: M:System.Exception.SaveStackTracesFromDeepCopy(System.Exception,System.Object,System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.savestacktracesfromdeepcopy
+  name: SaveStackTracesFromDeepCopy(Exception, object, object)
+  nameWithType: Exception.SaveStackTracesFromDeepCopy(Exception, object, object)
+  fullName: System.Exception.SaveStackTracesFromDeepCopy(System.Exception, object, object)
+  nameWithType.vb: Exception.SaveStackTracesFromDeepCopy(Exception, Object, Object)
+  fullName.vb: System.Exception.SaveStackTracesFromDeepCopy(System.Exception, Object, Object)
+  name.vb: SaveStackTracesFromDeepCopy(Exception, Object, Object)
+  spec.csharp:
+  - uid: System.Exception.SaveStackTracesFromDeepCopy(System.Exception,System.Object,System.Object)
+    name: SaveStackTracesFromDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.savestacktracesfromdeepcopy
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.SaveStackTracesFromDeepCopy(System.Exception,System.Object,System.Object)
+    name: SaveStackTracesFromDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.savestacktracesfromdeepcopy
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.CopyStackTrace(System.Object)
+  commentId: M:System.Exception.CopyStackTrace(System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.copystacktrace
+  name: CopyStackTrace(object)
+  nameWithType: Exception.CopyStackTrace(object)
+  fullName: System.Exception.CopyStackTrace(object)
+  nameWithType.vb: Exception.CopyStackTrace(Object)
+  fullName.vb: System.Exception.CopyStackTrace(Object)
+  name.vb: CopyStackTrace(Object)
+  spec.csharp:
+  - uid: System.Exception.CopyStackTrace(System.Object)
+    name: CopyStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.copystacktrace
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.CopyStackTrace(System.Object)
+    name: CopyStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.copystacktrace
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.CopyDynamicMethods(System.Object)
+  commentId: M:System.Exception.CopyDynamicMethods(System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.copydynamicmethods
+  name: CopyDynamicMethods(object)
+  nameWithType: Exception.CopyDynamicMethods(object)
+  fullName: System.Exception.CopyDynamicMethods(object)
+  nameWithType.vb: Exception.CopyDynamicMethods(Object)
+  fullName.vb: System.Exception.CopyDynamicMethods(Object)
+  name.vb: CopyDynamicMethods(Object)
+  spec.csharp:
+  - uid: System.Exception.CopyDynamicMethods(System.Object)
+    name: CopyDynamicMethods
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.copydynamicmethods
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.CopyDynamicMethods(System.Object)
+    name: CopyDynamicMethods
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.copydynamicmethods
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.StripFileInfo(System.String,System.Boolean)
+  commentId: M:System.Exception.StripFileInfo(System.String,System.Boolean)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.stripfileinfo
+  name: StripFileInfo(string, bool)
+  nameWithType: Exception.StripFileInfo(string, bool)
+  fullName: System.Exception.StripFileInfo(string, bool)
+  nameWithType.vb: Exception.StripFileInfo(String, Boolean)
+  fullName.vb: System.Exception.StripFileInfo(String, Boolean)
+  name.vb: StripFileInfo(String, Boolean)
+  spec.csharp:
+  - uid: System.Exception.StripFileInfo(System.String,System.Boolean)
+    name: StripFileInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.stripfileinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Exception.StripFileInfo(System.String,System.Boolean)
+    name: StripFileInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.stripfileinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Exception.DeepCopyStackTrace(System.Object)
+  commentId: M:System.Exception.DeepCopyStackTrace(System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopystacktrace
+  name: DeepCopyStackTrace(object)
+  nameWithType: Exception.DeepCopyStackTrace(object)
+  fullName: System.Exception.DeepCopyStackTrace(object)
+  nameWithType.vb: Exception.DeepCopyStackTrace(Object)
+  fullName.vb: System.Exception.DeepCopyStackTrace(Object)
+  name.vb: DeepCopyStackTrace(Object)
+  spec.csharp:
+  - uid: System.Exception.DeepCopyStackTrace(System.Object)
+    name: DeepCopyStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopystacktrace
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.DeepCopyStackTrace(System.Object)
+    name: DeepCopyStackTrace
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopystacktrace
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.DeepCopyDynamicMethods(System.Object)
+  commentId: M:System.Exception.DeepCopyDynamicMethods(System.Object)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopydynamicmethods
+  name: DeepCopyDynamicMethods(object)
+  nameWithType: Exception.DeepCopyDynamicMethods(object)
+  fullName: System.Exception.DeepCopyDynamicMethods(object)
+  nameWithType.vb: Exception.DeepCopyDynamicMethods(Object)
+  fullName.vb: System.Exception.DeepCopyDynamicMethods(Object)
+  name.vb: DeepCopyDynamicMethods(Object)
+  spec.csharp:
+  - uid: System.Exception.DeepCopyDynamicMethods(System.Object)
+    name: DeepCopyDynamicMethods
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopydynamicmethods
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.DeepCopyDynamicMethods(System.Object)
+    name: DeepCopyDynamicMethods
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.deepcopydynamicmethods
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.GetStackTracesDeepCopy(System.Object@,System.Object@)
+  commentId: M:System.Exception.GetStackTracesDeepCopy(System.Object@,System.Object@)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-object@-system-object@)
+  name: GetStackTracesDeepCopy(out object, out object)
+  nameWithType: Exception.GetStackTracesDeepCopy(out object, out object)
+  fullName: System.Exception.GetStackTracesDeepCopy(out object, out object)
+  nameWithType.vb: Exception.GetStackTracesDeepCopy(Object, Object)
+  fullName.vb: System.Exception.GetStackTracesDeepCopy(Object, Object)
+  name.vb: GetStackTracesDeepCopy(Object, Object)
+  spec.csharp:
+  - uid: System.Exception.GetStackTracesDeepCopy(System.Object@,System.Object@)
+    name: GetStackTracesDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-object@-system-object@)
+  - name: (
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetStackTracesDeepCopy(System.Object@,System.Object@)
+    name: GetStackTracesDeepCopy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getstacktracesdeepcopy#system-exception-getstacktracesdeepcopy(system-object@-system-object@)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+  commentId: M:System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.restoreexceptiondispatchinfo
+  name: RestoreExceptionDispatchInfo(ExceptionDispatchInfo)
+  nameWithType: Exception.RestoreExceptionDispatchInfo(ExceptionDispatchInfo)
+  fullName: System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+  spec.csharp:
+  - uid: System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+    name: RestoreExceptionDispatchInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.restoreexceptiondispatchinfo
+  - name: (
+  - uid: System.Runtime.ExceptionServices.ExceptionDispatchInfo
+    name: ExceptionDispatchInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.exceptionservices.exceptiondispatchinfo
+  - name: )
+  spec.vb:
+  - uid: System.Exception.RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+    name: RestoreExceptionDispatchInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.restoreexceptiondispatchinfo
+  - name: (
+  - uid: System.Runtime.ExceptionServices.ExceptionDispatchInfo
+    name: ExceptionDispatchInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.exceptionservices.exceptiondispatchinfo
+  - name: )
+- uid: System.Exception.InternalToString
+  commentId: M:System.Exception.InternalToString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.internaltostring
+  name: InternalToString()
+  nameWithType: Exception.InternalToString()
+  fullName: System.Exception.InternalToString()
+  spec.csharp:
+  - uid: System.Exception.InternalToString
+    name: InternalToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.internaltostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.InternalToString
+    name: InternalToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.internaltostring
+  - name: (
+  - name: )
+- uid: System.Exception.GetType
+  commentId: M:System.Exception.GetType
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  name: GetType()
+  nameWithType: Exception.GetType()
+  fullName: System.Exception.GetType()
+  spec.csharp:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+- uid: System.Exception.nIsTransient(System.Int32)
+  commentId: M:System.Exception.nIsTransient(System.Int32)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.nistransient
+  name: nIsTransient(int)
+  nameWithType: Exception.nIsTransient(int)
+  fullName: System.Exception.nIsTransient(int)
+  nameWithType.vb: Exception.nIsTransient(Integer)
+  fullName.vb: System.Exception.nIsTransient(Integer)
+  name.vb: nIsTransient(Integer)
+  spec.csharp:
+  - uid: System.Exception.nIsTransient(System.Int32)
+    name: nIsTransient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.nistransient
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Exception.nIsTransient(System.Int32)
+    name: nIsTransient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.nistransient
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+  commentId: M:System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind)
+  name: GetMessageFromNativeResources(ExceptionMessageKind)
+  nameWithType: Exception.GetMessageFromNativeResources(Exception.ExceptionMessageKind)
+  fullName: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+  spec.csharp:
+  - uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+    name: GetMessageFromNativeResources
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind)
+  - name: (
+  - uid: System.Exception.ExceptionMessageKind
+    name: ExceptionMessageKind
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.exceptionmessagekind
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind)
+    name: GetMessageFromNativeResources
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind)
+  - name: (
+  - uid: System.Exception.ExceptionMessageKind
+    name: ExceptionMessageKind
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.exceptionmessagekind
+  - name: )
+- uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind,System.Runtime.CompilerServices.StringHandleOnStack)
+  commentId: M:System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind,System.Runtime.CompilerServices.StringHandleOnStack)
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind-system-runtime-compilerservices-stringhandleonstack)
+  name: GetMessageFromNativeResources(ExceptionMessageKind, StringHandleOnStack)
+  nameWithType: Exception.GetMessageFromNativeResources(Exception.ExceptionMessageKind, StringHandleOnStack)
+  fullName: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind, System.Runtime.CompilerServices.StringHandleOnStack)
+  spec.csharp:
+  - uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind,System.Runtime.CompilerServices.StringHandleOnStack)
+    name: GetMessageFromNativeResources
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind-system-runtime-compilerservices-stringhandleonstack)
+  - name: (
+  - uid: System.Exception.ExceptionMessageKind
+    name: ExceptionMessageKind
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.exceptionmessagekind
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.CompilerServices.StringHandleOnStack
+    name: StringHandleOnStack
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.compilerservices.stringhandleonstack
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetMessageFromNativeResources(System.Exception.ExceptionMessageKind,System.Runtime.CompilerServices.StringHandleOnStack)
+    name: GetMessageFromNativeResources
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getmessagefromnativeresources#system-exception-getmessagefromnativeresources(system-exception-exceptionmessagekind-system-runtime-compilerservices-stringhandleonstack)
+  - name: (
+  - uid: System.Exception.ExceptionMessageKind
+    name: ExceptionMessageKind
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.exceptionmessagekind
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.CompilerServices.StringHandleOnStack
+    name: StringHandleOnStack
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.compilerservices.stringhandleonstack
+  - name: )
+- uid: System.Exception.Data
+  commentId: P:System.Exception.Data
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.data
+  name: Data
+  nameWithType: Exception.Data
+  fullName: System.Exception.Data
+- uid: System.Exception.InnerException
+  commentId: P:System.Exception.InnerException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.innerexception
+  name: InnerException
+  nameWithType: Exception.InnerException
+  fullName: System.Exception.InnerException
+- uid: System.Exception.TargetSite
+  commentId: P:System.Exception.TargetSite
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.targetsite
+  name: TargetSite
+  nameWithType: Exception.TargetSite
+  fullName: System.Exception.TargetSite
+- uid: System.Exception.StackTrace
+  commentId: P:System.Exception.StackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.stacktrace
+  name: StackTrace
+  nameWithType: Exception.StackTrace
+  fullName: System.Exception.StackTrace
+- uid: System.Exception.HelpLink
+  commentId: P:System.Exception.HelpLink
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.helplink
+  name: HelpLink
+  nameWithType: Exception.HelpLink
+  fullName: System.Exception.HelpLink
+- uid: System.Exception.Source
+  commentId: P:System.Exception.Source
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.source
+  name: Source
+  nameWithType: Exception.Source
+  fullName: System.Exception.Source
+- uid: System.Exception.IPForWatsonBuckets
+  commentId: P:System.Exception.IPForWatsonBuckets
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.ipforwatsonbuckets
+  name: IPForWatsonBuckets
+  nameWithType: Exception.IPForWatsonBuckets
+  fullName: System.Exception.IPForWatsonBuckets
+- uid: System.Exception.WatsonBuckets
+  commentId: P:System.Exception.WatsonBuckets
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.watsonbuckets
+  name: WatsonBuckets
+  nameWithType: Exception.WatsonBuckets
+  fullName: System.Exception.WatsonBuckets
+- uid: System.Exception.RemoteStackTrace
+  commentId: P:System.Exception.RemoteStackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.remotestacktrace
+  name: RemoteStackTrace
+  nameWithType: Exception.RemoteStackTrace
+  fullName: System.Exception.RemoteStackTrace
+- uid: System.Exception.HResult
+  commentId: P:System.Exception.HResult
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.hresult
+  name: HResult
+  nameWithType: Exception.HResult
+  fullName: System.Exception.HResult
+- uid: System.Exception.IsTransient
+  commentId: P:System.Exception.IsTransient
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.istransient
+  name: IsTransient
+  nameWithType: Exception.IsTransient
+  fullName: System.Exception.IsTransient
+- uid: System.Exception.SerializeObjectState
+  commentId: E:System.Exception.SerializeObjectState
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.serializeobjectstate
+  name: SerializeObjectState
+  nameWithType: Exception.SerializeObjectState
+  fullName: System.Exception.SerializeObjectState
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.Errors
+  commentId: N:PascalABCCompiler.Errors
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.Errors
+  nameWithType: PascalABCCompiler.Errors
+  fullName: PascalABCCompiler.Errors
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.Errors
+    name: Errors
+    isExternal: true
+    href: PascalABCCompiler.Errors.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.Errors
+    name: Errors
+    isExternal: true
+    href: PascalABCCompiler.Errors.html
+- uid: PascalABCCompiler.TreeConverter
+  commentId: N:PascalABCCompiler.TreeConverter
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.TreeConverter
+  nameWithType: PascalABCCompiler.TreeConverter
+  fullName: PascalABCCompiler.TreeConverter
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+- uid: System.Runtime.InteropServices
+  commentId: N:System.Runtime.InteropServices
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.InteropServices
+  nameWithType: System.Runtime.InteropServices
+  fullName: System.Runtime.InteropServices
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.InteropServices
+    name: InteropServices
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.RemoteCompilerError.#ctor*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerError.#ctor
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerError.html#PascalABCCompiler_RemoteCompilerError__ctor_System_String_PascalABCCompiler_TreeRealization_location_
+  name: RemoteCompilerError
+  nameWithType: RemoteCompilerError.RemoteCompilerError
+  fullName: PascalABCCompiler.RemoteCompilerError.RemoteCompilerError
+  nameWithType.vb: RemoteCompilerError.New
+  fullName.vb: PascalABCCompiler.RemoteCompilerError.New
+  name.vb: New
+- uid: PascalABCCompiler.TreeRealization.location
+  commentId: T:PascalABCCompiler.TreeRealization.location
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: location
+  nameWithType: location
+  fullName: PascalABCCompiler.TreeRealization.location
+- uid: PascalABCCompiler.TreeRealization
+  commentId: N:PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: PascalABCCompiler.TreeRealization
+  nameWithType: PascalABCCompiler.TreeRealization
+  fullName: PascalABCCompiler.TreeRealization
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+- uid: PascalABCCompiler.Errors.SemanticError.ToString
+  commentId: M:PascalABCCompiler.Errors.SemanticError.ToString
+  parent: PascalABCCompiler.Errors.SemanticError
+  isExternal: true
+  name: ToString()
+  nameWithType: SemanticError.ToString()
+  fullName: PascalABCCompiler.Errors.SemanticError.ToString()
+  spec.csharp:
+  - uid: PascalABCCompiler.Errors.SemanticError.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.Errors.SemanticError.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.RemoteCompilerError.ToString*
+  commentId: Overload:PascalABCCompiler.RemoteCompilerError.ToString
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerError.html#PascalABCCompiler_RemoteCompilerError_ToString
+  name: ToString
+  nameWithType: RemoteCompilerError.ToString
+  fullName: PascalABCCompiler.RemoteCompilerError.ToString

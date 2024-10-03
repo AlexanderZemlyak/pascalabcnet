@@ -1,0 +1,691 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerInternalDebug
+  commentId: T:PascalABCCompiler.CompilerInternalDebug
+  id: CompilerInternalDebug
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerInternalDebug.#ctor
+  - PascalABCCompiler.CompilerInternalDebug.AlwaysGenerateXMLDoc
+  - PascalABCCompiler.CompilerInternalDebug.CodeGeneration
+  - PascalABCCompiler.CompilerInternalDebug.DebugVersion
+  - PascalABCCompiler.CompilerInternalDebug.IncludeDebugInfoInPCU
+  - PascalABCCompiler.CompilerInternalDebug.PCUGenerate
+  - PascalABCCompiler.CompilerInternalDebug.RunOnMono
+  - PascalABCCompiler.CompilerInternalDebug.SemanticAnalysis
+  - PascalABCCompiler.CompilerInternalDebug.SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  - PascalABCCompiler.CompilerInternalDebug.SkipPCUErrors
+  - PascalABCCompiler.CompilerInternalDebug.UseStandarParserForIntellisense
+  langs:
+  - csharp
+  - vb
+  name: CompilerInternalDebug
+  nameWithType: CompilerInternalDebug
+  fullName: PascalABCCompiler.CompilerInternalDebug
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public class CompilerInternalDebug
+    content.vb: Public Class CompilerInternalDebug
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.CompilerInternalDebug.CodeGeneration
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.CodeGeneration
+  id: CodeGeneration
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: CodeGeneration
+  nameWithType: CompilerInternalDebug.CodeGeneration
+  fullName: PascalABCCompiler.CompilerInternalDebug.CodeGeneration
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool CodeGeneration
+    return:
+      type: System.Boolean
+    content.vb: Public CodeGeneration As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.SemanticAnalysis
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.SemanticAnalysis
+  id: SemanticAnalysis
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: SemanticAnalysis
+  nameWithType: CompilerInternalDebug.SemanticAnalysis
+  fullName: PascalABCCompiler.CompilerInternalDebug.SemanticAnalysis
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool SemanticAnalysis
+    return:
+      type: System.Boolean
+    content.vb: Public SemanticAnalysis As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.PCUGenerate
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.PCUGenerate
+  id: PCUGenerate
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: PCUGenerate
+  nameWithType: CompilerInternalDebug.PCUGenerate
+  fullName: PascalABCCompiler.CompilerInternalDebug.PCUGenerate
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool PCUGenerate
+    return:
+      type: System.Boolean
+    content.vb: Public PCUGenerate As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.SkipPCUErrors
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.SkipPCUErrors
+  id: SkipPCUErrors
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: SkipPCUErrors
+  nameWithType: CompilerInternalDebug.SkipPCUErrors
+  fullName: PascalABCCompiler.CompilerInternalDebug.SkipPCUErrors
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool SkipPCUErrors
+    return:
+      type: System.Boolean
+    content.vb: Public SkipPCUErrors As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.IncludeDebugInfoInPCU
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.IncludeDebugInfoInPCU
+  id: IncludeDebugInfoInPCU
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: IncludeDebugInfoInPCU
+  nameWithType: CompilerInternalDebug.IncludeDebugInfoInPCU
+  fullName: PascalABCCompiler.CompilerInternalDebug.IncludeDebugInfoInPCU
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool IncludeDebugInfoInPCU
+    return:
+      type: System.Boolean
+    content.vb: Public IncludeDebugInfoInPCU As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.AlwaysGenerateXMLDoc
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.AlwaysGenerateXMLDoc
+  id: AlwaysGenerateXMLDoc
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: AlwaysGenerateXMLDoc
+  nameWithType: CompilerInternalDebug.AlwaysGenerateXMLDoc
+  fullName: PascalABCCompiler.CompilerInternalDebug.AlwaysGenerateXMLDoc
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool AlwaysGenerateXMLDoc
+    return:
+      type: System.Boolean
+    content.vb: Public AlwaysGenerateXMLDoc As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  id: SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  nameWithType: CompilerInternalDebug.SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  fullName: PascalABCCompiler.CompilerInternalDebug.SkipInternalErrorsIfSyntaxTreeIsCorrupt
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool SkipInternalErrorsIfSyntaxTreeIsCorrupt
+    return:
+      type: System.Boolean
+    content.vb: Public SkipInternalErrorsIfSyntaxTreeIsCorrupt As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.UseStandarParserForIntellisense
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.UseStandarParserForIntellisense
+  id: UseStandarParserForIntellisense
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: UseStandarParserForIntellisense
+  nameWithType: CompilerInternalDebug.UseStandarParserForIntellisense
+  fullName: PascalABCCompiler.CompilerInternalDebug.UseStandarParserForIntellisense
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool UseStandarParserForIntellisense
+    return:
+      type: System.Boolean
+    content.vb: Public UseStandarParserForIntellisense As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.RunOnMono
+  commentId: F:PascalABCCompiler.CompilerInternalDebug.RunOnMono
+  id: RunOnMono
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: RunOnMono
+  nameWithType: CompilerInternalDebug.RunOnMono
+  fullName: PascalABCCompiler.CompilerInternalDebug.RunOnMono
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool RunOnMono
+    return:
+      type: System.Boolean
+    content.vb: Public RunOnMono As Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.#ctor
+  commentId: M:PascalABCCompiler.CompilerInternalDebug.#ctor
+  id: '#ctor'
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: CompilerInternalDebug()
+  nameWithType: CompilerInternalDebug.CompilerInternalDebug()
+  fullName: PascalABCCompiler.CompilerInternalDebug.CompilerInternalDebug()
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public CompilerInternalDebug()
+    content.vb: Public Sub New()
+  overload: PascalABCCompiler.CompilerInternalDebug.#ctor*
+  nameWithType.vb: CompilerInternalDebug.New()
+  fullName.vb: PascalABCCompiler.CompilerInternalDebug.New()
+  name.vb: New()
+- uid: PascalABCCompiler.CompilerInternalDebug.DebugVersion
+  commentId: P:PascalABCCompiler.CompilerInternalDebug.DebugVersion
+  id: DebugVersion
+  parent: PascalABCCompiler.CompilerInternalDebug
+  langs:
+  - csharp
+  - vb
+  name: DebugVersion
+  nameWithType: CompilerInternalDebug.DebugVersion
+  fullName: PascalABCCompiler.CompilerInternalDebug.DebugVersion
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool DebugVersion { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property DebugVersion As Boolean
+  overload: PascalABCCompiler.CompilerInternalDebug.DebugVersion*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: PascalABCCompiler.CompilerInternalDebug.#ctor*
+  commentId: Overload:PascalABCCompiler.CompilerInternalDebug.#ctor
+  isExternal: true
+  href: PascalABCCompiler.CompilerInternalDebug.html#PascalABCCompiler_CompilerInternalDebug__ctor
+  name: CompilerInternalDebug
+  nameWithType: CompilerInternalDebug.CompilerInternalDebug
+  fullName: PascalABCCompiler.CompilerInternalDebug.CompilerInternalDebug
+  nameWithType.vb: CompilerInternalDebug.New
+  fullName.vb: PascalABCCompiler.CompilerInternalDebug.New
+  name.vb: New
+- uid: PascalABCCompiler.CompilerInternalDebug.DebugVersion*
+  commentId: Overload:PascalABCCompiler.CompilerInternalDebug.DebugVersion
+  isExternal: true
+  href: PascalABCCompiler.CompilerInternalDebug.html#PascalABCCompiler_CompilerInternalDebug_DebugVersion
+  name: DebugVersion
+  nameWithType: CompilerInternalDebug.DebugVersion
+  fullName: PascalABCCompiler.CompilerInternalDebug.DebugVersion

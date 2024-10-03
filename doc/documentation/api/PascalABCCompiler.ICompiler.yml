@@ -1,0 +1,1067 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.ICompiler
+  commentId: T:PascalABCCompiler.ICompiler
+  id: ICompiler
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  - PascalABCCompiler.ICompiler.BeginOffset
+  - PascalABCCompiler.ICompiler.Compile
+  - PascalABCCompiler.ICompiler.CompilerOptions
+  - PascalABCCompiler.ICompiler.CompilerType
+  - PascalABCCompiler.ICompiler.ErrorsList
+  - PascalABCCompiler.ICompiler.Free
+  - PascalABCCompiler.ICompiler.GetSourceFileText(System.String)
+  - PascalABCCompiler.ICompiler.InternalDebug
+  - PascalABCCompiler.ICompiler.LinesCompiled
+  - PascalABCCompiler.ICompiler.OnChangeCompilerState
+  - PascalABCCompiler.ICompiler.PABCCodeHealth
+  - PascalABCCompiler.ICompiler.ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  - PascalABCCompiler.ICompiler.Reload
+  - PascalABCCompiler.ICompiler.SemanticTree
+  - PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+  - PascalABCCompiler.ICompiler.SourceFilesProvider
+  - PascalABCCompiler.ICompiler.StartCompile
+  - PascalABCCompiler.ICompiler.State
+  - PascalABCCompiler.ICompiler.SupportedProjectFiles
+  - PascalABCCompiler.ICompiler.SupportedSourceFiles
+  - PascalABCCompiler.ICompiler.UnitTable
+  - PascalABCCompiler.ICompiler.VarBeginOffset
+  - PascalABCCompiler.ICompiler.Warnings
+  langs:
+  - csharp
+  - vb
+  name: ICompiler
+  nameWithType: ICompiler
+  fullName: PascalABCCompiler.ICompiler
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface ICompiler
+    content.vb: Public Interface ICompiler
+- uid: PascalABCCompiler.ICompiler.Free
+  commentId: M:PascalABCCompiler.ICompiler.Free
+  id: Free
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: Free()
+  nameWithType: ICompiler.Free()
+  fullName: PascalABCCompiler.ICompiler.Free()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: void Free()
+    content.vb: Sub Free()
+  overload: PascalABCCompiler.ICompiler.Free*
+- uid: PascalABCCompiler.ICompiler.Reload
+  commentId: M:PascalABCCompiler.ICompiler.Reload
+  id: Reload
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: Reload()
+  nameWithType: ICompiler.Reload()
+  fullName: PascalABCCompiler.ICompiler.Reload()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: void Reload()
+    content.vb: Sub Reload()
+  overload: PascalABCCompiler.ICompiler.Reload*
+- uid: PascalABCCompiler.ICompiler.Compile
+  commentId: M:PascalABCCompiler.ICompiler.Compile
+  id: Compile
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: Compile()
+  nameWithType: ICompiler.Compile()
+  fullName: PascalABCCompiler.ICompiler.Compile()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Compile()
+    return:
+      type: System.String
+    content.vb: Function Compile() As String
+  overload: PascalABCCompiler.ICompiler.Compile*
+- uid: PascalABCCompiler.ICompiler.StartCompile
+  commentId: M:PascalABCCompiler.ICompiler.StartCompile
+  id: StartCompile
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: StartCompile()
+  nameWithType: ICompiler.StartCompile()
+  fullName: PascalABCCompiler.ICompiler.StartCompile()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: void StartCompile()
+    content.vb: Sub StartCompile()
+  overload: PascalABCCompiler.ICompiler.StartCompile*
+- uid: PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  commentId: M:PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  id: AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: AddWarnings(List<CompilerWarning>)
+  nameWithType: ICompiler.AddWarnings(List<CompilerWarning>)
+  fullName: PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List<PascalABCCompiler.Errors.CompilerWarning>)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: void AddWarnings(List<CompilerWarning> WarningList)
+    parameters:
+    - id: WarningList
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning}
+    content.vb: Sub AddWarnings(WarningList As List(Of CompilerWarning))
+  overload: PascalABCCompiler.ICompiler.AddWarnings*
+  nameWithType.vb: ICompiler.AddWarnings(List(Of CompilerWarning))
+  fullName.vb: PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List(Of PascalABCCompiler.Errors.CompilerWarning))
+  name.vb: AddWarnings(List(Of CompilerWarning))
+- uid: PascalABCCompiler.ICompiler.ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  commentId: M:PascalABCCompiler.ICompiler.ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  id: ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: ParseText(string, string, List<Error>, List<CompilerWarning>)
+  nameWithType: ICompiler.ParseText(string, string, List<Error>, List<CompilerWarning>)
+  fullName: PascalABCCompiler.ICompiler.ParseText(string, string, System.Collections.Generic.List<PascalABCCompiler.Errors.Error>, System.Collections.Generic.List<PascalABCCompiler.Errors.CompilerWarning>)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: compilation_unit ParseText(string FileName, string Text, List<Error> ErrorList, List<CompilerWarning> Warnings)
+    parameters:
+    - id: FileName
+      type: System.String
+    - id: Text
+      type: System.String
+    - id: ErrorList
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+    - id: Warnings
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning}
+    return:
+      type: PascalABCCompiler.SyntaxTree.compilation_unit
+    content.vb: Function ParseText(FileName As String, Text As String, ErrorList As List(Of [Error]), Warnings As List(Of CompilerWarning)) As compilation_unit
+  overload: PascalABCCompiler.ICompiler.ParseText*
+  nameWithType.vb: ICompiler.ParseText(String, String, List(Of Error), List(Of CompilerWarning))
+  fullName.vb: PascalABCCompiler.ICompiler.ParseText(String, String, System.Collections.Generic.List(Of PascalABCCompiler.Errors.Error), System.Collections.Generic.List(Of PascalABCCompiler.Errors.CompilerWarning))
+  name.vb: ParseText(String, String, List(Of Error), List(Of CompilerWarning))
+- uid: PascalABCCompiler.ICompiler.GetSourceFileText(System.String)
+  commentId: M:PascalABCCompiler.ICompiler.GetSourceFileText(System.String)
+  id: GetSourceFileText(System.String)
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: GetSourceFileText(string)
+  nameWithType: ICompiler.GetSourceFileText(string)
+  fullName: PascalABCCompiler.ICompiler.GetSourceFileText(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string GetSourceFileText(string FileName)
+    parameters:
+    - id: FileName
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Function GetSourceFileText(FileName As String) As String
+  overload: PascalABCCompiler.ICompiler.GetSourceFileText*
+  nameWithType.vb: ICompiler.GetSourceFileText(String)
+  fullName.vb: PascalABCCompiler.ICompiler.GetSourceFileText(String)
+  name.vb: GetSourceFileText(String)
+- uid: PascalABCCompiler.ICompiler.PABCCodeHealth
+  commentId: P:PascalABCCompiler.ICompiler.PABCCodeHealth
+  id: PABCCodeHealth
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: PABCCodeHealth
+  nameWithType: ICompiler.PABCCodeHealth
+  fullName: PascalABCCompiler.ICompiler.PABCCodeHealth
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  example: []
+  syntax:
+    content: int PABCCodeHealth { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property PABCCodeHealth As Integer
+  overload: PascalABCCompiler.ICompiler.PABCCodeHealth*
+- uid: PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+  commentId: P:PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+  id: SemanticTreeConvertersController
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConvertersController
+  nameWithType: ICompiler.SemanticTreeConvertersController
+  fullName: PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SemanticTreeConvertersController SemanticTreeConvertersController { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    content.vb: ReadOnly Property SemanticTreeConvertersController As SemanticTreeConvertersController
+  overload: PascalABCCompiler.ICompiler.SemanticTreeConvertersController*
+- uid: PascalABCCompiler.ICompiler.SemanticTree
+  commentId: P:PascalABCCompiler.ICompiler.SemanticTree
+  id: SemanticTree
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: SemanticTree
+  nameWithType: ICompiler.SemanticTree
+  fullName: PascalABCCompiler.ICompiler.SemanticTree
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: IProgramNode SemanticTree { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SemanticTree.IProgramNode
+    content.vb: ReadOnly Property SemanticTree As IProgramNode
+  overload: PascalABCCompiler.ICompiler.SemanticTree*
+- uid: PascalABCCompiler.ICompiler.LinesCompiled
+  commentId: P:PascalABCCompiler.ICompiler.LinesCompiled
+  id: LinesCompiled
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: LinesCompiled
+  nameWithType: ICompiler.LinesCompiled
+  fullName: PascalABCCompiler.ICompiler.LinesCompiled
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: uint LinesCompiled { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: ReadOnly Property LinesCompiled As UInteger
+  overload: PascalABCCompiler.ICompiler.LinesCompiled*
+- uid: PascalABCCompiler.ICompiler.InternalDebug
+  commentId: P:PascalABCCompiler.ICompiler.InternalDebug
+  id: InternalDebug
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: InternalDebug
+  nameWithType: ICompiler.InternalDebug
+  fullName: PascalABCCompiler.ICompiler.InternalDebug
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilerInternalDebug InternalDebug { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.CompilerInternalDebug
+    content.vb: Property InternalDebug As CompilerInternalDebug
+  overload: PascalABCCompiler.ICompiler.InternalDebug*
+- uid: PascalABCCompiler.ICompiler.State
+  commentId: P:PascalABCCompiler.ICompiler.State
+  id: State
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: ICompiler.State
+  fullName: PascalABCCompiler.ICompiler.State
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilerState State { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.CompilerState
+    content.vb: ReadOnly Property State As CompilerState
+  overload: PascalABCCompiler.ICompiler.State*
+- uid: PascalABCCompiler.ICompiler.SupportedSourceFiles
+  commentId: P:PascalABCCompiler.ICompiler.SupportedSourceFiles
+  id: SupportedSourceFiles
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: SupportedSourceFiles
+  nameWithType: ICompiler.SupportedSourceFiles
+  fullName: PascalABCCompiler.ICompiler.SupportedSourceFiles
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SupportedSourceFile[] SupportedSourceFiles { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SupportedSourceFile[]
+    content.vb: ReadOnly Property SupportedSourceFiles As SupportedSourceFile()
+  overload: PascalABCCompiler.ICompiler.SupportedSourceFiles*
+- uid: PascalABCCompiler.ICompiler.SupportedProjectFiles
+  commentId: P:PascalABCCompiler.ICompiler.SupportedProjectFiles
+  id: SupportedProjectFiles
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: SupportedProjectFiles
+  nameWithType: ICompiler.SupportedProjectFiles
+  fullName: PascalABCCompiler.ICompiler.SupportedProjectFiles
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SupportedSourceFile[] SupportedProjectFiles { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SupportedSourceFile[]
+    content.vb: ReadOnly Property SupportedProjectFiles As SupportedSourceFile()
+  overload: PascalABCCompiler.ICompiler.SupportedProjectFiles*
+- uid: PascalABCCompiler.ICompiler.CompilerOptions
+  commentId: P:PascalABCCompiler.ICompiler.CompilerOptions
+  id: CompilerOptions
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptions
+  nameWithType: ICompiler.CompilerOptions
+  fullName: PascalABCCompiler.ICompiler.CompilerOptions
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilerOptions CompilerOptions { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.CompilerOptions
+    content.vb: Property CompilerOptions As CompilerOptions
+  overload: PascalABCCompiler.ICompiler.CompilerOptions*
+- uid: PascalABCCompiler.ICompiler.ErrorsList
+  commentId: P:PascalABCCompiler.ICompiler.ErrorsList
+  id: ErrorsList
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: ErrorsList
+  nameWithType: ICompiler.ErrorsList
+  fullName: PascalABCCompiler.ICompiler.ErrorsList
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: List<Error> ErrorsList { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+    content.vb: ReadOnly Property ErrorsList As List(Of [Error])
+  overload: PascalABCCompiler.ICompiler.ErrorsList*
+- uid: PascalABCCompiler.ICompiler.Warnings
+  commentId: P:PascalABCCompiler.ICompiler.Warnings
+  id: Warnings
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: Warnings
+  nameWithType: ICompiler.Warnings
+  fullName: PascalABCCompiler.ICompiler.Warnings
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: List<CompilerWarning> Warnings { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning}
+    content.vb: ReadOnly Property Warnings As List(Of CompilerWarning)
+  overload: PascalABCCompiler.ICompiler.Warnings*
+- uid: PascalABCCompiler.ICompiler.BeginOffset
+  commentId: P:PascalABCCompiler.ICompiler.BeginOffset
+  id: BeginOffset
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: BeginOffset
+  nameWithType: ICompiler.BeginOffset
+  fullName: PascalABCCompiler.ICompiler.BeginOffset
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int BeginOffset { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property BeginOffset As Integer
+  overload: PascalABCCompiler.ICompiler.BeginOffset*
+- uid: PascalABCCompiler.ICompiler.VarBeginOffset
+  commentId: P:PascalABCCompiler.ICompiler.VarBeginOffset
+  id: VarBeginOffset
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: VarBeginOffset
+  nameWithType: ICompiler.VarBeginOffset
+  fullName: PascalABCCompiler.ICompiler.VarBeginOffset
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int VarBeginOffset { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property VarBeginOffset As Integer
+  overload: PascalABCCompiler.ICompiler.VarBeginOffset*
+- uid: PascalABCCompiler.ICompiler.UnitTable
+  commentId: P:PascalABCCompiler.ICompiler.UnitTable
+  id: UnitTable
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: UnitTable
+  nameWithType: ICompiler.UnitTable
+  fullName: PascalABCCompiler.ICompiler.UnitTable
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilationUnitHashTable UnitTable { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.CompilationUnitHashTable
+    content.vb: ReadOnly Property UnitTable As CompilationUnitHashTable
+  overload: PascalABCCompiler.ICompiler.UnitTable*
+- uid: PascalABCCompiler.ICompiler.SourceFilesProvider
+  commentId: P:PascalABCCompiler.ICompiler.SourceFilesProvider
+  id: SourceFilesProvider
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: SourceFilesProvider
+  nameWithType: ICompiler.SourceFilesProvider
+  fullName: PascalABCCompiler.ICompiler.SourceFilesProvider
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SourceFilesProviderDelegate SourceFilesProvider { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SourceFilesProviderDelegate
+    content.vb: ReadOnly Property SourceFilesProvider As SourceFilesProviderDelegate
+  overload: PascalABCCompiler.ICompiler.SourceFilesProvider*
+- uid: PascalABCCompiler.ICompiler.CompilerType
+  commentId: P:PascalABCCompiler.ICompiler.CompilerType
+  id: CompilerType
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: CompilerType
+  nameWithType: ICompiler.CompilerType
+  fullName: PascalABCCompiler.ICompiler.CompilerType
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilerType CompilerType { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.CompilerType
+    content.vb: ReadOnly Property CompilerType As CompilerType
+  overload: PascalABCCompiler.ICompiler.CompilerType*
+- uid: PascalABCCompiler.ICompiler.OnChangeCompilerState
+  commentId: E:PascalABCCompiler.ICompiler.OnChangeCompilerState
+  id: OnChangeCompilerState
+  parent: PascalABCCompiler.ICompiler
+  langs:
+  - csharp
+  - vb
+  name: OnChangeCompilerState
+  nameWithType: ICompiler.OnChangeCompilerState
+  fullName: PascalABCCompiler.ICompiler.OnChangeCompilerState
+  type: Event
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: event ChangeCompilerStateEventDelegate OnChangeCompilerState
+    return:
+      type: PascalABCCompiler.ChangeCompilerStateEventDelegate
+    content.vb: Event OnChangeCompilerState As ChangeCompilerStateEventDelegate
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.ICompiler.Free*
+  commentId: Overload:PascalABCCompiler.ICompiler.Free
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_Free
+  name: Free
+  nameWithType: ICompiler.Free
+  fullName: PascalABCCompiler.ICompiler.Free
+- uid: PascalABCCompiler.ICompiler.Reload*
+  commentId: Overload:PascalABCCompiler.ICompiler.Reload
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_Reload
+  name: Reload
+  nameWithType: ICompiler.Reload
+  fullName: PascalABCCompiler.ICompiler.Reload
+- uid: PascalABCCompiler.ICompiler.Compile*
+  commentId: Overload:PascalABCCompiler.ICompiler.Compile
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_Compile
+  name: Compile
+  nameWithType: ICompiler.Compile
+  fullName: PascalABCCompiler.ICompiler.Compile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.ICompiler.StartCompile*
+  commentId: Overload:PascalABCCompiler.ICompiler.StartCompile
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_StartCompile
+  name: StartCompile
+  nameWithType: ICompiler.StartCompile
+  fullName: PascalABCCompiler.ICompiler.StartCompile
+- uid: PascalABCCompiler.ICompiler.AddWarnings*
+  commentId: Overload:PascalABCCompiler.ICompiler.AddWarnings
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_AddWarnings_System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__
+  name: AddWarnings
+  nameWithType: ICompiler.AddWarnings
+  fullName: PascalABCCompiler.ICompiler.AddWarnings
+- uid: System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<CompilerWarning>
+  nameWithType: List<CompilerWarning>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.Errors.CompilerWarning>
+  nameWithType.vb: List(Of CompilerWarning)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.Errors.CompilerWarning)
+  name.vb: List(Of CompilerWarning)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.Errors.CompilerWarning
+    name: CompilerWarning
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.Errors.CompilerWarning
+    name: CompilerWarning
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PascalABCCompiler.ICompiler.ParseText*
+  commentId: Overload:PascalABCCompiler.ICompiler.ParseText
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_ParseText_System_String_System_String_System_Collections_Generic_List_PascalABCCompiler_Errors_Error__System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__
+  name: ParseText
+  nameWithType: ICompiler.ParseText
+  fullName: PascalABCCompiler.ICompiler.ParseText
+- uid: System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Error>
+  nameWithType: List<Error>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.Errors.Error>
+  nameWithType.vb: List(Of Error)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.Errors.Error)
+  name.vb: List(Of Error)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.Errors.Error
+    name: Error
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.Errors.Error
+    name: Error
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.SyntaxTree.compilation_unit
+  commentId: T:PascalABCCompiler.SyntaxTree.compilation_unit
+  parent: PascalABCCompiler.SyntaxTree
+  isExternal: true
+  name: compilation_unit
+  nameWithType: compilation_unit
+  fullName: PascalABCCompiler.SyntaxTree.compilation_unit
+- uid: PascalABCCompiler.SyntaxTree
+  commentId: N:PascalABCCompiler.SyntaxTree
+  isExternal: true
+  name: PascalABCCompiler.SyntaxTree
+  nameWithType: PascalABCCompiler.SyntaxTree
+  fullName: PascalABCCompiler.SyntaxTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SyntaxTree
+    name: SyntaxTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SyntaxTree
+    name: SyntaxTree
+    isExternal: true
+- uid: PascalABCCompiler.ICompiler.GetSourceFileText*
+  commentId: Overload:PascalABCCompiler.ICompiler.GetSourceFileText
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_GetSourceFileText_System_String_
+  name: GetSourceFileText
+  nameWithType: ICompiler.GetSourceFileText
+  fullName: PascalABCCompiler.ICompiler.GetSourceFileText
+- uid: PascalABCCompiler.ICompiler.PABCCodeHealth*
+  commentId: Overload:PascalABCCompiler.ICompiler.PABCCodeHealth
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_PABCCodeHealth
+  name: PABCCodeHealth
+  nameWithType: ICompiler.PABCCodeHealth
+  fullName: PascalABCCompiler.ICompiler.PABCCodeHealth
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PascalABCCompiler.ICompiler.SemanticTreeConvertersController*
+  commentId: Overload:PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_SemanticTreeConvertersController
+  name: SemanticTreeConvertersController
+  nameWithType: ICompiler.SemanticTreeConvertersController
+  fullName: PascalABCCompiler.ICompiler.SemanticTreeConvertersController
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  name: SemanticTreeConvertersController
+  nameWithType: SemanticTreeConvertersController
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.ICompiler.SemanticTree*
+  commentId: Overload:PascalABCCompiler.ICompiler.SemanticTree
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_SemanticTree
+  name: SemanticTree
+  nameWithType: ICompiler.SemanticTree
+  fullName: PascalABCCompiler.ICompiler.SemanticTree
+- uid: PascalABCCompiler.SemanticTree.IProgramNode
+  commentId: T:PascalABCCompiler.SemanticTree.IProgramNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: IProgramNode
+  nameWithType: IProgramNode
+  fullName: PascalABCCompiler.SemanticTree.IProgramNode
+- uid: PascalABCCompiler.SemanticTree
+  commentId: N:PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: PascalABCCompiler.SemanticTree
+  nameWithType: PascalABCCompiler.SemanticTree
+  fullName: PascalABCCompiler.SemanticTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+- uid: PascalABCCompiler.ICompiler.LinesCompiled*
+  commentId: Overload:PascalABCCompiler.ICompiler.LinesCompiled
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_LinesCompiled
+  name: LinesCompiled
+  nameWithType: ICompiler.LinesCompiled
+  fullName: PascalABCCompiler.ICompiler.LinesCompiled
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: PascalABCCompiler.ICompiler.InternalDebug*
+  commentId: Overload:PascalABCCompiler.ICompiler.InternalDebug
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_InternalDebug
+  name: InternalDebug
+  nameWithType: ICompiler.InternalDebug
+  fullName: PascalABCCompiler.ICompiler.InternalDebug
+- uid: PascalABCCompiler.CompilerInternalDebug
+  commentId: T:PascalABCCompiler.CompilerInternalDebug
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerInternalDebug.html
+  name: CompilerInternalDebug
+  nameWithType: CompilerInternalDebug
+  fullName: PascalABCCompiler.CompilerInternalDebug
+- uid: PascalABCCompiler.ICompiler.State*
+  commentId: Overload:PascalABCCompiler.ICompiler.State
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_State
+  name: State
+  nameWithType: ICompiler.State
+  fullName: PascalABCCompiler.ICompiler.State
+- uid: PascalABCCompiler.CompilerState
+  commentId: T:PascalABCCompiler.CompilerState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerState.html
+  name: CompilerState
+  nameWithType: CompilerState
+  fullName: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.ICompiler.SupportedSourceFiles*
+  commentId: Overload:PascalABCCompiler.ICompiler.SupportedSourceFiles
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_SupportedSourceFiles
+  name: SupportedSourceFiles
+  nameWithType: ICompiler.SupportedSourceFiles
+  fullName: PascalABCCompiler.ICompiler.SupportedSourceFiles
+- uid: PascalABCCompiler.SupportedSourceFile[]
+  isExternal: true
+  href: PascalABCCompiler.SupportedSourceFile.html
+  name: SupportedSourceFile[]
+  nameWithType: SupportedSourceFile[]
+  fullName: PascalABCCompiler.SupportedSourceFile[]
+  nameWithType.vb: SupportedSourceFile()
+  fullName.vb: PascalABCCompiler.SupportedSourceFile()
+  name.vb: SupportedSourceFile()
+  spec.csharp:
+  - uid: PascalABCCompiler.SupportedSourceFile
+    name: SupportedSourceFile
+    isExternal: true
+    href: PascalABCCompiler.SupportedSourceFile.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PascalABCCompiler.SupportedSourceFile
+    name: SupportedSourceFile
+    isExternal: true
+    href: PascalABCCompiler.SupportedSourceFile.html
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.ICompiler.SupportedProjectFiles*
+  commentId: Overload:PascalABCCompiler.ICompiler.SupportedProjectFiles
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_SupportedProjectFiles
+  name: SupportedProjectFiles
+  nameWithType: ICompiler.SupportedProjectFiles
+  fullName: PascalABCCompiler.ICompiler.SupportedProjectFiles
+- uid: PascalABCCompiler.ICompiler.CompilerOptions*
+  commentId: Overload:PascalABCCompiler.ICompiler.CompilerOptions
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_CompilerOptions
+  name: CompilerOptions
+  nameWithType: ICompiler.CompilerOptions
+  fullName: PascalABCCompiler.ICompiler.CompilerOptions
+- uid: PascalABCCompiler.CompilerOptions
+  commentId: T:PascalABCCompiler.CompilerOptions
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions
+  nameWithType: CompilerOptions
+  fullName: PascalABCCompiler.CompilerOptions
+- uid: PascalABCCompiler.ICompiler.ErrorsList*
+  commentId: Overload:PascalABCCompiler.ICompiler.ErrorsList
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_ErrorsList
+  name: ErrorsList
+  nameWithType: ICompiler.ErrorsList
+  fullName: PascalABCCompiler.ICompiler.ErrorsList
+- uid: PascalABCCompiler.ICompiler.Warnings*
+  commentId: Overload:PascalABCCompiler.ICompiler.Warnings
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_Warnings
+  name: Warnings
+  nameWithType: ICompiler.Warnings
+  fullName: PascalABCCompiler.ICompiler.Warnings
+- uid: PascalABCCompiler.ICompiler.BeginOffset*
+  commentId: Overload:PascalABCCompiler.ICompiler.BeginOffset
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_BeginOffset
+  name: BeginOffset
+  nameWithType: ICompiler.BeginOffset
+  fullName: PascalABCCompiler.ICompiler.BeginOffset
+- uid: PascalABCCompiler.ICompiler.VarBeginOffset*
+  commentId: Overload:PascalABCCompiler.ICompiler.VarBeginOffset
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_VarBeginOffset
+  name: VarBeginOffset
+  nameWithType: ICompiler.VarBeginOffset
+  fullName: PascalABCCompiler.ICompiler.VarBeginOffset
+- uid: PascalABCCompiler.ICompiler.UnitTable*
+  commentId: Overload:PascalABCCompiler.ICompiler.UnitTable
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_UnitTable
+  name: UnitTable
+  nameWithType: ICompiler.UnitTable
+  fullName: PascalABCCompiler.ICompiler.UnitTable
+- uid: PascalABCCompiler.CompilationUnitHashTable
+  commentId: T:PascalABCCompiler.CompilationUnitHashTable
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnitHashTable.html
+  name: CompilationUnitHashTable
+  nameWithType: CompilationUnitHashTable
+  fullName: PascalABCCompiler.CompilationUnitHashTable
+- uid: PascalABCCompiler.ICompiler.SourceFilesProvider*
+  commentId: Overload:PascalABCCompiler.ICompiler.SourceFilesProvider
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_SourceFilesProvider
+  name: SourceFilesProvider
+  nameWithType: ICompiler.SourceFilesProvider
+  fullName: PascalABCCompiler.ICompiler.SourceFilesProvider
+- uid: PascalABCCompiler.SourceFilesProviderDelegate
+  commentId: T:PascalABCCompiler.SourceFilesProviderDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  name: SourceFilesProviderDelegate
+  nameWithType: SourceFilesProviderDelegate
+  fullName: PascalABCCompiler.SourceFilesProviderDelegate
+- uid: PascalABCCompiler.ICompiler.CompilerType*
+  commentId: Overload:PascalABCCompiler.ICompiler.CompilerType
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html#PascalABCCompiler_ICompiler_CompilerType
+  name: CompilerType
+  nameWithType: ICompiler.CompilerType
+  fullName: PascalABCCompiler.ICompiler.CompilerType
+- uid: PascalABCCompiler.CompilerType
+  commentId: T:PascalABCCompiler.CompilerType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerType.html
+  name: CompilerType
+  nameWithType: CompilerType
+  fullName: PascalABCCompiler.CompilerType
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  commentId: T:PascalABCCompiler.ChangeCompilerStateEventDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html
+  name: ChangeCompilerStateEventDelegate
+  nameWithType: ChangeCompilerStateEventDelegate
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate

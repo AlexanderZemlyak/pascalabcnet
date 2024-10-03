@@ -1,0 +1,333 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  id: ISemanticTreeConverter
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert(PascalABCCompiler.ICompiler,PascalABCCompiler.SemanticTree.IProgramNode)
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+  - PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+  langs:
+  - csharp
+  - vb
+  name: ISemanticTreeConverter
+  nameWithType: ISemanticTreeConverter
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public interface ISemanticTreeConverter
+    content.vb: Public Interface ISemanticTreeConverter
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert(PascalABCCompiler.ICompiler,PascalABCCompiler.SemanticTree.IProgramNode)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert(PascalABCCompiler.ICompiler,PascalABCCompiler.SemanticTree.IProgramNode)
+  id: Convert(PascalABCCompiler.ICompiler,PascalABCCompiler.SemanticTree.IProgramNode)
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: Convert(ICompiler, IProgramNode)
+  nameWithType: ISemanticTreeConverter.Convert(ICompiler, IProgramNode)
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert(PascalABCCompiler.ICompiler, PascalABCCompiler.SemanticTree.IProgramNode)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: IProgramNode Convert(ICompiler Compiler, IProgramNode ProgramNode)
+    parameters:
+    - id: Compiler
+      type: PascalABCCompiler.ICompiler
+    - id: ProgramNode
+      type: PascalABCCompiler.SemanticTree.IProgramNode
+    return:
+      type: PascalABCCompiler.SemanticTree.IProgramNode
+    content.vb: Function Convert(Compiler As ICompiler, ProgramNode As IProgramNode) As IProgramNode
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+  id: Name
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ISemanticTreeConverter.Name
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+  id: Version
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: ISemanticTreeConverter.Version
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: string Version { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Version As String
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+  id: Description
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ISemanticTreeConverter.Description
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: string Description { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Description As String
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+  id: Copyright
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: Copyright
+  nameWithType: ISemanticTreeConverter.Copyright
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: string Copyright { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Copyright As String
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+  id: ConverterType
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: ConverterType
+  nameWithType: ISemanticTreeConverter.ConverterType
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: ConverterType ConverterType { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ConverterType
+    content.vb: ReadOnly Property ConverterType As ConverterType
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType*
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+  id: ExecutionOrder
+  parent: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: ExecutionOrder
+  nameWithType: ISemanticTreeConverter.ExecutionOrder
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: ExecutionOrder ExecutionOrder { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+    content.vb: ReadOnly Property ExecutionOrder As ExecutionOrder
+  overload: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder*
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_Convert_PascalABCCompiler_ICompiler_PascalABCCompiler_SemanticTree_IProgramNode_
+  name: Convert
+  nameWithType: ISemanticTreeConverter.Convert
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Convert
+- uid: PascalABCCompiler.ICompiler
+  commentId: T:PascalABCCompiler.ICompiler
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html
+  name: ICompiler
+  nameWithType: ICompiler
+  fullName: PascalABCCompiler.ICompiler
+- uid: PascalABCCompiler.SemanticTree.IProgramNode
+  commentId: T:PascalABCCompiler.SemanticTree.IProgramNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: IProgramNode
+  nameWithType: IProgramNode
+  fullName: PascalABCCompiler.SemanticTree.IProgramNode
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.SemanticTree
+  commentId: N:PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: PascalABCCompiler.SemanticTree
+  nameWithType: PascalABCCompiler.SemanticTree
+  fullName: PascalABCCompiler.SemanticTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_Name
+  name: Name
+  nameWithType: ISemanticTreeConverter.Name
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_Version
+  name: Version
+  nameWithType: ISemanticTreeConverter.Version
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Version
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_Description
+  name: Description
+  nameWithType: ISemanticTreeConverter.Description
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Description
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_Copyright
+  name: Copyright
+  nameWithType: ISemanticTreeConverter.Copyright
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.Copyright
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_ConverterType
+  name: ConverterType
+  nameWithType: ISemanticTreeConverter.ConverterType
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ConverterType
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ConverterType
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ConverterType.html
+  name: ConverterType
+  nameWithType: ConverterType
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html#PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_ExecutionOrder
+  name: ExecutionOrder
+  nameWithType: ISemanticTreeConverter.ExecutionOrder
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.ExecutionOrder
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.html
+  name: ExecutionOrder
+  nameWithType: ExecutionOrder
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder

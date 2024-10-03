@@ -1,0 +1,103 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.IRemoteCompiler
+  commentId: T:PascalABCCompiler.IRemoteCompiler
+  id: IRemoteCompiler
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+  - PascalABCCompiler.IRemoteCompiler.RemoteCompilerChannelAction
+  langs:
+  - csharp
+  - vb
+  name: IRemoteCompiler
+  nameWithType: IRemoteCompiler
+  fullName: PascalABCCompiler.IRemoteCompiler
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface IRemoteCompiler
+    content.vb: Public Interface IRemoteCompiler
+- uid: PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+  commentId: P:PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+  id: MaxProcessMemoryMB
+  parent: PascalABCCompiler.IRemoteCompiler
+  langs:
+  - csharp
+  - vb
+  name: MaxProcessMemoryMB
+  nameWithType: IRemoteCompiler.MaxProcessMemoryMB
+  fullName: PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int MaxProcessMemoryMB { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property MaxProcessMemoryMB As Integer
+  overload: PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB*
+- uid: PascalABCCompiler.IRemoteCompiler.RemoteCompilerChannelAction
+  commentId: E:PascalABCCompiler.IRemoteCompiler.RemoteCompilerChannelAction
+  id: RemoteCompilerChannelAction
+  parent: PascalABCCompiler.IRemoteCompiler
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerChannelAction
+  nameWithType: IRemoteCompiler.RemoteCompilerChannelAction
+  fullName: PascalABCCompiler.IRemoteCompiler.RemoteCompilerChannelAction
+  type: Event
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: event RemoteCompilerChannelEventDelegate RemoteCompilerChannelAction
+    return:
+      type: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+    content.vb: Event RemoteCompilerChannelAction As RemoteCompilerChannelEventDelegate
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB*
+  commentId: Overload:PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+  isExternal: true
+  href: PascalABCCompiler.IRemoteCompiler.html#PascalABCCompiler_IRemoteCompiler_MaxProcessMemoryMB
+  name: MaxProcessMemoryMB
+  nameWithType: IRemoteCompiler.MaxProcessMemoryMB
+  fullName: PascalABCCompiler.IRemoteCompiler.MaxProcessMemoryMB
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html
+  name: RemoteCompilerChannelEventDelegate
+  nameWithType: RemoteCompilerChannelEventDelegate
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate

@@ -1,0 +1,151 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.DotNetKind
+  commentId: T:PascalABCCompiler.PCU.DotNetKind
+  id: DotNetKind
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.DotNetKind.Constructor
+  - PascalABCCompiler.PCU.DotNetKind.Field
+  - PascalABCCompiler.PCU.DotNetKind.Method
+  - PascalABCCompiler.PCU.DotNetKind.Property
+  - PascalABCCompiler.PCU.DotNetKind.Type
+  langs:
+  - csharp
+  - vb
+  name: DotNetKind
+  nameWithType: DotNetKind
+  fullName: PascalABCCompiler.PCU.DotNetKind
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public enum DotNetKind
+    content.vb: Public Enum DotNetKind
+- uid: PascalABCCompiler.PCU.DotNetKind.Field
+  commentId: F:PascalABCCompiler.PCU.DotNetKind.Field
+  id: Field
+  parent: PascalABCCompiler.PCU.DotNetKind
+  langs:
+  - csharp
+  - vb
+  name: Field
+  nameWithType: DotNetKind.Field
+  fullName: PascalABCCompiler.PCU.DotNetKind.Field
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Field = 0
+    return:
+      type: PascalABCCompiler.PCU.DotNetKind
+- uid: PascalABCCompiler.PCU.DotNetKind.Method
+  commentId: F:PascalABCCompiler.PCU.DotNetKind.Method
+  id: Method
+  parent: PascalABCCompiler.PCU.DotNetKind
+  langs:
+  - csharp
+  - vb
+  name: Method
+  nameWithType: DotNetKind.Method
+  fullName: PascalABCCompiler.PCU.DotNetKind.Method
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Method = 1
+    return:
+      type: PascalABCCompiler.PCU.DotNetKind
+- uid: PascalABCCompiler.PCU.DotNetKind.Constructor
+  commentId: F:PascalABCCompiler.PCU.DotNetKind.Constructor
+  id: Constructor
+  parent: PascalABCCompiler.PCU.DotNetKind
+  langs:
+  - csharp
+  - vb
+  name: Constructor
+  nameWithType: DotNetKind.Constructor
+  fullName: PascalABCCompiler.PCU.DotNetKind.Constructor
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Constructor = 2
+    return:
+      type: PascalABCCompiler.PCU.DotNetKind
+- uid: PascalABCCompiler.PCU.DotNetKind.Type
+  commentId: F:PascalABCCompiler.PCU.DotNetKind.Type
+  id: Type
+  parent: PascalABCCompiler.PCU.DotNetKind
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: DotNetKind.Type
+  fullName: PascalABCCompiler.PCU.DotNetKind.Type
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Type = 3
+    return:
+      type: PascalABCCompiler.PCU.DotNetKind
+- uid: PascalABCCompiler.PCU.DotNetKind.Property
+  commentId: F:PascalABCCompiler.PCU.DotNetKind.Property
+  id: Property
+  parent: PascalABCCompiler.PCU.DotNetKind
+  langs:
+  - csharp
+  - vb
+  name: Property
+  nameWithType: DotNetKind.Property
+  fullName: PascalABCCompiler.PCU.DotNetKind.Property
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Property = 4
+    return:
+      type: PascalABCCompiler.PCU.DotNetKind
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: PascalABCCompiler.PCU.DotNetKind
+  commentId: T:PascalABCCompiler.PCU.DotNetKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.DotNetKind.html
+  name: DotNetKind
+  nameWithType: DotNetKind
+  fullName: PascalABCCompiler.PCU.DotNetKind

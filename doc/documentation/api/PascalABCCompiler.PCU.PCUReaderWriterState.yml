@@ -1,0 +1,151 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState
+  commentId: T:PascalABCCompiler.PCU.PCUReaderWriterState
+  id: PCUReaderWriterState
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.PCUReaderWriterState.BeginReadTree
+  - PascalABCCompiler.PCU.PCUReaderWriterState.BeginSaveTree
+  - PascalABCCompiler.PCU.PCUReaderWriterState.EndReadTree
+  - PascalABCCompiler.PCU.PCUReaderWriterState.EndSaveTree
+  - PascalABCCompiler.PCU.PCUReaderWriterState.ErrorSaveTree
+  langs:
+  - csharp
+  - vb
+  name: PCUReaderWriterState
+  nameWithType: PCUReaderWriterState
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public enum PCUReaderWriterState
+    content.vb: Public Enum PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState.BeginReadTree
+  commentId: F:PascalABCCompiler.PCU.PCUReaderWriterState.BeginReadTree
+  id: BeginReadTree
+  parent: PascalABCCompiler.PCU.PCUReaderWriterState
+  langs:
+  - csharp
+  - vb
+  name: BeginReadTree
+  nameWithType: PCUReaderWriterState.BeginReadTree
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState.BeginReadTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: BeginReadTree = 0
+    return:
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState.EndReadTree
+  commentId: F:PascalABCCompiler.PCU.PCUReaderWriterState.EndReadTree
+  id: EndReadTree
+  parent: PascalABCCompiler.PCU.PCUReaderWriterState
+  langs:
+  - csharp
+  - vb
+  name: EndReadTree
+  nameWithType: PCUReaderWriterState.EndReadTree
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState.EndReadTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: EndReadTree = 1
+    return:
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState.BeginSaveTree
+  commentId: F:PascalABCCompiler.PCU.PCUReaderWriterState.BeginSaveTree
+  id: BeginSaveTree
+  parent: PascalABCCompiler.PCU.PCUReaderWriterState
+  langs:
+  - csharp
+  - vb
+  name: BeginSaveTree
+  nameWithType: PCUReaderWriterState.BeginSaveTree
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState.BeginSaveTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: BeginSaveTree = 2
+    return:
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState.EndSaveTree
+  commentId: F:PascalABCCompiler.PCU.PCUReaderWriterState.EndSaveTree
+  id: EndSaveTree
+  parent: PascalABCCompiler.PCU.PCUReaderWriterState
+  langs:
+  - csharp
+  - vb
+  name: EndSaveTree
+  nameWithType: PCUReaderWriterState.EndSaveTree
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState.EndSaveTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: EndSaveTree = 3
+    return:
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState.ErrorSaveTree
+  commentId: F:PascalABCCompiler.PCU.PCUReaderWriterState.ErrorSaveTree
+  id: ErrorSaveTree
+  parent: PascalABCCompiler.PCU.PCUReaderWriterState
+  langs:
+  - csharp
+  - vb
+  name: ErrorSaveTree
+  nameWithType: PCUReaderWriterState.ErrorSaveTree
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState.ErrorSaveTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: ErrorSaveTree = 4
+    return:
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState
+  commentId: T:PascalABCCompiler.PCU.PCUReaderWriterState
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReaderWriterState.html
+  name: PCUReaderWriterState
+  nameWithType: PCUReaderWriterState
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState

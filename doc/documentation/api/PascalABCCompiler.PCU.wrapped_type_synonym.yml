@@ -1,0 +1,809 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.wrapped_type_synonym
+  commentId: T:PascalABCCompiler.PCU.wrapped_type_synonym
+  id: wrapped_type_synonym
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.wrapped_type_synonym.#ctor(PascalABCCompiler.PCU.PCUReader,System.String,System.Int32)
+  - PascalABCCompiler.PCU.wrapped_type_synonym.name
+  langs:
+  - csharp
+  - vb
+  name: wrapped_type_synonym
+  nameWithType: wrapped_type_synonym
+  fullName: PascalABCCompiler.PCU.wrapped_type_synonym
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: 'public class wrapped_type_synonym : wrapped_definition_node, IDefinitionNode, ISemanticNode'
+    content.vb: Public Class wrapped_type_synonym Inherits wrapped_definition_node Implements IDefinitionNode, ISemanticNode
+  inheritance:
+  - System.Object
+  - PascalABCCompiler.TreeRealization.semantic_node
+  - PascalABCCompiler.TreeRealization.definition_node
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node
+  implements:
+  - PascalABCCompiler.SemanticTree.IDefinitionNode
+  - PascalABCCompiler.SemanticTree.ISemanticNode
+  inheritedMembers:
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node.offset
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node.is_synonim
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node.PCUReader
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node.general_node_type
+  - PascalABCCompiler.TreeRealization.wrapped_definition_node.semantic_node_type
+  - PascalABCCompiler.TreeRealization.definition_node.doc
+  - PascalABCCompiler.TreeRealization.definition_node._attributes
+  - PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  - PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  - PascalABCCompiler.TreeRealization.definition_node.attributes
+  - PascalABCCompiler.TreeRealization.definition_node.Attributes
+  - PascalABCCompiler.TreeRealization.definition_node.documentation
+  - PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  - PascalABCCompiler.TreeRealization.definition_node.location
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.PCU.wrapped_type_synonym.name
+  commentId: F:PascalABCCompiler.PCU.wrapped_type_synonym.name
+  id: name
+  parent: PascalABCCompiler.PCU.wrapped_type_synonym
+  langs:
+  - csharp
+  - vb
+  name: name
+  nameWithType: wrapped_type_synonym.name
+  fullName: PascalABCCompiler.PCU.wrapped_type_synonym.name
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public string name
+    return:
+      type: System.String
+    content.vb: Public name As String
+- uid: PascalABCCompiler.PCU.wrapped_type_synonym.#ctor(PascalABCCompiler.PCU.PCUReader,System.String,System.Int32)
+  commentId: M:PascalABCCompiler.PCU.wrapped_type_synonym.#ctor(PascalABCCompiler.PCU.PCUReader,System.String,System.Int32)
+  id: '#ctor(PascalABCCompiler.PCU.PCUReader,System.String,System.Int32)'
+  parent: PascalABCCompiler.PCU.wrapped_type_synonym
+  langs:
+  - csharp
+  - vb
+  name: wrapped_type_synonym(PCUReader, string, int)
+  nameWithType: wrapped_type_synonym.wrapped_type_synonym(PCUReader, string, int)
+  fullName: PascalABCCompiler.PCU.wrapped_type_synonym.wrapped_type_synonym(PascalABCCompiler.PCU.PCUReader, string, int)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public wrapped_type_synonym(PCUReader pr, string name, int offset)
+    parameters:
+    - id: pr
+      type: PascalABCCompiler.PCU.PCUReader
+    - id: name
+      type: System.String
+    - id: offset
+      type: System.Int32
+    content.vb: Public Sub New(pr As PCUReader, name As String, offset As Integer)
+  overload: PascalABCCompiler.PCU.wrapped_type_synonym.#ctor*
+  nameWithType.vb: wrapped_type_synonym.New(PCUReader, String, Integer)
+  fullName.vb: PascalABCCompiler.PCU.wrapped_type_synonym.New(PascalABCCompiler.PCU.PCUReader, String, Integer)
+  name.vb: New(PCUReader, String, Integer)
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PascalABCCompiler.TreeRealization.semantic_node
+  commentId: T:PascalABCCompiler.TreeRealization.semantic_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: semantic_node
+  nameWithType: semantic_node
+  fullName: PascalABCCompiler.TreeRealization.semantic_node
+- uid: PascalABCCompiler.TreeRealization.definition_node
+  commentId: T:PascalABCCompiler.TreeRealization.definition_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: definition_node
+  nameWithType: definition_node
+  fullName: PascalABCCompiler.TreeRealization.definition_node
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  commentId: T:PascalABCCompiler.TreeRealization.wrapped_definition_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: wrapped_definition_node
+  nameWithType: wrapped_definition_node
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node
+- uid: PascalABCCompiler.SemanticTree.IDefinitionNode
+  commentId: T:PascalABCCompiler.SemanticTree.IDefinitionNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: IDefinitionNode
+  nameWithType: IDefinitionNode
+  fullName: PascalABCCompiler.SemanticTree.IDefinitionNode
+- uid: PascalABCCompiler.SemanticTree.ISemanticNode
+  commentId: T:PascalABCCompiler.SemanticTree.ISemanticNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: ISemanticNode
+  nameWithType: ISemanticNode
+  fullName: PascalABCCompiler.SemanticTree.ISemanticNode
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node.offset
+  commentId: F:PascalABCCompiler.TreeRealization.wrapped_definition_node.offset
+  parent: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  isExternal: true
+  name: offset
+  nameWithType: wrapped_definition_node.offset
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node.offset
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node.is_synonim
+  commentId: F:PascalABCCompiler.TreeRealization.wrapped_definition_node.is_synonim
+  parent: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  isExternal: true
+  name: is_synonim
+  nameWithType: wrapped_definition_node.is_synonim
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node.is_synonim
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node.PCUReader
+  commentId: F:PascalABCCompiler.TreeRealization.wrapped_definition_node.PCUReader
+  parent: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  isExternal: true
+  name: PCUReader
+  nameWithType: wrapped_definition_node.PCUReader
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node.PCUReader
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node.general_node_type
+  commentId: P:PascalABCCompiler.TreeRealization.wrapped_definition_node.general_node_type
+  parent: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  isExternal: true
+  name: general_node_type
+  nameWithType: wrapped_definition_node.general_node_type
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node.general_node_type
+- uid: PascalABCCompiler.TreeRealization.wrapped_definition_node.semantic_node_type
+  commentId: P:PascalABCCompiler.TreeRealization.wrapped_definition_node.semantic_node_type
+  parent: PascalABCCompiler.TreeRealization.wrapped_definition_node
+  isExternal: true
+  name: semantic_node_type
+  nameWithType: wrapped_definition_node.semantic_node_type
+  fullName: PascalABCCompiler.TreeRealization.wrapped_definition_node.semantic_node_type
+- uid: PascalABCCompiler.TreeRealization.definition_node.doc
+  commentId: F:PascalABCCompiler.TreeRealization.definition_node.doc
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: doc
+  nameWithType: definition_node.doc
+  fullName: PascalABCCompiler.TreeRealization.definition_node.doc
+- uid: PascalABCCompiler.TreeRealization.definition_node._attributes
+  commentId: F:PascalABCCompiler.TreeRealization.definition_node._attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: _attributes
+  nameWithType: definition_node._attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node._attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  commentId: M:PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: visit(ISemanticVisitor)
+  nameWithType: definition_node.visit(ISemanticVisitor)
+  fullName: PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+    name: visit
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ISemanticVisitor
+    name: ISemanticVisitor
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+    name: visit
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ISemanticVisitor
+    name: ISemanticVisitor
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  commentId: M:PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: find_by_location(int, int)
+  nameWithType: definition_node.find_by_location(int, int)
+  fullName: PascalABCCompiler.TreeRealization.definition_node.find_by_location(int, int)
+  nameWithType.vb: definition_node.find_by_location(Integer, Integer)
+  fullName.vb: PascalABCCompiler.TreeRealization.definition_node.find_by_location(Integer, Integer)
+  name.vb: find_by_location(Integer, Integer)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+    name: find_by_location
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+    name: find_by_location
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.definition_node.attributes
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: attributes
+  nameWithType: definition_node.attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node.attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.Attributes
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.Attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: Attributes
+  nameWithType: definition_node.Attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node.Attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.documentation
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.documentation
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: documentation
+  nameWithType: definition_node.documentation
+  fullName: PascalABCCompiler.TreeRealization.definition_node.documentation
+- uid: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: IDefinitionNode.Documentation
+  nameWithType: definition_node.IDefinitionNode.Documentation
+  fullName: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  nameWithType.vb: definition_node.PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  name.vb: PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.IDefinitionNode
+    name: IDefinitionNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+    name: Documentation
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.definition_node.location
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.location
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: location
+  nameWithType: definition_node.location
+  fullName: PascalABCCompiler.TreeRealization.definition_node.location
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.TreeRealization
+  commentId: N:PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: PascalABCCompiler.TreeRealization
+  nameWithType: PascalABCCompiler.TreeRealization
+  fullName: PascalABCCompiler.TreeRealization
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+- uid: PascalABCCompiler.SemanticTree
+  commentId: N:PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: PascalABCCompiler.SemanticTree
+  nameWithType: PascalABCCompiler.SemanticTree
+  fullName: PascalABCCompiler.SemanticTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.PCU.wrapped_type_synonym.#ctor*
+  commentId: Overload:PascalABCCompiler.PCU.wrapped_type_synonym.#ctor
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_type_synonym.html#PascalABCCompiler_PCU_wrapped_type_synonym__ctor_PascalABCCompiler_PCU_PCUReader_System_String_System_Int32_
+  name: wrapped_type_synonym
+  nameWithType: wrapped_type_synonym.wrapped_type_synonym
+  fullName: PascalABCCompiler.PCU.wrapped_type_synonym.wrapped_type_synonym
+  nameWithType.vb: wrapped_type_synonym.New
+  fullName.vb: PascalABCCompiler.PCU.wrapped_type_synonym.New
+  name.vb: New
+- uid: PascalABCCompiler.PCU.PCUReader
+  commentId: T:PascalABCCompiler.PCU.PCUReader
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader
+  nameWithType: PCUReader
+  fullName: PascalABCCompiler.PCU.PCUReader
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

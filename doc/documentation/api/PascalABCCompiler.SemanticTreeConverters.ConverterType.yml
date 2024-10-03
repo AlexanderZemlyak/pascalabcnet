@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ConverterType
+  id: ConverterType
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.ConverterType.Analysis
+  - PascalABCCompiler.SemanticTreeConverters.ConverterType.CodeGenerator
+  - PascalABCCompiler.SemanticTreeConverters.ConverterType.Conversion
+  langs:
+  - csharp
+  - vb
+  name: ConverterType
+  nameWithType: ConverterType
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public enum ConverterType
+    content.vb: Public Enum ConverterType
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType.Conversion
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ConverterType.Conversion
+  id: Conversion
+  parent: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  langs:
+  - csharp
+  - vb
+  name: Conversion
+  nameWithType: ConverterType.Conversion
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType.Conversion
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: Conversion = 0
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ConverterType
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType.Analysis
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ConverterType.Analysis
+  id: Analysis
+  parent: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  langs:
+  - csharp
+  - vb
+  name: Analysis
+  nameWithType: ConverterType.Analysis
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType.Analysis
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: Analysis = 1
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ConverterType
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType.CodeGenerator
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ConverterType.CodeGenerator
+  id: CodeGenerator
+  parent: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  langs:
+  - csharp
+  - vb
+  name: CodeGenerator
+  nameWithType: ConverterType.CodeGenerator
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType.CodeGenerator
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: CodeGenerator = 2
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ConverterType
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.SemanticTreeConverters.ConverterType
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ConverterType
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ConverterType.html
+  name: ConverterType
+  nameWithType: ConverterType
+  fullName: PascalABCCompiler.SemanticTreeConverters.ConverterType

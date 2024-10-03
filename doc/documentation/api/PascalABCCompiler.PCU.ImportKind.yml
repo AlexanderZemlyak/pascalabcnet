@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.ImportKind
+  commentId: T:PascalABCCompiler.PCU.ImportKind
+  id: ImportKind
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.ImportKind.Common
+  - PascalABCCompiler.PCU.ImportKind.DotNet
+  langs:
+  - csharp
+  - vb
+  name: ImportKind
+  nameWithType: ImportKind
+  fullName: PascalABCCompiler.PCU.ImportKind
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public enum ImportKind
+    content.vb: Public Enum ImportKind
+- uid: PascalABCCompiler.PCU.ImportKind.Common
+  commentId: F:PascalABCCompiler.PCU.ImportKind.Common
+  id: Common
+  parent: PascalABCCompiler.PCU.ImportKind
+  langs:
+  - csharp
+  - vb
+  name: Common
+  nameWithType: ImportKind.Common
+  fullName: PascalABCCompiler.PCU.ImportKind.Common
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Common = 0
+    return:
+      type: PascalABCCompiler.PCU.ImportKind
+- uid: PascalABCCompiler.PCU.ImportKind.DotNet
+  commentId: F:PascalABCCompiler.PCU.ImportKind.DotNet
+  id: DotNet
+  parent: PascalABCCompiler.PCU.ImportKind
+  langs:
+  - csharp
+  - vb
+  name: DotNet
+  nameWithType: ImportKind.DotNet
+  fullName: PascalABCCompiler.PCU.ImportKind.DotNet
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: DotNet = 1
+    return:
+      type: PascalABCCompiler.PCU.ImportKind
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: PascalABCCompiler.PCU.ImportKind
+  commentId: T:PascalABCCompiler.PCU.ImportKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.ImportKind.html
+  name: ImportKind
+  nameWithType: ImportKind
+  fullName: PascalABCCompiler.PCU.ImportKind

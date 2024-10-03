@@ -1,0 +1,901 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class wrapped_common_type_node </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class wrapped_common_type_node ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PascalABCCompiler.PCU.wrapped_common_type_node">
+
+
+
+  <h1 id="PascalABCCompiler_PCU_wrapped_common_type_node" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node" class="text-break">
+Class wrapped_common_type_node  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="PascalABCCompiler.html">PascalABCCompiler</a>.<a class="xref" href="PascalABCCompiler.PCU.html">PCU</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Compiler.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class wrapped_common_type_node : common_type_node, ICommonTypeNode, ITypeNode, IDefinitionNode, ISemanticNode, INamespaceMemberNode, ILocated</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">semantic_node</span></div>
+      <div><span class="xref">definition_node</span></div>
+      <div><span class="xref">type_node</span></div>
+      <div><span class="xref">wrapped_type</span></div>
+      <div><span class="xref">common_type_node</span></div>
+      <div><span class="xref">wrapped_common_type_node</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ICommonTypeNode</span></div>
+      <div><span class="xref">ITypeNode</span></div>
+      <div><span class="xref">IDefinitionNode</span></div>
+      <div><span class="xref">ISemanticNode</span></div>
+      <div><span class="xref">INamespaceMemberNode</span></div>
+      <div><span class="xref">ILocated</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">common_type_node._name</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._type_access_level</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._base_type</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._comprehensive_namespace</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._methods</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._fields</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._properties</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._const_defs</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._events</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._default_property_node</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._loc</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.defined_in_scope</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_value</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_class</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._scope</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.has_default_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.has_explicit_default_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.has_user_defined_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._has_static_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._static_constr</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_generic_type_definition</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._base_generic_instance</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._runtime_initialization_marker</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._generic_type_container</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._generic_function_container</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._generic_params</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_interface</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_delegate</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._forward_declaration_only</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._implementing_interfaces</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._original_template</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._depended_from_indefinite</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._type_special_kind</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._sealed</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_abstract</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.abstract_reason</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_partial</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_static</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._is_ficive</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node._parameters_eliminations</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">common_type_node.SetImplementingInterfaces(List&lt;ITypeNode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">common_type_node.SetDependedFromIndefinite(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">common_type_node.SetIsSealed(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">common_type_node.SetIsAbstract(bool, ClassAbstractReason)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">common_type_node.SetIsStatic(bool)</a>
+    </div>
+    <div>
+      <span class="xref">common_type_node.has_flags_attribute()</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.Merge(common_type_node)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.add_additional_enum_operations()</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.SetBaseType(type_node)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.SetBaseTypeIgnoringScope(type_node)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.SetName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.find(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.find(string, Scope, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.find_first_in_type(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.add_name(string, SymbolInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">common_type_node.add_generated_name(string, SymbolInfo)</a>
+    </div>
+    <div>
+      <span class="xref">common_type_node.visit(ISemanticVisitor)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.get_implicit_conversion_to(type_node)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.get_implicit_conversion_from(type_node)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.get_explicit_conversion_to(type_node)</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.get_explicit_conversion_from(type_node)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">common_type_node.get_instance(List&lt;type_node&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">common_type_node.has_static_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.static_constr</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.static_constructor</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.is_generic_type_definition</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.base_generic_instance</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.runtime_initialization_marker</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.runtime_initialization_marker</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.generic_type_container</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.generic_function_container</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.is_generic_parameter</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.generic_param_index</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.generic_params</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsInterface</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsEnum</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsDelegate</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ForwardDeclarationOnly</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ImplementingInterfaces</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.original_template</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.depended_from_indefinite</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsPartial</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsStatic</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsSealed</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsAbstract</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.AbstractReason</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.rank</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.type_special_kind</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.internal_type_special_kind</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.default_property</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.default_property_node</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.scope</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.const_defs</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.loc</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.location</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.Location</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.methods</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.fields</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.properties</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.events</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.internal_is_value</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.type_access_level</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.base_type</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.Scope</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.name</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.full_name</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.BaseFullName</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.PrintableName</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.low_bound</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.upper_bound</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.comprehensive_namespace</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.node_kind</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.semantic_node_type</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.methods</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.fields</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.properties</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.events</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ITypeNode.base_type</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.INamespaceMemberNode.comprehensive_namespace</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.constants</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.default_property</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.lower_value</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.ICommonTypeNode.upper_value</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.is_value</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.is_class</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.IsFictive</span>
+    </div>
+    <div>
+      <span class="xref">common_type_node.parameters_eliminations</span>
+    </div>
+    <div>
+      <span class="xref">wrapped_type.additional_names</span>
+    </div>
+    <div>
+      <span class="xref">wrapped_type.additional_generated_names</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">wrapped_type.add_additional_name(string, SymbolInfo, bool)</a>
+    </div>
+    <div>
+      <span class="xref">wrapped_type.clear_generated_names()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">wrapped_type.find_in_additional_names(string)</a>
+    </div>
+    <div>
+      <span class="xref">type_node.type_intersections</span>
+    </div>
+    <div>
+      <span class="xref">type_node.generated_type_intersections</span>
+    </div>
+    <div>
+      <span class="xref">type_node.internal_interfaces</span>
+    </div>
+    <div>
+      <span class="xref">type_node.is_ref_inited</span>
+    </div>
+    <div>
+      <span class="xref">type_node.is_nullable_inited</span>
+    </div>
+    <div>
+      <span class="xref">type_node._is_nullable_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node._ref_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node._element_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.element_type_recived</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ToString()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">type_node.add_intersection_node(type_node, type_intersection_node, bool)</a>
+    </div>
+    <div>
+      <span class="xref">type_node.clear_generated_intersections()</span>
+    </div>
+    <div>
+      <span class="xref">type_node.get_type_intersection(type_node)</span>
+    </div>
+    <div>
+      <span class="xref">type_node.add_internal_interface(internal_interface)</span>
+    </div>
+    <div>
+      <span class="xref">type_node.get_internal_interface(internal_interface_kind)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">type_node.find_first_in_type(string, Scope, bool)</a>
+    </div>
+    <div>
+      <span class="xref">type_node.is_standard_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.is_nullable_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ITypeNode.common_generic_function_container</span>
+    </div>
+    <div>
+      <span class="xref">type_node.IsPointer</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ImplementingInterfacesOrEmpty</span>
+    </div>
+    <div>
+      <span class="xref">type_node.is_generic_type_instance</span>
+    </div>
+    <div>
+      <span class="xref">type_node.instance_params</span>
+    </div>
+    <div>
+      <span class="xref">type_node.original_generic</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ref_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.general_node_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.is_value_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ITypeNode.type_special_kind</span>
+    </div>
+    <div>
+      <span class="xref">type_node.element_type</span>
+    </div>
+    <div>
+      <span class="xref">type_node.ITypeNode.element_type</span>
+    </div>
+    <div>
+      <span class="xref">definition_node.doc</span>
+    </div>
+    <div>
+      <span class="xref">definition_node._attributes</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">definition_node.find_by_location(int, int)</a>
+    </div>
+    <div>
+      <span class="xref">definition_node.attributes</span>
+    </div>
+    <div>
+      <span class="xref">definition_node.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">definition_node.documentation</span>
+    </div>
+    <div>
+      <span class="xref">definition_node.IDefinitionNode.Documentation</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldsetter">object.FieldSetter(string, string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldgetter">object.FieldGetter(string, string, ref object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo">object.GetFieldInfo(string, string)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PascalABCCompiler_PCU_wrapped_common_type_node__ctor_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.#ctor*"></a>
+
+  <h3 id="PascalABCCompiler_PCU_wrapped_common_type_node__ctor_PascalABCCompiler_PCU_PCUReader_PascalABCCompiler_TreeRealization_type_node_System_String_PascalABCCompiler_SemanticTree_type_access_level_PascalABCCompiler_TreeRealization_common_namespace_node_SymbolTable_ClassScope_PascalABCCompiler_TreeRealization_location_System_Int32_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.#ctor(PascalABCCompiler.PCU.PCUReader,PascalABCCompiler.TreeRealization.type_node,System.String,PascalABCCompiler.SemanticTree.type_access_level,PascalABCCompiler.TreeRealization.common_namespace_node,SymbolTable.ClassScope,PascalABCCompiler.TreeRealization.location,System.Int32)">
+  wrapped_common_type_node(PCUReader, type_node, string, type_access_level, common_namespace_node, ClassScope, location, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public wrapped_common_type_node(PCUReader pr, type_node base_type, string name, type_access_level type_access_level, common_namespace_node comprehensive_namespace, ClassScope cs, location loc, int offset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pr</code> <a class="xref" href="PascalABCCompiler.PCU.PCUReader.html">PCUReader</a></dt>
+    <dd></dd>
+    <dt><code>base_type</code> <span class="xref">type_node</span></dt>
+    <dd></dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>type_access_level</code> <span class="xref">type_access_level</span></dt>
+    <dd></dd>
+    <dt><code>comprehensive_namespace</code> <span class="xref">common_namespace_node</span></dt>
+    <dd></dd>
+    <dt><code>cs</code> <span class="xref">ClassScope</span></dt>
+    <dd></dd>
+    <dt><code>loc</code> <span class="xref">location</span></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="PascalABCCompiler_PCU_wrapped_common_type_node_offset" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.offset">
+  offset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int offset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_PCU_wrapped_common_type_node_pr" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.pr">
+  pr
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private PCUReader pr</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.PCU.PCUReader.html">PCUReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PascalABCCompiler_PCU_wrapped_common_type_node_find_in_type_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type*"></a>
+
+  <h3 id="PascalABCCompiler_PCU_wrapped_common_type_node_find_in_type_System_String_SymbolTable_Scope_PascalABCCompiler_TreeRealization_type_node_System_Boolean_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)">
+  find_in_type(string, Scope, type_node, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;SymbolInfo&gt; find_in_type(string name, Scope CurrentScope, type_node orig_generic_or_null = null, bool no_search_in_extension_methods = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>CurrentScope</code> <span class="xref">Scope</span></dt>
+    <dd></dd>
+    <dt><code>orig_generic_or_null</code> <span class="xref">type_node</span></dt>
+    <dd></dd>
+    <dt><code>no_search_in_extension_methods</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">SymbolInfo</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_PCU_wrapped_common_type_node_find_in_type_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type*"></a>
+
+  <h3 id="PascalABCCompiler_PCU_wrapped_common_type_node_find_in_type_System_String_System_Boolean_" data-uid="PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,System.Boolean)">
+  find_in_type(string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;SymbolInfo&gt; find_in_type(string name, bool no_search_in_extension_methods = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>no_search_in_extension_methods</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">SymbolInfo</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

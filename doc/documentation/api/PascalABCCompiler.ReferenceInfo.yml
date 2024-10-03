@@ -1,0 +1,697 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.ReferenceInfo
+  commentId: T:PascalABCCompiler.ReferenceInfo
+  id: ReferenceInfo
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ReferenceInfo.#ctor
+  - PascalABCCompiler.ReferenceInfo.#ctor(System.String,System.String)
+  - PascalABCCompiler.ReferenceInfo.AssemblyName
+  - PascalABCCompiler.ReferenceInfo.FullAssemblyName
+  - PascalABCCompiler.ReferenceInfo._assembly_name
+  - PascalABCCompiler.ReferenceInfo._full_assembly_name
+  - PascalABCCompiler.ReferenceInfo.assembly_name
+  - PascalABCCompiler.ReferenceInfo.full_assembly_name
+  langs:
+  - csharp
+  - vb
+  name: ReferenceInfo
+  nameWithType: ReferenceInfo
+  fullName: PascalABCCompiler.ReferenceInfo
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: 'public class ReferenceInfo : IReferenceInfo'
+    content.vb: Public Class ReferenceInfo Implements IReferenceInfo
+  inheritance:
+  - System.Object
+  implements:
+  - PascalABCCompiler.IReferenceInfo
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.ReferenceInfo._assembly_name
+  commentId: F:PascalABCCompiler.ReferenceInfo._assembly_name
+  id: _assembly_name
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: _assembly_name
+  nameWithType: ReferenceInfo._assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo._assembly_name
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private string _assembly_name
+    return:
+      type: System.String
+    content.vb: Private _assembly_name As String
+- uid: PascalABCCompiler.ReferenceInfo._full_assembly_name
+  commentId: F:PascalABCCompiler.ReferenceInfo._full_assembly_name
+  id: _full_assembly_name
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: _full_assembly_name
+  nameWithType: ReferenceInfo._full_assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo._full_assembly_name
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private string _full_assembly_name
+    return:
+      type: System.String
+    content.vb: Private _full_assembly_name As String
+- uid: PascalABCCompiler.ReferenceInfo.#ctor
+  commentId: M:PascalABCCompiler.ReferenceInfo.#ctor
+  id: '#ctor'
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: ReferenceInfo()
+  nameWithType: ReferenceInfo.ReferenceInfo()
+  fullName: PascalABCCompiler.ReferenceInfo.ReferenceInfo()
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public ReferenceInfo()
+    content.vb: Public Sub New()
+  overload: PascalABCCompiler.ReferenceInfo.#ctor*
+  nameWithType.vb: ReferenceInfo.New()
+  fullName.vb: PascalABCCompiler.ReferenceInfo.New()
+  name.vb: New()
+- uid: PascalABCCompiler.ReferenceInfo.#ctor(System.String,System.String)
+  commentId: M:PascalABCCompiler.ReferenceInfo.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: ReferenceInfo(string, string)
+  nameWithType: ReferenceInfo.ReferenceInfo(string, string)
+  fullName: PascalABCCompiler.ReferenceInfo.ReferenceInfo(string, string)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public ReferenceInfo(string assembly_name, string full_assembly_name)
+    parameters:
+    - id: assembly_name
+      type: System.String
+    - id: full_assembly_name
+      type: System.String
+    content.vb: Public Sub New(assembly_name As String, full_assembly_name As String)
+  overload: PascalABCCompiler.ReferenceInfo.#ctor*
+  nameWithType.vb: ReferenceInfo.New(String, String)
+  fullName.vb: PascalABCCompiler.ReferenceInfo.New(String, String)
+  name.vb: New(String, String)
+- uid: PascalABCCompiler.ReferenceInfo.assembly_name
+  commentId: P:PascalABCCompiler.ReferenceInfo.assembly_name
+  id: assembly_name
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: assembly_name
+  nameWithType: ReferenceInfo.assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo.assembly_name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public string assembly_name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property assembly_name As String
+  overload: PascalABCCompiler.ReferenceInfo.assembly_name*
+- uid: PascalABCCompiler.ReferenceInfo.full_assembly_name
+  commentId: P:PascalABCCompiler.ReferenceInfo.full_assembly_name
+  id: full_assembly_name
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: full_assembly_name
+  nameWithType: ReferenceInfo.full_assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo.full_assembly_name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public string full_assembly_name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property full_assembly_name As String
+  overload: PascalABCCompiler.ReferenceInfo.full_assembly_name*
+- uid: PascalABCCompiler.ReferenceInfo.AssemblyName
+  commentId: P:PascalABCCompiler.ReferenceInfo.AssemblyName
+  id: AssemblyName
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: AssemblyName
+  nameWithType: ReferenceInfo.AssemblyName
+  fullName: PascalABCCompiler.ReferenceInfo.AssemblyName
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  example: []
+  syntax:
+    content: public string AssemblyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssemblyName As String
+  overload: PascalABCCompiler.ReferenceInfo.AssemblyName*
+  implements:
+  - PascalABCCompiler.IReferenceInfo.AssemblyName
+- uid: PascalABCCompiler.ReferenceInfo.FullAssemblyName
+  commentId: P:PascalABCCompiler.ReferenceInfo.FullAssemblyName
+  id: FullAssemblyName
+  parent: PascalABCCompiler.ReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: FullAssemblyName
+  nameWithType: ReferenceInfo.FullAssemblyName
+  fullName: PascalABCCompiler.ReferenceInfo.FullAssemblyName
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  example: []
+  syntax:
+    content: public string FullAssemblyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FullAssemblyName As String
+  overload: PascalABCCompiler.ReferenceInfo.FullAssemblyName*
+  implements:
+  - PascalABCCompiler.IReferenceInfo.FullAssemblyName
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PascalABCCompiler.IReferenceInfo
+  commentId: T:PascalABCCompiler.IReferenceInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html
+  name: IReferenceInfo
+  nameWithType: IReferenceInfo
+  fullName: PascalABCCompiler.IReferenceInfo
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.ReferenceInfo.#ctor*
+  commentId: Overload:PascalABCCompiler.ReferenceInfo.#ctor
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html#PascalABCCompiler_ReferenceInfo__ctor
+  name: ReferenceInfo
+  nameWithType: ReferenceInfo.ReferenceInfo
+  fullName: PascalABCCompiler.ReferenceInfo.ReferenceInfo
+  nameWithType.vb: ReferenceInfo.New
+  fullName.vb: PascalABCCompiler.ReferenceInfo.New
+  name.vb: New
+- uid: PascalABCCompiler.ReferenceInfo.assembly_name*
+  commentId: Overload:PascalABCCompiler.ReferenceInfo.assembly_name
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html#PascalABCCompiler_ReferenceInfo_assembly_name
+  name: assembly_name
+  nameWithType: ReferenceInfo.assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo.assembly_name
+- uid: PascalABCCompiler.ReferenceInfo.full_assembly_name*
+  commentId: Overload:PascalABCCompiler.ReferenceInfo.full_assembly_name
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html#PascalABCCompiler_ReferenceInfo_full_assembly_name
+  name: full_assembly_name
+  nameWithType: ReferenceInfo.full_assembly_name
+  fullName: PascalABCCompiler.ReferenceInfo.full_assembly_name
+- uid: PascalABCCompiler.ReferenceInfo.AssemblyName*
+  commentId: Overload:PascalABCCompiler.ReferenceInfo.AssemblyName
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html#PascalABCCompiler_ReferenceInfo_AssemblyName
+  name: AssemblyName
+  nameWithType: ReferenceInfo.AssemblyName
+  fullName: PascalABCCompiler.ReferenceInfo.AssemblyName
+- uid: PascalABCCompiler.IReferenceInfo.AssemblyName
+  commentId: P:PascalABCCompiler.IReferenceInfo.AssemblyName
+  parent: PascalABCCompiler.IReferenceInfo
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html#PascalABCCompiler_IReferenceInfo_AssemblyName
+  name: AssemblyName
+  nameWithType: IReferenceInfo.AssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.AssemblyName
+- uid: PascalABCCompiler.ReferenceInfo.FullAssemblyName*
+  commentId: Overload:PascalABCCompiler.ReferenceInfo.FullAssemblyName
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html#PascalABCCompiler_ReferenceInfo_FullAssemblyName
+  name: FullAssemblyName
+  nameWithType: ReferenceInfo.FullAssemblyName
+  fullName: PascalABCCompiler.ReferenceInfo.FullAssemblyName
+- uid: PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  commentId: P:PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  parent: PascalABCCompiler.IReferenceInfo
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html#PascalABCCompiler_IReferenceInfo_FullAssemblyName
+  name: FullAssemblyName
+  nameWithType: IReferenceInfo.FullAssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.FullAssemblyName

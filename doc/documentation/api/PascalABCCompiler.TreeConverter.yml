@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.TreeConverter
+  commentId: N:PascalABCCompiler.TreeConverter
+  id: PascalABCCompiler.TreeConverter
+  children:
+  - PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter
+  langs:
+  - csharp
+  - vb
+  name: PascalABCCompiler.TreeConverter
+  nameWithType: PascalABCCompiler.TreeConverter
+  fullName: PascalABCCompiler.TreeConverter
+  type: Namespace
+  assemblies:
+  - Compiler
+references:
+- uid: PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter
+  commentId: T:PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter
+  parent: PascalABCCompiler.TreeConverter
+  isExternal: true
+  href: PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter.html
+  name: SyntaxTreeToSemanticTreeConverter
+  nameWithType: SyntaxTreeToSemanticTreeConverter
+  fullName: PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter
+- uid: PascalABCCompiler.TreeConverter
+  commentId: N:PascalABCCompiler.TreeConverter
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.TreeConverter
+  nameWithType: PascalABCCompiler.TreeConverter
+  fullName: PascalABCCompiler.TreeConverter
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html

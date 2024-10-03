@@ -1,0 +1,74 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventType
+  id: RemoteCompilerChannelEventType
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.RemoteCompilerChannelEventType.Receive
+  - PascalABCCompiler.RemoteCompilerChannelEventType.Send
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompilerChannelEventType
+  nameWithType: RemoteCompilerChannelEventType
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum RemoteCompilerChannelEventType
+    content.vb: Public Enum RemoteCompilerChannelEventType
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType.Send
+  commentId: F:PascalABCCompiler.RemoteCompilerChannelEventType.Send
+  id: Send
+  parent: PascalABCCompiler.RemoteCompilerChannelEventType
+  langs:
+  - csharp
+  - vb
+  name: Send
+  nameWithType: RemoteCompilerChannelEventType.Send
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType.Send
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Send = 0
+    return:
+      type: PascalABCCompiler.RemoteCompilerChannelEventType
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType.Receive
+  commentId: F:PascalABCCompiler.RemoteCompilerChannelEventType.Receive
+  id: Receive
+  parent: PascalABCCompiler.RemoteCompilerChannelEventType
+  langs:
+  - csharp
+  - vb
+  name: Receive
+  nameWithType: RemoteCompilerChannelEventType.Receive
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType.Receive
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Receive = 1
+    return:
+      type: PascalABCCompiler.RemoteCompilerChannelEventType
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventType.html
+  name: RemoteCompilerChannelEventType
+  nameWithType: RemoteCompilerChannelEventType
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType

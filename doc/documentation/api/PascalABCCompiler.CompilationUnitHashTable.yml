@@ -1,0 +1,1953 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilationUnitHashTable
+  commentId: T:PascalABCCompiler.CompilationUnitHashTable
+  id: CompilationUnitHashTable
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilationUnitHashTable.#ctor
+  - PascalABCCompiler.CompilationUnitHashTable.Item(System.String)
+  langs:
+  - csharp
+  - vb
+  name: CompilationUnitHashTable
+  nameWithType: CompilationUnitHashTable
+  fullName: PascalABCCompiler.CompilationUnitHashTable
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: 'public class CompilationUnitHashTable : Hashtable, IDictionary, ICollection, IEnumerable, ISerializable, IDeserializationCallback, ICloneable'
+    content.vb: Public Class CompilationUnitHashTable Inherits Hashtable Implements IDictionary, ICollection, IEnumerable, ISerializable, IDeserializationCallback, ICloneable
+  inheritance:
+  - System.Object
+  - System.Collections.Hashtable
+  implements:
+  - System.Collections.IDictionary
+  - System.Collections.ICollection
+  - System.Collections.IEnumerable
+  - System.Runtime.Serialization.ISerializable
+  - System.Runtime.Serialization.IDeserializationCallback
+  - System.ICloneable
+  inheritedMembers:
+  - System.Collections.Hashtable.HashPrime
+  - System.Collections.Hashtable.InitialSize
+  - System.Collections.Hashtable.LoadFactorName
+  - System.Collections.Hashtable.VersionName
+  - System.Collections.Hashtable.ComparerName
+  - System.Collections.Hashtable.HashCodeProviderName
+  - System.Collections.Hashtable.HashSizeName
+  - System.Collections.Hashtable.KeysName
+  - System.Collections.Hashtable.ValuesName
+  - System.Collections.Hashtable.KeyComparerName
+  - System.Collections.Hashtable.buckets
+  - System.Collections.Hashtable.count
+  - System.Collections.Hashtable.occupancy
+  - System.Collections.Hashtable.loadsize
+  - System.Collections.Hashtable.loadFactor
+  - System.Collections.Hashtable.version
+  - System.Collections.Hashtable.isWriterInProgress
+  - System.Collections.Hashtable.keys
+  - System.Collections.Hashtable.values
+  - System.Collections.Hashtable._keycomparer
+  - System.Collections.Hashtable._syncRoot
+  - System.Collections.Hashtable.InitHash(System.Object,System.Int32,System.UInt32@,System.UInt32@)
+  - System.Collections.Hashtable.Add(System.Object,System.Object)
+  - System.Collections.Hashtable.Clear
+  - System.Collections.Hashtable.Clone
+  - System.Collections.Hashtable.Contains(System.Object)
+  - System.Collections.Hashtable.ContainsKey(System.Object)
+  - System.Collections.Hashtable.ContainsValue(System.Object)
+  - System.Collections.Hashtable.CopyKeys(System.Array,System.Int32)
+  - System.Collections.Hashtable.CopyEntries(System.Array,System.Int32)
+  - System.Collections.Hashtable.CopyTo(System.Array,System.Int32)
+  - System.Collections.Hashtable.ToKeyValuePairsArray
+  - System.Collections.Hashtable.CopyValues(System.Array,System.Int32)
+  - System.Collections.Hashtable.expand
+  - System.Collections.Hashtable.rehash
+  - System.Collections.Hashtable.UpdateVersion
+  - System.Collections.Hashtable.rehash(System.Int32,System.Boolean)
+  - System.Collections.Hashtable.System#Collections#IEnumerable#GetEnumerator
+  - System.Collections.Hashtable.GetEnumerator
+  - System.Collections.Hashtable.GetHash(System.Object)
+  - System.Collections.Hashtable.KeyEquals(System.Object,System.Object)
+  - System.Collections.Hashtable.Insert(System.Object,System.Object,System.Boolean)
+  - System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[],System.Object,System.Object,System.Int32)
+  - System.Collections.Hashtable.Remove(System.Object)
+  - System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+  - System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - System.Collections.Hashtable.OnDeserialization(System.Object)
+  - System.Collections.Hashtable.hcp
+  - System.Collections.Hashtable.comparer
+  - System.Collections.Hashtable.EqualityComparer
+  - System.Collections.Hashtable.Item(System.Object)
+  - System.Collections.Hashtable.IsReadOnly
+  - System.Collections.Hashtable.IsFixedSize
+  - System.Collections.Hashtable.IsSynchronized
+  - System.Collections.Hashtable.Keys
+  - System.Collections.Hashtable.Values
+  - System.Collections.Hashtable.SyncRoot
+  - System.Collections.Hashtable.Count
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.CompilationUnitHashTable.#ctor
+  commentId: M:PascalABCCompiler.CompilationUnitHashTable.#ctor
+  id: '#ctor'
+  parent: PascalABCCompiler.CompilationUnitHashTable
+  langs:
+  - csharp
+  - vb
+  name: CompilationUnitHashTable()
+  nameWithType: CompilationUnitHashTable.CompilationUnitHashTable()
+  fullName: PascalABCCompiler.CompilationUnitHashTable.CompilationUnitHashTable()
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public CompilationUnitHashTable()
+    content.vb: Public Sub New()
+  overload: PascalABCCompiler.CompilationUnitHashTable.#ctor*
+  nameWithType.vb: CompilationUnitHashTable.New()
+  fullName.vb: PascalABCCompiler.CompilationUnitHashTable.New()
+  name.vb: New()
+- uid: PascalABCCompiler.CompilationUnitHashTable.Item(System.String)
+  commentId: P:PascalABCCompiler.CompilationUnitHashTable.Item(System.String)
+  id: Item(System.String)
+  parent: PascalABCCompiler.CompilationUnitHashTable
+  langs:
+  - csharp
+  - vb
+  name: this[string]
+  nameWithType: CompilationUnitHashTable.this[string]
+  fullName: PascalABCCompiler.CompilationUnitHashTable.this[string]
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public CompilationUnit this[string key] { get; set; }
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: PascalABCCompiler.CompilationUnit
+    content.vb: Public Default Property this[](key As String) As CompilationUnit
+  overload: PascalABCCompiler.CompilationUnitHashTable.Item*
+  nameWithType.vb: CompilationUnitHashTable.this[](String)
+  fullName.vb: PascalABCCompiler.CompilationUnitHashTable.this[](String)
+  name.vb: this[](String)
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Hashtable
+  commentId: T:System.Collections.Hashtable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable
+  name: Hashtable
+  nameWithType: Hashtable
+  fullName: System.Collections.Hashtable
+- uid: System.Collections.IDictionary
+  commentId: T:System.Collections.IDictionary
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.idictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Runtime.Serialization.IDeserializationCallback
+  commentId: T:System.Runtime.Serialization.IDeserializationCallback
+  parent: System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback
+  name: IDeserializationCallback
+  nameWithType: IDeserializationCallback
+  fullName: System.Runtime.Serialization.IDeserializationCallback
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.Collections.Hashtable.HashPrime
+  commentId: F:System.Collections.Hashtable.HashPrime
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.hashprime
+  name: HashPrime
+  nameWithType: Hashtable.HashPrime
+  fullName: System.Collections.Hashtable.HashPrime
+- uid: System.Collections.Hashtable.InitialSize
+  commentId: F:System.Collections.Hashtable.InitialSize
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.initialsize
+  name: InitialSize
+  nameWithType: Hashtable.InitialSize
+  fullName: System.Collections.Hashtable.InitialSize
+- uid: System.Collections.Hashtable.LoadFactorName
+  commentId: F:System.Collections.Hashtable.LoadFactorName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.loadfactorname
+  name: LoadFactorName
+  nameWithType: Hashtable.LoadFactorName
+  fullName: System.Collections.Hashtable.LoadFactorName
+- uid: System.Collections.Hashtable.VersionName
+  commentId: F:System.Collections.Hashtable.VersionName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.versionname
+  name: VersionName
+  nameWithType: Hashtable.VersionName
+  fullName: System.Collections.Hashtable.VersionName
+- uid: System.Collections.Hashtable.ComparerName
+  commentId: F:System.Collections.Hashtable.ComparerName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.comparername
+  name: ComparerName
+  nameWithType: Hashtable.ComparerName
+  fullName: System.Collections.Hashtable.ComparerName
+- uid: System.Collections.Hashtable.HashCodeProviderName
+  commentId: F:System.Collections.Hashtable.HashCodeProviderName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.hashcodeprovidername
+  name: HashCodeProviderName
+  nameWithType: Hashtable.HashCodeProviderName
+  fullName: System.Collections.Hashtable.HashCodeProviderName
+- uid: System.Collections.Hashtable.HashSizeName
+  commentId: F:System.Collections.Hashtable.HashSizeName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.hashsizename
+  name: HashSizeName
+  nameWithType: Hashtable.HashSizeName
+  fullName: System.Collections.Hashtable.HashSizeName
+- uid: System.Collections.Hashtable.KeysName
+  commentId: F:System.Collections.Hashtable.KeysName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keysname
+  name: KeysName
+  nameWithType: Hashtable.KeysName
+  fullName: System.Collections.Hashtable.KeysName
+- uid: System.Collections.Hashtable.ValuesName
+  commentId: F:System.Collections.Hashtable.ValuesName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.valuesname
+  name: ValuesName
+  nameWithType: Hashtable.ValuesName
+  fullName: System.Collections.Hashtable.ValuesName
+- uid: System.Collections.Hashtable.KeyComparerName
+  commentId: F:System.Collections.Hashtable.KeyComparerName
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keycomparername
+  name: KeyComparerName
+  nameWithType: Hashtable.KeyComparerName
+  fullName: System.Collections.Hashtable.KeyComparerName
+- uid: System.Collections.Hashtable.buckets
+  commentId: F:System.Collections.Hashtable.buckets
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.buckets
+  name: buckets
+  nameWithType: Hashtable.buckets
+  fullName: System.Collections.Hashtable.buckets
+- uid: System.Collections.Hashtable.count
+  commentId: F:System.Collections.Hashtable.count
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.count
+  name: count
+  nameWithType: Hashtable.count
+  fullName: System.Collections.Hashtable.count
+- uid: System.Collections.Hashtable.occupancy
+  commentId: F:System.Collections.Hashtable.occupancy
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.occupancy
+  name: occupancy
+  nameWithType: Hashtable.occupancy
+  fullName: System.Collections.Hashtable.occupancy
+- uid: System.Collections.Hashtable.loadsize
+  commentId: F:System.Collections.Hashtable.loadsize
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.loadsize
+  name: loadsize
+  nameWithType: Hashtable.loadsize
+  fullName: System.Collections.Hashtable.loadsize
+- uid: System.Collections.Hashtable.loadFactor
+  commentId: F:System.Collections.Hashtable.loadFactor
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.loadfactor
+  name: loadFactor
+  nameWithType: Hashtable.loadFactor
+  fullName: System.Collections.Hashtable.loadFactor
+- uid: System.Collections.Hashtable.version
+  commentId: F:System.Collections.Hashtable.version
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.version
+  name: version
+  nameWithType: Hashtable.version
+  fullName: System.Collections.Hashtable.version
+- uid: System.Collections.Hashtable.isWriterInProgress
+  commentId: F:System.Collections.Hashtable.isWriterInProgress
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.iswriterinprogress
+  name: isWriterInProgress
+  nameWithType: Hashtable.isWriterInProgress
+  fullName: System.Collections.Hashtable.isWriterInProgress
+- uid: System.Collections.Hashtable.keys
+  commentId: F:System.Collections.Hashtable.keys
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keys
+  name: keys
+  nameWithType: Hashtable.keys
+  fullName: System.Collections.Hashtable.keys
+- uid: System.Collections.Hashtable.values
+  commentId: F:System.Collections.Hashtable.values
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.values
+  name: values
+  nameWithType: Hashtable.values
+  fullName: System.Collections.Hashtable.values
+- uid: System.Collections.Hashtable._keycomparer
+  commentId: F:System.Collections.Hashtable._keycomparer
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable._keycomparer
+  name: _keycomparer
+  nameWithType: Hashtable._keycomparer
+  fullName: System.Collections.Hashtable._keycomparer
+- uid: System.Collections.Hashtable._syncRoot
+  commentId: F:System.Collections.Hashtable._syncRoot
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable._syncroot
+  name: _syncRoot
+  nameWithType: Hashtable._syncRoot
+  fullName: System.Collections.Hashtable._syncRoot
+- uid: System.Collections.Hashtable.InitHash(System.Object,System.Int32,System.UInt32@,System.UInt32@)
+  commentId: M:System.Collections.Hashtable.InitHash(System.Object,System.Int32,System.UInt32@,System.UInt32@)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.inithash
+  name: InitHash(object, int, out uint, out uint)
+  nameWithType: Hashtable.InitHash(object, int, out uint, out uint)
+  fullName: System.Collections.Hashtable.InitHash(object, int, out uint, out uint)
+  nameWithType.vb: Hashtable.InitHash(Object, Integer, UInteger, UInteger)
+  fullName.vb: System.Collections.Hashtable.InitHash(Object, Integer, UInteger, UInteger)
+  name.vb: InitHash(Object, Integer, UInteger, UInteger)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.InitHash(System.Object,System.Int32,System.UInt32@,System.UInt32@)
+    name: InitHash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.inithash
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.InitHash(System.Object,System.Int32,System.UInt32@,System.UInt32@)
+    name: InitHash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.inithash
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: ','
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )
+- uid: System.Collections.Hashtable.Add(System.Object,System.Object)
+  commentId: M:System.Collections.Hashtable.Add(System.Object,System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.add
+  name: Add(object, object)
+  nameWithType: Hashtable.Add(object, object)
+  fullName: System.Collections.Hashtable.Add(object, object)
+  nameWithType.vb: Hashtable.Add(Object, Object)
+  fullName.vb: System.Collections.Hashtable.Add(Object, Object)
+  name.vb: Add(Object, Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Add(System.Object,System.Object)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.add
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Add(System.Object,System.Object)
+    name: Add
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.add
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.Clear
+  commentId: M:System.Collections.Hashtable.Clear
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clear
+  name: Clear()
+  nameWithType: Hashtable.Clear()
+  fullName: System.Collections.Hashtable.Clear()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clear
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.Clone
+  commentId: M:System.Collections.Hashtable.Clone
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clone
+  name: Clone()
+  nameWithType: Hashtable.Clone()
+  fullName: System.Collections.Hashtable.Clone()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.clone
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.Contains(System.Object)
+  commentId: M:System.Collections.Hashtable.Contains(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.contains
+  name: Contains(object)
+  nameWithType: Hashtable.Contains(object)
+  fullName: System.Collections.Hashtable.Contains(object)
+  nameWithType.vb: Hashtable.Contains(Object)
+  fullName.vb: System.Collections.Hashtable.Contains(Object)
+  name.vb: Contains(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Contains(System.Object)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.contains
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Contains(System.Object)
+    name: Contains
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.contains
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.ContainsKey(System.Object)
+  commentId: M:System.Collections.Hashtable.ContainsKey(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containskey
+  name: ContainsKey(object)
+  nameWithType: Hashtable.ContainsKey(object)
+  fullName: System.Collections.Hashtable.ContainsKey(object)
+  nameWithType.vb: Hashtable.ContainsKey(Object)
+  fullName.vb: System.Collections.Hashtable.ContainsKey(Object)
+  name.vb: ContainsKey(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.ContainsKey(System.Object)
+    name: ContainsKey
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containskey
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.ContainsKey(System.Object)
+    name: ContainsKey
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containskey
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.ContainsValue(System.Object)
+  commentId: M:System.Collections.Hashtable.ContainsValue(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containsvalue
+  name: ContainsValue(object)
+  nameWithType: Hashtable.ContainsValue(object)
+  fullName: System.Collections.Hashtable.ContainsValue(object)
+  nameWithType.vb: Hashtable.ContainsValue(Object)
+  fullName.vb: System.Collections.Hashtable.ContainsValue(Object)
+  name.vb: ContainsValue(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.ContainsValue(System.Object)
+    name: ContainsValue
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containsvalue
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.ContainsValue(System.Object)
+    name: ContainsValue
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.containsvalue
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.CopyKeys(System.Array,System.Int32)
+  commentId: M:System.Collections.Hashtable.CopyKeys(System.Array,System.Int32)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copykeys
+  name: CopyKeys(Array, int)
+  nameWithType: Hashtable.CopyKeys(Array, int)
+  fullName: System.Collections.Hashtable.CopyKeys(System.Array, int)
+  nameWithType.vb: Hashtable.CopyKeys(Array, Integer)
+  fullName.vb: System.Collections.Hashtable.CopyKeys(System.Array, Integer)
+  name.vb: CopyKeys(Array, Integer)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.CopyKeys(System.Array,System.Int32)
+    name: CopyKeys
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copykeys
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.CopyKeys(System.Array,System.Int32)
+    name: CopyKeys
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copykeys
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Hashtable.CopyEntries(System.Array,System.Int32)
+  commentId: M:System.Collections.Hashtable.CopyEntries(System.Array,System.Int32)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyentries
+  name: CopyEntries(Array, int)
+  nameWithType: Hashtable.CopyEntries(Array, int)
+  fullName: System.Collections.Hashtable.CopyEntries(System.Array, int)
+  nameWithType.vb: Hashtable.CopyEntries(Array, Integer)
+  fullName.vb: System.Collections.Hashtable.CopyEntries(System.Array, Integer)
+  name.vb: CopyEntries(Array, Integer)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.CopyEntries(System.Array,System.Int32)
+    name: CopyEntries
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyentries
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.CopyEntries(System.Array,System.Int32)
+    name: CopyEntries
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyentries
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Hashtable.CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.Hashtable.CopyTo(System.Array,System.Int32)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyto
+  name: CopyTo(Array, int)
+  nameWithType: Hashtable.CopyTo(Array, int)
+  fullName: System.Collections.Hashtable.CopyTo(System.Array, int)
+  nameWithType.vb: Hashtable.CopyTo(Array, Integer)
+  fullName.vb: System.Collections.Hashtable.CopyTo(System.Array, Integer)
+  name.vb: CopyTo(Array, Integer)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.CopyTo(System.Array,System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyto
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.CopyTo(System.Array,System.Int32)
+    name: CopyTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyto
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Hashtable.ToKeyValuePairsArray
+  commentId: M:System.Collections.Hashtable.ToKeyValuePairsArray
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.tokeyvaluepairsarray
+  name: ToKeyValuePairsArray()
+  nameWithType: Hashtable.ToKeyValuePairsArray()
+  fullName: System.Collections.Hashtable.ToKeyValuePairsArray()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.ToKeyValuePairsArray
+    name: ToKeyValuePairsArray
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.tokeyvaluepairsarray
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.ToKeyValuePairsArray
+    name: ToKeyValuePairsArray
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.tokeyvaluepairsarray
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.CopyValues(System.Array,System.Int32)
+  commentId: M:System.Collections.Hashtable.CopyValues(System.Array,System.Int32)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyvalues
+  name: CopyValues(Array, int)
+  nameWithType: Hashtable.CopyValues(Array, int)
+  fullName: System.Collections.Hashtable.CopyValues(System.Array, int)
+  nameWithType.vb: Hashtable.CopyValues(Array, Integer)
+  fullName.vb: System.Collections.Hashtable.CopyValues(System.Array, Integer)
+  name.vb: CopyValues(Array, Integer)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.CopyValues(System.Array,System.Int32)
+    name: CopyValues
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyvalues
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.CopyValues(System.Array,System.Int32)
+    name: CopyValues
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.copyvalues
+  - name: (
+  - uid: System.Array
+    name: Array
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Hashtable.expand
+  commentId: M:System.Collections.Hashtable.expand
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.expand
+  name: expand()
+  nameWithType: Hashtable.expand()
+  fullName: System.Collections.Hashtable.expand()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.expand
+    name: expand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.expand
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.expand
+    name: expand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.expand
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.rehash
+  commentId: M:System.Collections.Hashtable.rehash
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash
+  name: rehash()
+  nameWithType: Hashtable.rehash()
+  fullName: System.Collections.Hashtable.rehash()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.rehash
+    name: rehash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.rehash
+    name: rehash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.UpdateVersion
+  commentId: M:System.Collections.Hashtable.UpdateVersion
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.updateversion
+  name: UpdateVersion()
+  nameWithType: Hashtable.UpdateVersion()
+  fullName: System.Collections.Hashtable.UpdateVersion()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.UpdateVersion
+    name: UpdateVersion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.updateversion
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.UpdateVersion
+    name: UpdateVersion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.updateversion
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.rehash(System.Int32,System.Boolean)
+  commentId: M:System.Collections.Hashtable.rehash(System.Int32,System.Boolean)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash(system-int32-system-boolean)
+  name: rehash(int, bool)
+  nameWithType: Hashtable.rehash(int, bool)
+  fullName: System.Collections.Hashtable.rehash(int, bool)
+  nameWithType.vb: Hashtable.rehash(Integer, Boolean)
+  fullName.vb: System.Collections.Hashtable.rehash(Integer, Boolean)
+  name.vb: rehash(Integer, Boolean)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.rehash(System.Int32,System.Boolean)
+    name: rehash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash(system-int32-system-boolean)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.rehash(System.Int32,System.Boolean)
+    name: rehash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.rehash#system-collections-hashtable-rehash(system-int32-system-boolean)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Collections.Hashtable.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Collections.Hashtable.System#Collections#IEnumerable#GetEnumerator
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable.GetEnumerator()
+  nameWithType: Hashtable.IEnumerable.GetEnumerator()
+  fullName: System.Collections.Hashtable.System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  - name: .
+  - uid: System.Collections.Hashtable.System#Collections#IEnumerable#GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.system-collections-ienumerable-getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.GetEnumerator
+  commentId: M:System.Collections.Hashtable.GetEnumerator
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getenumerator
+  name: GetEnumerator()
+  nameWithType: Hashtable.GetEnumerator()
+  fullName: System.Collections.Hashtable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Hashtable.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Hashtable.GetHash(System.Object)
+  commentId: M:System.Collections.Hashtable.GetHash(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.gethash
+  name: GetHash(object)
+  nameWithType: Hashtable.GetHash(object)
+  fullName: System.Collections.Hashtable.GetHash(object)
+  nameWithType.vb: Hashtable.GetHash(Object)
+  fullName.vb: System.Collections.Hashtable.GetHash(Object)
+  name.vb: GetHash(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.GetHash(System.Object)
+    name: GetHash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.gethash
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.GetHash(System.Object)
+    name: GetHash
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.gethash
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.KeyEquals(System.Object,System.Object)
+  commentId: M:System.Collections.Hashtable.KeyEquals(System.Object,System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keyequals
+  name: KeyEquals(object, object)
+  nameWithType: Hashtable.KeyEquals(object, object)
+  fullName: System.Collections.Hashtable.KeyEquals(object, object)
+  nameWithType.vb: Hashtable.KeyEquals(Object, Object)
+  fullName.vb: System.Collections.Hashtable.KeyEquals(Object, Object)
+  name.vb: KeyEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.KeyEquals(System.Object,System.Object)
+    name: KeyEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keyequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.KeyEquals(System.Object,System.Object)
+    name: KeyEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keyequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.Insert(System.Object,System.Object,System.Boolean)
+  commentId: M:System.Collections.Hashtable.Insert(System.Object,System.Object,System.Boolean)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.insert
+  name: Insert(object, object, bool)
+  nameWithType: Hashtable.Insert(object, object, bool)
+  fullName: System.Collections.Hashtable.Insert(object, object, bool)
+  nameWithType.vb: Hashtable.Insert(Object, Object, Boolean)
+  fullName.vb: System.Collections.Hashtable.Insert(Object, Object, Boolean)
+  name.vb: Insert(Object, Object, Boolean)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Insert(System.Object,System.Object,System.Boolean)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.insert
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Insert(System.Object,System.Object,System.Boolean)
+    name: Insert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.insert
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[],System.Object,System.Object,System.Int32)
+  commentId: M:System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[],System.Object,System.Object,System.Int32)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.putentry
+  name: putEntry(bucket[], object, object, int)
+  nameWithType: Hashtable.putEntry(Hashtable.bucket[], object, object, int)
+  fullName: System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[], object, object, int)
+  nameWithType.vb: Hashtable.putEntry(Hashtable.bucket(), Object, Object, Integer)
+  fullName.vb: System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket(), Object, Object, Integer)
+  name.vb: putEntry(bucket(), Object, Object, Integer)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[],System.Object,System.Object,System.Int32)
+    name: putEntry
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.putentry
+  - name: (
+  - uid: System.Collections.Hashtable.bucket
+    name: bucket
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.bucket
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.putEntry(System.Collections.Hashtable.bucket[],System.Object,System.Object,System.Int32)
+    name: putEntry
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.putentry
+  - name: (
+  - uid: System.Collections.Hashtable.bucket
+    name: bucket
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.bucket
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Hashtable.Remove(System.Object)
+  commentId: M:System.Collections.Hashtable.Remove(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.remove
+  name: Remove(object)
+  nameWithType: Hashtable.Remove(object)
+  fullName: System.Collections.Hashtable.Remove(object)
+  nameWithType.vb: Hashtable.Remove(Object)
+  fullName.vb: System.Collections.Hashtable.Remove(Object)
+  name.vb: Remove(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Remove(System.Object)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.remove
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Remove(System.Object)
+    name: Remove
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.remove
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+  commentId: M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.synchronized
+  name: Synchronized(Hashtable)
+  nameWithType: Hashtable.Synchronized(Hashtable)
+  fullName: System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+    name: Synchronized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.synchronized
+  - name: (
+  - uid: System.Collections.Hashtable
+    name: Hashtable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)
+    name: Synchronized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.synchronized
+  - name: (
+  - uid: System.Collections.Hashtable
+    name: Hashtable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable
+  - name: )
+- uid: System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getobjectdata
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: Hashtable.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getobjectdata
+  - name: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.getobjectdata
+  - name: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo
+  - name: ','
+  - name: " "
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext
+  - name: )
+- uid: System.Collections.Hashtable.OnDeserialization(System.Object)
+  commentId: M:System.Collections.Hashtable.OnDeserialization(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.ondeserialization
+  name: OnDeserialization(object)
+  nameWithType: Hashtable.OnDeserialization(object)
+  fullName: System.Collections.Hashtable.OnDeserialization(object)
+  nameWithType.vb: Hashtable.OnDeserialization(Object)
+  fullName.vb: System.Collections.Hashtable.OnDeserialization(Object)
+  name.vb: OnDeserialization(Object)
+  spec.csharp:
+  - uid: System.Collections.Hashtable.OnDeserialization(System.Object)
+    name: OnDeserialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.ondeserialization
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Hashtable.OnDeserialization(System.Object)
+    name: OnDeserialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.ondeserialization
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.hcp
+  commentId: P:System.Collections.Hashtable.hcp
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.hcp
+  name: hcp
+  nameWithType: Hashtable.hcp
+  fullName: System.Collections.Hashtable.hcp
+- uid: System.Collections.Hashtable.comparer
+  commentId: P:System.Collections.Hashtable.comparer
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.comparer
+  name: comparer
+  nameWithType: Hashtable.comparer
+  fullName: System.Collections.Hashtable.comparer
+- uid: System.Collections.Hashtable.EqualityComparer
+  commentId: P:System.Collections.Hashtable.EqualityComparer
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.equalitycomparer
+  name: EqualityComparer
+  nameWithType: Hashtable.EqualityComparer
+  fullName: System.Collections.Hashtable.EqualityComparer
+- uid: System.Collections.Hashtable.Item(System.Object)
+  commentId: P:System.Collections.Hashtable.Item(System.Object)
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: this[object]
+  nameWithType: Hashtable.this[object]
+  fullName: System.Collections.Hashtable.this[object]
+  nameWithType.vb: Hashtable.this[](Object)
+  fullName.vb: System.Collections.Hashtable.this[](Object)
+  name.vb: this[](Object)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ']'
+  spec.vb:
+  - uid: System.Collections.Hashtable.Item(System.Object)
+    name: this[]
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.item
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Hashtable.IsReadOnly
+  commentId: P:System.Collections.Hashtable.IsReadOnly
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.isreadonly
+  name: IsReadOnly
+  nameWithType: Hashtable.IsReadOnly
+  fullName: System.Collections.Hashtable.IsReadOnly
+- uid: System.Collections.Hashtable.IsFixedSize
+  commentId: P:System.Collections.Hashtable.IsFixedSize
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.isfixedsize
+  name: IsFixedSize
+  nameWithType: Hashtable.IsFixedSize
+  fullName: System.Collections.Hashtable.IsFixedSize
+- uid: System.Collections.Hashtable.IsSynchronized
+  commentId: P:System.Collections.Hashtable.IsSynchronized
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.issynchronized
+  name: IsSynchronized
+  nameWithType: Hashtable.IsSynchronized
+  fullName: System.Collections.Hashtable.IsSynchronized
+- uid: System.Collections.Hashtable.Keys
+  commentId: P:System.Collections.Hashtable.Keys
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.keys
+  name: Keys
+  nameWithType: Hashtable.Keys
+  fullName: System.Collections.Hashtable.Keys
+- uid: System.Collections.Hashtable.Values
+  commentId: P:System.Collections.Hashtable.Values
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.values
+  name: Values
+  nameWithType: Hashtable.Values
+  fullName: System.Collections.Hashtable.Values
+- uid: System.Collections.Hashtable.SyncRoot
+  commentId: P:System.Collections.Hashtable.SyncRoot
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.syncroot
+  name: SyncRoot
+  nameWithType: Hashtable.SyncRoot
+  fullName: System.Collections.Hashtable.SyncRoot
+- uid: System.Collections.Hashtable.Count
+  commentId: P:System.Collections.Hashtable.Count
+  parent: System.Collections.Hashtable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.hashtable.count
+  name: Count
+  nameWithType: Hashtable.Count
+  fullName: System.Collections.Hashtable.Count
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+- uid: PascalABCCompiler.CompilationUnitHashTable.#ctor*
+  commentId: Overload:PascalABCCompiler.CompilationUnitHashTable.#ctor
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnitHashTable.html#PascalABCCompiler_CompilationUnitHashTable__ctor
+  name: CompilationUnitHashTable
+  nameWithType: CompilationUnitHashTable.CompilationUnitHashTable
+  fullName: PascalABCCompiler.CompilationUnitHashTable.CompilationUnitHashTable
+  nameWithType.vb: CompilationUnitHashTable.New
+  fullName.vb: PascalABCCompiler.CompilationUnitHashTable.New
+  name.vb: New
+- uid: PascalABCCompiler.CompilationUnitHashTable.Item*
+  commentId: Overload:PascalABCCompiler.CompilationUnitHashTable.Item
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnitHashTable.html#PascalABCCompiler_CompilationUnitHashTable_Item_System_String_
+  name: this
+  nameWithType: CompilationUnitHashTable.this
+  fullName: PascalABCCompiler.CompilationUnitHashTable.this
+  nameWithType.vb: CompilationUnitHashTable.this[]
+  fullName.vb: PascalABCCompiler.CompilationUnitHashTable.this[]
+  name.vb: this[]
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.CompilationUnit
+  commentId: T:PascalABCCompiler.CompilationUnit
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html
+  name: CompilationUnit
+  nameWithType: CompilationUnit
+  fullName: PascalABCCompiler.CompilationUnit

@@ -1,0 +1,75 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.IResourceInfo
+  commentId: T:PascalABCCompiler.IResourceInfo
+  id: IResourceInfo
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.IResourceInfo.Name
+  langs:
+  - csharp
+  - vb
+  name: IResourceInfo
+  nameWithType: IResourceInfo
+  fullName: PascalABCCompiler.IResourceInfo
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface IResourceInfo
+    content.vb: Public Interface IResourceInfo
+- uid: PascalABCCompiler.IResourceInfo.Name
+  commentId: P:PascalABCCompiler.IResourceInfo.Name
+  id: Name
+  parent: PascalABCCompiler.IResourceInfo
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IResourceInfo.Name
+  fullName: PascalABCCompiler.IResourceInfo.Name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: PascalABCCompiler.IResourceInfo.Name*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.IResourceInfo.Name*
+  commentId: Overload:PascalABCCompiler.IResourceInfo.Name
+  isExternal: true
+  href: PascalABCCompiler.IResourceInfo.html#PascalABCCompiler_IResourceInfo_Name
+  name: Name
+  nameWithType: IResourceInfo.Name
+  fullName: PascalABCCompiler.IResourceInfo.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.IFileInfo
+  commentId: T:PascalABCCompiler.IFileInfo
+  id: IFileInfo
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.IFileInfo.Name
+  - PascalABCCompiler.IFileInfo.Path
+  langs:
+  - csharp
+  - vb
+  name: IFileInfo
+  nameWithType: IFileInfo
+  fullName: PascalABCCompiler.IFileInfo
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface IFileInfo
+    content.vb: Public Interface IFileInfo
+- uid: PascalABCCompiler.IFileInfo.Name
+  commentId: P:PascalABCCompiler.IFileInfo.Name
+  id: Name
+  parent: PascalABCCompiler.IFileInfo
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IFileInfo.Name
+  fullName: PascalABCCompiler.IFileInfo.Name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Name As String
+  overload: PascalABCCompiler.IFileInfo.Name*
+- uid: PascalABCCompiler.IFileInfo.Path
+  commentId: P:PascalABCCompiler.IFileInfo.Path
+  id: Path
+  parent: PascalABCCompiler.IFileInfo
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: IFileInfo.Path
+  fullName: PascalABCCompiler.IFileInfo.Path
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Path { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Path As String
+  overload: PascalABCCompiler.IFileInfo.Path*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.IFileInfo.Name*
+  commentId: Overload:PascalABCCompiler.IFileInfo.Name
+  isExternal: true
+  href: PascalABCCompiler.IFileInfo.html#PascalABCCompiler_IFileInfo_Name
+  name: Name
+  nameWithType: IFileInfo.Name
+  fullName: PascalABCCompiler.IFileInfo.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.IFileInfo.Path*
+  commentId: Overload:PascalABCCompiler.IFileInfo.Path
+  isExternal: true
+  href: PascalABCCompiler.IFileInfo.html#PascalABCCompiler_IFileInfo_Path
+  name: Path
+  nameWithType: IFileInfo.Path
+  fullName: PascalABCCompiler.IFileInfo.Path

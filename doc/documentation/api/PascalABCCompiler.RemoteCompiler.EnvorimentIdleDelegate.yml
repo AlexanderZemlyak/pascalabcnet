@@ -1,0 +1,198 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  commentId: T:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  id: RemoteCompiler.EnvorimentIdleDelegate
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor(System.Object,System.IntPtr)
+  - PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  - PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke(System.IAsyncResult)
+  - PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke
+  langs:
+  - csharp
+  - vb
+  name: RemoteCompiler.EnvorimentIdleDelegate
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  type: Delegate
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public delegate void RemoteCompiler.EnvorimentIdleDelegate()
+    content.vb: Public Delegate Sub RemoteCompiler.EnvorimentIdleDelegate()
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor(System.Object,System.IntPtr)
+  commentId: M:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  langs:
+  - csharp
+  - vb
+  name: EnvorimentIdleDelegate(object, IntPtr)
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.EnvorimentIdleDelegate(object, IntPtr)
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EnvorimentIdleDelegate(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public EnvorimentIdleDelegate(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor*
+  nameWithType.vb: RemoteCompiler.EnvorimentIdleDelegate.New(Object, IntPtr)
+  fullName.vb: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke
+  commentId: M:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke
+  id: Invoke
+  parent: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  langs:
+  - csharp
+  - vb
+  name: Invoke()
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.Invoke()
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void Invoke()
+    content.vb: Public Overridable Sub Invoke()
+  overload: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke*
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  commentId: M:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  id: BeginInvoke(System.AsyncCallback,System.Object)
+  parent: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(AsyncCallback, object)
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(AsyncCallback, object)
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(AsyncCallback callback, object @object)
+    parameters:
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke*
+  nameWithType.vb: RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(AsyncCallback, Object)
+  fullName.vb: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke(System.AsyncCallback, Object)
+  name.vb: BeginInvoke(AsyncCallback, Object)
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke(System.IAsyncResult)
+  commentId: M:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.EndInvoke(IAsyncResult)
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor*
+  commentId: Overload:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.#ctor
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html#PascalABCCompiler_RemoteCompiler_EnvorimentIdleDelegate__ctor_System_Object_System_IntPtr_
+  name: EnvorimentIdleDelegate
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.EnvorimentIdleDelegate
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EnvorimentIdleDelegate
+  nameWithType.vb: RemoteCompiler.EnvorimentIdleDelegate.New
+  fullName.vb: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html#PascalABCCompiler_RemoteCompiler_EnvorimentIdleDelegate_Invoke
+  name: Invoke
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.Invoke
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.Invoke
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html#PascalABCCompiler_RemoteCompiler_EnvorimentIdleDelegate_BeginInvoke_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke*
+  commentId: Overload:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html#PascalABCCompiler_RemoteCompiler_EnvorimentIdleDelegate_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate.EndInvoke
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.EndInvoke

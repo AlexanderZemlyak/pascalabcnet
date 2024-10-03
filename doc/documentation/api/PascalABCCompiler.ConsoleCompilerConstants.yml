@@ -1,0 +1,1173 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.ConsoleCompilerConstants
+  commentId: T:PascalABCCompiler.ConsoleCompilerConstants
+  id: ConsoleCompilerConstants
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ConsoleCompilerConstants.#ctor
+  - PascalABCCompiler.ConsoleCompilerConstants.BeginOffest
+  - PascalABCCompiler.ConsoleCompilerConstants.CommandCompile
+  - PascalABCCompiler.ConsoleCompilerConstants.CommandExit
+  - PascalABCCompiler.ConsoleCompilerConstants.CommandGCCollect
+  - PascalABCCompiler.ConsoleCompilerConstants.CommandStartNumber
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerLocale
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptions
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsClearStandartModules
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsDebug
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsFileName
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsForDebugging
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputDirectory
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputType
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsProjectCompiled
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRebuild
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRunWithEnvironment
+  - PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsStandartModule
+  - PascalABCCompiler.ConsoleCompilerConstants.DataSeparator
+  - PascalABCCompiler.ConsoleCompilerConstants.Error
+  - PascalABCCompiler.ConsoleCompilerConstants.FileExsist
+  - PascalABCCompiler.ConsoleCompilerConstants.GetLastWriteTime
+  - PascalABCCompiler.ConsoleCompilerConstants.IDELocale
+  - PascalABCCompiler.ConsoleCompilerConstants.InternalDebug
+  - PascalABCCompiler.ConsoleCompilerConstants.InternalDebugSavePCU
+  - PascalABCCompiler.ConsoleCompilerConstants.InternalError
+  - PascalABCCompiler.ConsoleCompilerConstants.LinesCompiled
+  - PascalABCCompiler.ConsoleCompilerConstants.MaxProcessMemoryMB
+  - PascalABCCompiler.ConsoleCompilerConstants.MessageSeparator
+  - PascalABCCompiler.ConsoleCompilerConstants.PABCHealth
+  - PascalABCCompiler.ConsoleCompilerConstants.SourceFileText
+  - PascalABCCompiler.ConsoleCompilerConstants.UseDllForSystemUnits
+  - PascalABCCompiler.ConsoleCompilerConstants.VarBeginOffest
+  - PascalABCCompiler.ConsoleCompilerConstants.Warning
+  - PascalABCCompiler.ConsoleCompilerConstants.WorkingSet
+  langs:
+  - csharp
+  - vb
+  name: ConsoleCompilerConstants
+  nameWithType: ConsoleCompilerConstants
+  fullName: PascalABCCompiler.ConsoleCompilerConstants
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public class ConsoleCompilerConstants
+    content.vb: Public Class ConsoleCompilerConstants
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.ConsoleCompilerConstants.MaxProcessMemoryMB
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.MaxProcessMemoryMB
+  id: MaxProcessMemoryMB
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: MaxProcessMemoryMB
+  nameWithType: ConsoleCompilerConstants.MaxProcessMemoryMB
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.MaxProcessMemoryMB
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int MaxProcessMemoryMB = 500
+    return:
+      type: System.Int32
+    content.vb: Public Const MaxProcessMemoryMB As Integer = 500
+- uid: PascalABCCompiler.ConsoleCompilerConstants.DataSeparator
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.DataSeparator
+  id: DataSeparator
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: DataSeparator
+  nameWithType: ConsoleCompilerConstants.DataSeparator
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.DataSeparator
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const string DataSeparator = "]\r\n["
+    return:
+      type: System.String
+    content.vb: Public Const DataSeparator As String = "]" & vbCrLf & "["
+- uid: PascalABCCompiler.ConsoleCompilerConstants.MessageSeparator
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.MessageSeparator
+  id: MessageSeparator
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: MessageSeparator
+  nameWithType: ConsoleCompilerConstants.MessageSeparator
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.MessageSeparator
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public static readonly string MessageSeparator
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly MessageSeparator As String
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CommandStartNumber
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CommandStartNumber
+  id: CommandStartNumber
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CommandStartNumber
+  nameWithType: ConsoleCompilerConstants.CommandStartNumber
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CommandStartNumber
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CommandStartNumber = 100
+    return:
+      type: System.Int32
+    content.vb: Public Const CommandStartNumber As Integer = 100
+- uid: PascalABCCompiler.ConsoleCompilerConstants.LinesCompiled
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.LinesCompiled
+  id: LinesCompiled
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: LinesCompiled
+  nameWithType: ConsoleCompilerConstants.LinesCompiled
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.LinesCompiled
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int LinesCompiled = 180
+    return:
+      type: System.Int32
+    content.vb: Public Const LinesCompiled As Integer = 180
+- uid: PascalABCCompiler.ConsoleCompilerConstants.BeginOffest
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.BeginOffest
+  id: BeginOffest
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: BeginOffest
+  nameWithType: ConsoleCompilerConstants.BeginOffest
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.BeginOffest
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int BeginOffest = 181
+    return:
+      type: System.Int32
+    content.vb: Public Const BeginOffest As Integer = 181
+- uid: PascalABCCompiler.ConsoleCompilerConstants.Error
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.Error
+  id: Error
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: ConsoleCompilerConstants.Error
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.Error
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int Error = 182
+    return:
+      type: System.Int32
+    content.vb: Public Const Error As Integer = 182
+- uid: PascalABCCompiler.ConsoleCompilerConstants.Warning
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.Warning
+  id: Warning
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: Warning
+  nameWithType: ConsoleCompilerConstants.Warning
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.Warning
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int Warning = 183
+    return:
+      type: System.Int32
+    content.vb: Public Const Warning As Integer = 183
+- uid: PascalABCCompiler.ConsoleCompilerConstants.FileExsist
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.FileExsist
+  id: FileExsist
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: FileExsist
+  nameWithType: ConsoleCompilerConstants.FileExsist
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.FileExsist
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int FileExsist = 184
+    return:
+      type: System.Int32
+    content.vb: Public Const FileExsist As Integer = 184
+- uid: PascalABCCompiler.ConsoleCompilerConstants.SourceFileText
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.SourceFileText
+  id: SourceFileText
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: SourceFileText
+  nameWithType: ConsoleCompilerConstants.SourceFileText
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.SourceFileText
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int SourceFileText = 185
+    return:
+      type: System.Int32
+    content.vb: Public Const SourceFileText As Integer = 185
+- uid: PascalABCCompiler.ConsoleCompilerConstants.GetLastWriteTime
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.GetLastWriteTime
+  id: GetLastWriteTime
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: GetLastWriteTime
+  nameWithType: ConsoleCompilerConstants.GetLastWriteTime
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.GetLastWriteTime
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int GetLastWriteTime = 186
+    return:
+      type: System.Int32
+    content.vb: Public Const GetLastWriteTime As Integer = 186
+- uid: PascalABCCompiler.ConsoleCompilerConstants.VarBeginOffest
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.VarBeginOffest
+  id: VarBeginOffest
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: VarBeginOffest
+  nameWithType: ConsoleCompilerConstants.VarBeginOffest
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.VarBeginOffest
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int VarBeginOffest = 187
+    return:
+      type: System.Int32
+    content.vb: Public Const VarBeginOffest As Integer = 187
+- uid: PascalABCCompiler.ConsoleCompilerConstants.InternalError
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.InternalError
+  id: InternalError
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: InternalError
+  nameWithType: ConsoleCompilerConstants.InternalError
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.InternalError
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int InternalError = 188
+    return:
+      type: System.Int32
+    content.vb: Public Const InternalError As Integer = 188
+- uid: PascalABCCompiler.ConsoleCompilerConstants.PABCHealth
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.PABCHealth
+  id: PABCHealth
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: PABCHealth
+  nameWithType: ConsoleCompilerConstants.PABCHealth
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.PABCHealth
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int PABCHealth = 189
+    return:
+      type: System.Int32
+    content.vb: Public Const PABCHealth As Integer = 189
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CommandExit
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CommandExit
+  id: CommandExit
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CommandExit
+  nameWithType: ConsoleCompilerConstants.CommandExit
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CommandExit
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CommandExit = 200
+    return:
+      type: System.Int32
+    content.vb: Public Const CommandExit As Integer = 200
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CommandGCCollect
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CommandGCCollect
+  id: CommandGCCollect
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CommandGCCollect
+  nameWithType: ConsoleCompilerConstants.CommandGCCollect
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CommandGCCollect
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CommandGCCollect = 201
+    return:
+      type: System.Int32
+    content.vb: Public Const CommandGCCollect As Integer = 201
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CommandCompile
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CommandCompile
+  id: CommandCompile
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CommandCompile
+  nameWithType: ConsoleCompilerConstants.CommandCompile
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CommandCompile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CommandCompile = 210
+    return:
+      type: System.Int32
+    content.vb: Public Const CommandCompile As Integer = 210
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputType
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputType
+  id: CompilerOptionsOutputType
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsOutputType
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsOutputType
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputType
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsOutputType = 211
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsOutputType As Integer = 211
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsDebug
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsDebug
+  id: CompilerOptionsDebug
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsDebug
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsDebug
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsDebug
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsDebug = 212
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsDebug As Integer = 212
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputDirectory
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputDirectory
+  id: CompilerOptionsOutputDirectory
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsOutputDirectory
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsOutputDirectory
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsOutputDirectory
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsOutputDirectory = 213
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsOutputDirectory As Integer = 213
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRebuild
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRebuild
+  id: CompilerOptionsRebuild
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsRebuild
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsRebuild
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRebuild
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsRebuild = 214
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsRebuild As Integer = 214
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsFileName
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsFileName
+  id: CompilerOptionsFileName
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsFileName
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsFileName
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsFileName
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsFileName = 215
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsFileName As Integer = 215
+- uid: PascalABCCompiler.ConsoleCompilerConstants.InternalDebugSavePCU
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.InternalDebugSavePCU
+  id: InternalDebugSavePCU
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: InternalDebugSavePCU
+  nameWithType: ConsoleCompilerConstants.InternalDebugSavePCU
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.InternalDebugSavePCU
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int InternalDebugSavePCU = 216
+    return:
+      type: System.Int32
+    content.vb: Public Const InternalDebugSavePCU As Integer = 216
+- uid: PascalABCCompiler.ConsoleCompilerConstants.WorkingSet
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.WorkingSet
+  id: WorkingSet
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: WorkingSet
+  nameWithType: ConsoleCompilerConstants.WorkingSet
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.WorkingSet
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int WorkingSet = 217
+    return:
+      type: System.Int32
+    content.vb: Public Const WorkingSet As Integer = 217
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsStandartModule
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsStandartModule
+  id: CompilerOptionsStandartModule
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsStandartModule
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsStandartModule
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsStandartModule
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsStandartModule = 218
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsStandartModule As Integer = 218
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsClearStandartModules
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsClearStandartModules
+  id: CompilerOptionsClearStandartModules
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsClearStandartModules
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsClearStandartModules
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsClearStandartModules
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsClearStandartModules = 219
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsClearStandartModules As Integer = 219
+- uid: PascalABCCompiler.ConsoleCompilerConstants.InternalDebug
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.InternalDebug
+  id: InternalDebug
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: InternalDebug
+  nameWithType: ConsoleCompilerConstants.InternalDebug
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.InternalDebug
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int InternalDebug = 221
+    return:
+      type: System.Int32
+    content.vb: Public Const InternalDebug As Integer = 221
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptions
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptions
+  id: CompilerOptions
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptions
+  nameWithType: ConsoleCompilerConstants.CompilerOptions
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptions
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptions = 222
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptions As Integer = 222
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsForDebugging
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsForDebugging
+  id: CompilerOptionsForDebugging
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsForDebugging
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsForDebugging
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsForDebugging
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsForDebugging = 223
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsForDebugging As Integer = 223
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRunWithEnvironment
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRunWithEnvironment
+  id: CompilerOptionsRunWithEnvironment
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsRunWithEnvironment
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsRunWithEnvironment
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsRunWithEnvironment
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsRunWithEnvironment = 224
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsRunWithEnvironment As Integer = 224
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsProjectCompiled
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsProjectCompiled
+  id: CompilerOptionsProjectCompiled
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptionsProjectCompiled
+  nameWithType: ConsoleCompilerConstants.CompilerOptionsProjectCompiled
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerOptionsProjectCompiled
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerOptionsProjectCompiled = 225
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerOptionsProjectCompiled As Integer = 225
+- uid: PascalABCCompiler.ConsoleCompilerConstants.UseDllForSystemUnits
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.UseDllForSystemUnits
+  id: UseDllForSystemUnits
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: UseDllForSystemUnits
+  nameWithType: ConsoleCompilerConstants.UseDllForSystemUnits
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.UseDllForSystemUnits
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int UseDllForSystemUnits = 226
+    return:
+      type: System.Int32
+    content.vb: Public Const UseDllForSystemUnits As Integer = 226
+- uid: PascalABCCompiler.ConsoleCompilerConstants.IDELocale
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.IDELocale
+  id: IDELocale
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: IDELocale
+  nameWithType: ConsoleCompilerConstants.IDELocale
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.IDELocale
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int IDELocale = 227
+    return:
+      type: System.Int32
+    content.vb: Public Const IDELocale As Integer = 227
+- uid: PascalABCCompiler.ConsoleCompilerConstants.CompilerLocale
+  commentId: F:PascalABCCompiler.ConsoleCompilerConstants.CompilerLocale
+  id: CompilerLocale
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: CompilerLocale
+  nameWithType: ConsoleCompilerConstants.CompilerLocale
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.CompilerLocale
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public const int CompilerLocale = 228
+    return:
+      type: System.Int32
+    content.vb: Public Const CompilerLocale As Integer = 228
+- uid: PascalABCCompiler.ConsoleCompilerConstants.#ctor
+  commentId: M:PascalABCCompiler.ConsoleCompilerConstants.#ctor
+  id: '#ctor'
+  parent: PascalABCCompiler.ConsoleCompilerConstants
+  langs:
+  - csharp
+  - vb
+  name: ConsoleCompilerConstants()
+  nameWithType: ConsoleCompilerConstants.ConsoleCompilerConstants()
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.ConsoleCompilerConstants()
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public ConsoleCompilerConstants()
+    content.vb: Public Sub New()
+  overload: PascalABCCompiler.ConsoleCompilerConstants.#ctor*
+  nameWithType.vb: ConsoleCompilerConstants.New()
+  fullName.vb: PascalABCCompiler.ConsoleCompilerConstants.New()
+  name.vb: New()
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.ConsoleCompilerConstants.#ctor*
+  commentId: Overload:PascalABCCompiler.ConsoleCompilerConstants.#ctor
+  isExternal: true
+  href: PascalABCCompiler.ConsoleCompilerConstants.html#PascalABCCompiler_ConsoleCompilerConstants__ctor
+  name: ConsoleCompilerConstants
+  nameWithType: ConsoleCompilerConstants.ConsoleCompilerConstants
+  fullName: PascalABCCompiler.ConsoleCompilerConstants.ConsoleCompilerConstants
+  nameWithType.vb: ConsoleCompilerConstants.New
+  fullName.vb: PascalABCCompiler.ConsoleCompilerConstants.New
+  name.vb: New

@@ -1,0 +1,93 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.UnitState
+  commentId: T:PascalABCCompiler.UnitState
+  id: UnitState
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.UnitState.BeginCompilation
+  - PascalABCCompiler.UnitState.Compiled
+  - PascalABCCompiler.UnitState.InterfaceCompiled
+  langs:
+  - csharp
+  - vb
+  name: UnitState
+  nameWithType: UnitState
+  fullName: PascalABCCompiler.UnitState
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum UnitState
+    content.vb: Public Enum UnitState
+- uid: PascalABCCompiler.UnitState.BeginCompilation
+  commentId: F:PascalABCCompiler.UnitState.BeginCompilation
+  id: BeginCompilation
+  parent: PascalABCCompiler.UnitState
+  langs:
+  - csharp
+  - vb
+  name: BeginCompilation
+  nameWithType: UnitState.BeginCompilation
+  fullName: PascalABCCompiler.UnitState.BeginCompilation
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: BeginCompilation = 0
+    return:
+      type: PascalABCCompiler.UnitState
+- uid: PascalABCCompiler.UnitState.InterfaceCompiled
+  commentId: F:PascalABCCompiler.UnitState.InterfaceCompiled
+  id: InterfaceCompiled
+  parent: PascalABCCompiler.UnitState
+  langs:
+  - csharp
+  - vb
+  name: InterfaceCompiled
+  nameWithType: UnitState.InterfaceCompiled
+  fullName: PascalABCCompiler.UnitState.InterfaceCompiled
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: InterfaceCompiled = 1
+    return:
+      type: PascalABCCompiler.UnitState
+- uid: PascalABCCompiler.UnitState.Compiled
+  commentId: F:PascalABCCompiler.UnitState.Compiled
+  id: Compiled
+  parent: PascalABCCompiler.UnitState
+  langs:
+  - csharp
+  - vb
+  name: Compiled
+  nameWithType: UnitState.Compiled
+  fullName: PascalABCCompiler.UnitState.Compiled
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Compiled = 2
+    return:
+      type: PascalABCCompiler.UnitState
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.UnitState
+  commentId: T:PascalABCCompiler.UnitState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.UnitState.html
+  name: UnitState
+  nameWithType: UnitState
+  fullName: PascalABCCompiler.UnitState

@@ -1,0 +1,249 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  commentId: T:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  id: PCUReader.ChangeStateDelegate
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  - PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object,System.AsyncCallback,System.Object)
+  - PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  - PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: PCUReader.ChangeStateDelegate
+  nameWithType: PCUReader.ChangeStateDelegate
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  type: Delegate
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public delegate void PCUReader.ChangeStateDelegate(object Sender, PCUReaderWriterState State, object obj)
+    parameters:
+    - id: Sender
+      type: System.Object
+    - id: State
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+    - id: obj
+      type: System.Object
+    content.vb: Public Delegate Sub PCUReader.ChangeStateDelegate(Sender As Object, State As PCUReaderWriterState, obj As Object)
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  commentId: M:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: ChangeStateDelegate(object, IntPtr)
+  nameWithType: PCUReader.ChangeStateDelegate.ChangeStateDelegate(object, IntPtr)
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.ChangeStateDelegate(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public ChangeStateDelegate(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor*
+  nameWithType.vb: PCUReader.ChangeStateDelegate.New(Object, IntPtr)
+  fullName.vb: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object)
+  commentId: M:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object)
+  id: Invoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object)
+  parent: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: Invoke(object, PCUReaderWriterState, object)
+  nameWithType: PCUReader.ChangeStateDelegate.Invoke(object, PCUReaderWriterState, object)
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke(object, PascalABCCompiler.PCU.PCUReaderWriterState, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public virtual void Invoke(object Sender, PCUReaderWriterState State, object obj)
+    parameters:
+    - id: Sender
+      type: System.Object
+    - id: State
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+    - id: obj
+      type: System.Object
+    content.vb: Public Overridable Sub Invoke(Sender As Object, State As PCUReaderWriterState, obj As Object)
+  overload: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke*
+  nameWithType.vb: PCUReader.ChangeStateDelegate.Invoke(Object, PCUReaderWriterState, Object)
+  fullName.vb: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke(Object, PascalABCCompiler.PCU.PCUReaderWriterState, Object)
+  name.vb: Invoke(Object, PCUReaderWriterState, Object)
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object,System.AsyncCallback,System.Object)
+  commentId: M:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object,System.AsyncCallback,System.Object)
+  id: BeginInvoke(System.Object,PascalABCCompiler.PCU.PCUReaderWriterState,System.Object,System.AsyncCallback,System.Object)
+  parent: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(object, PCUReaderWriterState, object, AsyncCallback, object)
+  nameWithType: PCUReader.ChangeStateDelegate.BeginInvoke(object, PCUReaderWriterState, object, AsyncCallback, object)
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke(object, PascalABCCompiler.PCU.PCUReaderWriterState, object, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(object Sender, PCUReaderWriterState State, object obj, AsyncCallback callback, object @object)
+    parameters:
+    - id: Sender
+      type: System.Object
+    - id: State
+      type: PascalABCCompiler.PCU.PCUReaderWriterState
+    - id: obj
+      type: System.Object
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(Sender As Object, State As PCUReaderWriterState, obj As Object, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke*
+  nameWithType.vb: PCUReader.ChangeStateDelegate.BeginInvoke(Object, PCUReaderWriterState, Object, AsyncCallback, Object)
+  fullName.vb: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke(Object, PascalABCCompiler.PCU.PCUReaderWriterState, Object, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(Object, PCUReaderWriterState, Object, AsyncCallback, Object)
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  commentId: M:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: PCUReader.ChangeStateDelegate.EndInvoke(IAsyncResult)
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke*
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState
+  commentId: T:PascalABCCompiler.PCU.PCUReaderWriterState
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReaderWriterState.html
+  name: PCUReaderWriterState
+  nameWithType: PCUReaderWriterState
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor*
+  commentId: Overload:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.#ctor
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html#PascalABCCompiler_PCU_PCUReader_ChangeStateDelegate__ctor_System_Object_System_IntPtr_
+  name: ChangeStateDelegate
+  nameWithType: PCUReader.ChangeStateDelegate.ChangeStateDelegate
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.ChangeStateDelegate
+  nameWithType.vb: PCUReader.ChangeStateDelegate.New
+  fullName.vb: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.New
+  name.vb: New
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke*
+  commentId: Overload:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html#PascalABCCompiler_PCU_PCUReader_ChangeStateDelegate_Invoke_System_Object_PascalABCCompiler_PCU_PCUReaderWriterState_System_Object_
+  name: Invoke
+  nameWithType: PCUReader.ChangeStateDelegate.Invoke
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.Invoke
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke*
+  commentId: Overload:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html#PascalABCCompiler_PCU_PCUReader_ChangeStateDelegate_BeginInvoke_System_Object_PascalABCCompiler_PCU_PCUReaderWriterState_System_Object_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: PCUReader.ChangeStateDelegate.BeginInvoke
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke*
+  commentId: Overload:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html#PascalABCCompiler_PCU_PCUReader_ChangeStateDelegate_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: PCUReader.ChangeStateDelegate.EndInvoke
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.EndInvoke

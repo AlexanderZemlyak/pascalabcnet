@@ -1,0 +1,1111 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  commentId: T:PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  id: WrappedUnitImplementationScope
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor(PascalABCCompiler.PCU.PCUReader,SymbolTable.Scope)
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find(System.String)
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope(System.String)
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation(System.String)
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope.pr
+  langs:
+  - csharp
+  - vb
+  name: WrappedUnitImplementationScope
+  nameWithType: WrappedUnitImplementationScope
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: 'public class WrappedUnitImplementationScope : UnitImplementationScope'
+    content.vb: Public Class WrappedUnitImplementationScope Inherits UnitImplementationScope
+  inheritance:
+  - System.Object
+  - PascalABCCompiler.TreeConverter.BaseScope
+  - SymbolTable.Scope
+  - SymbolTable.UnitPartScope
+  - SymbolTable.UnitImplementationScope
+  inheritedMembers:
+  - SymbolTable.UnitPartScope.TopScopeArray
+  - SymbolTable.Scope.Name
+  - SymbolTable.Scope.Symbols
+  - SymbolTable.Scope.InternalScopes
+  - SymbolTable.Scope.SymbolTable
+  - SymbolTable.Scope.CaseSensitive
+  - SymbolTable.Scope.AddStatementsToFront
+  - SymbolTable.Scope.TopScope
+  - SymbolTable.Scope.ScopeNum
+  - SymbolTable.Scope.ToString
+  - SymbolTable.Scope.ClearScope
+  - SymbolTable.Scope.Find(System.String,SymbolTable.Scope)
+  - SymbolTable.Scope.FindOnlyInScopeAndBlocks(System.String)
+  - SymbolTable.Scope.FindOnlyInType(System.String,SymbolTable.Scope)
+  - SymbolTable.Scope.AddSymbol(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.pr
+  commentId: F:PascalABCCompiler.PCU.WrappedUnitImplementationScope.pr
+  id: pr
+  parent: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  langs:
+  - csharp
+  - vb
+  name: pr
+  nameWithType: WrappedUnitImplementationScope.pr
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.pr
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: protected PCUReader pr
+    return:
+      type: PascalABCCompiler.PCU.PCUReader
+    content.vb: Protected pr As PCUReader
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor(PascalABCCompiler.PCU.PCUReader,SymbolTable.Scope)
+  commentId: M:PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor(PascalABCCompiler.PCU.PCUReader,SymbolTable.Scope)
+  id: '#ctor(PascalABCCompiler.PCU.PCUReader,SymbolTable.Scope)'
+  parent: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  langs:
+  - csharp
+  - vb
+  name: WrappedUnitImplementationScope(PCUReader, Scope)
+  nameWithType: WrappedUnitImplementationScope.WrappedUnitImplementationScope(PCUReader, Scope)
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.WrappedUnitImplementationScope(PascalABCCompiler.PCU.PCUReader, SymbolTable.Scope)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public WrappedUnitImplementationScope(PCUReader pr, Scope TopScope)
+    parameters:
+    - id: pr
+      type: PascalABCCompiler.PCU.PCUReader
+    - id: TopScope
+      type: SymbolTable.Scope
+    content.vb: Public Sub New(pr As PCUReader, TopScope As Scope)
+  overload: PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor*
+  nameWithType.vb: WrappedUnitImplementationScope.New(PCUReader, Scope)
+  fullName.vb: PascalABCCompiler.PCU.WrappedUnitImplementationScope.New(PascalABCCompiler.PCU.PCUReader, SymbolTable.Scope)
+  name.vb: New(PCUReader, Scope)
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find(System.String)
+  commentId: M:PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find(System.String)
+  id: Find(System.String)
+  parent: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  langs:
+  - csharp
+  - vb
+  name: Find(string)
+  nameWithType: WrappedUnitImplementationScope.Find(string)
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  example: []
+  syntax:
+    content: public override List<SymbolInfo> Find(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+    content.vb: Public Overrides Function Find(name As String) As List(Of SymbolInfo)
+  overridden: SymbolTable.Scope.Find(System.String)
+  overload: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find*
+  nameWithType.vb: WrappedUnitImplementationScope.Find(String)
+  fullName.vb: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find(String)
+  name.vb: Find(String)
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope(System.String)
+  commentId: M:PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope(System.String)
+  id: FindOnlyInScope(System.String)
+  parent: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  langs:
+  - csharp
+  - vb
+  name: FindOnlyInScope(string)
+  nameWithType: WrappedUnitImplementationScope.FindOnlyInScope(string)
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  example: []
+  syntax:
+    content: public override List<SymbolInfo> FindOnlyInScope(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+    content.vb: Public Overrides Function FindOnlyInScope(name As String) As List(Of SymbolInfo)
+  overridden: SymbolTable.Scope.FindOnlyInScope(System.String)
+  overload: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope*
+  nameWithType.vb: WrappedUnitImplementationScope.FindOnlyInScope(String)
+  fullName.vb: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope(String)
+  name.vb: FindOnlyInScope(String)
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation(System.String)
+  commentId: M:PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation(System.String)
+  id: FindWithoutCreation(System.String)
+  parent: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  langs:
+  - csharp
+  - vb
+  name: FindWithoutCreation(string)
+  nameWithType: WrappedUnitImplementationScope.FindWithoutCreation(string)
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public List<SymbolInfo> FindWithoutCreation(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+    content.vb: Public Function FindWithoutCreation(name As String) As List(Of SymbolInfo)
+  overload: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation*
+  nameWithType.vb: WrappedUnitImplementationScope.FindWithoutCreation(String)
+  fullName.vb: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation(String)
+  name.vb: FindWithoutCreation(String)
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PascalABCCompiler.TreeConverter.BaseScope
+  commentId: T:PascalABCCompiler.TreeConverter.BaseScope
+  parent: PascalABCCompiler.TreeConverter
+  isExternal: true
+  name: BaseScope
+  nameWithType: BaseScope
+  fullName: PascalABCCompiler.TreeConverter.BaseScope
+- uid: SymbolTable.Scope
+  commentId: T:SymbolTable.Scope
+  parent: SymbolTable
+  isExternal: true
+  name: Scope
+  nameWithType: Scope
+  fullName: SymbolTable.Scope
+- uid: SymbolTable.UnitPartScope
+  commentId: T:SymbolTable.UnitPartScope
+  parent: SymbolTable
+  isExternal: true
+  name: UnitPartScope
+  nameWithType: UnitPartScope
+  fullName: SymbolTable.UnitPartScope
+- uid: SymbolTable.UnitImplementationScope
+  commentId: T:SymbolTable.UnitImplementationScope
+  parent: SymbolTable
+  isExternal: true
+  name: UnitImplementationScope
+  nameWithType: UnitImplementationScope
+  fullName: SymbolTable.UnitImplementationScope
+- uid: SymbolTable.UnitPartScope.TopScopeArray
+  commentId: F:SymbolTable.UnitPartScope.TopScopeArray
+  parent: SymbolTable.UnitPartScope
+  isExternal: true
+  name: TopScopeArray
+  nameWithType: UnitPartScope.TopScopeArray
+  fullName: SymbolTable.UnitPartScope.TopScopeArray
+- uid: SymbolTable.Scope.Name
+  commentId: F:SymbolTable.Scope.Name
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: Name
+  nameWithType: Scope.Name
+  fullName: SymbolTable.Scope.Name
+- uid: SymbolTable.Scope.Symbols
+  commentId: F:SymbolTable.Scope.Symbols
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: Symbols
+  nameWithType: Scope.Symbols
+  fullName: SymbolTable.Scope.Symbols
+- uid: SymbolTable.Scope.InternalScopes
+  commentId: F:SymbolTable.Scope.InternalScopes
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: InternalScopes
+  nameWithType: Scope.InternalScopes
+  fullName: SymbolTable.Scope.InternalScopes
+- uid: SymbolTable.Scope.SymbolTable
+  commentId: F:SymbolTable.Scope.SymbolTable
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: SymbolTable
+  nameWithType: Scope.SymbolTable
+  fullName: SymbolTable.Scope.SymbolTable
+- uid: SymbolTable.Scope.CaseSensitive
+  commentId: F:SymbolTable.Scope.CaseSensitive
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: CaseSensitive
+  nameWithType: Scope.CaseSensitive
+  fullName: SymbolTable.Scope.CaseSensitive
+- uid: SymbolTable.Scope.AddStatementsToFront
+  commentId: F:SymbolTable.Scope.AddStatementsToFront
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: AddStatementsToFront
+  nameWithType: Scope.AddStatementsToFront
+  fullName: SymbolTable.Scope.AddStatementsToFront
+- uid: SymbolTable.Scope.TopScope
+  commentId: F:SymbolTable.Scope.TopScope
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: TopScope
+  nameWithType: Scope.TopScope
+  fullName: SymbolTable.Scope.TopScope
+- uid: SymbolTable.Scope.ScopeNum
+  commentId: F:SymbolTable.Scope.ScopeNum
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: ScopeNum
+  nameWithType: Scope.ScopeNum
+  fullName: SymbolTable.Scope.ScopeNum
+- uid: SymbolTable.Scope.ToString
+  commentId: M:SymbolTable.Scope.ToString
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: ToString()
+  nameWithType: Scope.ToString()
+  fullName: SymbolTable.Scope.ToString()
+  spec.csharp:
+  - uid: SymbolTable.Scope.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: SymbolTable.Scope.ClearScope
+  commentId: M:SymbolTable.Scope.ClearScope
+  parent: SymbolTable.Scope
+  isExternal: true
+  name: ClearScope()
+  nameWithType: Scope.ClearScope()
+  fullName: SymbolTable.Scope.ClearScope()
+  spec.csharp:
+  - uid: SymbolTable.Scope.ClearScope
+    name: ClearScope
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.ClearScope
+    name: ClearScope
+    isExternal: true
+  - name: (
+  - name: )
+- uid: SymbolTable.Scope.Find(System.String,SymbolTable.Scope)
+  commentId: M:SymbolTable.Scope.Find(System.String,SymbolTable.Scope)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Find(string, Scope)
+  nameWithType: Scope.Find(string, Scope)
+  fullName: SymbolTable.Scope.Find(string, SymbolTable.Scope)
+  nameWithType.vb: Scope.Find(String, Scope)
+  fullName.vb: SymbolTable.Scope.Find(String, SymbolTable.Scope)
+  name.vb: Find(String, Scope)
+  spec.csharp:
+  - uid: SymbolTable.Scope.Find(System.String,SymbolTable.Scope)
+    name: Find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.Find(System.String,SymbolTable.Scope)
+    name: Find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: )
+- uid: SymbolTable.Scope.FindOnlyInScopeAndBlocks(System.String)
+  commentId: M:SymbolTable.Scope.FindOnlyInScopeAndBlocks(System.String)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: FindOnlyInScopeAndBlocks(string)
+  nameWithType: Scope.FindOnlyInScopeAndBlocks(string)
+  fullName: SymbolTable.Scope.FindOnlyInScopeAndBlocks(string)
+  nameWithType.vb: Scope.FindOnlyInScopeAndBlocks(String)
+  fullName.vb: SymbolTable.Scope.FindOnlyInScopeAndBlocks(String)
+  name.vb: FindOnlyInScopeAndBlocks(String)
+  spec.csharp:
+  - uid: SymbolTable.Scope.FindOnlyInScopeAndBlocks(System.String)
+    name: FindOnlyInScopeAndBlocks
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.FindOnlyInScopeAndBlocks(System.String)
+    name: FindOnlyInScopeAndBlocks
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: SymbolTable.Scope.FindOnlyInType(System.String,SymbolTable.Scope)
+  commentId: M:SymbolTable.Scope.FindOnlyInType(System.String,SymbolTable.Scope)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: FindOnlyInType(string, Scope)
+  nameWithType: Scope.FindOnlyInType(string, Scope)
+  fullName: SymbolTable.Scope.FindOnlyInType(string, SymbolTable.Scope)
+  nameWithType.vb: Scope.FindOnlyInType(String, Scope)
+  fullName.vb: SymbolTable.Scope.FindOnlyInType(String, SymbolTable.Scope)
+  name.vb: FindOnlyInType(String, Scope)
+  spec.csharp:
+  - uid: SymbolTable.Scope.FindOnlyInType(System.String,SymbolTable.Scope)
+    name: FindOnlyInType
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.FindOnlyInType(System.String,SymbolTable.Scope)
+    name: FindOnlyInType
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: )
+- uid: SymbolTable.Scope.AddSymbol(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  commentId: M:SymbolTable.Scope.AddSymbol(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: AddSymbol(string, SymbolInfo)
+  nameWithType: Scope.AddSymbol(string, SymbolInfo)
+  fullName: SymbolTable.Scope.AddSymbol(string, PascalABCCompiler.TreeConverter.SymbolInfo)
+  nameWithType.vb: Scope.AddSymbol(String, SymbolInfo)
+  fullName.vb: SymbolTable.Scope.AddSymbol(String, PascalABCCompiler.TreeConverter.SymbolInfo)
+  name.vb: AddSymbol(String, SymbolInfo)
+  spec.csharp:
+  - uid: SymbolTable.Scope.AddSymbol(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: AddSymbol
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.AddSymbol(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: AddSymbol
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.TreeConverter
+  commentId: N:PascalABCCompiler.TreeConverter
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.TreeConverter
+  nameWithType: PascalABCCompiler.TreeConverter
+  fullName: PascalABCCompiler.TreeConverter
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.TreeConverter
+    name: TreeConverter
+    isExternal: true
+    href: PascalABCCompiler.TreeConverter.html
+- uid: SymbolTable
+  commentId: N:SymbolTable
+  isExternal: true
+  name: SymbolTable
+  nameWithType: SymbolTable
+  fullName: SymbolTable
+- uid: PascalABCCompiler.PCU.PCUReader
+  commentId: T:PascalABCCompiler.PCU.PCUReader
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader
+  nameWithType: PCUReader
+  fullName: PascalABCCompiler.PCU.PCUReader
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor*
+  commentId: Overload:PascalABCCompiler.PCU.WrappedUnitImplementationScope.#ctor
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitImplementationScope.html#PascalABCCompiler_PCU_WrappedUnitImplementationScope__ctor_PascalABCCompiler_PCU_PCUReader_SymbolTable_Scope_
+  name: WrappedUnitImplementationScope
+  nameWithType: WrappedUnitImplementationScope.WrappedUnitImplementationScope
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.WrappedUnitImplementationScope
+  nameWithType.vb: WrappedUnitImplementationScope.New
+  fullName.vb: PascalABCCompiler.PCU.WrappedUnitImplementationScope.New
+  name.vb: New
+- uid: SymbolTable.Scope.Find(System.String)
+  commentId: M:SymbolTable.Scope.Find(System.String)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Find(string)
+  nameWithType: Scope.Find(string)
+  fullName: SymbolTable.Scope.Find(string)
+  nameWithType.vb: Scope.Find(String)
+  fullName.vb: SymbolTable.Scope.Find(String)
+  name.vb: Find(String)
+  spec.csharp:
+  - uid: SymbolTable.Scope.Find(System.String)
+    name: Find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.Find(System.String)
+    name: Find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find*
+  commentId: Overload:PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitImplementationScope.html#PascalABCCompiler_PCU_WrappedUnitImplementationScope_Find_System_String_
+  name: Find
+  nameWithType: WrappedUnitImplementationScope.Find
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.Find
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SymbolInfo>
+  nameWithType: List<SymbolInfo>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.TreeConverter.SymbolInfo>
+  nameWithType.vb: List(Of SymbolInfo)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.TreeConverter.SymbolInfo)
+  name.vb: List(Of SymbolInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SymbolTable.Scope.FindOnlyInScope(System.String)
+  commentId: M:SymbolTable.Scope.FindOnlyInScope(System.String)
+  parent: SymbolTable.Scope
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: FindOnlyInScope(string)
+  nameWithType: Scope.FindOnlyInScope(string)
+  fullName: SymbolTable.Scope.FindOnlyInScope(string)
+  nameWithType.vb: Scope.FindOnlyInScope(String)
+  fullName.vb: SymbolTable.Scope.FindOnlyInScope(String)
+  name.vb: FindOnlyInScope(String)
+  spec.csharp:
+  - uid: SymbolTable.Scope.FindOnlyInScope(System.String)
+    name: FindOnlyInScope
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: SymbolTable.Scope.FindOnlyInScope(System.String)
+    name: FindOnlyInScope
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope*
+  commentId: Overload:PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitImplementationScope.html#PascalABCCompiler_PCU_WrappedUnitImplementationScope_FindOnlyInScope_System_String_
+  name: FindOnlyInScope
+  nameWithType: WrappedUnitImplementationScope.FindOnlyInScope
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindOnlyInScope
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation*
+  commentId: Overload:PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitImplementationScope.html#PascalABCCompiler_PCU_WrappedUnitImplementationScope_FindWithoutCreation_System_String_
+  name: FindWithoutCreation
+  nameWithType: WrappedUnitImplementationScope.FindWithoutCreation
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope.FindWithoutCreation

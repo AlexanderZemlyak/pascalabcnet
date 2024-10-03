@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.TypeKind
+  commentId: T:PascalABCCompiler.PCU.TypeKind
+  id: TypeKind
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.TypeKind.Array
+  - PascalABCCompiler.PCU.TypeKind.BoundedArray
+  - PascalABCCompiler.PCU.TypeKind.GenericInstance
+  - PascalABCCompiler.PCU.TypeKind.GenericParameterOfFunction
+  - PascalABCCompiler.PCU.TypeKind.GenericParameterOfMethod
+  - PascalABCCompiler.PCU.TypeKind.GenericParameterOfType
+  - PascalABCCompiler.PCU.TypeKind.LambdaAnyType
+  - PascalABCCompiler.PCU.TypeKind.Pointer
+  - PascalABCCompiler.PCU.TypeKind.ShortString
+  - PascalABCCompiler.PCU.TypeKind.TemplateInstance
+  - PascalABCCompiler.PCU.TypeKind.UnsizedArray
+  langs:
+  - csharp
+  - vb
+  name: TypeKind
+  nameWithType: TypeKind
+  fullName: PascalABCCompiler.PCU.TypeKind
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public enum TypeKind
+    content.vb: Public Enum TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.Array
+  commentId: F:PascalABCCompiler.PCU.TypeKind.Array
+  id: Array
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: Array
+  nameWithType: TypeKind.Array
+  fullName: PascalABCCompiler.PCU.TypeKind.Array
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Array = 2
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.Pointer
+  commentId: F:PascalABCCompiler.PCU.TypeKind.Pointer
+  id: Pointer
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: Pointer
+  nameWithType: TypeKind.Pointer
+  fullName: PascalABCCompiler.PCU.TypeKind.Pointer
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Pointer = 3
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.UnsizedArray
+  commentId: F:PascalABCCompiler.PCU.TypeKind.UnsizedArray
+  id: UnsizedArray
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: UnsizedArray
+  nameWithType: TypeKind.UnsizedArray
+  fullName: PascalABCCompiler.PCU.TypeKind.UnsizedArray
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: UnsizedArray = 4
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.BoundedArray
+  commentId: F:PascalABCCompiler.PCU.TypeKind.BoundedArray
+  id: BoundedArray
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: BoundedArray
+  nameWithType: TypeKind.BoundedArray
+  fullName: PascalABCCompiler.PCU.TypeKind.BoundedArray
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: BoundedArray = 5
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.TemplateInstance
+  commentId: F:PascalABCCompiler.PCU.TypeKind.TemplateInstance
+  id: TemplateInstance
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: TemplateInstance
+  nameWithType: TypeKind.TemplateInstance
+  fullName: PascalABCCompiler.PCU.TypeKind.TemplateInstance
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: TemplateInstance = 6
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.GenericInstance
+  commentId: F:PascalABCCompiler.PCU.TypeKind.GenericInstance
+  id: GenericInstance
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: GenericInstance
+  nameWithType: TypeKind.GenericInstance
+  fullName: PascalABCCompiler.PCU.TypeKind.GenericInstance
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: GenericInstance = 7
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.ShortString
+  commentId: F:PascalABCCompiler.PCU.TypeKind.ShortString
+  id: ShortString
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: ShortString
+  nameWithType: TypeKind.ShortString
+  fullName: PascalABCCompiler.PCU.TypeKind.ShortString
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: ShortString = 8
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.GenericParameterOfType
+  commentId: F:PascalABCCompiler.PCU.TypeKind.GenericParameterOfType
+  id: GenericParameterOfType
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: GenericParameterOfType
+  nameWithType: TypeKind.GenericParameterOfType
+  fullName: PascalABCCompiler.PCU.TypeKind.GenericParameterOfType
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: GenericParameterOfType = 9
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.GenericParameterOfFunction
+  commentId: F:PascalABCCompiler.PCU.TypeKind.GenericParameterOfFunction
+  id: GenericParameterOfFunction
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: GenericParameterOfFunction
+  nameWithType: TypeKind.GenericParameterOfFunction
+  fullName: PascalABCCompiler.PCU.TypeKind.GenericParameterOfFunction
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: GenericParameterOfFunction = 10
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.GenericParameterOfMethod
+  commentId: F:PascalABCCompiler.PCU.TypeKind.GenericParameterOfMethod
+  id: GenericParameterOfMethod
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: GenericParameterOfMethod
+  nameWithType: TypeKind.GenericParameterOfMethod
+  fullName: PascalABCCompiler.PCU.TypeKind.GenericParameterOfMethod
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: GenericParameterOfMethod = 11
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.TypeKind.LambdaAnyType
+  commentId: F:PascalABCCompiler.PCU.TypeKind.LambdaAnyType
+  id: LambdaAnyType
+  parent: PascalABCCompiler.PCU.TypeKind
+  langs:
+  - csharp
+  - vb
+  name: LambdaAnyType
+  nameWithType: TypeKind.LambdaAnyType
+  fullName: PascalABCCompiler.PCU.TypeKind.LambdaAnyType
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: LambdaAnyType = 12
+    return:
+      type: PascalABCCompiler.PCU.TypeKind
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: PascalABCCompiler.PCU.TypeKind
+  commentId: T:PascalABCCompiler.PCU.TypeKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.TypeKind.html
+  name: TypeKind
+  nameWithType: TypeKind
+  fullName: PascalABCCompiler.PCU.TypeKind

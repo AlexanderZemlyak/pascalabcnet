@@ -1,0 +1,46 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../bin/",
+          "files": [
+            "Compiler.dll"
+          ]
+        }
+      ],
+      "dest": "api",
+      "includePrivateMembers" : true
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "",
+      "_appTitle": "",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}

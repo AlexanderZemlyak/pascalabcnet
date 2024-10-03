@@ -1,0 +1,1177 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DocXmlManager </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DocXmlManager ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PascalABCCompiler.DocXmlManager">
+
+
+
+  <h1 id="PascalABCCompiler_DocXmlManager" data-uid="PascalABCCompiler.DocXmlManager" class="text-break">
+Class DocXmlManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="PascalABCCompiler.html">PascalABCCompiler</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Compiler.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DocXmlManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DocXmlManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldsetter">object.FieldSetter(string, string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.fieldgetter">object.FieldGetter(string, string, ref object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo">object.GetFieldInfo(string, string)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PascalABCCompiler_DocXmlManager__ctor_" data-uid="PascalABCCompiler.DocXmlManager.#ctor*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager__ctor" data-uid="PascalABCCompiler.DocXmlManager.#ctor">
+  DocXmlManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DocXmlManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="PascalABCCompiler_DocXmlManager_cu" data-uid="PascalABCCompiler.DocXmlManager.cu">
+  cu
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private CompilationUnit cu</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilationUnit.html">CompilationUnit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_DocXmlManager_is_assembly" data-uid="PascalABCCompiler.DocXmlManager.is_assembly">
+  is_assembly
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private bool is_assembly</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_DocXmlManager_unit_name" data-uid="PascalABCCompiler.DocXmlManager.unit_name">
+  unit_name
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string unit_name</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PascalABCCompiler_DocXmlManager_xtw" data-uid="PascalABCCompiler.DocXmlManager.xtw">
+  xtw
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private XmlWriter xtw</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PascalABCCompiler_DocXmlManager_GetGenericFlag_" data-uid="PascalABCCompiler.DocXmlManager.GetGenericFlag*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_GetGenericFlag_PascalABCCompiler_TreeRealization_common_function_node_" data-uid="PascalABCCompiler.DocXmlManager.GetGenericFlag(PascalABCCompiler.TreeRealization.common_function_node)">
+  GetGenericFlag(common_function_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string GetGenericFlag(common_function_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_function_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_GetParameters_" data-uid="PascalABCCompiler.DocXmlManager.GetParameters*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_GetParameters_PascalABCCompiler_TreeRealization_common_function_node_" data-uid="PascalABCCompiler.DocXmlManager.GetParameters(PascalABCCompiler.TreeRealization.common_function_node)">
+  GetParameters(common_function_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string GetParameters(common_function_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_function_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveClassConstant_" data-uid="PascalABCCompiler.DocXmlManager.SaveClassConstant*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveClassConstant_PascalABCCompiler_TreeRealization_class_constant_definition_" data-uid="PascalABCCompiler.DocXmlManager.SaveClassConstant(PascalABCCompiler.TreeRealization.class_constant_definition)">
+  SaveClassConstant(class_constant_definition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveClassConstant(class_constant_definition cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">class_constant_definition</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveConstant_" data-uid="PascalABCCompiler.DocXmlManager.SaveConstant*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveConstant_PascalABCCompiler_TreeRealization_namespace_constant_definition_" data-uid="PascalABCCompiler.DocXmlManager.SaveConstant(PascalABCCompiler.TreeRealization.namespace_constant_definition)">
+  SaveConstant(namespace_constant_definition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveConstant(namespace_constant_definition cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">namespace_constant_definition</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveEvent_" data-uid="PascalABCCompiler.DocXmlManager.SaveEvent*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveEvent_PascalABCCompiler_TreeRealization_common_event_" data-uid="PascalABCCompiler.DocXmlManager.SaveEvent(PascalABCCompiler.TreeRealization.common_event)">
+  SaveEvent(common_event)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveEvent(common_event cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_event</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveField_" data-uid="PascalABCCompiler.DocXmlManager.SaveField*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveField_PascalABCCompiler_TreeRealization_class_field_" data-uid="PascalABCCompiler.DocXmlManager.SaveField(PascalABCCompiler.TreeRealization.class_field)">
+  SaveField(class_field)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveField(class_field cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">class_field</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveFunction_" data-uid="PascalABCCompiler.DocXmlManager.SaveFunction*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveFunction_PascalABCCompiler_TreeRealization_common_namespace_function_node_" data-uid="PascalABCCompiler.DocXmlManager.SaveFunction(PascalABCCompiler.TreeRealization.common_namespace_function_node)">
+  SaveFunction(common_namespace_function_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveFunction(common_namespace_function_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_namespace_function_node</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveMembers_" data-uid="PascalABCCompiler.DocXmlManager.SaveMembers*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveMembers" data-uid="PascalABCCompiler.DocXmlManager.SaveMembers">
+  SaveMembers()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveMembers()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveMethod_" data-uid="PascalABCCompiler.DocXmlManager.SaveMethod*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveMethod_PascalABCCompiler_TreeRealization_common_method_node_" data-uid="PascalABCCompiler.DocXmlManager.SaveMethod(PascalABCCompiler.TreeRealization.common_method_node)">
+  SaveMethod(common_method_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveMethod(common_method_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_method_node</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveProperty_" data-uid="PascalABCCompiler.DocXmlManager.SaveProperty*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveProperty_PascalABCCompiler_TreeRealization_common_property_node_" data-uid="PascalABCCompiler.DocXmlManager.SaveProperty(PascalABCCompiler.TreeRealization.common_property_node)">
+  SaveProperty(common_property_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveProperty(common_property_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">common_property_node</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveType_" data-uid="PascalABCCompiler.DocXmlManager.SaveType*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveType_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.SaveType(PascalABCCompiler.TreeRealization.common_type_node)">
+  SaveType(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveType(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveTypeSynonim_" data-uid="PascalABCCompiler.DocXmlManager.SaveTypeSynonim*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveTypeSynonim_PascalABCCompiler_TreeRealization_type_synonym_" data-uid="PascalABCCompiler.DocXmlManager.SaveTypeSynonim(PascalABCCompiler.TreeRealization.type_synonym)">
+  SaveTypeSynonim(type_synonym)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveTypeSynonim(type_synonym ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">type_synonym</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveVariable_" data-uid="PascalABCCompiler.DocXmlManager.SaveVariable*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveVariable_PascalABCCompiler_TreeRealization_var_definition_node_" data-uid="PascalABCCompiler.DocXmlManager.SaveVariable(PascalABCCompiler.TreeRealization.var_definition_node)">
+  SaveVariable(var_definition_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveVariable(var_definition_node cfn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cfn</code> <span class="xref">var_definition_node</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_SaveXml_" data-uid="PascalABCCompiler.DocXmlManager.SaveXml*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_SaveXml_PascalABCCompiler_CompilationUnit_" data-uid="PascalABCCompiler.DocXmlManager.SaveXml(PascalABCCompiler.CompilationUnit)">
+  SaveXml(CompilationUnit)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveXml(CompilationUnit cu)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cu</code> <a class="xref" href="PascalABCCompiler.CompilationUnit.html">CompilationUnit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_array_name_" data-uid="PascalABCCompiler.DocXmlManager.get_array_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_array_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_array_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_array_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_array_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_binary_file_name_" data-uid="PascalABCCompiler.DocXmlManager.get_binary_file_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_binary_file_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_binary_file_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_binary_file_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_binary_file_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_constant_" data-uid="PascalABCCompiler.DocXmlManager.get_constant*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_constant_PascalABCCompiler_TreeRealization_constant_node_" data-uid="PascalABCCompiler.DocXmlManager.get_constant(PascalABCCompiler.TreeRealization.constant_node)">
+  get_constant(constant_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_constant(constant_node cn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cn</code> <span class="xref">constant_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_delegate_name_" data-uid="PascalABCCompiler.DocXmlManager.get_delegate_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_delegate_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_delegate_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_delegate_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_delegate_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_diap_name_" data-uid="PascalABCCompiler.DocXmlManager.get_diap_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_diap_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_diap_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_diap_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_diap_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_dyn_array_name_" data-uid="PascalABCCompiler.DocXmlManager.get_dyn_array_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_dyn_array_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_dyn_array_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_dyn_array_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_dyn_array_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_name_" data-uid="PascalABCCompiler.DocXmlManager.get_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_name_PascalABCCompiler_TreeRealization_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_name(PascalABCCompiler.TreeRealization.type_node)">
+  get_name(type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_name(type_node tn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tn</code> <span class="xref">type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_pointer_name_" data-uid="PascalABCCompiler.DocXmlManager.get_pointer_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_pointer_name_PascalABCCompiler_TreeRealization_ref_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_pointer_name(PascalABCCompiler.TreeRealization.ref_type_node)">
+  get_pointer_name(ref_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_pointer_name(ref_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">ref_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_set_type_name_" data-uid="PascalABCCompiler.DocXmlManager.get_set_type_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_set_type_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_set_type_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_set_type_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_set_type_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_shortstring_name_" data-uid="PascalABCCompiler.DocXmlManager.get_shortstring_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_shortstring_name_PascalABCCompiler_TreeRealization_short_string_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_shortstring_name(PascalABCCompiler.TreeRealization.short_string_type_node)">
+  get_shortstring_name(short_string_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_shortstring_name(short_string_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">short_string_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_DocXmlManager_get_typed_file_name_" data-uid="PascalABCCompiler.DocXmlManager.get_typed_file_name*"></a>
+
+  <h3 id="PascalABCCompiler_DocXmlManager_get_typed_file_name_PascalABCCompiler_TreeRealization_common_type_node_" data-uid="PascalABCCompiler.DocXmlManager.get_typed_file_name(PascalABCCompiler.TreeRealization.common_type_node)">
+  get_typed_file_name(common_type_node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private string get_typed_file_name(common_type_node ctn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctn</code> <span class="xref">common_type_node</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,361 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  id: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.ClassInfo
+  - PascalABCCompiler.PCU.DotAdditInfo
+  - PascalABCCompiler.PCU.DotNetKind
+  - PascalABCCompiler.PCU.DotNetNameRef
+  - PascalABCCompiler.PCU.GenericParamKind
+  - PascalABCCompiler.PCU.ImportKind
+  - PascalABCCompiler.PCU.ImportedEntity
+  - PascalABCCompiler.PCU.InvalidPCUFile
+  - PascalABCCompiler.PCU.NameRef
+  - PascalABCCompiler.PCU.PCUConsts
+  - PascalABCCompiler.PCU.PCUFile
+  - PascalABCCompiler.PCU.PCUFileFormatVersion
+  - PascalABCCompiler.PCU.PCUReader
+  - PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  - PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+  - PascalABCCompiler.PCU.PCUReader.TypeSpec
+  - PascalABCCompiler.PCU.PCUReaderWriterState
+  - PascalABCCompiler.PCU.PCUWriter
+  - PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+  - PascalABCCompiler.PCU.TypeKind
+  - PascalABCCompiler.PCU.WrappedClassScope
+  - PascalABCCompiler.PCU.WrappedInterfaceScope
+  - PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  - PascalABCCompiler.PCU.WrappedUnitInterfaceScope
+  - PascalABCCompiler.PCU.wrapped_common_type_node
+  - PascalABCCompiler.PCU.wrapped_expression
+  - PascalABCCompiler.PCU.wrapped_function_body
+  - PascalABCCompiler.PCU.wrapped_type_synonym
+  langs:
+  - csharp
+  - vb
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  type: Namespace
+  assemblies:
+  - Compiler
+references:
+- uid: PascalABCCompiler.PCU.PCUFileFormatVersion
+  commentId: T:PascalABCCompiler.PCU.PCUFileFormatVersion
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUFileFormatVersion.html
+  name: PCUFileFormatVersion
+  nameWithType: PCUFileFormatVersion
+  fullName: PascalABCCompiler.PCU.PCUFileFormatVersion
+- uid: PascalABCCompiler.PCU.PCUConsts
+  commentId: T:PascalABCCompiler.PCU.PCUConsts
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUConsts.html
+  name: PCUConsts
+  nameWithType: PCUConsts
+  fullName: PascalABCCompiler.PCU.PCUConsts
+- uid: PascalABCCompiler.PCU.NameRef
+  commentId: T:PascalABCCompiler.PCU.NameRef
+  isExternal: true
+  href: PascalABCCompiler.PCU.NameRef.html
+  name: NameRef
+  nameWithType: NameRef
+  fullName: PascalABCCompiler.PCU.NameRef
+- uid: PascalABCCompiler.PCU.ClassInfo
+  commentId: T:PascalABCCompiler.PCU.ClassInfo
+  isExternal: true
+  href: PascalABCCompiler.PCU.ClassInfo.html
+  name: ClassInfo
+  nameWithType: ClassInfo
+  fullName: PascalABCCompiler.PCU.ClassInfo
+- uid: PascalABCCompiler.PCU.ImportKind
+  commentId: T:PascalABCCompiler.PCU.ImportKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.ImportKind.html
+  name: ImportKind
+  nameWithType: ImportKind
+  fullName: PascalABCCompiler.PCU.ImportKind
+- uid: PascalABCCompiler.PCU.TypeKind
+  commentId: T:PascalABCCompiler.PCU.TypeKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.TypeKind.html
+  name: TypeKind
+  nameWithType: TypeKind
+  fullName: PascalABCCompiler.PCU.TypeKind
+- uid: PascalABCCompiler.PCU.GenericParamKind
+  commentId: T:PascalABCCompiler.PCU.GenericParamKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.GenericParamKind.html
+  name: GenericParamKind
+  nameWithType: GenericParamKind
+  fullName: PascalABCCompiler.PCU.GenericParamKind
+- uid: PascalABCCompiler.PCU.ImportedEntity
+  commentId: T:PascalABCCompiler.PCU.ImportedEntity
+  isExternal: true
+  href: PascalABCCompiler.PCU.ImportedEntity.html
+  name: ImportedEntity
+  nameWithType: ImportedEntity
+  fullName: PascalABCCompiler.PCU.ImportedEntity
+- uid: PascalABCCompiler.PCU.DotNetKind
+  commentId: T:PascalABCCompiler.PCU.DotNetKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.DotNetKind.html
+  name: DotNetKind
+  nameWithType: DotNetKind
+  fullName: PascalABCCompiler.PCU.DotNetKind
+- uid: PascalABCCompiler.PCU.DotAdditInfo
+  commentId: T:PascalABCCompiler.PCU.DotAdditInfo
+  isExternal: true
+  href: PascalABCCompiler.PCU.DotAdditInfo.html
+  name: DotAdditInfo
+  nameWithType: DotAdditInfo
+  fullName: PascalABCCompiler.PCU.DotAdditInfo
+- uid: PascalABCCompiler.PCU.DotNetNameRef
+  commentId: T:PascalABCCompiler.PCU.DotNetNameRef
+  isExternal: true
+  href: PascalABCCompiler.PCU.DotNetNameRef.html
+  name: DotNetNameRef
+  nameWithType: DotNetNameRef
+  fullName: PascalABCCompiler.PCU.DotNetNameRef
+- uid: PascalABCCompiler.PCU.PCUFile
+  commentId: T:PascalABCCompiler.PCU.PCUFile
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUFile.html
+  name: PCUFile
+  nameWithType: PCUFile
+  fullName: PascalABCCompiler.PCU.PCUFile
+- uid: PascalABCCompiler.PCU.PCUWriter
+  commentId: T:PascalABCCompiler.PCU.PCUWriter
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUWriter.html
+  name: PCUWriter
+  nameWithType: PCUWriter
+  fullName: PascalABCCompiler.PCU.PCUWriter
+- uid: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+  commentId: T:PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUWriter.html
+  name: PCUWriter.ChangeStateDelegate
+  nameWithType: PCUWriter.ChangeStateDelegate
+  fullName: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+  spec.csharp:
+  - uid: PascalABCCompiler.PCU.PCUWriter
+    name: PCUWriter
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUWriter.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate.html
+  spec.vb:
+  - uid: PascalABCCompiler.PCU.PCUWriter
+    name: PCUWriter
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUWriter.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate.html
+- uid: PascalABCCompiler.PCU.PCUReaderWriterState
+  commentId: T:PascalABCCompiler.PCU.PCUReaderWriterState
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReaderWriterState.html
+  name: PCUReaderWriterState
+  nameWithType: PCUReaderWriterState
+  fullName: PascalABCCompiler.PCU.PCUReaderWriterState
+- uid: PascalABCCompiler.PCU.InvalidPCUFile
+  commentId: T:PascalABCCompiler.PCU.InvalidPCUFile
+  isExternal: true
+  href: PascalABCCompiler.PCU.InvalidPCUFile.html
+  name: InvalidPCUFile
+  nameWithType: InvalidPCUFile
+  fullName: PascalABCCompiler.PCU.InvalidPCUFile
+- uid: PascalABCCompiler.PCU.PCUReader
+  commentId: T:PascalABCCompiler.PCU.PCUReader
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader
+  nameWithType: PCUReader
+  fullName: PascalABCCompiler.PCU.PCUReader
+- uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  commentId: T:PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader.ChangeStateDelegate
+  nameWithType: PCUReader.ChangeStateDelegate
+  fullName: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+  spec.csharp:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html
+  spec.vb:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html
+- uid: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+  commentId: T:PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader.PCUFileHeadState
+  nameWithType: PCUReader.PCUFileHeadState
+  fullName: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+  spec.csharp:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+    name: PCUFileHeadState
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState.html
+  spec.vb:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+    name: PCUFileHeadState
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState.html
+- uid: PascalABCCompiler.PCU.PCUReader.TypeSpec
+  commentId: T:PascalABCCompiler.PCU.PCUReader.TypeSpec
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader.TypeSpec
+  nameWithType: PCUReader.TypeSpec
+  fullName: PascalABCCompiler.PCU.PCUReader.TypeSpec
+  spec.csharp:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.TypeSpec
+    name: TypeSpec
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.TypeSpec.html
+  spec.vb:
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.html
+  - name: .
+  - uid: PascalABCCompiler.PCU.PCUReader.TypeSpec
+    name: TypeSpec
+    isExternal: true
+    href: PascalABCCompiler.PCU.PCUReader.TypeSpec.html
+- uid: PascalABCCompiler.PCU.WrappedUnitInterfaceScope
+  commentId: T:PascalABCCompiler.PCU.WrappedUnitInterfaceScope
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitInterfaceScope.html
+  name: WrappedUnitInterfaceScope
+  nameWithType: WrappedUnitInterfaceScope
+  fullName: PascalABCCompiler.PCU.WrappedUnitInterfaceScope
+- uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  commentId: T:PascalABCCompiler.PCU.WrappedUnitImplementationScope
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedUnitImplementationScope.html
+  name: WrappedUnitImplementationScope
+  nameWithType: WrappedUnitImplementationScope
+  fullName: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+- uid: PascalABCCompiler.PCU.WrappedClassScope
+  commentId: T:PascalABCCompiler.PCU.WrappedClassScope
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedClassScope.html
+  name: WrappedClassScope
+  nameWithType: WrappedClassScope
+  fullName: PascalABCCompiler.PCU.WrappedClassScope
+- uid: PascalABCCompiler.PCU.WrappedInterfaceScope
+  commentId: T:PascalABCCompiler.PCU.WrappedInterfaceScope
+  isExternal: true
+  href: PascalABCCompiler.PCU.WrappedInterfaceScope.html
+  name: WrappedInterfaceScope
+  nameWithType: WrappedInterfaceScope
+  fullName: PascalABCCompiler.PCU.WrappedInterfaceScope
+- uid: PascalABCCompiler.PCU.wrapped_type_synonym
+  commentId: T:PascalABCCompiler.PCU.wrapped_type_synonym
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_type_synonym.html
+  name: wrapped_type_synonym
+  nameWithType: wrapped_type_synonym
+  fullName: PascalABCCompiler.PCU.wrapped_type_synonym
+- uid: PascalABCCompiler.PCU.wrapped_expression
+  commentId: T:PascalABCCompiler.PCU.wrapped_expression
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_expression.html
+  name: wrapped_expression
+  nameWithType: wrapped_expression
+  fullName: PascalABCCompiler.PCU.wrapped_expression
+- uid: PascalABCCompiler.PCU.wrapped_function_body
+  commentId: T:PascalABCCompiler.PCU.wrapped_function_body
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_function_body.html
+  name: wrapped_function_body
+  nameWithType: wrapped_function_body
+  fullName: PascalABCCompiler.PCU.wrapped_function_body
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node
+  commentId: T:PascalABCCompiler.PCU.wrapped_common_type_node
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_common_type_node.html
+  name: wrapped_common_type_node
+  nameWithType: wrapped_common_type_node
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html

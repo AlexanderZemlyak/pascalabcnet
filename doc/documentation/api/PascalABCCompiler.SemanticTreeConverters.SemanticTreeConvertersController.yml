@@ -1,0 +1,848 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  id: SemanticTreeConvertersController
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor(PascalABCCompiler.ICompiler)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters(System.String)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeState
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Compiler
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert(PascalABCCompiler.SemanticTree.IProgramNode)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.semanticTreeConverters
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConvertersController
+  nameWithType: SemanticTreeConvertersController
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public class SemanticTreeConvertersController
+    content.vb: Public Class SemanticTreeConvertersController
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Compiler
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Compiler
+  id: Compiler
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: Compiler
+  nameWithType: SemanticTreeConvertersController.Compiler
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Compiler
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: private ICompiler Compiler
+    return:
+      type: PascalABCCompiler.ICompiler
+    content.vb: Private Compiler As ICompiler
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.semanticTreeConverters
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.semanticTreeConverters
+  id: semanticTreeConverters
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: semanticTreeConverters
+  nameWithType: SemanticTreeConvertersController.semanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.semanticTreeConverters
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: private List<ISemanticTreeConverter> semanticTreeConverters
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter}
+    content.vb: Private semanticTreeConverters As List(Of ISemanticTreeConverter)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor(PascalABCCompiler.ICompiler)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor(PascalABCCompiler.ICompiler)
+  id: '#ctor(PascalABCCompiler.ICompiler)'
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConvertersController(ICompiler)
+  nameWithType: SemanticTreeConvertersController.SemanticTreeConvertersController(ICompiler)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConvertersController(PascalABCCompiler.ICompiler)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public SemanticTreeConvertersController(ICompiler Compiler)
+    parameters:
+    - id: Compiler
+      type: PascalABCCompiler.ICompiler
+    content.vb: Public Sub New(Compiler As ICompiler)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor*
+  nameWithType.vb: SemanticTreeConvertersController.New(ICompiler)
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.New(PascalABCCompiler.ICompiler)
+  name.vb: New(ICompiler)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters
+  id: AddConverters
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: AddConverters()
+  nameWithType: SemanticTreeConvertersController.AddConverters()
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters()
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public void AddConverters()
+    content.vb: Public Sub AddConverters()
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters*
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters(System.String)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters(System.String)
+  id: AddConverters(System.String)
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: AddConverters(string)
+  nameWithType: SemanticTreeConvertersController.AddConverters(string)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: private void AddConverters(string DirectoryName)
+    parameters:
+    - id: DirectoryName
+      type: System.String
+    content.vb: Private Sub AddConverters(DirectoryName As String)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters*
+  nameWithType.vb: SemanticTreeConvertersController.AddConverters(String)
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters(String)
+  name.vb: AddConverters(String)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert(PascalABCCompiler.SemanticTree.IProgramNode)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert(PascalABCCompiler.SemanticTree.IProgramNode)
+  id: Convert(PascalABCCompiler.SemanticTree.IProgramNode)
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: Convert(IProgramNode)
+  nameWithType: SemanticTreeConvertersController.Convert(IProgramNode)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert(PascalABCCompiler.SemanticTree.IProgramNode)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public IProgramNode Convert(IProgramNode ProgramNode)
+    parameters:
+    - id: ProgramNode
+      type: PascalABCCompiler.SemanticTree.IProgramNode
+    return:
+      type: PascalABCCompiler.SemanticTree.IProgramNode
+    content.vb: Public Function Convert(ProgramNode As IProgramNode) As IProgramNode
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert*
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+  commentId: P:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+  id: SemanticTreeConverters
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConverters
+  nameWithType: SemanticTreeConvertersController.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public List<ISemanticTreeConverter> SemanticTreeConverters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter}
+    content.vb: Public ReadOnly Property SemanticTreeConverters As List(Of ISemanticTreeConverter)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters*
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeState
+  commentId: E:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeState
+  id: ChangeState
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+  langs:
+  - csharp
+  - vb
+  name: ChangeState
+  nameWithType: SemanticTreeConvertersController.ChangeState
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeState
+  type: Event
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public event SemanticTreeConvertersController.ChangeStateDelegate ChangeState
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+    content.vb: Public Event ChangeState As SemanticTreeConvertersController.ChangeStateDelegate
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.ICompiler
+  commentId: T:PascalABCCompiler.ICompiler
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html
+  name: ICompiler
+  nameWithType: ICompiler
+  fullName: PascalABCCompiler.ICompiler
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Collections.Generic.List{PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ISemanticTreeConverter>
+  nameWithType: List<ISemanticTreeConverter>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter>
+  nameWithType.vb: List(Of ISemanticTreeConverter)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  name.vb: List(Of ISemanticTreeConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    name: ISemanticTreeConverter
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    name: ISemanticTreeConverter
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.#ctor
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController__ctor_PascalABCCompiler_ICompiler_
+  name: SemanticTreeConvertersController
+  nameWithType: SemanticTreeConvertersController.SemanticTreeConvertersController
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConvertersController
+  nameWithType.vb: SemanticTreeConvertersController.New
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.New
+  name.vb: New
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_AddConverters
+  name: AddConverters
+  nameWithType: SemanticTreeConvertersController.AddConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.AddConverters
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_Convert_PascalABCCompiler_SemanticTree_IProgramNode_
+  name: Convert
+  nameWithType: SemanticTreeConvertersController.Convert
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.Convert
+- uid: PascalABCCompiler.SemanticTree.IProgramNode
+  commentId: T:PascalABCCompiler.SemanticTree.IProgramNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: IProgramNode
+  nameWithType: IProgramNode
+  fullName: PascalABCCompiler.SemanticTree.IProgramNode
+- uid: PascalABCCompiler.SemanticTree
+  commentId: N:PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: PascalABCCompiler.SemanticTree
+  nameWithType: PascalABCCompiler.SemanticTree
+  fullName: PascalABCCompiler.SemanticTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_SemanticTreeConverters
+  name: SemanticTreeConverters
+  nameWithType: SemanticTreeConvertersController.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.SemanticTreeConverters
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  name: SemanticTreeConvertersController.ChangeStateDelegate
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html
+  spec.vb:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+    name: ChangeStateDelegate
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html

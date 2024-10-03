@@ -1,0 +1,1151 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerOptions.StandardModule
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModule
+  id: CompilerOptions.StandardModule
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerOptions.StandardModule.#ctor(System.String,PascalABCCompiler.CompilerOptions.StandardModuleAddMethod,System.String)
+  - PascalABCCompiler.CompilerOptions.StandardModule.addMethod
+  - PascalABCCompiler.CompilerOptions.StandardModule.languageToAdd
+  - PascalABCCompiler.CompilerOptions.StandardModule.name
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptions.StandardModule
+  nameWithType: CompilerOptions.StandardModule
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: 'public class CompilerOptions.StandardModule : MarshalByRefObject'
+    content.vb: Public Class CompilerOptions.StandardModule Inherits MarshalByRefObject
+  inheritance:
+  - System.Object
+  - System.MarshalByRefObject
+  inheritedMembers:
+  - System.MarshalByRefObject.__identity
+  - System.MarshalByRefObject.GetComIUnknown(System.Boolean)
+  - System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+  - System.MarshalByRefObject.IsInstanceOfType(System.Type)
+  - System.MarshalByRefObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])
+  - System.MarshalByRefObject.MemberwiseClone(System.Boolean)
+  - System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject,System.Boolean@)
+  - System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+  - System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+  - System.MarshalByRefObject.__ResetServerIdentity
+  - System.MarshalByRefObject.GetLifetimeService
+  - System.MarshalByRefObject.InitializeLifetimeService
+  - System.MarshalByRefObject.CreateObjRef(System.Type)
+  - System.MarshalByRefObject.CanCastToXmlType(System.String,System.String)
+  - System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType,System.MarshalByRefObject)
+  - System.MarshalByRefObject.Identity
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.CompilerOptions.StandardModule.name
+  commentId: F:PascalABCCompiler.CompilerOptions.StandardModule.name
+  id: name
+  parent: PascalABCCompiler.CompilerOptions.StandardModule
+  langs:
+  - csharp
+  - vb
+  name: name
+  nameWithType: CompilerOptions.StandardModule.name
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule.name
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public string name
+    return:
+      type: System.String
+    content.vb: Public name As String
+- uid: PascalABCCompiler.CompilerOptions.StandardModule.addMethod
+  commentId: F:PascalABCCompiler.CompilerOptions.StandardModule.addMethod
+  id: addMethod
+  parent: PascalABCCompiler.CompilerOptions.StandardModule
+  langs:
+  - csharp
+  - vb
+  name: addMethod
+  nameWithType: CompilerOptions.StandardModule.addMethod
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule.addMethod
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public CompilerOptions.StandardModuleAddMethod addMethod
+    return:
+      type: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    content.vb: Public addMethod As CompilerOptions.StandardModuleAddMethod
+- uid: PascalABCCompiler.CompilerOptions.StandardModule.languageToAdd
+  commentId: F:PascalABCCompiler.CompilerOptions.StandardModule.languageToAdd
+  id: languageToAdd
+  parent: PascalABCCompiler.CompilerOptions.StandardModule
+  langs:
+  - csharp
+  - vb
+  name: languageToAdd
+  nameWithType: CompilerOptions.StandardModule.languageToAdd
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule.languageToAdd
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public string languageToAdd
+    return:
+      type: System.String
+    content.vb: Public languageToAdd As String
+- uid: PascalABCCompiler.CompilerOptions.StandardModule.#ctor(System.String,PascalABCCompiler.CompilerOptions.StandardModuleAddMethod,System.String)
+  commentId: M:PascalABCCompiler.CompilerOptions.StandardModule.#ctor(System.String,PascalABCCompiler.CompilerOptions.StandardModuleAddMethod,System.String)
+  id: '#ctor(System.String,PascalABCCompiler.CompilerOptions.StandardModuleAddMethod,System.String)'
+  parent: PascalABCCompiler.CompilerOptions.StandardModule
+  langs:
+  - csharp
+  - vb
+  name: StandardModule(string, StandardModuleAddMethod, string)
+  nameWithType: CompilerOptions.StandardModule.StandardModule(string, CompilerOptions.StandardModuleAddMethod, string)
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule.StandardModule(string, PascalABCCompiler.CompilerOptions.StandardModuleAddMethod, string)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public StandardModule(string name, CompilerOptions.StandardModuleAddMethod addMethod = StandardModuleAddMethod.LeftToAll, string languageToAdd = "PascalABC.NET")
+    parameters:
+    - id: name
+      type: System.String
+    - id: addMethod
+      type: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    - id: languageToAdd
+      type: System.String
+    content.vb: Public Sub New(name As String, addMethod As CompilerOptions.StandardModuleAddMethod = StandardModuleAddMethod.LeftToAll, languageToAdd As String = "PascalABC.NET")
+  overload: PascalABCCompiler.CompilerOptions.StandardModule.#ctor*
+  nameWithType.vb: CompilerOptions.StandardModule.New(String, CompilerOptions.StandardModuleAddMethod, String)
+  fullName.vb: PascalABCCompiler.CompilerOptions.StandardModule.New(String, PascalABCCompiler.CompilerOptions.StandardModuleAddMethod, String)
+  name.vb: New(String, StandardModuleAddMethod, String)
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.MarshalByRefObject
+  commentId: T:System.MarshalByRefObject
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  name: MarshalByRefObject
+  nameWithType: MarshalByRefObject
+  fullName: System.MarshalByRefObject
+- uid: System.MarshalByRefObject.__identity
+  commentId: F:System.MarshalByRefObject.__identity
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__identity
+  name: __identity
+  nameWithType: MarshalByRefObject.__identity
+  fullName: System.MarshalByRefObject.__identity
+- uid: System.MarshalByRefObject.GetComIUnknown(System.Boolean)
+  commentId: M:System.MarshalByRefObject.GetComIUnknown(System.Boolean)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-boolean)
+  name: GetComIUnknown(bool)
+  nameWithType: MarshalByRefObject.GetComIUnknown(bool)
+  fullName: System.MarshalByRefObject.GetComIUnknown(bool)
+  nameWithType.vb: MarshalByRefObject.GetComIUnknown(Boolean)
+  fullName.vb: System.MarshalByRefObject.GetComIUnknown(Boolean)
+  name.vb: GetComIUnknown(Boolean)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.GetComIUnknown(System.Boolean)
+    name: GetComIUnknown
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-boolean)
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.GetComIUnknown(System.Boolean)
+    name: GetComIUnknown
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-boolean)
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+  commentId: M:System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-marshalbyrefobject)
+  name: GetComIUnknown(MarshalByRefObject)
+  nameWithType: MarshalByRefObject.GetComIUnknown(MarshalByRefObject)
+  fullName: System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+    name: GetComIUnknown
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-marshalbyrefobject)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.GetComIUnknown(System.MarshalByRefObject)
+    name: GetComIUnknown
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getcomiunknown#system-marshalbyrefobject-getcomiunknown(system-marshalbyrefobject)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+- uid: System.MarshalByRefObject.IsInstanceOfType(System.Type)
+  commentId: M:System.MarshalByRefObject.IsInstanceOfType(System.Type)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.isinstanceoftype
+  name: IsInstanceOfType(Type)
+  nameWithType: MarshalByRefObject.IsInstanceOfType(Type)
+  fullName: System.MarshalByRefObject.IsInstanceOfType(System.Type)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.IsInstanceOfType(System.Type)
+    name: IsInstanceOfType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.isinstanceoftype
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.IsInstanceOfType(System.Type)
+    name: IsInstanceOfType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.isinstanceoftype
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.MarshalByRefObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])
+  commentId: M:System.MarshalByRefObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.invokemember
+  name: InvokeMember(string, BindingFlags, Binder, object[], ParameterModifier[], CultureInfo, string[])
+  nameWithType: MarshalByRefObject.InvokeMember(string, BindingFlags, Binder, object[], ParameterModifier[], CultureInfo, string[])
+  fullName: System.MarshalByRefObject.InvokeMember(string, System.Reflection.BindingFlags, System.Reflection.Binder, object[], System.Reflection.ParameterModifier[], System.Globalization.CultureInfo, string[])
+  nameWithType.vb: MarshalByRefObject.InvokeMember(String, BindingFlags, Binder, Object(), ParameterModifier(), CultureInfo, String())
+  fullName.vb: System.MarshalByRefObject.InvokeMember(String, System.Reflection.BindingFlags, System.Reflection.Binder, Object(), System.Reflection.ParameterModifier(), System.Globalization.CultureInfo, String())
+  name.vb: InvokeMember(String, BindingFlags, Binder, Object(), ParameterModifier(), CultureInfo, String())
+  spec.csharp:
+  - uid: System.MarshalByRefObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])
+    name: InvokeMember
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.invokemember
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.BindingFlags
+    name: BindingFlags
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.Binder
+    name: Binder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.binder
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ParameterModifier
+    name: ParameterModifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.parametermodifier
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])
+    name: InvokeMember
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.invokemember
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.BindingFlags
+    name: BindingFlags
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.Binder
+    name: Binder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.binder
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ParameterModifier
+    name: ParameterModifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.parametermodifier
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: System.MarshalByRefObject.MemberwiseClone(System.Boolean)
+  commentId: M:System.MarshalByRefObject.MemberwiseClone(System.Boolean)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone
+  name: MemberwiseClone(bool)
+  nameWithType: MarshalByRefObject.MemberwiseClone(bool)
+  fullName: System.MarshalByRefObject.MemberwiseClone(bool)
+  nameWithType.vb: MarshalByRefObject.MemberwiseClone(Boolean)
+  fullName.vb: System.MarshalByRefObject.MemberwiseClone(Boolean)
+  name.vb: MemberwiseClone(Boolean)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.MemberwiseClone(System.Boolean)
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.MemberwiseClone(System.Boolean)
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject,System.Boolean@)
+  commentId: M:System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject,System.Boolean@)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject-system-boolean@)
+  name: GetIdentity(MarshalByRefObject, out bool)
+  nameWithType: MarshalByRefObject.GetIdentity(MarshalByRefObject, out bool)
+  fullName: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject, out bool)
+  nameWithType.vb: MarshalByRefObject.GetIdentity(MarshalByRefObject, Boolean)
+  fullName.vb: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject, Boolean)
+  name.vb: GetIdentity(MarshalByRefObject, Boolean)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject,System.Boolean@)
+    name: GetIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject-system-boolean@)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject,System.Boolean@)
+    name: GetIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject-system-boolean@)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+  commentId: M:System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject)
+  name: GetIdentity(MarshalByRefObject)
+  nameWithType: MarshalByRefObject.GetIdentity(MarshalByRefObject)
+  fullName: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+    name: GetIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.GetIdentity(System.MarshalByRefObject)
+    name: GetIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getidentity#system-marshalbyrefobject-getidentity(system-marshalbyrefobject)
+  - name: (
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+- uid: System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+  commentId: M:System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__racesetserveridentity
+  name: __RaceSetServerIdentity(ServerIdentity)
+  nameWithType: MarshalByRefObject.__RaceSetServerIdentity(ServerIdentity)
+  fullName: System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+    name: __RaceSetServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__racesetserveridentity
+  - name: (
+  - uid: System.Runtime.Remoting.ServerIdentity
+    name: ServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.remoting.serveridentity
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.__RaceSetServerIdentity(System.Runtime.Remoting.ServerIdentity)
+    name: __RaceSetServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__racesetserveridentity
+  - name: (
+  - uid: System.Runtime.Remoting.ServerIdentity
+    name: ServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.remoting.serveridentity
+  - name: )
+- uid: System.MarshalByRefObject.__ResetServerIdentity
+  commentId: M:System.MarshalByRefObject.__ResetServerIdentity
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__resetserveridentity
+  name: __ResetServerIdentity()
+  nameWithType: MarshalByRefObject.__ResetServerIdentity()
+  fullName: System.MarshalByRefObject.__ResetServerIdentity()
+  spec.csharp:
+  - uid: System.MarshalByRefObject.__ResetServerIdentity
+    name: __ResetServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__resetserveridentity
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.__ResetServerIdentity
+    name: __ResetServerIdentity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.__resetserveridentity
+  - name: (
+  - name: )
+- uid: System.MarshalByRefObject.GetLifetimeService
+  commentId: M:System.MarshalByRefObject.GetLifetimeService
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice
+  name: GetLifetimeService()
+  nameWithType: MarshalByRefObject.GetLifetimeService()
+  fullName: System.MarshalByRefObject.GetLifetimeService()
+  spec.csharp:
+  - uid: System.MarshalByRefObject.GetLifetimeService
+    name: GetLifetimeService
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.GetLifetimeService
+    name: GetLifetimeService
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice
+  - name: (
+  - name: )
+- uid: System.MarshalByRefObject.InitializeLifetimeService
+  commentId: M:System.MarshalByRefObject.InitializeLifetimeService
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice
+  name: InitializeLifetimeService()
+  nameWithType: MarshalByRefObject.InitializeLifetimeService()
+  fullName: System.MarshalByRefObject.InitializeLifetimeService()
+  spec.csharp:
+  - uid: System.MarshalByRefObject.InitializeLifetimeService
+    name: InitializeLifetimeService
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.InitializeLifetimeService
+    name: InitializeLifetimeService
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice
+  - name: (
+  - name: )
+- uid: System.MarshalByRefObject.CreateObjRef(System.Type)
+  commentId: M:System.MarshalByRefObject.CreateObjRef(System.Type)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref
+  name: CreateObjRef(Type)
+  nameWithType: MarshalByRefObject.CreateObjRef(Type)
+  fullName: System.MarshalByRefObject.CreateObjRef(System.Type)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.CreateObjRef(System.Type)
+    name: CreateObjRef
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.CreateObjRef(System.Type)
+    name: CreateObjRef
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.MarshalByRefObject.CanCastToXmlType(System.String,System.String)
+  commentId: M:System.MarshalByRefObject.CanCastToXmlType(System.String,System.String)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltype
+  name: CanCastToXmlType(string, string)
+  nameWithType: MarshalByRefObject.CanCastToXmlType(string, string)
+  fullName: System.MarshalByRefObject.CanCastToXmlType(string, string)
+  nameWithType.vb: MarshalByRefObject.CanCastToXmlType(String, String)
+  fullName.vb: System.MarshalByRefObject.CanCastToXmlType(String, String)
+  name.vb: CanCastToXmlType(String, String)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.CanCastToXmlType(System.String,System.String)
+    name: CanCastToXmlType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltype
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.CanCastToXmlType(System.String,System.String)
+    name: CanCastToXmlType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltype
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType,System.MarshalByRefObject)
+  commentId: M:System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType,System.MarshalByRefObject)
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltypehelper
+  name: CanCastToXmlTypeHelper(RuntimeType, MarshalByRefObject)
+  nameWithType: MarshalByRefObject.CanCastToXmlTypeHelper(RuntimeType, MarshalByRefObject)
+  fullName: System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType, System.MarshalByRefObject)
+  spec.csharp:
+  - uid: System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType,System.MarshalByRefObject)
+    name: CanCastToXmlTypeHelper
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltypehelper
+  - name: (
+  - uid: System.RuntimeType
+    name: RuntimeType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtimetype
+  - name: ','
+  - name: " "
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+  spec.vb:
+  - uid: System.MarshalByRefObject.CanCastToXmlTypeHelper(System.RuntimeType,System.MarshalByRefObject)
+    name: CanCastToXmlTypeHelper
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.cancasttoxmltypehelper
+  - name: (
+  - uid: System.RuntimeType
+    name: RuntimeType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtimetype
+  - name: ','
+  - name: " "
+  - uid: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject
+  - name: )
+- uid: System.MarshalByRefObject.Identity
+  commentId: P:System.MarshalByRefObject.Identity
+  parent: System.MarshalByRefObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.identity
+  name: Identity
+  nameWithType: MarshalByRefObject.Identity
+  fullName: System.MarshalByRefObject.Identity
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.StandardModuleAddMethod
+  nameWithType: CompilerOptions.StandardModuleAddMethod
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html
+- uid: PascalABCCompiler.CompilerOptions.StandardModule.#ctor*
+  commentId: Overload:PascalABCCompiler.CompilerOptions.StandardModule.#ctor
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.StandardModule.html#PascalABCCompiler_CompilerOptions_StandardModule__ctor_System_String_PascalABCCompiler_CompilerOptions_StandardModuleAddMethod_System_String_
+  name: StandardModule
+  nameWithType: CompilerOptions.StandardModule.StandardModule
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule.StandardModule
+  nameWithType.vb: CompilerOptions.StandardModule.New
+  fullName.vb: PascalABCCompiler.CompilerOptions.StandardModule.New
+  name.vb: New

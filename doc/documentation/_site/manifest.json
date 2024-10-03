@@ -1,0 +1,1108 @@
+{
+  "source_base_path": "C:/Users/alex/Desktop/Дипломная/PABCNet source/pascalabcnet/doc/documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ChangeCompilerStateEventDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ChangeCompilerStateEventDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilationUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilationUnit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilationUnitHashTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilationUnitHashTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Compiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Compiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerInternalDebug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerInternalDebug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerOptions.OutputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerOptions.OutputType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerOptions.StandardModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerOptions.StandardModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.CompilerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.CompilerType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ConsoleCompilerConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ConsoleCompilerConstants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.DocXmlManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.DocXmlManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.AppTypeDllIsAllowedOnlyForLibraries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.AppTypeDllIsAllowedOnlyForLibraries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.AssemblyNotFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.AssemblyNotFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.AssemblyReadingError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.AssemblyReadingError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.CompilerThrownError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.CompilerThrownError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.CycleUnitReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.CycleUnitReference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.DisableStandardUnitsDirectiveDisallowedInUsedUnits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.DisableStandardUnitsDirectiveDisallowedInUsedUnits.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.DuplicateDirective.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.DuplicateDirective.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.DuplicateUsesUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.DuplicateUsesUnit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.FileNotFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.FileNotFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.IncludeNamespaceInUnitError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.IncludeNamespaceInUnitError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.InvalidAssemblyPathError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.InvalidAssemblyPathError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.InvalidPathError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.InvalidPathError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.MainResourceNotAllowed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.MainResourceNotAllowed.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.NamespaceCannotHaveInSection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.NamespaceCannotHaveInSection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.NamespaceModuleExpected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.NamespaceModuleExpected.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.NamespacesCanBeCompiledOnlyInProjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.NamespacesCanBeCompiledOnlyInProjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.ProgramModuleExpected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.ProgramModuleExpected.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.ReadPCUError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.ReadPCUError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.ResourceFileNotFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.ResourceFileNotFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.SourceFileNotFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.SourceFileNotFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnauthorizedAccessToFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnauthorizedAccessToFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnitModuleExpected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnitModuleExpected.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnitModuleExpectedLibraryFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnitModuleExpectedLibraryFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnitNotFound.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnitNotFound.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnsupportedOutputFileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnsupportedOutputFileType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnsupportedTargetFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnsupportedTargetFramework.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UnsupportedTargetPlatform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UnsupportedTargetPlatform.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.UsesInWrongName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.UsesInWrongName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.Errors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.Errors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ICompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ICompiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.IFileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.IFileInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.IProjectInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.IProjectInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.IReferenceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.IReferenceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.IRemoteCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.IRemoteCompiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.IResourceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.IResourceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.ClassInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.ClassInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.DotAdditInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.DotAdditInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.DotNetKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.DotNetKind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.DotNetNameRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.DotNetNameRef.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.GenericParamKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.GenericParamKind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.ImportKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.ImportKind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.ImportedEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.ImportedEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.InvalidPCUFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.InvalidPCUFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.NameRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.NameRef.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUConsts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUConsts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUFileFormatVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUFileFormatVersion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUReader.PCUFileHeadState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUReader.PCUFileHeadState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUReader.TypeSpec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUReader.TypeSpec.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUReaderWriterState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUReaderWriterState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.PCUWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.PCUWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.TypeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.TypeKind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.WrappedClassScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.WrappedClassScope.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.WrappedInterfaceScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.WrappedInterfaceScope.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.WrappedUnitImplementationScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.WrappedUnitImplementationScope.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.WrappedUnitInterfaceScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.WrappedUnitInterfaceScope.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.wrapped_common_type_node.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.wrapped_common_type_node.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.wrapped_expression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.wrapped_expression.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.wrapped_function_body.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.wrapped_function_body.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.wrapped_type_synonym.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.wrapped_type_synonym.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.PCU.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.PCU.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ProjectInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ProjectInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ProjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ProjectType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ReferenceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ReferenceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompilerChannelEventDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompilerChannelEventDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompilerChannelEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompilerChannelEventType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompilerError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompilerError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompilerInternalError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompilerInternalError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.RemoteCompilerWarning.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.RemoteCompilerWarning.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.ResourceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.ResourceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ConverterType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ConverterType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SemanticTreeConverters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SemanticTreeConverters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SourceCodeFileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SourceCodeFileInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.SupportedSourceFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.SupportedSourceFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.TooOldProjectFileVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.TooOldProjectFileVersion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.TreeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.TreeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.UnitState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.UnitState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PascalABCCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PascalABCCompiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerType
+  commentId: T:PascalABCCompiler.CompilerType
+  id: CompilerType
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerType.Remote
+  - PascalABCCompiler.CompilerType.Standart
+  langs:
+  - csharp
+  - vb
+  name: CompilerType
+  nameWithType: CompilerType
+  fullName: PascalABCCompiler.CompilerType
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum CompilerType
+    content.vb: Public Enum CompilerType
+- uid: PascalABCCompiler.CompilerType.Standart
+  commentId: F:PascalABCCompiler.CompilerType.Standart
+  id: Standart
+  parent: PascalABCCompiler.CompilerType
+  langs:
+  - csharp
+  - vb
+  name: Standart
+  nameWithType: CompilerType.Standart
+  fullName: PascalABCCompiler.CompilerType.Standart
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Standart = 0
+    return:
+      type: PascalABCCompiler.CompilerType
+- uid: PascalABCCompiler.CompilerType.Remote
+  commentId: F:PascalABCCompiler.CompilerType.Remote
+  id: Remote
+  parent: PascalABCCompiler.CompilerType
+  langs:
+  - csharp
+  - vb
+  name: Remote
+  nameWithType: CompilerType.Remote
+  fullName: PascalABCCompiler.CompilerType.Remote
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Remote = 1
+    return:
+      type: PascalABCCompiler.CompilerType
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.CompilerType
+  commentId: T:PascalABCCompiler.CompilerType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerType.html
+  name: CompilerType
+  nameWithType: CompilerType
+  fullName: PascalABCCompiler.CompilerType

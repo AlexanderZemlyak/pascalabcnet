@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  id: ExecutionOrder
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.First
+  - PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Last
+  - PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Undefined
+  langs:
+  - csharp
+  - vb
+  name: ExecutionOrder
+  nameWithType: ExecutionOrder
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public enum ExecutionOrder
+    content.vb: Public Enum ExecutionOrder
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Undefined
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Undefined
+  id: Undefined
+  parent: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  langs:
+  - csharp
+  - vb
+  name: Undefined
+  nameWithType: ExecutionOrder.Undefined
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Undefined
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: Undefined = 0
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.First
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.First
+  id: First
+  parent: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: ExecutionOrder.First
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.First
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: First = 1
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Last
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Last
+  id: Last
+  parent: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  langs:
+  - csharp
+  - vb
+  name: Last
+  nameWithType: ExecutionOrder.Last
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.Last
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: Last = 2
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder.html
+  name: ExecutionOrder
+  nameWithType: ExecutionOrder
+  fullName: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder

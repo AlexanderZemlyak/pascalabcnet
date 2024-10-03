@@ -1,0 +1,151 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerOptions.OutputType
+  commentId: T:PascalABCCompiler.CompilerOptions.OutputType
+  id: CompilerOptions.OutputType
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerOptions.OutputType.ClassLibrary
+  - PascalABCCompiler.CompilerOptions.OutputType.ConsoleApplicaton
+  - PascalABCCompiler.CompilerOptions.OutputType.PascalCompiledUnit
+  - PascalABCCompiler.CompilerOptions.OutputType.SemanticTree
+  - PascalABCCompiler.CompilerOptions.OutputType.WindowsApplication
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptions.OutputType
+  nameWithType: CompilerOptions.OutputType
+  fullName: PascalABCCompiler.CompilerOptions.OutputType
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum CompilerOptions.OutputType
+    content.vb: Public Enum CompilerOptions.OutputType
+- uid: PascalABCCompiler.CompilerOptions.OutputType.ClassLibrary
+  commentId: F:PascalABCCompiler.CompilerOptions.OutputType.ClassLibrary
+  id: ClassLibrary
+  parent: PascalABCCompiler.CompilerOptions.OutputType
+  langs:
+  - csharp
+  - vb
+  name: ClassLibrary
+  nameWithType: CompilerOptions.OutputType.ClassLibrary
+  fullName: PascalABCCompiler.CompilerOptions.OutputType.ClassLibrary
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ClassLibrary = 0
+    return:
+      type: PascalABCCompiler.CompilerOptions.OutputType
+- uid: PascalABCCompiler.CompilerOptions.OutputType.ConsoleApplicaton
+  commentId: F:PascalABCCompiler.CompilerOptions.OutputType.ConsoleApplicaton
+  id: ConsoleApplicaton
+  parent: PascalABCCompiler.CompilerOptions.OutputType
+  langs:
+  - csharp
+  - vb
+  name: ConsoleApplicaton
+  nameWithType: CompilerOptions.OutputType.ConsoleApplicaton
+  fullName: PascalABCCompiler.CompilerOptions.OutputType.ConsoleApplicaton
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ConsoleApplicaton = 1
+    return:
+      type: PascalABCCompiler.CompilerOptions.OutputType
+- uid: PascalABCCompiler.CompilerOptions.OutputType.WindowsApplication
+  commentId: F:PascalABCCompiler.CompilerOptions.OutputType.WindowsApplication
+  id: WindowsApplication
+  parent: PascalABCCompiler.CompilerOptions.OutputType
+  langs:
+  - csharp
+  - vb
+  name: WindowsApplication
+  nameWithType: CompilerOptions.OutputType.WindowsApplication
+  fullName: PascalABCCompiler.CompilerOptions.OutputType.WindowsApplication
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: WindowsApplication = 2
+    return:
+      type: PascalABCCompiler.CompilerOptions.OutputType
+- uid: PascalABCCompiler.CompilerOptions.OutputType.PascalCompiledUnit
+  commentId: F:PascalABCCompiler.CompilerOptions.OutputType.PascalCompiledUnit
+  id: PascalCompiledUnit
+  parent: PascalABCCompiler.CompilerOptions.OutputType
+  langs:
+  - csharp
+  - vb
+  name: PascalCompiledUnit
+  nameWithType: CompilerOptions.OutputType.PascalCompiledUnit
+  fullName: PascalABCCompiler.CompilerOptions.OutputType.PascalCompiledUnit
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: PascalCompiledUnit = 3
+    return:
+      type: PascalABCCompiler.CompilerOptions.OutputType
+- uid: PascalABCCompiler.CompilerOptions.OutputType.SemanticTree
+  commentId: F:PascalABCCompiler.CompilerOptions.OutputType.SemanticTree
+  id: SemanticTree
+  parent: PascalABCCompiler.CompilerOptions.OutputType
+  langs:
+  - csharp
+  - vb
+  name: SemanticTree
+  nameWithType: CompilerOptions.OutputType.SemanticTree
+  fullName: PascalABCCompiler.CompilerOptions.OutputType.SemanticTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SemanticTree = 4
+    return:
+      type: PascalABCCompiler.CompilerOptions.OutputType
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.CompilerOptions.OutputType
+  commentId: T:PascalABCCompiler.CompilerOptions.OutputType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.OutputType
+  nameWithType: CompilerOptions.OutputType
+  fullName: PascalABCCompiler.CompilerOptions.OutputType
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.OutputType
+    name: OutputType
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.OutputType.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.OutputType
+    name: OutputType
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.OutputType.html

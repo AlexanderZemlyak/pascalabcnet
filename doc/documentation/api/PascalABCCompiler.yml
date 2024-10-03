@@ -1,0 +1,397 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  id: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ChangeCompilerStateEventDelegate
+  - PascalABCCompiler.CompilationUnit
+  - PascalABCCompiler.CompilationUnitHashTable
+  - PascalABCCompiler.Compiler
+  - PascalABCCompiler.CompilerInternalDebug
+  - PascalABCCompiler.CompilerOptions
+  - PascalABCCompiler.CompilerOptions.OutputType
+  - PascalABCCompiler.CompilerOptions.StandardModule
+  - PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  - PascalABCCompiler.CompilerState
+  - PascalABCCompiler.CompilerType
+  - PascalABCCompiler.ConsoleCompilerConstants
+  - PascalABCCompiler.DocXmlManager
+  - PascalABCCompiler.ICompiler
+  - PascalABCCompiler.IFileInfo
+  - PascalABCCompiler.IProjectInfo
+  - PascalABCCompiler.IReferenceInfo
+  - PascalABCCompiler.IRemoteCompiler
+  - PascalABCCompiler.IResourceInfo
+  - PascalABCCompiler.ProjectInfo
+  - PascalABCCompiler.ProjectType
+  - PascalABCCompiler.ReferenceInfo
+  - PascalABCCompiler.RemoteCompiler
+  - PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  - PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  - PascalABCCompiler.RemoteCompilerChannelEventType
+  - PascalABCCompiler.RemoteCompilerError
+  - PascalABCCompiler.RemoteCompilerInternalError
+  - PascalABCCompiler.RemoteCompilerWarning
+  - PascalABCCompiler.ResourceInfo
+  - PascalABCCompiler.SourceCodeFileInfo
+  - PascalABCCompiler.SupportedSourceFile
+  - PascalABCCompiler.TooOldProjectFileVersion
+  - PascalABCCompiler.UnitState
+  langs:
+  - csharp
+  - vb
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+  type: Namespace
+  assemblies:
+  - Compiler
+references:
+- uid: PascalABCCompiler.UnitState
+  commentId: T:PascalABCCompiler.UnitState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.UnitState.html
+  name: UnitState
+  nameWithType: UnitState
+  fullName: PascalABCCompiler.UnitState
+- uid: PascalABCCompiler.CompilationUnit
+  commentId: T:PascalABCCompiler.CompilationUnit
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html
+  name: CompilationUnit
+  nameWithType: CompilationUnit
+  fullName: PascalABCCompiler.CompilationUnit
+- uid: PascalABCCompiler.CompilationUnitHashTable
+  commentId: T:PascalABCCompiler.CompilationUnitHashTable
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnitHashTable.html
+  name: CompilationUnitHashTable
+  nameWithType: CompilationUnitHashTable
+  fullName: PascalABCCompiler.CompilationUnitHashTable
+- uid: PascalABCCompiler.CompilerOptions
+  commentId: T:PascalABCCompiler.CompilerOptions
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions
+  nameWithType: CompilerOptions
+  fullName: PascalABCCompiler.CompilerOptions
+- uid: PascalABCCompiler.CompilerOptions.OutputType
+  commentId: T:PascalABCCompiler.CompilerOptions.OutputType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.OutputType
+  nameWithType: CompilerOptions.OutputType
+  fullName: PascalABCCompiler.CompilerOptions.OutputType
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.OutputType
+    name: OutputType
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.OutputType.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.OutputType
+    name: OutputType
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.OutputType.html
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.StandardModuleAddMethod
+  nameWithType: CompilerOptions.StandardModuleAddMethod
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html
+- uid: PascalABCCompiler.CompilerOptions.StandardModule
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModule
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.StandardModule
+  nameWithType: CompilerOptions.StandardModule
+  fullName: PascalABCCompiler.CompilerOptions.StandardModule
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModule
+    name: StandardModule
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModule.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModule
+    name: StandardModule
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModule.html
+- uid: PascalABCCompiler.CompilerState
+  commentId: T:PascalABCCompiler.CompilerState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerState.html
+  name: CompilerState
+  nameWithType: CompilerState
+  fullName: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerInternalDebug
+  commentId: T:PascalABCCompiler.CompilerInternalDebug
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerInternalDebug.html
+  name: CompilerInternalDebug
+  nameWithType: CompilerInternalDebug
+  fullName: PascalABCCompiler.CompilerInternalDebug
+- uid: PascalABCCompiler.SupportedSourceFile
+  commentId: T:PascalABCCompiler.SupportedSourceFile
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.SupportedSourceFile.html
+  name: SupportedSourceFile
+  nameWithType: SupportedSourceFile
+  fullName: PascalABCCompiler.SupportedSourceFile
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  commentId: T:PascalABCCompiler.ChangeCompilerStateEventDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html
+  name: ChangeCompilerStateEventDelegate
+  nameWithType: ChangeCompilerStateEventDelegate
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate
+- uid: PascalABCCompiler.Compiler
+  commentId: T:PascalABCCompiler.Compiler
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.Compiler.html
+  name: Compiler
+  nameWithType: Compiler
+  fullName: PascalABCCompiler.Compiler
+- uid: PascalABCCompiler.ConsoleCompilerConstants
+  commentId: T:PascalABCCompiler.ConsoleCompilerConstants
+  isExternal: true
+  href: PascalABCCompiler.ConsoleCompilerConstants.html
+  name: ConsoleCompilerConstants
+  nameWithType: ConsoleCompilerConstants
+  fullName: PascalABCCompiler.ConsoleCompilerConstants
+- uid: PascalABCCompiler.DocXmlManager
+  commentId: T:PascalABCCompiler.DocXmlManager
+  isExternal: true
+  href: PascalABCCompiler.DocXmlManager.html
+  name: DocXmlManager
+  nameWithType: DocXmlManager
+  fullName: PascalABCCompiler.DocXmlManager
+- uid: PascalABCCompiler.CompilerType
+  commentId: T:PascalABCCompiler.CompilerType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerType.html
+  name: CompilerType
+  nameWithType: CompilerType
+  fullName: PascalABCCompiler.CompilerType
+- uid: PascalABCCompiler.ICompiler
+  commentId: T:PascalABCCompiler.ICompiler
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html
+  name: ICompiler
+  nameWithType: ICompiler
+  fullName: PascalABCCompiler.ICompiler
+- uid: PascalABCCompiler.ProjectType
+  commentId: T:PascalABCCompiler.ProjectType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ProjectType.html
+  name: ProjectType
+  nameWithType: ProjectType
+  fullName: PascalABCCompiler.ProjectType
+- uid: PascalABCCompiler.IProjectInfo
+  commentId: T:PascalABCCompiler.IProjectInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html
+  name: IProjectInfo
+  nameWithType: IProjectInfo
+  fullName: PascalABCCompiler.IProjectInfo
+- uid: PascalABCCompiler.IFileInfo
+  commentId: T:PascalABCCompiler.IFileInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.IFileInfo.html
+  name: IFileInfo
+  nameWithType: IFileInfo
+  fullName: PascalABCCompiler.IFileInfo
+- uid: PascalABCCompiler.IReferenceInfo
+  commentId: T:PascalABCCompiler.IReferenceInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html
+  name: IReferenceInfo
+  nameWithType: IReferenceInfo
+  fullName: PascalABCCompiler.IReferenceInfo
+- uid: PascalABCCompiler.IResourceInfo
+  commentId: T:PascalABCCompiler.IResourceInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.IResourceInfo.html
+  name: IResourceInfo
+  nameWithType: IResourceInfo
+  fullName: PascalABCCompiler.IResourceInfo
+- uid: PascalABCCompiler.ProjectInfo
+  commentId: T:PascalABCCompiler.ProjectInfo
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ProjectInfo.html
+  name: ProjectInfo
+  nameWithType: ProjectInfo
+  fullName: PascalABCCompiler.ProjectInfo
+- uid: PascalABCCompiler.SourceCodeFileInfo
+  commentId: T:PascalABCCompiler.SourceCodeFileInfo
+  isExternal: true
+  href: PascalABCCompiler.SourceCodeFileInfo.html
+  name: SourceCodeFileInfo
+  nameWithType: SourceCodeFileInfo
+  fullName: PascalABCCompiler.SourceCodeFileInfo
+- uid: PascalABCCompiler.ReferenceInfo
+  commentId: T:PascalABCCompiler.ReferenceInfo
+  isExternal: true
+  href: PascalABCCompiler.ReferenceInfo.html
+  name: ReferenceInfo
+  nameWithType: ReferenceInfo
+  fullName: PascalABCCompiler.ReferenceInfo
+- uid: PascalABCCompiler.ResourceInfo
+  commentId: T:PascalABCCompiler.ResourceInfo
+  isExternal: true
+  href: PascalABCCompiler.ResourceInfo.html
+  name: ResourceInfo
+  nameWithType: ResourceInfo
+  fullName: PascalABCCompiler.ResourceInfo
+- uid: PascalABCCompiler.TooOldProjectFileVersion
+  commentId: T:PascalABCCompiler.TooOldProjectFileVersion
+  isExternal: true
+  href: PascalABCCompiler.TooOldProjectFileVersion.html
+  name: TooOldProjectFileVersion
+  nameWithType: TooOldProjectFileVersion
+  fullName: PascalABCCompiler.TooOldProjectFileVersion
+- uid: PascalABCCompiler.RemoteCompilerChannelEventType
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventType.html
+  name: RemoteCompilerChannelEventType
+  nameWithType: RemoteCompilerChannelEventType
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventType
+- uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  commentId: T:PascalABCCompiler.RemoteCompilerChannelEventDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerChannelEventDelegate.html
+  name: RemoteCompilerChannelEventDelegate
+  nameWithType: RemoteCompilerChannelEventDelegate
+  fullName: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+- uid: PascalABCCompiler.IRemoteCompiler
+  commentId: T:PascalABCCompiler.IRemoteCompiler
+  isExternal: true
+  href: PascalABCCompiler.IRemoteCompiler.html
+  name: IRemoteCompiler
+  nameWithType: IRemoteCompiler
+  fullName: PascalABCCompiler.IRemoteCompiler
+- uid: PascalABCCompiler.RemoteCompilerError
+  commentId: T:PascalABCCompiler.RemoteCompilerError
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerError.html
+  name: RemoteCompilerError
+  nameWithType: RemoteCompilerError
+  fullName: PascalABCCompiler.RemoteCompilerError
+- uid: PascalABCCompiler.RemoteCompilerInternalError
+  commentId: T:PascalABCCompiler.RemoteCompilerInternalError
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerInternalError.html
+  name: RemoteCompilerInternalError
+  nameWithType: RemoteCompilerInternalError
+  fullName: PascalABCCompiler.RemoteCompilerInternalError
+- uid: PascalABCCompiler.RemoteCompilerWarning
+  commentId: T:PascalABCCompiler.RemoteCompilerWarning
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompilerWarning.html
+  name: RemoteCompilerWarning
+  nameWithType: RemoteCompilerWarning
+  fullName: PascalABCCompiler.RemoteCompilerWarning
+- uid: PascalABCCompiler.RemoteCompiler
+  commentId: T:PascalABCCompiler.RemoteCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.html
+  name: RemoteCompiler
+  nameWithType: RemoteCompiler
+  fullName: PascalABCCompiler.RemoteCompiler
+- uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  commentId: T:PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.RemoteCompiler.html
+  name: RemoteCompiler.EnvorimentIdleDelegate
+  nameWithType: RemoteCompiler.EnvorimentIdleDelegate
+  fullName: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+  spec.csharp:
+  - uid: PascalABCCompiler.RemoteCompiler
+    name: RemoteCompiler
+    isExternal: true
+    href: PascalABCCompiler.RemoteCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+    name: EnvorimentIdleDelegate
+    isExternal: true
+    href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html
+  spec.vb:
+  - uid: PascalABCCompiler.RemoteCompiler
+    name: RemoteCompiler
+    isExternal: true
+    href: PascalABCCompiler.RemoteCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+    name: EnvorimentIdleDelegate
+    isExternal: true
+    href: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate.html
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler

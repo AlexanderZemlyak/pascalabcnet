@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  id: CompilerOptions.StandardModuleAddMethod
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.LeftToAll
+  - PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.RightToMain
+  langs:
+  - csharp
+  - vb
+  name: CompilerOptions.StandardModuleAddMethod
+  nameWithType: CompilerOptions.StandardModuleAddMethod
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum CompilerOptions.StandardModuleAddMethod
+    content.vb: Public Enum CompilerOptions.StandardModuleAddMethod
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.LeftToAll
+  commentId: F:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.LeftToAll
+  id: LeftToAll
+  parent: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  langs:
+  - csharp
+  - vb
+  name: LeftToAll
+  nameWithType: CompilerOptions.StandardModuleAddMethod.LeftToAll
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.LeftToAll
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: LeftToAll = 0
+    return:
+      type: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.RightToMain
+  commentId: F:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.RightToMain
+  id: RightToMain
+  parent: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  langs:
+  - csharp
+  - vb
+  name: RightToMain
+  nameWithType: CompilerOptions.StandardModuleAddMethod.RightToMain
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.RightToMain
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: RightToMain = 1
+    return:
+      type: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  commentId: T:PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerOptions.html
+  name: CompilerOptions.StandardModuleAddMethod
+  nameWithType: CompilerOptions.StandardModuleAddMethod
+  fullName: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+  spec.csharp:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html
+  spec.vb:
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.html
+  - name: .
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: StandardModuleAddMethod
+    isExternal: true
+    href: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod.html

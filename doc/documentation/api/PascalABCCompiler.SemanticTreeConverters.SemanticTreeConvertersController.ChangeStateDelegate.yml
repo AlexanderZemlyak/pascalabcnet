@@ -1,0 +1,268 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  id: SemanticTreeConvertersController.ChangeStateDelegate
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter,System.AsyncCallback,System.Object)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConvertersController.ChangeStateDelegate
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  type: Delegate
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public delegate void SemanticTreeConvertersController.ChangeStateDelegate(SemanticTreeConvertersController.State State, ISemanticTreeConverter SemanticTreeConverter)
+    parameters:
+    - id: State
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    - id: SemanticTreeConverter
+      type: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    content.vb: Public Delegate Sub SemanticTreeConvertersController.ChangeStateDelegate(State As SemanticTreeConvertersController.State, SemanticTreeConverter As ISemanticTreeConverter)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: ChangeStateDelegate(object, IntPtr)
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.ChangeStateDelegate(object, IntPtr)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.ChangeStateDelegate(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public ChangeStateDelegate(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor*
+  nameWithType.vb: SemanticTreeConvertersController.ChangeStateDelegate.New(Object, IntPtr)
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  id: Invoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: Invoke(State, ISemanticTreeConverter)
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.Invoke(SemanticTreeConvertersController.State, ISemanticTreeConverter)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State, PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public virtual void Invoke(SemanticTreeConvertersController.State State, ISemanticTreeConverter SemanticTreeConverter)
+    parameters:
+    - id: State
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    - id: SemanticTreeConverter
+      type: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    content.vb: Public Overridable Sub Invoke(State As SemanticTreeConvertersController.State, SemanticTreeConverter As ISemanticTreeConverter)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke*
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter,System.AsyncCallback,System.Object)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter,System.AsyncCallback,System.Object)
+  id: BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State,PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter,System.AsyncCallback,System.Object)
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(State, ISemanticTreeConverter, AsyncCallback, object)
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(SemanticTreeConvertersController.State, ISemanticTreeConverter, AsyncCallback, object)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State, PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(SemanticTreeConvertersController.State State, ISemanticTreeConverter SemanticTreeConverter, AsyncCallback callback, object @object)
+    parameters:
+    - id: State
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    - id: SemanticTreeConverter
+      type: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(State As SemanticTreeConvertersController.State, SemanticTreeConverter As ISemanticTreeConverter, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke*
+  nameWithType.vb: SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(SemanticTreeConvertersController.State, ISemanticTreeConverter, AsyncCallback, Object)
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke(PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State, PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(State, ISemanticTreeConverter, AsyncCallback, Object)
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  commentId: M:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke(IAsyncResult)
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke*
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  name: SemanticTreeConvertersController.State
+  nameWithType: SemanticTreeConvertersController.State
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    name: State
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.html
+  spec.vb:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    name: State
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.html
+- uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter.html
+  name: ISemanticTreeConverter
+  nameWithType: ISemanticTreeConverter
+  fullName: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.#ctor
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_ChangeStateDelegate__ctor_System_Object_System_IntPtr_
+  name: ChangeStateDelegate
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.ChangeStateDelegate
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.ChangeStateDelegate
+  nameWithType.vb: SemanticTreeConvertersController.ChangeStateDelegate.New
+  fullName.vb: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_ChangeStateDelegate_Invoke_PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_State_PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_
+  name: Invoke
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.Invoke
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.Invoke
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_ChangeStateDelegate_BeginInvoke_PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_State_PascalABCCompiler_SemanticTreeConverters_ISemanticTreeConverter_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke*
+  commentId: Overload:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.html#PascalABCCompiler_SemanticTreeConverters_SemanticTreeConvertersController_ChangeStateDelegate_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate.EndInvoke

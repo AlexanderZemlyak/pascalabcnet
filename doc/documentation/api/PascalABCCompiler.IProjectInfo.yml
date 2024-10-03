@@ -1,0 +1,933 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.IProjectInfo
+  commentId: T:PascalABCCompiler.IProjectInfo
+  id: IProjectInfo
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.IProjectInfo.AppIcon
+  - PascalABCCompiler.IProjectInfo.BuildVersion
+  - PascalABCCompiler.IProjectInfo.CommandLineArguments
+  - PascalABCCompiler.IProjectInfo.Company
+  - PascalABCCompiler.IProjectInfo.ContainsSourceFile(System.String)
+  - PascalABCCompiler.IProjectInfo.Copyright
+  - PascalABCCompiler.IProjectInfo.DeleteEXE
+  - PascalABCCompiler.IProjectInfo.DeletePDB
+  - PascalABCCompiler.IProjectInfo.Description
+  - PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+  - PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+  - PascalABCCompiler.IProjectInfo.MainFile
+  - PascalABCCompiler.IProjectInfo.MajorVersion
+  - PascalABCCompiler.IProjectInfo.MinorVersion
+  - PascalABCCompiler.IProjectInfo.Name
+  - PascalABCCompiler.IProjectInfo.OutputDirectory
+  - PascalABCCompiler.IProjectInfo.OutputFileName
+  - PascalABCCompiler.IProjectInfo.Path
+  - PascalABCCompiler.IProjectInfo.Product
+  - PascalABCCompiler.IProjectInfo.ProjectDirectory
+  - PascalABCCompiler.IProjectInfo.ProjectType
+  - PascalABCCompiler.IProjectInfo.References
+  - PascalABCCompiler.IProjectInfo.Resources
+  - PascalABCCompiler.IProjectInfo.RevisionVersion
+  - PascalABCCompiler.IProjectInfo.SourceFiles
+  - PascalABCCompiler.IProjectInfo.Title
+  - PascalABCCompiler.IProjectInfo.Trademark
+  langs:
+  - csharp
+  - vb
+  name: IProjectInfo
+  nameWithType: IProjectInfo
+  fullName: PascalABCCompiler.IProjectInfo
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface IProjectInfo
+    content.vb: Public Interface IProjectInfo
+- uid: PascalABCCompiler.IProjectInfo.ContainsSourceFile(System.String)
+  commentId: M:PascalABCCompiler.IProjectInfo.ContainsSourceFile(System.String)
+  id: ContainsSourceFile(System.String)
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: ContainsSourceFile(string)
+  nameWithType: IProjectInfo.ContainsSourceFile(string)
+  fullName: PascalABCCompiler.IProjectInfo.ContainsSourceFile(string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: bool ContainsSourceFile(string FileName)
+    parameters:
+    - id: FileName
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Function ContainsSourceFile(FileName As String) As Boolean
+  overload: PascalABCCompiler.IProjectInfo.ContainsSourceFile*
+  nameWithType.vb: IProjectInfo.ContainsSourceFile(String)
+  fullName.vb: PascalABCCompiler.IProjectInfo.ContainsSourceFile(String)
+  name.vb: ContainsSourceFile(String)
+- uid: PascalABCCompiler.IProjectInfo.Name
+  commentId: P:PascalABCCompiler.IProjectInfo.Name
+  id: Name
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IProjectInfo.Name
+  fullName: PascalABCCompiler.IProjectInfo.Name
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: PascalABCCompiler.IProjectInfo.Name*
+- uid: PascalABCCompiler.IProjectInfo.MainFile
+  commentId: P:PascalABCCompiler.IProjectInfo.MainFile
+  id: MainFile
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: MainFile
+  nameWithType: IProjectInfo.MainFile
+  fullName: PascalABCCompiler.IProjectInfo.MainFile
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string MainFile { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property MainFile As String
+  overload: PascalABCCompiler.IProjectInfo.MainFile*
+- uid: PascalABCCompiler.IProjectInfo.Path
+  commentId: P:PascalABCCompiler.IProjectInfo.Path
+  id: Path
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: IProjectInfo.Path
+  fullName: PascalABCCompiler.IProjectInfo.Path
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Path { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Path As String
+  overload: PascalABCCompiler.IProjectInfo.Path*
+- uid: PascalABCCompiler.IProjectInfo.ProjectDirectory
+  commentId: P:PascalABCCompiler.IProjectInfo.ProjectDirectory
+  id: ProjectDirectory
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: ProjectDirectory
+  nameWithType: IProjectInfo.ProjectDirectory
+  fullName: PascalABCCompiler.IProjectInfo.ProjectDirectory
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string ProjectDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ProjectDirectory As String
+  overload: PascalABCCompiler.IProjectInfo.ProjectDirectory*
+- uid: PascalABCCompiler.IProjectInfo.DeleteEXE
+  commentId: P:PascalABCCompiler.IProjectInfo.DeleteEXE
+  id: DeleteEXE
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: DeleteEXE
+  nameWithType: IProjectInfo.DeleteEXE
+  fullName: PascalABCCompiler.IProjectInfo.DeleteEXE
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: bool DeleteEXE { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property DeleteEXE As Boolean
+  overload: PascalABCCompiler.IProjectInfo.DeleteEXE*
+- uid: PascalABCCompiler.IProjectInfo.DeletePDB
+  commentId: P:PascalABCCompiler.IProjectInfo.DeletePDB
+  id: DeletePDB
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: DeletePDB
+  nameWithType: IProjectInfo.DeletePDB
+  fullName: PascalABCCompiler.IProjectInfo.DeletePDB
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: bool DeletePDB { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property DeletePDB As Boolean
+  overload: PascalABCCompiler.IProjectInfo.DeletePDB*
+- uid: PascalABCCompiler.IProjectInfo.AppIcon
+  commentId: P:PascalABCCompiler.IProjectInfo.AppIcon
+  id: AppIcon
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: AppIcon
+  nameWithType: IProjectInfo.AppIcon
+  fullName: PascalABCCompiler.IProjectInfo.AppIcon
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string AppIcon { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property AppIcon As String
+  overload: PascalABCCompiler.IProjectInfo.AppIcon*
+- uid: PascalABCCompiler.IProjectInfo.MajorVersion
+  commentId: P:PascalABCCompiler.IProjectInfo.MajorVersion
+  id: MajorVersion
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: MajorVersion
+  nameWithType: IProjectInfo.MajorVersion
+  fullName: PascalABCCompiler.IProjectInfo.MajorVersion
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int MajorVersion { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property MajorVersion As Integer
+  overload: PascalABCCompiler.IProjectInfo.MajorVersion*
+- uid: PascalABCCompiler.IProjectInfo.MinorVersion
+  commentId: P:PascalABCCompiler.IProjectInfo.MinorVersion
+  id: MinorVersion
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: MinorVersion
+  nameWithType: IProjectInfo.MinorVersion
+  fullName: PascalABCCompiler.IProjectInfo.MinorVersion
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int MinorVersion { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property MinorVersion As Integer
+  overload: PascalABCCompiler.IProjectInfo.MinorVersion*
+- uid: PascalABCCompiler.IProjectInfo.BuildVersion
+  commentId: P:PascalABCCompiler.IProjectInfo.BuildVersion
+  id: BuildVersion
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: BuildVersion
+  nameWithType: IProjectInfo.BuildVersion
+  fullName: PascalABCCompiler.IProjectInfo.BuildVersion
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int BuildVersion { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property BuildVersion As Integer
+  overload: PascalABCCompiler.IProjectInfo.BuildVersion*
+- uid: PascalABCCompiler.IProjectInfo.RevisionVersion
+  commentId: P:PascalABCCompiler.IProjectInfo.RevisionVersion
+  id: RevisionVersion
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: RevisionVersion
+  nameWithType: IProjectInfo.RevisionVersion
+  fullName: PascalABCCompiler.IProjectInfo.RevisionVersion
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: int RevisionVersion { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property RevisionVersion As Integer
+  overload: PascalABCCompiler.IProjectInfo.RevisionVersion*
+- uid: PascalABCCompiler.IProjectInfo.Product
+  commentId: P:PascalABCCompiler.IProjectInfo.Product
+  id: Product
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Product
+  nameWithType: IProjectInfo.Product
+  fullName: PascalABCCompiler.IProjectInfo.Product
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Product { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Product As String
+  overload: PascalABCCompiler.IProjectInfo.Product*
+- uid: PascalABCCompiler.IProjectInfo.Company
+  commentId: P:PascalABCCompiler.IProjectInfo.Company
+  id: Company
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Company
+  nameWithType: IProjectInfo.Company
+  fullName: PascalABCCompiler.IProjectInfo.Company
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Company { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Company As String
+  overload: PascalABCCompiler.IProjectInfo.Company*
+- uid: PascalABCCompiler.IProjectInfo.Trademark
+  commentId: P:PascalABCCompiler.IProjectInfo.Trademark
+  id: Trademark
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Trademark
+  nameWithType: IProjectInfo.Trademark
+  fullName: PascalABCCompiler.IProjectInfo.Trademark
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Trademark { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Trademark As String
+  overload: PascalABCCompiler.IProjectInfo.Trademark*
+- uid: PascalABCCompiler.IProjectInfo.Copyright
+  commentId: P:PascalABCCompiler.IProjectInfo.Copyright
+  id: Copyright
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Copyright
+  nameWithType: IProjectInfo.Copyright
+  fullName: PascalABCCompiler.IProjectInfo.Copyright
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Copyright { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Copyright As String
+  overload: PascalABCCompiler.IProjectInfo.Copyright*
+- uid: PascalABCCompiler.IProjectInfo.Title
+  commentId: P:PascalABCCompiler.IProjectInfo.Title
+  id: Title
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: IProjectInfo.Title
+  fullName: PascalABCCompiler.IProjectInfo.Title
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Title { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Title As String
+  overload: PascalABCCompiler.IProjectInfo.Title*
+- uid: PascalABCCompiler.IProjectInfo.Description
+  commentId: P:PascalABCCompiler.IProjectInfo.Description
+  id: Description
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: IProjectInfo.Description
+  fullName: PascalABCCompiler.IProjectInfo.Description
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Description As String
+  overload: PascalABCCompiler.IProjectInfo.Description*
+- uid: PascalABCCompiler.IProjectInfo.CommandLineArguments
+  commentId: P:PascalABCCompiler.IProjectInfo.CommandLineArguments
+  id: CommandLineArguments
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: CommandLineArguments
+  nameWithType: IProjectInfo.CommandLineArguments
+  fullName: PascalABCCompiler.IProjectInfo.CommandLineArguments
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string CommandLineArguments { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property CommandLineArguments As String
+  overload: PascalABCCompiler.IProjectInfo.CommandLineArguments*
+- uid: PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+  commentId: P:PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+  id: IncludeDebugInfo
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: IncludeDebugInfo
+  nameWithType: IProjectInfo.IncludeDebugInfo
+  fullName: PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: bool IncludeDebugInfo { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IncludeDebugInfo As Boolean
+  overload: PascalABCCompiler.IProjectInfo.IncludeDebugInfo*
+- uid: PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+  commentId: P:PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+  id: GenerateXMLDoc
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: GenerateXMLDoc
+  nameWithType: IProjectInfo.GenerateXMLDoc
+  fullName: PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: bool GenerateXMLDoc { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property GenerateXMLDoc As Boolean
+  overload: PascalABCCompiler.IProjectInfo.GenerateXMLDoc*
+- uid: PascalABCCompiler.IProjectInfo.OutputFileName
+  commentId: P:PascalABCCompiler.IProjectInfo.OutputFileName
+  id: OutputFileName
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: OutputFileName
+  nameWithType: IProjectInfo.OutputFileName
+  fullName: PascalABCCompiler.IProjectInfo.OutputFileName
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string OutputFileName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property OutputFileName As String
+  overload: PascalABCCompiler.IProjectInfo.OutputFileName*
+- uid: PascalABCCompiler.IProjectInfo.OutputDirectory
+  commentId: P:PascalABCCompiler.IProjectInfo.OutputDirectory
+  id: OutputDirectory
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: OutputDirectory
+  nameWithType: IProjectInfo.OutputDirectory
+  fullName: PascalABCCompiler.IProjectInfo.OutputDirectory
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string OutputDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property OutputDirectory As String
+  overload: PascalABCCompiler.IProjectInfo.OutputDirectory*
+- uid: PascalABCCompiler.IProjectInfo.ProjectType
+  commentId: P:PascalABCCompiler.IProjectInfo.ProjectType
+  id: ProjectType
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: ProjectType
+  nameWithType: IProjectInfo.ProjectType
+  fullName: PascalABCCompiler.IProjectInfo.ProjectType
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ProjectType ProjectType { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.ProjectType
+    content.vb: ReadOnly Property ProjectType As ProjectType
+  overload: PascalABCCompiler.IProjectInfo.ProjectType*
+- uid: PascalABCCompiler.IProjectInfo.SourceFiles
+  commentId: P:PascalABCCompiler.IProjectInfo.SourceFiles
+  id: SourceFiles
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: SourceFiles
+  nameWithType: IProjectInfo.SourceFiles
+  fullName: PascalABCCompiler.IProjectInfo.SourceFiles
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: IFileInfo[] SourceFiles { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.IFileInfo[]
+    content.vb: ReadOnly Property SourceFiles As IFileInfo()
+  overload: PascalABCCompiler.IProjectInfo.SourceFiles*
+- uid: PascalABCCompiler.IProjectInfo.References
+  commentId: P:PascalABCCompiler.IProjectInfo.References
+  id: References
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: References
+  nameWithType: IProjectInfo.References
+  fullName: PascalABCCompiler.IProjectInfo.References
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: IReferenceInfo[] References { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.IReferenceInfo[]
+    content.vb: ReadOnly Property References As IReferenceInfo()
+  overload: PascalABCCompiler.IProjectInfo.References*
+- uid: PascalABCCompiler.IProjectInfo.Resources
+  commentId: P:PascalABCCompiler.IProjectInfo.Resources
+  id: Resources
+  parent: PascalABCCompiler.IProjectInfo
+  langs:
+  - csharp
+  - vb
+  name: Resources
+  nameWithType: IProjectInfo.Resources
+  fullName: PascalABCCompiler.IProjectInfo.Resources
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: IResourceInfo[] Resources { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.IResourceInfo[]
+    content.vb: ReadOnly Property Resources As IResourceInfo()
+  overload: PascalABCCompiler.IProjectInfo.Resources*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.IProjectInfo.ContainsSourceFile*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.ContainsSourceFile
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_ContainsSourceFile_System_String_
+  name: ContainsSourceFile
+  nameWithType: IProjectInfo.ContainsSourceFile
+  fullName: PascalABCCompiler.IProjectInfo.ContainsSourceFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.IProjectInfo.Name*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Name
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Name
+  name: Name
+  nameWithType: IProjectInfo.Name
+  fullName: PascalABCCompiler.IProjectInfo.Name
+- uid: PascalABCCompiler.IProjectInfo.MainFile*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.MainFile
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_MainFile
+  name: MainFile
+  nameWithType: IProjectInfo.MainFile
+  fullName: PascalABCCompiler.IProjectInfo.MainFile
+- uid: PascalABCCompiler.IProjectInfo.Path*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Path
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Path
+  name: Path
+  nameWithType: IProjectInfo.Path
+  fullName: PascalABCCompiler.IProjectInfo.Path
+- uid: PascalABCCompiler.IProjectInfo.ProjectDirectory*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.ProjectDirectory
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_ProjectDirectory
+  name: ProjectDirectory
+  nameWithType: IProjectInfo.ProjectDirectory
+  fullName: PascalABCCompiler.IProjectInfo.ProjectDirectory
+- uid: PascalABCCompiler.IProjectInfo.DeleteEXE*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.DeleteEXE
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_DeleteEXE
+  name: DeleteEXE
+  nameWithType: IProjectInfo.DeleteEXE
+  fullName: PascalABCCompiler.IProjectInfo.DeleteEXE
+- uid: PascalABCCompiler.IProjectInfo.DeletePDB*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.DeletePDB
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_DeletePDB
+  name: DeletePDB
+  nameWithType: IProjectInfo.DeletePDB
+  fullName: PascalABCCompiler.IProjectInfo.DeletePDB
+- uid: PascalABCCompiler.IProjectInfo.AppIcon*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.AppIcon
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_AppIcon
+  name: AppIcon
+  nameWithType: IProjectInfo.AppIcon
+  fullName: PascalABCCompiler.IProjectInfo.AppIcon
+- uid: PascalABCCompiler.IProjectInfo.MajorVersion*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.MajorVersion
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_MajorVersion
+  name: MajorVersion
+  nameWithType: IProjectInfo.MajorVersion
+  fullName: PascalABCCompiler.IProjectInfo.MajorVersion
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PascalABCCompiler.IProjectInfo.MinorVersion*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.MinorVersion
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_MinorVersion
+  name: MinorVersion
+  nameWithType: IProjectInfo.MinorVersion
+  fullName: PascalABCCompiler.IProjectInfo.MinorVersion
+- uid: PascalABCCompiler.IProjectInfo.BuildVersion*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.BuildVersion
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_BuildVersion
+  name: BuildVersion
+  nameWithType: IProjectInfo.BuildVersion
+  fullName: PascalABCCompiler.IProjectInfo.BuildVersion
+- uid: PascalABCCompiler.IProjectInfo.RevisionVersion*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.RevisionVersion
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_RevisionVersion
+  name: RevisionVersion
+  nameWithType: IProjectInfo.RevisionVersion
+  fullName: PascalABCCompiler.IProjectInfo.RevisionVersion
+- uid: PascalABCCompiler.IProjectInfo.Product*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Product
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Product
+  name: Product
+  nameWithType: IProjectInfo.Product
+  fullName: PascalABCCompiler.IProjectInfo.Product
+- uid: PascalABCCompiler.IProjectInfo.Company*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Company
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Company
+  name: Company
+  nameWithType: IProjectInfo.Company
+  fullName: PascalABCCompiler.IProjectInfo.Company
+- uid: PascalABCCompiler.IProjectInfo.Trademark*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Trademark
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Trademark
+  name: Trademark
+  nameWithType: IProjectInfo.Trademark
+  fullName: PascalABCCompiler.IProjectInfo.Trademark
+- uid: PascalABCCompiler.IProjectInfo.Copyright*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Copyright
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Copyright
+  name: Copyright
+  nameWithType: IProjectInfo.Copyright
+  fullName: PascalABCCompiler.IProjectInfo.Copyright
+- uid: PascalABCCompiler.IProjectInfo.Title*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Title
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Title
+  name: Title
+  nameWithType: IProjectInfo.Title
+  fullName: PascalABCCompiler.IProjectInfo.Title
+- uid: PascalABCCompiler.IProjectInfo.Description*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Description
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Description
+  name: Description
+  nameWithType: IProjectInfo.Description
+  fullName: PascalABCCompiler.IProjectInfo.Description
+- uid: PascalABCCompiler.IProjectInfo.CommandLineArguments*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.CommandLineArguments
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_CommandLineArguments
+  name: CommandLineArguments
+  nameWithType: IProjectInfo.CommandLineArguments
+  fullName: PascalABCCompiler.IProjectInfo.CommandLineArguments
+- uid: PascalABCCompiler.IProjectInfo.IncludeDebugInfo*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_IncludeDebugInfo
+  name: IncludeDebugInfo
+  nameWithType: IProjectInfo.IncludeDebugInfo
+  fullName: PascalABCCompiler.IProjectInfo.IncludeDebugInfo
+- uid: PascalABCCompiler.IProjectInfo.GenerateXMLDoc*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_GenerateXMLDoc
+  name: GenerateXMLDoc
+  nameWithType: IProjectInfo.GenerateXMLDoc
+  fullName: PascalABCCompiler.IProjectInfo.GenerateXMLDoc
+- uid: PascalABCCompiler.IProjectInfo.OutputFileName*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.OutputFileName
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_OutputFileName
+  name: OutputFileName
+  nameWithType: IProjectInfo.OutputFileName
+  fullName: PascalABCCompiler.IProjectInfo.OutputFileName
+- uid: PascalABCCompiler.IProjectInfo.OutputDirectory*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.OutputDirectory
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_OutputDirectory
+  name: OutputDirectory
+  nameWithType: IProjectInfo.OutputDirectory
+  fullName: PascalABCCompiler.IProjectInfo.OutputDirectory
+- uid: PascalABCCompiler.IProjectInfo.ProjectType*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.ProjectType
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_ProjectType
+  name: ProjectType
+  nameWithType: IProjectInfo.ProjectType
+  fullName: PascalABCCompiler.IProjectInfo.ProjectType
+- uid: PascalABCCompiler.ProjectType
+  commentId: T:PascalABCCompiler.ProjectType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ProjectType.html
+  name: ProjectType
+  nameWithType: ProjectType
+  fullName: PascalABCCompiler.ProjectType
+- uid: PascalABCCompiler.IProjectInfo.SourceFiles*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.SourceFiles
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_SourceFiles
+  name: SourceFiles
+  nameWithType: IProjectInfo.SourceFiles
+  fullName: PascalABCCompiler.IProjectInfo.SourceFiles
+- uid: PascalABCCompiler.IFileInfo[]
+  isExternal: true
+  href: PascalABCCompiler.IFileInfo.html
+  name: IFileInfo[]
+  nameWithType: IFileInfo[]
+  fullName: PascalABCCompiler.IFileInfo[]
+  nameWithType.vb: IFileInfo()
+  fullName.vb: PascalABCCompiler.IFileInfo()
+  name.vb: IFileInfo()
+  spec.csharp:
+  - uid: PascalABCCompiler.IFileInfo
+    name: IFileInfo
+    isExternal: true
+    href: PascalABCCompiler.IFileInfo.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PascalABCCompiler.IFileInfo
+    name: IFileInfo
+    isExternal: true
+    href: PascalABCCompiler.IFileInfo.html
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.IProjectInfo.References*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.References
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_References
+  name: References
+  nameWithType: IProjectInfo.References
+  fullName: PascalABCCompiler.IProjectInfo.References
+- uid: PascalABCCompiler.IReferenceInfo[]
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html
+  name: IReferenceInfo[]
+  nameWithType: IReferenceInfo[]
+  fullName: PascalABCCompiler.IReferenceInfo[]
+  nameWithType.vb: IReferenceInfo()
+  fullName.vb: PascalABCCompiler.IReferenceInfo()
+  name.vb: IReferenceInfo()
+  spec.csharp:
+  - uid: PascalABCCompiler.IReferenceInfo
+    name: IReferenceInfo
+    isExternal: true
+    href: PascalABCCompiler.IReferenceInfo.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PascalABCCompiler.IReferenceInfo
+    name: IReferenceInfo
+    isExternal: true
+    href: PascalABCCompiler.IReferenceInfo.html
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.IProjectInfo.Resources*
+  commentId: Overload:PascalABCCompiler.IProjectInfo.Resources
+  isExternal: true
+  href: PascalABCCompiler.IProjectInfo.html#PascalABCCompiler_IProjectInfo_Resources
+  name: Resources
+  nameWithType: IProjectInfo.Resources
+  fullName: PascalABCCompiler.IProjectInfo.Resources
+- uid: PascalABCCompiler.IResourceInfo[]
+  isExternal: true
+  href: PascalABCCompiler.IResourceInfo.html
+  name: IResourceInfo[]
+  nameWithType: IResourceInfo[]
+  fullName: PascalABCCompiler.IResourceInfo[]
+  nameWithType.vb: IResourceInfo()
+  fullName.vb: PascalABCCompiler.IResourceInfo()
+  name.vb: IResourceInfo()
+  spec.csharp:
+  - uid: PascalABCCompiler.IResourceInfo
+    name: IResourceInfo
+    isExternal: true
+    href: PascalABCCompiler.IResourceInfo.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PascalABCCompiler.IResourceInfo
+    name: IResourceInfo
+    isExternal: true
+    href: PascalABCCompiler.IResourceInfo.html
+  - name: (
+  - name: )

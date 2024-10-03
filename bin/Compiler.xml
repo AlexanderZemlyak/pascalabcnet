@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Compiler</name>
+    </assembly>
+    <members>
+        <member name="F:PascalABCCompiler.CompilationUnit.currentUsedUnitId">
+            <summary>
+            поле для проверки на циклическую зависимость интерфейсов модулей
+            </summary>
+        </member>
+        <member name="P:PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits">
+            <summary>
+            Только "реальные" юниты (не dll и namespace)
+            </summary>
+        </member>
+        <member name="P:PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits">
+            <summary>
+            Только "реальные" юниты (не dll и namespace)
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.CompilerOptions">
+            <summary>
+            Опции компиляции
+            </summary>
+        </member>
+        <member name="P:PascalABCCompiler.CompilerOptions.SourceFileName">
+            имя исходного файла
+            при измененнии меняется OutputFileName,OutputDirectory,SourceFileDirectory
+        </member>
+        <member name="P:PascalABCCompiler.CompilerOptions.StandardModules">
+            <summary>
+            Списки стандартных модулей для поддерживаемых языков (первым в списке должен быть модуль "System")
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.CompilerOptions.LoadStandardModules">
+            <summary>
+            Заполняет словарь стандартных модулей для всех поддерживаемых языков
+            </summary>
+        </member>
+        <member name="F:PascalABCCompiler.Compiler.UnitsToCompileDelayedList">
+            <summary>
+            список отложенной компиляции реализации (она будет откомпилирована в Compile, а не в СompileUnit)
+            </summary>
+        </member>
+        <member name="F:PascalABCCompiler.Compiler.beginOffset">
+            <summary>
+            Начало основной программы
+            </summary>
+        </member>
+        <member name="F:PascalABCCompiler.Compiler.varBeginOffset">
+            <summary>
+            Положение первых переменных в пространстве имен основной программы
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.SaveUnitCheckInParsers">
+            <summary>
+            Передаем парсерам возможность проверить, компилируется ли в данный момент модуль 
+            (нужно, если нет ключевого слова unit или подобного в языке)
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetCompilerDirectives(System.Collections.Generic.List{PascalABCCompiler.CompilationUnit})">
+            <summary>
+            Формирует словарь директив компилятора, собирая их из всех переданных модулей
+            </summary>
+            <param name="Units"></param>
+            <returns></returns>
+            <exception cref="T:PascalABCCompiler.Errors.DuplicateDirective"></exception>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetDirectivesAsSemanticNodes(System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.compiler_directive},System.String)">
+            <summary>
+            преобразует в директивы семантического уровня | в syntax_tree_visitor такая же функция  EVA
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.PrebuildMainSemanticTreeActions(PascalABCCompiler.NETGenerator.CompilerOptions@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Сохраняет документацию для модулей;
+            Выясняет тип выходного файла, целевой фреймворк, платформу;
+            Заполняет опции .NET компиляции согласно директивам и/или информации из проекта;
+            Находит ресурсные файлы из директив
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.CheckForDuplicatesInUsesSection(System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace})">
+            <summary>
+            Бросает ошибку если находит дупликаты в секции uses
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetInterfaceUsesSection(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            Возвращает список зависимостей из интерфейсной части модуля (или основной программы)
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.AddReferencesToNetSystemLibraries(PascalABCCompiler.CompilationUnit,System.Collections.Generic.List{PascalABCCompiler.TreeRealization.compiler_directive})">
+            <summary>
+            Добавляет ссылки на стандартные системные dll .NET - версия с директивами уровня семантики
+            </summary>
+            <param name="compilationUnit"></param>
+            <param name="directives"></param>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.AddReferencesToNetSystemLibraries(PascalABCCompiler.CompilationUnit,System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.compiler_directive})">
+            <summary>
+            Добавляет ссылки на стандартные системные dll .NET - версия с директивами уровня синтаксиса
+            </summary>
+            <param name="compilationUnit"></param>
+            <param name="directives"></param>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetNamespace(PascalABCCompiler.TreeRealization.using_namespace_list,System.String,PascalABCCompiler.SyntaxTree.unit_or_namespace,System.Boolean,System.Collections.Generic.Dictionary{System.String,PascalABCCompiler.SyntaxTree.syntax_namespace_node})">
+            <summary>
+            Формирует узел семантического дерева, соответствующий пространству имен (.NET или пользовательскому)
+            </summary>
+            <exception cref="T:PascalABCCompiler.Errors.UnitNotFound"></exception>
+            <exception cref="T:PascalABCCompiler.TreeConverter.NamespaceNotFound"></exception>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetInterfaceUsingList(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            получение списка using - legacy code !!!
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.GetImplementationSyntaxUsingList(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            получение списка using - legacy code !!!
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.IsDll(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            Проверяет, является ли модуль dll по соответствующей директиве
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.IsDll(PascalABCCompiler.SyntaxTree.compilation_unit,PascalABCCompiler.SyntaxTree.compiler_directive@)">
+            <summary>
+            Проверяет, является ли модуль dll по соответствующей директиве и возвращает эту директиву выходным параметром
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.CompileUnit(PascalABCCompiler.TreeRealization.unit_node_list,System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit},PascalABCCompiler.SyntaxTree.unit_or_namespace,System.String)">
+            <summary>
+            Компилирует основную программу и все используемые ей юниты рекурсивно
+            </summary>
+            <param name="unitsFromUsesSection"> Вспомогательная переменная для заполнения CompilationUnit.interfaceUsedUnits и 
+            CompilationUnit.implementationUsedUnits (здесь могут содержаться юниты и dll) </param>
+            
+            <param name="directUnitsFromUsesSection">Вспомогательная переменная для заполнения CompilationUnit.interfaceUsedDirectUnits и 
+            CompilationUnit.implementationUsedDirectUnits</param>
+            
+            <param name="currentUnitNode">Синтаксический узел текущего модуля (или пространства имен)</param>
+            <param name="previousPath">Директория родительского модуля</param>
+            <returns>Скомпилированный юнит</returns>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.CompileImplementationDependencies(System.String,PascalABCCompiler.CompilationUnit,System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace},System.Collections.Generic.Dictionary{System.String,PascalABCCompiler.SyntaxTree.syntax_namespace_node},PascalABCCompiler.TreeRealization.common_unit_node,System.Boolean@)">
+            <summary>
+            Компилирует модули из секции uses текущего модуля реализации рекурсивно
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.CompileInterfaceDependencies(PascalABCCompiler.TreeRealization.unit_node_list,System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit},PascalABCCompiler.SyntaxTree.unit_or_namespace,System.String,System.String,PascalABCCompiler.CompilationUnit,System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace},PascalABCCompiler.TreeRealization.unit_node_list,System.Collections.Generic.Dictionary{System.String,PascalABCCompiler.SyntaxTree.syntax_namespace_node},System.Boolean@)">
+            <summary>
+            Компилирует модули из секции uses интерфейса текущего модуля рекурсивно
+            </summary>
+            <exception cref="T:PascalABCCompiler.Errors.CycleUnitReference"></exception>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.SetUseDLLForSystemUnits(System.String,System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace},System.Int32)">
+            <summary>
+            Если в программе в секции uses есть не про-во имен и не стандартный модуль, то использование PABCRtl.dll отменяется
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.InitializeNewUnit(System.String,System.String,PascalABCCompiler.CompilationUnit@,System.Collections.Generic.Dictionary{PascalABCCompiler.SyntaxTree.syntax_tree_node,System.String}@)">
+            <summary>
+            Получение исходного кода модуля, заполнение документации,
+            генерация синтаксического дерева,
+            обработка синтаксических ошибок
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.ConstructSyntaxTreeAndRunSugarConversions(System.String,PascalABCCompiler.CompilationUnit,System.Collections.Generic.Dictionary{PascalABCCompiler.SyntaxTree.syntax_tree_node,System.String}@)">
+            <summary>
+            Строит синтаксическое дерево, бросает первую из найденных ошибок (если они есть) и запускает сахарные преобразования
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.InitializeCompilerOptionsRelatedToStandardUnits(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            Устанавливает значения опций DisableStandardUnits и UseDllForSystemUnits
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.RunSemanticChecks(System.String,PascalABCCompiler.CompilationUnit)">
+            <summary>
+            Семантические проверки по директивам и по типу файла
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.SemanticCheckDLLDirectiveOnlyForLibraries(PascalABCCompiler.SyntaxTree.compilation_unit,System.Boolean,PascalABCCompiler.SyntaxTree.compiler_directive)">
+            <summary>
+            Проверка, что директива dll только в Library - требует передачи директивы dll
+            </summary>
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.SemanticCheckDisableStandardUnitsDirectiveInUnit(PascalABCCompiler.SyntaxTree.compilation_unit)">
+            <summary>
+            Ошибка указания директивы DisableStandardUnits в подключенном модулей
+            </summary>
+            
+        </member>
+        <member name="M:PascalABCCompiler.Compiler.CurrentUnitIsNotMainProgram">
+            <summary>
+            Возвращает true, если текущий компилируемый модуль не является основной программой (program_module)
+            
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.CompilerThrownError">
+            <summary>
+            Базовый класс для ошибок, бросаемых компилятором
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.ReadPCUError">
+            <summary>
+            Бросается в случае невозможности чтения pcu
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.NamespaceCannotHaveInSection">
+            <summary>
+            Бросается в случае использования uses in в пространстве имен
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.ProgramModuleExpected">
+            <summary>
+            Бросается, если встречена не основная программа (там где она должна быть)
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnitModuleExpected">
+            <summary>
+            Бросается, если встречен не модуль (там где он должна быть)
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.AppTypeDllIsAllowedOnlyForLibraries">
+            <summary>
+            Бросается при обнаружении директивы {$apptype dll} не в библиотеке
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.DisableStandardUnitsDirectiveDisallowedInUsedUnits">
+            <summary>
+            Бросается при обраружении директивы {$DisableStandardUnits} в подключенном модуле
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnitModuleExpectedLibraryFound">
+            <summary>
+            Бросается при компиляции библиотеки не первой
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.AssemblyNotFound">
+            <summary>
+            Бросается, если файл сборки не найден
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.AssemblyReadingError">
+            <summary>
+            Бросается при невозможности чтения сборки
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.InvalidAssemblyPathError">
+            <summary>
+            Бросается при попытке обработки неправильного пути к сборке
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.InvalidPathError">
+            <summary>
+            Бросается при попытке обработки неправильного пути к файлу
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.ResourceFileNotFound">
+            <summary>
+            Бросается при неудаче в нахождении файла ресурсов
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.IncludeNamespaceInUnitError">
+            <summary>
+            Бросается при подключении явного пространства имен в модуле
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.NamespaceModuleExpected">
+            <summary>
+            Бросается, если встречено не явное пространство имен
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.MainResourceNotAllowed">
+            <summary>
+            Бросается в случае некорректного использования директивы {$mainresource ...}
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.DuplicateUsesUnit">
+            <summary>
+            Бросается при нахождении дубликатов в секции uses
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.DuplicateDirective">
+            <summary>
+            Бросается при нахождении дубликатов директив, не поддерживающих многократное использование в рамках некоторого контекста
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.NamespacesCanBeCompiledOnlyInProjects">
+            <summary>
+            Legacy, бросается, если unitModule.unitName.HeaderKeyword == SyntaxTree.UnitHeaderKeyword.Namespace
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnitNotFound">
+            <summary>
+            Бросается, если модуль (unit) не найден по некоторому пути
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UsesInWrongName">
+            <summary>
+            Бросается при некорректном пути в uses in
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.SourceFileNotFound">
+            <summary>
+            Бросается при невозможности найти исходник по некотрому пути
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnauthorizedAccessToFile">
+            <summary>
+            Бросается при попытке файловой операции с недостаточными правами
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.CycleUnitReference">
+            <summary>
+            Бросается в случае обнаружения циклической зависимости модулей
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnsupportedTargetFramework">
+            <summary>
+            Бросается, если пользователь указывает неподдерживаемый целевой framework
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnsupportedTargetPlatform">
+            <summary>
+            Бросается, если пользователь указывает неподдерживаемую целевую платформу
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.UnsupportedOutputFileType">
+            <summary>
+            Бросается, если пользователь указывает неподдерживаемый тип выходного файла (например, в директиве {$apptype ...})
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.Errors.FileNotFound">
+            <summary>
+            Бросается при отсутствии некоторого файла по некоторому пути
+            </summary>
+        </member>
+        <member name="P:PascalABCCompiler.ICompiler.PABCCodeHealth">
+            Здоровье кода на всякий случай выносим в интерфейс компилятора
+            Реально оно будет использоваться только при запуске из под оболочки (Remote Compiler)
+        </member>
+        <member name="T:PascalABCCompiler.PCU.PCUFile">
+            <summary>
+            Класс, описывающий заголовок PCU-файла
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.PCU.PCUWriter">
+            <summary>
+            Класс, создающий PCU-модуль
+            </summary>
+        </member>
+        <member name="T:PascalABCCompiler.PCU.PCUReader.PCUFileHeadState">
+            <summary>
+            Читает начало загаловка PCU файла
+            </summary>
+            <param name="fileName">
+            Имя PCU файла
+            </param>
+            <returns>
+            Возвращает состояние заголовка PCU файла 
+            </returns>
+        </member>
+    </members>
+</doc>

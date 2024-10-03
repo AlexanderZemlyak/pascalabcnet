@@ -1,0 +1,416 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilerState
+  commentId: T:PascalABCCompiler.CompilerState
+  id: CompilerState
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilerState.BeginCompileFile
+  - PascalABCCompiler.CompilerState.BeginParsingFile
+  - PascalABCCompiler.CompilerState.CodeGeneration
+  - PascalABCCompiler.CompilerState.CompilationFinished
+  - PascalABCCompiler.CompilerState.CompilationStarting
+  - PascalABCCompiler.CompilerState.CompileImplementation
+  - PascalABCCompiler.CompilerState.CompileInterface
+  - PascalABCCompiler.CompilerState.EndCompileFile
+  - PascalABCCompiler.CompilerState.EndParsingFile
+  - PascalABCCompiler.CompilerState.PCUReadingError
+  - PascalABCCompiler.CompilerState.PCUWritingError
+  - PascalABCCompiler.CompilerState.ParserConnected
+  - PascalABCCompiler.CompilerState.ReadDLL
+  - PascalABCCompiler.CompilerState.ReadPCUFile
+  - PascalABCCompiler.CompilerState.Ready
+  - PascalABCCompiler.CompilerState.Reloading
+  - PascalABCCompiler.CompilerState.SavePCUFile
+  - PascalABCCompiler.CompilerState.SemanticTreeConversion
+  - PascalABCCompiler.CompilerState.SemanticTreeConverterConnected
+  - PascalABCCompiler.CompilerState.SyntaxTreeConversion
+  langs:
+  - csharp
+  - vb
+  name: CompilerState
+  nameWithType: CompilerState
+  fullName: PascalABCCompiler.CompilerState
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum CompilerState
+    content.vb: Public Enum CompilerState
+- uid: PascalABCCompiler.CompilerState.Ready
+  commentId: F:PascalABCCompiler.CompilerState.Ready
+  id: Ready
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: Ready
+  nameWithType: CompilerState.Ready
+  fullName: PascalABCCompiler.CompilerState.Ready
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Ready = 0
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.CompilationStarting
+  commentId: F:PascalABCCompiler.CompilerState.CompilationStarting
+  id: CompilationStarting
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: CompilationStarting
+  nameWithType: CompilerState.CompilationStarting
+  fullName: PascalABCCompiler.CompilerState.CompilationStarting
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilationStarting = 1
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.Reloading
+  commentId: F:PascalABCCompiler.CompilerState.Reloading
+  id: Reloading
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: Reloading
+  nameWithType: CompilerState.Reloading
+  fullName: PascalABCCompiler.CompilerState.Reloading
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Reloading = 2
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.ParserConnected
+  commentId: F:PascalABCCompiler.CompilerState.ParserConnected
+  id: ParserConnected
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: ParserConnected
+  nameWithType: CompilerState.ParserConnected
+  fullName: PascalABCCompiler.CompilerState.ParserConnected
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ParserConnected = 3
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.BeginCompileFile
+  commentId: F:PascalABCCompiler.CompilerState.BeginCompileFile
+  id: BeginCompileFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: BeginCompileFile
+  nameWithType: CompilerState.BeginCompileFile
+  fullName: PascalABCCompiler.CompilerState.BeginCompileFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: BeginCompileFile = 4
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.BeginParsingFile
+  commentId: F:PascalABCCompiler.CompilerState.BeginParsingFile
+  id: BeginParsingFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: BeginParsingFile
+  nameWithType: CompilerState.BeginParsingFile
+  fullName: PascalABCCompiler.CompilerState.BeginParsingFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: BeginParsingFile = 5
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.EndParsingFile
+  commentId: F:PascalABCCompiler.CompilerState.EndParsingFile
+  id: EndParsingFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: EndParsingFile
+  nameWithType: CompilerState.EndParsingFile
+  fullName: PascalABCCompiler.CompilerState.EndParsingFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: EndParsingFile = 6
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.CompileInterface
+  commentId: F:PascalABCCompiler.CompilerState.CompileInterface
+  id: CompileInterface
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: CompileInterface
+  nameWithType: CompilerState.CompileInterface
+  fullName: PascalABCCompiler.CompilerState.CompileInterface
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompileInterface = 7
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.CompileImplementation
+  commentId: F:PascalABCCompiler.CompilerState.CompileImplementation
+  id: CompileImplementation
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: CompileImplementation
+  nameWithType: CompilerState.CompileImplementation
+  fullName: PascalABCCompiler.CompilerState.CompileImplementation
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompileImplementation = 8
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.EndCompileFile
+  commentId: F:PascalABCCompiler.CompilerState.EndCompileFile
+  id: EndCompileFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: EndCompileFile
+  nameWithType: CompilerState.EndCompileFile
+  fullName: PascalABCCompiler.CompilerState.EndCompileFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: EndCompileFile = 9
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.ReadDLL
+  commentId: F:PascalABCCompiler.CompilerState.ReadDLL
+  id: ReadDLL
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: ReadDLL
+  nameWithType: CompilerState.ReadDLL
+  fullName: PascalABCCompiler.CompilerState.ReadDLL
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ReadDLL = 10
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.ReadPCUFile
+  commentId: F:PascalABCCompiler.CompilerState.ReadPCUFile
+  id: ReadPCUFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: ReadPCUFile
+  nameWithType: CompilerState.ReadPCUFile
+  fullName: PascalABCCompiler.CompilerState.ReadPCUFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ReadPCUFile = 11
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.SavePCUFile
+  commentId: F:PascalABCCompiler.CompilerState.SavePCUFile
+  id: SavePCUFile
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: SavePCUFile
+  nameWithType: CompilerState.SavePCUFile
+  fullName: PascalABCCompiler.CompilerState.SavePCUFile
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SavePCUFile = 12
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.CodeGeneration
+  commentId: F:PascalABCCompiler.CompilerState.CodeGeneration
+  id: CodeGeneration
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: CodeGeneration
+  nameWithType: CompilerState.CodeGeneration
+  fullName: PascalABCCompiler.CompilerState.CodeGeneration
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CodeGeneration = 13
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.CompilationFinished
+  commentId: F:PascalABCCompiler.CompilerState.CompilationFinished
+  id: CompilationFinished
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: CompilationFinished
+  nameWithType: CompilerState.CompilationFinished
+  fullName: PascalABCCompiler.CompilerState.CompilationFinished
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: CompilationFinished = 14
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.PCUReadingError
+  commentId: F:PascalABCCompiler.CompilerState.PCUReadingError
+  id: PCUReadingError
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: PCUReadingError
+  nameWithType: CompilerState.PCUReadingError
+  fullName: PascalABCCompiler.CompilerState.PCUReadingError
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: PCUReadingError = 15
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.PCUWritingError
+  commentId: F:PascalABCCompiler.CompilerState.PCUWritingError
+  id: PCUWritingError
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: PCUWritingError
+  nameWithType: CompilerState.PCUWritingError
+  fullName: PascalABCCompiler.CompilerState.PCUWritingError
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: PCUWritingError = 16
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.SemanticTreeConverterConnected
+  commentId: F:PascalABCCompiler.CompilerState.SemanticTreeConverterConnected
+  id: SemanticTreeConverterConnected
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConverterConnected
+  nameWithType: CompilerState.SemanticTreeConverterConnected
+  fullName: PascalABCCompiler.CompilerState.SemanticTreeConverterConnected
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SemanticTreeConverterConnected = 17
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.SemanticTreeConversion
+  commentId: F:PascalABCCompiler.CompilerState.SemanticTreeConversion
+  id: SemanticTreeConversion
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConversion
+  nameWithType: CompilerState.SemanticTreeConversion
+  fullName: PascalABCCompiler.CompilerState.SemanticTreeConversion
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SemanticTreeConversion = 18
+    return:
+      type: PascalABCCompiler.CompilerState
+- uid: PascalABCCompiler.CompilerState.SyntaxTreeConversion
+  commentId: F:PascalABCCompiler.CompilerState.SyntaxTreeConversion
+  id: SyntaxTreeConversion
+  parent: PascalABCCompiler.CompilerState
+  langs:
+  - csharp
+  - vb
+  name: SyntaxTreeConversion
+  nameWithType: CompilerState.SyntaxTreeConversion
+  fullName: PascalABCCompiler.CompilerState.SyntaxTreeConversion
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: SyntaxTreeConversion = 19
+    return:
+      type: PascalABCCompiler.CompilerState
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.CompilerState
+  commentId: T:PascalABCCompiler.CompilerState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerState.html
+  name: CompilerState
+  nameWithType: CompilerState
+  fullName: PascalABCCompiler.CompilerState

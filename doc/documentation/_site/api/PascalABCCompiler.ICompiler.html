@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface ICompiler </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ICompiler ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PascalABCCompiler.ICompiler">
+
+
+
+  <h1 id="PascalABCCompiler_ICompiler" data-uid="PascalABCCompiler.ICompiler" class="text-break">
+Interface ICompiler  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="PascalABCCompiler.html">PascalABCCompiler</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Compiler.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ICompiler</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PascalABCCompiler_ICompiler_BeginOffset_" data-uid="PascalABCCompiler.ICompiler.BeginOffset*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_BeginOffset" data-uid="PascalABCCompiler.ICompiler.BeginOffset">
+  BeginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int BeginOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_CompilerOptions_" data-uid="PascalABCCompiler.ICompiler.CompilerOptions*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_CompilerOptions" data-uid="PascalABCCompiler.ICompiler.CompilerOptions">
+  CompilerOptions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CompilerOptions CompilerOptions { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerOptions.html">CompilerOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_CompilerType_" data-uid="PascalABCCompiler.ICompiler.CompilerType*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_CompilerType" data-uid="PascalABCCompiler.ICompiler.CompilerType">
+  CompilerType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CompilerType CompilerType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerType.html">CompilerType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_ErrorsList_" data-uid="PascalABCCompiler.ICompiler.ErrorsList*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_ErrorsList" data-uid="PascalABCCompiler.ICompiler.ErrorsList">
+  ErrorsList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;Error&gt; ErrorsList { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Error</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_InternalDebug_" data-uid="PascalABCCompiler.ICompiler.InternalDebug*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_InternalDebug" data-uid="PascalABCCompiler.ICompiler.InternalDebug">
+  InternalDebug
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CompilerInternalDebug InternalDebug { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerInternalDebug.html">CompilerInternalDebug</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_LinesCompiled_" data-uid="PascalABCCompiler.ICompiler.LinesCompiled*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_LinesCompiled" data-uid="PascalABCCompiler.ICompiler.LinesCompiled">
+  LinesCompiled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint LinesCompiled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_PABCCodeHealth_" data-uid="PascalABCCompiler.ICompiler.PABCCodeHealth*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_PABCCodeHealth" data-uid="PascalABCCompiler.ICompiler.PABCCodeHealth">
+  PABCCodeHealth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int PABCCodeHealth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_SemanticTree_" data-uid="PascalABCCompiler.ICompiler.SemanticTree*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_SemanticTree" data-uid="PascalABCCompiler.ICompiler.SemanticTree">
+  SemanticTree
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IProgramNode SemanticTree { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IProgramNode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_SemanticTreeConvertersController_" data-uid="PascalABCCompiler.ICompiler.SemanticTreeConvertersController*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_SemanticTreeConvertersController" data-uid="PascalABCCompiler.ICompiler.SemanticTreeConvertersController">
+  SemanticTreeConvertersController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SemanticTreeConvertersController SemanticTreeConvertersController { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html">SemanticTreeConvertersController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_SourceFilesProvider_" data-uid="PascalABCCompiler.ICompiler.SourceFilesProvider*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_SourceFilesProvider" data-uid="PascalABCCompiler.ICompiler.SourceFilesProvider">
+  SourceFilesProvider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SourceFilesProviderDelegate SourceFilesProvider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SourceFilesProviderDelegate</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_State_" data-uid="PascalABCCompiler.ICompiler.State*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_State" data-uid="PascalABCCompiler.ICompiler.State">
+  State
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CompilerState State { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilerState.html">CompilerState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_SupportedProjectFiles_" data-uid="PascalABCCompiler.ICompiler.SupportedProjectFiles*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_SupportedProjectFiles" data-uid="PascalABCCompiler.ICompiler.SupportedProjectFiles">
+  SupportedProjectFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SupportedSourceFile[] SupportedProjectFiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SupportedSourceFile.html">SupportedSourceFile</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_SupportedSourceFiles_" data-uid="PascalABCCompiler.ICompiler.SupportedSourceFiles*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_SupportedSourceFiles" data-uid="PascalABCCompiler.ICompiler.SupportedSourceFiles">
+  SupportedSourceFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SupportedSourceFile[] SupportedSourceFiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.SupportedSourceFile.html">SupportedSourceFile</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_UnitTable_" data-uid="PascalABCCompiler.ICompiler.UnitTable*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_UnitTable" data-uid="PascalABCCompiler.ICompiler.UnitTable">
+  UnitTable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CompilationUnitHashTable UnitTable { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.CompilationUnitHashTable.html">CompilationUnitHashTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_VarBeginOffset_" data-uid="PascalABCCompiler.ICompiler.VarBeginOffset*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_VarBeginOffset" data-uid="PascalABCCompiler.ICompiler.VarBeginOffset">
+  VarBeginOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int VarBeginOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_Warnings_" data-uid="PascalABCCompiler.ICompiler.Warnings*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_Warnings" data-uid="PascalABCCompiler.ICompiler.Warnings">
+  Warnings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;CompilerWarning&gt; Warnings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PascalABCCompiler_ICompiler_AddWarnings_" data-uid="PascalABCCompiler.ICompiler.AddWarnings*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_AddWarnings_System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__" data-uid="PascalABCCompiler.ICompiler.AddWarnings(System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})">
+  AddWarnings(List&lt;CompilerWarning&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddWarnings(List&lt;CompilerWarning&gt; WarningList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>WarningList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_Compile_" data-uid="PascalABCCompiler.ICompiler.Compile*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_Compile" data-uid="PascalABCCompiler.ICompiler.Compile">
+  Compile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Compile()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_Free_" data-uid="PascalABCCompiler.ICompiler.Free*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_Free" data-uid="PascalABCCompiler.ICompiler.Free">
+  Free()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Free()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_GetSourceFileText_" data-uid="PascalABCCompiler.ICompiler.GetSourceFileText*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_GetSourceFileText_System_String_" data-uid="PascalABCCompiler.ICompiler.GetSourceFileText(System.String)">
+  GetSourceFileText(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string GetSourceFileText(string FileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_ParseText_" data-uid="PascalABCCompiler.ICompiler.ParseText*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_ParseText_System_String_System_String_System_Collections_Generic_List_PascalABCCompiler_Errors_Error__System_Collections_Generic_List_PascalABCCompiler_Errors_CompilerWarning__" data-uid="PascalABCCompiler.ICompiler.ParseText(System.String,System.String,System.Collections.Generic.List{PascalABCCompiler.Errors.Error},System.Collections.Generic.List{PascalABCCompiler.Errors.CompilerWarning})">
+  ParseText(string, string, List&lt;Error&gt;, List&lt;CompilerWarning&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">compilation_unit ParseText(string FileName, string Text, List&lt;Error&gt; ErrorList, List&lt;CompilerWarning&gt; Warnings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>Text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ErrorList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Error</span>&gt;</dt>
+    <dd></dd>
+    <dt><code>Warnings</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">CompilerWarning</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">compilation_unit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_Reload_" data-uid="PascalABCCompiler.ICompiler.Reload*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_Reload" data-uid="PascalABCCompiler.ICompiler.Reload">
+  Reload()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Reload()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PascalABCCompiler_ICompiler_StartCompile_" data-uid="PascalABCCompiler.ICompiler.StartCompile*"></a>
+
+  <h3 id="PascalABCCompiler_ICompiler_StartCompile" data-uid="PascalABCCompiler.ICompiler.StartCompile">
+  StartCompile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void StartCompile()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="PascalABCCompiler_ICompiler_OnChangeCompilerState" data-uid="PascalABCCompiler.ICompiler.OnChangeCompilerState">
+  OnChangeCompilerState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event ChangeCompilerStateEventDelegate OnChangeCompilerState</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PascalABCCompiler.ChangeCompilerStateEventDelegate.html">ChangeCompilerStateEventDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

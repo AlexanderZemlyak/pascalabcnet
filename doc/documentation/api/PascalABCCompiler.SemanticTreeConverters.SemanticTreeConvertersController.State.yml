@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  id: SemanticTreeConvertersController.State
+  parent: PascalABCCompiler.SemanticTreeConverters
+  children:
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.ConnectConverter
+  - PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.Convert
+  langs:
+  - csharp
+  - vb
+  name: SemanticTreeConvertersController.State
+  nameWithType: SemanticTreeConvertersController.State
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: public enum SemanticTreeConvertersController.State
+    content.vb: Public Enum SemanticTreeConvertersController.State
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.ConnectConverter
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.ConnectConverter
+  id: ConnectConverter
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  langs:
+  - csharp
+  - vb
+  name: ConnectConverter
+  nameWithType: SemanticTreeConvertersController.State.ConnectConverter
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.ConnectConverter
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: ConnectConverter = 0
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.Convert
+  commentId: F:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.Convert
+  id: Convert
+  parent: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  langs:
+  - csharp
+  - vb
+  name: Convert
+  nameWithType: SemanticTreeConvertersController.State.Convert
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.Convert
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.SemanticTreeConverters
+  syntax:
+    content: Convert = 1
+    return:
+      type: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+references:
+- uid: PascalABCCompiler.SemanticTreeConverters
+  commentId: N:PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.SemanticTreeConverters
+  nameWithType: PascalABCCompiler.SemanticTreeConverters
+  fullName: PascalABCCompiler.SemanticTreeConverters
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters
+    name: SemanticTreeConverters
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.html
+- uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  commentId: T:PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  parent: PascalABCCompiler.SemanticTreeConverters
+  isExternal: true
+  href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  name: SemanticTreeConvertersController.State
+  nameWithType: SemanticTreeConvertersController.State
+  fullName: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    name: State
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.html
+  spec.vb:
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.html
+  - name: .
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    name: State
+    isExternal: true
+    href: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State.html

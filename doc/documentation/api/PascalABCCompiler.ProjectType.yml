@@ -1,0 +1,93 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.ProjectType
+  commentId: T:PascalABCCompiler.ProjectType
+  id: ProjectType
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ProjectType.ConsoleApp
+  - PascalABCCompiler.ProjectType.Library
+  - PascalABCCompiler.ProjectType.WindowsApp
+  langs:
+  - csharp
+  - vb
+  name: ProjectType
+  nameWithType: ProjectType
+  fullName: PascalABCCompiler.ProjectType
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public enum ProjectType
+    content.vb: Public Enum ProjectType
+- uid: PascalABCCompiler.ProjectType.ConsoleApp
+  commentId: F:PascalABCCompiler.ProjectType.ConsoleApp
+  id: ConsoleApp
+  parent: PascalABCCompiler.ProjectType
+  langs:
+  - csharp
+  - vb
+  name: ConsoleApp
+  nameWithType: ProjectType.ConsoleApp
+  fullName: PascalABCCompiler.ProjectType.ConsoleApp
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: ConsoleApp = 0
+    return:
+      type: PascalABCCompiler.ProjectType
+- uid: PascalABCCompiler.ProjectType.Library
+  commentId: F:PascalABCCompiler.ProjectType.Library
+  id: Library
+  parent: PascalABCCompiler.ProjectType
+  langs:
+  - csharp
+  - vb
+  name: Library
+  nameWithType: ProjectType.Library
+  fullName: PascalABCCompiler.ProjectType.Library
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: Library = 1
+    return:
+      type: PascalABCCompiler.ProjectType
+- uid: PascalABCCompiler.ProjectType.WindowsApp
+  commentId: F:PascalABCCompiler.ProjectType.WindowsApp
+  id: WindowsApp
+  parent: PascalABCCompiler.ProjectType
+  langs:
+  - csharp
+  - vb
+  name: WindowsApp
+  nameWithType: ProjectType.WindowsApp
+  fullName: PascalABCCompiler.ProjectType.WindowsApp
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: WindowsApp = 2
+    return:
+      type: PascalABCCompiler.ProjectType
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.ProjectType
+  commentId: T:PascalABCCompiler.ProjectType
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ProjectType.html
+  name: ProjectType
+  nameWithType: ProjectType
+  fullName: PascalABCCompiler.ProjectType

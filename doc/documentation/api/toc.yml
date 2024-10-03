@@ -1,0 +1,212 @@
+### YamlMime:TableOfContent
+items:
+- uid: PascalABCCompiler
+  name: PascalABCCompiler
+  items:
+  - uid: PascalABCCompiler.ChangeCompilerStateEventDelegate
+    name: ChangeCompilerStateEventDelegate
+  - uid: PascalABCCompiler.CompilationUnit
+    name: CompilationUnit
+  - uid: PascalABCCompiler.CompilationUnitHashTable
+    name: CompilationUnitHashTable
+  - uid: PascalABCCompiler.Compiler
+    name: Compiler
+  - uid: PascalABCCompiler.CompilerInternalDebug
+    name: CompilerInternalDebug
+  - uid: PascalABCCompiler.CompilerOptions
+    name: CompilerOptions
+  - uid: PascalABCCompiler.CompilerOptions.OutputType
+    name: CompilerOptions.OutputType
+  - uid: PascalABCCompiler.CompilerOptions.StandardModule
+    name: CompilerOptions.StandardModule
+  - uid: PascalABCCompiler.CompilerOptions.StandardModuleAddMethod
+    name: CompilerOptions.StandardModuleAddMethod
+  - uid: PascalABCCompiler.CompilerState
+    name: CompilerState
+  - uid: PascalABCCompiler.CompilerType
+    name: CompilerType
+  - uid: PascalABCCompiler.ConsoleCompilerConstants
+    name: ConsoleCompilerConstants
+  - uid: PascalABCCompiler.DocXmlManager
+    name: DocXmlManager
+  - uid: PascalABCCompiler.ICompiler
+    name: ICompiler
+  - uid: PascalABCCompiler.IFileInfo
+    name: IFileInfo
+  - uid: PascalABCCompiler.IProjectInfo
+    name: IProjectInfo
+  - uid: PascalABCCompiler.IReferenceInfo
+    name: IReferenceInfo
+  - uid: PascalABCCompiler.IRemoteCompiler
+    name: IRemoteCompiler
+  - uid: PascalABCCompiler.IResourceInfo
+    name: IResourceInfo
+  - uid: PascalABCCompiler.ProjectInfo
+    name: ProjectInfo
+  - uid: PascalABCCompiler.ProjectType
+    name: ProjectType
+  - uid: PascalABCCompiler.ReferenceInfo
+    name: ReferenceInfo
+  - uid: PascalABCCompiler.RemoteCompiler
+    name: RemoteCompiler
+  - uid: PascalABCCompiler.RemoteCompiler.EnvorimentIdleDelegate
+    name: RemoteCompiler.EnvorimentIdleDelegate
+  - uid: PascalABCCompiler.RemoteCompilerChannelEventDelegate
+    name: RemoteCompilerChannelEventDelegate
+  - uid: PascalABCCompiler.RemoteCompilerChannelEventType
+    name: RemoteCompilerChannelEventType
+  - uid: PascalABCCompiler.RemoteCompilerError
+    name: RemoteCompilerError
+  - uid: PascalABCCompiler.RemoteCompilerInternalError
+    name: RemoteCompilerInternalError
+  - uid: PascalABCCompiler.RemoteCompilerWarning
+    name: RemoteCompilerWarning
+  - uid: PascalABCCompiler.ResourceInfo
+    name: ResourceInfo
+  - uid: PascalABCCompiler.SourceCodeFileInfo
+    name: SourceCodeFileInfo
+  - uid: PascalABCCompiler.SupportedSourceFile
+    name: SupportedSourceFile
+  - uid: PascalABCCompiler.TooOldProjectFileVersion
+    name: TooOldProjectFileVersion
+  - uid: PascalABCCompiler.UnitState
+    name: UnitState
+- uid: PascalABCCompiler.Errors
+  name: PascalABCCompiler.Errors
+  items:
+  - uid: PascalABCCompiler.Errors.AppTypeDllIsAllowedOnlyForLibraries
+    name: AppTypeDllIsAllowedOnlyForLibraries
+  - uid: PascalABCCompiler.Errors.AssemblyNotFound
+    name: AssemblyNotFound
+  - uid: PascalABCCompiler.Errors.AssemblyReadingError
+    name: AssemblyReadingError
+  - uid: PascalABCCompiler.Errors.CompilerThrownError
+    name: CompilerThrownError
+  - uid: PascalABCCompiler.Errors.CycleUnitReference
+    name: CycleUnitReference
+  - uid: PascalABCCompiler.Errors.DisableStandardUnitsDirectiveDisallowedInUsedUnits
+    name: DisableStandardUnitsDirectiveDisallowedInUsedUnits
+  - uid: PascalABCCompiler.Errors.DuplicateDirective
+    name: DuplicateDirective
+  - uid: PascalABCCompiler.Errors.DuplicateUsesUnit
+    name: DuplicateUsesUnit
+  - uid: PascalABCCompiler.Errors.FileNotFound
+    name: FileNotFound
+  - uid: PascalABCCompiler.Errors.IncludeNamespaceInUnitError
+    name: IncludeNamespaceInUnitError
+  - uid: PascalABCCompiler.Errors.InvalidAssemblyPathError
+    name: InvalidAssemblyPathError
+  - uid: PascalABCCompiler.Errors.InvalidPathError
+    name: InvalidPathError
+  - uid: PascalABCCompiler.Errors.MainResourceNotAllowed
+    name: MainResourceNotAllowed
+  - uid: PascalABCCompiler.Errors.NamespaceCannotHaveInSection
+    name: NamespaceCannotHaveInSection
+  - uid: PascalABCCompiler.Errors.NamespaceModuleExpected
+    name: NamespaceModuleExpected
+  - uid: PascalABCCompiler.Errors.NamespacesCanBeCompiledOnlyInProjects
+    name: NamespacesCanBeCompiledOnlyInProjects
+  - uid: PascalABCCompiler.Errors.ProgramModuleExpected
+    name: ProgramModuleExpected
+  - uid: PascalABCCompiler.Errors.ReadPCUError
+    name: ReadPCUError
+  - uid: PascalABCCompiler.Errors.ResourceFileNotFound
+    name: ResourceFileNotFound
+  - uid: PascalABCCompiler.Errors.SourceFileNotFound
+    name: SourceFileNotFound
+  - uid: PascalABCCompiler.Errors.UnauthorizedAccessToFile
+    name: UnauthorizedAccessToFile
+  - uid: PascalABCCompiler.Errors.UnitModuleExpected
+    name: UnitModuleExpected
+  - uid: PascalABCCompiler.Errors.UnitModuleExpectedLibraryFound
+    name: UnitModuleExpectedLibraryFound
+  - uid: PascalABCCompiler.Errors.UnitNotFound
+    name: UnitNotFound
+  - uid: PascalABCCompiler.Errors.UnsupportedOutputFileType
+    name: UnsupportedOutputFileType
+  - uid: PascalABCCompiler.Errors.UnsupportedTargetFramework
+    name: UnsupportedTargetFramework
+  - uid: PascalABCCompiler.Errors.UnsupportedTargetPlatform
+    name: UnsupportedTargetPlatform
+  - uid: PascalABCCompiler.Errors.UsesInWrongName
+    name: UsesInWrongName
+- uid: PascalABCCompiler.PCU
+  name: PascalABCCompiler.PCU
+  items:
+  - uid: PascalABCCompiler.PCU.ClassInfo
+    name: ClassInfo
+  - uid: PascalABCCompiler.PCU.DotAdditInfo
+    name: DotAdditInfo
+  - uid: PascalABCCompiler.PCU.DotNetKind
+    name: DotNetKind
+  - uid: PascalABCCompiler.PCU.DotNetNameRef
+    name: DotNetNameRef
+  - uid: PascalABCCompiler.PCU.GenericParamKind
+    name: GenericParamKind
+  - uid: PascalABCCompiler.PCU.ImportKind
+    name: ImportKind
+  - uid: PascalABCCompiler.PCU.ImportedEntity
+    name: ImportedEntity
+  - uid: PascalABCCompiler.PCU.InvalidPCUFile
+    name: InvalidPCUFile
+  - uid: PascalABCCompiler.PCU.NameRef
+    name: NameRef
+  - uid: PascalABCCompiler.PCU.PCUConsts
+    name: PCUConsts
+  - uid: PascalABCCompiler.PCU.PCUFile
+    name: PCUFile
+  - uid: PascalABCCompiler.PCU.PCUFileFormatVersion
+    name: PCUFileFormatVersion
+  - uid: PascalABCCompiler.PCU.PCUReader
+    name: PCUReader
+  - uid: PascalABCCompiler.PCU.PCUReader.ChangeStateDelegate
+    name: PCUReader.ChangeStateDelegate
+  - uid: PascalABCCompiler.PCU.PCUReader.PCUFileHeadState
+    name: PCUReader.PCUFileHeadState
+  - uid: PascalABCCompiler.PCU.PCUReader.TypeSpec
+    name: PCUReader.TypeSpec
+  - uid: PascalABCCompiler.PCU.PCUReaderWriterState
+    name: PCUReaderWriterState
+  - uid: PascalABCCompiler.PCU.PCUWriter
+    name: PCUWriter
+  - uid: PascalABCCompiler.PCU.PCUWriter.ChangeStateDelegate
+    name: PCUWriter.ChangeStateDelegate
+  - uid: PascalABCCompiler.PCU.TypeKind
+    name: TypeKind
+  - uid: PascalABCCompiler.PCU.WrappedClassScope
+    name: WrappedClassScope
+  - uid: PascalABCCompiler.PCU.WrappedInterfaceScope
+    name: WrappedInterfaceScope
+  - uid: PascalABCCompiler.PCU.WrappedUnitImplementationScope
+    name: WrappedUnitImplementationScope
+  - uid: PascalABCCompiler.PCU.WrappedUnitInterfaceScope
+    name: WrappedUnitInterfaceScope
+  - uid: PascalABCCompiler.PCU.wrapped_common_type_node
+    name: wrapped_common_type_node
+  - uid: PascalABCCompiler.PCU.wrapped_expression
+    name: wrapped_expression
+  - uid: PascalABCCompiler.PCU.wrapped_function_body
+    name: wrapped_function_body
+  - uid: PascalABCCompiler.PCU.wrapped_type_synonym
+    name: wrapped_type_synonym
+- uid: PascalABCCompiler.SemanticTreeConverters
+  name: PascalABCCompiler.SemanticTreeConverters
+  items:
+  - uid: PascalABCCompiler.SemanticTreeConverters.ConverterType
+    name: ConverterType
+  - uid: PascalABCCompiler.SemanticTreeConverters.ExecutionOrder
+    name: ExecutionOrder
+  - uid: PascalABCCompiler.SemanticTreeConverters.ISemanticTreeConverter
+    name: ISemanticTreeConverter
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController
+    name: SemanticTreeConvertersController
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.ChangeStateDelegate
+    name: SemanticTreeConvertersController.ChangeStateDelegate
+  - uid: PascalABCCompiler.SemanticTreeConverters.SemanticTreeConvertersController.State
+    name: SemanticTreeConvertersController.State
+- uid: PascalABCCompiler.TreeConverter
+  name: PascalABCCompiler.TreeConverter
+  items:
+  - uid: PascalABCCompiler.TreeConverter.SyntaxTreeToSemanticTreeConverter
+    name: SyntaxTreeToSemanticTreeConverter
+memberLayout: SamePage

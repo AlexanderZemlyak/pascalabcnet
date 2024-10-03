@@ -1,0 +1,248 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  commentId: T:PascalABCCompiler.ChangeCompilerStateEventDelegate
+  id: ChangeCompilerStateEventDelegate
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor(System.Object,System.IntPtr)
+  - PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String,System.AsyncCallback,System.Object)
+  - PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke(System.IAsyncResult)
+  - PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String)
+  langs:
+  - csharp
+  - vb
+  name: ChangeCompilerStateEventDelegate
+  nameWithType: ChangeCompilerStateEventDelegate
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  type: Delegate
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public delegate void ChangeCompilerStateEventDelegate(ICompiler sender, CompilerState State, string FileName)
+    parameters:
+    - id: sender
+      type: PascalABCCompiler.ICompiler
+    - id: State
+      type: PascalABCCompiler.CompilerState
+    - id: FileName
+      type: System.String
+    content.vb: Public Delegate Sub ChangeCompilerStateEventDelegate(sender As ICompiler, State As CompilerState, FileName As String)
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor(System.Object,System.IntPtr)
+  commentId: M:PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: ChangeCompilerStateEventDelegate(object, IntPtr)
+  nameWithType: ChangeCompilerStateEventDelegate.ChangeCompilerStateEventDelegate(object, IntPtr)
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.ChangeCompilerStateEventDelegate(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public ChangeCompilerStateEventDelegate(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor*
+  nameWithType.vb: ChangeCompilerStateEventDelegate.New(Object, IntPtr)
+  fullName.vb: PascalABCCompiler.ChangeCompilerStateEventDelegate.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String)
+  commentId: M:PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String)
+  id: Invoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String)
+  parent: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: Invoke(ICompiler, CompilerState, string)
+  nameWithType: ChangeCompilerStateEventDelegate.Invoke(ICompiler, CompilerState, string)
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke(PascalABCCompiler.ICompiler, PascalABCCompiler.CompilerState, string)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void Invoke(ICompiler sender, CompilerState State, string FileName)
+    parameters:
+    - id: sender
+      type: PascalABCCompiler.ICompiler
+    - id: State
+      type: PascalABCCompiler.CompilerState
+    - id: FileName
+      type: System.String
+    content.vb: Public Overridable Sub Invoke(sender As ICompiler, State As CompilerState, FileName As String)
+  overload: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke*
+  nameWithType.vb: ChangeCompilerStateEventDelegate.Invoke(ICompiler, CompilerState, String)
+  fullName.vb: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke(PascalABCCompiler.ICompiler, PascalABCCompiler.CompilerState, String)
+  name.vb: Invoke(ICompiler, CompilerState, String)
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String,System.AsyncCallback,System.Object)
+  commentId: M:PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String,System.AsyncCallback,System.Object)
+  id: BeginInvoke(PascalABCCompiler.ICompiler,PascalABCCompiler.CompilerState,System.String,System.AsyncCallback,System.Object)
+  parent: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(ICompiler, CompilerState, string, AsyncCallback, object)
+  nameWithType: ChangeCompilerStateEventDelegate.BeginInvoke(ICompiler, CompilerState, string, AsyncCallback, object)
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke(PascalABCCompiler.ICompiler, PascalABCCompiler.CompilerState, string, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(ICompiler sender, CompilerState State, string FileName, AsyncCallback callback, object @object)
+    parameters:
+    - id: sender
+      type: PascalABCCompiler.ICompiler
+    - id: State
+      type: PascalABCCompiler.CompilerState
+    - id: FileName
+      type: System.String
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(sender As ICompiler, State As CompilerState, FileName As String, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke*
+  nameWithType.vb: ChangeCompilerStateEventDelegate.BeginInvoke(ICompiler, CompilerState, String, AsyncCallback, Object)
+  fullName.vb: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke(PascalABCCompiler.ICompiler, PascalABCCompiler.CompilerState, String, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(ICompiler, CompilerState, String, AsyncCallback, Object)
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke(System.IAsyncResult)
+  commentId: M:PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: PascalABCCompiler.ChangeCompilerStateEventDelegate
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: ChangeCompilerStateEventDelegate.EndInvoke(IAsyncResult)
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.ICompiler
+  commentId: T:PascalABCCompiler.ICompiler
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.ICompiler.html
+  name: ICompiler
+  nameWithType: ICompiler
+  fullName: PascalABCCompiler.ICompiler
+- uid: PascalABCCompiler.CompilerState
+  commentId: T:PascalABCCompiler.CompilerState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.CompilerState.html
+  name: CompilerState
+  nameWithType: CompilerState
+  fullName: PascalABCCompiler.CompilerState
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor*
+  commentId: Overload:PascalABCCompiler.ChangeCompilerStateEventDelegate.#ctor
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html#PascalABCCompiler_ChangeCompilerStateEventDelegate__ctor_System_Object_System_IntPtr_
+  name: ChangeCompilerStateEventDelegate
+  nameWithType: ChangeCompilerStateEventDelegate.ChangeCompilerStateEventDelegate
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.ChangeCompilerStateEventDelegate
+  nameWithType.vb: ChangeCompilerStateEventDelegate.New
+  fullName.vb: PascalABCCompiler.ChangeCompilerStateEventDelegate.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke*
+  commentId: Overload:PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html#PascalABCCompiler_ChangeCompilerStateEventDelegate_Invoke_PascalABCCompiler_ICompiler_PascalABCCompiler_CompilerState_System_String_
+  name: Invoke
+  nameWithType: ChangeCompilerStateEventDelegate.Invoke
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.Invoke
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke*
+  commentId: Overload:PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html#PascalABCCompiler_ChangeCompilerStateEventDelegate_BeginInvoke_PascalABCCompiler_ICompiler_PascalABCCompiler_CompilerState_System_String_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: ChangeCompilerStateEventDelegate.BeginInvoke
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke*
+  commentId: Overload:PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke
+  isExternal: true
+  href: PascalABCCompiler.ChangeCompilerStateEventDelegate.html#PascalABCCompiler_ChangeCompilerStateEventDelegate_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: ChangeCompilerStateEventDelegate.EndInvoke
+  fullName: PascalABCCompiler.ChangeCompilerStateEventDelegate.EndInvoke

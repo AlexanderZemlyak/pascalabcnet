@@ -1,0 +1,1486 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.CompilationUnit
+  commentId: T:PascalABCCompiler.CompilationUnit
+  id: CompilationUnit
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.CompilationUnit.#ctor
+  - PascalABCCompiler.CompilationUnit.CaseSensitive
+  - PascalABCCompiler.CompilationUnit.Documented
+  - PascalABCCompiler.CompilationUnit.ErrorList
+  - PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit(System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean})
+  - PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+  - PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+  - PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList
+  - PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+  - PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+  - PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+  - PascalABCCompiler.CompilationUnit.Language
+  - PascalABCCompiler.CompilationUnit.SemanticTree
+  - PascalABCCompiler.CompilationUnit.State
+  - PascalABCCompiler.CompilationUnit.SyntaxTree
+  - PascalABCCompiler.CompilationUnit.UnitFileName
+  - PascalABCCompiler.CompilationUnit._implementation_using_namespace_list
+  - PascalABCCompiler.CompilationUnit._interface_using_namespace_list
+  - PascalABCCompiler.CompilationUnit._semanticTree
+  - PascalABCCompiler.CompilationUnit._syntaxTree
+  - PascalABCCompiler.CompilationUnit.currentUsedUnitId
+  - PascalABCCompiler.CompilationUnit.possibleNamespaces
+  - PascalABCCompiler.CompilationUnit.syntax_error
+  langs:
+  - csharp
+  - vb
+  name: CompilationUnit
+  nameWithType: CompilationUnit
+  fullName: PascalABCCompiler.CompilationUnit
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public class CompilationUnit
+    content.vb: Public Class CompilationUnit
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.CompilationUnit.CaseSensitive
+  commentId: F:PascalABCCompiler.CompilationUnit.CaseSensitive
+  id: CaseSensitive
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: CaseSensitive
+  nameWithType: CompilationUnit.CaseSensitive
+  fullName: PascalABCCompiler.CompilationUnit.CaseSensitive
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: internal bool CaseSensitive
+    return:
+      type: System.Boolean
+    content.vb: Friend CaseSensitive As Boolean
+- uid: PascalABCCompiler.CompilationUnit.currentUsedUnitId
+  commentId: F:PascalABCCompiler.CompilationUnit.currentUsedUnitId
+  id: currentUsedUnitId
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: currentUsedUnitId
+  nameWithType: CompilationUnit.currentUsedUnitId
+  fullName: PascalABCCompiler.CompilationUnit.currentUsedUnitId
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  summary: поле для проверки на циклическую зависимость интерфейсов модулей
+  example: []
+  syntax:
+    content: public string currentUsedUnitId
+    return:
+      type: System.String
+    content.vb: Public currentUsedUnitId As String
+- uid: PascalABCCompiler.CompilationUnit.syntax_error
+  commentId: F:PascalABCCompiler.CompilationUnit.syntax_error
+  id: syntax_error
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: syntax_error
+  nameWithType: CompilationUnit.syntax_error
+  fullName: PascalABCCompiler.CompilationUnit.syntax_error
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public SyntaxError syntax_error
+    return:
+      type: PascalABCCompiler.Errors.SyntaxError
+    content.vb: Public syntax_error As SyntaxError
+- uid: PascalABCCompiler.CompilationUnit.UnitFileName
+  commentId: F:PascalABCCompiler.CompilationUnit.UnitFileName
+  id: UnitFileName
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: UnitFileName
+  nameWithType: CompilationUnit.UnitFileName
+  fullName: PascalABCCompiler.CompilationUnit.UnitFileName
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public string UnitFileName
+    return:
+      type: System.String
+    content.vb: Public UnitFileName As String
+- uid: PascalABCCompiler.CompilationUnit.ErrorList
+  commentId: F:PascalABCCompiler.CompilationUnit.ErrorList
+  id: ErrorList
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: ErrorList
+  nameWithType: CompilationUnit.ErrorList
+  fullName: PascalABCCompiler.CompilationUnit.ErrorList
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public List<Error> ErrorList
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+    content.vb: Public ErrorList As List(Of [Error])
+- uid: PascalABCCompiler.CompilationUnit.Documented
+  commentId: F:PascalABCCompiler.CompilationUnit.Documented
+  id: Documented
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: Documented
+  nameWithType: CompilationUnit.Documented
+  fullName: PascalABCCompiler.CompilationUnit.Documented
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool Documented
+    return:
+      type: System.Boolean
+    content.vb: Public Documented As Boolean
+- uid: PascalABCCompiler.CompilationUnit.possibleNamespaces
+  commentId: F:PascalABCCompiler.CompilationUnit.possibleNamespaces
+  id: possibleNamespaces
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: possibleNamespaces
+  nameWithType: CompilationUnit.possibleNamespaces
+  fullName: PascalABCCompiler.CompilationUnit.possibleNamespaces
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: internal List<unit_or_namespace> possibleNamespaces
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace}
+    content.vb: Friend possibleNamespaces As List(Of unit_or_namespace)
+- uid: PascalABCCompiler.CompilationUnit._syntaxTree
+  commentId: F:PascalABCCompiler.CompilationUnit._syntaxTree
+  id: _syntaxTree
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: _syntaxTree
+  nameWithType: CompilationUnit._syntaxTree
+  fullName: PascalABCCompiler.CompilationUnit._syntaxTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private compilation_unit _syntaxTree
+    return:
+      type: PascalABCCompiler.SyntaxTree.compilation_unit
+    content.vb: Private _syntaxTree As compilation_unit
+- uid: PascalABCCompiler.CompilationUnit._semanticTree
+  commentId: F:PascalABCCompiler.CompilationUnit._semanticTree
+  id: _semanticTree
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: _semanticTree
+  nameWithType: CompilationUnit._semanticTree
+  fullName: PascalABCCompiler.CompilationUnit._semanticTree
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private unit_node _semanticTree
+    return:
+      type: PascalABCCompiler.TreeRealization.unit_node
+    content.vb: Private _semanticTree As unit_node
+- uid: PascalABCCompiler.CompilationUnit._interface_using_namespace_list
+  commentId: F:PascalABCCompiler.CompilationUnit._interface_using_namespace_list
+  id: _interface_using_namespace_list
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: _interface_using_namespace_list
+  nameWithType: CompilationUnit._interface_using_namespace_list
+  fullName: PascalABCCompiler.CompilationUnit._interface_using_namespace_list
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private using_namespace_list _interface_using_namespace_list
+    return:
+      type: PascalABCCompiler.TreeRealization.using_namespace_list
+    content.vb: Private _interface_using_namespace_list As using_namespace_list
+- uid: PascalABCCompiler.CompilationUnit._implementation_using_namespace_list
+  commentId: F:PascalABCCompiler.CompilationUnit._implementation_using_namespace_list
+  id: _implementation_using_namespace_list
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: _implementation_using_namespace_list
+  nameWithType: CompilationUnit._implementation_using_namespace_list
+  fullName: PascalABCCompiler.CompilationUnit._implementation_using_namespace_list
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: private using_namespace_list _implementation_using_namespace_list
+    return:
+      type: PascalABCCompiler.TreeRealization.using_namespace_list
+    content.vb: Private _implementation_using_namespace_list As using_namespace_list
+- uid: PascalABCCompiler.CompilationUnit.State
+  commentId: F:PascalABCCompiler.CompilationUnit.State
+  id: State
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: CompilationUnit.State
+  fullName: PascalABCCompiler.CompilationUnit.State
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public UnitState State
+    return:
+      type: PascalABCCompiler.UnitState
+    content.vb: Public State As UnitState
+- uid: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit(System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean})
+  commentId: M:PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit(System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean})
+  id: ForEachDirectCompilationUnit(System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean})
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: ForEachDirectCompilationUnit(Func<CompilationUnit, string, bool>)
+  nameWithType: CompilationUnit.ForEachDirectCompilationUnit(Func<CompilationUnit, string, bool>)
+  fullName: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit(System.Func<PascalABCCompiler.CompilationUnit, string, bool>)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public bool ForEachDirectCompilationUnit(Func<CompilationUnit, string, bool> on_unit)
+    parameters:
+    - id: on_unit
+      type: System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean}
+    return:
+      type: System.Boolean
+    content.vb: Public Function ForEachDirectCompilationUnit(on_unit As Func(Of CompilationUnit, String, Boolean)) As Boolean
+  overload: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit*
+  nameWithType.vb: CompilationUnit.ForEachDirectCompilationUnit(Func(Of CompilationUnit, String, Boolean))
+  fullName.vb: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit(System.Func(Of PascalABCCompiler.CompilationUnit, String, Boolean))
+  name.vb: ForEachDirectCompilationUnit(Func(Of CompilationUnit, String, Boolean))
+- uid: PascalABCCompiler.CompilationUnit.#ctor
+  commentId: M:PascalABCCompiler.CompilationUnit.#ctor
+  id: '#ctor'
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: CompilationUnit()
+  nameWithType: CompilationUnit.CompilationUnit()
+  fullName: PascalABCCompiler.CompilationUnit.CompilationUnit()
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public CompilationUnit()
+    content.vb: Public Sub New()
+  overload: PascalABCCompiler.CompilationUnit.#ctor*
+  nameWithType.vb: CompilationUnit.New()
+  fullName.vb: PascalABCCompiler.CompilationUnit.New()
+  name.vb: New()
+- uid: PascalABCCompiler.CompilationUnit.Language
+  commentId: P:PascalABCCompiler.CompilationUnit.Language
+  id: Language
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: Language
+  nameWithType: CompilationUnit.Language
+  fullName: PascalABCCompiler.CompilationUnit.Language
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public ILanguage Language { get; set; }
+    parameters: []
+    return:
+      type: Languages.Facade.ILanguage
+    content.vb: Public Property Language As ILanguage
+  overload: PascalABCCompiler.CompilationUnit.Language*
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+  commentId: P:PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+  id: InterfaceUsedDirectUnits
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: InterfaceUsedDirectUnits
+  nameWithType: CompilationUnit.InterfaceUsedDirectUnits
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  summary: Только "реальные" юниты (не dll и namespace)
+  example: []
+  syntax:
+    content: public Dictionary<unit_node, CompilationUnit> InterfaceUsedDirectUnits { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit}
+    content.vb: Public ReadOnly Property InterfaceUsedDirectUnits As Dictionary(Of unit_node, CompilationUnit)
+  overload: PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits*
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+  commentId: P:PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+  id: InterfaceUsedUnits
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: InterfaceUsedUnits
+  nameWithType: CompilationUnit.InterfaceUsedUnits
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public unit_node_list InterfaceUsedUnits { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.TreeRealization.unit_node_list
+    content.vb: Public ReadOnly Property InterfaceUsedUnits As unit_node_list
+  overload: PascalABCCompiler.CompilationUnit.InterfaceUsedUnits*
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+  commentId: P:PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+  id: ImplementationUsedDirectUnits
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: ImplementationUsedDirectUnits
+  nameWithType: CompilationUnit.ImplementationUsedDirectUnits
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  summary: Только "реальные" юниты (не dll и namespace)
+  example: []
+  syntax:
+    content: public Dictionary<unit_node, CompilationUnit> ImplementationUsedDirectUnits { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit}
+    content.vb: Public ReadOnly Property ImplementationUsedDirectUnits As Dictionary(Of unit_node, CompilationUnit)
+  overload: PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits*
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+  commentId: P:PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+  id: ImplementationUsedUnits
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: ImplementationUsedUnits
+  nameWithType: CompilationUnit.ImplementationUsedUnits
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public unit_node_list ImplementationUsedUnits { get; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.TreeRealization.unit_node_list
+    content.vb: Public ReadOnly Property ImplementationUsedUnits As unit_node_list
+  overload: PascalABCCompiler.CompilationUnit.ImplementationUsedUnits*
+- uid: PascalABCCompiler.CompilationUnit.SyntaxTree
+  commentId: P:PascalABCCompiler.CompilationUnit.SyntaxTree
+  id: SyntaxTree
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: SyntaxTree
+  nameWithType: CompilationUnit.SyntaxTree
+  fullName: PascalABCCompiler.CompilationUnit.SyntaxTree
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public compilation_unit SyntaxTree { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.SyntaxTree.compilation_unit
+    content.vb: Public Property SyntaxTree As compilation_unit
+  overload: PascalABCCompiler.CompilationUnit.SyntaxTree*
+- uid: PascalABCCompiler.CompilationUnit.SemanticTree
+  commentId: P:PascalABCCompiler.CompilationUnit.SemanticTree
+  id: SemanticTree
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: SemanticTree
+  nameWithType: CompilationUnit.SemanticTree
+  fullName: PascalABCCompiler.CompilationUnit.SemanticTree
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public unit_node SemanticTree { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.TreeRealization.unit_node
+    content.vb: Public Property SemanticTree As unit_node
+  overload: PascalABCCompiler.CompilationUnit.SemanticTree*
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+  commentId: P:PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+  id: InterfaceUsingNamespaceList
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: InterfaceUsingNamespaceList
+  nameWithType: CompilationUnit.InterfaceUsingNamespaceList
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public using_namespace_list InterfaceUsingNamespaceList { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.TreeRealization.using_namespace_list
+    content.vb: Public Property InterfaceUsingNamespaceList As using_namespace_list
+  overload: PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList*
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList
+  commentId: P:PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList
+  id: ImplementationUsingNamespaceList
+  parent: PascalABCCompiler.CompilationUnit
+  langs:
+  - csharp
+  - vb
+  name: ImplementationUsingNamespaceList
+  nameWithType: CompilationUnit.ImplementationUsingNamespaceList
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public using_namespace_list ImplementationUsingNamespaceList { get; set; }
+    parameters: []
+    return:
+      type: PascalABCCompiler.TreeRealization.using_namespace_list
+    content.vb: Public Property ImplementationUsingNamespaceList As using_namespace_list
+  overload: PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.Errors.SyntaxError
+  commentId: T:PascalABCCompiler.Errors.SyntaxError
+  parent: PascalABCCompiler.Errors
+  isExternal: true
+  name: SyntaxError
+  nameWithType: SyntaxError
+  fullName: PascalABCCompiler.Errors.SyntaxError
+- uid: PascalABCCompiler.Errors
+  commentId: N:PascalABCCompiler.Errors
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.Errors
+  nameWithType: PascalABCCompiler.Errors
+  fullName: PascalABCCompiler.Errors
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.Errors
+    name: Errors
+    isExternal: true
+    href: PascalABCCompiler.Errors.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.Errors
+    name: Errors
+    isExternal: true
+    href: PascalABCCompiler.Errors.html
+- uid: System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.Errors.Error}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Error>
+  nameWithType: List<Error>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.Errors.Error>
+  nameWithType.vb: List(Of Error)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.Errors.Error)
+  name.vb: List(Of Error)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.Errors.Error
+    name: Error
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.Errors.Error
+    name: Error
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.SyntaxTree.unit_or_namespace}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<unit_or_namespace>
+  nameWithType: List<unit_or_namespace>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.SyntaxTree.unit_or_namespace>
+  nameWithType.vb: List(Of unit_or_namespace)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.SyntaxTree.unit_or_namespace)
+  name.vb: List(Of unit_or_namespace)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.SyntaxTree.unit_or_namespace
+    name: unit_or_namespace
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.SyntaxTree.unit_or_namespace
+    name: unit_or_namespace
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.SyntaxTree.compilation_unit
+  commentId: T:PascalABCCompiler.SyntaxTree.compilation_unit
+  parent: PascalABCCompiler.SyntaxTree
+  isExternal: true
+  name: compilation_unit
+  nameWithType: compilation_unit
+  fullName: PascalABCCompiler.SyntaxTree.compilation_unit
+- uid: PascalABCCompiler.SyntaxTree
+  commentId: N:PascalABCCompiler.SyntaxTree
+  isExternal: true
+  name: PascalABCCompiler.SyntaxTree
+  nameWithType: PascalABCCompiler.SyntaxTree
+  fullName: PascalABCCompiler.SyntaxTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SyntaxTree
+    name: SyntaxTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SyntaxTree
+    name: SyntaxTree
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.unit_node
+  commentId: T:PascalABCCompiler.TreeRealization.unit_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: unit_node
+  nameWithType: unit_node
+  fullName: PascalABCCompiler.TreeRealization.unit_node
+- uid: PascalABCCompiler.TreeRealization
+  commentId: N:PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: PascalABCCompiler.TreeRealization
+  nameWithType: PascalABCCompiler.TreeRealization
+  fullName: PascalABCCompiler.TreeRealization
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.using_namespace_list
+  commentId: T:PascalABCCompiler.TreeRealization.using_namespace_list
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: using_namespace_list
+  nameWithType: using_namespace_list
+  fullName: PascalABCCompiler.TreeRealization.using_namespace_list
+- uid: PascalABCCompiler.UnitState
+  commentId: T:PascalABCCompiler.UnitState
+  parent: PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.UnitState.html
+  name: UnitState
+  nameWithType: UnitState
+  fullName: PascalABCCompiler.UnitState
+- uid: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_ForEachDirectCompilationUnit_System_Func_PascalABCCompiler_CompilationUnit_System_String_System_Boolean__
+  name: ForEachDirectCompilationUnit
+  nameWithType: CompilationUnit.ForEachDirectCompilationUnit
+  fullName: PascalABCCompiler.CompilationUnit.ForEachDirectCompilationUnit
+- uid: System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean}
+  commentId: T:System.Func{PascalABCCompiler.CompilationUnit,System.String,System.Boolean}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<CompilationUnit, string, bool>
+  nameWithType: Func<CompilationUnit, string, bool>
+  fullName: System.Func<PascalABCCompiler.CompilationUnit, string, bool>
+  nameWithType.vb: Func(Of CompilationUnit, String, Boolean)
+  fullName.vb: System.Func(Of PascalABCCompiler.CompilationUnit, String, Boolean)
+  name.vb: Func(Of CompilationUnit, String, Boolean)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: PascalABCCompiler.CompilationUnit
+    name: CompilationUnit
+    isExternal: true
+    href: PascalABCCompiler.CompilationUnit.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.CompilationUnit
+    name: CompilationUnit
+    isExternal: true
+    href: PascalABCCompiler.CompilationUnit.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: PascalABCCompiler.CompilationUnit.#ctor*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.#ctor
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit__ctor
+  name: CompilationUnit
+  nameWithType: CompilationUnit.CompilationUnit
+  fullName: PascalABCCompiler.CompilationUnit.CompilationUnit
+  nameWithType.vb: CompilationUnit.New
+  fullName.vb: PascalABCCompiler.CompilationUnit.New
+  name.vb: New
+- uid: PascalABCCompiler.CompilationUnit.Language*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.Language
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_Language
+  name: Language
+  nameWithType: CompilationUnit.Language
+  fullName: PascalABCCompiler.CompilationUnit.Language
+- uid: Languages.Facade.ILanguage
+  commentId: T:Languages.Facade.ILanguage
+  parent: Languages.Facade
+  isExternal: true
+  name: ILanguage
+  nameWithType: ILanguage
+  fullName: Languages.Facade.ILanguage
+- uid: Languages.Facade
+  commentId: N:Languages.Facade
+  isExternal: true
+  name: Languages.Facade
+  nameWithType: Languages.Facade
+  fullName: Languages.Facade
+  spec.csharp:
+  - uid: Languages
+    name: Languages
+    isExternal: true
+  - name: .
+  - uid: Languages.Facade
+    name: Facade
+    isExternal: true
+  spec.vb:
+  - uid: Languages
+    name: Languages
+    isExternal: true
+  - name: .
+  - uid: Languages.Facade
+    name: Facade
+    isExternal: true
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_InterfaceUsedDirectUnits
+  name: InterfaceUsedDirectUnits
+  nameWithType: CompilationUnit.InterfaceUsedDirectUnits
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsedDirectUnits
+- uid: System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit}
+  commentId: T:System.Collections.Generic.Dictionary{PascalABCCompiler.TreeRealization.unit_node,PascalABCCompiler.CompilationUnit}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<unit_node, CompilationUnit>
+  nameWithType: Dictionary<unit_node, CompilationUnit>
+  fullName: System.Collections.Generic.Dictionary<PascalABCCompiler.TreeRealization.unit_node, PascalABCCompiler.CompilationUnit>
+  nameWithType.vb: Dictionary(Of unit_node, CompilationUnit)
+  fullName.vb: System.Collections.Generic.Dictionary(Of PascalABCCompiler.TreeRealization.unit_node, PascalABCCompiler.CompilationUnit)
+  name.vb: Dictionary(Of unit_node, CompilationUnit)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: PascalABCCompiler.TreeRealization.unit_node
+    name: unit_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.CompilationUnit
+    name: CompilationUnit
+    isExternal: true
+    href: PascalABCCompiler.CompilationUnit.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.unit_node
+    name: unit_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.CompilationUnit
+    name: CompilationUnit
+    isExternal: true
+    href: PascalABCCompiler.CompilationUnit.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsedUnits*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_InterfaceUsedUnits
+  name: InterfaceUsedUnits
+  nameWithType: CompilationUnit.InterfaceUsedUnits
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsedUnits
+- uid: PascalABCCompiler.TreeRealization.unit_node_list
+  commentId: T:PascalABCCompiler.TreeRealization.unit_node_list
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: unit_node_list
+  nameWithType: unit_node_list
+  fullName: PascalABCCompiler.TreeRealization.unit_node_list
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_ImplementationUsedDirectUnits
+  name: ImplementationUsedDirectUnits
+  nameWithType: CompilationUnit.ImplementationUsedDirectUnits
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsedDirectUnits
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsedUnits*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_ImplementationUsedUnits
+  name: ImplementationUsedUnits
+  nameWithType: CompilationUnit.ImplementationUsedUnits
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsedUnits
+- uid: PascalABCCompiler.CompilationUnit.SyntaxTree*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.SyntaxTree
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_SyntaxTree
+  name: SyntaxTree
+  nameWithType: CompilationUnit.SyntaxTree
+  fullName: PascalABCCompiler.CompilationUnit.SyntaxTree
+- uid: PascalABCCompiler.CompilationUnit.SemanticTree*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.SemanticTree
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_SemanticTree
+  name: SemanticTree
+  nameWithType: CompilationUnit.SemanticTree
+  fullName: PascalABCCompiler.CompilationUnit.SemanticTree
+- uid: PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_InterfaceUsingNamespaceList
+  name: InterfaceUsingNamespaceList
+  nameWithType: CompilationUnit.InterfaceUsingNamespaceList
+  fullName: PascalABCCompiler.CompilationUnit.InterfaceUsingNamespaceList
+- uid: PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList*
+  commentId: Overload:PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList
+  isExternal: true
+  href: PascalABCCompiler.CompilationUnit.html#PascalABCCompiler_CompilationUnit_ImplementationUsingNamespaceList
+  name: ImplementationUsingNamespaceList
+  nameWithType: CompilationUnit.ImplementationUsingNamespaceList
+  fullName: PascalABCCompiler.CompilationUnit.ImplementationUsingNamespaceList

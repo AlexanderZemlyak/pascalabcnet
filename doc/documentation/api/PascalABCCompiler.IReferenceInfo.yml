@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.IReferenceInfo
+  commentId: T:PascalABCCompiler.IReferenceInfo
+  id: IReferenceInfo
+  parent: PascalABCCompiler
+  children:
+  - PascalABCCompiler.IReferenceInfo.AssemblyName
+  - PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  langs:
+  - csharp
+  - vb
+  name: IReferenceInfo
+  nameWithType: IReferenceInfo
+  fullName: PascalABCCompiler.IReferenceInfo
+  type: Interface
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: public interface IReferenceInfo
+    content.vb: Public Interface IReferenceInfo
+- uid: PascalABCCompiler.IReferenceInfo.AssemblyName
+  commentId: P:PascalABCCompiler.IReferenceInfo.AssemblyName
+  id: AssemblyName
+  parent: PascalABCCompiler.IReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: AssemblyName
+  nameWithType: IReferenceInfo.AssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.AssemblyName
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string AssemblyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property AssemblyName As String
+  overload: PascalABCCompiler.IReferenceInfo.AssemblyName*
+- uid: PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  commentId: P:PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  id: FullAssemblyName
+  parent: PascalABCCompiler.IReferenceInfo
+  langs:
+  - csharp
+  - vb
+  name: FullAssemblyName
+  nameWithType: IReferenceInfo.FullAssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  type: Property
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler
+  syntax:
+    content: string FullAssemblyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property FullAssemblyName As String
+  overload: PascalABCCompiler.IReferenceInfo.FullAssemblyName*
+references:
+- uid: PascalABCCompiler
+  commentId: N:PascalABCCompiler
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler
+  nameWithType: PascalABCCompiler
+  fullName: PascalABCCompiler
+- uid: PascalABCCompiler.IReferenceInfo.AssemblyName*
+  commentId: Overload:PascalABCCompiler.IReferenceInfo.AssemblyName
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html#PascalABCCompiler_IReferenceInfo_AssemblyName
+  name: AssemblyName
+  nameWithType: IReferenceInfo.AssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.AssemblyName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.IReferenceInfo.FullAssemblyName*
+  commentId: Overload:PascalABCCompiler.IReferenceInfo.FullAssemblyName
+  isExternal: true
+  href: PascalABCCompiler.IReferenceInfo.html#PascalABCCompiler_IReferenceInfo_FullAssemblyName
+  name: FullAssemblyName
+  nameWithType: IReferenceInfo.FullAssemblyName
+  fullName: PascalABCCompiler.IReferenceInfo.FullAssemblyName

@@ -1,0 +1,3359 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node
+  commentId: T:PascalABCCompiler.PCU.wrapped_common_type_node
+  id: wrapped_common_type_node
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.wrapped_common_type_node.#ctor(PascalABCCompiler.PCU.PCUReader,PascalABCCompiler.TreeRealization.type_node,System.String,PascalABCCompiler.SemanticTree.type_access_level,PascalABCCompiler.TreeRealization.common_namespace_node,SymbolTable.ClassScope,PascalABCCompiler.TreeRealization.location,System.Int32)
+  - PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  - PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,System.Boolean)
+  - PascalABCCompiler.PCU.wrapped_common_type_node.offset
+  - PascalABCCompiler.PCU.wrapped_common_type_node.pr
+  langs:
+  - csharp
+  - vb
+  name: wrapped_common_type_node
+  nameWithType: wrapped_common_type_node
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node
+  type: Class
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: 'public class wrapped_common_type_node : common_type_node, ICommonTypeNode, ITypeNode, IDefinitionNode, ISemanticNode, INamespaceMemberNode, ILocated'
+    content.vb: Public Class wrapped_common_type_node Inherits common_type_node Implements ICommonTypeNode, ITypeNode, IDefinitionNode, ISemanticNode, INamespaceMemberNode, ILocated
+  inheritance:
+  - System.Object
+  - PascalABCCompiler.TreeRealization.semantic_node
+  - PascalABCCompiler.TreeRealization.definition_node
+  - PascalABCCompiler.TreeRealization.type_node
+  - PascalABCCompiler.TreeRealization.wrapped_type
+  - PascalABCCompiler.TreeRealization.common_type_node
+  implements:
+  - PascalABCCompiler.SemanticTree.ICommonTypeNode
+  - PascalABCCompiler.SemanticTree.ITypeNode
+  - PascalABCCompiler.SemanticTree.IDefinitionNode
+  - PascalABCCompiler.SemanticTree.ISemanticNode
+  - PascalABCCompiler.SemanticTree.INamespaceMemberNode
+  - PascalABCCompiler.SemanticTree.ILocated
+  inheritedMembers:
+  - PascalABCCompiler.TreeRealization.common_type_node._name
+  - PascalABCCompiler.TreeRealization.common_type_node._type_access_level
+  - PascalABCCompiler.TreeRealization.common_type_node._base_type
+  - PascalABCCompiler.TreeRealization.common_type_node._comprehensive_namespace
+  - PascalABCCompiler.TreeRealization.common_type_node._methods
+  - PascalABCCompiler.TreeRealization.common_type_node._fields
+  - PascalABCCompiler.TreeRealization.common_type_node._properties
+  - PascalABCCompiler.TreeRealization.common_type_node._const_defs
+  - PascalABCCompiler.TreeRealization.common_type_node._events
+  - PascalABCCompiler.TreeRealization.common_type_node._default_property_node
+  - PascalABCCompiler.TreeRealization.common_type_node._loc
+  - PascalABCCompiler.TreeRealization.common_type_node.defined_in_scope
+  - PascalABCCompiler.TreeRealization.common_type_node._is_value
+  - PascalABCCompiler.TreeRealization.common_type_node._is_class
+  - PascalABCCompiler.TreeRealization.common_type_node._scope
+  - PascalABCCompiler.TreeRealization.common_type_node.has_default_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node.has_explicit_default_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node.has_user_defined_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node._has_static_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node._static_constr
+  - PascalABCCompiler.TreeRealization.common_type_node._is_generic_type_definition
+  - PascalABCCompiler.TreeRealization.common_type_node._base_generic_instance
+  - PascalABCCompiler.TreeRealization.common_type_node._runtime_initialization_marker
+  - PascalABCCompiler.TreeRealization.common_type_node._generic_type_container
+  - PascalABCCompiler.TreeRealization.common_type_node._generic_function_container
+  - PascalABCCompiler.TreeRealization.common_type_node._generic_params
+  - PascalABCCompiler.TreeRealization.common_type_node._is_interface
+  - PascalABCCompiler.TreeRealization.common_type_node._is_delegate
+  - PascalABCCompiler.TreeRealization.common_type_node._forward_declaration_only
+  - PascalABCCompiler.TreeRealization.common_type_node._implementing_interfaces
+  - PascalABCCompiler.TreeRealization.common_type_node._original_template
+  - PascalABCCompiler.TreeRealization.common_type_node._depended_from_indefinite
+  - PascalABCCompiler.TreeRealization.common_type_node._type_special_kind
+  - PascalABCCompiler.TreeRealization.common_type_node._sealed
+  - PascalABCCompiler.TreeRealization.common_type_node._is_abstract
+  - PascalABCCompiler.TreeRealization.common_type_node.abstract_reason
+  - PascalABCCompiler.TreeRealization.common_type_node._is_partial
+  - PascalABCCompiler.TreeRealization.common_type_node._is_static
+  - PascalABCCompiler.TreeRealization.common_type_node._is_ficive
+  - PascalABCCompiler.TreeRealization.common_type_node._parameters_eliminations
+  - PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List{PascalABCCompiler.SemanticTree.ITypeNode})
+  - PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(System.Boolean,PascalABCCompiler.TreeRealization.ClassAbstractReason)
+  - PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute
+  - PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations
+  - PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.SetName(System.String)
+  - PascalABCCompiler.TreeRealization.common_type_node.find(System.String,System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.find(System.String,SymbolTable.Scope,System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(System.String,System.Boolean)
+  - PascalABCCompiler.TreeRealization.common_type_node.add_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  - PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  - PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  - PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List{PascalABCCompiler.TreeRealization.type_node})
+  - PascalABCCompiler.TreeRealization.common_type_node.has_static_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node.static_constr
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#static_constructor
+  - PascalABCCompiler.TreeRealization.common_type_node.is_generic_type_definition
+  - PascalABCCompiler.TreeRealization.common_type_node.base_generic_instance
+  - PascalABCCompiler.TreeRealization.common_type_node.runtime_initialization_marker
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#runtime_initialization_marker
+  - PascalABCCompiler.TreeRealization.common_type_node.generic_type_container
+  - PascalABCCompiler.TreeRealization.common_type_node.generic_function_container
+  - PascalABCCompiler.TreeRealization.common_type_node.is_generic_parameter
+  - PascalABCCompiler.TreeRealization.common_type_node.generic_param_index
+  - PascalABCCompiler.TreeRealization.common_type_node.generic_params
+  - PascalABCCompiler.TreeRealization.common_type_node.IsInterface
+  - PascalABCCompiler.TreeRealization.common_type_node.IsEnum
+  - PascalABCCompiler.TreeRealization.common_type_node.IsDelegate
+  - PascalABCCompiler.TreeRealization.common_type_node.ForwardDeclarationOnly
+  - PascalABCCompiler.TreeRealization.common_type_node.ImplementingInterfaces
+  - PascalABCCompiler.TreeRealization.common_type_node.original_template
+  - PascalABCCompiler.TreeRealization.common_type_node.depended_from_indefinite
+  - PascalABCCompiler.TreeRealization.common_type_node.IsPartial
+  - PascalABCCompiler.TreeRealization.common_type_node.IsStatic
+  - PascalABCCompiler.TreeRealization.common_type_node.IsSealed
+  - PascalABCCompiler.TreeRealization.common_type_node.IsAbstract
+  - PascalABCCompiler.TreeRealization.common_type_node.AbstractReason
+  - PascalABCCompiler.TreeRealization.common_type_node.rank
+  - PascalABCCompiler.TreeRealization.common_type_node.type_special_kind
+  - PascalABCCompiler.TreeRealization.common_type_node.internal_type_special_kind
+  - PascalABCCompiler.TreeRealization.common_type_node.default_property
+  - PascalABCCompiler.TreeRealization.common_type_node.default_property_node
+  - PascalABCCompiler.TreeRealization.common_type_node.scope
+  - PascalABCCompiler.TreeRealization.common_type_node.const_defs
+  - PascalABCCompiler.TreeRealization.common_type_node.loc
+  - PascalABCCompiler.TreeRealization.common_type_node.location
+  - PascalABCCompiler.TreeRealization.common_type_node.Location
+  - PascalABCCompiler.TreeRealization.common_type_node.methods
+  - PascalABCCompiler.TreeRealization.common_type_node.fields
+  - PascalABCCompiler.TreeRealization.common_type_node.properties
+  - PascalABCCompiler.TreeRealization.common_type_node.events
+  - PascalABCCompiler.TreeRealization.common_type_node.internal_is_value
+  - PascalABCCompiler.TreeRealization.common_type_node.type_access_level
+  - PascalABCCompiler.TreeRealization.common_type_node.base_type
+  - PascalABCCompiler.TreeRealization.common_type_node.Scope
+  - PascalABCCompiler.TreeRealization.common_type_node.name
+  - PascalABCCompiler.TreeRealization.common_type_node.full_name
+  - PascalABCCompiler.TreeRealization.common_type_node.BaseFullName
+  - PascalABCCompiler.TreeRealization.common_type_node.PrintableName
+  - PascalABCCompiler.TreeRealization.common_type_node.low_bound
+  - PascalABCCompiler.TreeRealization.common_type_node.upper_bound
+  - PascalABCCompiler.TreeRealization.common_type_node.comprehensive_namespace
+  - PascalABCCompiler.TreeRealization.common_type_node.node_kind
+  - PascalABCCompiler.TreeRealization.common_type_node.semantic_node_type
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#methods
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#fields
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#properties
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#events
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ITypeNode#base_type
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#INamespaceMemberNode#comprehensive_namespace
+  - PascalABCCompiler.TreeRealization.common_type_node.constants
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#default_property
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#lower_value
+  - PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#upper_value
+  - PascalABCCompiler.TreeRealization.common_type_node.is_value
+  - PascalABCCompiler.TreeRealization.common_type_node.is_class
+  - PascalABCCompiler.TreeRealization.common_type_node.IsFictive
+  - PascalABCCompiler.TreeRealization.common_type_node.parameters_eliminations
+  - PascalABCCompiler.TreeRealization.wrapped_type.additional_names
+  - PascalABCCompiler.TreeRealization.wrapped_type.additional_generated_names
+  - PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo,System.Boolean)
+  - PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names
+  - PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(System.String)
+  - PascalABCCompiler.TreeRealization.type_node.type_intersections
+  - PascalABCCompiler.TreeRealization.type_node.generated_type_intersections
+  - PascalABCCompiler.TreeRealization.type_node.internal_interfaces
+  - PascalABCCompiler.TreeRealization.type_node.is_ref_inited
+  - PascalABCCompiler.TreeRealization.type_node.is_nullable_inited
+  - PascalABCCompiler.TreeRealization.type_node._is_nullable_type
+  - PascalABCCompiler.TreeRealization.type_node._ref_type
+  - PascalABCCompiler.TreeRealization.type_node._element_type
+  - PascalABCCompiler.TreeRealization.type_node.element_type_recived
+  - PascalABCCompiler.TreeRealization.type_node.ToString
+  - PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node,PascalABCCompiler.TreeRealization.type_intersection_node,System.Boolean)
+  - PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections
+  - PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+  - PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+  - PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+  - PascalABCCompiler.TreeRealization.type_node.find_first_in_type(System.String,SymbolTable.Scope,System.Boolean)
+  - PascalABCCompiler.TreeRealization.type_node.is_standard_type
+  - PascalABCCompiler.TreeRealization.type_node.is_nullable_type
+  - PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#common_generic_function_container
+  - PascalABCCompiler.TreeRealization.type_node.IsPointer
+  - PascalABCCompiler.TreeRealization.type_node.ImplementingInterfacesOrEmpty
+  - PascalABCCompiler.TreeRealization.type_node.is_generic_type_instance
+  - PascalABCCompiler.TreeRealization.type_node.instance_params
+  - PascalABCCompiler.TreeRealization.type_node.original_generic
+  - PascalABCCompiler.TreeRealization.type_node.ref_type
+  - PascalABCCompiler.TreeRealization.type_node.general_node_type
+  - PascalABCCompiler.TreeRealization.type_node.is_value_type
+  - PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#type_special_kind
+  - PascalABCCompiler.TreeRealization.type_node.element_type
+  - PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#element_type
+  - PascalABCCompiler.TreeRealization.definition_node.doc
+  - PascalABCCompiler.TreeRealization.definition_node._attributes
+  - PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  - PascalABCCompiler.TreeRealization.definition_node.attributes
+  - PascalABCCompiler.TreeRealization.definition_node.Attributes
+  - PascalABCCompiler.TreeRealization.definition_node.documentation
+  - PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.FieldSetter(System.String,System.String,System.Object)
+  - System.Object.FieldGetter(System.String,System.String,System.Object@)
+  - System.Object.GetFieldInfo(System.String,System.String)
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.pr
+  commentId: F:PascalABCCompiler.PCU.wrapped_common_type_node.pr
+  id: pr
+  parent: PascalABCCompiler.PCU.wrapped_common_type_node
+  langs:
+  - csharp
+  - vb
+  name: pr
+  nameWithType: wrapped_common_type_node.pr
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.pr
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: private PCUReader pr
+    return:
+      type: PascalABCCompiler.PCU.PCUReader
+    content.vb: Private pr As PCUReader
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.offset
+  commentId: F:PascalABCCompiler.PCU.wrapped_common_type_node.offset
+  id: offset
+  parent: PascalABCCompiler.PCU.wrapped_common_type_node
+  langs:
+  - csharp
+  - vb
+  name: offset
+  nameWithType: wrapped_common_type_node.offset
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.offset
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public int offset
+    return:
+      type: System.Int32
+    content.vb: Public offset As Integer
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.#ctor(PascalABCCompiler.PCU.PCUReader,PascalABCCompiler.TreeRealization.type_node,System.String,PascalABCCompiler.SemanticTree.type_access_level,PascalABCCompiler.TreeRealization.common_namespace_node,SymbolTable.ClassScope,PascalABCCompiler.TreeRealization.location,System.Int32)
+  commentId: M:PascalABCCompiler.PCU.wrapped_common_type_node.#ctor(PascalABCCompiler.PCU.PCUReader,PascalABCCompiler.TreeRealization.type_node,System.String,PascalABCCompiler.SemanticTree.type_access_level,PascalABCCompiler.TreeRealization.common_namespace_node,SymbolTable.ClassScope,PascalABCCompiler.TreeRealization.location,System.Int32)
+  id: '#ctor(PascalABCCompiler.PCU.PCUReader,PascalABCCompiler.TreeRealization.type_node,System.String,PascalABCCompiler.SemanticTree.type_access_level,PascalABCCompiler.TreeRealization.common_namespace_node,SymbolTable.ClassScope,PascalABCCompiler.TreeRealization.location,System.Int32)'
+  parent: PascalABCCompiler.PCU.wrapped_common_type_node
+  langs:
+  - csharp
+  - vb
+  name: wrapped_common_type_node(PCUReader, type_node, string, type_access_level, common_namespace_node, ClassScope, location, int)
+  nameWithType: wrapped_common_type_node.wrapped_common_type_node(PCUReader, type_node, string, type_access_level, common_namespace_node, ClassScope, location, int)
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.wrapped_common_type_node(PascalABCCompiler.PCU.PCUReader, PascalABCCompiler.TreeRealization.type_node, string, PascalABCCompiler.SemanticTree.type_access_level, PascalABCCompiler.TreeRealization.common_namespace_node, SymbolTable.ClassScope, PascalABCCompiler.TreeRealization.location, int)
+  type: Constructor
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public wrapped_common_type_node(PCUReader pr, type_node base_type, string name, type_access_level type_access_level, common_namespace_node comprehensive_namespace, ClassScope cs, location loc, int offset)
+    parameters:
+    - id: pr
+      type: PascalABCCompiler.PCU.PCUReader
+    - id: base_type
+      type: PascalABCCompiler.TreeRealization.type_node
+    - id: name
+      type: System.String
+    - id: type_access_level
+      type: PascalABCCompiler.SemanticTree.type_access_level
+    - id: comprehensive_namespace
+      type: PascalABCCompiler.TreeRealization.common_namespace_node
+    - id: cs
+      type: SymbolTable.ClassScope
+    - id: loc
+      type: PascalABCCompiler.TreeRealization.location
+    - id: offset
+      type: System.Int32
+    content.vb: Public Sub New(pr As PCUReader, base_type As type_node, name As String, type_access_level As type_access_level, comprehensive_namespace As common_namespace_node, cs As ClassScope, loc As location, offset As Integer)
+  overload: PascalABCCompiler.PCU.wrapped_common_type_node.#ctor*
+  nameWithType.vb: wrapped_common_type_node.New(PCUReader, type_node, String, type_access_level, common_namespace_node, ClassScope, location, Integer)
+  fullName.vb: PascalABCCompiler.PCU.wrapped_common_type_node.New(PascalABCCompiler.PCU.PCUReader, PascalABCCompiler.TreeRealization.type_node, String, PascalABCCompiler.SemanticTree.type_access_level, PascalABCCompiler.TreeRealization.common_namespace_node, SymbolTable.ClassScope, PascalABCCompiler.TreeRealization.location, Integer)
+  name.vb: New(PCUReader, type_node, String, type_access_level, common_namespace_node, ClassScope, location, Integer)
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,System.Boolean)
+  commentId: M:PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,System.Boolean)
+  id: find_in_type(System.String,System.Boolean)
+  parent: PascalABCCompiler.PCU.wrapped_common_type_node
+  langs:
+  - csharp
+  - vb
+  name: find_in_type(string, bool)
+  nameWithType: wrapped_common_type_node.find_in_type(string, bool)
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(string, bool)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  example: []
+  syntax:
+    content: public override List<SymbolInfo> find_in_type(string name, bool no_search_in_extension_methods = false)
+    parameters:
+    - id: name
+      type: System.String
+    - id: no_search_in_extension_methods
+      type: System.Boolean
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+    content.vb: Public Overrides Function find_in_type(name As String, no_search_in_extension_methods As Boolean = False) As List(Of SymbolInfo)
+  overridden: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,System.Boolean)
+  overload: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type*
+  nameWithType.vb: wrapped_common_type_node.find_in_type(String, Boolean)
+  fullName.vb: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(String, Boolean)
+  name.vb: find_in_type(String, Boolean)
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  commentId: M:PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  id: find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  parent: PascalABCCompiler.PCU.wrapped_common_type_node
+  langs:
+  - csharp
+  - vb
+  name: find_in_type(string, Scope, type_node, bool)
+  nameWithType: wrapped_common_type_node.find_in_type(string, Scope, type_node, bool)
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(string, SymbolTable.Scope, PascalABCCompiler.TreeRealization.type_node, bool)
+  type: Method
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  example: []
+  syntax:
+    content: public override List<SymbolInfo> find_in_type(string name, Scope CurrentScope, type_node orig_generic_or_null = null, bool no_search_in_extension_methods = false)
+    parameters:
+    - id: name
+      type: System.String
+    - id: CurrentScope
+      type: SymbolTable.Scope
+    - id: orig_generic_or_null
+      type: PascalABCCompiler.TreeRealization.type_node
+    - id: no_search_in_extension_methods
+      type: System.Boolean
+    return:
+      type: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+    content.vb: Public Overrides Function find_in_type(name As String, CurrentScope As Scope, orig_generic_or_null As type_node = Nothing, no_search_in_extension_methods As Boolean = False) As List(Of SymbolInfo)
+  overridden: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  overload: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type*
+  nameWithType.vb: wrapped_common_type_node.find_in_type(String, Scope, type_node, Boolean)
+  fullName.vb: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type(String, SymbolTable.Scope, PascalABCCompiler.TreeRealization.type_node, Boolean)
+  name.vb: find_in_type(String, Scope, type_node, Boolean)
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PascalABCCompiler.TreeRealization.semantic_node
+  commentId: T:PascalABCCompiler.TreeRealization.semantic_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: semantic_node
+  nameWithType: semantic_node
+  fullName: PascalABCCompiler.TreeRealization.semantic_node
+- uid: PascalABCCompiler.TreeRealization.definition_node
+  commentId: T:PascalABCCompiler.TreeRealization.definition_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: definition_node
+  nameWithType: definition_node
+  fullName: PascalABCCompiler.TreeRealization.definition_node
+- uid: PascalABCCompiler.TreeRealization.type_node
+  commentId: T:PascalABCCompiler.TreeRealization.type_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: type_node
+  nameWithType: type_node
+  fullName: PascalABCCompiler.TreeRealization.type_node
+- uid: PascalABCCompiler.TreeRealization.wrapped_type
+  commentId: T:PascalABCCompiler.TreeRealization.wrapped_type
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: wrapped_type
+  nameWithType: wrapped_type
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type
+- uid: PascalABCCompiler.TreeRealization.common_type_node
+  commentId: T:PascalABCCompiler.TreeRealization.common_type_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: common_type_node
+  nameWithType: common_type_node
+  fullName: PascalABCCompiler.TreeRealization.common_type_node
+- uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+  commentId: T:PascalABCCompiler.SemanticTree.ICommonTypeNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: ICommonTypeNode
+  nameWithType: ICommonTypeNode
+  fullName: PascalABCCompiler.SemanticTree.ICommonTypeNode
+- uid: PascalABCCompiler.SemanticTree.ITypeNode
+  commentId: T:PascalABCCompiler.SemanticTree.ITypeNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: ITypeNode
+  nameWithType: ITypeNode
+  fullName: PascalABCCompiler.SemanticTree.ITypeNode
+- uid: PascalABCCompiler.SemanticTree.IDefinitionNode
+  commentId: T:PascalABCCompiler.SemanticTree.IDefinitionNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: IDefinitionNode
+  nameWithType: IDefinitionNode
+  fullName: PascalABCCompiler.SemanticTree.IDefinitionNode
+- uid: PascalABCCompiler.SemanticTree.ISemanticNode
+  commentId: T:PascalABCCompiler.SemanticTree.ISemanticNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: ISemanticNode
+  nameWithType: ISemanticNode
+  fullName: PascalABCCompiler.SemanticTree.ISemanticNode
+- uid: PascalABCCompiler.SemanticTree.INamespaceMemberNode
+  commentId: T:PascalABCCompiler.SemanticTree.INamespaceMemberNode
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: INamespaceMemberNode
+  nameWithType: INamespaceMemberNode
+  fullName: PascalABCCompiler.SemanticTree.INamespaceMemberNode
+- uid: PascalABCCompiler.SemanticTree.ILocated
+  commentId: T:PascalABCCompiler.SemanticTree.ILocated
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: ILocated
+  nameWithType: ILocated
+  fullName: PascalABCCompiler.SemanticTree.ILocated
+- uid: PascalABCCompiler.TreeRealization.common_type_node._name
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._name
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _name
+  nameWithType: common_type_node._name
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._name
+- uid: PascalABCCompiler.TreeRealization.common_type_node._type_access_level
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._type_access_level
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _type_access_level
+  nameWithType: common_type_node._type_access_level
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._type_access_level
+- uid: PascalABCCompiler.TreeRealization.common_type_node._base_type
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._base_type
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _base_type
+  nameWithType: common_type_node._base_type
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._base_type
+- uid: PascalABCCompiler.TreeRealization.common_type_node._comprehensive_namespace
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._comprehensive_namespace
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _comprehensive_namespace
+  nameWithType: common_type_node._comprehensive_namespace
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._comprehensive_namespace
+- uid: PascalABCCompiler.TreeRealization.common_type_node._methods
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._methods
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _methods
+  nameWithType: common_type_node._methods
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._methods
+- uid: PascalABCCompiler.TreeRealization.common_type_node._fields
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._fields
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _fields
+  nameWithType: common_type_node._fields
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._fields
+- uid: PascalABCCompiler.TreeRealization.common_type_node._properties
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._properties
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _properties
+  nameWithType: common_type_node._properties
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._properties
+- uid: PascalABCCompiler.TreeRealization.common_type_node._const_defs
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._const_defs
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _const_defs
+  nameWithType: common_type_node._const_defs
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._const_defs
+- uid: PascalABCCompiler.TreeRealization.common_type_node._events
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._events
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _events
+  nameWithType: common_type_node._events
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._events
+- uid: PascalABCCompiler.TreeRealization.common_type_node._default_property_node
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._default_property_node
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _default_property_node
+  nameWithType: common_type_node._default_property_node
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._default_property_node
+- uid: PascalABCCompiler.TreeRealization.common_type_node._loc
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._loc
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _loc
+  nameWithType: common_type_node._loc
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._loc
+- uid: PascalABCCompiler.TreeRealization.common_type_node.defined_in_scope
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node.defined_in_scope
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: defined_in_scope
+  nameWithType: common_type_node.defined_in_scope
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.defined_in_scope
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_value
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_value
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_value
+  nameWithType: common_type_node._is_value
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_value
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_class
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_class
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_class
+  nameWithType: common_type_node._is_class
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_class
+- uid: PascalABCCompiler.TreeRealization.common_type_node._scope
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._scope
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _scope
+  nameWithType: common_type_node._scope
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._scope
+- uid: PascalABCCompiler.TreeRealization.common_type_node.has_default_constructor
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node.has_default_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: has_default_constructor
+  nameWithType: common_type_node.has_default_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.has_default_constructor
+- uid: PascalABCCompiler.TreeRealization.common_type_node.has_explicit_default_constructor
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node.has_explicit_default_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: has_explicit_default_constructor
+  nameWithType: common_type_node.has_explicit_default_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.has_explicit_default_constructor
+- uid: PascalABCCompiler.TreeRealization.common_type_node.has_user_defined_constructor
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node.has_user_defined_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: has_user_defined_constructor
+  nameWithType: common_type_node.has_user_defined_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.has_user_defined_constructor
+- uid: PascalABCCompiler.TreeRealization.common_type_node._has_static_constructor
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._has_static_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _has_static_constructor
+  nameWithType: common_type_node._has_static_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._has_static_constructor
+- uid: PascalABCCompiler.TreeRealization.common_type_node._static_constr
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._static_constr
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _static_constr
+  nameWithType: common_type_node._static_constr
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._static_constr
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_generic_type_definition
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_generic_type_definition
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_generic_type_definition
+  nameWithType: common_type_node._is_generic_type_definition
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_generic_type_definition
+- uid: PascalABCCompiler.TreeRealization.common_type_node._base_generic_instance
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._base_generic_instance
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _base_generic_instance
+  nameWithType: common_type_node._base_generic_instance
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._base_generic_instance
+- uid: PascalABCCompiler.TreeRealization.common_type_node._runtime_initialization_marker
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._runtime_initialization_marker
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _runtime_initialization_marker
+  nameWithType: common_type_node._runtime_initialization_marker
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._runtime_initialization_marker
+- uid: PascalABCCompiler.TreeRealization.common_type_node._generic_type_container
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._generic_type_container
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _generic_type_container
+  nameWithType: common_type_node._generic_type_container
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._generic_type_container
+- uid: PascalABCCompiler.TreeRealization.common_type_node._generic_function_container
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._generic_function_container
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _generic_function_container
+  nameWithType: common_type_node._generic_function_container
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._generic_function_container
+- uid: PascalABCCompiler.TreeRealization.common_type_node._generic_params
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._generic_params
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _generic_params
+  nameWithType: common_type_node._generic_params
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._generic_params
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_interface
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_interface
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_interface
+  nameWithType: common_type_node._is_interface
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_interface
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_delegate
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_delegate
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_delegate
+  nameWithType: common_type_node._is_delegate
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_delegate
+- uid: PascalABCCompiler.TreeRealization.common_type_node._forward_declaration_only
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._forward_declaration_only
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _forward_declaration_only
+  nameWithType: common_type_node._forward_declaration_only
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._forward_declaration_only
+- uid: PascalABCCompiler.TreeRealization.common_type_node._implementing_interfaces
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._implementing_interfaces
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _implementing_interfaces
+  nameWithType: common_type_node._implementing_interfaces
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._implementing_interfaces
+- uid: PascalABCCompiler.TreeRealization.common_type_node._original_template
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._original_template
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _original_template
+  nameWithType: common_type_node._original_template
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._original_template
+- uid: PascalABCCompiler.TreeRealization.common_type_node._depended_from_indefinite
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._depended_from_indefinite
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _depended_from_indefinite
+  nameWithType: common_type_node._depended_from_indefinite
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._depended_from_indefinite
+- uid: PascalABCCompiler.TreeRealization.common_type_node._type_special_kind
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._type_special_kind
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _type_special_kind
+  nameWithType: common_type_node._type_special_kind
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._type_special_kind
+- uid: PascalABCCompiler.TreeRealization.common_type_node._sealed
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._sealed
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _sealed
+  nameWithType: common_type_node._sealed
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._sealed
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_abstract
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_abstract
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_abstract
+  nameWithType: common_type_node._is_abstract
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_abstract
+- uid: PascalABCCompiler.TreeRealization.common_type_node.abstract_reason
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node.abstract_reason
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: abstract_reason
+  nameWithType: common_type_node.abstract_reason
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.abstract_reason
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_partial
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_partial
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_partial
+  nameWithType: common_type_node._is_partial
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_partial
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_static
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_static
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_static
+  nameWithType: common_type_node._is_static
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_static
+- uid: PascalABCCompiler.TreeRealization.common_type_node._is_ficive
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._is_ficive
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _is_ficive
+  nameWithType: common_type_node._is_ficive
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._is_ficive
+- uid: PascalABCCompiler.TreeRealization.common_type_node._parameters_eliminations
+  commentId: F:PascalABCCompiler.TreeRealization.common_type_node._parameters_eliminations
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: _parameters_eliminations
+  nameWithType: common_type_node._parameters_eliminations
+  fullName: PascalABCCompiler.TreeRealization.common_type_node._parameters_eliminations
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List{PascalABCCompiler.SemanticTree.ITypeNode})
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List{PascalABCCompiler.SemanticTree.ITypeNode})
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: SetImplementingInterfaces(List<ITypeNode>)
+  nameWithType: common_type_node.SetImplementingInterfaces(List<ITypeNode>)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List<PascalABCCompiler.SemanticTree.ITypeNode>)
+  nameWithType.vb: common_type_node.SetImplementingInterfaces(List(Of ITypeNode))
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List(Of PascalABCCompiler.SemanticTree.ITypeNode))
+  name.vb: SetImplementingInterfaces(List(Of ITypeNode))
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List{PascalABCCompiler.SemanticTree.ITypeNode})
+    name: SetImplementingInterfaces
+    isExternal: true
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetImplementingInterfaces(System.Collections.Generic.List{PascalABCCompiler.SemanticTree.ITypeNode})
+    name: SetImplementingInterfaces
+    isExternal: true
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: )
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetDependedFromIndefinite(bool)
+  nameWithType: common_type_node.SetDependedFromIndefinite(bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(bool)
+  nameWithType.vb: common_type_node.SetDependedFromIndefinite(Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(Boolean)
+  name.vb: SetDependedFromIndefinite(Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(System.Boolean)
+    name: SetDependedFromIndefinite
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetDependedFromIndefinite(System.Boolean)
+    name: SetDependedFromIndefinite
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetIsSealed(bool)
+  nameWithType: common_type_node.SetIsSealed(bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(bool)
+  nameWithType.vb: common_type_node.SetIsSealed(Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(Boolean)
+  name.vb: SetIsSealed(Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(System.Boolean)
+    name: SetIsSealed
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsSealed(System.Boolean)
+    name: SetIsSealed
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(System.Boolean,PascalABCCompiler.TreeRealization.ClassAbstractReason)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(System.Boolean,PascalABCCompiler.TreeRealization.ClassAbstractReason)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetIsAbstract(bool, ClassAbstractReason)
+  nameWithType: common_type_node.SetIsAbstract(bool, ClassAbstractReason)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(bool, PascalABCCompiler.TreeRealization.ClassAbstractReason)
+  nameWithType.vb: common_type_node.SetIsAbstract(Boolean, ClassAbstractReason)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(Boolean, PascalABCCompiler.TreeRealization.ClassAbstractReason)
+  name.vb: SetIsAbstract(Boolean, ClassAbstractReason)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(System.Boolean,PascalABCCompiler.TreeRealization.ClassAbstractReason)
+    name: SetIsAbstract
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.ClassAbstractReason
+    name: ClassAbstractReason
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsAbstract(System.Boolean,PascalABCCompiler.TreeRealization.ClassAbstractReason)
+    name: SetIsAbstract
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.ClassAbstractReason
+    name: ClassAbstractReason
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetIsStatic(bool)
+  nameWithType: common_type_node.SetIsStatic(bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(bool)
+  nameWithType.vb: common_type_node.SetIsStatic(Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(Boolean)
+  name.vb: SetIsStatic(Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(System.Boolean)
+    name: SetIsStatic
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetIsStatic(System.Boolean)
+    name: SetIsStatic
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: has_flags_attribute()
+  nameWithType: common_type_node.has_flags_attribute()
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute()
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute
+    name: has_flags_attribute
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.has_flags_attribute
+    name: has_flags_attribute
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: Merge(common_type_node)
+  nameWithType: common_type_node.Merge(common_type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+    name: Merge
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.common_type_node
+    name: common_type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.Merge(PascalABCCompiler.TreeRealization.common_type_node)
+    name: Merge
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.common_type_node
+    name: common_type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: add_additional_enum_operations()
+  nameWithType: common_type_node.add_additional_enum_operations()
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations()
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations
+    name: add_additional_enum_operations
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_additional_enum_operations
+    name: add_additional_enum_operations
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: SetBaseType(type_node)
+  nameWithType: common_type_node.SetBaseType(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+    name: SetBaseType
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseType(PascalABCCompiler.TreeRealization.type_node)
+    name: SetBaseType
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: SetBaseTypeIgnoringScope(type_node)
+  nameWithType: common_type_node.SetBaseTypeIgnoringScope(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+    name: SetBaseTypeIgnoringScope
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetBaseTypeIgnoringScope(PascalABCCompiler.TreeRealization.type_node)
+    name: SetBaseTypeIgnoringScope
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.SetName(System.String)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.SetName(System.String)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: SetName(string)
+  nameWithType: common_type_node.SetName(string)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.SetName(string)
+  nameWithType.vb: common_type_node.SetName(String)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.SetName(String)
+  name.vb: SetName(String)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetName(System.String)
+    name: SetName
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.SetName(System.String)
+    name: SetName
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.find(System.String,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find(string, bool)
+  nameWithType: common_type_node.find(string, bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.find(string, bool)
+  nameWithType.vb: common_type_node.find(String, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.find(String, Boolean)
+  name.vb: find(String, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,System.Boolean)
+    name: find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,System.Boolean)
+    name: find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,SymbolTable.Scope,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.find(System.String,SymbolTable.Scope,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find(string, Scope, bool)
+  nameWithType: common_type_node.find(string, Scope, bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.find(string, SymbolTable.Scope, bool)
+  nameWithType.vb: common_type_node.find(String, Scope, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.find(String, SymbolTable.Scope, Boolean)
+  name.vb: find(String, Scope, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,SymbolTable.Scope,System.Boolean)
+    name: find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find(System.String,SymbolTable.Scope,System.Boolean)
+    name: find
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(System.String,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(System.String,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find_first_in_type(string, bool)
+  nameWithType: common_type_node.find_first_in_type(string, bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(string, bool)
+  nameWithType.vb: common_type_node.find_first_in_type(String, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(String, Boolean)
+  name.vb: find_first_in_type(String, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(System.String,System.Boolean)
+    name: find_first_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_first_in_type(System.String,System.Boolean)
+    name: find_first_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.add_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.add_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: add_name(string, SymbolInfo)
+  nameWithType: common_type_node.add_name(string, SymbolInfo)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.add_name(string, PascalABCCompiler.TreeConverter.SymbolInfo)
+  nameWithType.vb: common_type_node.add_name(String, SymbolInfo)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.add_name(String, PascalABCCompiler.TreeConverter.SymbolInfo)
+  name.vb: add_name(String, SymbolInfo)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: add_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: add_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: add_generated_name(string, SymbolInfo)
+  nameWithType: common_type_node.add_generated_name(string, SymbolInfo)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(string, PascalABCCompiler.TreeConverter.SymbolInfo)
+  nameWithType.vb: common_type_node.add_generated_name(String, SymbolInfo)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(String, PascalABCCompiler.TreeConverter.SymbolInfo)
+  name.vb: add_generated_name(String, SymbolInfo)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: add_generated_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.add_generated_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo)
+    name: add_generated_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: visit(ISemanticVisitor)
+  nameWithType: common_type_node.visit(ISemanticVisitor)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+    name: visit
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ISemanticVisitor
+    name: ISemanticVisitor
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.visit(PascalABCCompiler.SemanticTree.ISemanticVisitor)
+    name: visit
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.SemanticTree.ISemanticVisitor
+    name: ISemanticVisitor
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: get_implicit_conversion_to(type_node)
+  nameWithType: common_type_node.get_implicit_conversion_to(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+    name: get_implicit_conversion_to
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+    name: get_implicit_conversion_to
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: get_implicit_conversion_from(type_node)
+  nameWithType: common_type_node.get_implicit_conversion_from(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+    name: get_implicit_conversion_from
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_implicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+    name: get_implicit_conversion_from
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: get_explicit_conversion_to(type_node)
+  nameWithType: common_type_node.get_explicit_conversion_to(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+    name: get_explicit_conversion_to
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_to(PascalABCCompiler.TreeRealization.type_node)
+    name: get_explicit_conversion_to
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: get_explicit_conversion_from(type_node)
+  nameWithType: common_type_node.get_explicit_conversion_from(type_node)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+    name: get_explicit_conversion_from
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_explicit_conversion_from(PascalABCCompiler.TreeRealization.type_node)
+    name: get_explicit_conversion_from
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List{PascalABCCompiler.TreeRealization.type_node})
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List{PascalABCCompiler.TreeRealization.type_node})
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: get_instance(List<type_node>)
+  nameWithType: common_type_node.get_instance(List<type_node>)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List<PascalABCCompiler.TreeRealization.type_node>)
+  nameWithType.vb: common_type_node.get_instance(List(Of type_node))
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List(Of PascalABCCompiler.TreeRealization.type_node))
+  name.vb: get_instance(List(Of type_node))
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List{PascalABCCompiler.TreeRealization.type_node})
+    name: get_instance
+    isExternal: true
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.get_instance(System.Collections.Generic.List{PascalABCCompiler.TreeRealization.type_node})
+    name: get_instance
+    isExternal: true
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.common_type_node.has_static_constructor
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.has_static_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: has_static_constructor
+  nameWithType: common_type_node.has_static_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.has_static_constructor
+- uid: PascalABCCompiler.TreeRealization.common_type_node.static_constr
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.static_constr
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: static_constr
+  nameWithType: common_type_node.static_constr
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.static_constr
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#static_constructor
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#static_constructor
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.static_constructor
+  nameWithType: common_type_node.ICommonTypeNode.static_constructor
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.static_constructor
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.static_constructor
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.static_constructor
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#static_constructor
+    name: static_constructor
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.is_generic_type_definition
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.is_generic_type_definition
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: is_generic_type_definition
+  nameWithType: common_type_node.is_generic_type_definition
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.is_generic_type_definition
+- uid: PascalABCCompiler.TreeRealization.common_type_node.base_generic_instance
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.base_generic_instance
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: base_generic_instance
+  nameWithType: common_type_node.base_generic_instance
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.base_generic_instance
+- uid: PascalABCCompiler.TreeRealization.common_type_node.runtime_initialization_marker
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.runtime_initialization_marker
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: runtime_initialization_marker
+  nameWithType: common_type_node.runtime_initialization_marker
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.runtime_initialization_marker
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#runtime_initialization_marker
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#runtime_initialization_marker
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.runtime_initialization_marker
+  nameWithType: common_type_node.ICommonTypeNode.runtime_initialization_marker
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.runtime_initialization_marker
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.runtime_initialization_marker
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.runtime_initialization_marker
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#runtime_initialization_marker
+    name: runtime_initialization_marker
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.generic_type_container
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.generic_type_container
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: generic_type_container
+  nameWithType: common_type_node.generic_type_container
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.generic_type_container
+- uid: PascalABCCompiler.TreeRealization.common_type_node.generic_function_container
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.generic_function_container
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: generic_function_container
+  nameWithType: common_type_node.generic_function_container
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.generic_function_container
+- uid: PascalABCCompiler.TreeRealization.common_type_node.is_generic_parameter
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.is_generic_parameter
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: is_generic_parameter
+  nameWithType: common_type_node.is_generic_parameter
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.is_generic_parameter
+- uid: PascalABCCompiler.TreeRealization.common_type_node.generic_param_index
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.generic_param_index
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: generic_param_index
+  nameWithType: common_type_node.generic_param_index
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.generic_param_index
+- uid: PascalABCCompiler.TreeRealization.common_type_node.generic_params
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.generic_params
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: generic_params
+  nameWithType: common_type_node.generic_params
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.generic_params
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsInterface
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsInterface
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsInterface
+  nameWithType: common_type_node.IsInterface
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsInterface
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsEnum
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsEnum
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsEnum
+  nameWithType: common_type_node.IsEnum
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsEnum
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsDelegate
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsDelegate
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsDelegate
+  nameWithType: common_type_node.IsDelegate
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsDelegate
+- uid: PascalABCCompiler.TreeRealization.common_type_node.ForwardDeclarationOnly
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.ForwardDeclarationOnly
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ForwardDeclarationOnly
+  nameWithType: common_type_node.ForwardDeclarationOnly
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.ForwardDeclarationOnly
+- uid: PascalABCCompiler.TreeRealization.common_type_node.ImplementingInterfaces
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.ImplementingInterfaces
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ImplementingInterfaces
+  nameWithType: common_type_node.ImplementingInterfaces
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.ImplementingInterfaces
+- uid: PascalABCCompiler.TreeRealization.common_type_node.original_template
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.original_template
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: original_template
+  nameWithType: common_type_node.original_template
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.original_template
+- uid: PascalABCCompiler.TreeRealization.common_type_node.depended_from_indefinite
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.depended_from_indefinite
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: depended_from_indefinite
+  nameWithType: common_type_node.depended_from_indefinite
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.depended_from_indefinite
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsPartial
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsPartial
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsPartial
+  nameWithType: common_type_node.IsPartial
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsPartial
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsStatic
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsStatic
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsStatic
+  nameWithType: common_type_node.IsStatic
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsStatic
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsSealed
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsSealed
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsSealed
+  nameWithType: common_type_node.IsSealed
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsSealed
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsAbstract
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsAbstract
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsAbstract
+  nameWithType: common_type_node.IsAbstract
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsAbstract
+- uid: PascalABCCompiler.TreeRealization.common_type_node.AbstractReason
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.AbstractReason
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: AbstractReason
+  nameWithType: common_type_node.AbstractReason
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.AbstractReason
+- uid: PascalABCCompiler.TreeRealization.common_type_node.rank
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.rank
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: rank
+  nameWithType: common_type_node.rank
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.rank
+- uid: PascalABCCompiler.TreeRealization.common_type_node.type_special_kind
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.type_special_kind
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: type_special_kind
+  nameWithType: common_type_node.type_special_kind
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.type_special_kind
+- uid: PascalABCCompiler.TreeRealization.common_type_node.internal_type_special_kind
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.internal_type_special_kind
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: internal_type_special_kind
+  nameWithType: common_type_node.internal_type_special_kind
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.internal_type_special_kind
+- uid: PascalABCCompiler.TreeRealization.common_type_node.default_property
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.default_property
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: default_property
+  nameWithType: common_type_node.default_property
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.default_property
+- uid: PascalABCCompiler.TreeRealization.common_type_node.default_property_node
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.default_property_node
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: default_property_node
+  nameWithType: common_type_node.default_property_node
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.default_property_node
+- uid: PascalABCCompiler.TreeRealization.common_type_node.scope
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.scope
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: scope
+  nameWithType: common_type_node.scope
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.scope
+- uid: PascalABCCompiler.TreeRealization.common_type_node.const_defs
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.const_defs
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: const_defs
+  nameWithType: common_type_node.const_defs
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.const_defs
+- uid: PascalABCCompiler.TreeRealization.common_type_node.loc
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.loc
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: loc
+  nameWithType: common_type_node.loc
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.loc
+- uid: PascalABCCompiler.TreeRealization.common_type_node.location
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.location
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: location
+  nameWithType: common_type_node.location
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.location
+- uid: PascalABCCompiler.TreeRealization.common_type_node.Location
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.Location
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: Location
+  nameWithType: common_type_node.Location
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.Location
+- uid: PascalABCCompiler.TreeRealization.common_type_node.methods
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.methods
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: methods
+  nameWithType: common_type_node.methods
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.methods
+- uid: PascalABCCompiler.TreeRealization.common_type_node.fields
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.fields
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: fields
+  nameWithType: common_type_node.fields
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.fields
+- uid: PascalABCCompiler.TreeRealization.common_type_node.properties
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.properties
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: properties
+  nameWithType: common_type_node.properties
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.properties
+- uid: PascalABCCompiler.TreeRealization.common_type_node.events
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.events
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: events
+  nameWithType: common_type_node.events
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.events
+- uid: PascalABCCompiler.TreeRealization.common_type_node.internal_is_value
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.internal_is_value
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: internal_is_value
+  nameWithType: common_type_node.internal_is_value
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.internal_is_value
+- uid: PascalABCCompiler.TreeRealization.common_type_node.type_access_level
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.type_access_level
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: type_access_level
+  nameWithType: common_type_node.type_access_level
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.type_access_level
+- uid: PascalABCCompiler.TreeRealization.common_type_node.base_type
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.base_type
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: base_type
+  nameWithType: common_type_node.base_type
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.base_type
+- uid: PascalABCCompiler.TreeRealization.common_type_node.Scope
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.Scope
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: Scope
+  nameWithType: common_type_node.Scope
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.Scope
+- uid: PascalABCCompiler.TreeRealization.common_type_node.name
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.name
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: name
+  nameWithType: common_type_node.name
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.name
+- uid: PascalABCCompiler.TreeRealization.common_type_node.full_name
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.full_name
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: full_name
+  nameWithType: common_type_node.full_name
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.full_name
+- uid: PascalABCCompiler.TreeRealization.common_type_node.BaseFullName
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.BaseFullName
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: BaseFullName
+  nameWithType: common_type_node.BaseFullName
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.BaseFullName
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PrintableName
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PrintableName
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: PrintableName
+  nameWithType: common_type_node.PrintableName
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PrintableName
+- uid: PascalABCCompiler.TreeRealization.common_type_node.low_bound
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.low_bound
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: low_bound
+  nameWithType: common_type_node.low_bound
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.low_bound
+- uid: PascalABCCompiler.TreeRealization.common_type_node.upper_bound
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.upper_bound
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: upper_bound
+  nameWithType: common_type_node.upper_bound
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.upper_bound
+- uid: PascalABCCompiler.TreeRealization.common_type_node.comprehensive_namespace
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.comprehensive_namespace
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: comprehensive_namespace
+  nameWithType: common_type_node.comprehensive_namespace
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.comprehensive_namespace
+- uid: PascalABCCompiler.TreeRealization.common_type_node.node_kind
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.node_kind
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: node_kind
+  nameWithType: common_type_node.node_kind
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.node_kind
+- uid: PascalABCCompiler.TreeRealization.common_type_node.semantic_node_type
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.semantic_node_type
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: semantic_node_type
+  nameWithType: common_type_node.semantic_node_type
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.semantic_node_type
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#methods
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#methods
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.methods
+  nameWithType: common_type_node.ICommonTypeNode.methods
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.methods
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.methods
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.methods
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#methods
+    name: methods
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#fields
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#fields
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.fields
+  nameWithType: common_type_node.ICommonTypeNode.fields
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.fields
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.fields
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.fields
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#fields
+    name: fields
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#properties
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#properties
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.properties
+  nameWithType: common_type_node.ICommonTypeNode.properties
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.properties
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.properties
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.properties
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#properties
+    name: properties
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#events
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#events
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.events
+  nameWithType: common_type_node.ICommonTypeNode.events
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.events
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.events
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.events
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#events
+    name: events
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ITypeNode#base_type
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ITypeNode#base_type
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ITypeNode.base_type
+  nameWithType: common_type_node.ITypeNode.base_type
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ITypeNode.base_type
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ITypeNode.base_type
+  name.vb: PascalABCCompiler.SemanticTree.ITypeNode.base_type
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ITypeNode#base_type
+    name: base_type
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#INamespaceMemberNode#comprehensive_namespace
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#INamespaceMemberNode#comprehensive_namespace
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: INamespaceMemberNode.comprehensive_namespace
+  nameWithType: common_type_node.INamespaceMemberNode.comprehensive_namespace
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.INamespaceMemberNode.comprehensive_namespace
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.INamespaceMemberNode.comprehensive_namespace
+  name.vb: PascalABCCompiler.SemanticTree.INamespaceMemberNode.comprehensive_namespace
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.INamespaceMemberNode
+    name: INamespaceMemberNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#INamespaceMemberNode#comprehensive_namespace
+    name: comprehensive_namespace
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.constants
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.constants
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: constants
+  nameWithType: common_type_node.constants
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.constants
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#default_property
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#default_property
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.default_property
+  nameWithType: common_type_node.ICommonTypeNode.default_property
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.default_property
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.default_property
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.default_property
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#default_property
+    name: default_property
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#lower_value
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#lower_value
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.lower_value
+  nameWithType: common_type_node.ICommonTypeNode.lower_value
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.lower_value
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.lower_value
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.lower_value
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#lower_value
+    name: lower_value
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#upper_value
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#upper_value
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: ICommonTypeNode.upper_value
+  nameWithType: common_type_node.ICommonTypeNode.upper_value
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.upper_value
+  nameWithType.vb: common_type_node.PascalABCCompiler.SemanticTree.ICommonTypeNode.upper_value
+  name.vb: PascalABCCompiler.SemanticTree.ICommonTypeNode.upper_value
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ICommonTypeNode
+    name: ICommonTypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.PascalABCCompiler#SemanticTree#ICommonTypeNode#upper_value
+    name: upper_value
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.common_type_node.is_value
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.is_value
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: is_value
+  nameWithType: common_type_node.is_value
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.is_value
+- uid: PascalABCCompiler.TreeRealization.common_type_node.is_class
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.is_class
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: is_class
+  nameWithType: common_type_node.is_class
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.is_class
+- uid: PascalABCCompiler.TreeRealization.common_type_node.IsFictive
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.IsFictive
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: IsFictive
+  nameWithType: common_type_node.IsFictive
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.IsFictive
+- uid: PascalABCCompiler.TreeRealization.common_type_node.parameters_eliminations
+  commentId: P:PascalABCCompiler.TreeRealization.common_type_node.parameters_eliminations
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  name: parameters_eliminations
+  nameWithType: common_type_node.parameters_eliminations
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.parameters_eliminations
+- uid: PascalABCCompiler.TreeRealization.wrapped_type.additional_names
+  commentId: F:PascalABCCompiler.TreeRealization.wrapped_type.additional_names
+  parent: PascalABCCompiler.TreeRealization.wrapped_type
+  isExternal: true
+  name: additional_names
+  nameWithType: wrapped_type.additional_names
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type.additional_names
+- uid: PascalABCCompiler.TreeRealization.wrapped_type.additional_generated_names
+  commentId: F:PascalABCCompiler.TreeRealization.wrapped_type.additional_generated_names
+  parent: PascalABCCompiler.TreeRealization.wrapped_type
+  isExternal: true
+  name: additional_generated_names
+  nameWithType: wrapped_type.additional_generated_names
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type.additional_generated_names
+- uid: PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.wrapped_type
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: add_additional_name(string, SymbolInfo, bool)
+  nameWithType: wrapped_type.add_additional_name(string, SymbolInfo, bool)
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(string, PascalABCCompiler.TreeConverter.SymbolInfo, bool)
+  nameWithType.vb: wrapped_type.add_additional_name(String, SymbolInfo, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(String, PascalABCCompiler.TreeConverter.SymbolInfo, Boolean)
+  name.vb: add_additional_name(String, SymbolInfo, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo,System.Boolean)
+    name: add_additional_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.add_additional_name(System.String,PascalABCCompiler.TreeConverter.SymbolInfo,System.Boolean)
+    name: add_additional_name
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names
+  commentId: M:PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names
+  parent: PascalABCCompiler.TreeRealization.wrapped_type
+  isExternal: true
+  name: clear_generated_names()
+  nameWithType: wrapped_type.clear_generated_names()
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names()
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names
+    name: clear_generated_names
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.clear_generated_names
+    name: clear_generated_names
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(System.String)
+  commentId: M:PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(System.String)
+  parent: PascalABCCompiler.TreeRealization.wrapped_type
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find_in_additional_names(string)
+  nameWithType: wrapped_type.find_in_additional_names(string)
+  fullName: PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(string)
+  nameWithType.vb: wrapped_type.find_in_additional_names(String)
+  fullName.vb: PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(String)
+  name.vb: find_in_additional_names(String)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(System.String)
+    name: find_in_additional_names
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.wrapped_type.find_in_additional_names(System.String)
+    name: find_in_additional_names
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.type_intersections
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.type_intersections
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: type_intersections
+  nameWithType: type_node.type_intersections
+  fullName: PascalABCCompiler.TreeRealization.type_node.type_intersections
+- uid: PascalABCCompiler.TreeRealization.type_node.generated_type_intersections
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.generated_type_intersections
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: generated_type_intersections
+  nameWithType: type_node.generated_type_intersections
+  fullName: PascalABCCompiler.TreeRealization.type_node.generated_type_intersections
+- uid: PascalABCCompiler.TreeRealization.type_node.internal_interfaces
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.internal_interfaces
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: internal_interfaces
+  nameWithType: type_node.internal_interfaces
+  fullName: PascalABCCompiler.TreeRealization.type_node.internal_interfaces
+- uid: PascalABCCompiler.TreeRealization.type_node.is_ref_inited
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.is_ref_inited
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_ref_inited
+  nameWithType: type_node.is_ref_inited
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_ref_inited
+- uid: PascalABCCompiler.TreeRealization.type_node.is_nullable_inited
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.is_nullable_inited
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_nullable_inited
+  nameWithType: type_node.is_nullable_inited
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_nullable_inited
+- uid: PascalABCCompiler.TreeRealization.type_node._is_nullable_type
+  commentId: F:PascalABCCompiler.TreeRealization.type_node._is_nullable_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: _is_nullable_type
+  nameWithType: type_node._is_nullable_type
+  fullName: PascalABCCompiler.TreeRealization.type_node._is_nullable_type
+- uid: PascalABCCompiler.TreeRealization.type_node._ref_type
+  commentId: F:PascalABCCompiler.TreeRealization.type_node._ref_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: _ref_type
+  nameWithType: type_node._ref_type
+  fullName: PascalABCCompiler.TreeRealization.type_node._ref_type
+- uid: PascalABCCompiler.TreeRealization.type_node._element_type
+  commentId: F:PascalABCCompiler.TreeRealization.type_node._element_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: _element_type
+  nameWithType: type_node._element_type
+  fullName: PascalABCCompiler.TreeRealization.type_node._element_type
+- uid: PascalABCCompiler.TreeRealization.type_node.element_type_recived
+  commentId: F:PascalABCCompiler.TreeRealization.type_node.element_type_recived
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: element_type_recived
+  nameWithType: type_node.element_type_recived
+  fullName: PascalABCCompiler.TreeRealization.type_node.element_type_recived
+- uid: PascalABCCompiler.TreeRealization.type_node.ToString
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.ToString
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ToString()
+  nameWithType: type_node.ToString()
+  fullName: PascalABCCompiler.TreeRealization.type_node.ToString()
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node,PascalABCCompiler.TreeRealization.type_intersection_node,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node,PascalABCCompiler.TreeRealization.type_intersection_node,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: add_intersection_node(type_node, type_intersection_node, bool)
+  nameWithType: type_node.add_intersection_node(type_node, type_intersection_node, bool)
+  fullName: PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node, PascalABCCompiler.TreeRealization.type_intersection_node, bool)
+  nameWithType.vb: type_node.add_intersection_node(type_node, type_intersection_node, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node, PascalABCCompiler.TreeRealization.type_intersection_node, Boolean)
+  name.vb: add_intersection_node(type_node, type_intersection_node, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node,PascalABCCompiler.TreeRealization.type_intersection_node,System.Boolean)
+    name: add_intersection_node
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.type_intersection_node
+    name: type_intersection_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.add_intersection_node(PascalABCCompiler.TreeRealization.type_node,PascalABCCompiler.TreeRealization.type_intersection_node,System.Boolean)
+    name: add_intersection_node
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.type_intersection_node
+    name: type_intersection_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: clear_generated_intersections()
+  nameWithType: type_node.clear_generated_intersections()
+  fullName: PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections()
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections
+    name: clear_generated_intersections
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.clear_generated_intersections
+    name: clear_generated_intersections
+    isExternal: true
+  - name: (
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: get_type_intersection(type_node)
+  nameWithType: type_node.get_type_intersection(type_node)
+  fullName: PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+    name: get_type_intersection
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.get_type_intersection(PascalABCCompiler.TreeRealization.type_node)
+    name: get_type_intersection
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: add_internal_interface(internal_interface)
+  nameWithType: type_node.add_internal_interface(internal_interface)
+  fullName: PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+    name: add_internal_interface
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.internal_interface
+    name: internal_interface
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.add_internal_interface(PascalABCCompiler.TreeRealization.internal_interface)
+    name: add_internal_interface
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.internal_interface
+    name: internal_interface
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: get_internal_interface(internal_interface_kind)
+  nameWithType: type_node.get_internal_interface(internal_interface_kind)
+  fullName: PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+    name: get_internal_interface
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.internal_interface_kind
+    name: internal_interface_kind
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.get_internal_interface(PascalABCCompiler.TreeRealization.internal_interface_kind)
+    name: get_internal_interface
+    isExternal: true
+  - name: (
+  - uid: PascalABCCompiler.TreeRealization.internal_interface_kind
+    name: internal_interface_kind
+    isExternal: true
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.find_first_in_type(System.String,SymbolTable.Scope,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.type_node.find_first_in_type(System.String,SymbolTable.Scope,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find_first_in_type(string, Scope, bool)
+  nameWithType: type_node.find_first_in_type(string, Scope, bool)
+  fullName: PascalABCCompiler.TreeRealization.type_node.find_first_in_type(string, SymbolTable.Scope, bool)
+  nameWithType.vb: type_node.find_first_in_type(String, Scope, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.type_node.find_first_in_type(String, SymbolTable.Scope, Boolean)
+  name.vb: find_first_in_type(String, Scope, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.type_node.find_first_in_type(System.String,SymbolTable.Scope,System.Boolean)
+    name: find_first_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.type_node.find_first_in_type(System.String,SymbolTable.Scope,System.Boolean)
+    name: find_first_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.type_node.is_standard_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.is_standard_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_standard_type
+  nameWithType: type_node.is_standard_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_standard_type
+- uid: PascalABCCompiler.TreeRealization.type_node.is_nullable_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.is_nullable_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_nullable_type
+  nameWithType: type_node.is_nullable_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_nullable_type
+- uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#common_generic_function_container
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#common_generic_function_container
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ITypeNode.common_generic_function_container
+  nameWithType: type_node.ITypeNode.common_generic_function_container
+  fullName: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler.SemanticTree.ITypeNode.common_generic_function_container
+  nameWithType.vb: type_node.PascalABCCompiler.SemanticTree.ITypeNode.common_generic_function_container
+  name.vb: PascalABCCompiler.SemanticTree.ITypeNode.common_generic_function_container
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#common_generic_function_container
+    name: common_generic_function_container
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.type_node.IsPointer
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.IsPointer
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: IsPointer
+  nameWithType: type_node.IsPointer
+  fullName: PascalABCCompiler.TreeRealization.type_node.IsPointer
+- uid: PascalABCCompiler.TreeRealization.type_node.ImplementingInterfacesOrEmpty
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.ImplementingInterfacesOrEmpty
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ImplementingInterfacesOrEmpty
+  nameWithType: type_node.ImplementingInterfacesOrEmpty
+  fullName: PascalABCCompiler.TreeRealization.type_node.ImplementingInterfacesOrEmpty
+- uid: PascalABCCompiler.TreeRealization.type_node.is_generic_type_instance
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.is_generic_type_instance
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_generic_type_instance
+  nameWithType: type_node.is_generic_type_instance
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_generic_type_instance
+- uid: PascalABCCompiler.TreeRealization.type_node.instance_params
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.instance_params
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: instance_params
+  nameWithType: type_node.instance_params
+  fullName: PascalABCCompiler.TreeRealization.type_node.instance_params
+- uid: PascalABCCompiler.TreeRealization.type_node.original_generic
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.original_generic
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: original_generic
+  nameWithType: type_node.original_generic
+  fullName: PascalABCCompiler.TreeRealization.type_node.original_generic
+- uid: PascalABCCompiler.TreeRealization.type_node.ref_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.ref_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ref_type
+  nameWithType: type_node.ref_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.ref_type
+- uid: PascalABCCompiler.TreeRealization.type_node.general_node_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.general_node_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: general_node_type
+  nameWithType: type_node.general_node_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.general_node_type
+- uid: PascalABCCompiler.TreeRealization.type_node.is_value_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.is_value_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: is_value_type
+  nameWithType: type_node.is_value_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.is_value_type
+- uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#type_special_kind
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#type_special_kind
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ITypeNode.type_special_kind
+  nameWithType: type_node.ITypeNode.type_special_kind
+  fullName: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler.SemanticTree.ITypeNode.type_special_kind
+  nameWithType.vb: type_node.PascalABCCompiler.SemanticTree.ITypeNode.type_special_kind
+  name.vb: PascalABCCompiler.SemanticTree.ITypeNode.type_special_kind
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#type_special_kind
+    name: type_special_kind
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.type_node.element_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.element_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: element_type
+  nameWithType: type_node.element_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.element_type
+- uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#element_type
+  commentId: P:PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#element_type
+  parent: PascalABCCompiler.TreeRealization.type_node
+  isExternal: true
+  name: ITypeNode.element_type
+  nameWithType: type_node.ITypeNode.element_type
+  fullName: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler.SemanticTree.ITypeNode.element_type
+  nameWithType.vb: type_node.PascalABCCompiler.SemanticTree.ITypeNode.element_type
+  name.vb: PascalABCCompiler.SemanticTree.ITypeNode.element_type
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.ITypeNode
+    name: ITypeNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.type_node.PascalABCCompiler#SemanticTree#ITypeNode#element_type
+    name: element_type
+    isExternal: true
+- uid: PascalABCCompiler.TreeRealization.definition_node.doc
+  commentId: F:PascalABCCompiler.TreeRealization.definition_node.doc
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: doc
+  nameWithType: definition_node.doc
+  fullName: PascalABCCompiler.TreeRealization.definition_node.doc
+- uid: PascalABCCompiler.TreeRealization.definition_node._attributes
+  commentId: F:PascalABCCompiler.TreeRealization.definition_node._attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: _attributes
+  nameWithType: definition_node._attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node._attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  commentId: M:PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: find_by_location(int, int)
+  nameWithType: definition_node.find_by_location(int, int)
+  fullName: PascalABCCompiler.TreeRealization.definition_node.find_by_location(int, int)
+  nameWithType.vb: definition_node.find_by_location(Integer, Integer)
+  fullName.vb: PascalABCCompiler.TreeRealization.definition_node.find_by_location(Integer, Integer)
+  name.vb: find_by_location(Integer, Integer)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+    name: find_by_location
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.definition_node.find_by_location(System.Int32,System.Int32)
+    name: find_by_location
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: PascalABCCompiler.TreeRealization.definition_node.attributes
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: attributes
+  nameWithType: definition_node.attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node.attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.Attributes
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.Attributes
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: Attributes
+  nameWithType: definition_node.Attributes
+  fullName: PascalABCCompiler.TreeRealization.definition_node.Attributes
+- uid: PascalABCCompiler.TreeRealization.definition_node.documentation
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.documentation
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: documentation
+  nameWithType: definition_node.documentation
+  fullName: PascalABCCompiler.TreeRealization.definition_node.documentation
+- uid: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  commentId: P:PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+  parent: PascalABCCompiler.TreeRealization.definition_node
+  isExternal: true
+  name: IDefinitionNode.Documentation
+  nameWithType: definition_node.IDefinitionNode.Documentation
+  fullName: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  nameWithType.vb: definition_node.PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  name.vb: PascalABCCompiler.SemanticTree.IDefinitionNode.Documentation
+  spec.csharp:
+  - uid: PascalABCCompiler.SemanticTree.IDefinitionNode
+    name: IDefinitionNode
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization.definition_node.PascalABCCompiler#SemanticTree#IDefinitionNode#Documentation
+    name: Documentation
+    isExternal: true
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+  commentId: M:System.Object.FieldSetter(System.String,System.String,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  name: FieldSetter(string, string, object)
+  nameWithType: object.FieldSetter(string, string, object)
+  fullName: object.FieldSetter(string, string, object)
+  nameWithType.vb: Object.FieldSetter(String, String, Object)
+  fullName.vb: Object.FieldSetter(String, String, Object)
+  name.vb: FieldSetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldSetter(System.String,System.String,System.Object)
+    name: FieldSetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldsetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+  commentId: M:System.Object.FieldGetter(System.String,System.String,System.Object@)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  name: FieldGetter(string, string, ref object)
+  nameWithType: object.FieldGetter(string, string, ref object)
+  fullName: object.FieldGetter(string, string, ref object)
+  nameWithType.vb: Object.FieldGetter(String, String, Object)
+  fullName.vb: Object.FieldGetter(String, String, Object)
+  name.vb: FieldGetter(String, String, Object)
+  spec.csharp:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.FieldGetter(System.String,System.String,System.Object@)
+    name: FieldGetter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.fieldgetter
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetFieldInfo(System.String,System.String)
+  commentId: M:System.Object.GetFieldInfo(System.String,System.String)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  name: GetFieldInfo(string, string)
+  nameWithType: object.GetFieldInfo(string, string)
+  fullName: object.GetFieldInfo(string, string)
+  nameWithType.vb: Object.GetFieldInfo(String, String)
+  fullName.vb: Object.GetFieldInfo(String, String)
+  name.vb: GetFieldInfo(String, String)
+  spec.csharp:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetFieldInfo(System.String,System.String)
+    name: GetFieldInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.getfieldinfo
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PascalABCCompiler.TreeRealization
+  commentId: N:PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: PascalABCCompiler.TreeRealization
+  nameWithType: PascalABCCompiler.TreeRealization
+  fullName: PascalABCCompiler.TreeRealization
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.TreeRealization
+    name: TreeRealization
+    isExternal: true
+- uid: PascalABCCompiler.SemanticTree
+  commentId: N:PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: PascalABCCompiler.SemanticTree
+  nameWithType: PascalABCCompiler.SemanticTree
+  fullName: PascalABCCompiler.SemanticTree
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+  - name: .
+  - uid: PascalABCCompiler.SemanticTree
+    name: SemanticTree
+    isExternal: true
+- uid: PascalABCCompiler.PCU.PCUReader
+  commentId: T:PascalABCCompiler.PCU.PCUReader
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.PCUReader.html
+  name: PCUReader
+  nameWithType: PCUReader
+  fullName: PascalABCCompiler.PCU.PCUReader
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.#ctor*
+  commentId: Overload:PascalABCCompiler.PCU.wrapped_common_type_node.#ctor
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_common_type_node.html#PascalABCCompiler_PCU_wrapped_common_type_node__ctor_PascalABCCompiler_PCU_PCUReader_PascalABCCompiler_TreeRealization_type_node_System_String_PascalABCCompiler_SemanticTree_type_access_level_PascalABCCompiler_TreeRealization_common_namespace_node_SymbolTable_ClassScope_PascalABCCompiler_TreeRealization_location_System_Int32_
+  name: wrapped_common_type_node
+  nameWithType: wrapped_common_type_node.wrapped_common_type_node
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.wrapped_common_type_node
+  nameWithType.vb: wrapped_common_type_node.New
+  fullName.vb: PascalABCCompiler.PCU.wrapped_common_type_node.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PascalABCCompiler.SemanticTree.type_access_level
+  commentId: T:PascalABCCompiler.SemanticTree.type_access_level
+  parent: PascalABCCompiler.SemanticTree
+  isExternal: true
+  name: type_access_level
+  nameWithType: type_access_level
+  fullName: PascalABCCompiler.SemanticTree.type_access_level
+- uid: PascalABCCompiler.TreeRealization.common_namespace_node
+  commentId: T:PascalABCCompiler.TreeRealization.common_namespace_node
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: common_namespace_node
+  nameWithType: common_namespace_node
+  fullName: PascalABCCompiler.TreeRealization.common_namespace_node
+- uid: SymbolTable.ClassScope
+  commentId: T:SymbolTable.ClassScope
+  parent: SymbolTable
+  isExternal: true
+  name: ClassScope
+  nameWithType: ClassScope
+  fullName: SymbolTable.ClassScope
+- uid: PascalABCCompiler.TreeRealization.location
+  commentId: T:PascalABCCompiler.TreeRealization.location
+  parent: PascalABCCompiler.TreeRealization
+  isExternal: true
+  name: location
+  nameWithType: location
+  fullName: PascalABCCompiler.TreeRealization.location
+- uid: SymbolTable
+  commentId: N:SymbolTable
+  isExternal: true
+  name: SymbolTable
+  nameWithType: SymbolTable
+  fullName: SymbolTable
+- uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find_in_type(string, bool)
+  nameWithType: common_type_node.find_in_type(string, bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(string, bool)
+  nameWithType.vb: common_type_node.find_in_type(String, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(String, Boolean)
+  name.vb: find_in_type(String, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,System.Boolean)
+    name: find_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,System.Boolean)
+    name: find_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type*
+  commentId: Overload:PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type
+  isExternal: true
+  href: PascalABCCompiler.PCU.wrapped_common_type_node.html#PascalABCCompiler_PCU_wrapped_common_type_node_find_in_type_System_String_System_Boolean_
+  name: find_in_type
+  nameWithType: wrapped_common_type_node.find_in_type
+  fullName: PascalABCCompiler.PCU.wrapped_common_type_node.find_in_type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+  commentId: T:System.Collections.Generic.List{PascalABCCompiler.TreeConverter.SymbolInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SymbolInfo>
+  nameWithType: List<SymbolInfo>
+  fullName: System.Collections.Generic.List<PascalABCCompiler.TreeConverter.SymbolInfo>
+  nameWithType.vb: List(Of SymbolInfo)
+  fullName.vb: System.Collections.Generic.List(Of PascalABCCompiler.TreeConverter.SymbolInfo)
+  name.vb: List(Of SymbolInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PascalABCCompiler.TreeConverter.SymbolInfo
+    name: SymbolInfo
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  commentId: M:PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+  parent: PascalABCCompiler.TreeRealization.common_type_node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: find_in_type(string, Scope, type_node, bool)
+  nameWithType: common_type_node.find_in_type(string, Scope, type_node, bool)
+  fullName: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(string, SymbolTable.Scope, PascalABCCompiler.TreeRealization.type_node, bool)
+  nameWithType.vb: common_type_node.find_in_type(String, Scope, type_node, Boolean)
+  fullName.vb: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(String, SymbolTable.Scope, PascalABCCompiler.TreeRealization.type_node, Boolean)
+  name.vb: find_in_type(String, Scope, type_node, Boolean)
+  spec.csharp:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+    name: find_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PascalABCCompiler.TreeRealization.common_type_node.find_in_type(System.String,SymbolTable.Scope,PascalABCCompiler.TreeRealization.type_node,System.Boolean)
+    name: find_in_type
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: SymbolTable.Scope
+    name: Scope
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: PascalABCCompiler.TreeRealization.type_node
+    name: type_node
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: SymbolTable.Scope
+  commentId: T:SymbolTable.Scope
+  parent: SymbolTable
+  isExternal: true
+  name: Scope
+  nameWithType: Scope
+  fullName: SymbolTable.Scope

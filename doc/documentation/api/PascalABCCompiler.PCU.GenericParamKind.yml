@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: PascalABCCompiler.PCU.GenericParamKind
+  commentId: T:PascalABCCompiler.PCU.GenericParamKind
+  id: GenericParamKind
+  parent: PascalABCCompiler.PCU
+  children:
+  - PascalABCCompiler.PCU.GenericParamKind.Class
+  - PascalABCCompiler.PCU.GenericParamKind.None
+  - PascalABCCompiler.PCU.GenericParamKind.Value
+  langs:
+  - csharp
+  - vb
+  name: GenericParamKind
+  nameWithType: GenericParamKind
+  fullName: PascalABCCompiler.PCU.GenericParamKind
+  type: Enum
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: public enum GenericParamKind
+    content.vb: Public Enum GenericParamKind
+- uid: PascalABCCompiler.PCU.GenericParamKind.None
+  commentId: F:PascalABCCompiler.PCU.GenericParamKind.None
+  id: None
+  parent: PascalABCCompiler.PCU.GenericParamKind
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: GenericParamKind.None
+  fullName: PascalABCCompiler.PCU.GenericParamKind.None
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: None = 0
+    return:
+      type: PascalABCCompiler.PCU.GenericParamKind
+- uid: PascalABCCompiler.PCU.GenericParamKind.Class
+  commentId: F:PascalABCCompiler.PCU.GenericParamKind.Class
+  id: Class
+  parent: PascalABCCompiler.PCU.GenericParamKind
+  langs:
+  - csharp
+  - vb
+  name: Class
+  nameWithType: GenericParamKind.Class
+  fullName: PascalABCCompiler.PCU.GenericParamKind.Class
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Class = 1
+    return:
+      type: PascalABCCompiler.PCU.GenericParamKind
+- uid: PascalABCCompiler.PCU.GenericParamKind.Value
+  commentId: F:PascalABCCompiler.PCU.GenericParamKind.Value
+  id: Value
+  parent: PascalABCCompiler.PCU.GenericParamKind
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: GenericParamKind.Value
+  fullName: PascalABCCompiler.PCU.GenericParamKind.Value
+  type: Field
+  assemblies:
+  - Compiler
+  namespace: PascalABCCompiler.PCU
+  syntax:
+    content: Value = 2
+    return:
+      type: PascalABCCompiler.PCU.GenericParamKind
+references:
+- uid: PascalABCCompiler.PCU
+  commentId: N:PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.html
+  name: PascalABCCompiler.PCU
+  nameWithType: PascalABCCompiler.PCU
+  fullName: PascalABCCompiler.PCU
+  spec.csharp:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+  spec.vb:
+  - uid: PascalABCCompiler
+    name: PascalABCCompiler
+    isExternal: true
+    href: PascalABCCompiler.html
+  - name: .
+  - uid: PascalABCCompiler.PCU
+    name: PCU
+    isExternal: true
+    href: PascalABCCompiler.PCU.html
+- uid: PascalABCCompiler.PCU.GenericParamKind
+  commentId: T:PascalABCCompiler.PCU.GenericParamKind
+  parent: PascalABCCompiler.PCU
+  isExternal: true
+  href: PascalABCCompiler.PCU.GenericParamKind.html
+  name: GenericParamKind
+  nameWithType: GenericParamKind
+  fullName: PascalABCCompiler.PCU.GenericParamKind
