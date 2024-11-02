@@ -11,6 +11,7 @@
 	private HashSet<string> globalVariables = new HashSet<string>();
 	private declarations decl_forward = new declarations();
 	private declarations decl = new declarations();
+	private uses_list imports = new uses_list();
 	private bool isInsideFunction = false;
 	private bool isVariableToBeAssigned = false;
 
@@ -73,7 +74,7 @@
 %type <stn> stmt_list block
 %type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
 %type <td> proc_func_header form_param_type simple_type_identifier
-%type <stn> import_clause import_clause_one
+%type <stn> import_clause
 %type <ob> optional_semicolon
 %type <op> assign_type
 
@@ -96,24 +97,23 @@ act		= actual
 
 %%
 program
-	: import_clause decl_and_stmt_list optional_semicolon
+	: decl_and_stmt_list optional_semicolon
 		{
 			// main program
 			if (!is_unit_to_be_parsed) {
-				var ul = $1 as uses_list;
-				var stl = $2 as statement_list;
+				var stl = $1 as statement_list;
 				stl.left_logical_bracket = new token_info("");
 				stl.right_logical_bracket = new token_info("");
-				var bl = new block(decl, stl, @2);
+				var bl = new block(decl, stl, @1);
 				decl.AddFirst(decl_forward.defs);
-				root = $$ = NewProgramModule(null, null, ul, bl, $3, @$);
+				root = $$ = NewProgramModule(null, null, imports, bl, $2, @$);
 				root.source_context = bl.source_context;
 			}
 			// unit
 			else {
 				decl.AddFirst(decl_forward.defs);
-				var interface_part = new interface_node(decl as declarations, $1 as uses_list, null, null);
-				var initialization_part = new initfinal_part(null, $2 as statement_list, null, null, null, @$);
+				var interface_part = new interface_node(decl as declarations, imports, null, null);
+				var initialization_part = new initfinal_part(null, $1 as statement_list, null, null, null, @$);
 
 				root = $$ = new unit_module(
 					new unit_name(new ident(Path.GetFileNameWithoutExtension(parserTools.currentFileName)),
@@ -126,42 +126,7 @@ program
 	;
 
 import_clause
-	:
-		{
-			$$ = null;
-		}
-	| import_clause import_clause_one
-		{
-   			if (parserTools.build_tree_for_formatter)
-   			{
-	        	if ($1 == null)
-                {
-	        		$$ = new uses_closure($2 as uses_list,@$);
-                }
-	        	else {
-                    ($1 as uses_closure).AddUsesList($2 as uses_list,@$);
-                    $$ = $1;
-                }
-   			}
-   			else
-   			{
-	        	if ($1 == null)
-                {
-                    $$ = $2;
-                    $$.source_context = @$;
-                }
-	        	else
-                {
-                    ($1 as uses_list).AddUsesList($2 as uses_list,@$);
-                    $$ = $1;
-                    $$.source_context = @$;
-                }
-			}
-		}
-	;
-
-import_clause_one
-	: IMPORT ident SEMICOLON
+	: IMPORT ident
 		{
 			$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
 			$$.source_context = @$;
@@ -181,6 +146,10 @@ decl
 			$$ = null;
 			decl.Add($1 as procedure_definition, @$);
 		}
+	| import_clause {
+		$$ = null;
+		imports.AddUsesList($1 as uses_list, @$);
+	}
 	;
 
 decl_and_stmt_list
