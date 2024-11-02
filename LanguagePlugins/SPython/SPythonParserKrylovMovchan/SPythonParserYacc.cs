@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 02.11.2024 18:28:54
+// DateTime: 02.11.2024 18:35:21
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -92,12 +92,12 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
       "variable", "optional_condition", "act_param", "act_param_list", "optional_act_param_list", 
       "proc_func_decl", "return_stmt", "break_stmt", "continue_stmt", "global_stmt", 
       "var_stmt", "assign_stmt", "if_stmt", "stmt", "proc_func_call_stmt", "while_stmt", 
-      "for_stmt", "optional_else", "optional_elif", "decl_or_stmt", "decl_and_stmt_list", 
-      "expr_list", "stmt_list", "block", "program", "decl", "param_name", "form_param_sect", 
-      "form_param_list", "optional_form_param_list", "dotted_ident_list", "proc_func_header", 
-      "form_param_type", "simple_type_identifier", "import_clause", "optional_semicolon", 
-      "assign_type", "$accept", "NestedSymbolTableBegin", "NestedSymbolTableEnd", 
-      "InsideFunction", "OutsideFunction", };
+      "for_stmt", "optional_else", "optional_elif", "import_or_decl_or_stmt", 
+      "import_and_decl_and_stmt_list", "expr_list", "stmt_list", "block", "program", 
+      "import_or_decl", "param_name", "form_param_sect", "form_param_list", "optional_form_param_list", 
+      "dotted_ident_list", "proc_func_header", "form_param_type", "simple_type_identifier", 
+      "import_clause", "optional_semicolon", "assign_type", "$accept", "NestedSymbolTableBegin", 
+      "NestedSymbolTableEnd", "InsideFunction", "OutsideFunction", };
 
   static SPythonGPPGParser() {
     states[0] = new State(new int[]{45,56,16,61,17,62,18,63,19,64,33,65,24,66,6,104,5,127,3,132,10,139,11,142,12,144,15,146,13,183,9,-84},new int[]{-31,1,-27,3,-26,185,-20,7,-18,8,-7,9,-1,55,-5,100,-6,101,-17,102,-19,103,-21,125,-22,126,-23,131,-13,138,-14,141,-15,143,-16,145,-32,155,-12,156,-45,157,-41,182});
@@ -407,7 +407,7 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
   {
     switch (action)
     {
-      case 2: // program -> decl_and_stmt_list, optional_semicolon
+      case 2: // program -> import_and_decl_and_stmt_list, optional_semicolon
 {
 			// main program
 			if (!is_unit_to_be_parsed) {
@@ -440,25 +440,25 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 			CurrentSemanticValue.stn.source_context = CurrentLocationSpan;
 		}
         break;
-      case 4: // decl_or_stmt -> stmt
+      case 4: // import_or_decl_or_stmt -> stmt
 { CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-1].stn; }
         break;
-      case 5: // decl_or_stmt -> decl
+      case 5: // import_or_decl_or_stmt -> import_or_decl
 { CurrentSemanticValue.stn = null; }
         break;
-      case 6: // decl -> proc_func_decl
+      case 6: // import_or_decl -> proc_func_decl
 {
 			CurrentSemanticValue.stn = null;
 			decl.Add(ValueStack[ValueStack.Depth-1].stn as procedure_definition, CurrentLocationSpan);
 		}
         break;
-      case 7: // decl -> import_clause
+      case 7: // import_or_decl -> import_clause
 {
 		CurrentSemanticValue.stn = null;
 		imports.AddUsesList(ValueStack[ValueStack.Depth-1].stn as uses_list, CurrentLocationSpan);
 	}
         break;
-      case 8: // decl_and_stmt_list -> decl_or_stmt
+      case 8: // import_and_decl_and_stmt_list -> import_or_decl_or_stmt
 {
 			if (ValueStack[ValueStack.Depth-1].stn is statement st)
 				CurrentSemanticValue.stn = new statement_list(ValueStack[ValueStack.Depth-1].stn as statement, LocationStack[LocationStack.Depth-1]);
@@ -466,7 +466,8 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 				CurrentSemanticValue.stn =  new statement_list();
 		}
         break;
-      case 9: // decl_and_stmt_list -> decl_and_stmt_list, SEMICOLON, decl_or_stmt
+      case 9: // import_and_decl_and_stmt_list -> import_and_decl_and_stmt_list, SEMICOLON, 
+              //                                  import_or_decl_or_stmt
 {
 			if (ValueStack[ValueStack.Depth-1].stn is statement st)
 				CurrentSemanticValue.stn = (ValueStack[ValueStack.Depth-3].stn as statement_list).Add(st, CurrentLocationSpan);

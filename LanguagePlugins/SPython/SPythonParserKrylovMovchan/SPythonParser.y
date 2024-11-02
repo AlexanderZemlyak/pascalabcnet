@@ -70,9 +70,9 @@
 %type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
-%type <stn> decl_or_stmt decl_and_stmt_list expr_list
+%type <stn> import_or_decl_or_stmt import_and_decl_and_stmt_list expr_list
 %type <stn> stmt_list block
-%type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
+%type <stn> program import_or_decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
 %type <td> proc_func_header form_param_type simple_type_identifier
 %type <stn> import_clause
 %type <ob> optional_semicolon
@@ -97,7 +97,7 @@ act		= actual
 
 %%
 program
-	: decl_and_stmt_list optional_semicolon
+	: import_and_decl_and_stmt_list optional_semicolon
 		{
 			// main program
 			if (!is_unit_to_be_parsed) {
@@ -133,14 +133,14 @@ import_clause
 		}
 	;
 
-decl_or_stmt
+import_or_decl_or_stmt
 	: stmt
 		{ $$ = $1; }
-	| decl
+	| import_or_decl
 		{ $$ = null; }
 	;
 
-decl
+import_or_decl
 	: proc_func_decl
 		{
 			$$ = null;
@@ -152,15 +152,15 @@ decl
 	}
 	;
 
-decl_and_stmt_list
-	: decl_or_stmt
+import_and_decl_and_stmt_list
+	: import_or_decl_or_stmt
 		{
 			if ($1 is statement st)
 				$$ = new statement_list($1 as statement, @1);
 			else
 				$$ =  new statement_list();
 		}
-	| decl_and_stmt_list SEMICOLON decl_or_stmt
+	| import_and_decl_and_stmt_list SEMICOLON import_or_decl_or_stmt
 		{
 			if ($3 is statement st)
 				$$ = ($1 as statement_list).Add(st, @$);
