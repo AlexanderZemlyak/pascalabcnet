@@ -15,6 +15,7 @@ namespace Languages.SPython.Frontend.Converters
         SymbolTable localVariables = new SymbolTable();
         HashSet<string> globalVariables = new HashSet<string>();
         HashSet<string> importedModules = new HashSet<string>();
+        Dictionary<string, string> modulesAliases = new Dictionary<string, string>();
         bool isInFunctionBody = false;
 
         public AssignToVarConverterVisitor() {
@@ -61,6 +62,12 @@ namespace Languages.SPython.Frontend.Converters
             base.Exit(stn);
         }
 
+        public override void visit(dot_node _dot_node)
+        {
+            if (_dot_node.left is ident left && modulesAliases.ContainsKey(left.name))
+                left.name = modulesAliases[left.name];
+        }
+
         public override void visit(global_statement _global_statement)
         {
             foreach (ident _ident in _global_statement.idents.idents)
@@ -88,6 +95,7 @@ namespace Languages.SPython.Frontend.Converters
             foreach (as_statement as_Statement in _import.modules_names.as_statements)
             {
                 importedModules.Add(as_Statement.real_name.name);
+                modulesAliases[as_Statement.alias.name] = as_Statement.real_name.name;
             }
         }
 
@@ -114,11 +122,12 @@ namespace Languages.SPython.Frontend.Converters
 
                     ReplaceStatement(_assign, _var_statement);
 
+                    base.visit(_assign);
                     return;
                 }
                 localVariables.Add(_ident.name);
             }
-                
+            base.visit(_assign);
         }
 
 
