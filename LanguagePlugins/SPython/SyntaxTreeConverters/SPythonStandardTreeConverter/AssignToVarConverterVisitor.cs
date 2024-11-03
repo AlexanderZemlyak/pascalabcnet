@@ -85,7 +85,10 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void visit(import _import)
         {
-            importedModules.Add(_import.modules_names[0].name);
+            foreach (as_statement as_Statement in _import.modules_names.as_statements)
+            {
+                importedModules.Add(as_Statement.real_name.name);
+            }
         }
 
         public override void visit(variable_definitions _variable_definitions)

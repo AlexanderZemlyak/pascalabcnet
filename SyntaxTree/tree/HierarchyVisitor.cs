@@ -2133,6 +2133,22 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 		}
 
+		public virtual void pre_do_visit(as_statement _as_statement)
+		{
+		}
+
+		public virtual void post_do_visit(as_statement _as_statement)
+		{
+		}
+
+		public virtual void pre_do_visit(as_statement_list _as_statement_list)
+		{
+		}
+
+		public virtual void post_do_visit(as_statement_list _as_statement_list)
+		{
+		}
+
 		public override void visit(expression _expression)
 		{
 			DefaultVisit(_expression);
@@ -4407,9 +4423,26 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			DefaultVisit(_import);
 			pre_do_visit(_import);
-			for (int i = 0; i < modules_names.Count; i++)
-				visit(import.modules_names[i]);
+			visit(import.modules_names);
 			post_do_visit(_import);
+		}
+
+		public override void visit(as_statement _as_statement)
+		{
+			DefaultVisit(_as_statement);
+			pre_do_visit(_as_statement);
+			visit(as_statement.real_name);
+			visit(as_statement.alias);
+			post_do_visit(_as_statement);
+		}
+
+		public override void visit(as_statement_list _as_statement_list)
+		{
+			DefaultVisit(_as_statement_list);
+			pre_do_visit(_as_statement_list);
+			for (int i = 0; i < as_statements.Count; i++)
+				visit(as_statement_list.as_statements[i]);
+			post_do_visit(_as_statement_list);
 		}
 	}
 

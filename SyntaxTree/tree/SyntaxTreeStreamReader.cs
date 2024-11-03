@@ -552,6 +552,10 @@ namespace PascalABCCompiler.SyntaxTree
 					return new list_generator();
 				case 265:
 					return new import();
+				case 266:
+					return new as_statement();
+				case 267:
+					return new as_statement_list();
 			}
 			return null;
 		}
@@ -4626,17 +4630,42 @@ namespace PascalABCCompiler.SyntaxTree
 		public void read_import(import _import)
 		{
 			read_statement(_import);
+			_import.modules_names = _read_node() as as_statement_list;
+		}
+
+
+		public void visit(as_statement _as_statement)
+		{
+			read_as_statement(_as_statement);
+		}
+
+		public void read_as_statement(as_statement _as_statement)
+		{
+			read_statement(_as_statement);
+			_as_statement.real_name = _read_node() as ident;
+			_as_statement.alias = _read_node() as ident;
+		}
+
+
+		public void visit(as_statement_list _as_statement_list)
+		{
+			read_as_statement_list(_as_statement_list);
+		}
+
+		public void read_as_statement_list(as_statement_list _as_statement_list)
+		{
+			read_statement(_as_statement_list);
 			if (br.ReadByte() == 0)
 			{
-				_import.modules_names = null;
+				_as_statement_list.as_statements = null;
 			}
 			else
 			{
-				_import.modules_names = new List<ident>();
+				_as_statement_list.as_statements = new List<as_statement>();
 				Int32 ssyy_count = br.ReadInt32();
 				for(Int32 ssyy_i = 0; ssyy_i < ssyy_count; ssyy_i++)
 				{
-					_import.modules_names.Add(_read_node() as ident);
+					_as_statement_list.as_statements.Add(_read_node() as as_statement);
 				}
 			}
 		}

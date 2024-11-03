@@ -3404,7 +3404,28 @@
     </SyntaxNode>
     <SyntaxNode Name="import" BaseName="statement">
       <Fields>
-        <ExtendedField Name="modules_names" Type="List&lt;ident&gt;" CreateVariable="true" DeleteVariable="false" />
+        <SyntaxField Name="modules_names" SyntaxType="as_statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="as_statement" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="real_name" SyntaxType="ident" />
+        <SyntaxField Name="alias" SyntaxType="ident" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="as_statement_list" BaseName="statement">
+      <Fields>
+        <ExtendedField Name="as_statements" Type="List&lt;as_statement&gt;" CreateVariable="true" DeleteVariable="false" />
       </Fields>
       <Methods />
       <Tags>
@@ -3461,6 +3482,7 @@
       <HelpData Key=".additional_restrictions" Value="" />
       <HelpData Key=".alias" Value="" />
       <HelpData Key=".aloneparam" Value="" />
+      <HelpData Key=".as_nodes" Value="" />
       <HelpData Key=".attr" Value="" />
       <HelpData Key=".attributes" Value="" />
       <HelpData Key=".body" Value="" />
@@ -3513,6 +3535,7 @@
       <HelpData Key=".pattern" Value="" />
       <HelpData Key=".pattern_expression" Value="" />
       <HelpData Key=".procdef" Value="" />
+      <HelpData Key=".real_name" Value="" />
       <HelpData Key=".res" Value="" />
       <HelpData Key=".restriction" Value="" />
       <HelpData Key=".restriction_args" Value="" />
@@ -3587,9 +3610,16 @@
       <HelpData Key="as_node.alias" Value="" />
       <HelpData Key="as_node.left" Value="" />
       <HelpData Key="as_node.name" Value="" />
+      <HelpData Key="as_node.real_name" Value="" />
       <HelpData Key="as_node.right" Value="" />
       <HelpData Key="as_node_list" Value="" />
       <HelpData Key="as_node_list.as_nodes" Value="" />
+      <HelpData Key="as_statement" Value="" />
+      <HelpData Key="as_statement.alias" Value="" />
+      <HelpData Key="as_statement.real_name" Value="" />
+      <HelpData Key="as_statement_list" Value="" />
+      <HelpData Key="as_statement_list.as_nodes" Value="" />
+      <HelpData Key="as_statement_list.as_statements" Value="" />
       <HelpData Key="assign" Value="Оператор присваивания" />
       <HelpData Key="assign." Value="" />
       <HelpData Key="assign.assign(addressed_value left,expression ex): this(left,ex,Operators.Assignment)" Value="" />

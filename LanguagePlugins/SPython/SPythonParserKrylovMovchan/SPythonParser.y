@@ -49,7 +49,7 @@
     public type_definition td;
 }
 
-%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL
+%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS
 %token <ex> INTNUM REALNUM TRUE FALSE
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON INDENT UNINDENT ARROW
 %token <stn> STRINGNUM
@@ -73,6 +73,7 @@
 %type <stn> import_or_decl_or_stmt import_and_decl_and_stmt_list expr_list
 %type <stn> stmt_list block
 %type <stn> program import_or_decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
+%type <stn> ident_as_ident ident_as_ident_list
 %type <td> proc_func_header form_param_type simple_type_identifier
 %type <stn> import_clause
 %type <ob> optional_semicolon
@@ -126,9 +127,9 @@ program
 	;
 
 import_clause
-	: IMPORT ident
+	: IMPORT ident_as_ident_list
 		{
-			$$ = new import($2 as ident, @2);
+			$$ = new import($2 as as_statement_list, @2);
 			//$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
 			//$$.source_context = @$;
 		}
@@ -186,8 +187,6 @@ stmt_list
 stmt
 	: assign_stmt
 		{ $$ = $1; }
-	//| block
-	//	{ $$ = $1; }
 	| var_stmt
 		{ $$ = $1; }
 	| if_stmt
@@ -253,6 +252,24 @@ dotted_ident_list
     | dotted_ident_list COMMA dotted_ident
         {
 			$$ = ($1 as ident_list).Add($3, @$);
+		}
+    ;
+
+ident_as_ident
+	: ident AS ident
+		{ $$ = new as_statement($1.name, $3.name); }
+	| ident
+		{ $$ = new as_statement($1.name, $1.name); }
+	;
+
+ident_as_ident_list
+    : ident_as_ident
+        {
+			$$ = new as_statement_list($1 as as_statement, @$);
+		}
+    | ident_as_ident_list COMMA ident_as_ident
+        {
+			$$ = ($1 as as_statement_list).Add($3 as as_statement, @$);
 		}
     ;
 
