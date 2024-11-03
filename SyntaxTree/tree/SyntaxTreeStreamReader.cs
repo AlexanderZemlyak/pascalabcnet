@@ -550,6 +550,8 @@ namespace PascalABCCompiler.SyntaxTree
 					return new global_statement();
 				case 264:
 					return new list_generator();
+				case 265:
+					return new import();
 			}
 			return null;
 		}
@@ -4613,6 +4615,30 @@ namespace PascalABCCompiler.SyntaxTree
 			_list_generator._ident = _read_node() as ident;
 			_list_generator._range = _read_node() as expression;
 			_list_generator._condition = _read_node() as expression;
+		}
+
+
+		public void visit(import _import)
+		{
+			read_import(_import);
+		}
+
+		public void read_import(import _import)
+		{
+			read_statement(_import);
+			if (br.ReadByte() == 0)
+			{
+				_import.modules_names = null;
+			}
+			else
+			{
+				_import.modules_names = new List<ident>();
+				Int32 ssyy_count = br.ReadInt32();
+				for(Int32 ssyy_i = 0; ssyy_i < ssyy_count; ssyy_i++)
+				{
+					_import.modules_names.Add(_read_node() as ident);
+				}
+			}
 		}
 
 	}

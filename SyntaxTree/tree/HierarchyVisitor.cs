@@ -2125,6 +2125,14 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 		}
 
+		public virtual void pre_do_visit(import _import)
+		{
+		}
+
+		public virtual void post_do_visit(import _import)
+		{
+		}
+
 		public override void visit(expression _expression)
 		{
 			DefaultVisit(_expression);
@@ -4393,6 +4401,15 @@ namespace PascalABCCompiler.SyntaxTree
 			visit(list_generator._range);
 			visit(list_generator._condition);
 			post_do_visit(_list_generator);
+		}
+
+		public override void visit(import _import)
+		{
+			DefaultVisit(_import);
+			pre_do_visit(_import);
+			for (int i = 0; i < modules_names.Count; i++)
+				visit(import.modules_names[i]);
+			post_do_visit(_import);
 		}
 	}
 

@@ -13,5 +13,10 @@ namespace Languages.SPython.Frontend.Converters
         {
             DeleteInStatementList(_global_statement);
         }
+
+        public override void visit(import _import)
+        {
+            DeleteInStatementList(_import);
+        }
     }
 }

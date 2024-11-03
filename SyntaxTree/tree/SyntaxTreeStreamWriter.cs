@@ -7280,6 +7280,39 @@ namespace PascalABCCompiler.SyntaxTree
 			}
 		}
 
+
+		public void visit(import _import)
+		{
+			bw.Write((Int16)265);
+			write_import(_import);
+		}
+
+		public void write_import(import _import)
+		{
+			write_statement(_import);
+			if (_import.modules_names == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				bw.Write(_import.modules_names.Count);
+				for(Int32 ssyy_i = 0; ssyy_i < _import.modules_names.Count; ssyy_i++)
+				{
+					if (_import.modules_names[ssyy_i] == null)
+					{
+						bw.Write((byte)0);
+					}
+					else
+					{
+						bw.Write((byte)1);
+						_import.modules_names[ssyy_i].visit(this);
+					}
+				}
+			}
+		}
+
 	}
 
 

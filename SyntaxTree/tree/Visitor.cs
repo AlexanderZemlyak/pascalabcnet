@@ -1594,6 +1594,12 @@ namespace PascalABCCompiler.SyntaxTree
 		///<param name="_list_generator">Node to visit</param>
 		///<returns> Return value is void </returns>
 		void visit(list_generator _list_generator);
+		///<summary>
+		///Method to visit import.
+		///</summary>
+		///<param name="_import">Node to visit</param>
+		///<returns> Return value is void </returns>
+		void visit(import _import);
 	}
 
 

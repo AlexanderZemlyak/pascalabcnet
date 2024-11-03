@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Xml.Serialization;
 using PascalABCCompiler.SyntaxTree;
 using SyntaxVisitors;
 
@@ -13,6 +14,7 @@ namespace Languages.SPython.Frontend.Converters
         HashSet<string> functionParameters = new HashSet<string>();
         SymbolTable localVariables = new SymbolTable();
         HashSet<string> globalVariables = new HashSet<string>();
+        HashSet<string> importedModules = new HashSet<string>();
         bool isInFunctionBody = false;
 
         public AssignToVarConverterVisitor() {
@@ -50,7 +52,11 @@ namespace Languages.SPython.Frontend.Converters
             }
             if (stn is statement_list)
                 localVariables.ClearScope();
-
+            if (stn is program_module pm)
+            {
+                foreach (string module_name in importedModules)
+                    pm.used_units.Add(new unit_or_namespace(new ident_list(new ident(module_name))));
+            }
 
             base.Exit(stn);
         }
@@ -77,6 +83,11 @@ namespace Languages.SPython.Frontend.Converters
             localVariables.Add(_var_statement.var_def.vars.idents[0].name);
         }
 
+        public override void visit(import _import)
+        {
+            importedModules.Add(_import.modules_names[0].name);
+        }
+
         public override void visit(variable_definitions _variable_definitions)
         {
             string variable_name = _variable_definitions.var_definitions[0].vars.idents[0].name;
@@ -87,6 +98,7 @@ namespace Languages.SPython.Frontend.Converters
         {
             if (_assign.to is ident _ident) { 
                 if (
+                    !importedModules.Contains(_ident.name) &&
                     !functionParameters.Contains(_ident.name) &&
                     !localVariables.Contains(_ident.name) &&
                     !functionGlobalVariables.Contains(_ident.name) &&

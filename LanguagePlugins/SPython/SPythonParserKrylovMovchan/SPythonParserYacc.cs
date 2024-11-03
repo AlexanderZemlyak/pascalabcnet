@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 02.11.2024 18:35:21
+// DateTime: 02.11.2024 19:14:19
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -436,15 +436,16 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 3: // import_clause -> IMPORT, ident
 {
-			CurrentSemanticValue.stn = new uses_list(new unit_or_namespace(new ident_list(ValueStack[ValueStack.Depth-1].id as ident, LocationStack[LocationStack.Depth-1]), LocationStack[LocationStack.Depth-1]),LocationStack[LocationStack.Depth-1]);
-			CurrentSemanticValue.stn.source_context = CurrentLocationSpan;
+			CurrentSemanticValue.stn = new import(ValueStack[ValueStack.Depth-1].id as ident, LocationStack[LocationStack.Depth-1]);
+			//$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
+			//$$.source_context = @$;
 		}
         break;
       case 4: // import_or_decl_or_stmt -> stmt
 { CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-1].stn; }
         break;
       case 5: // import_or_decl_or_stmt -> import_or_decl
-{ CurrentSemanticValue.stn = null; }
+{ CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-1].stn; }
         break;
       case 6: // import_or_decl -> proc_func_decl
 {
@@ -454,9 +455,10 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 7: // import_or_decl -> import_clause
 {
-		CurrentSemanticValue.stn = null;
-		imports.AddUsesList(ValueStack[ValueStack.Depth-1].stn as uses_list, CurrentLocationSpan);
-	}
+			CurrentSemanticValue.stn = ValueStack[ValueStack.Depth-1].stn;
+			//$$ = null;
+			//imports.AddUsesList($1 as uses_list, @$);
+		}
         break;
       case 8: // import_and_decl_and_stmt_list -> import_or_decl_or_stmt
 {

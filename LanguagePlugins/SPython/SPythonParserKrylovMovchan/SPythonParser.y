@@ -128,8 +128,9 @@ program
 import_clause
 	: IMPORT ident
 		{
-			$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
-			$$.source_context = @$;
+			$$ = new import($2 as ident, @2);
+			//$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
+			//$$.source_context = @$;
 		}
 	;
 
@@ -137,7 +138,7 @@ import_or_decl_or_stmt
 	: stmt
 		{ $$ = $1; }
 	| import_or_decl
-		{ $$ = null; }
+		{ $$ = $1; }
 	;
 
 import_or_decl
@@ -146,10 +147,12 @@ import_or_decl
 			$$ = null;
 			decl.Add($1 as procedure_definition, @$);
 		}
-	| import_clause {
-		$$ = null;
-		imports.AddUsesList($1 as uses_list, @$);
-	}
+	| import_clause 
+		{
+			$$ = $1;
+			//$$ = null;
+			//imports.AddUsesList($1 as uses_list, @$);
+		}
 	;
 
 import_and_decl_and_stmt_list

@@ -3402,6 +3402,16 @@
         <TagIndices />
       </Tags>
     </SyntaxNode>
+    <SyntaxNode Name="import" BaseName="statement">
+      <Fields>
+        <ExtendedField Name="modules_names" Type="List&lt;ident&gt;" CreateVariable="true" DeleteVariable="false" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
   </SyntaxNodes>
   <Settings>
     <FileName>Tree.cs</FileName>
@@ -3449,6 +3459,7 @@
       <HelpData Key="._range" Value="" />
       <HelpData Key="._realType" Value="" />
       <HelpData Key=".additional_restrictions" Value="" />
+      <HelpData Key=".alias" Value="" />
       <HelpData Key=".aloneparam" Value="" />
       <HelpData Key=".attr" Value="" />
       <HelpData Key=".attributes" Value="" />
@@ -3573,8 +3584,12 @@
       <HelpData Key="array_type.size" Value="" />
       <HelpData Key="as_node" Value="" />
       <HelpData Key="as_node." Value="" />
+      <HelpData Key="as_node.alias" Value="" />
       <HelpData Key="as_node.left" Value="" />
+      <HelpData Key="as_node.name" Value="" />
       <HelpData Key="as_node.right" Value="" />
+      <HelpData Key="as_node_list" Value="" />
+      <HelpData Key="as_node_list.as_nodes" Value="" />
       <HelpData Key="assign" Value="Оператор присваивания" />
       <HelpData Key="assign." Value="" />
       <HelpData Key="assign.assign(addressed_value left,expression ex): this(left,ex,Operators.Assignment)" Value="" />
@@ -4081,6 +4096,8 @@
       <HelpData Key="implementation_node.implementation_definitions" Value="" />
       <HelpData Key="implementation_node.uses_modules" Value="" />
       <HelpData Key="implementation_node.using_namespaces" Value="" />
+      <HelpData Key="import" Value="" />
+      <HelpData Key="import.modules_names" Value="" />
       <HelpData Key="index" Value="" />
       <HelpData Key="index.index_expr" Value="" />
       <HelpData Key="index.inverted" Value="" />
