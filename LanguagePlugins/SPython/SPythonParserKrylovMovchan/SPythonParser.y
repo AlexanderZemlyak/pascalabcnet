@@ -129,9 +129,15 @@ program
 import_clause
 	: IMPORT ident_as_ident_list
 		{
-			$$ = new import($2 as as_statement_list, @2);
-			//$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
-			//$$.source_context = @$;
+			$$ = new import_statement($2 as as_statement_list, @2);
+		}
+	| FROM ident IMPORT ident_as_ident_list 
+		{
+			$$ = new from_import_statement($2 as ident, false, $4 as as_statement_list, @$);
+		}
+	| FROM ident IMPORT STAR 
+		{
+			$$ = new from_import_statement($2 as ident, true, null, @$);
 		}
 	;
 
@@ -151,8 +157,6 @@ import_or_decl
 	| import_clause 
 		{
 			$$ = $1;
-			//$$ = null;
-			//imports.AddUsesList($1 as uses_list, @$);
 		}
 	;
 

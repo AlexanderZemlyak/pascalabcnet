@@ -3402,7 +3402,7 @@
         <TagIndices />
       </Tags>
     </SyntaxNode>
-    <SyntaxNode Name="import" BaseName="statement">
+    <SyntaxNode Name="import_statement" BaseName="statement">
       <Fields>
         <SyntaxField Name="modules_names" SyntaxType="as_statement_list" />
       </Fields>
@@ -3426,6 +3426,18 @@
     <SyntaxNode Name="as_statement_list" BaseName="statement">
       <Fields>
         <ExtendedField Name="as_statements" Type="List&lt;as_statement&gt;" CreateVariable="true" DeleteVariable="false" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="from_import_statement" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="module_name" SyntaxType="ident" />
+        <ExtendedField Name="is_star" Type="bool" CreateVariable="false" DeleteVariable="false" />
+        <SyntaxField Name="imported_names" SyntaxType="as_statement_list" />
       </Fields>
       <Methods />
       <Tags>
@@ -4038,6 +4050,11 @@
       <HelpData Key="fptype_and_expr" Value="" />
       <HelpData Key="fptype_and_expr." Value="" />
       <HelpData Key="fptype_and_expr.typedef" Value="" />
+      <HelpData Key="from_import_statement" Value="" />
+      <HelpData Key="from_import_statement.imported_names" Value="" />
+      <HelpData Key="from_import_statement.is_star" Value="" />
+      <HelpData Key="from_import_statement.module_name" Value="" />
+      <HelpData Key="from_import_statement.modules_names" Value="" />
       <HelpData Key="function_header" Value="" />
       <HelpData Key="function_header.function_header(formal_parameters _parameters, procedure_attributes_list _proc_attributes, method_name _name, where_definition_list _where_defs, type_definition _return_type, SourceContext sc)" Value="" />
       <HelpData Key="function_header.function_header(formal_parameters fp, procedure_attributes_list pal, string name, string returntype)" Value="for sugar" />
@@ -4128,6 +4145,8 @@
       <HelpData Key="implementation_node.using_namespaces" Value="" />
       <HelpData Key="import" Value="" />
       <HelpData Key="import.modules_names" Value="" />
+      <HelpData Key="import_statement" Value="" />
+      <HelpData Key="import_statement.modules_names" Value="" />
       <HelpData Key="index" Value="" />
       <HelpData Key="index.index_expr" Value="" />
       <HelpData Key="index.inverted" Value="" />

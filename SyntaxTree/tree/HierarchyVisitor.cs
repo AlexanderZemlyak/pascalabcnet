@@ -2125,11 +2125,11 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 		}
 
-		public virtual void pre_do_visit(import _import)
+		public virtual void pre_do_visit(import_statement _import_statement)
 		{
 		}
 
-		public virtual void post_do_visit(import _import)
+		public virtual void post_do_visit(import_statement _import_statement)
 		{
 		}
 
@@ -2146,6 +2146,14 @@ namespace PascalABCCompiler.SyntaxTree
 		}
 
 		public virtual void post_do_visit(as_statement_list _as_statement_list)
+		{
+		}
+
+		public virtual void pre_do_visit(from_import_statement _from_import_statement)
+		{
+		}
+
+		public virtual void post_do_visit(from_import_statement _from_import_statement)
 		{
 		}
 
@@ -4419,12 +4427,12 @@ namespace PascalABCCompiler.SyntaxTree
 			post_do_visit(_list_generator);
 		}
 
-		public override void visit(import _import)
+		public override void visit(import_statement _import_statement)
 		{
-			DefaultVisit(_import);
-			pre_do_visit(_import);
-			visit(import.modules_names);
-			post_do_visit(_import);
+			DefaultVisit(_import_statement);
+			pre_do_visit(_import_statement);
+			visit(import_statement.modules_names);
+			post_do_visit(_import_statement);
 		}
 
 		public override void visit(as_statement _as_statement)
@@ -4443,6 +4451,15 @@ namespace PascalABCCompiler.SyntaxTree
 			for (int i = 0; i < as_statements.Count; i++)
 				visit(as_statement_list.as_statements[i]);
 			post_do_visit(_as_statement_list);
+		}
+
+		public override void visit(from_import_statement _from_import_statement)
+		{
+			DefaultVisit(_from_import_statement);
+			pre_do_visit(_from_import_statement);
+			visit(from_import_statement.module_name);
+			visit(from_import_statement.imported_names);
+			post_do_visit(_from_import_statement);
 		}
 	}
 

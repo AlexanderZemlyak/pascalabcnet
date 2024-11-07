@@ -551,11 +551,13 @@ namespace PascalABCCompiler.SyntaxTree
 				case 264:
 					return new list_generator();
 				case 265:
-					return new import();
+					return new import_statement();
 				case 266:
 					return new as_statement();
 				case 267:
 					return new as_statement_list();
+				case 268:
+					return new from_import_statement();
 			}
 			return null;
 		}
@@ -4622,15 +4624,15 @@ namespace PascalABCCompiler.SyntaxTree
 		}
 
 
-		public void visit(import _import)
+		public void visit(import_statement _import_statement)
 		{
-			read_import(_import);
+			read_import_statement(_import_statement);
 		}
 
-		public void read_import(import _import)
+		public void read_import_statement(import_statement _import_statement)
 		{
-			read_statement(_import);
-			_import.modules_names = _read_node() as as_statement_list;
+			read_statement(_import_statement);
+			_import_statement.modules_names = _read_node() as as_statement_list;
 		}
 
 
@@ -4668,6 +4670,20 @@ namespace PascalABCCompiler.SyntaxTree
 					_as_statement_list.as_statements.Add(_read_node() as as_statement);
 				}
 			}
+		}
+
+
+		public void visit(from_import_statement _from_import_statement)
+		{
+			read_from_import_statement(_from_import_statement);
+		}
+
+		public void read_from_import_statement(from_import_statement _from_import_statement)
+		{
+			read_statement(_from_import_statement);
+			_from_import_statement.module_name = _read_node() as ident;
+			_from_import_statement.is_star = br.ReadBoolean();
+			_from_import_statement.imported_names = _read_node() as as_statement_list;
 		}
 
 	}

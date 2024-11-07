@@ -56504,13 +56504,13 @@ namespace PascalABCCompiler.SyntaxTree
 	///
 	///</summary>
 	[Serializable]
-	public partial class import : statement
+	public partial class import_statement : statement
 	{
 
 		///<summary>
 		///Конструктор без параметров.
 		///</summary>
-		public import()
+		public import_statement()
 		{
 
 		}
@@ -56518,7 +56518,7 @@ namespace PascalABCCompiler.SyntaxTree
 		///<summary>
 		///Конструктор с параметрами.
 		///</summary>
-		public import(as_statement_list _modules_names)
+		public import_statement(as_statement_list _modules_names)
 		{
 			this._modules_names=_modules_names;
 			FillParentsInDirectChilds();
@@ -56527,7 +56527,7 @@ namespace PascalABCCompiler.SyntaxTree
 		///<summary>
 		///Конструктор с параметрами.
 		///</summary>
-		public import(as_statement_list _modules_names,SourceContext sc)
+		public import_statement(as_statement_list _modules_names,SourceContext sc)
 		{
 			this._modules_names=_modules_names;
 			source_context = sc;
@@ -56556,7 +56556,7 @@ namespace PascalABCCompiler.SyntaxTree
 		/// <summary> Создает копию узла </summary>
 		public override syntax_tree_node Clone()
 		{
-			import copy = new import();
+			import_statement copy = new import_statement();
 			copy.Parent = this.Parent;
 			if (source_context != null)
 				copy.source_context = new SourceContext(source_context);
@@ -56574,9 +56574,9 @@ namespace PascalABCCompiler.SyntaxTree
 		}
 
 		/// <summary> Получает копию данного узла корректного типа </summary>
-		public new import TypedClone()
+		public new import_statement TypedClone()
 		{
-			return Clone() as import;
+			return Clone() as import_statement;
 		}
 
 		///<summary> Заполняет поля Parent в непосредственных дочерних узлах </summary>
@@ -57162,6 +57162,215 @@ namespace PascalABCCompiler.SyntaxTree
 						as_statements[index_counter]= (as_statement)value;
 						return;
 					}
+				}
+			}
+		}
+		///<summary>
+		///Метод для обхода дерева посетителем
+		///</summary>
+		///<param name="visitor">Объект-посетитель.</param>
+		///<returns>Return value is void</returns>
+		public override void visit(IVisitor visitor)
+		{
+			visitor.visit(this);
+		}
+
+	}
+
+
+	///<summary>
+	///
+	///</summary>
+	[Serializable]
+	public partial class from_import_statement : statement
+	{
+
+		///<summary>
+		///Конструктор без параметров.
+		///</summary>
+		public from_import_statement()
+		{
+
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public from_import_statement(ident _module_name,bool _is_star,as_statement_list _imported_names)
+		{
+			this._module_name=_module_name;
+			this._is_star=_is_star;
+			this._imported_names=_imported_names;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public from_import_statement(ident _module_name,bool _is_star,as_statement_list _imported_names,SourceContext sc)
+		{
+			this._module_name=_module_name;
+			this._is_star=_is_star;
+			this._imported_names=_imported_names;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+		protected ident _module_name;
+		protected bool _is_star;
+		protected as_statement_list _imported_names;
+
+		///<summary>
+		///
+		///</summary>
+		public ident module_name
+		{
+			get
+			{
+				return _module_name;
+			}
+			set
+			{
+				_module_name=value;
+				if (_module_name != null)
+					_module_name.Parent = this;
+			}
+		}
+
+		///<summary>
+		///
+		///</summary>
+		public bool is_star
+		{
+			get
+			{
+				return _is_star;
+			}
+			set
+			{
+				_is_star=value;
+			}
+		}
+
+		///<summary>
+		///
+		///</summary>
+		public as_statement_list imported_names
+		{
+			get
+			{
+				return _imported_names;
+			}
+			set
+			{
+				_imported_names=value;
+				if (_imported_names != null)
+					_imported_names.Parent = this;
+			}
+		}
+
+
+		/// <summary> Создает копию узла </summary>
+		public override syntax_tree_node Clone()
+		{
+			from_import_statement copy = new from_import_statement();
+			copy.Parent = this.Parent;
+			if (source_context != null)
+				copy.source_context = new SourceContext(source_context);
+			if (attributes != null)
+			{
+				copy.attributes = (attribute_list)attributes.Clone();
+				copy.attributes.Parent = copy;
+			}
+			if (module_name != null)
+			{
+				copy.module_name = (ident)module_name.Clone();
+				copy.module_name.Parent = copy;
+			}
+			copy.is_star = is_star;
+			if (imported_names != null)
+			{
+				copy.imported_names = (as_statement_list)imported_names.Clone();
+				copy.imported_names.Parent = copy;
+			}
+			return copy;
+		}
+
+		/// <summary> Получает копию данного узла корректного типа </summary>
+		public new from_import_statement TypedClone()
+		{
+			return Clone() as from_import_statement;
+		}
+
+		///<summary> Заполняет поля Parent в непосредственных дочерних узлах </summary>
+		public override void FillParentsInDirectChilds()
+		{
+			if (attributes != null)
+				attributes.Parent = this;
+			if (module_name != null)
+				module_name.Parent = this;
+			if (imported_names != null)
+				imported_names.Parent = this;
+		}
+
+		///<summary> Заполняет поля Parent во всем поддереве </summary>
+		public override void FillParentsInAllChilds()
+		{
+			FillParentsInDirectChilds();
+			attributes?.FillParentsInAllChilds();
+			module_name?.FillParentsInAllChilds();
+			imported_names?.FillParentsInAllChilds();
+		}
+
+		///<summary>
+		///Свойство для получения количества всех подузлов без элементов поля типа List
+		///</summary>
+		public override Int32 subnodes_without_list_elements_count
+		{
+			get
+			{
+				return 2;
+			}
+		}
+		///<summary>
+		///Свойство для получения количества всех подузлов. Подузлом также считается каждый элемент поля типа List
+		///</summary>
+		public override Int32 subnodes_count
+		{
+			get
+			{
+				return 2;
+			}
+		}
+		///<summary>
+		///Индексатор для получения всех подузлов
+		///</summary>
+		public override syntax_tree_node this[Int32 ind]
+		{
+			get
+			{
+				if(subnodes_count == 0 || ind < 0 || ind > subnodes_count-1)
+					throw new IndexOutOfRangeException();
+				switch(ind)
+				{
+					case 0:
+						return module_name;
+					case 1:
+						return imported_names;
+				}
+				return null;
+			}
+			set
+			{
+				if(subnodes_count == 0 || ind < 0 || ind > subnodes_count-1)
+					throw new IndexOutOfRangeException();
+				switch(ind)
+				{
+					case 0:
+						module_name = (ident)value;
+						break;
+					case 1:
+						imported_names = (as_statement_list)value;
+						break;
 				}
 			}
 		}

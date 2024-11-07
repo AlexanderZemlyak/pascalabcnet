@@ -7281,23 +7281,23 @@ namespace PascalABCCompiler.SyntaxTree
 		}
 
 
-		public void visit(import _import)
+		public void visit(import_statement _import_statement)
 		{
 			bw.Write((Int16)265);
-			write_import(_import);
+			write_import_statement(_import_statement);
 		}
 
-		public void write_import(import _import)
+		public void write_import_statement(import_statement _import_statement)
 		{
-			write_statement(_import);
-			if (_import.modules_names == null)
+			write_statement(_import_statement);
+			if (_import_statement.modules_names == null)
 			{
 				bw.Write((byte)0);
 			}
 			else
 			{
 				bw.Write((byte)1);
-				_import.modules_names.visit(this);
+				_import_statement.modules_names.visit(this);
 			}
 		}
 
@@ -7361,6 +7361,37 @@ namespace PascalABCCompiler.SyntaxTree
 						_as_statement_list.as_statements[ssyy_i].visit(this);
 					}
 				}
+			}
+		}
+
+
+		public void visit(from_import_statement _from_import_statement)
+		{
+			bw.Write((Int16)268);
+			write_from_import_statement(_from_import_statement);
+		}
+
+		public void write_from_import_statement(from_import_statement _from_import_statement)
+		{
+			write_statement(_from_import_statement);
+			if (_from_import_statement.module_name == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_from_import_statement.module_name.visit(this);
+			}
+			bw.Write(_from_import_statement.is_star);
+			if (_from_import_statement.imported_names == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_from_import_statement.imported_names.visit(this);
 			}
 		}
 
