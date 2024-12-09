@@ -205,7 +205,7 @@ namespace SLangParser
             //    tokens = tokens.Except((new string[] { "tkAbstract", "tkOverload", "tkReintroduce", "tkOverride", "tkVirtual", "tkAt", "tkOn", "tkName", "tkForward", "tkRead", "tkWrite" })).ToList();
 
             // Добавляем фиктивный токен, что означает, что далее могут идти несколько токенов, начинающих выражение
-            if (tokens.Contains("FOR") && tokens.Contains("IF") && tokens.Contains("WHILE") && tokens.Contains("DEF"))
+            if (tokens.Contains("FOR") && tokens.Contains("IF") && tokens.Contains("WHILE") && tokens.Contains("FN"))
             {
                 tokens.Clear();
                 tokens.Add("STATEMENT");

@@ -60,6 +60,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCompletion", "CodeCompletion\CodeCompletion.csproj", "{1AB15F6E-C22E-499A-A7ED-54BA7DE5CFA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LanguagePlugins", "LanguagePlugins", "{BB6973BA-B3A2-4B31-A986-7CB008F22C4F}"
+	ProjectSection(SolutionItems) = preProject
+		LanguagePlugins\Integrating new language.md = LanguagePlugins\Integrating new language.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trees", "Trees", "{94EED2FF-0641-4562-8167-CBC280A733AF}"
 EndProject
@@ -114,6 +117,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyntaxTreeConverters", "SyntaxTreeConverters\SyntaxTreeConverters.csproj", "{F10A5330-DCF4-4533-877C-7B1B1BE23884}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SPython", "SPython", "{C12F6C91-460E-4C66-9572-D4D5AB169DF9}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Lib\SpythonHidden.pas = bin\Lib\SpythonHidden.pas
+		bin\Lib\spython_unit.yavb = bin\Lib\spython_unit.yavb
+		bin\Lib\SPythonSystem.pas = bin\Lib\SPythonSystem.pas
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyntaxTreeConverters", "SyntaxTreeConverters", "{E51C8CE6-9785-4666-9CD2-BADB728933E3}"
 EndProject
@@ -124,6 +132,23 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPythonParser", "LanguagePlugins\SPython\SPythonParserKrylovMovchan\SPythonParser.csproj", "{81FE2BAA-D100-4596-A392-F03BBE30F829}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPythonLanguageInfo", "LanguagePlugins\SPython\SPythonLanguageInfo\SPythonLanguageInfo.csproj", "{DFF88E9F-AFB3-4986-84FE-77F8A04CB6F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLang", "SLang", "{48D02DE9-F1F9-4268-A251-6FE3CAFC10A1}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Lib\SLangSystem.pas = bin\Lib\SLangSystem.pas
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SemanticAnalyzers", "SemanticAnalyzers", "{9C79E608-B130-40BD-9A6F-00993059BEF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangSyntaxTreeVisitor", "LanguagePlugins\SLang\SemanticAnalyzers\SLangSyntaxTreeVisitor\SLangSyntaxTreeVisitor.csproj", "{EC0DD357-918E-46A3-8E07-E6A32C436703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLanguageInfo", "LanguagePlugins\SLang\SLanguageInfo\SLanguageInfo.csproj", "{D508E0CC-13AC-49B3-91D1-4465EB320453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangParser", "LanguagePlugins\SLang\SLangParser\SLangParser.csproj", "{5E089C76-32A6-406A-857C-B15ACDFDB051}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyntaxTreeConverters", "SyntaxTreeConverters", "{D261C188-F555-4A20-9538-E80648CE191A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangStandardTreeConverter", "LanguagePlugins\SLang\SyntaxTreeConverters\SLangStandardTreeConverter\SLangStandardTreeConverter.csproj", "{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -585,6 +610,54 @@ Global
 		{DFF88E9F-AFB3-4986-84FE-77F8A04CB6F0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DFF88E9F-AFB3-4986-84FE-77F8A04CB6F0}.Release|x86.ActiveCfg = Release|Any CPU
 		{DFF88E9F-AFB3-4986-84FE-77F8A04CB6F0}.Release|x86.Build.0 = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC0DD357-918E-46A3-8E07-E6A32C436703}.Release|x86.Build.0 = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Debug|x86.Build.0 = Debug|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|x86.ActiveCfg = Release|Any CPU
+		{D508E0CC-13AC-49B3-91D1-4465EB320453}.Release|x86.Build.0 = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E089C76-32A6-406A-857C-B15ACDFDB051}.Release|x86.Build.0 = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Debug|x86.Build.0 = Debug|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -639,6 +712,13 @@ Global
 		{431AA1A0-81B9-4D93-9CB1-219BDF7825C9} = {E51C8CE6-9785-4666-9CD2-BADB728933E3}
 		{81FE2BAA-D100-4596-A392-F03BBE30F829} = {C12F6C91-460E-4C66-9572-D4D5AB169DF9}
 		{DFF88E9F-AFB3-4986-84FE-77F8A04CB6F0} = {C12F6C91-460E-4C66-9572-D4D5AB169DF9}
+		{48D02DE9-F1F9-4268-A251-6FE3CAFC10A1} = {BB6973BA-B3A2-4B31-A986-7CB008F22C4F}
+		{9C79E608-B130-40BD-9A6F-00993059BEF0} = {48D02DE9-F1F9-4268-A251-6FE3CAFC10A1}
+		{EC0DD357-918E-46A3-8E07-E6A32C436703} = {9C79E608-B130-40BD-9A6F-00993059BEF0}
+		{D508E0CC-13AC-49B3-91D1-4465EB320453} = {48D02DE9-F1F9-4268-A251-6FE3CAFC10A1}
+		{5E089C76-32A6-406A-857C-B15ACDFDB051} = {48D02DE9-F1F9-4268-A251-6FE3CAFC10A1}
+		{D261C188-F555-4A20-9538-E80648CE191A} = {48D02DE9-F1F9-4268-A251-6FE3CAFC10A1}
+		{9B39B142-6F3A-4CD7-BEFC-6C17564539D4} = {D261C188-F555-4A20-9538-E80648CE191A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68E993E6-EE86-4DDF-B0A1-4FE884F8AC39}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{D508E0CC-13AC-49B3-91D1-4465EB320453}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>SLanguageInfo</RootNamespace>
+        <AssemblyName>SLanguageInfo</AssemblyName>
+        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>..\..\..\bin\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>..\..\..\bin\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Include="SLanguage.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\LambdaAnySynToSemConverter\LambdaAnySynToSemConverter.csproj">
+        <Project>{27d9800e-2689-4aa1-a2d6-128e4a9bae98}</Project>
+        <Name>LambdaAnySynToSemConverter</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\LanguageIntegrator\LanguageIntegrator.csproj">
+        <Project>{a48d9069-d569-4110-9252-a10f139b669b}</Project>
+        <Name>LanguageIntegrator</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\ParserTools\ParserTools.csproj">
+        <Project>{af2efd7b-69dd-4b43-af65-b59b29349c23}</Project>
+        <Name>ParserTools</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\SyntaxVisitors\SyntaxVisitors.csproj">
+        <Project>{a9ab4282-83b4-41a7-86c3-e5bf6a45e7e2}</Project>
+        <Name>SyntaxVisitors</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\TreeConverter\TreeConverter.csproj">
+        <Project>{1c9c945a-586d-42a2-a06b-65d84fa7ff78}</Project>
+        <Name>TreeConverter</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\SemanticAnalyzers\SLangSyntaxTreeVisitor\SLangSyntaxTreeVisitor.csproj">
+        <Project>{ec0dd357-918e-46a3-8e07-e6a32c436703}</Project>
+        <Name>SLangSyntaxTreeVisitor</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\SLangParser\SLangParser.csproj">
+        <Project>{5e089c76-32a6-406a-857c-b15acdfdb051}</Project>
+        <Name>SLangParser</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\SyntaxTreeConverters\SLangStandardTreeConverter\SLangStandardTreeConverter.csproj">
+        <Project>{9b39b142-6f3a-4cd7-befc-6c17564539d4}</Project>
+        <Name>SLangStandardTreeConverter</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

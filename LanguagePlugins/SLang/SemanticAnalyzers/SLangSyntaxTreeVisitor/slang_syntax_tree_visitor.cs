@@ -13,9 +13,9 @@ using PascalABCCompiler.Errors;
 
 namespace SLangSyntaxTreeVisitor
 {
-    public class spython_syntax_tree_visitor : syntax_tree_visitor
+    public class slang_syntax_tree_visitor : syntax_tree_visitor
     {
-        public spython_syntax_tree_visitor(): base()
+        public slang_syntax_tree_visitor(): base()
         {
             OnLeave = RunAdditionalChecks;
         }

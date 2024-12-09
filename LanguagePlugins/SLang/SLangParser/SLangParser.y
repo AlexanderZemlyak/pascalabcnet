@@ -39,16 +39,16 @@
 %namespace SLangParserYacc
 
 %union {
-	public expression ex;
-	public ident id;
-    public Object ob;
-    public op_type_node op;
-    public syntax_tree_node stn;
-    public token_info ti;
-    public type_definition td;
+public expression ex;
+public ident id;
+public Object ob;
+public op_type_node op;
+public syntax_tree_node stn;
+public token_info ti;
+public type_definition td;
 }
 
-%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL
+%token <ti> FOR IN WHILE IF ELSE ELIF FN RETURN BREAK CONTINUE IMPORT FROM GLOBAL LET
 %token <ex> INTNUM REALNUM TRUE FALSE
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON INDENT UNINDENT ARROW
 %token <stn> STRINGNUM
@@ -91,146 +91,106 @@ param	= parameter
 assign	= assignment
 form	= formal
 sect	= section
-act		= actual
+act	= actual
 */
 
 %%
-program
-	: import_clause decl_and_stmt_list optional_semicolon
-		{
-			// main program
-			if (!is_unit_to_be_parsed) {
-				var ul = $1 as uses_list;
-				var stl = $2 as statement_list;
-				stl.left_logical_bracket = new token_info("");
-				stl.right_logical_bracket = new token_info("");
-				var bl = new block(decl, stl, @2);
-				decl.AddFirst(decl_forward.defs);
-				root = $$ = NewProgramModule(null, null, ul, bl, $3, @$);
-				root.source_context = bl.source_context;
-			}
-			// unit
-			else {
-				decl.AddFirst(decl_forward.defs);
-				var interface_part = new interface_node(decl as declarations, $1 as uses_list, null, null);
-				var initialization_part = new initfinal_part(null, $2 as statement_list, null, null, null, @$);
-
-				root = $$ = new unit_module(
-					new unit_name(new ident(Path.GetFileNameWithoutExtension(parserTools.currentFileName)),
-					UnitHeaderKeyword.Unit, @$), interface_part, null,
-					initialization_part.initialization_sect,
-					initialization_part.finalization_sect, null, @$);
-			}
-
-		}
+program	: import_clause decl_and_stmt_list optional_semicolon {
+	// main program
+	var ul = $1 as uses_list;
+	var stl = $2 as statement_list;
+	stl.left_logical_bracket = new token_info("");
+	stl.right_logical_bracket = new token_info("");
+	var bl = new block(decl, stl, @2);
+	decl.AddFirst(decl_forward.defs);
+	root = $$ = NewProgramModule(null, null, ul, bl, $3, @$);
+	root.source_context = bl.source_context;
+	}
 	;
 
-import_clause
-	:
-		{
-			$$ = null;
-		}
-	| import_clause import_clause_one
-		{
-   			if (parserTools.build_tree_for_formatter)
-   			{
-	        	if ($1 == null)
-                {
-	        		$$ = new uses_closure($2 as uses_list,@$);
-                }
-	        	else {
-                    ($1 as uses_closure).AddUsesList($2 as uses_list,@$);
-                    $$ = $1;
-                }
-   			}
-   			else
-   			{
-	        	if ($1 == null)
-                {
-                    $$ = $2;
-                    $$.source_context = @$;
-                }
-	        	else
-                {
-                    ($1 as uses_list).AddUsesList($2 as uses_list,@$);
-                    $$ = $1;
-                    $$.source_context = @$;
-                }
+import_clause 	: { $$ = null; }
+		| import_clause import_clause_one {
+		if (parserTools.build_tree_for_formatter) {
+			if ($1 == null) {	
+				$$ = new uses_closure($2 as uses_list,@$);
+			} else {
+			    ($1 as uses_closure).AddUsesList($2 as uses_list,@$);
+			    $$ = $1;
+			}
+		} else {
+			if ($1 == null) {
+			    $$ = $2;
+			    $$.source_context = @$;
+			} else {
+			    ($1 as uses_list).AddUsesList($2 as uses_list,@$);
+			    $$ = $1;
+			    $$.source_context = @$;
 			}
 		}
-	;
+		}
+		;
 
-import_clause_one
-	: IMPORT ident SEMICOLON
-		{
+import_clause_one	: IMPORT ident SEMICOLON {
 			$$ = new uses_list(new unit_or_namespace(new ident_list($2 as ident, @2), @2),@2);
 			$$.source_context = @$;
-		}
+			}
+			;
+
+decl_or_stmt	: stmt { $$ = $1; }
+		| decl { $$ = null; }
+		;
+
+decl	: proc_func_decl {
+		$$ = null;
+		decl.Add($1 as procedure_definition, @$);
+	}
 	;
 
-decl_or_stmt
-	: stmt
-		{ $$ = $1; }
-	| decl
-		{ $$ = null; }
-	;
-
-decl
-	: proc_func_decl
-		{
-			$$ = null;
-			decl.Add($1 as procedure_definition, @$);
-		}
-	;
-
-decl_and_stmt_list
-	: decl_or_stmt
-		{
+decl_and_stmt_list	: decl_or_stmt {
 			if ($1 is statement st)
 				$$ = new statement_list($1 as statement, @1);
 			else
 				$$ =  new statement_list();
-		}
-	| decl_and_stmt_list SEMICOLON decl_or_stmt
-		{
-			if ($3 is statement st)
+			}
+			| decl_and_stmt_list decl_or_stmt {
+			if ($2 is statement st)
 				$$ = ($1 as statement_list).Add(st, @$);
 			else
 				$$ = ($1 as statement_list);
-		}
-	;
+			}
+			;
 
 stmt_list
 	: stmt
 		{
 			$$ = new statement_list($1 as statement, @1);
 		}
-	| stmt_list SEMICOLON stmt
+	| stmt_list stmt
 		{
-			$$ = ($1 as statement_list).Add($3 as statement, @$);
+			$$ = ($1 as statement_list).Add($2 as statement, @$);
 		}
 	;
 
 stmt
-	: assign_stmt
+	: assign_stmt SEMICOLON
 		{ $$ = $1; }
 	//| block
 	//	{ $$ = $1; }
-	| var_stmt
+	| var_stmt SEMICOLON
 		{ $$ = $1; }
 	| if_stmt
 		{ $$ = $1; }
-	| proc_func_call_stmt
+	| proc_func_call_stmt SEMICOLON
 		{ $$ = $1; }
 	| while_stmt
 		{ $$ = $1; }
 	| for_stmt
 		{ $$ = $1; }
-	| return_stmt
+	| return_stmt SEMICOLON
 		{ $$ = $1; }
-	| break_stmt
+	| break_stmt SEMICOLON
 		{ $$ = $1; }
-	| continue_stmt
+	| continue_stmt SEMICOLON
 		{ $$ = $1; }
 	| global_stmt
 		{ $$ = $1; }
@@ -274,7 +234,7 @@ dotted_ident
 	;
 
 dotted_ident_list
-    : dotted_ident
+     : dotted_ident
         {
 			$$ = new ident_list($1, @$);
 		}
@@ -285,13 +245,13 @@ dotted_ident_list
     ;
 
 var_stmt
-	: variable COLON simple_type_identifier ASSIGN expr
+	: LET variable COLON simple_type_identifier ASSIGN expr
 		{
-			var vds = new var_def_statement(new ident_list($1 as ident, @1), $3, $5, definition_attribute.None, false, @$);
+			var vds = new var_def_statement(new ident_list($2 as ident, @2), $4, $6, definition_attribute.None, false, @$);
 
-			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
+			if ($2 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 					globalVariables.Add(id.name);
-					$$ = new assign(id as addressed_value, $5, $4.type, @$);
+					$$ = new assign(id as addressed_value, $6, $5.type, @$);
 					decl.Add(new variable_definitions(vds, @$), @$);
 			}
 			else
@@ -300,11 +260,11 @@ var_stmt
 	;
 
 assign_stmt
-	: variable ASSIGN expr
+	: LET variable ASSIGN expr
 		{
-			var ass = new assign($1 as addressed_value, $3, $2.type, @$);
+			var ass = new assign($2 as addressed_value, $4, $3.type, @$);
 
-			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
+			if ($2 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
 				ass.first_assignment_defines_type = true;
 				type_definition ntr = new named_type_reference(new ident("integer"));
@@ -314,9 +274,9 @@ assign_stmt
 			
 			$$ = ass;
 
-			/*if ($1 is ident id) {
+			/*if ($2 is ident id) {
 				// объявление
-				if (!isInsideFunction && ($2 != null || (!symbolTable.Contains(id.name) && (isInsideFunction || !globalVariables.Contains(id.name))))) {
+				if (!isInsideFunction && ($3 != null || (!symbolTable.Contains(id.name) && (isInsideFunction || !globalVariables.Contains(id.name))))) {
 
 					// объявление глобальной переменной
 					if (symbolTable.OuterScope == null) {
@@ -324,17 +284,17 @@ assign_stmt
 							parserTools.AddErrorFromResource("This variable is declared before", @$);
 						}
 						else {
-							var ass = new assign(id as addressed_value, $3, $2.type, @$);
+							var ass = new assign(id as addressed_value, $4, $3.type, @$);
 							globalVariables.Add(id.name);
 
 							type_definition ntr;
 
-							if ($2 == null) {
+							if ($3 == null) {
 								ntr = new named_type_reference(new ident("integer"));
-								// ntr = (new same_type_node($3) as type_definition);
+								// ntr = (new same_type_node($4) as type_definition);
 								ass.first_assignment_defines_type = true;
 							}
-							else ntr = $2 as type_definition;
+							else ntr = $3 as type_definition;
 
 							var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
 							decl.Add(new variable_definitions(vds, @$), @$);
@@ -343,18 +303,18 @@ assign_stmt
 					}
 					// объявление локальной переменной
 					else {
-						var vds = new var_def_statement(new ident_list(id, @1), $2, $3, definition_attribute.None, false, @$);
+						var vds = new var_def_statement(new ident_list(id, @1), $3, $4, definition_attribute.None, false, @$);
 						symbolTable.Add(id.name);
 						$$ = new var_statement(vds, @$);
 					}
 				}
 				// присваивание
 				else {
-					$$ = new assign(id as addressed_value, $3, $2.type, @$);
+					$$ = new assign(id as addressed_value, $4, $3.type, @$);
 				}
 			}
 			else {
-				$$ = new assign($1 as addressed_value, $3, $2.type, @$);
+				$$ = new assign($2 as addressed_value, $4, $3.type, @$);
 			}*/
 		}
 	| variable assign_type expr
@@ -442,39 +402,36 @@ expr_list
 	;
 
 if_stmt
-	: IF expr COLON block optional_elif
+	: IF expr block optional_elif
 		{
-			$$ = new if_node($2, $4 as statement, $5 as statement, @$);
+			$$ = new if_node($2, $3 as statement, $4 as statement, @$);
 		}
 	;
 
 optional_elif
-	: ELIF expr COLON block optional_elif
+	: ELIF expr block optional_elif
 		{
-			$$ = new if_node($2, $4 as statement, $5 as statement, @$);
+			$$ = new if_node($2, $3 as statement, $4 as statement, @$);
 		}
-	| optional_else
-		{ $$ = $1; }
+	| optional_else { $$ = $1; }
 	;
 
 optional_else
-	: ELSE COLON block
-		{ $$ = $3; }
-	|
-		{ $$ = null; }
+	: ELSE block { $$ = $2; }
+	| { $$ = null; }
 	;
 
 while_stmt
-	: WHILE expr COLON block
+	: WHILE expr block
 		{
-			$$ = new while_node($2, $4 as statement, WhileCycleType.While, @$);
+			$$ = new while_node($2, $3 as statement, WhileCycleType.While, @$);
 		}
 	;
 
 for_stmt
-	: FOR ident IN expr COLON block
+	: FOR ident IN expr block
 		{
-			$$ = new foreach_stmt($2, new no_type_foreach(), $4, (statement)$6, null, @$);
+			$$ = new foreach_stmt($2, new no_type_foreach(), $4, (statement)$5, null, @$);
 		}
 	;
 
@@ -604,40 +561,26 @@ optional_condition
 	;
 
 block
-	: NestedSymbolTableBegin INDENT stmt_list SEMICOLON UNINDENT NestedSymbolTableEnd
+	: LBRACE stmt_list RBRACE
 		{
-			$$ = $3 as statement_list;
-			($$ as statement_list).left_logical_bracket = $2;
-			($$ as statement_list).right_logical_bracket = $4;
-			$$.source_context = LexLocation.MergeAll(@2,@3,@4);
-		}
-	;
-
-NestedSymbolTableBegin
-	:
-		{
-			ScopeCounter++;
-		}
-	;
-
-NestedSymbolTableEnd
-	:
-		{
-			ScopeCounter--;
+			$$ = $2 as statement_list;
+			($$ as statement_list).left_logical_bracket = $1;
+			($$ as statement_list).right_logical_bracket = $3;
+			$$.source_context = LexLocation.MergeAll(@1,@2,@3);
 		}
 	;
 
 proc_func_decl
-	: NestedSymbolTableBegin proc_func_header InsideFunction block OutsideFunction NestedSymbolTableEnd
+	: proc_func_header InsideFunction block OutsideFunction
 		{
 			//var pd1 = new procedure_definition($1 as procedure_header, new block(null, $2 as statement_list, @2), @$);
 			//pd1.AssignAttrList(null);
 			//$$ = pd1;
-			$$ = new procedure_definition($2 as procedure_header, new block(null, $4 as statement_list, @4), @$);
+			$$ = new procedure_definition($1 as procedure_header, new block(null, $3 as statement_list, @3), @$);
 
-			var pd = new procedure_definition($2 as procedure_header, null, @2);
-            pd.proc_header.proc_attributes.Add(new procedure_attribute(proc_attribute.attr_forward));
-			decl_forward.Add(pd, @2);
+			var pd = new procedure_definition($1 as procedure_header, null, @1);
+            		pd.proc_header.proc_attributes.Add(new procedure_attribute(proc_attribute.attr_forward));
+			decl_forward.Add(pd, @1);
 		}
 	;
 
@@ -656,11 +599,11 @@ OutsideFunction
 	;
 
 proc_func_header
-	: DEF func_name_ident LPAR optional_form_param_list RPAR COLON
+	: FN func_name_ident LPAR optional_form_param_list RPAR
 		{
 			$$ = new procedure_header($4 as formal_parameters, new procedure_attributes_list(new List<procedure_attribute>(), @$), new method_name(null,null, $2, null, @$), null, @$);
 		}
-	| DEF func_name_ident LPAR optional_form_param_list RPAR ARROW form_param_type COLON
+	| FN func_name_ident LPAR optional_form_param_list RPAR ARROW form_param_type
 		{
 			$$ = new function_header($4 as formal_parameters, new procedure_attributes_list(new List<procedure_attribute>(), @$), new method_name(null,null, $2, null, @$), null, $7 as type_definition, @$);
 		}

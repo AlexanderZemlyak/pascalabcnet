@@ -1,28 +1,27 @@
 ﻿using System.Collections.Generic;
 using Languages.Facade;
-using Languages.Pascal.Frontend.Converters;
-using PascalABCCompiler.Parsers;
 using PascalABCCompiler.SyntaxTreeConverters;
 using PascalABCCompiler.SystemLibrary;
 using PascalABCCompiler.TreeConverter;
-using SLangParser;
 
-namespace SLangInfo {
-    class SLanguage: BaseLanguage {
+namespace Languages.SLang 
+{
+    public class SLanguage: BaseLanguage 
+    {
         public SLanguage() : base(
             name: "SLang",
             version: "0.0.1",
             copyright: "Copyright © 2024 by Stanislav Leonchik",
 
-            parser: new SLangLanguageParser(),
+            parser: new SLangParser.SLangLanguageParser(),
             docParser: null,
 
-            syntaxTreeConverters: new List<ISyntaxTreeConverter>() { new StandardSyntaxTreeConverter(), new SyntaxSemanticVisitors.LambdaAnyConverter() },
-            syntaxTreeToSemanticTreeConverter: new SLangSyntaxTreeVisitor.spython_syntax_tree_visitor(),
+            syntaxTreeConverters: new List<ISyntaxTreeConverter>() { new Frontend.Converters.StandardSyntaxTreeConverter(), new SyntaxSemanticVisitors.LambdaAnyConverter() },
+            syntaxTreeToSemanticTreeConverter: new SLangSyntaxTreeVisitor.slang_syntax_tree_visitor(),
 
             filesExtensions: new string[] { ".slang" },
             caseSensitive: false,
-            systemUnitNames: new string[] { "SlangSystem", "SlangHidden" }
+            systemUnitNames: new string[] { "SlangSystem" }
             )
         { }
 
@@ -50,7 +49,7 @@ namespace SLangInfo {
 
         public override void SetSyntaxTreeToSemanticTreeConverter()
         {
-            // SyntaxTreeToSemanticTreeConverter = new SLangSyntaxTreeVisitor.spython_syntax_tree_visitor();
+            SyntaxTreeToSemanticTreeConverter = new SLangSyntaxTreeVisitor.slang_syntax_tree_visitor();
         }
     }
 }

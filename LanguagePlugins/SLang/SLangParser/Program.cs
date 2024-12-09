@@ -7,7 +7,7 @@ using static System.Console;
 namespace SLangParser {
     internal class Program {
         static void Main(string[] args) {
-            string fileName = "/Users/controldata/GitHub/pascalabcnet/LanguagePlugins/SLang/SLangParser/InputCode.spy";
+            string fileName = "/Users/controldata/GitHub/pascalabcnet/LanguagePlugins/SLang/SLangParser/InputCode.slang";
             string inputCode = "";
             try {
                 using (StreamReader sr = new StreamReader(fileName)) {
