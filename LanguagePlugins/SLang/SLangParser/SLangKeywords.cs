@@ -24,7 +24,7 @@ namespace SLangParser {
                 ["and"] = (int)Tokens.AND,
                 ["or"] = (int)Tokens.OR,
                 ["not"] = (int)Tokens.NOT,
-                ["import"] = (int)Tokens.IMPORT,
+                ["use"] = (int)Tokens.USE,
                 ["from"] = (int)Tokens.FROM,
                 ["global"] = (int)Tokens.GLOBAL,
                 ["True"] = (int)Tokens.TRUE,

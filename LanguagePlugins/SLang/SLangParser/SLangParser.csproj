@@ -33,6 +33,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+      <Content Include="..\..\..\bin\Highlighting\SLang.xshd">
+        <Link>SLang.xshd</Link>
+      </Content>
       <Content Include="..\..\..\_ReBuildRelease.bat">
         <Link>_ReBuildRelease.bat</Link>
       </Content>

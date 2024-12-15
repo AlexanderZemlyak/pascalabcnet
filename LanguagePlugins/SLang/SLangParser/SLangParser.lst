@@ -1,3 +1,14 @@
+
+// ==========================================================================
+//  GPPG error listing for yacc source file <SLangParser.y>
+// ==========================================================================
+//  Version:  1.3.6
+//  Machine:  MACBOOK-PRO-16
+//  DateTime: 12/16/2024 12:10:04 AM
+//  UserName: controldata
+// ==========================================================================
+
+
 %{
    	public syntax_tree_node root;
 	public List<Error> errors;
@@ -95,6 +106,9 @@ act	= actual
 */
 
 %%
+// Warning: NonTerminal symbol "dotted_ident_list" is unreachable
+// Warning: NonTerminal symbol "dotted_ident" is unreachable
+// --------------------------------------------------------------
 program	: import_clause decl_and_stmt_list optional_semicolon {
 	// main program
 	var ul = $1 as uses_list;
@@ -253,10 +267,10 @@ assign_stmt
 			$$ = ass;
 
 			/*if ($2 is ident id) {
-				// объявление
+				// Ð¾Ð±ÑÑÐ²Ð»ÐµÐ½Ð¸Ðµ
 				if (!isInsideFunction && ($3 != null || (!symbolTable.Contains(id.name) && (isInsideFunction || !globalVariables.Contains(id.name))))) {
 
-					// объявление глобальной переменной
+					// Ð¾Ð±ÑÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð³Ð»Ð¾Ð±Ð°Ð»ÑÐ½Ð¾Ð¹ Ð¿ÐµÑÐµÐ¼ÐµÐ½Ð½Ð¾Ð¹
 					if (symbolTable.OuterScope == null) {
 						if (globalVariables.Contains(id.name)) {
 							parserTools.AddErrorFromResource("This variable is declared before", @$);
@@ -279,14 +293,14 @@ assign_stmt
 							$$ = ass;
 						}
 					}
-					// объявление локальной переменной
+					// Ð¾Ð±ÑÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð»Ð¾ÐºÐ°Ð»ÑÐ½Ð¾Ð¹ Ð¿ÐµÑÐµÐ¼ÐµÐ½Ð½Ð¾Ð¹
 					else {
 						var vds = new var_def_statement(new ident_list(id, @1), $3, $4, definition_attribute.None, false, @$);
 						symbolTable.Add(id.name);
 						$$ = new var_statement(vds, @$);
 					}
 				}
-				// присваивание
+				// Ð¿ÑÐ¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ðµ
 				else {
 					$$ = new assign(id as addressed_value, $4, $3.type, @$);
 				}
@@ -721,3 +735,5 @@ optional_semicolon
             }
             return progModule;
         }
+// ==========================================================================
+
