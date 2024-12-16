@@ -27,8 +27,9 @@ namespace SLangParser {
                 ["use"] = (int)Tokens.USE,
                 ["from"] = (int)Tokens.FROM,
                 ["global"] = (int)Tokens.GLOBAL,
-                ["True"] = (int)Tokens.TRUE,
-                ["False"] = (int)Tokens.FALSE
+                ["true"] = (int)Tokens.TRUE,
+                ["false"] = (int)Tokens.FALSE,
+                ["mod"] = (int)Tokens.MOD
             }
             .ToDictionary(kv => ConvertKeyword(kv.Key), kv => kv.Value);
         }

@@ -1,4 +1,4 @@
-﻿import time;
+﻿use priority_queue;
 
 fn greet() -> float {
     let s = 0.0;
@@ -24,6 +24,8 @@ fn greet2() -> float {
       i += 1;
     }
     print(time_elapsed() - stime);
+    let a = [0, 0, 4];
     return s;
 }
 print(greet2());
+make_tree();

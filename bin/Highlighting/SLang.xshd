@@ -43,6 +43,7 @@
 		<Key word = "import" />
 		<Key word = "uses" />
 		<Key word = "use" />
+		<Key word = "mod" />
 		<Key word = "pass" />
 		<Key word = "return" />
 		<Key word = "with" />
@@ -59,12 +60,12 @@
 		<Key word = "#end" />
 	</KeyWords> 
 
-     	<KeyWords name = "Punctuation123" bold = "true" italic = "false" color = "Orange">
+     	<KeyWords name = "Punctuation123" bold = "false" italic = "false" color = "Orange">
 		<Key word = "((" />
 		<Key word = ".Where" />
 	</KeyWords> 
 
-     <KeyWords name = "Punctuation2" bold = "true" italic = "false" color = "Black">
+     <KeyWords name = "Punctuation2" bold = "false" italic = "false" color = "Black">
         	<Key word = "," />
 		<Key word = "." />
 		<Key word = ";" />
@@ -143,13 +144,13 @@
 		<Key word = "continue" />
 	</KeyWords>
 
-	<KeyWords name = "InternalConstant" bold = "false" italic = "false" color = "#ff7700">
+	<KeyWords name = "InternalConstant" bold = "true" italic = "false" color = "#ff7700">
 		<Key word = "True" />
 		<Key word = "False" />
 		<Key word = "None" />	
 	</KeyWords> 
 
-	<KeyWords name = "Builtins" bold="false" italic="false"  color = "#900090"> <!--python original is color="#900090"-->
+	<KeyWords name = "Builtins" bold="true" italic="false"  color = "#871094">
 		<Key word = "ArithmeticError" />
 		<Key word = "AssertionError" />
 		<Key word = "AttributeError" />
@@ -285,7 +286,6 @@
   	</KeyWords>
 		  
 	<KeyWords name = "Modifiers" bold="true" italic="false" color="#ff7700">
-		<Key word = "global" />
 		<Key word = "nonlocal" />
 	</KeyWords>
 	

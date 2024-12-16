@@ -4,7 +4,7 @@
     // public string current_file_name;
     // public int max_errors = 10;
 	public SLangParserTools parserTools;
-    public List<compiler_directive> CompilerDirectives;
+    	public List<compiler_directive> CompilerDirectives;
 	public ParserLambdaHelper lambdaHelper = new ParserLambdaHelper();
 
 	private int ScopeCounter = 0;
@@ -48,12 +48,12 @@ public token_info ti;
 public type_definition td;
 }
 
-%token <ti> FOR IN WHILE IF ELSE ELIF FN RETURN BREAK CONTINUE USE FROM GLOBAL LET
+%token <ti> FOR IN WHILE IF ELSE ELIF FN RETURN BREAK CONTINUE USE FROM GLOBAL LET MOD
 %token <ex> INTNUM REALNUM TRUE FALSE
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON INDENT UNINDENT ARROW
 %token <stn> STRINGNUM
 %token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL
-%token <op> PLUS MINUS STAR DIVIDE SLASHSLASH PERCENTAGE
+%token <op> PLUS MINUS STAR DIVIDE PERCENTAGE
 %token <id> ID
 %token <op> LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
 %token <op> AND OR NOT
@@ -62,16 +62,16 @@ public type_definition td;
 %left AND
 %left LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
 %left PLUS MINUS
-%left STAR DIVIDE SLASHSLASH PERCENTAGE
+%left STAR DIVIDE PERCENTAGE
 %left NOT
 
-%type <id> ident dotted_ident func_name_ident
+%type <id> ident /*dotted_ident*/ func_name_ident
 %type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
 %type <stn> decl_or_stmt decl_and_stmt_list expr_list
 %type <stn> stmt_list block
-%type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
+%type <stn> program decl param_name form_param_sect form_param_list optional_form_param_list /*dotted_ident_list*/
 %type <td> proc_func_header form_param_type simple_type_identifier
 %type <stn> import_clause import_clause_one
 %type <ob> optional_semicolon
@@ -95,16 +95,28 @@ act	= actual
 */
 
 %%
-program	: import_clause decl_and_stmt_list optional_semicolon {
-	// main program
-	var ul = $1 as uses_list;
-	var stl = $2 as statement_list;
-	stl.left_logical_bracket = new token_info("");
-	stl.right_logical_bracket = new token_info("");
-	var bl = new block(decl, stl, @2);
-	decl.AddFirst(decl_forward.defs);
-	root = $$ = NewProgramModule(null, null, ul, bl, $3, @$);
-	root.source_context = bl.source_context;
+program	: import_clause decl_and_stmt_list optional_semicolon 
+	{
+		var ul = $1 as uses_list;
+		var stl = $2 as statement_list;
+		stl.left_logical_bracket = new token_info("");
+		stl.right_logical_bracket = new token_info("");
+		var bl = new block(decl, stl, @2);
+		decl.AddFirst(decl_forward.defs);
+		root = $$ = NewProgramModule(null, null, ul, bl, $3, @$);
+		root.source_context = bl.source_context;
+	}
+	| MOD ident SEMICOLON import_clause decl_and_stmt_list
+	{
+		decl.AddFirst(decl_forward.defs);
+		var interface_part = new interface_node(decl as declarations, $4 as uses_list, null, null);
+		var initialization_part = new initfinal_part(null, $5 as statement_list, null, null, null, @$);
+
+		root = $$ = new unit_module(
+			new unit_name(new ident($2.name),
+			UnitHeaderKeyword.Unit, @$), interface_part, null,
+			initialization_part.initialization_sect,
+			initialization_part.finalization_sect, null, @$);
 	}
 	;
 
@@ -204,6 +216,7 @@ ident
 		}
 	;
 
+/*
 dotted_ident
 	: ident
 		{ $$ = $1; }
@@ -221,6 +234,7 @@ dotted_ident_list
 			$$ = ($1 as ident_list).Add($3, @$);
 		}
     ;
+*/
 
 var_stmt
 	: LET variable COLON simple_type_identifier ASSIGN expr
@@ -338,8 +352,6 @@ expr
 	| expr AND 			expr
 		{ $$ = new bin_expr($1, $3, $2.type, @$); }
 	| expr OR 			expr
-		{ $$ = new bin_expr($1, $3, $2.type, @$); }
-	| expr SLASHSLASH	expr
 		{ $$ = new bin_expr($1, $3, $2.type, @$); }
 	| expr PERCENTAGE	expr
 		{ $$ = new bin_expr($1, $3, $2.type, @$); }
@@ -468,6 +480,13 @@ variable
 		{ $$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); }
 	// list constant
 	| LBRACKET expr_list RBRACKET
+		{
+			var acn = new array_const_new($2 as expression_list, @$);
+			var dn = new dot_node(acn as addressed_value, (new ident("ToList")) as addressed_value, @$);
+			$$ = new method_call(dn as addressed_value, null, @$);
+		}
+	// cortege
+	| LPAR expr_list RPAR
 		{
 			var acn = new array_const_new($2 as expression_list, @$);
 			var dn = new dot_node(acn as addressed_value, (new ident("ToList")) as addressed_value, @$);

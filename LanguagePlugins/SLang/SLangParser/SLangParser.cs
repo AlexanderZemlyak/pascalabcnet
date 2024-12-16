@@ -33,8 +33,8 @@ namespace SLangParser {
             if (Errors.Count > 0)
                 return null;
 
-            if (root is compilation_unit unit)
-                unit.file_name = FileName;
+            if (root != null && root is compilation_unit)
+                (root as compilation_unit).file_name = FileName;
 
             return root;
         }
