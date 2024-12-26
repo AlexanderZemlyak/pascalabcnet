@@ -17,9 +17,11 @@ namespace PascalABCCompiler.SyntaxTreeConverters
             //FillParentNodeVisitor.New.ProcessNode(root); // почему-то перепрошивает не всё. А следующий вызов - всё
             root.FillParentsInAllChilds();
 
-            return ApplyConcreteConversions(root);
+            return ApplyConversions(root);
         }
 
-        protected abstract syntax_tree_node ApplyConcreteConversions(syntax_tree_node root);
+        protected abstract syntax_tree_node ApplyConversions(syntax_tree_node root);
+
+        public virtual syntax_tree_node ConvertAfterUsedModulesCompilation(syntax_tree_node root, object data) { return root; }
     }
 }
