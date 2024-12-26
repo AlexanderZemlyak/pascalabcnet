@@ -117,20 +117,16 @@ namespace Languages.Integration
             }
             catch (ReflectionTypeLoadException e)
             {
-#if DEBUG
                 string errorMessage = e + Environment.NewLine;
                 errorMessage += "<Loader exceptions>:" + Environment.NewLine;
                 errorMessage += string.Join(Environment.NewLine, e.LoaderExceptions.Select(error => error.ToString())) + Environment.NewLine;
                 File.AppendAllText("log.txt", errorMessage);
-#endif
                 LanguageLoadErrorOccured?.Invoke(languageFile.Name);
             }
             catch (Exception e)
             {
-#if DEBUG
                 string errorMessage = e + Environment.NewLine;
                 File.AppendAllText("log.txt", errorMessage);
-#endif
                 LanguageLoadErrorOccured?.Invoke(languageFile.Name);
             }
         }
