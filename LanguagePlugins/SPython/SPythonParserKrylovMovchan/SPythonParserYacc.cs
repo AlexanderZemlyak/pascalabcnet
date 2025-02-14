@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 12.02.2025 13:12:35
+// DateTime: 14.02.2025 18:47:16
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -567,9 +567,9 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 					symbolTable.Add(id.name);
 				//}
 			}*/
-			//$$ = new global_statement($2 as ident_list, @$);
-			CurrentSemanticValue.stn = null;
-			parserTools.AddErrorFromResource("UNSUPPORTED_CONSTRUCTION_{0}",CurrentLocationSpan, "global");
+			CurrentSemanticValue.stn = new global_statement(ValueStack[ValueStack.Depth-1].stn as ident_list, CurrentLocationSpan);
+			//$$ = null;
+			//parserTools.AddErrorFromResource("UNSUPPORTED_CONSTRUCTION_{0}",@$, "global");
 		}
         break;
       case 25: // ident -> ID
@@ -631,8 +631,9 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 
 			if (ValueStack[ValueStack.Depth-3].ex is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
-				ass.first_assignment_defines_type = true;
-				type_definition ntr = new named_type_reference(new ident("integer"));
+				//ass.first_assignment_defines_type = true;
+				//type_definition ntr = new named_type_reference(new ident("integer"));
+				type_definition ntr = (new same_type_node(ValueStack[ValueStack.Depth-1].ex) as type_definition);
 				var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
 				decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
 			}

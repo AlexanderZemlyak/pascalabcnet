@@ -159,17 +159,25 @@ namespace Languages.SPython.Frontend.Converters
             visit(_interface_node.interface_definitions);
         }
 
-        //public override void visit(global_statement _global_statement)
-        //{
-        //    foreach (ident _ident in _global_statement.idents.idents)
-        //        if (symbolTable.localVariables.Contains(_ident.name))
-        //            throw new SyntaxVisitorError("Variable local declaration before global statement", 
-        //                _global_statement.source_context);
-        //        else if (functionParameters.Contains(_ident.name))
-        //            throw new SyntaxVisitorError("Variable declared global has the same name as function parameter", 
-        //                _global_statement.source_context);
-        //        else functionGlobalVariables.Add(_ident.name);
-        //}
+        public override void visit(global_statement _global_statement)
+        {
+            foreach (ident _ident in _global_statement.idents.idents)
+            {
+                NameKind nameType = symbolTable.GetNameKindHard(_ident.name);
+                switch (nameType)
+                {
+                    case NameKind.GlobalVariable:
+                        symbolTable.Add(_ident.name, NameKind.LocalVariable);
+                        break;
+                    case NameKind.Unknown:
+                        throw new SyntaxVisitorError("Variable local declaration before global statement",
+                        _global_statement.source_context);
+                    default:
+                        throw new SyntaxVisitorError("Variable declared global has the same name as function parameter",
+                        _global_statement.source_context);
+                }
+            }
+        }
 
         public override void visit(typed_parameters _typed_parameters)
         {
@@ -388,6 +396,16 @@ namespace Languages.SPython.Frontend.Converters
                         return nameTypes[name];
                     return NameKind.Unknown; 
                 }
+            }
+
+            // Получение типа имени вне зависимости от isInFunctionBody
+            public NameKind GetNameKindHard(string name)
+            {
+                bool isInFunctionBodyCopy = isInFunctionBody;
+                isInFunctionBody = false;
+                NameKind result = this[name];
+                isInFunctionBody = isInFunctionBodyCopy;
+                return result;
             }
 
             public void Add(string name, NameKind nameType)
