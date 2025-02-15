@@ -398,8 +398,9 @@ namespace Languages.SPython.Frontend.Converters
 
             public bool IsVisibleForAssignment(string name)
             {
-                if (!isInFunctionBody) return true;
                 NameKind kind = this[name];
+                if (kind == NameKind.Unknown) return false;
+                if (!isInFunctionBody) return true;
                 return (kind != NameKind.GlobalVariable &&
                     kind != NameKind.ImportedNameAlias) ||
                     NamesAddedByGlobal.Contains(name);
