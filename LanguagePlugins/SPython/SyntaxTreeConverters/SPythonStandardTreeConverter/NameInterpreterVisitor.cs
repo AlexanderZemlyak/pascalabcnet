@@ -41,7 +41,6 @@ namespace Languages.SPython.Frontend.Converters
             }
             if (stn is procedure_definition)
             {
-                symbolTable.Add("result", NameKind.LocalVariable);
                 symbolTable.IsInFunctionBody = true;
             }
             if (stn is block && !isInProgramBlock && !symbolTable.IsInFunctionBody)
@@ -167,7 +166,8 @@ namespace Languages.SPython.Frontend.Converters
                 switch (nameType)
                 {
                     case NameKind.GlobalVariable:
-                        symbolTable.Add(_ident.name, NameKind.LocalVariable);
+                    case NameKind.ImportedNameAlias:
+                        symbolTable.MakeVisibleForAssignment(_ident.name);
                         break;
                     case NameKind.Unknown:
                         throw new SPythonSyntaxVisitorError("UNKNOWN_NAME_{0}",
@@ -260,10 +260,7 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(assign _assign)
         {
             if (_assign.to is ident _ident) {
-                NameKind nameType = symbolTable[_ident.name];
-                if (nameType == NameKind.Unknown ||
-                    (symbolTable.IsInFunctionBody 
-                    && nameType == NameKind.GlobalVariable)) 
+                if (!symbolTable.IsVisibleForAssignment(_ident.name))
                 {
                     symbolTable.Add(_ident.name, NameKind.LocalVariable);
 
@@ -337,10 +334,24 @@ namespace Languages.SPython.Frontend.Converters
                 { "random", "random1" },
             };
 
+            // names added to current function with global statements
+            private HashSet<string> NamesAddedByGlobal = new HashSet<string>();
+
             private bool isInFunctionBody = false;
             public bool IsInFunctionBody {
                 get { return isInFunctionBody; }
-                set { isInFunctionBody = value; }
+                set 
+                { 
+                    isInFunctionBody = value; 
+                    if (isInFunctionBody)
+                    {
+                        Add("result", NameKind.LocalVariable);
+                    }
+                    else
+                    {
+                        NamesAddedByGlobal.Clear();
+                    }
+                }
             }
 
             // module alias -> module real name
@@ -378,6 +389,20 @@ namespace Languages.SPython.Frontend.Converters
             public string AliasToModuleName(string alias)
             {
                 return aliasToRealNameAndModuleName[alias].Item2;
+            }
+
+            public void MakeVisibleForAssignment(string name)
+            {
+                NamesAddedByGlobal.Add(name);
+            }
+
+            public bool IsVisibleForAssignment(string name)
+            {
+                if (!isInFunctionBody) return true;
+                NameKind kind = this[name];
+                return (kind != NameKind.GlobalVariable &&
+                    kind != NameKind.ImportedNameAlias) ||
+                    NamesAddedByGlobal.Contains(name);
             }
 
             public NameKind this[string name]
