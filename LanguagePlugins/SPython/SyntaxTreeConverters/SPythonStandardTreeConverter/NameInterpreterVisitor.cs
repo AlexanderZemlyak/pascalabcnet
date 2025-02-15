@@ -170,11 +170,11 @@ namespace Languages.SPython.Frontend.Converters
                         symbolTable.Add(_ident.name, NameKind.LocalVariable);
                         break;
                     case NameKind.Unknown:
-                        throw new SyntaxVisitorError("Variable local declaration before global statement",
-                        _global_statement.source_context);
+                        throw new SPythonSyntaxVisitorError("UNKNOWN_NAME_{0}",
+                        _global_statement.source_context, _ident.name);
                     default:
-                        throw new SyntaxVisitorError("Variable declared global has the same name as function parameter",
-                        _global_statement.source_context);
+                        throw new SPythonSyntaxVisitorError("SCOPE_CONTAINS_NAME_{0}",
+                        _global_statement.source_context, _ident.name);
                 }
             }
         }
