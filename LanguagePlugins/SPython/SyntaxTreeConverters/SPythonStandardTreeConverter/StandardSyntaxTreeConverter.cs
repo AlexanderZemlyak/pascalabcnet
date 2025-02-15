@@ -16,7 +16,7 @@ namespace Languages.SPython.Frontend.Converters
             ituv.ProcessNode(root);
 
             // замена генерации списков на Select.Where.ToArray
-            // (почему-то не работает если переместить в ConvertAfterUsedModulesCompilation)
+            // (не работает из-за лямбд, если переместить в ConvertAfterUsedModulesCompilation)
             var ldv = new ListDesugarVisitor();
             ldv.ProcessNode(root);
 
@@ -30,8 +30,8 @@ namespace Languages.SPython.Frontend.Converters
             var niv = new NameInterpreterVisitor(compilationArtifacts.NamesFromUsedUnits);
             niv.ProcessNode(root);
 
-            // вынос переменных самого внешнего уровня на глобальный
-            // если они используются в функциях (являются глобальными)
+            // выносит глобальные переменные на локальный уровень
+            // если они не используются в функциях (не являются глобальными)
             //var rugvv = new RetainUsedGlobalVariablesVisitor();
             //rugvv.ProcessNode(root);
 
@@ -39,7 +39,7 @@ namespace Languages.SPython.Frontend.Converters
             var fwnpdv = new FunctionsWithNamedParametersDesugarVisitor();
             fwnpdv.ProcessNode(root);
 
-            // удаление узлов global
+            // удаление специфичных синтаксических узлов Spython'a перед конвертацией в семантическое дерево
             var esonv = new EraseSpythonOnlyNodesVisitor();
             esonv.ProcessNode(root);
 
