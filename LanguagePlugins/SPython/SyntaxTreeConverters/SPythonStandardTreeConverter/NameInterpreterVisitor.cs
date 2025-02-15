@@ -216,12 +216,6 @@ namespace Languages.SPython.Frontend.Converters
                     real_name = symbolTable.specialModulesAliases[real_name];
                 symbolTable.AddModuleAlias(real_name, alias);
             }
-
-            var upper = UpperNode();
-            if (upper is interface_node _interface_node)
-                _interface_node.interface_definitions.ReplaceDescendant<syntax_tree_node, syntax_tree_node>(
-                    _import_statement, new empty_statement());
-            else Replace(_import_statement, new empty_statement());
         }
 
         public override void visit(from_import_statement _from_import_statement)
@@ -247,12 +241,6 @@ namespace Languages.SPython.Frontend.Converters
                     symbolTable.AddAlias(as_Statement.real_name.name, as_Statement.alias.name, module_name);
                 }
             }
-
-            var upper = UpperNode();
-            if (upper is interface_node _interface_node)
-                _interface_node.interface_definitions.ReplaceDescendant<syntax_tree_node, syntax_tree_node>(
-                    _from_import_statement, new empty_statement());
-            else Replace(_from_import_statement, new empty_statement());
         }
 
         public override void visit(variable_definitions _variable_definitions)
@@ -286,7 +274,6 @@ namespace Languages.SPython.Frontend.Converters
                     base.visit(_assign);
                     return;
                 }
-                symbolTable.Add(_ident.name, NameKind.LocalVariable);
             }
             base.visit(_assign);
         }

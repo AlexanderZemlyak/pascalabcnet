@@ -56,6 +56,14 @@ namespace Languages.SPython.Frontend.Converters
             base.Exit(stn);
         }
 
+        public override void visit(import_statement _import_statement)
+        {
+        }
+
+        public override void visit(from_import_statement _from_import_statement)
+        {
+        }
+
         public override void visit(variable_definitions _variable_definitions)
         {
             string variable_name = _variable_definitions.var_definitions[0].vars.idents[0].name;
