@@ -163,7 +163,7 @@ namespace Languages.SPython.Frontend.Converters
         {
             foreach (ident _ident in _global_statement.idents.idents)
             {
-                NameKind nameType = symbolTable.GetNameKindHard(_ident.name);
+                NameKind nameType = symbolTable[_ident.name];
                 switch (nameType)
                 {
                     case NameKind.GlobalVariable:
@@ -265,8 +265,12 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void visit(assign _assign)
         {
-            if (_assign.to is ident _ident) { 
-                if (symbolTable[_ident.name] == NameKind.Unknown) {
+            if (_assign.to is ident _ident) {
+                NameKind nameType = symbolTable[_ident.name];
+                if (nameType == NameKind.Unknown ||
+                    (symbolTable.IsInFunctionBody 
+                    && nameType == NameKind.GlobalVariable)) 
+                {
                     symbolTable.Add(_ident.name, NameKind.LocalVariable);
 
                     var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
@@ -390,22 +394,10 @@ namespace Languages.SPython.Frontend.Converters
                 get { 
                     if (localVariables.Contains(name))
                         return NameKind.LocalVariable;
-                    if (nameTypes.ContainsKey(name) &&
-                        (nameTypes[name] != NameKind.GlobalVariable
-                        || !isInFunctionBody))
+                    if (nameTypes.ContainsKey(name))
                         return nameTypes[name];
                     return NameKind.Unknown; 
                 }
-            }
-
-            // Получение типа имени вне зависимости от isInFunctionBody
-            public NameKind GetNameKindHard(string name)
-            {
-                bool isInFunctionBodyCopy = isInFunctionBody;
-                isInFunctionBody = false;
-                NameKind result = this[name];
-                isInFunctionBody = isInFunctionBodyCopy;
-                return result;
             }
 
             public void Add(string name, NameKind nameType)
