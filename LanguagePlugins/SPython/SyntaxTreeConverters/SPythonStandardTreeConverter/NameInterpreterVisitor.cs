@@ -258,9 +258,15 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(variable_definitions _variable_definitions)
         {
             string variable_name = _variable_definitions.var_definitions[0].vars.idents[0].name;
-            symbolTable.Add(variable_name, NameKind.GlobalVariable);
+            // Присвоение к переменной из модуля воспринимается парсером как объявление
+            if (symbolTable[variable_name] == NameKind.ImportedNameAlias)
+                Replace(_variable_definitions, new empty_statement());
+            else
+            {
+                symbolTable.Add(variable_name, NameKind.GlobalVariable);
 
-            base.visit(_variable_definitions);
+                base.visit(_variable_definitions);
+            }
         }
 
         public override void visit(assign _assign)
