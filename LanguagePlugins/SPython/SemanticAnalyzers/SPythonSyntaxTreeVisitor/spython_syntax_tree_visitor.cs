@@ -40,6 +40,7 @@ namespace SPythonSyntaxTreeVisitor
             return;
         }
 
+
         protected override void get_system_module(common_unit_node psystem_unit)
         {
             init_system_module(psystem_unit);
@@ -92,8 +93,16 @@ namespace SPythonSyntaxTreeVisitor
                     break;
             }
             base.AddError(err, shouldReturn);
-
         }
+
+        public override void visit(declarations_as_statement _declarations_as_statement)
+        {
+            contextChanger.SaveContextAndUpToGlobalLevel();
+            ProcessNode(_declarations_as_statement.defs[0]);
+            //base.visit(_declarations_as_statement);
+            contextChanger.RestoreCurrentContext();
+        }
+
         public override void visit(bin_expr _bin_expr)
         {
             expression_node left = convert_strong(_bin_expr.left);

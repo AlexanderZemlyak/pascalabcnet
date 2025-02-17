@@ -14,6 +14,7 @@ namespace Languages.SPython.Frontend.Converters
             // как uses в начале программы для сбора имён из этих модулей
             var ituv = new ImportToUsesVisitor();
             ituv.ProcessNode(root);
+            return root;
 
             // замена генерации списков на Select.Where.ToArray
             // (не работает из-за лямбд, если переместить в ConvertAfterUsedModulesCompilation)
@@ -25,6 +26,10 @@ namespace Languages.SPython.Frontend.Converters
 
         public override syntax_tree_node ConvertAfterUsedModulesCompilation(syntax_tree_node root, in CompilationArtifactsUsedBySyntaxConverters compilationArtifacts)
         {
+            // удаление специфичных синтаксических узлов Spython'a перед конвертацией в семантическое дерево
+            var esonv = new EraseSpythonOnlyNodesVisitor();
+            esonv.ProcessNode(root);
+            return root;
             // визитер проверящий корректность имён из модулей
             // и заменяющий первые присваивания переменных на объявление с инициализацией
             var niv = new NameInterpreterVisitor(compilationArtifacts.NamesFromUsedUnits);
@@ -40,8 +45,8 @@ namespace Languages.SPython.Frontend.Converters
             fwnpdv.ProcessNode(root);
 
             // удаление специфичных синтаксических узлов Spython'a перед конвертацией в семантическое дерево
-            var esonv = new EraseSpythonOnlyNodesVisitor();
-            esonv.ProcessNode(root);
+            //var esonv = new EraseSpythonOnlyNodesVisitor();
+            //esonv.ProcessNode(root);
 
             return root;
         }

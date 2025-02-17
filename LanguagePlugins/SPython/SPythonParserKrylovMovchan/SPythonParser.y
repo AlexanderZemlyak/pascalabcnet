@@ -106,7 +106,7 @@ program
 				stl.left_logical_bracket = new token_info("");
 				stl.right_logical_bracket = new token_info("");
 				var bl = new block(decl, stl, @$);
-				decl.AddFirst(decl_forward.defs);
+				//decl.AddFirst(decl_forward.defs);
 				root = $$ = NewProgramModule(null, null, new uses_list(), bl, $2, @$);
 				root.source_context = bl.source_context;
 			}
@@ -132,21 +132,21 @@ import_clause
 			foreach (as_statement as_Statement in ($2 as as_statement_list).as_statements)
 				imports.AddUsesList(new uses_list(as_Statement.real_name.name));
 			import_statement import_stmt =  new import_statement($2 as as_statement_list, @2);
-			decl.Add(import_stmt);
+			//decl.Add(import_stmt);
 			$$ = import_stmt;
 		}
 	| FROM ident IMPORT ident_as_ident_list 
 		{
 			imports.AddUsesList(new uses_list(($2 as ident).name));
 			from_import_statement fis = new from_import_statement($2 as ident, false, $4 as as_statement_list, @$);
-			decl.Add(fis);
+			//decl.Add(fis);
 			$$ = fis;
 		}
 	| FROM ident IMPORT STAR 
 		{
 			imports.AddUsesList(new uses_list(($2 as ident).name));
 			from_import_statement fis = new from_import_statement($2 as ident, true, null, @$);
-			decl.Add(fis);
+			//decl.Add(fis);
 			$$ = fis;
 		}
 	;
@@ -161,8 +161,8 @@ import_or_decl_or_stmt
 import_or_decl
 	: proc_func_decl
 		{
-			$$ = null;
-			decl.Add($1 as procedure_definition, @$);
+			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+			//decl.Add($1 as procedure_definition, @$);
 		}
 	| import_clause 
 		{
@@ -307,18 +307,17 @@ var_stmt
 assign_stmt
 	: variable ASSIGN expr
 		{
-			var ass = new assign($1 as addressed_value, $3, $2.type, @$);
-
 			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
 				//ass.first_assignment_defines_type = true;
 				//type_definition ntr = new named_type_reference(new ident("integer"));
 				type_definition ntr = (new same_type_node($3) as type_definition);
-				var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
-				decl.Add(new variable_definitions(vds, @$), @$);
+				var vds = new var_def_statement(new ident_list(id, @1), ntr, $3, definition_attribute.None, false, @$);
+				$$ = new declarations_as_statement(new declarations(vds, @$), @$);
+				//decl.Add(new variable_definitions(vds, @$), @$);
 			}
-			
-			$$ = ass;
+			else 
+				$$ = new assign($1 as addressed_value, $3, $2.type, @$);
 
 			/*if ($1 is ident id) {
 				// объявление
