@@ -25,10 +25,15 @@ namespace Languages.SPython.Frontend.Converters
 
         public override syntax_tree_node ConvertAfterUsedModulesCompilation(syntax_tree_node root, in CompilationArtifactsUsedBySyntaxConverters compilationArtifacts)
         {
-            // визитер проверящий корректность имён из модулей
-            // и заменяющий первые присваивания переменных на объявление с инициализацией
+            // проверяет корректность имён из модулей
+            // и заменяет первые присваивания переменных на объявление с инициализацией
             var niv = new NameInterpreterVisitor(compilationArtifacts.NamesFromUsedUnits);
             niv.ProcessNode(root);
+
+            // преобразования AST-дерева,
+            // помогающие компилятору определить тип глобальных переменных по первому присваиванию
+            //var gav = new GlobalAssignmentVisitor();
+            //gav.ProcessNode(root);
 
             // выносит глобальные переменные на локальный уровень
             // если они не используются в функциях (не являются глобальными)
