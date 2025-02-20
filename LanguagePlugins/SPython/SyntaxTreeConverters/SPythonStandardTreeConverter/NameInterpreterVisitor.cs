@@ -32,16 +32,14 @@ namespace Languages.SPython.Frontend.Converters
 
         public override void Enter(syntax_tree_node stn)
         {
-            if (stn is foreach_stmt     
-                || stn is for_node
-                ||  stn is while_node           
-                ||  stn is procedure_definition)
+            if (stn is statement_list)
             {
                 symbolTable.OpenLocalScope();
             }
             if (stn is procedure_definition)
             {
                 symbolTable.IsInFunctionBody = true;
+                symbolTable.OpenLocalScope();
             }
             if (stn is block && !isInProgramBlock && !symbolTable.IsInFunctionBody)
             {
@@ -57,11 +55,9 @@ namespace Languages.SPython.Frontend.Converters
             if (stn is procedure_definition)
             {
                 symbolTable.IsInFunctionBody = false;
+                symbolTable.CloseLocalScope();
             }
-            if (stn is foreach_stmt
-                || stn is for_node
-                || stn is while_node
-                || stn is procedure_definition)
+            if (stn is statement_list)
             {
                 symbolTable.CloseLocalScope();
             }
@@ -198,19 +194,6 @@ namespace Languages.SPython.Frontend.Converters
             base.visit(_var_statement);
         }
 
-        public override void visit(if_node _if_node)
-        {
-            base.visit(_if_node.condition);
-
-            symbolTable.OpenLocalScope();
-            base.visit(_if_node.then_body);
-            symbolTable.CloseLocalScope();
-
-            symbolTable.OpenLocalScope();
-            base.visit(_if_node.else_body);
-            symbolTable.CloseLocalScope();
-        }
-
         public override void visit(import_statement _import_statement)
         {
             foreach (as_statement as_Statement in _import_statement.modules_names.as_statements)
@@ -273,7 +256,7 @@ namespace Languages.SPython.Frontend.Converters
 
                     ReplaceStatement(_assign, _var_statement);
 
-                    base.visit(_assign);
+                    base.visit(_var_statement);
                     return;
                 }
             }
