@@ -14,7 +14,6 @@ namespace Languages.SPython.Frontend.Converters
             // как uses в начале программы для сбора имён из этих модулей
             var ituv = new ImportToUsesVisitor();
             ituv.ProcessNode(root);
-            return root;
 
             // замена генерации списков на Select.Where.ToArray
             // (не работает из-за лямбд, если переместить в ConvertAfterUsedModulesCompilation)
@@ -29,16 +28,18 @@ namespace Languages.SPython.Frontend.Converters
             // удаление специфичных синтаксических узлов Spython'a перед конвертацией в семантическое дерево
             var esonv = new EraseSpythonOnlyNodesVisitor();
             esonv.ProcessNode(root);
+
+            // выносит глобальные переменные на локальный уровень
+            // если они не используются в функциях (не являются глобальными)
+            //var rugvv = new RetainUsedGlobalVariablesVisitor();
+            //rugvv.ProcessNode(root);
             return root;
             // визитер проверящий корректность имён из модулей
             // и заменяющий первые присваивания переменных на объявление с инициализацией
             var niv = new NameInterpreterVisitor(compilationArtifacts.NamesFromUsedUnits);
             niv.ProcessNode(root);
 
-            // выносит глобальные переменные на локальный уровень
-            // если они не используются в функциях (не являются глобальными)
-            var rugvv = new RetainUsedGlobalVariablesVisitor();
-            rugvv.ProcessNode(root);
+            
 
             // замена вызова функций с именованными параметрами на вызов метода класса
             var fwnpdv = new FunctionsWithNamedParametersDesugarVisitor();

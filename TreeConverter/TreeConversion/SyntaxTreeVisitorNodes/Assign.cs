@@ -125,12 +125,35 @@ namespace PascalABCCompiler.TreeConverter
             {
                 // Перенёс вычисление from в начало - чтобы потом сделать узел, задающий тип при первом присваивании
                 from0 = convert_strong(_assign.from);
-                 if (_assign.first_assignment_defines_type) // всегда в этом случае должно быть присваивание := а не += и т.д.
-                 {
-                      var sc = context.CurrentScope;
-                      var ttt = sc.Find((_assign.to as ident).name); // всегда в этом случае должно быть простое имя
-                      (ttt[0].sym_info as var_definition_node).type = from0.type;
-                 }
+                if (_assign.first_assignment_defines_type) // всегда в этом случае должно быть присваивание := а не += и т.д.
+                {
+                    if (from0 is typed_expression) // SSM 22.12.18 syntax_tree_visitor.cs 16066 - взял оттуда
+                    {
+                        base_function_call bfc = ((from0 as typed_expression).type as delegated_methods).proper_methods[0];
+                        /*if (bfc.function.is_generic_function && _var_def_statement.vars_type == null)
+                        {
+                            AddError(inital_value.location, "CAN_NOT_DEDUCE_TYPE_{0}", null);
+                        }
+                        foreach (parameter p in bfc.simple_function_node.parameters)
+                        {
+                            if (p.type.is_generic_parameter)
+                                AddError(inital_value.location, "USE_ANONYMOUS_FUNCTION_TYPE_WITH_GENERICS");
+                        } */
+                        common_type_node del =
+                            convertion_data_and_alghoritms.type_constructor.create_delegate(context.get_delegate_type_name(), bfc.simple_function_node.return_value_type, bfc.simple_function_node.parameters, context.converted_namespace, null);
+                        context.converted_namespace.types.AddElement(del); //- сомневаюсь - контекст уже поменялся!
+                        //tn = del;
+                        from0 = convertion_data_and_alghoritms.explicit_convert_type(from0, del);
+                        from0.type = del;
+                    }
+
+
+                    var sc = context.CurrentScope;
+                    var ttt = sc.Find((_assign.to as ident).name); // всегда в этом случае должно быть простое имя
+                    //same_type_node stn = new same_type_node(_assign.from);
+                    //type_node from_type = convert_strong(stn);
+                    (ttt[0].sym_info as var_definition_node).type = from0.type;
+                }
             }
 
             internal_is_assign = true;

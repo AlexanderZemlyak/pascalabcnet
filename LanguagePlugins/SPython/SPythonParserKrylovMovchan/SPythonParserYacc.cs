@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 15.02.2025 21:42:12
+// DateTime: 25.02.2025 18:06:31
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -486,8 +486,8 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 8: // import_or_decl -> proc_func_decl
 {
-			CurrentSemanticValue.stn = new declarations_as_statement(new declarations(ValueStack[ValueStack.Depth-1].stn as procedure_definition, CurrentLocationSpan), CurrentLocationSpan);
-			//decl.Add($1 as procedure_definition, @$);
+			//$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+			decl.Add(ValueStack[ValueStack.Depth-1].stn as procedure_definition, CurrentLocationSpan);
 		}
         break;
       case 9: // import_or_decl -> import_clause
@@ -627,17 +627,22 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
         break;
       case 35: // assign_stmt -> variable, ASSIGN, expr
 {
+			var ass = new assign(ValueStack[ValueStack.Depth-3].ex as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
+
 			if (ValueStack[ValueStack.Depth-3].ex is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
-				//ass.first_assignment_defines_type = true;
-				//type_definition ntr = new named_type_reference(new ident("integer"));
-				type_definition ntr = (new same_type_node(ValueStack[ValueStack.Depth-1].ex) as type_definition);
-				var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, ValueStack[ValueStack.Depth-1].ex, definition_attribute.None, false, CurrentLocationSpan);
-				CurrentSemanticValue.stn = new declarations_as_statement(new declarations(vds, CurrentLocationSpan), CurrentLocationSpan);
-				//decl.Add(new variable_definitions(vds, @$), @$);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				//type_definition ntr = (new same_type_node($3) as type_definition);
+				var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
+				CurrentSemanticValue.stn = new statement_list(new List<statement>
+				{	new declarations_as_statement(new declarations(vds, CurrentLocationSpan), CurrentLocationSpan),
+					ass});
+				CurrentSemanticValue.stn = ass;
+				decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
 			}
 			else 
-				CurrentSemanticValue.stn = new assign(ValueStack[ValueStack.Depth-3].ex as addressed_value, ValueStack[ValueStack.Depth-1].ex, ValueStack[ValueStack.Depth-2].op.type, CurrentLocationSpan);
+				CurrentSemanticValue.stn = ass;
 
 			/*if ($1 is ident id) {
 				// об�?явление

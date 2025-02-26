@@ -161,8 +161,8 @@ import_or_decl_or_stmt
 import_or_decl
 	: proc_func_decl
 		{
-			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
-			//decl.Add($1 as procedure_definition, @$);
+			//$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+			decl.Add($1 as procedure_definition, @$);
 		}
 	| import_clause 
 		{
@@ -307,17 +307,22 @@ var_stmt
 assign_stmt
 	: variable ASSIGN expr
 		{
+			var ass = new assign($1 as addressed_value, $3, $2.type, @$);
+
 			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
-				//ass.first_assignment_defines_type = true;
-				//type_definition ntr = new named_type_reference(new ident("integer"));
-				type_definition ntr = (new same_type_node($3) as type_definition);
-				var vds = new var_def_statement(new ident_list(id, @1), ntr, $3, definition_attribute.None, false, @$);
-				$$ = new declarations_as_statement(new declarations(vds, @$), @$);
-				//decl.Add(new variable_definitions(vds, @$), @$);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				//type_definition ntr = (new same_type_node($3) as type_definition);
+				var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
+				$$ = new statement_list(new List<statement>
+				{	new declarations_as_statement(new declarations(vds, @$), @$),
+					ass});
+				$$ = ass;
+				decl.Add(new variable_definitions(vds, @$), @$);
 			}
 			else 
-				$$ = new assign($1 as addressed_value, $3, $2.type, @$);
+				$$ = ass;
 
 			/*if ($1 is ident id) {
 				// объявление
