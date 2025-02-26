@@ -95,11 +95,6 @@ namespace Languages.SPython.Frontend.Converters
             base.visit(_function_header);
         }
 
-        public override void visit(same_type_node same_type_node)
-        {
-            // should be empty, otherwise the same expressions is visited twice
-        }
-
         public override void visit(dot_node _dot_node)
         {
             if (_dot_node.left is ident left)

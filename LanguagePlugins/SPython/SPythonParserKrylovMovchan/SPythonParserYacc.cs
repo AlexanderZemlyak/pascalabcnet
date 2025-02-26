@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 14.02.2025 18:47:16
+// DateTime: 26.02.2025 16:27:22
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -631,9 +631,9 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 
 			if (ValueStack[ValueStack.Depth-3].ex is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
-				//ass.first_assignment_defines_type = true;
-				//type_definition ntr = new named_type_reference(new ident("integer"));
-				type_definition ntr = (new same_type_node(ValueStack[ValueStack.Depth-1].ex) as type_definition);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				//type_definition ntr = (new same_type_node($3) as type_definition);
 				var vds = new var_def_statement(new ident_list(id, LocationStack[LocationStack.Depth-3]), ntr, null, definition_attribute.None, false, CurrentLocationSpan);
 				decl.Add(new variable_definitions(vds, CurrentLocationSpan), CurrentLocationSpan);
 			}

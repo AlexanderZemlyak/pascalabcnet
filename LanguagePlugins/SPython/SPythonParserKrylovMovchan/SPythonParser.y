@@ -311,9 +311,9 @@ assign_stmt
 
 			if ($1 is ident id && ScopeCounter == 0 && !globalVariables.Contains(id.name)) {
 				globalVariables.Add(id.name);
-				//ass.first_assignment_defines_type = true;
-				//type_definition ntr = new named_type_reference(new ident("integer"));
-				type_definition ntr = (new same_type_node($3) as type_definition);
+				ass.first_assignment_defines_type = true;
+				type_definition ntr = new named_type_reference(new ident("integer"));
+				//type_definition ntr = (new same_type_node($3) as type_definition);
 				var vds = new var_def_statement(new ident_list(id, @1), ntr, null, definition_attribute.None, false, @$);
 				decl.Add(new variable_definitions(vds, @$), @$);
 			}
