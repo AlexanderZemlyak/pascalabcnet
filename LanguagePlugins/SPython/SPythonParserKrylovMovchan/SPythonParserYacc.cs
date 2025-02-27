@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.6
 // Machine:  DESKTOP-56159VE
-// DateTime: 26.02.2025 16:27:22
+// DateTime: 26.02.2025 18:56:04
 // UserName: ????
 // Input file <SPythonParser.y>
 
@@ -957,7 +957,7 @@ public partial class SPythonGPPGParser: ShiftReduceParser<ValueType, LexLocation
 			//$$ = pd1;
 			CurrentSemanticValue.stn = new procedure_definition(ValueStack[ValueStack.Depth-5].td as procedure_header, new block(null, ValueStack[ValueStack.Depth-3].stn as statement_list, LocationStack[LocationStack.Depth-3]), CurrentLocationSpan);
 
-			var pd = new procedure_definition(ValueStack[ValueStack.Depth-5].td as procedure_header, null, LocationStack[LocationStack.Depth-5]);
+			var pd = new procedure_definition((ValueStack[ValueStack.Depth-5].td as procedure_header).TypedClone(), null, LocationStack[LocationStack.Depth-5]);
             pd.proc_header.proc_attributes.Add(new procedure_attribute(proc_attribute.attr_forward));
 			decl_forward.Add(pd, LocationStack[LocationStack.Depth-5]);
 		}

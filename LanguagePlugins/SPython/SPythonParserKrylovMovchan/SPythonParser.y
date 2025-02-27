@@ -642,7 +642,7 @@ proc_func_decl
 			//$$ = pd1;
 			$$ = new procedure_definition($2 as procedure_header, new block(null, $4 as statement_list, @4), @$);
 
-			var pd = new procedure_definition($2 as procedure_header, null, @2);
+			var pd = new procedure_definition(($2 as procedure_header).TypedClone(), null, @2);
             pd.proc_header.proc_attributes.Add(new procedure_attribute(proc_attribute.attr_forward));
 			decl_forward.Add(pd, @2);
 		}

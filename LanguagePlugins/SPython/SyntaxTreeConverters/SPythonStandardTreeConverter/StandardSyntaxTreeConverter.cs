@@ -43,6 +43,10 @@ namespace Languages.SPython.Frontend.Converters
             var esonv = new EraseSpythonOnlyNodesVisitor();
             esonv.ProcessNode(root);
 
+            // перестроение структуры дерева, для последующих этапов компиляции
+            var tnrv = new TreeNodesRearrangementVisitor();
+            tnrv.ProcessNode(root);
+
             return root;
         }
     }
