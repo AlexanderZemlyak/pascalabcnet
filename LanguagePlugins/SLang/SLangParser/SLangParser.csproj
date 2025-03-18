@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{5E089C76-32A6-406A-857C-B15ACDFDB051}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>SLangParser</RootNamespace>
+        <AssemblyName>SLangParser</AssemblyName>
+        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>..\..\..\bin\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>..\..\..\bin\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\db.txt">
+        <Link>examples\Olymp-2 (1)\db.txt</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\lightpt.dat">
+        <Link>examples\Olymp-2 (1)\lightpt.dat</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Oly2.pdf">
+        <Link>examples\Olymp-2 (1)\Oly2.pdf</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task01.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task01.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task02.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task02.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task03.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task03.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task04.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task04.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task05.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task05.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task06.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task06.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task07.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task07.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task08.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task08.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Olymp2-Task09.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task09.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\olympFullExample.pas">
+        <Link>examples\Olymp-2 (1)\olympFullExample.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\server.dat">
+        <Link>examples\Olymp-2 (1)\server.dat</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Tasks.pas">
+        <Link>examples\Olymp-2 (1)\Tasks.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\TasksOlymp1.pas">
+        <Link>examples\Olymp-2 (1)\TasksOlymp1.pas</Link>
+      </Content>
+      <Content Include="..\..\..\..\..\Downloads\Olymp-2 (1)\Tree.txt">
+        <Link>examples/Olymp-2 (1)/Tree.txt</Link>
+      </Content>
+      <Content Include="..\..\..\bin\Highlighting\SLang.xshd">
+        <Link>SLang.xshd</Link>
+      </Content>
+      <Content Include="..\..\..\bin\Lib\LightPT.pas">
+        <Link>examples\LightPT.pas</Link>
+      </Content>
+      <Content Include="..\..\..\_ReBuildRelease.bat">
+        <Link>_ReBuildRelease.bat</Link>
+      </Content>
+      <Content Include="examples\DSLExample.slang" />
+      <Content Include="examples\InputCode.slang" />
+      <Content Include="examples\LightPT.txt" />
+      <Content Include="examples\Olymp2-Task01.pas">
+        <Link>examples\Olymp-2 (1)\Olymp2-Task01.pas</Link>
+      </Content>
+      <Content Include="Gplex.exe" />
+      <Content Include="Gppg.exe" />
+      <Content Include="gps.bat" />
+      <Content Include="gps.sh" />
+      <Content Include="SLangLexer.lex" />
+      <Content Include="SLangParser.y" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Include="Program.cs" />
+      <Compile Include="SLangKeywords.cs" />
+      <Compile Include="SLangLexer.cs" />
+      <Compile Include="SLangParser.cs" />
+      <Compile Include="SLangParserTools.cs" />
+      <Compile Include="SLangParserYacc.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Errors\Errors.csproj">
+        <Project>{44a01f9e-dce7-470c-aae5-c3de0ccbee3b}</Project>
+        <Name>Errors</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\Localization\Localization.csproj">
+        <Project>{2de2842f-0912-4251-bc0f-480854c44a13}</Project>
+        <Name>Localization</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\ParserTools\ParserTools.csproj">
+        <Project>{af2efd7b-69dd-4b43-af65-b59b29349c23}</Project>
+        <Name>ParserTools</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\SyntaxTree\SyntaxTree.csproj">
+        <Project>{c2cac65a-b2ae-4ccc-b067-e6b8e75df73a}</Project>
+        <Name>SyntaxTree</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\SyntaxVisitors\SyntaxVisitors.csproj">
+        <Project>{a9ab4282-83b4-41a7-86c3-e5bf6a45e7e2}</Project>
+        <Name>SyntaxVisitors</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="System" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

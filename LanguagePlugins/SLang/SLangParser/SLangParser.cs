@@ -1,0 +1,90 @@
+﻿using System.IO;
+using System.Collections.Generic;
+using PascalABCCompiler.SyntaxTree;
+using PascalABCCompiler.Parsers;
+using SLangParserYacc;
+
+
+namespace SLangParser {
+    public class SLangLanguageParser: BaseParser {
+        public SLangLanguageParser() {
+            Keywords = new SLangKeywords();
+        }
+
+        public override void Reset() {
+            CompilerDirectives = new List<compiler_directive>();
+
+            Errors.Clear();
+        }
+
+        protected override void PreBuildTree(string FileName) {
+            CompilerDirectives = new List<compiler_directive>();
+
+            CompilerDirectives.Add(new compiler_directive(new token_info("zerobasedstrings"), new token_info("")));
+
+        }
+
+        protected override syntax_tree_node BuildTreeInNormalMode(string FileName, string Text, List<string> DefinesList = null) {
+            Errors.Clear();
+            Warnings.Clear();
+
+            var root = Parse(Text, FileName, false, DefinesList);
+
+            if (Errors.Count > 0)
+                return null;
+
+            if (root != null && root is compilation_unit)
+                (root as compilation_unit).file_name = FileName;
+
+            return root;
+        }
+
+        public syntax_tree_node Parse(string Text, string fileName, bool buildTreeForFormatter = false, List<string> definesList = null) {
+#if DEBUG
+#if _ERR
+            FileInfo f = new FileInfo(FileName);
+            var sv = Path.ChangeExtension(FileName,".grmtrack1");
+            var sw = new StreamWriter(sv);
+            Console.SetError(sw);
+#endif
+#endif
+            var parserTools = new SLangParserTools(Errors, Warnings, ValidDirectives, buildTreeForFormatter, false,
+                Path.GetFullPath(fileName), CompilerDirectives); // контекст сканера и парсера
+            
+
+            var scanner = new Scanner(Text, parserTools, Keywords, definesList);
+
+            var parser = new SLangGPPGParser(scanner, parserTools, true);
+
+            if (!parser.Parse())
+                if (Errors.Count == 0)
+                    parserTools.AddErrorFromResource("UNEXPECTED_SYNTAX_ERROR", null);
+#if DEBUG
+#if _ERR
+            sw.Close();
+#endif
+#endif
+            return parser.root;
+        }
+
+        protected override syntax_tree_node BuildTreeInTypeExprMode(string FileName, string Text) {
+            return null;
+        }
+
+        protected override syntax_tree_node BuildTreeInExprMode(string FileName, string Text) {
+            throw null;
+        }
+
+        protected override syntax_tree_node BuildTreeInSpecialMode(string FileName, string Text) {
+            throw null;
+        }
+
+        protected override syntax_tree_node BuildTreeInFormatterMode(string FileName, string Text) {
+            throw null;
+        }
+
+        protected override syntax_tree_node BuildTreeInStatementMode(string FileName, string Text) {
+            return null;
+        }
+    }
+}
