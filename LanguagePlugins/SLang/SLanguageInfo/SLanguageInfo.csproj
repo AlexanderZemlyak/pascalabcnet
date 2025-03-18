@@ -69,6 +69,17 @@
         <Name>SLangStandardTreeConverter</Name>
       </ProjectReference>
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\..\bin\Highlighting\SLang.xshd">
+        <Link>SLang.xshd</Link>
+      </Content>
+      <Content Include="..\..\..\bin\Lib\SLangHidden.pas">
+        <Link>SLangHidden.pas</Link>
+      </Content>
+      <Content Include="..\..\..\bin\Lib\SLangSystem.pas">
+        <Link>SLangSystem.pas</Link>
+      </Content>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.

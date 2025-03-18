@@ -1,18 +1,10 @@
-﻿task "Olymp2-Task01" {
-  input {
-    CheckData(cInt * 3);
-    let a = cInt;
-  }
+﻿import PABCSystem
 
-  solution {
-    let d = a + 2;
-  }
+def random() -> float:
+    print(Random(0,99))
+    return PABCSystem.random()
+    
+def randint(a: int, b: int) -> int:
+    return PABCSystem.random(a, b)
 
-  tests {
-    GenerateTests(10, tInt * 3);
-  }
-
-  output {
-    CheckOutput(a);
-  }
-}
+random()

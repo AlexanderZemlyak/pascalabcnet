@@ -33,12 +33,29 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+      <Compile Include="AddForwardDeclarationsVisitor.cs" />
+      <Compile Include="CompoundComparisonDesugarVisitor.cs" />
+      <Compile Include="EraseSLangOnlyNodesVisitor.cs" />
+      <Compile Include="FunctionsWithNamedParametersDesugarVisitor.cs" />
+      <Compile Include="ImportToUsesVisitor.cs" />
+      <Compile Include="ListDesugarVisitor.cs" />
+      <Compile Include="NameCorrectVisitor.cs" />
+      <Compile Include="RetainUsedGlobalVariablesVisitor.cs" />
       <Compile Include="StandardSyntaxTreeConverter.cs" />
+      <Compile Include="StringResources.cs" />
+      <Compile Include="SymbolTableFillingVisitor.cs" />
+      <Compile Include="TreeNodesRearrangementVisitor.cs" />
+      <Compile Include="TypeCorrectVisitor.cs" />
+      <Compile Include="UnsupportedConstructsVisitor.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\Errors\Errors.csproj">
         <Project>{44a01f9e-dce7-470c-aae5-c3de0ccbee3b}</Project>
         <Name>Errors</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\..\Localization\Localization.csproj">
+        <Project>{2de2842f-0912-4251-bc0f-480854c44a13}</Project>
+        <Name>Localization</Name>
       </ProjectReference>
       <ProjectReference Include="..\..\..\..\SyntaxTree\SyntaxTree.csproj">
         <Project>{c2cac65a-b2ae-4ccc-b067-e6b8e75df73a}</Project>
@@ -48,6 +65,13 @@
         <Project>{a9ab4282-83b4-41a7-86c3-e5bf6a45e7e2}</Project>
         <Name>SyntaxVisitors</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="System.Data" />
+      <Reference Include="System.Xml.Linq" />
+      <Reference Include="System.Xml.Serialization">
+        <HintPath>C:\Users\controldata\.nuget\packages\microsoft.netframework.referenceassemblies.net462\1.0.3\build\.NETFramework\v4.6.2\System.Xml.Serialization.dll</HintPath>
+      </Reference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

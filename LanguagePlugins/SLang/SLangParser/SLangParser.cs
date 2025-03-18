@@ -5,30 +5,102 @@ using PascalABCCompiler.Parsers;
 using SLangParserYacc;
 
 
-namespace SLangParser {
-    public class SLangLanguageParser: BaseParser {
-        public SLangLanguageParser() {
+
+namespace SLangParser
+{
+    /*public class SLangGPPGParserHelper
+    {
+        private List<Error> Errs;
+        private List<CompilerWarning> Warnings;
+        private string FileName;
+        public bool build_tree_for_formatter = false;
+        public List<string> DefinesList = null;
+
+        public static Func<bool> CheckIfParsingUnit;
+
+        public SLangGPPGParserHelper(List<Error> Errs, List<CompilerWarning> Warnings, string FileName)
+        {
+            this.Errs = Errs;
+            this.Warnings = Warnings;
+            this.FileName = FileName;
+        }
+
+        public syntax_tree_node Parse(string Text, List<compiler_directive> compilerDirectives = null)
+        {
+#if DEBUG
+#if _ERR
+            FileInfo f = new FileInfo(FileName);
+            var sv = Path.ChangeExtension(FileName,".grmtrack1");
+            var sw = new StreamWriter(sv);
+            Console.SetError(sw);
+#endif
+#endif
+            SLangParserTools parsertools = new SLangParserTools(); // контекст сканера и парсера
+            parsertools.errors = Errs;
+            parsertools.warnings = Warnings;
+            parsertools.compilerDirectives = compilerDirectives;
+            parsertools.CurrentFileName = Path.GetFullPath(FileName);
+            
+
+            IndentArranger ia = new IndentArranger();
+            ia.ProcessSourceText(ref Text);
+
+            var scanner = new Scanner();
+            scanner.SetSource(Text, 0);
+            scanner.parsertools = parsertools;// передали parsertools в объект сканера
+            if (DefinesList != null)
+                scanner.Defines.AddRange(DefinesList);
+
+            SLangGPPGParser parser = new SLangGPPGParser(scanner);
+            parsertools.build_tree_for_formatter = build_tree_for_formatter;
+
+            parser.is_unit_to_be_parsed = CheckIfParsingUnit.Invoke();
+
+            parser.parsertools = parsertools; // передали parsertools в объект парсера
+
+            if (!parser.Parse())
+                if (Errs.Count == 0)
+                    parsertools.AddErrorFromResource("UNEXPECTED_SYNTAX_ERROR", null);
+#if DEBUG
+#if _ERR
+            sw.Close();
+#endif
+#endif
+            return parser.root;
+        }
+    }*/
+
+    public class SLangLanguageParser : BaseParser
+    {
+        //private SLangGPPGParserHelper localparserhelper;
+
+        public SLangLanguageParser()
+        {
             Keywords = new SLangKeywords();
         }
 
-        public override void Reset() {
+        public override void Reset()
+        {
             CompilerDirectives = new List<compiler_directive>();
 
             Errors.Clear();
         }
 
-        protected override void PreBuildTree(string FileName) {
+        protected override void PreBuildTree(string FileName)
+        {
             CompilerDirectives = new List<compiler_directive>();
 
+            // чтобы строки во всех программах индексировались с нуля | Movchan 18.05.24
             CompilerDirectives.Add(new compiler_directive(new token_info("zerobasedstrings"), new token_info("")));
 
         }
 
-        protected override syntax_tree_node BuildTreeInNormalMode(string FileName, string Text, List<string> DefinesList = null) {
+        protected override syntax_tree_node BuildTreeInNormalMode(string FileName, string Text, List<string> DefinesList = null)
+        {
             Errors.Clear();
             Warnings.Clear();
 
-            var root = Parse(Text, FileName, false, DefinesList);
+            syntax_tree_node root = Parse(Text, FileName, false, DefinesList);
 
             if (Errors.Count > 0)
                 return null;
@@ -39,7 +111,8 @@ namespace SLangParser {
             return root;
         }
 
-        public syntax_tree_node Parse(string Text, string fileName, bool buildTreeForFormatter = false, List<string> definesList = null) {
+        public syntax_tree_node Parse(string Text, string fileName, bool buildTreeForFormatter = false, List<string> definesList = null)
+        {
 #if DEBUG
 #if _ERR
             FileInfo f = new FileInfo(FileName);
@@ -48,13 +121,16 @@ namespace SLangParser {
             Console.SetError(sw);
 #endif
 #endif
-            var parserTools = new SLangParserTools(Errors, Warnings, ValidDirectives, buildTreeForFormatter, false,
+            SLangParserTools parserTools = new SLangParserTools(Errors, Warnings, ValidDirectives, buildTreeForFormatter, false,
                 Path.GetFullPath(fileName), CompilerDirectives); // контекст сканера и парсера
-            
+
+
+            IndentArranger ia = new IndentArranger();
+            ia.ProcessSourceText(ref Text);
 
             var scanner = new Scanner(Text, parserTools, Keywords, definesList);
 
-            var parser = new SLangGPPGParser(scanner, parserTools, true);
+            SLangGPPGParser parser = new SLangGPPGParser(scanner, parserTools, CheckIfParsingUnit.Invoke());
 
             if (!parser.Parse())
                 if (Errors.Count == 0)
@@ -67,23 +143,28 @@ namespace SLangParser {
             return parser.root;
         }
 
-        protected override syntax_tree_node BuildTreeInTypeExprMode(string FileName, string Text) {
+        protected override syntax_tree_node BuildTreeInTypeExprMode(string FileName, string Text)
+        {
             return null;
         }
 
-        protected override syntax_tree_node BuildTreeInExprMode(string FileName, string Text) {
+        protected override syntax_tree_node BuildTreeInExprMode(string FileName, string Text)
+        {
             throw null;
         }
 
-        protected override syntax_tree_node BuildTreeInSpecialMode(string FileName, string Text) {
+        protected override syntax_tree_node BuildTreeInSpecialMode(string FileName, string Text)
+        {
             throw null;
         }
 
-        protected override syntax_tree_node BuildTreeInFormatterMode(string FileName, string Text) {
+        protected override syntax_tree_node BuildTreeInFormatterMode(string FileName, string Text)
+        {
             throw null;
         }
 
-        protected override syntax_tree_node BuildTreeInStatementMode(string FileName, string Text) {
+        protected override syntax_tree_node BuildTreeInStatementMode(string FileName, string Text)
+        {
             return null;
         }
     }

@@ -81,5 +81,13 @@
       <Name>SPythonStandardTreeConverter</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\bin\Lib\SPythonHidden.pas">
+      <Link>SPythonHidden.pas</Link>
+    </Content>
+    <Content Include="..\..\..\bin\Lib\SPythonSystem.pas">
+      <Link>SPythonSystem.pas</Link>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

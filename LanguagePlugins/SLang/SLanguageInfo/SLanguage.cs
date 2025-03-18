@@ -11,7 +11,7 @@ namespace Languages.SLang
         public SLanguage() : base(
             name: "SLang",
             version: "0.0.1",
-            copyright: "Copyright © 2024 by Stanislav Leonchik",
+            copyright: "Copyright © 2024-2025 by Stanislav Leonchik",
 
             parser: new SLangParser.SLangLanguageParser(),
             docParser: null,
@@ -21,7 +21,7 @@ namespace Languages.SLang
 
             filesExtensions: new string[] { ".slang" },
             caseSensitive: false,
-            systemUnitNames: new string[] { "SlangSystem" }
+            systemUnitNames: new string[] { "SLangSystem", "SLangHidden", "LightPT" }
             )
         { }
 

@@ -147,3 +147,9 @@
 
 
 .idea/.idea.PascalABCNET/.idea
+bin/.DS_Store
+PascalABCNET.sln.DotSettings.user
+bin/SLangParser.dll
+bin/SLangStandardTreeConverter.dll
+bin/SLangSyntaxTreeVisitor.dll
+bin/SLanguageInfo.dll

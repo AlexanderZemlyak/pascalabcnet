@@ -1,5 +1,5 @@
 ﻿{$HiddenIdents}
-unit SPythonHidden;
+unit SLangHidden;
 
 interface
 

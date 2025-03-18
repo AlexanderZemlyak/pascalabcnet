@@ -90,24 +90,33 @@
       <Content Include="..\..\..\bin\Lib\LightPT.pas">
         <Link>examples\LightPT.pas</Link>
       </Content>
-      <Content Include="..\..\..\_ReBuildRelease.bat">
-        <Link>_ReBuildRelease.bat</Link>
-      </Content>
       <Content Include="examples\DSLExample.slang" />
       <Content Include="examples\InputCode.slang" />
       <Content Include="examples\LightPT.txt" />
       <Content Include="examples\Olymp2-Task01.pas">
         <Link>examples\Olymp-2 (1)\Olymp2-Task01.pas</Link>
       </Content>
-      <Content Include="Gplex.exe" />
-      <Content Include="Gppg.exe" />
-      <Content Include="gps.bat" />
+      <Content Include="examples\Olymp\lightpt.dat" />
+      <Content Include="examples\Olymp\Oly2.pdf" />
+      <Content Include="examples\Olymp\Olymp2-Task01.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task02.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task03.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task04.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task05.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task06.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task07.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task08.pas" />
+      <Content Include="examples\Olymp\Olymp2-Task09.pas" />
+      <Content Include="examples\Olymp\server.dat" />
+      <Content Include="examples\Olymp\Tasks.pas" />
+      <Content Include="examples\Olymp\TasksOlymp1.pas" />
       <Content Include="gps.sh" />
       <Content Include="SLangLexer.lex" />
       <Content Include="SLangParser.y" />
     </ItemGroup>
     <ItemGroup>
-      <Compile Include="Program.cs" />
+      <Compile Include="Errors.cs" />
+      <Compile Include="IndentArranger.cs" />
       <Compile Include="SLangKeywords.cs" />
       <Compile Include="SLangLexer.cs" />
       <Compile Include="SLangParser.cs" />
@@ -138,6 +147,7 @@
     </ItemGroup>
     <ItemGroup>
       <Reference Include="System" />
+      <Reference Include="System.Data.Linq" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
