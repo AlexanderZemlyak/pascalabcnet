@@ -155,3 +155,12 @@
 /AddIns/ICSharpCode.SharpDevelop.addin
 
 
+.idea/
+bin/.DS_Store
+bin/SLangParser.dll
+bin/SLangStandardTreeConverter.dll
+bin/SLangSyntaxTreeVisitor.dll
+bin/SLanguageInfo.dll
+PascalABCNET.sln.DotSettings.user
+NodesGenerator.exe - Shortcut.lnk
+.vscode/settings.json
