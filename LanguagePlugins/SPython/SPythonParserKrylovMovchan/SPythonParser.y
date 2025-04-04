@@ -40,9 +40,9 @@
     public type_definition td;
 }
 
-%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA
+%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA EXIT NEW IS
 %token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE
-%token <ex> INTNUM REALNUM TRUE FALSE
+%token <ex> INTNUM REALNUM TRUE FALSE BIGINT
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON ARROW
 %token <stn> STRINGNUM
 %token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL
@@ -60,9 +60,9 @@
 %right STARSTAR
 
 %type <id> ident dotted_ident func_name_ident
-%type <ex> expr proc_func_call const_value variable optional_condition act_param
+%type <ex> expr proc_func_call const_value variable optional_condition act_param new_expr is_expr
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
-%type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
+%type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif exit_stmt
 %type <stn> expr_list
 %type <stn> stmt_list block
 %type <stn> program param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
@@ -173,12 +173,14 @@ stmt
 		{ 
 			$$ = $1; 
 		}
-	// works only on global level
+	| exit_stmt
+		{
+			$$ = $1;
+		}
 	| proc_func_decl
 		{
 			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
 		}
-	// works only on global level
 	| import_clause
 		{
 			$$ = $1; 
@@ -204,6 +206,13 @@ pass_stmt
 	: PASS
 		{
 			$$ = new empty_statement();
+		}
+	;
+
+exit_stmt
+	: EXIT LPAR optional_act_param_list RPAR
+		{
+			parserTools.AddErrorFromResource("UNSUPPORTED_CONSTRUCTION_{0}", @$, "exit");
 		}
 	;
 
@@ -395,9 +404,31 @@ expr
 		{ 
 			$$ = $1; 
 		}
+	| new_expr
+		{
+			$$ = $1;
+		}
+	| is_expr
+		{
+			$$ = $1;
+		}
 	| LPAR expr RPAR
 		{ 
 			$$ = new bracket_expr($2, @$); 
+		}
+	;
+
+is_expr
+	: variable IS type_ref
+		{
+			$$ = parserTools.NewAsIsExpr($1, op_typecast.is_op, $3, @$);
+		}
+	;
+
+new_expr
+	: NEW type_ref LPAR optional_act_param_list RPAR
+		{
+			$$ = new new_expr($2, $4 as expression_list, false, null, @$);
 		}
 	;
 
@@ -421,6 +452,10 @@ const_value
 	| STRINGNUM
 		{ 
 			$$ = $1 as literal; 
+		}
+	| BIGINT
+		{ 
+			$$ = $1;
 		}
 	;
 
@@ -485,18 +520,14 @@ func_name_ident
 		}
 	;
 
-// return `expr` ~ result := `expr`; exit;
 return_stmt
 	: RETURN expr
 		{
-			statement res_assign = new assign(new ident("result"), $2, Operators.Assignment, @$);
-			statement exit_call = new procedure_call(new ident("exit"), true, @$);
-			$$ = new statement_list(res_assign, @$);
-			($$ as statement_list).Add(exit_call, @$);
+			$$ = new return_statement($2, @$);
 		}
 	| RETURN
 		{
-			$$ = new procedure_call(new ident("exit", @$), true, @$);
+			$$ = new return_statement(null, @$);
 		}
 	;
 

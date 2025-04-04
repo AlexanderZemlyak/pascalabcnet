@@ -12,7 +12,7 @@ namespace Languages.SPython.Frontend.Converters
         protected override syntax_tree_node ApplyConversions(syntax_tree_node root)
         {
             // кидает ошибки за использование 
-            // нереализованных конструкций языка
+            // неподдерживаемых конструкций языка
             var ucv = new UnsupportedConstructsVisitor();
             ucv.ProcessNode(root);
 
@@ -20,6 +20,11 @@ namespace Languages.SPython.Frontend.Converters
             // как uses в начале программы для сбора имён из этих модулей
             var ituv = new ImportToUsesVisitor();
             ituv.ProcessNode(root);
+
+            // замена return;       на { exit(); }
+            // замена return expr;  на { result := expr; exit(); }
+            var rdv = new ReturnDesugarVisitor();
+            rdv.ProcessNode(root);
 
             // замена генерации списков на Select.Where.ToArray
             // (не работает из-за лямбд, если переместить в ConvertAfterUsedModulesCompilation)

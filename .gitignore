@@ -146,10 +146,10 @@
 /AddIns/ICSharpCode.SharpDevelop.addin
 
 
-.idea/.idea.PascalABCNET/.idea
+.idea/
 bin/.DS_Store
-PascalABCNET.sln.DotSettings.user
 bin/SLangParser.dll
 bin/SLangStandardTreeConverter.dll
 bin/SLangSyntaxTreeVisitor.dll
 bin/SLanguageInfo.dll
+PascalABCNET.sln.DotSettings.user
