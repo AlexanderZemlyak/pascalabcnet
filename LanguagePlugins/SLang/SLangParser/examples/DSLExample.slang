@@ -1,10 +1,21 @@
-﻿import PABCSystem
+﻿a = 12
 
-def random() -> float:
-    print(Random(0,99))
-    return PABCSystem.random()
+Задача a:
+  Ввод:
+    print(Random(0,1))
+  Проверка:
+    print(Random(0,1) + 10)
+  Тесты:
+    print(Random(0,1) + 100)
+  Вывод:
+    print(Random(0,1)+ 1000)
     
-def randint(a: int, b: int) -> int:
-    return PABCSystem.random(a, b)
-
-random()
+Задача a:
+  Ввод:
+    print(Random(0,1))
+  Проверка:
+    print(Random(0,1) + 10)
+  Тесты:
+    print(Random(0,1) + 100)
+  Вывод:
+    print(Random(0,1)+ 1000)

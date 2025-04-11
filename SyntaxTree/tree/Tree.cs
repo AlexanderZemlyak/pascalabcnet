@@ -1006,8 +1006,7 @@ namespace PascalABCCompiler.SyntaxTree
 				copy.from.Parent = copy;
 			}
 			copy.operator_type = operator_type;
-			copy.first_assignment_defines_type = first_assignment_defines_type;
-            return copy;
+			return copy;
 		}
 
 		/// <summary> Получает копию данного узла корректного типа </summary>
@@ -57548,6 +57547,293 @@ namespace PascalABCCompiler.SyntaxTree
 					case 0:
 						expr = (expression)value;
 						break;
+				}
+			}
+		}
+		///<summary>
+		///Метод для обхода дерева посетителем
+		///</summary>
+		///<param name="visitor">Объект-посетитель.</param>
+		///<returns>Return value is void</returns>
+		public override void visit(IVisitor visitor)
+		{
+			visitor.visit(this);
+		}
+
+	}
+
+
+	///<summary>
+	///
+	///</summary>
+	[Serializable]
+	public partial class task_stmt : statement_list
+	{
+
+		///<summary>
+		///Конструктор без параметров.
+		///</summary>
+		public task_stmt()
+		{
+
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public task_stmt(expression _task_id,statement_list _sections)
+		{
+			this._task_id=_task_id;
+			this._sections=_sections;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public task_stmt(expression _task_id,statement_list _sections,SourceContext sc)
+		{
+			this._task_id=_task_id;
+			this._sections=_sections;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public task_stmt(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,expression _task_id,statement_list _sections)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._task_id=_task_id;
+			this._sections=_sections;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public task_stmt(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,expression _task_id,statement_list _sections,SourceContext sc)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._task_id=_task_id;
+			this._sections=_sections;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+		protected expression _task_id;
+		protected statement_list _sections;
+
+		///<summary>
+		///
+		///</summary>
+		public expression task_id
+		{
+			get
+			{
+				return _task_id;
+			}
+			set
+			{
+				_task_id=value;
+				if (_task_id != null)
+					_task_id.Parent = this;
+			}
+		}
+
+		///<summary>
+		///
+		///</summary>
+		public statement_list sections
+		{
+			get
+			{
+				return _sections;
+			}
+			set
+			{
+				_sections=value;
+				if (_sections != null)
+					_sections.Parent = this;
+			}
+		}
+
+
+		/// <summary> Создает копию узла </summary>
+		public override syntax_tree_node Clone()
+		{
+			task_stmt copy = new task_stmt();
+			copy.Parent = this.Parent;
+			if (source_context != null)
+				copy.source_context = new SourceContext(source_context);
+			if (attributes != null)
+			{
+				copy.attributes = (attribute_list)attributes.Clone();
+				copy.attributes.Parent = copy;
+			}
+			if (subnodes != null)
+			{
+				foreach (statement elem in subnodes)
+				{
+					if (elem != null)
+					{
+						copy.Add((statement)elem.Clone());
+						copy.Last().Parent = copy;
+					}
+					else
+						copy.Add(null);
+				}
+			}
+			if (left_logical_bracket != null)
+			{
+				copy.left_logical_bracket = (token_info)left_logical_bracket.Clone();
+				copy.left_logical_bracket.Parent = copy;
+			}
+			if (right_logical_bracket != null)
+			{
+				copy.right_logical_bracket = (token_info)right_logical_bracket.Clone();
+				copy.right_logical_bracket.Parent = copy;
+			}
+			copy.expr_lambda_body = expr_lambda_body;
+			if (task_id != null)
+			{
+				copy.task_id = (expression)task_id.Clone();
+				copy.task_id.Parent = copy;
+			}
+			if (sections != null)
+			{
+				copy.sections = (statement_list)sections.Clone();
+				copy.sections.Parent = copy;
+			}
+			return copy;
+		}
+
+		/// <summary> Получает копию данного узла корректного типа </summary>
+		public new task_stmt TypedClone()
+		{
+			return Clone() as task_stmt;
+		}
+
+		///<summary> Заполняет поля Parent в непосредственных дочерних узлах </summary>
+		public override void FillParentsInDirectChilds()
+		{
+			if (attributes != null)
+				attributes.Parent = this;
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					if (child != null)
+						child.Parent = this;
+			}
+			if (left_logical_bracket != null)
+				left_logical_bracket.Parent = this;
+			if (right_logical_bracket != null)
+				right_logical_bracket.Parent = this;
+			if (task_id != null)
+				task_id.Parent = this;
+			if (sections != null)
+				sections.Parent = this;
+		}
+
+		///<summary> Заполняет поля Parent во всем поддереве </summary>
+		public override void FillParentsInAllChilds()
+		{
+			FillParentsInDirectChilds();
+			attributes?.FillParentsInAllChilds();
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					child?.FillParentsInAllChilds();
+			}
+			left_logical_bracket?.FillParentsInAllChilds();
+			right_logical_bracket?.FillParentsInAllChilds();
+			task_id?.FillParentsInAllChilds();
+			sections?.FillParentsInAllChilds();
+		}
+
+		///<summary>
+		///Свойство для получения количества всех подузлов без элементов поля типа List
+		///</summary>
+		public override Int32 subnodes_without_list_elements_count
+		{
+			get
+			{
+				return 4;
+			}
+		}
+		///<summary>
+		///Свойство для получения количества всех подузлов. Подузлом также считается каждый элемент поля типа List
+		///</summary>
+		public override Int32 subnodes_count
+		{
+			get
+			{
+				return 4 + (subnodes == null ? 0 : subnodes.Count);
+			}
+		}
+		///<summary>
+		///Индексатор для получения всех подузлов
+		///</summary>
+		public override syntax_tree_node this[Int32 ind]
+		{
+			get
+			{
+				if(subnodes_count == 0 || ind < 0 || ind > subnodes_count-1)
+					throw new IndexOutOfRangeException();
+				switch(ind)
+				{
+					case 0:
+						return left_logical_bracket;
+					case 1:
+						return right_logical_bracket;
+					case 2:
+						return task_id;
+					case 3:
+						return sections;
+				}
+				Int32 index_counter=ind - 4;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						return subnodes[index_counter];
+					}
+				}
+				return null;
+			}
+			set
+			{
+				if(subnodes_count == 0 || ind < 0 || ind > subnodes_count-1)
+					throw new IndexOutOfRangeException();
+				switch(ind)
+				{
+					case 0:
+						left_logical_bracket = (token_info)value;
+						break;
+					case 1:
+						right_logical_bracket = (token_info)value;
+						break;
+					case 2:
+						task_id = (expression)value;
+						break;
+					case 3:
+						sections = (statement_list)value;
+						break;
+				}
+				Int32 index_counter=ind - 4;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						subnodes[index_counter]= (statement)value;
+						return;
+					}
 				}
 			}
 		}

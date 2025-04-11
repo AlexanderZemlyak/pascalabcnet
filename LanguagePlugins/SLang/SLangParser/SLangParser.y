@@ -59,7 +59,7 @@
 %left NOT
 %right STARSTAR
 
-%type <id> ident dotted_ident func_name_ident
+%type <id> ident dotted_ident func_name_ident 
 %type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
@@ -71,6 +71,9 @@
 %type <stn> import_clause template_type_params template_param_list
 %type <ob> optional_semicolon end_of_line
 %type <op> assign_type
+
+%type <stn> task_definition input_section check_section tests_section output_section
+%type <ex> task_id
 
 %start program
 
@@ -92,21 +95,7 @@ act		= actual
 /* ---------------------- ГЛАВНОЕ ПРАВИЛО program ---------------------- */
 %%
 program
-    /* 1) файл может содержать список DSL-задач + ; + EOF */
-	: task_list optional_semicolon END_OF_FILE
-              {
-                  if (!is_unit_to_be_parsed) {
-                      // Преобразуем список задач в некий модуль/AST
-                      var tasksBlock = parserTools.MakeTasksModule($1, @$);
-                      root = tasksBlock; 
-                  } 
-                  else {
-                      // Если файл парсится как unit, аналогично
-                      // ...
-                  }
-              }
-    /* 2) или обычные операторы SLang, как прежде */
-	| stmt_list optional_semicolon END_OF_FILE
+	: stmt_list optional_semicolon END_OF_FILE
 		{
 			if (!is_unit_to_be_parsed) {
 				var stl = $1 as statement_list;
@@ -130,22 +119,6 @@ program
 		}
 	;
 
-/* ---------------------- СПИСОК ЗАДАЧ DSL ---------------------- */
-task_list
-    : /* пусто */ 
-      { 
-          // пустой список
-          $$ = new List<syntax_tree_node>();
-      }
-    | task_list task_definition
-      {
-          // добавляем очередную задачу
-          var tasks = $1 as List<syntax_tree_node>;
-          tasks.Add($2);
-          $$ = tasks;
-      }
-    ;
-
 /* ---------------------- ОПРЕДЕЛЕНИЕ ОДНОЙ DSL-ЗАДАЧИ ---------------------- 
    Пример синтаксиса:
    Задача 12:
@@ -158,63 +131,144 @@ task_list
        Вывод:
          ...
 */
+
+/*
+наброс
+checker
+	: tasks
+		{
+			$$ = new procedure_definition($1 as procedure_header, new block(null, $2 as statement_list, @2), @$);
+		}
+	;
+
+proc_func_header
+	: optional_form_param_list
+		{
+			$$ = new procedure_header(
+				$4 as formal_parameters, 
+				null, 
+				new method_name(null,null, $2, null, @2), 
+				null, 
+				$@
+			);
+		}
+	;
+	
+case_stmt
+    : tkCase expr_l1 tkOf case_list else_case tkEnd 
+        { 
+			$$ = new case_node($2, $4 as case_variants, $5 as statement, @$); 
+		}  
+	| tkCase expr_l1 tkOf case_list tkSemiColon else_case tkEnd 
+        { 
+			$$ = new case_node($2, $4 as case_variants, $6 as statement, @$); 
+		}
+	| tkCase expr_l1 tkOf else_case tkEnd 
+        { 
+			$$ = new case_node($2, NewCaseItem(new empty_statement(), null), $4 as statement, @$); 
+		}		
+    ;
+
+case_list
+    : case_item
+        {
+			if ($1 is empty_statement) 
+				$$ = NewCaseItem($1, null);
+			else $$ = NewCaseItem($1, @$);
+		}
+    | case_list tkSemiColon case_item         
+        { 
+			$$ = AddCaseItem($1 as case_variants, $3, @$);
+		} 
+    ;
+
+case_item
+    : case_label_list tkColon unlabelled_stmt            
+        { 
+			$$ = new case_variant($1 as expression_list, $3 as statement, @$); 
+		}
+    ;
+
+case_label_list
+    : case_label                               
+        { 
+			$$ = new expression_list($1, @$);
+		}
+    |  case_label_list tkComma case_label      
+        { 
+			$$ = ($1 as expression_list).Add($3, @$);
+		}
+    ;
+
+case_label
+    : const_elem
+		{ $$ = $1; }
+    ;
+
+else_case
+    :
+		{ $$ = null;}
+    |  tkElse stmt_list                  
+        { $$ = $2; }
+    ;
+
+	
+tasks
+	: task_definition
+	| tasks end_of_line task_definition
+	;
+*/
+
 task_definition
-    : TASK task_id COLON end_of_line
-      INDENT
-         InputSection
-         CheckSection
-         TestsSection
-         OutputSection
-      UNINDENT
-      {
-          // Собираем все 4 секции в один узел
-          $$ = new DSLTaskNode($2, $5, $6, $7, $8, @$);
-      }
+    : TASK task_id COLON block {
+	$$ = new task_stmt(
+		$2 as ident, 
+		$4 as statement_list,
+		@$
+	);
+    }
     ;
 
 /* Идентификатор задачи: либо число, либо обычный идентификатор. */
 task_id
     : INTNUM
-      { $$ = $1; }
+      { $$ = new ident($1.ToString(), @$); }
     | ident
       { $$ = $1; }
     ;
 
 /* ---------------------- СЕКЦИЯ "ВВОД" ---------------------- */
-InputSection
-    : INPUT COLON end_of_line block
+input_section
+    : INPUT COLON block
       {
-          // block -- это stmt_list: можем писать var-объявления, CheckData(...) и прочее
-          $$ = new DSLInputSectionNode($4, @$);
+          // Просто statement_list
+          $$ = $3;
       }
-    | /* пусто */ { $$ = null; }
+    | /* пусто */
+      {
+          $$ = null;
+      }
     ;
 
-/* ---------------------- СЕКЦИЯ "ПРОВЕРКА" ---------------------- */
-CheckSection
-    : CHECK COLON end_of_line block
-      {
-          $$ = new DSLCheckSectionNode($4, @$);
-      }
-    | /* пусто */ { $$ = null; }
+check_section
+    : CHECK COLON block
+      { $$ = $3; }
+    | /* пусто */
+      { $$ = null; }
     ;
 
-/* ---------------------- СЕКЦИЯ "ТЕСТЫ" ---------------------- */
-TestsSection
-    : TESTS COLON end_of_line block
-      {
-          $$ = new DSLTestsSectionNode($4, @$);
-      }
-    | /* пусто */ { $$ = null; }
+tests_section
+    : TESTS COLON block
+      { $$ = $3; }
+    | /* пусто */
+      { $$ = null; }
     ;
 
-/* ---------------------- СЕКЦИЯ "ВЫВОД" ---------------------- */
-OutputSection
-    : OUTPUT COLON end_of_line block
-      {
-          $$ = new DSLOutputSectionNode($4, @$);
-      }
-    | /* пусто */ { $$ = null; }
+output_section
+    : OUTPUT COLON block
+      { $$ = $3; }
+    | /* пусто */
+      { $$ = null; }
     ;
 
 /* ---------------------- НИЖЕ - СТАРЫЕ ПРАВИЛА stmt_list, if_stmt, etc. ---------------------- */
@@ -255,6 +309,11 @@ stmt
 		{ 
 			$$ = $1; 
 		}
+	| task_definition { $$ = $1; }
+	| input_section { $$ = $1; }
+        | check_section { $$ = $1; }
+        | tests_section { $$ = $1; }
+        | output_section { $$ = $1; }
 	| return_stmt
 		{ 
 			$$ = $1; 
@@ -285,7 +344,7 @@ stmt
 		{
 			$$ = $1; 
 		}
-	;
+    	;
 
 import_clause
 	: IMPORT ident_as_ident_list

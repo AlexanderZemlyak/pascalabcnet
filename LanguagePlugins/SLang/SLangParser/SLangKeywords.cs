@@ -37,11 +37,11 @@ namespace SLangParser
                     ["pass"] = (int)Tokens.PASS,
                     ["class"] = (int)Tokens.CLASS,
                     ["lambda"] = (int)Tokens.LAMBDA,
-                    ["ЗАДАЧА"] = (int)Tokens.TASK,
-                    ["ВВОД"] = (int)Tokens.INPUT,
-                    ["ПРОВЕРКА"] = (int)Tokens.CHECK,
-                    ["ТЕСТЫ"] = (int)Tokens.TESTS,
-                    ["ВЫВОД"] = (int)Tokens.OUTPUT,
+                    ["Задача"] = (int)Tokens.TASK,
+                    ["Ввод"] = (int)Tokens.INPUT,
+                    ["Проверка"] = (int)Tokens.CHECK,
+                    ["Тесты"] = (int)Tokens.TESTS,
+                    ["Вывод"] = (int)Tokens.OUTPUT,
                 }
                 .ToDictionary(kv => ConvertKeyword(kv.Key), kv => kv.Value);
         }

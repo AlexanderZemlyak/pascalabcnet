@@ -560,6 +560,8 @@ namespace PascalABCCompiler.SyntaxTree
 					return new from_import_statement();
 				case 269:
 					return new return_statement();
+				case 270:
+					return new task_stmt();
 			}
 			return null;
 		}
@@ -4699,6 +4701,19 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			read_statement(_return_statement);
 			_return_statement.expr = _read_node() as expression;
+		}
+
+
+		public void visit(task_stmt _task_stmt)
+		{
+			read_task_stmt(_task_stmt);
+		}
+
+		public void read_task_stmt(task_stmt _task_stmt)
+		{
+			read_statement_list(_task_stmt);
+			_task_stmt.task_id = _read_node() as expression;
+			_task_stmt.sections = _read_node() as statement_list;
 		}
 
 	}

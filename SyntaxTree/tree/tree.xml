@@ -3456,6 +3456,17 @@
         <TagIndices />
       </Tags>
     </SyntaxNode>
+    <SyntaxNode Name="task_stmt" BaseName="statement_list">
+      <Fields>
+        <SyntaxField Name="task_id" SyntaxType="expression" />
+        <SyntaxField Name="sections" SyntaxType="statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
   </SyntaxNodes>
   <Settings>
     <FileName>Tree.cs</FileName>
@@ -4779,6 +4790,18 @@
       <HelpData Key="syntax_tree_node" Value="Базовый класс для всех классов синтаксического дерева" />
       <HelpData Key="syntax_tree_node.f" Value="" />
       <HelpData Key="syntax_tree_node.source_context" Value="Позиция в тексте (строка-столбец начала - строка-столбец конца)" />
+      <HelpData Key="task_stmt" Value="" />
+      <HelpData Key="task_stmt.check_section" Value="" />
+      <HelpData Key="task_stmt.check_stmts" Value="" />
+      <HelpData Key="task_stmt.input_section" Value="" />
+      <HelpData Key="task_stmt.input_stmts" Value="" />
+      <HelpData Key="task_stmt.name" Value="" />
+      <HelpData Key="task_stmt.output_section" Value="" />
+      <HelpData Key="task_stmt.output_stmts" Value="" />
+      <HelpData Key="task_stmt.sections" Value="" />
+      <HelpData Key="task_stmt.task_id" Value="" />
+      <HelpData Key="task_stmt.tests_section" Value="" />
+      <HelpData Key="task_stmt.tests_stmts" Value="" />
       <HelpData Key="template_operator_name" Value="" />
       <HelpData Key="template_operator_name.opname" Value="" />
       <HelpData Key="template_param_list" Value="" />
