@@ -246,7 +246,7 @@ namespace PascalABCCompiler.TreeConverter
 
 		private SemanticTree.field_access_level _fal;
         private bool _has_nested_functions;
-        internal syntax_tree_visitor syntax_tree_visitor;
+        internal syntax_tree_visitor syntax_tree_visitor { get; set; }
 		
         private static compilation_context _instance;
 
@@ -258,8 +258,7 @@ namespace PascalABCCompiler.TreeConverter
         {
             this.convertion_data_and_alghoritms = convertion_data_and_alghoritms;
             this.syntax_tree_visitor = syntax_tree_visitor;
-            if (syntax_tree_visitor.GetType() == typeof(syntax_tree_visitor))
-                _instance = this;
+            _instance = this;
         }
 		
         
@@ -3230,6 +3229,17 @@ namespace PascalABCCompiler.TreeConverter
                             }
                         }
                     }
+                    if (_ctn.type_special_kind == SemanticTree.type_special_kind.array_kind && _ctn.element_type.is_generic_parameter)
+                    {
+                        var arr_types = type_constructor.instance.get_generic_arrays(_ctn.rank);
+                        foreach (var ctn in arr_types)
+                        {
+                            var addit_si_list = ctn.Scope.FindOnlyInScope(fn.name);
+                            if (addit_si_list != null)
+                                si_list.AddRange(addit_si_list);
+                        }
+                       
+                    }
                 }
                 else if (_compiled_tn != null)
                 {
@@ -3263,7 +3273,10 @@ namespace PascalABCCompiler.TreeConverter
                 foreach (var tmp_si in si_list)
                 {
                     if (tmp_si.sym_info == fn)
+                    {
+                        
                         continue;
+                    }
                     if (tmp_si.sym_info.general_node_type != general_node_type.function_node)
                     {
                         TreeRealization.BasePCUReader.RestoreSymbols(si_list, fn.name);

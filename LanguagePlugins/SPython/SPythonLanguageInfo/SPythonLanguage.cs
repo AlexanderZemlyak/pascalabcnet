@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using Languages.Facade;
-using Languages.SPython.Frontend.Converters;
-using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.SyntaxTreeConverters;
 using PascalABCCompiler.SystemLibrary;
 using PascalABCCompiler.TreeConverter;
-using SPythonSyntaxTreeVisitor;
 
 namespace Languages.SPython
 {
@@ -16,11 +13,12 @@ namespace Languages.SPython
             version: "0.0.1",
             copyright: "Copyright © 2023-2025 by Vladislav Krylov, Egor Movchan",
 
+            languageInformation: new Frontend.Data.SPythonLanguageInformation(),
             parser: new SPythonParser.SPythonLanguageParser(),
             docParser: null,
 
             syntaxTreeConverters: new List<ISyntaxTreeConverter>() { new Frontend.Converters.StandardSyntaxTreeConverter(), new SyntaxSemanticVisitors.LambdaAnyConverter() },
-            syntaxTreeToSemanticTreeConverter: new SPythonSyntaxTreeVisitor.spython_syntax_tree_visitor(),
+            // syntaxTreeToSemanticTreeConverter: new SPythonSyntaxTreeVisitor.spython_syntax_tree_visitor(LanguageProvider.Instance.MainLanguage.SyntaxTreeToSemanticTreeConverter),
 
             filesExtensions: new string[] { ".pys" },
             caseSensitive: true,
@@ -52,7 +50,7 @@ namespace Languages.SPython
 
         public override void SetSyntaxTreeToSemanticTreeConverter()
         {
-            SyntaxTreeToSemanticTreeConverter = new SPythonSyntaxTreeVisitor.spython_syntax_tree_visitor();
+            SyntaxTreeToSemanticTreeConverter = new SPythonSyntaxTreeVisitor.spython_syntax_tree_visitor(LanguageProvider.Instance.MainLanguage.SyntaxTreeToSemanticTreeConverter);
         }
 
     }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using PascalABCCompiler.SemanticTree;
 using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.SystemLibrary;
-using PascalABCCompiler.TreeConverter.TreeConversion;
 using PascalABCCompiler.TreeConverter;
 using PascalABCCompiler.TreeRealization;
 using PascalABCCompiler.Errors;
@@ -13,12 +9,23 @@ using PascalABCCompiler.Errors;
 
 namespace SPythonSyntaxTreeVisitor
 {
+    // Возможно, стоит заменить на декоратор или стратегию вместо наследования EVA
     public class spython_syntax_tree_visitor : syntax_tree_visitor
     {
-        public spython_syntax_tree_visitor(): base()
+        syntax_tree_visitor mainVisitor;
+
+        public spython_syntax_tree_visitor(syntax_tree_visitor mainSyntaxTreeVisitor) : base(false)
         {
+
+            mainVisitor = mainSyntaxTreeVisitor;
+            convertion_data_and_alghoritms = mainSyntaxTreeVisitor.convertion_data_and_alghoritms;
+            ret = mainSyntaxTreeVisitor.ret;
+            context = mainSyntaxTreeVisitor.context;
+            contextChanger = mainSyntaxTreeVisitor.contextChanger;
+
             OnLeave = RunAdditionalChecks;
         }
+
         private void RunAdditionalChecks(syntax_tree_node node)
         {
             switch (node)
@@ -43,6 +50,7 @@ namespace SPythonSyntaxTreeVisitor
         protected override void get_system_module(common_unit_node psystem_unit)
         {
             init_system_module(psystem_unit);
+
             //esli zapustili v otladke, to vosstanovim mnozhestvo i procedury sozdanija diapasonov, inache ne budet rabotat
             if (debugging)
             {
@@ -50,10 +58,17 @@ namespace SPythonSyntaxTreeVisitor
                 si = SystemLibInitializer.CreateObjDiapason.SymbolInfo;
                 si = SystemLibInitializer.TypedSetType.SymbolInfo;
             }
-            //if (SystemLibrary.SystemLibInitializer.TextFileType.Found)
-            //	SystemLibrary.SystemLibInitializer.TextFileType.GetTypeNodeSpecials().type_special_kind = PascalABCCompiler.SemanticTree.type_special_kind.text_file;
-            // SystemUnitAssigned = true;
+
+            // SystemUnitAssigned = true; - убрали для SPython
             CreateSpecialFields(psystem_unit);
+        }
+
+        // Инициализируем только переменные экземпляра, не влияем на глобальное состояние в отличие от визитора Паскаля EVA
+        protected override void internal_reset()
+        {
+            _system_unit = mainVisitor._system_unit;
+            SystemLibrary.system_unit = _system_unit;
+            ResetSelfFields();
         }
 
         public override void AddError(location loc, string ErrResourceString, params object[] values)

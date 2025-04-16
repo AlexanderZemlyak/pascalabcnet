@@ -67,7 +67,7 @@ namespace PascalABCCompiler.TreeConverter
 
         public convertion_data_and_alghoritms convertion_data_and_alghoritms;
 
-        internal returner ret;
+        public returner ret;
 
         internal document current_document;
 
@@ -89,7 +89,7 @@ namespace PascalABCCompiler.TreeConverter
 
         private common_unit_node _compiled_unit;
 
-        private common_unit_node _system_unit;
+        public common_unit_node _system_unit;
 		internal bool debug=true;
 		public bool debugging=false;
         public bool for_intellisense = false;
@@ -160,7 +160,14 @@ namespace PascalABCCompiler.TreeConverter
             this.debug = initializationData.debug;
             this.debugging = initializationData.debugging;
             this.for_intellisense = initializationData.forIntellisense;
+            
+            // Возможно, это тоже вызывает ошибки, если присваивается не паскалевский визитор, пока непонятно EVA
             SystemLibrary.SystemLibrary.syn_visitor = this;
+            
+            // Добавлено, потому что в SPython используются эти же объекты, а не создаются новые EVA
+            convertion_data_and_alghoritms.syntax_tree_visitor = this;
+            ret.syntax_tree_visitor = this;
+            context.syntax_tree_visitor = this;
         }
 
         public List<TreeRealization.var_definition_node> CompiledVariables => compiledVariables;
@@ -238,7 +245,7 @@ namespace PascalABCCompiler.TreeConverter
             return gpa;
         }
 
-        private void internal_reset()
+        protected virtual void internal_reset()
         {
             PascalABCCompiler.SystemLibrary.SystemLibInitializer.initialization_properties init_properties =
                 new PascalABCCompiler.SystemLibrary.SystemLibInitializer.initialization_properties();
@@ -252,6 +259,18 @@ namespace PascalABCCompiler.TreeConverter
             SystemLibrary.SystemLibrary.system_unit = _system_unit;
             generic_convertions.reset_generics();
             generic_convertions.visitor = this;
+            
+            #region MikhailoMMX, реинициализация класса OpenMP
+            OpenMP.InternalReset();
+            #endregion
+            CapturedVariablesSubstitutionClassGenerator.Reset();
+
+            ResetSelfFields();
+        }
+
+        // Добавили, чтобы можно было использовать его для потомков syntax_tree_visitor EVA
+        protected void ResetSelfFields()
+        {
             _record_created = false;
             RefTypesForCheckPointersTypeForDotNetFramework.Clear();
             reset_for_interface();
@@ -266,22 +285,22 @@ namespace PascalABCCompiler.TreeConverter
             SystemLibrary.SystemLibInitializer.NeedsToRestore.Clear();
             type_section_converting = false;
             ThrowCompilationError = true;
-            #region MikhailoMMX, реинициализация класса OpenMP
-            OpenMP.InternalReset();
-            CurrentParallelPosition = ParallelPosition.Outside;
-            #endregion
-
             lambdaProcessingState = LambdaProcessingState.None; //lroman
-            CapturedVariablesSubstitutionClassGenerator.Reset();
+            // MikhailoMMX, реинициализация для OpenMP
+            CurrentParallelPosition = ParallelPosition.Outside;
         }
 
-        public syntax_tree_visitor()
+        public syntax_tree_visitor(bool mainConverterInitialization = true)
         {
-            convertion_data_and_alghoritms = new convertion_data_and_alghoritms(this);
-            ret = new returner(this);
-            context = new compilation_context(convertion_data_and_alghoritms, this);
-			contextChanger = new ContextChanger(context);
-            internal_reset();
+            // объекты ниже создаем только для паскалевского визитора, чтобы они оставались в единственном экземпляре EVA
+            if (mainConverterInitialization)
+            {
+                convertion_data_and_alghoritms = new convertion_data_and_alghoritms(this);
+                ret = new returner(this);
+                context = new compilation_context(convertion_data_and_alghoritms, this);
+                contextChanger = new ContextChanger(context);
+                internal_reset();
+            }
         }
 
 
@@ -14155,6 +14174,7 @@ namespace PascalABCCompiler.TreeConverter
             common_type_node common_converted_type_tmp = context.converted_type;
             compiled_type_node compiled_converted_type_tmp = context.converted_compiled_type;
             common_namespace_function_node cnfn2 = context.top_function as common_namespace_function_node;
+
             if (cnfn2 != null && cnfn2.ConnectedToType != null)
             {
                 if (cnfn2.ConnectedToType is compiled_type_node)
@@ -14346,8 +14366,20 @@ namespace PascalABCCompiler.TreeConverter
                     }
                 }
             }
-            bool unique = context.close_function_params(body_exists);
+            common_type_node common_converted_type_tmp = context.converted_type;
+            compiled_type_node compiled_converted_type_tmp = context.converted_compiled_type;
+            common_namespace_function_node cnfn2 = context.top_function as common_namespace_function_node;
 
+            if (cnfn2 != null && cnfn2.ConnectedToType != null)
+            {
+                if (cnfn2.ConnectedToType is compiled_type_node)
+                    context.converted_compiled_type = cnfn2.ConnectedToType as compiled_type_node;
+                else if (cnfn2.ConnectedToType is common_type_node)
+                    context.converted_type = cnfn2.ConnectedToType as common_type_node;
+            }
+            bool unique = context.close_function_params(body_exists);
+            context.converted_compiled_type = compiled_converted_type_tmp;
+            context.converted_type = common_converted_type_tmp;
             if (context.converted_type != null && context.converted_type.IsInterface)
             {
                 if (body_exists)
