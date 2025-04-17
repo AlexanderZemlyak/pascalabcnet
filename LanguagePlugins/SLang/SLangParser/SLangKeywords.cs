@@ -1,49 +1,43 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using PascalABCCompiler.Parsers;
 using SLangParserYacc;
 
 namespace SLangParser
 {
 
-    public class SLangKeywords : PascalABCCompiler.Parsers.BaseKeywords
+    public class SLangKeywords : BaseKeywords
     {
-        protected override Dictionary<string, int> KeywordsToTokens { get; set; }
 
-        protected override string FileName => "keywordsmap.spy";
+        protected override string FileName => "keywordsmap.pys";
 
-        public SLangKeywords() : base()
+        public SLangKeywords() : base(true)
         {
-            KeywordsToTokens = new Dictionary<string, int>
-                {
-                    ["if"] = (int)Tokens.IF,
-                    ["elif"] = (int)Tokens.ELIF,
-                    ["else"] = (int)Tokens.ELSE,
-                    ["while"] = (int)Tokens.WHILE,
-                    ["for"] = (int)Tokens.FOR,
-                    ["in"] = (int)Tokens.IN,
-                    ["def"] = (int)Tokens.DEF,
-                    ["return"] = (int)Tokens.RETURN,
-                    ["break"] = (int)Tokens.BREAK,
-                    ["continue"] = (int)Tokens.CONTINUE,
-                    ["and"] = (int)Tokens.AND,
-                    ["or"] = (int)Tokens.OR,
-                    ["not"] = (int)Tokens.NOT,
-                    ["import"] = (int)Tokens.IMPORT,
-                    ["from"] = (int)Tokens.FROM,
-                    ["global"] = (int)Tokens.GLOBAL,
-                    ["True"] = (int)Tokens.TRUE,
-                    ["False"] = (int)Tokens.FALSE,
-                    ["as"] = (int)Tokens.AS,
-                    ["pass"] = (int)Tokens.PASS,
-                    ["class"] = (int)Tokens.CLASS,
-                    ["lambda"] = (int)Tokens.LAMBDA,
-                    ["Задача"] = (int)Tokens.TASK,
-                    ["Ввод"] = (int)Tokens.INPUT,
-                    ["Проверка"] = (int)Tokens.CHECK,
-                    ["Тесты"] = (int)Tokens.TESTS,
-                    ["Вывод"] = (int)Tokens.OUTPUT,
-                }
-                .ToDictionary(kv => ConvertKeyword(kv.Key), kv => kv.Value);
+            CreateNewKeyword("if", Tokens.IF);
+            CreateNewKeyword("elif", Tokens.ELIF);
+            CreateNewKeyword("else", Tokens.ELSE);
+            CreateNewKeyword("while", Tokens.WHILE);
+            CreateNewKeyword("for", Tokens.FOR);
+            CreateNewKeyword("in", Tokens.IN);
+            CreateNewKeyword("def", Tokens.DEF, KeywordKind.Function, true);
+            CreateNewKeyword("return", Tokens.RETURN);
+            CreateNewKeyword("break", Tokens.BREAK);
+            CreateNewKeyword("continue", Tokens.CONTINUE);
+            CreateNewKeyword("and", Tokens.AND);
+            CreateNewKeyword("or", Tokens.OR);
+            CreateNewKeyword("not", Tokens.NOT);
+            CreateNewKeyword("import", Tokens.IMPORT, KeywordKind.Uses);
+            CreateNewKeyword("from", Tokens.FROM);
+            CreateNewKeyword("global", Tokens.GLOBAL);
+            CreateNewKeyword("True", Tokens.TRUE);
+            CreateNewKeyword("False", Tokens.FALSE);
+            CreateNewKeyword("as", Tokens.AS);
+            CreateNewKeyword("pass", Tokens.PASS);
+            CreateNewKeyword("class", Tokens.CLASS, isTypeKeyword: true);
+            CreateNewKeyword("lambda", Tokens.LAMBDA);
+            CreateNewKeyword("Задача", Tokens.TASK);
+            CreateNewKeyword("Ввод", Tokens.INPUT, KeywordKind.New);
+            CreateNewKeyword("Проверка", Tokens.CHECK);
+            CreateNewKeyword("Тесты", Tokens.TESTS);
+            CreateNewKeyword("Вывод", Tokens.OUTPUT);
         }
 
         protected override int GetIdToken() => (int)Tokens.ID;

@@ -9,6 +9,8 @@ uses PABCSystem;
 
 function input(): string;
 
+function input(s: string): string;
+
 type 
     !print = record
     public
@@ -67,32 +69,46 @@ function abs(x: real): real;
 
 //Standard functions with Lists
 
-function len<T>(list: List<T>): integer;
+function len<T>(lst: PABCSystem.List<T>): integer;
 
-function sorted<T>(list: List<T>): PABCSystem.List<T>;
+function sorted<T>(lst: PABCSystem.List<T>): PABCSystem.List<T>;
 
-function sum(list: List<integer>): integer;
+function sum(lst: PABCSystem.List<integer>): integer;
 
-function sum(list: List<real>): real;
+function sum(lst: PABCSystem.List<real>): real;
 
 function !assign<T>(var a: T; b: T): T;
 
 function !pow(x, n: integer): integer;
 
+function !pow(x, n: biginteger): biginteger;
+
 function !pow(x: integer; y: real): real;
 
 function !pow(x: real; y: real): real;
 
+function bigint(x: integer): biginteger;
+
 function !pow_recursion(x, n: integer): integer;
 
+function !pow_recursion(x, n: biginteger): biginteger;
+
 type 
+    
     list<T> = PABCSystem.List<T>;
+    biginteger = PABCSystem.BigInteger;
 
 implementation
 
 function input(): string;
 begin
   PABCSystem.Print();
+  Result := PABCSystem.ReadlnString();
+end;
+
+function input(s: string): string;
+begin
+  PABCSystem.Print(s);
   Result := PABCSystem.ReadlnString();
 end;
   
@@ -144,22 +160,42 @@ function abs(x: integer): integer := if x >= 0 then x else -x;
 
 function abs(x: real): real := PABCSystem.Abs(x);
 
-function len<T>(list: List<T>): integer := list.Count;
+function len<T>(lst: PABCSystem.List<T>): integer := lst.Count;
 
-function sorted<T>(list: List<T>): PABCSystem.List<T>;
+function sorted<T>(lst: PABCSystem.List<T>): PABCSystem.List<T>;
 begin
-  var new_list := new PABCSystem.List<T>(list);
+  var new_list := new PABCSystem.List<T>(lst);
   new_list.sort();
   Result := new_list;
 end;
 
-function sum(list: List<integer>): integer := list.sum();
-function sum(list: List<real>): real := list.sum();
+function sum(lst: PABCSystem.List<integer>): integer := lst.sum();
+function sum(lst: PABCSystem.List<real>): real := lst.sum();
 
 function !assign<T>(var a: T; b: T): T;
 begin
   a := b;
   Result := a;
+end;
+
+function !pow(x, n: biginteger): biginteger;
+begin
+  if (n < 0) then
+    raise new System.ArgumentException('возведение в степень не работает для целой отрицательной степени типа bigint.');
+  Result := !pow_recursion(x, n);
+end;
+
+function !pow_recursion(x, n: biginteger): biginteger;
+begin
+  
+  if (n = 0) then
+    Result := 1
+  else begin
+    Result := !pow_recursion(x, n div 2);
+    Result *= Result;
+    if ((n mod 2) = 1) then
+      Result *= x;
+  end;
 end;
 
 function !pow(x, n: integer): integer;
@@ -184,6 +220,11 @@ begin
     if ((n mod 2) = 1) then
       Result *= x;
   end;
+end;
+
+function bigint(x: integer): biginteger;
+begin
+  Result := x;
 end;
 
 end.

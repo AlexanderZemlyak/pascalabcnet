@@ -13,11 +13,12 @@ namespace Languages.SLang
             version: "0.0.1",
             copyright: "Copyright © 2024-2025 by Stanislav Leonchik",
 
+            languageInformation: new Frontend.Data.SLanguageInformation(),
             parser: new SLangParser.SLangLanguageParser(),
             docParser: null,
 
             syntaxTreeConverters: new List<ISyntaxTreeConverter>() { new Frontend.Converters.StandardSyntaxTreeConverter(), new SyntaxSemanticVisitors.LambdaAnyConverter() },
-            syntaxTreeToSemanticTreeConverter: new SLangSyntaxTreeVisitor.slang_syntax_tree_visitor(),
+            // syntaxTreeToSemanticTreeConverter: new SLangSyntaxTreeVisitor.spython_syntax_tree_visitor(LanguageProvider.Instance.MainLanguage.SyntaxTreeToSemanticTreeConverter),
 
             filesExtensions: new string[] { ".slang" },
             caseSensitive: false,
@@ -49,7 +50,8 @@ namespace Languages.SLang
 
         public override void SetSyntaxTreeToSemanticTreeConverter()
         {
-            SyntaxTreeToSemanticTreeConverter = new SLangSyntaxTreeVisitor.slang_syntax_tree_visitor();
+            SyntaxTreeToSemanticTreeConverter = new SLangSyntaxTreeVisitor.slang_syntax_tree_visitor(LanguageProvider.Instance.MainLanguage.SyntaxTreeToSemanticTreeConverter);
         }
+
     }
 }

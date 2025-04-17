@@ -2,9 +2,10 @@
 
 Задача a:
   Ввод:
-    print(Random(0,1))
+    b = 0
+    CheckData([2,3]);
   Проверка:
-    print(Random(0,1) + 10)
+    print()
   Тесты:
     print(Random(0,1) + 100)
   Вывод:

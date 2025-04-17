@@ -87,6 +87,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\bin\Lib\SLangHidden.pas">
+      <Link>SLangHidden.pas</Link>
+    </Content>
     <Content Include="..\..\..\bin\Lib\SPythonHidden.pas">
       <Link>SPythonHidden.pas</Link>
     </Content>

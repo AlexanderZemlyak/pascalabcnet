@@ -34,6 +34,7 @@
     </PropertyGroup>
     <ItemGroup>
       <Compile Include="SLanguage.cs" />
+      <Compile Include="SLanguageInformation.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\..\LambdaAnySynToSemConverter\LambdaAnySynToSemConverter.csproj">
@@ -44,9 +45,17 @@
         <Project>{a48d9069-d569-4110-9252-a10f139b669b}</Project>
         <Name>LanguageIntegrator</Name>
       </ProjectReference>
+      <ProjectReference Include="..\..\..\Localization\Localization.csproj">
+        <Project>{2de2842f-0912-4251-bc0f-480854c44a13}</Project>
+        <Name>Localization</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\..\ParserTools\ParserTools.csproj">
         <Project>{af2efd7b-69dd-4b43-af65-b59b29349c23}</Project>
         <Name>ParserTools</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\SyntaxTree\SyntaxTree.csproj">
+        <Project>{c2cac65a-b2ae-4ccc-b067-e6b8e75df73a}</Project>
+        <Name>SyntaxTree</Name>
       </ProjectReference>
       <ProjectReference Include="..\..\..\SyntaxVisitors\SyntaxVisitors.csproj">
         <Project>{a9ab4282-83b4-41a7-86c3-e5bf6a45e7e2}</Project>
@@ -79,6 +88,9 @@
       <Content Include="..\..\..\bin\Lib\SLangSystem.pas">
         <Link>SLangSystem.pas</Link>
       </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="System" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using PascalABCCompiler.SemanticTree;
 using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.SystemLibrary;
-using PascalABCCompiler.TreeConverter.TreeConversion;
 using PascalABCCompiler.TreeConverter;
 using PascalABCCompiler.TreeRealization;
 using PascalABCCompiler.Errors;
@@ -13,12 +9,23 @@ using PascalABCCompiler.Errors;
 
 namespace SLangSyntaxTreeVisitor
 {
+    // Возможно, стоит заменить на декоратор или стратегию вместо наследования EVA
     public class slang_syntax_tree_visitor : syntax_tree_visitor
     {
-        public slang_syntax_tree_visitor(): base()
+        syntax_tree_visitor mainVisitor;
+
+        public slang_syntax_tree_visitor(syntax_tree_visitor mainSyntaxTreeVisitor) : base(false)
         {
+
+            mainVisitor = mainSyntaxTreeVisitor;
+            convertion_data_and_alghoritms = mainSyntaxTreeVisitor.convertion_data_and_alghoritms;
+            ret = mainSyntaxTreeVisitor.ret;
+            context = mainSyntaxTreeVisitor.context;
+            contextChanger = mainSyntaxTreeVisitor.contextChanger;
+
             OnLeave = RunAdditionalChecks;
         }
+
         private void RunAdditionalChecks(syntax_tree_node node)
         {
             switch (node)
@@ -43,6 +50,7 @@ namespace SLangSyntaxTreeVisitor
         protected override void get_system_module(common_unit_node psystem_unit)
         {
             init_system_module(psystem_unit);
+
             //esli zapustili v otladke, to vosstanovim mnozhestvo i procedury sozdanija diapasonov, inache ne budet rabotat
             if (debugging)
             {
@@ -50,10 +58,17 @@ namespace SLangSyntaxTreeVisitor
                 si = SystemLibInitializer.CreateObjDiapason.SymbolInfo;
                 si = SystemLibInitializer.TypedSetType.SymbolInfo;
             }
-            //if (SystemLibrary.SystemLibInitializer.TextFileType.Found)
-            //	SystemLibrary.SystemLibInitializer.TextFileType.GetTypeNodeSpecials().type_special_kind = PascalABCCompiler.SemanticTree.type_special_kind.text_file;
-            // SystemUnitAssigned = true;
+
+            // SystemUnitAssigned = true; - убрали для SLang
             CreateSpecialFields(psystem_unit);
+        }
+
+        // Инициализируем только переменные экземпляра, не влияем на глобальное состояние в отличие от визитора Паскаля EVA
+        protected override void internal_reset()
+        {
+            _system_unit = mainVisitor._system_unit;
+            SystemLibrary.system_unit = _system_unit;
+            ResetSelfFields();
         }
 
         public override void AddError(location loc, string ErrResourceString, params object[] values)
@@ -68,43 +83,61 @@ namespace SLangSyntaxTreeVisitor
                 base.AddError(err);
             }
         }
+
+        private type_node ConvertTypeNameToSLangTypeName(type_node tn)
+        {
+            if (tn is compiled_type_node cnt)
+            {
+                string new_name = tn.PrintableName;
+                new_name = new_name
+                    .Replace("<", "[")
+                    .Replace(">", "]")
+                    .Replace("List", "list")
+                    .Replace("integer", "int")
+                    .Replace("string", "str")
+                    .Replace("real", "float")
+                    .Replace("boolean", "bool")
+                    .Replace("System.Numerics.BigInteger", "bigint");
+                return new common_type_node(new_name, type_access_level.tal_public, null, null, cnt.location);
+            }
+            return tn;
+        }
+
         public override void AddError(Error err, bool shouldReturn = false)
         {
-            // TODO : Add Error Rerouting according to Python semantics
+            // TODO : Add Error Rerouting according to SLang semantics
             switch (err)
             {
                 case OperatorCanNotBeAppliedToThisTypes _op_err:
                     if (_op_err.operator_name == "mod")
-                    {
                         base.AddError(new OperatorCanNotBeAppliedToThisTypes("%", _op_err.left, _op_err.right, _op_err.loc), shouldReturn);
-                        return;
-                    }
                     else if (_op_err.operator_name == "div")
-                    {
                         base.AddError(new OperatorCanNotBeAppliedToThisTypes("//", _op_err.left, _op_err.right, _op_err.loc), shouldReturn);
-                        return;
-                    }
-                    break;
+                    return;
                 case FunctionExpectedProcedureMeet _proc_meet:
                     base.AddError(new SLangSemanticError(_proc_meet.loc, "SLANGSEMANTIC_FUNCTION_{0}_NO_RETURN", _proc_meet.function.name));
                     return;
-                case SimpleSemanticError _ss_err:
-                    break;
+                case CanNotConvertTypes conv_err:
+                    base.AddError(new CanNotConvertTypes(conv_err.expression_node,
+                        ConvertTypeNameToSLangTypeName(conv_err.from), 
+                        ConvertTypeNameToSLangTypeName(conv_err.to),
+                        conv_err.loc));
+                    return;
             }
             base.AddError(err, shouldReturn);
 
         }
-        public override void visit(bin_expr _bin_expr)
-        {
+
+        public override void visit(bin_expr _bin_expr) {
             expression_node left = convert_strong(_bin_expr.left);
             expression_node right = convert_strong(_bin_expr.right);
 
-            var new_bin_expr = new bin_expr(new semantic_addr_value(left), new semantic_addr_value(right), _bin_expr.operation_type, _bin_expr.source_context);
+            var new_bin_expr = new bin_expr(new semantic_addr_value(left), new semantic_addr_value(right),
+                _bin_expr.operation_type, _bin_expr.source_context);
 
             RunAdditionalChecks(new_bin_expr);
 
-            switch (_bin_expr.operation_type)
-            {
+            switch (_bin_expr.operation_type) {
                 /*case Operators.Plus:
                     if (left.type == right.type && left.type.name == "boolean")
                     {
@@ -116,40 +149,45 @@ namespace SLangSyntaxTreeVisitor
                     }
                     break;*/
                 case Operators.Division:
-                    if (left.type == right.type && left.type.name == "string")
-                    {
-                        var mcn = new method_call(new dot_node(new semantic_addr_value(left, left.location), new ident("IndexOf")),
-                            new expression_list(new semantic_addr_value(right, right.location)), _bin_expr.source_context);
+                    if (left.type == right.type && left.type.name == "string") {
+                        var mcn = new method_call(
+                            new dot_node(new semantic_addr_value(left, left.location), new ident("IndexOf")),
+                            new expression_list(new semantic_addr_value(right, right.location)),
+                            _bin_expr.source_context);
                         visit(mcn);
-                        return; 
+                        return;
                     }
+
                     break;
                 case Operators.IntegerDivision:
-                    if (left.type == right.type && left.type.name == "real")
-                    {
-                        var exprlist = new expression_list(); exprlist.source_context = _bin_expr.source_context;
+                    if (left.type == right.type && left.type.name == "real") {
+                        var exprlist = new expression_list();
+                        exprlist.source_context = _bin_expr.source_context;
                         exprlist.Add(new semantic_addr_value(left, left.location));
                         exprlist.Add(new semantic_addr_value(right, right.location));
                         var floornode = new method_call(new ident("!FloorDiv"), exprlist, _bin_expr.source_context);
                         visit(floornode);
                         return;
                     }
+
                     break;
                 case Operators.ModulusRemainder:
-                    if (left.type == right.type && left.type.name == "real")
-                    {
+                    if (left.type == right.type && left.type.name == "real") {
                         //var divnode = new bin_expr(new semantic_addr_value(left, left.location), new semantic_addr_value(right, right.location), Operators.IntegerDivision, _bin_expr.source_context);
                         //var multnode = new bin_expr(new semantic_addr_value(right, right.location), divnode, Operators.Multiplication);
                         //var modnode = new bin_expr(new semantic_addr_value(left, left.location), multnode, Operators.Minus);
-                        var exprlist = new expression_list(); exprlist.source_context = _bin_expr.source_context;
+                        var exprlist = new expression_list();
+                        exprlist.source_context = _bin_expr.source_context;
                         exprlist.Add(new semantic_addr_value(left, left.location));
                         exprlist.Add(new semantic_addr_value(right, right.location));
                         var modnode = new method_call(new ident("!FloorMod"), exprlist, _bin_expr.source_context);
                         visit(modnode);
                         return;
                     }
+
                     break;
             }
+
             base.visit(new_bin_expr);
         }
     }

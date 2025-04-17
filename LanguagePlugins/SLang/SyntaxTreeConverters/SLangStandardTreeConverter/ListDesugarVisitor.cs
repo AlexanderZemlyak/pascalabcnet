@@ -56,9 +56,9 @@ namespace Languages.SLang.Frontend.Converters
 
 
             mc = new method_call(dn as addressed_value, new expression_list(lambda as expression), _list_generator.source_context);
-            dn = new dot_node(mc as addressed_value, (new ident("ToList")) as addressed_value, _list_generator.source_context);
+            // dn = new dot_node(mc as addressed_value, (new ident("ToList")) as addressed_value, _list_generator.source_context);
 
-            Replace(_list_generator, new method_call(dn as addressed_value, null, _list_generator.source_context));
+            Replace(_list_generator, mc);
         }
     }
 
