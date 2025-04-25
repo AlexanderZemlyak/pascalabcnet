@@ -4,7 +4,7 @@
 // ==========================================================================
 //  Version:  1.3.6
 //  Machine:  MACBOOK-PRO-16
-//  DateTime: 09.04.2025 00:23:12
+//  DateTime: 4/25/2025 1:00:06 PM
 //  UserName: controldata
 // ==========================================================================
 
@@ -70,7 +70,7 @@
 %left NOT
 %right STARSTAR
 
-%type <id> ident dotted_ident func_name_ident 
+%type <id> ident dotted_ident func_name_ident task_id
 %type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
@@ -84,7 +84,6 @@
 %type <op> assign_type
 
 %type <stn> task_definition input_section check_section tests_section output_section
-%type <id> task_id
 
 %start program
 
@@ -105,6 +104,15 @@ act		= actual
 
 /* ---------------------- ÐÐÐÐÐÐÐ ÐÐ ÐÐÐÐÐ program ---------------------- */
 %%
+// Warning: NonTerminal symbol "optional_form_param_list" is unreachable
+// Warning: NonTerminal symbol "form_param_list" is unreachable
+// Warning: NonTerminal symbol "task_definition" is unreachable
+// Warning: NonTerminal symbol "proc_func_header" is unreachable
+// Warning: NonTerminal symbol "proc_func_decl" is unreachable
+// Warning: NonTerminal symbol "func_name_ident" is unreachable
+// Warning: NonTerminal symbol "form_param_sect" is unreachable
+// Warning: NonTerminal symbol "param_name" is unreachable
+// ---------------------------------------------------------------------
 program
 	: stmt_list optional_semicolon END_OF_FILE
 		{
@@ -142,36 +150,111 @@ program
        ÐÑÐ²Ð¾Ð´:
          ...
 */
-      // TODO: - ÐÐÐ¤ÐÐÐ¡ÐÐ¢Ð¬ Ð­Ð¢Ð
-//          $$ = new task_stmt($2 as ident, $6 as as_statement_list, $7 as as_statement_list, $8 as as_statement_list, $9 as as_statement_list, @$);
-//      	  ($$ as statement_list).left_logical_bracket = $5;
-//      	  ($$ as statement_list).right_logical_bracket = $10;
-//      	  $$.source_context = LexLocation.MergeAll(@1, @2, @3, @4, @6, @7, @8, @9);
+
+/*
+Ð½Ð°Ð±ÑÐ¾Ñ
+checker
+	: tasks
+		{
+			$$ = new procedure_definition($1 as procedure_header, new block(null, $2 as statement_list, @2), @$);
+		}
+	;
+
+proc_func_header
+	: optional_form_param_list
+		{
+			$$ = new procedure_header(
+				$4 as formal_parameters, 
+				null, 
+				new method_name(null,null, $2, null, @2), 
+				null, 
+				$@
+			);
+		}
+	;
+	
+case_stmt
+    : tkCase expr_l1 tkOf case_list else_case tkEnd 
+        { 
+			$$ = new case_node($2, $4 as case_variants, $5 as statement, @$); 
+		}  
+	| tkCase expr_l1 tkOf case_list tkSemiColon else_case tkEnd 
+        { 
+			$$ = new case_node($2, $4 as case_variants, $6 as statement, @$); 
+		}
+	| tkCase expr_l1 tkOf else_case tkEnd 
+        { 
+			$$ = new case_node($2, NewCaseItem(new empty_statement(), null), $4 as statement, @$); 
+		}		
+    ;
+
+case_list
+    : case_item
+        {
+			if ($1 is empty_statement) 
+				$$ = NewCaseItem($1, null);
+			else $$ = NewCaseItem($1, @$);
+		}
+    | case_list tkSemiColon case_item         
+        { 
+			$$ = AddCaseItem($1 as case_variants, $3, @$);
+		} 
+    ;
+
+case_item
+    : case_label_list tkColon unlabelled_stmt            
+        { 
+			$$ = new case_variant($1 as expression_list, $3 as statement, @$); 
+		}
+    ;
+
+case_label_list
+    : case_label                               
+        { 
+			$$ = new expression_list($1, @$);
+		}
+    |  case_label_list tkComma case_label      
+        { 
+			$$ = ($1 as expression_list).Add($3, @$);
+		}
+    ;
+
+case_label
+    : const_elem
+		{ $$ = $1; }
+    ;
+
+else_case
+    :
+		{ $$ = null;}
+    |  tkElse stmt_list                  
+        { $$ = $2; }
+    ;
+
+	
+tasks
+	: task_definition
+	| tasks end_of_line task_definition
+	;
+*/
+
 task_definition
     : TASK task_id COLON block {
-	$$ = new task_stmt($2 as ident, @$);
+	$$ = new task_stmt(
+		$2 as ident, 
+		$4 as statement_list,
+		@$
+	);
     }
     ;
-
-/* ÐÐ´ÐµÐ½ÑÐ¸ÑÐ¸ÐºÐ°ÑÐ¾Ñ Ð·Ð°Ð´Ð°ÑÐ¸: Ð»Ð¸Ð±Ð¾ ÑÐ¸ÑÐ»Ð¾, Ð»Ð¸Ð±Ð¾ Ð¾Ð±ÑÑÐ½ÑÐ¹ Ð¸Ð´ÐµÐ½ÑÐ¸ÑÐ¸ÐºÐ°ÑÐ¾Ñ. */
-task_id
-    : INTNUM
-      { $$ = new ident($1.ToString(), @$); }
-    | ident
-      { $$ = $1; }
-    ;
-
+    
 /* ---------------------- Ð¡ÐÐÐ¦ÐÐ¯ "ÐÐÐÐ" ---------------------- */
 input_section
     : INPUT COLON block
       {
-          // ÐÑÐ¾ÑÑÐ¾ statement_list
-          $$ = $4;
-//-------------^^
-// Error: Semantic action index is out of bounds
-// ---------------------------------------------
+          $$ = new input_section($3 as statement_list);
       }
-    | /* Ð¿ÑÑÑÐ¾ */
+    |
       {
           $$ = null;
       }
@@ -179,30 +262,27 @@ input_section
 
 check_section
     : CHECK COLON block
-      { $$ = $4; }
-//----------^^
-// Error: Semantic action index is out of bounds
-// ---------------------------------------------
+      { 
+                $$ = new check_section($3 as statement_list);
+      }
     | /* Ð¿ÑÑÑÐ¾ */
       { $$ = null; }
     ;
 
 tests_section
     : TESTS COLON block
-      { $$ = $4; }
-//----------^^
-// Error: Semantic action index is out of bounds
-// ---------------------------------------------
+      { 
+                $$ = new tests_section($3 as statement_list);
+      }
     | /* Ð¿ÑÑÑÐ¾ */
       { $$ = null; }
     ;
 
 output_section
     : OUTPUT COLON block
-      { $$ = $4; }
-//----------^^
-// Error: Semantic action index is out of bounds
-// ---------------------------------------------
+      { 
+                $$ = new output_section($3 as statement_list);
+      }
     | /* Ð¿ÑÑÑÐ¾ */
       { $$ = null; }
     ;
@@ -245,7 +325,7 @@ stmt
 		{ 
 			$$ = $1; 
 		}
-	| task_definition { $$ = $1; }
+//	| task_definition { $$ = $1; }
 	| input_section { $$ = $1; }
         | check_section { $$ = $1; }
         | tests_section { $$ = $1; }
@@ -271,9 +351,23 @@ stmt
 			$$ = $1; 
 		}
 	// works only on global level
-	| proc_func_decl
+	| TASK task_id block
 		{
-			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+			var file_type = new named_type_reference(new ident("str"));
+			var file_name = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
+			var file_name_param = new formal_parameters(file_name, @$);
+
+			var func_name = new ident("CheckTaskT");
+
+			var proc_head = new procedure_header(
+				file_name_param as formal_parameters, 
+				new procedure_attributes_list(new List<procedure_attribute>()), 
+				new method_name(null,null, func_name, null), 
+				null, 
+				@$
+			);
+			var proc_def = new procedure_definition(proc_head, new block(null, $3 as statement_list, @3), @$);
+			$$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
 		}
 	// works only on global level
 	| import_clause
@@ -281,6 +375,8 @@ stmt
 			$$ = $1; 
 		}
     	;
+
+task_id : ident { $$ = new ident($1.name); };
 
 import_clause
 	: IMPORT ident_as_ident_list
@@ -639,8 +735,8 @@ variable
 	| LBRACKET expr_list RBRACKET
 		{
 			var acn = new array_const_new($2 as expression_list, '|', @$);
-			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
-			$$ = new method_call(dn as addressed_value, null, @$);
+//			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
+			$$ = acn;
 		}
 	// index property
 	| variable LBRACKET expr RBRACKET
@@ -665,6 +761,8 @@ optional_condition
 			$$ = $2; 
 		}
 	;
+
+// MARK: - Block
 
 block
 	: INDENT stmt_list end_of_line UNINDENT
@@ -851,5 +949,6 @@ public program_module NewProgramModule(program_name progName, Object optHeadComp
             err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
     }
     return progModule;
-}// ==========================================================================
+}
+// ==========================================================================
 

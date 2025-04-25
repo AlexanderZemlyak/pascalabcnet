@@ -3467,6 +3467,46 @@
         <TagIndices />
       </Tags>
     </SyntaxNode>
+    <SyntaxNode Name="input_section" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="stmts" SyntaxType="statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="check_section" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="stmts" SyntaxType="statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="tests_section" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="stmts" SyntaxType="statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
+    <SyntaxNode Name="output_section" BaseName="statement">
+      <Fields>
+        <SyntaxField Name="stmts" SyntaxType="statement_list" />
+      </Fields>
+      <Methods />
+      <Tags>
+        <CategoryIndices />
+        <TagIndices />
+      </Tags>
+    </SyntaxNode>
   </SyntaxNodes>
   <Settings>
     <FileName>Tree.cs</FileName>
@@ -3582,6 +3622,7 @@
       <HelpData Key=".statements" Value="" />
       <HelpData Key=".step" Value="" />
       <HelpData Key=".stmt" Value="" />
+      <HelpData Key=".stmts" Value="" />
       <HelpData Key=".string" Value="" />
       <HelpData Key=".subprogram_definitions" Value="" />
       <HelpData Key=".substitution" Value="" />
@@ -3751,6 +3792,8 @@
       <HelpData Key="case_variants.variants" Value="" />
       <HelpData Key="char_const" Value="Класс, представляющий символьную константу в синтаксическом дереве программы." />
       <HelpData Key="char_const.cconst" Value="" />
+      <HelpData Key="check_section" Value="" />
+      <HelpData Key="check_section.stmts" Value="" />
       <HelpData Key="class_body" Value="" />
       <HelpData Key="class_body.class_body Add(class_members _class_members)" Value="" />
       <HelpData Key="class_body.class_body Add(class_members _class_members, SourceContext sc)" Value="" />
@@ -4201,6 +4244,8 @@
       <HelpData Key="initfinal_part.initfinal_part(statement_list init,statement_list fin,SourceContext sc)" Value="" />
       <HelpData Key="initfinal_part.initfinal_part(syntax_tree_node stn1, statement_list init, syntax_tree_node stn2, statement_list fin, syntax_tree_node stn3, SourceContext sc)" Value="" />
       <HelpData Key="initfinal_part.initialization_sect" Value="" />
+      <HelpData Key="input_section" Value="" />
+      <HelpData Key="input_section.stmts" Value="" />
       <HelpData Key="instance_definition" Value="Определение того как конкретный тип удовлетворяет классу типов." />
       <HelpData Key="instance_definition.body" Value="" />
       <HelpData Key="int32_const" Value="Целая константа" />
@@ -4443,6 +4488,8 @@
       <HelpData Key="operator_name_ident." Value="" />
       <HelpData Key="operator_name_ident.operator_type" Value="" />
       <HelpData Key="operator_name_ident.type" Value="" />
+      <HelpData Key="output_section" Value="" />
+      <HelpData Key="output_section.stmts" Value="" />
       <HelpData Key="pair_type_stlist" Value="" />
       <HelpData Key="pair_type_stlist.exprs" Value="" />
       <HelpData Key="pair_type_stlist.tn" Value="" />
@@ -4822,6 +4869,10 @@
       <HelpData Key="template_type_reference." Value="" />
       <HelpData Key="template_type_reference.name" Value="" />
       <HelpData Key="template_type_reference.params_list" Value="" />
+      <HelpData Key="test_section" Value="" />
+      <HelpData Key="test_section.stmts" Value="" />
+      <HelpData Key="tests_section" Value="" />
+      <HelpData Key="tests_section.stmts" Value="" />
       <HelpData Key="to_expr" Value="" />
       <HelpData Key="to_expr.key" Value="" />
       <HelpData Key="to_expr.value" Value="" />

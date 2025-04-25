@@ -7447,6 +7447,90 @@ namespace PascalABCCompiler.SyntaxTree
 			}
 		}
 
+
+		public void visit(input_section _input_section)
+		{
+			bw.Write((Int16)271);
+			write_input_section(_input_section);
+		}
+
+		public void write_input_section(input_section _input_section)
+		{
+			write_statement(_input_section);
+			if (_input_section.stmts == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_input_section.stmts.visit(this);
+			}
+		}
+
+
+		public void visit(check_section _check_section)
+		{
+			bw.Write((Int16)272);
+			write_check_section(_check_section);
+		}
+
+		public void write_check_section(check_section _check_section)
+		{
+			write_statement(_check_section);
+			if (_check_section.stmts == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_check_section.stmts.visit(this);
+			}
+		}
+
+
+		public void visit(tests_section _tests_section)
+		{
+			bw.Write((Int16)273);
+			write_tests_section(_tests_section);
+		}
+
+		public void write_tests_section(tests_section _tests_section)
+		{
+			write_statement(_tests_section);
+			if (_tests_section.stmts == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_tests_section.stmts.visit(this);
+			}
+		}
+
+
+		public void visit(output_section _output_section)
+		{
+			bw.Write((Int16)274);
+			write_output_section(_output_section);
+		}
+
+		public void write_output_section(output_section _output_section)
+		{
+			write_statement(_output_section);
+			if (_output_section.stmts == null)
+			{
+				bw.Write((byte)0);
+			}
+			else
+			{
+				bw.Write((byte)1);
+				_output_section.stmts.visit(this);
+			}
+		}
+
 	}
 
 

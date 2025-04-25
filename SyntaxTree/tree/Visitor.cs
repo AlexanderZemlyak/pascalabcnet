@@ -1630,6 +1630,30 @@ namespace PascalABCCompiler.SyntaxTree
 		///<param name="_task_stmt">Node to visit</param>
 		///<returns> Return value is void </returns>
 		void visit(task_stmt _task_stmt);
+		///<summary>
+		///Method to visit input_section.
+		///</summary>
+		///<param name="_input_section">Node to visit</param>
+		///<returns> Return value is void </returns>
+		void visit(input_section _input_section);
+		///<summary>
+		///Method to visit check_section.
+		///</summary>
+		///<param name="_check_section">Node to visit</param>
+		///<returns> Return value is void </returns>
+		void visit(check_section _check_section);
+		///<summary>
+		///Method to visit tests_section.
+		///</summary>
+		///<param name="_tests_section">Node to visit</param>
+		///<returns> Return value is void </returns>
+		void visit(tests_section _tests_section);
+		///<summary>
+		///Method to visit output_section.
+		///</summary>
+		///<param name="_output_section">Node to visit</param>
+		///<returns> Return value is void </returns>
+		void visit(output_section _output_section);
 	}
 
 

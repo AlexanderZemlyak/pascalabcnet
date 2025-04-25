@@ -1,21 +1,10 @@
-﻿a = 12
-
-Задача a:
+﻿Задача задача23
   Ввод:
-    b = 0
-    CheckData([2,3]);
+    b: int
+    CheckData(cInt*5)
+    CheckOutput([1,3])
   Проверка:
     print()
-  Тесты:
-    print(Random(0,1) + 100)
-  Вывод:
-    print(Random(0,1)+ 1000)
-    
-Задача a:
-  Ввод:
-    print(Random(0,1))
-  Проверка:
-    print(Random(0,1) + 10)
   Тесты:
     print(Random(0,1) + 100)
   Вывод:

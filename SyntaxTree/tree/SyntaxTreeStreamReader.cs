@@ -562,6 +562,14 @@ namespace PascalABCCompiler.SyntaxTree
 					return new return_statement();
 				case 270:
 					return new task_stmt();
+				case 271:
+					return new input_section();
+				case 272:
+					return new check_section();
+				case 273:
+					return new tests_section();
+				case 274:
+					return new output_section();
 			}
 			return null;
 		}
@@ -4714,6 +4722,54 @@ namespace PascalABCCompiler.SyntaxTree
 			read_statement_list(_task_stmt);
 			_task_stmt.task_id = _read_node() as expression;
 			_task_stmt.sections = _read_node() as statement_list;
+		}
+
+
+		public void visit(input_section _input_section)
+		{
+			read_input_section(_input_section);
+		}
+
+		public void read_input_section(input_section _input_section)
+		{
+			read_statement(_input_section);
+			_input_section.stmts = _read_node() as statement_list;
+		}
+
+
+		public void visit(check_section _check_section)
+		{
+			read_check_section(_check_section);
+		}
+
+		public void read_check_section(check_section _check_section)
+		{
+			read_statement(_check_section);
+			_check_section.stmts = _read_node() as statement_list;
+		}
+
+
+		public void visit(tests_section _tests_section)
+		{
+			read_tests_section(_tests_section);
+		}
+
+		public void read_tests_section(tests_section _tests_section)
+		{
+			read_statement(_tests_section);
+			_tests_section.stmts = _read_node() as statement_list;
+		}
+
+
+		public void visit(output_section _output_section)
+		{
+			read_output_section(_output_section);
+		}
+
+		public void read_output_section(output_section _output_section)
+		{
+			read_statement(_output_section);
+			_output_section.stmts = _read_node() as statement_list;
 		}
 
 	}

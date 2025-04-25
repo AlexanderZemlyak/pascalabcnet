@@ -59,7 +59,7 @@
 %left NOT
 %right STARSTAR
 
-%type <id> ident dotted_ident func_name_ident 
+%type <id> ident dotted_ident func_name_ident task_id
 %type <ex> expr proc_func_call const_value variable optional_condition act_param
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
@@ -73,7 +73,6 @@
 %type <op> assign_type
 
 %type <stn> task_definition input_section check_section tests_section output_section
-%type <ex> task_id
 
 %start program
 
@@ -228,23 +227,14 @@ task_definition
 	);
     }
     ;
-
-/* Идентификатор задачи: либо число, либо обычный идентификатор. */
-task_id
-    : INTNUM
-      { $$ = new ident($1.ToString(), @$); }
-    | ident
-      { $$ = $1; }
-    ;
-
+    
 /* ---------------------- СЕКЦИЯ "ВВОД" ---------------------- */
 input_section
     : INPUT COLON block
       {
-          // Просто statement_list
-          $$ = $3;
+          $$ = new input_section($3 as statement_list);
       }
-    | /* пусто */
+    |
       {
           $$ = null;
       }
@@ -252,21 +242,27 @@ input_section
 
 check_section
     : CHECK COLON block
-      { $$ = $3; }
+      { 
+                $$ = new check_section($3 as statement_list);
+      }
     | /* пусто */
       { $$ = null; }
     ;
 
 tests_section
     : TESTS COLON block
-      { $$ = $3; }
+      { 
+                $$ = new tests_section($3 as statement_list);
+      }
     | /* пусто */
       { $$ = null; }
     ;
 
 output_section
     : OUTPUT COLON block
-      { $$ = $3; }
+      { 
+                $$ = new output_section($3 as statement_list);
+      }
     | /* пусто */
       { $$ = null; }
     ;
@@ -309,7 +305,7 @@ stmt
 		{ 
 			$$ = $1; 
 		}
-	| task_definition { $$ = $1; }
+//	| task_definition { $$ = $1; }
 	| input_section { $$ = $1; }
         | check_section { $$ = $1; }
         | tests_section { $$ = $1; }
@@ -335,9 +331,23 @@ stmt
 			$$ = $1; 
 		}
 	// works only on global level
-	| proc_func_decl
+	| TASK task_id block
 		{
-			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+			var file_type = new named_type_reference(new ident("str"));
+			var file_name = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
+			var file_name_param = new formal_parameters(file_name, @$);
+
+			var func_name = new ident("CheckTaskT");
+
+			var proc_head = new procedure_header(
+				file_name_param as formal_parameters, 
+				new procedure_attributes_list(new List<procedure_attribute>()), 
+				new method_name(null,null, func_name, null), 
+				null, 
+				@$
+			);
+			var proc_def = new procedure_definition(proc_head, new block(null, $3 as statement_list, @3), @$);
+			$$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
 		}
 	// works only on global level
 	| import_clause
@@ -345,6 +355,8 @@ stmt
 			$$ = $1; 
 		}
     	;
+
+task_id : ident { $$ = new ident($1.name); };
 
 import_clause
 	: IMPORT ident_as_ident_list
@@ -729,6 +741,8 @@ optional_condition
 			$$ = $2; 
 		}
 	;
+
+// MARK: - Block
 
 block
 	: INDENT stmt_list end_of_line UNINDENT

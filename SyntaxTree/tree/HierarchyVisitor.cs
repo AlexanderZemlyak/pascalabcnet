@@ -2173,6 +2173,38 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 		}
 
+		public virtual void pre_do_visit(input_section _input_section)
+		{
+		}
+
+		public virtual void post_do_visit(input_section _input_section)
+		{
+		}
+
+		public virtual void pre_do_visit(check_section _check_section)
+		{
+		}
+
+		public virtual void post_do_visit(check_section _check_section)
+		{
+		}
+
+		public virtual void pre_do_visit(tests_section _tests_section)
+		{
+		}
+
+		public virtual void post_do_visit(tests_section _tests_section)
+		{
+		}
+
+		public virtual void pre_do_visit(output_section _output_section)
+		{
+		}
+
+		public virtual void post_do_visit(output_section _output_section)
+		{
+		}
+
 		public override void visit(expression _expression)
 		{
 			DefaultVisit(_expression);
@@ -4493,6 +4525,38 @@ namespace PascalABCCompiler.SyntaxTree
 			visit(task_stmt.task_id);
 			visit(task_stmt.sections);
 			post_do_visit(_task_stmt);
+		}
+
+		public override void visit(input_section _input_section)
+		{
+			DefaultVisit(_input_section);
+			pre_do_visit(_input_section);
+			visit(input_section.stmts);
+			post_do_visit(_input_section);
+		}
+
+		public override void visit(check_section _check_section)
+		{
+			DefaultVisit(_check_section);
+			pre_do_visit(_check_section);
+			visit(check_section.stmts);
+			post_do_visit(_check_section);
+		}
+
+		public override void visit(tests_section _tests_section)
+		{
+			DefaultVisit(_tests_section);
+			pre_do_visit(_tests_section);
+			visit(tests_section.stmts);
+			post_do_visit(_tests_section);
+		}
+
+		public override void visit(output_section _output_section)
+		{
+			DefaultVisit(_output_section);
+			pre_do_visit(_output_section);
+			visit(output_section.stmts);
+			post_do_visit(_output_section);
 		}
 	}
 

@@ -1362,6 +1362,26 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			DefaultVisit(_task_stmt);
 		}
+
+		public virtual void visit(input_section _input_section)
+		{
+			DefaultVisit(_input_section);
+		}
+
+		public virtual void visit(check_section _check_section)
+		{
+			DefaultVisit(_check_section);
+		}
+
+		public virtual void visit(tests_section _tests_section)
+		{
+			DefaultVisit(_tests_section);
+		}
+
+		public virtual void visit(output_section _output_section)
+		{
+			DefaultVisit(_output_section);
+		}
 	}
 
 
