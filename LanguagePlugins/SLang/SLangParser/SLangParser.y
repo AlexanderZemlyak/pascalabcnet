@@ -7,8 +7,8 @@
 	public bool is_unit_to_be_parsed = false;
 
 	public SLangGPPGParser(AbstractScanner<ValueType, LexLocation> scanner, SLangParserTools parserTools,
-	bool isUnitToBeParsed) : base(scanner) 
-	{ 
+	bool isUnitToBeParsed) : base(scanner)
+	{
 		this.parserTools = parserTools;
 		this.is_unit_to_be_parsed = isUnitToBeParsed;
 	}
@@ -118,117 +118,16 @@ program
 		}
 	;
 
-/* ---------------------- ОПРЕДЕЛЕНИЕ ОДНОЙ DSL-ЗАДАЧИ ---------------------- 
-   Пример синтаксиса:
-   Задача 12:
-       Ввод:
-         CheckData(Input := cInt*2)
-       Проверка:
-         ...
-       Тесты:
-         ...
-       Вывод:
-         ...
-*/
-
-/*
-наброс
-checker
-	: tasks
-		{
-			$$ = new procedure_definition($1 as procedure_header, new block(null, $2 as statement_list, @2), @$);
-		}
-	;
-
-proc_func_header
-	: optional_form_param_list
-		{
-			$$ = new procedure_header(
-				$4 as formal_parameters, 
-				null, 
-				new method_name(null,null, $2, null, @2), 
-				null, 
-				$@
-			);
-		}
-	;
-	
-case_stmt
-    : tkCase expr_l1 tkOf case_list else_case tkEnd 
-        { 
-			$$ = new case_node($2, $4 as case_variants, $5 as statement, @$); 
-		}  
-	| tkCase expr_l1 tkOf case_list tkSemiColon else_case tkEnd 
-        { 
-			$$ = new case_node($2, $4 as case_variants, $6 as statement, @$); 
-		}
-	| tkCase expr_l1 tkOf else_case tkEnd 
-        { 
-			$$ = new case_node($2, NewCaseItem(new empty_statement(), null), $4 as statement, @$); 
-		}		
-    ;
-
-case_list
-    : case_item
-        {
-			if ($1 is empty_statement) 
-				$$ = NewCaseItem($1, null);
-			else $$ = NewCaseItem($1, @$);
-		}
-    | case_list tkSemiColon case_item         
-        { 
-			$$ = AddCaseItem($1 as case_variants, $3, @$);
-		} 
-    ;
-
-case_item
-    : case_label_list tkColon unlabelled_stmt            
-        { 
-			$$ = new case_variant($1 as expression_list, $3 as statement, @$); 
-		}
-    ;
-
-case_label_list
-    : case_label                               
-        { 
-			$$ = new expression_list($1, @$);
-		}
-    |  case_label_list tkComma case_label      
-        { 
-			$$ = ($1 as expression_list).Add($3, @$);
-		}
-    ;
-
-case_label
-    : const_elem
-		{ $$ = $1; }
-    ;
-
-else_case
-    :
-		{ $$ = null;}
-    |  tkElse stmt_list                  
-        { $$ = $2; }
-    ;
-
-	
-tasks
-	: task_definition
-	| tasks end_of_line task_definition
-	;
-*/
-
 task_definition
     : TASK task_id COLON block {
 	$$ = new task_stmt(
-		$2 as ident, 
+		$2 as ident,
 		$4 as statement_list,
 		@$
 	);
     }
     ;
-    
-/* ---------------------- СЕКЦИЯ "ВВОД" ---------------------- */
+
 input_section
     : INPUT COLON block
       {
@@ -242,7 +141,7 @@ input_section
 
 check_section
     : CHECK COLON block
-      { 
+      {
                 $$ = new check_section($3 as statement_list);
       }
     | /* пусто */
@@ -251,7 +150,7 @@ check_section
 
 tests_section
     : TESTS COLON block
-      { 
+      {
                 $$ = new tests_section($3 as statement_list);
       }
     | /* пусто */
@@ -260,7 +159,7 @@ tests_section
 
 output_section
     : OUTPUT COLON block
-      { 
+      {
                 $$ = new output_section($3 as statement_list);
       }
     | /* пусто */
@@ -280,57 +179,64 @@ stmt_list
 		}
 	;
 
+// MARK: - Statement
+
 stmt
 	: assign_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| var_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| if_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| proc_func_call_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| while_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| for_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
-//	| task_definition { $$ = $1; }
 	| input_section { $$ = $1; }
-        | check_section { $$ = $1; }
-        | tests_section { $$ = $1; }
-        | output_section { $$ = $1; }
+	| check_section { $$ = $1; }
+	| tests_section { $$ = $1; }
+	| output_section { $$ = $1; }
 	| return_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| break_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| continue_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| global_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| pass_stmt
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
-	// works only on global level
+	| import_clause
+		{
+			$$ = $1;
+		}
+
+	// MARK: - Task node
+
 	| TASK task_id block
 		{
 			var file_type = new named_type_reference(new ident("str"));
@@ -340,10 +246,10 @@ stmt
 			var func_name = new ident("CheckTaskT");
 
 			var proc_head = new procedure_header(
-				file_name_param as formal_parameters, 
-				new procedure_attributes_list(new List<procedure_attribute>()), 
-				new method_name(null,null, func_name, null), 
-				null, 
+				file_name_param as formal_parameters,
+				new procedure_attributes_list(new List<procedure_attribute>()),
+				new method_name(null,null, func_name, null),
+				null,
 				@$
 			);
 			var proc_def = new procedure_definition(proc_head, new block(null, $3 as statement_list, @3), @$);
@@ -363,11 +269,11 @@ import_clause
 		{
 			$$ = new import_statement($2 as as_statement_list, @$);
 		}
-	| FROM ident IMPORT ident_as_ident_list 
+	| FROM ident IMPORT ident_as_ident_list
 		{
 			$$ = new from_import_statement($2 as ident, false, $4 as as_statement_list, @$);
 		}
-	| FROM ident IMPORT STAR 
+	| FROM ident IMPORT STAR
 		{
 			$$ = new from_import_statement($2 as ident, true, null, @$);
 		}
@@ -396,12 +302,12 @@ ident
 
 dotted_ident
 	: ident
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| dotted_ident DOT ident
-		{ 
-			$$ = new ident($1.name + "." + $3.name, @$); 
+		{
+			$$ = new ident($1.name + "." + $3.name, @$);
 		}
 	;
 
@@ -418,12 +324,12 @@ dotted_ident_list
 
 ident_as_ident
 	: ident AS ident
-		{ 
-			$$ = new as_statement($1, $3, @$); 
+		{
+			$$ = new as_statement($1, $3, @$);
 		}
 	| ident
-		{ 
-			$$ = new as_statement($1, $1, @$); 
+		{
+			$$ = new as_statement($1, $1, @$);
 		}
 	;
 
@@ -468,132 +374,134 @@ assign_stmt
 
 assign_type
 	: PLUSEQUAL
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
     | MINUSEQUAL
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
     | STAREQUAL
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
     | DIVEQUAL
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
     ;
+
+// MARK: - Expression
 
 expr
 	: expr IF expr ELSE expr
 		{
 			$$ = new question_colon_expression($3, $1, $5, @$);
 		}
-	| expr PLUS 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr PLUS expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr STAR 	expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr STAR expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr DIVIDE 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr DIVIDE expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr MINUS 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr MINUS expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-  	| expr LESS 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+  	| expr LESS expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr GREATER 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr GREATER expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr LESSEQUAL 	expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr LESSEQUAL expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
 	| expr GREATEREQUAL expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr EQUAL 		expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr EQUAL expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr NOTEQUAL 	expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr NOTEQUAL expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr AND 			expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr AND expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr OR 			expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr OR expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr SLASHSLASH	expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr SLASHSLASH expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr PERCENTAGE	expr
-		{ 
-			$$ = new bin_expr($1, $3, $2.type, @$); 
+	| expr PERCENTAGE expr
+		{
+			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-	| expr STARSTAR		expr
+	| expr STARSTAR expr
 		{
 			addressed_value method_name = new ident("!pow", @$);
 			expression_list el = new expression_list(new List<expression> { $1, $3 }, @$);
 			$$ = new method_call(method_name, el, @$);
 		}
-	| MINUS	expr
-		{ 
-			$$ = new un_expr($2, $1.type, @$); 
+	| MINUS expr
+		{
+			$$ = new un_expr($2, $1.type, @$);
 		}
-	| NOT	expr
-		{ 
-			$$ = new un_expr($2, $1.type, @$); 
+	| NOT expr
+		{
+			$$ = new un_expr($2, $1.type, @$);
 		}
 	| variable
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| const_value
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| LPAR expr RPAR
-		{ 
-			$$ = new bracket_expr($2, @$); 
+		{
+			$$ = new bracket_expr($2, @$);
 		}
 	;
 
 const_value
 	: INTNUM
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| REALNUM
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| TRUE
-		{ 
-			$$ = new ident("true", @$); 
+		{
+			$$ = new ident("true", @$);
 		}
 	| FALSE
-		{ 
-			$$ = new ident("false", @$); 
+		{
+			$$ = new ident("false", @$);
 		}
 	| STRINGNUM
-		{ 
-			$$ = $1 as literal; 
+		{
+			$$ = $1 as literal;
 		}
 	;
 
@@ -621,19 +529,19 @@ optional_elif
 			$$ = new if_node($2, $4 as statement, $5 as statement, @$);
 		}
 	| optional_else
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	;
 
 optional_else
 	: ELSE COLON block
-		{ 
-			$$ = $3; 
+		{
+			$$ = $3;
 		}
 	|
-		{ 
-			$$ = null; 
+		{
+			$$ = null;
 		}
 	;
 
@@ -696,20 +604,20 @@ proc_func_call_stmt
 
 variable
 	: ident
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| proc_func_call
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| variable DOT ident
-		{ 
-			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); 
+		{
+			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$);
 		}
 	| const_value DOT ident
-		{ 
-			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); 
+		{
+			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$);
 		}
 	// list constant
 	| LBRACKET expr_list RBRACKET
@@ -733,12 +641,12 @@ variable
 
 optional_condition
 	:
-		{ 
-			$$ = null; 
+		{
+			$$ = null;
 		}
 	| IF expr
-		{ 
-			$$ = $2; 
+		{
+			$$ = $2;
 		}
 	;
 
@@ -785,7 +693,7 @@ simple_type_identifier
 			$$ = new named_type_reference($1, @$);
 		}
 	| simple_type_identifier DOT ident
-        { 
+        {
 			$$ = ($1 as named_type_reference).Add($3, @$);
 		}
 	;
@@ -796,20 +704,20 @@ type_ref
 			$$ = $1 as named_type_reference;
 		}
 	| template_type
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	;
 
 template_type
-    : simple_type_identifier template_type_params    
-        { 
-			$$ = new template_type_reference($1 as named_type_reference, $2 as template_param_list, @$); 
+    : simple_type_identifier template_type_params
+        {
+			$$ = new template_type_reference($1 as named_type_reference, $2 as template_param_list, @$);
 		}
     ;
 
 template_type_params
-    : LBRACKET template_param_list RBRACKET            
+    : LBRACKET template_param_list RBRACKET
         {
 			$$ = $2;
 			$$.source_context = @$;
@@ -817,12 +725,12 @@ template_type_params
     ;
 
 template_param_list
-    : type_ref                              
-        { 
+    : type_ref
+        {
 			$$ = new template_param_list($1, @$);
 		}
-    | template_param_list COMMA type_ref  
-        { 
+    | template_param_list COMMA type_ref
+        {
 			$$ = ($1 as template_param_list).Add($3, @$);
 		}
     ;
@@ -865,12 +773,12 @@ optional_form_param_list
 
 act_param
 	: expr
-		{ 
-			$$ = $1; 
+		{
+			$$ = $1;
 		}
 	| ident ASSIGN expr
-		{ 
-			$$ = new name_assign_expr($1, $3, @$); 
+		{
+			$$ = new name_assign_expr($1, $3, @$);
 		}
 	;
 
