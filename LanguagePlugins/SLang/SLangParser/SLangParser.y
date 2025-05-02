@@ -1,5 +1,5 @@
 %{
-   	public syntax_tree_node root;
+	public syntax_tree_node root;
 	public List<Error> errors;
 	public SLangParserTools parserTools;
 	public List<compiler_directive> CompilerDirectives;
@@ -31,11 +31,11 @@
 %union {
 	public expression ex;
 	public ident id;
-    public Object ob;
-    public op_type_node op;
-    public syntax_tree_node stn;
-    public token_info ti;
-    public type_definition td;
+	public Object ob;
+	public op_type_node op;
+	public syntax_tree_node stn;
+	public token_info ti;
+	public type_definition td;
 }
 
 /* Ключевые слова, включая DSL: TASK, INPUT, CHECK, TESTS, OUTPUT */
@@ -73,6 +73,8 @@
 %type <op> assign_type
 
 %type <stn> task_definition input_section check_section tests_section output_section
+%type <stn> task_switch case_stmt task_switch_list case_list case_item case_label_list task_switch_item
+%type <ex> case_label
 
 %start program
 
@@ -119,52 +121,52 @@ program
 	;
 
 task_definition
-    : TASK task_id COLON block {
+	: TASK task_id COLON block {
 	$$ = new task_stmt(
 		$2 as ident,
 		$4 as statement_list,
 		@$
 	);
-    }
-    ;
+	}
+	;
 
 input_section
-    : INPUT COLON block
-      {
-          $$ = new input_section($3 as statement_list);
-      }
-    |
-      {
-          $$ = null;
-      }
-    ;
+	: INPUT COLON block
+		{
+			$$ = new input_section($3 as statement_list);
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
 
 check_section
-    : CHECK COLON block
-      {
-                $$ = new check_section($3 as statement_list);
-      }
-    | /* пусто */
-      { $$ = null; }
-    ;
+	: CHECK COLON block
+		{
+				$$ = new check_section($3 as statement_list);
+		}
+	| /* пусто */
+		{ $$ = null; }
+	;
 
 tests_section
-    : TESTS COLON block
-      {
-                $$ = new tests_section($3 as statement_list);
-      }
-    | /* пусто */
-      { $$ = null; }
-    ;
+	: TESTS COLON block
+		{
+				$$ = new tests_section($3 as statement_list);
+		}
+	| /* пусто */
+		{ $$ = null; }
+	;
 
 output_section
-    : OUTPUT COLON block
-      {
-                $$ = new output_section($3 as statement_list);
-      }
-    | /* пусто */
-      { $$ = null; }
-    ;
+	: OUTPUT COLON block
+		{
+				$$ = new output_section($3 as statement_list);
+		}
+	| /* пусто */
+		{ $$ = null; }
+	;
 
 /* ---------------------- НИЖЕ - СТАРЫЕ ПРАВИЛА stmt_list, if_stmt, etc. ---------------------- */
 
@@ -234,10 +236,16 @@ stmt
 		{
 			$$ = $1;
 		}
+	| task_switch
+		{
+			$$ = $1;
+		}
+	;
 
 	// MARK: - Task node
 
-	| TASK task_id block
+task_switch 
+	: TASK task_id block
 		{
 			var file_type = new named_type_reference(new ident("str"));
 			var file_name = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
@@ -252,15 +260,106 @@ stmt
 				null,
 				@$
 			);
+
+			var selector = new ident("task_selector");
+			var case_node = new case_node(selector, NewCaseItem(new empty_statement(), null), null, @$);
+
 			var proc_def = new procedure_definition(proc_head, new block(null, $3 as statement_list, @3), @$);
+
 			$$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
 		}
-	// works only on global level
-	| import_clause
+	| task_switch_list
 		{
-			$$ = $1; 
+			$$ = $1;
 		}
-    	;
+	;
+
+task_switch_list
+	: task_switch_item 
+		{
+			$$ = new statement_list($1 as statement, @$);
+		}
+	| task_switch_list task_switch_item
+		{
+			($1 as statement_list).Add($2 as statement, @$);
+            $$ = $1;
+		}
+	;
+
+task_switch_item
+    : TASK task_id block
+        {
+            var file_type  = new named_type_reference(new ident("str"));
+
+            var file_name  = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
+            var file_param = new formal_parameters(file_name, @$);
+
+            var func_name  = new ident("CheckTaskT");
+
+            var proc_head  = new procedure_header(
+                                file_param,
+                                new procedure_attributes_list(new List<procedure_attribute>()),
+                                new method_name(null, null, func_name, null),
+                                null,
+                                @$);
+
+            var case_node  = new case_node($2, NewCaseItem(new empty_statement(), null), null, @$);
+
+            var proc_def   = new procedure_definition(
+                                proc_head,
+                                new block(null, $3 as statement_list, @3),
+                                @$);
+
+            $$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
+        }
+    ;
+
+case_stmt
+	: TASK case_list
+		{
+			$$ = new case_node(new ident("selector"), $2 as case_variants, null, @$);
+		}
+	| TASK
+		{
+			$$ = new case_node(new ident("selector"), NewCaseItem(new empty_statement(), null), null, @$);
+		}
+	;
+
+case_list
+	: case_item
+		{
+			if ($1 is empty_statement)
+				$$ = NewCaseItem($1, null);
+			else $$ = NewCaseItem($1, @$);
+		}
+	| case_list case_item
+		{
+			$$ = AddCaseItem($1 as case_variants, $2, @$);
+		}
+	;
+
+case_item
+	: case_label_list stmt
+		{
+			$$ = new case_variant($1 as expression_list, $2 as statement, @$);
+		}
+	;
+
+case_label_list
+	: case_label
+	 {
+			$$ = new expression_list($1, @$);
+		}
+	| case_label_list COMMA case_label
+	 {
+			$$ = ($1 as expression_list).Add($3, @$);
+		}
+	;
+
+case_label
+	: const_value
+		{ $$ = $1; }
+	;
 
 task_id : ident { $$ = new ident($1.name); };
 
@@ -312,15 +411,15 @@ dotted_ident
 	;
 
 dotted_ident_list
-    : dotted_ident
-        {
+	: dotted_ident
+		{
 			$$ = new ident_list($1, @$);
 		}
-    | dotted_ident_list COMMA dotted_ident
-        {
+	| dotted_ident_list COMMA dotted_ident
+		{
 			$$ = ($1 as ident_list).Add($3, @$);
 		}
-    ;
+	;
 
 ident_as_ident
 	: ident AS ident
@@ -334,15 +433,15 @@ ident_as_ident
 	;
 
 ident_as_ident_list
-    : ident_as_ident
-        {
+	: ident_as_ident
+		{
 			$$ = new as_statement_list($1 as as_statement, @$);
 		}
-    | ident_as_ident_list COMMA ident_as_ident
-        {
+	| ident_as_ident_list COMMA ident_as_ident
+		{
 			$$ = ($1 as as_statement_list).Add($3 as as_statement, @$);
 		}
-    ;
+	;
 
 var_stmt
 	: variable COLON type_ref
@@ -361,13 +460,13 @@ assign_stmt
 	: variable ASSIGN expr
 		{
 			if (!($1 is addressed_value))
-        		parserTools.AddErrorFromResource("LEFT_SIDE_CANNOT_BE_ASSIGNED_TO", @$);
+				parserTools.AddErrorFromResource("LEFT_SIDE_CANNOT_BE_ASSIGNED_TO", @$);
 			$$ = new assign($1 as addressed_value, $3, $2.type, @$);
 		}
 	| variable assign_type expr
 		{
 			if (!($1 is addressed_value))
-        		parserTools.AddErrorFromResource("LEFT_SIDE_CANNOT_BE_ASSIGNED_TO", @$);
+			parserTools.AddErrorFromResource("LEFT_SIDE_CANNOT_BE_ASSIGNED_TO", @$);
 			$$ = new assign($1 as addressed_value, $3, $2.type, @$);
 		}
 	;
@@ -377,19 +476,19 @@ assign_type
 		{
 			$$ = $1;
 		}
-    | MINUSEQUAL
+	| MINUSEQUAL
 		{
 			$$ = $1;
 		}
-    | STAREQUAL
+	| STAREQUAL
 		{
 			$$ = $1;
 		}
-    | DIVEQUAL
+	| DIVEQUAL
 		{
 			$$ = $1;
 		}
-    ;
+	;
 
 // MARK: - Expression
 
@@ -414,7 +513,7 @@ expr
 		{
 			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
-  	| expr LESS expr
+	| expr LESS expr
 		{
 			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
@@ -596,8 +695,8 @@ continue_stmt
 	;
 
 proc_func_call_stmt
-	:  proc_func_call
-        {
+	: proc_func_call
+		{
 			$$ = new procedure_call($1 as addressed_value, $1 is ident, @$);
 		}
 	;
@@ -693,7 +792,7 @@ simple_type_identifier
 			$$ = new named_type_reference($1, @$);
 		}
 	| simple_type_identifier DOT ident
-        {
+		{
 			$$ = ($1 as named_type_reference).Add($3, @$);
 		}
 	;
@@ -710,37 +809,37 @@ type_ref
 	;
 
 template_type
-    : simple_type_identifier template_type_params
-        {
+	: simple_type_identifier template_type_params
+		{
 			$$ = new template_type_reference($1 as named_type_reference, $2 as template_param_list, @$);
 		}
-    ;
+	;
 
 template_type_params
-    : LBRACKET template_param_list RBRACKET
-        {
+	: LBRACKET template_param_list RBRACKET
+		{
 			$$ = $2;
 			$$.source_context = @$;
 		}
-    ;
+	;
 
 template_param_list
-    : type_ref
-        {
+	: type_ref
+		{
 			$$ = new template_param_list($1, @$);
 		}
-    | template_param_list COMMA type_ref
-        {
+	| template_param_list COMMA type_ref
+		{
 			$$ = ($1 as template_param_list).Add($3, @$);
 		}
-    ;
+	;
 
 param_name
 	: ident
 		{
 			$$ = new ident_list($1, @$);
 		}
-    ;
+	;
 
 form_param_sect
 	: param_name COLON type_ref
@@ -750,26 +849,26 @@ form_param_sect
 	;
 
 form_param_list
-    : form_param_sect
-        {
+	: form_param_sect
+		{
 			$$ = new formal_parameters($1 as typed_parameters, @$);
-        }
-    | form_param_list COMMA form_param_sect
-        {
+		}
+	| form_param_list COMMA form_param_sect
+		{
 			$$ = ($1 as formal_parameters).Add($3 as typed_parameters, @$);
-        }
-    ;
+		}
+	;
 
 optional_form_param_list
-    : form_param_list
-        {
+	: form_param_list
+		{
 			$$ = $1;
 		}
 	|
-        {
+		{
 			$$ = null;
 		}
-    ;
+	;
 
 act_param
 	: expr
@@ -799,10 +898,10 @@ optional_act_param_list
 			$$ = $1;
 		}
 	|
-        {
+		{
 			$$ = null;
 		}
-    ;
+	;
 
 end_of_line
 	: END_OF_LINE
@@ -827,14 +926,31 @@ optional_semicolon
 /* ---------------------- ВСПОМОГАТЕЛЬНЫЙ МЕТОД ---------------------- */
 public program_module NewProgramModule(program_name progName, Object optHeadCompDirs, uses_list mainUsesClose, syntax_tree_node progBlock, Object optPoint, LexLocation loc)
 {
-    var progModule = new program_module(progName, mainUsesClose, progBlock as block, null, loc);
-    progModule.Language = "SLang";
-    if (optPoint == null && progBlock != null)
-    {
-        var fp = progBlock.source_context.end_position;
-        var err_stn = progBlock;
+	var progModule = new program_module(progName, mainUsesClose, progBlock as block, null, loc);
+	progModule.Language = "SLang";
+	if (optPoint == null && progBlock != null)
+	{
+		var fp = progBlock.source_context.end_position;
+		var err_stn = progBlock;
 		if ((progBlock is block) && (progBlock as block).program_code != null && (progBlock as block).program_code.subnodes != null && (progBlock as block).program_code.subnodes.Count > 0)
-            err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
-    }
-    return progModule;
+	 	 err_stn = (progBlock as block).program_code.subnodes[(progBlock as block).program_code.subnodes.Count - 1];
+	}
+	return progModule;
+}
+public case_variants NewCaseItem(syntax_tree_node case_item, LexLocation loc)
+{
+	var nci = new case_variants(); 
+	if (case_item is case_variant)
+		nci.Add((case_variant)case_item);
+	nci.source_context = loc;
+	return nci;
+}
+
+public case_variants AddCaseItem(case_variants case_list, syntax_tree_node case_item, LexLocation loc)
+{
+	var nci = case_list;
+	if (case_item is case_variant)
+		nci.Add((case_variant)case_item);
+	nci.source_context = loc;
+	return nci;
 }

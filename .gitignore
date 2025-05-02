@@ -154,3 +154,4 @@ bin/SLangSyntaxTreeVisitor.dll
 bin/SLanguageInfo.dll
 PascalABCNET.sln.DotSettings.user
 *.lnk
+.vscode/settings.json
