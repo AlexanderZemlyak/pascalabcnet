@@ -38,6 +38,9 @@ namespace SLangParser
             CreateNewKeyword("Проверка", Tokens.CHECK);
             CreateNewKeyword("Тесты", Tokens.TESTS);
             CreateNewKeyword("Вывод", Tokens.OUTPUT);
+            CreateNewKeyword("Конец", Tokens.END_TASK);
+            CreateNewKeyword("КонецЗадачи", Tokens.END_TASK);
+
         }
 
         protected override int GetIdToken() => (int)Tokens.ID;

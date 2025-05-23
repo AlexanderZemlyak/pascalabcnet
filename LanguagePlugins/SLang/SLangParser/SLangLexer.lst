@@ -4,7 +4,7 @@
 // ==========================================================================
 //  Version:  1.1.3.301
 //  Machine:  MACBOOK-PRO-16
-//  DateTime: 12/16/2024 2:01:43 AM
+//  DateTime: 5/23/2025 1:32:09 PM
 //  UserName: controldata
 // ==========================================================================
 
@@ -18,22 +18,26 @@
 
 %namespace SLangParser
 
+HRLINE   [-\u2014\u2500]{4,}
+//--------^
+// Warning: Special case: "-" included as set class member
+// -------------------------------------------------------
 Alpha         [[:IsLetter:]_]
 NonZeroDigit  [1-9]
 Digit         0|{NonZeroDigit}
-AlphaDigit {Alpha}|{Digit}
-INTNUM  ({NonZeroDigit}{Digit}*)|0
-REALNUM ({INTNUM}?\.{INTNUM})|({INTNUM}\.)
-STRINGNUM (\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\")
-ID {Alpha}{AlphaDigit}*
-
-%x COMMENT
+AlphaDigit    {Alpha}|{Digit}
+INTNUM        ({NonZeroDigit}{Digit}*)|0
+REALNUM       ({INTNUM}?\.{INTNUM})|({INTNUM}\.)
+STRINGNUM     (\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\")
+ID            {Alpha}{AlphaDigit}*
 
 %{
   private SLangKeywords keywords;
   public SLangParserTools parserTools;
   public List<string> Defines = new List<string>();
-  LexLocation currentLexLocation;
+  private int last_line_needed_colon = -1;
+  private LexLocation currentLexLocation;
+  private LexLocation prevLexLocation = new LexLocation(-1, -1, -1, -1, "");
 
   public Scanner(string text, SLangParserTools parserTools, PascalABCCompiler.Parsers.BaseKeywords keywords, List<string> defines = null) 
   {
@@ -47,29 +51,27 @@ ID {Alpha}{AlphaDigit}*
 
 %%
 
-"/*" { BEGIN(COMMENT); }
-<COMMENT> {ID} {
+{HRLINE} {
+  yylval = new SLangParserYacc.ValueType();
+  return (int)Tokens.HR;
 }
-<COMMENT> "*/" { BEGIN(INITIAL); }
-
-"//"[^\n]* { }
-//^^^^^^^^
-// Warning: This pattern always overrides ""//"" 
-// ----------------------------------------------
 
 {INTNUM} {
+  yylval = new SLangParserYacc.ValueType();
   currentLexLocation = CurrentLexLocation;
   yylval.ex = parserTools.create_int_const(yytext,currentLexLocation);
   return (int)Tokens.INTNUM;
 }
 
 {REALNUM} {
+  yylval = new SLangParserYacc.ValueType();
   currentLexLocation = CurrentLexLocation;
   yylval.ex = parserTools.create_double_const(yytext,currentLexLocation);
   return (int)Tokens.REALNUM;
 }
 
 {STRINGNUM} {
+  yylval = new SLangParserYacc.ValueType();
   currentLexLocation = CurrentLexLocation;
   yylval.stn = parserTools.create_string_const(yytext,currentLexLocation);
   return (int)Tokens.STRINGNUM;
@@ -79,67 +81,94 @@ ID {Alpha}{AlphaDigit}*
   string cur_yytext = yytext;
   int res = keywords.KeywordOrIDToken(cur_yytext);
   currentLexLocation = CurrentLexLocation;
+  yylval = new SLangParserYacc.ValueType();
   switch (res)
   {
     case (int)Tokens.ID:
-      yylval.id = parserTools.create_ident(cur_yytext,currentLexLocation);
+      yylval.id = parserTools.create_ident(cur_yytext, currentLexLocation);
       break;
     case (int)Tokens.AND:
-      yylval.op = new op_type_node(Operators.LogicalAND);
+      yylval.op = new op_type_node(Operators.LogicalAND, currentLexLocation);
+      yylval.op.text = cur_yytext;
       break;
     case (int)Tokens.OR:
-      yylval.op = new op_type_node(Operators.LogicalOR);
+      yylval.op = new op_type_node(Operators.LogicalOR, currentLexLocation);
+      yylval.op.text = cur_yytext;
       break;
     case (int)Tokens.NOT:
-      yylval.op = new op_type_node(Operators.LogicalNOT);
+      yylval.op = new op_type_node(Operators.LogicalNOT, currentLexLocation);
+      yylval.op.text = cur_yytext;
+      break;
+    case (int)Tokens.IF:
+    case (int)Tokens.ELIF:
+    case (int)Tokens.ELSE:
+    case (int)Tokens.WHILE:
+    case (int)Tokens.FOR:
+    case (int)Tokens.DEF:
+      last_line_needed_colon = CurrentLexLocation.StartLine;
+      break;
+    case (int)Tokens.CLASS:
+    case (int)Tokens.LAMBDA:
+      parserTools.AddErrorFromResource("UNSUPPORTED_CONSTRUCTION_{0}", currentLexLocation, yytext);
       break;
   }
 
   return res;
 }
 
-"+=" { yylval.op = new op_type_node(Operators.AssignmentAddition); return (int)Tokens.PLUSEQUAL; }
-"-=" { yylval.op = new op_type_node(Operators.AssignmentSubtraction); return (int)Tokens.MINUSEQUAL; }
-"*=" { yylval.op = new op_type_node(Operators.AssignmentMultiplication); return (int)Tokens.STAREQUAL; }
-"/=" { yylval.op = new op_type_node(Operators.AssignmentDivision); return (int)Tokens.DIVEQUAL; }
+"+=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentAddition); return (int)Tokens.PLUSEQUAL; }
+"-=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentSubtraction); return (int)Tokens.MINUSEQUAL; }
+"*=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentMultiplication); return (int)Tokens.STAREQUAL; }
+"/=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentDivision); return (int)Tokens.DIVEQUAL; }
 
-"+"  { yylval.op = new op_type_node(Operators.Plus); return (int)Tokens.PLUS; }
-"-"  { yylval.op = new op_type_node(Operators.Minus); return (int)Tokens.MINUS; }
-"*"  { yylval.op = new op_type_node(Operators.Multiplication); return (int)Tokens.STAR; }
-"//" { yylval.op = new op_type_node(Operators.IntegerDivision); return (int)Tokens.SLASHSLASH; }
-//^^
-// Warning: This pattern always overridden by ""//"[^\n]*" 
-// --------------------------------------------------------
-"/"  { yylval.op = new op_type_node(Operators.Division); return (int)Tokens.DIVIDE; }
-"%"  { yylval.op = new op_type_node(Operators.ModulusRemainder); return (int)Tokens.PERCENTAGE; }
+"+"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Plus); return (int)Tokens.PLUS; }
+"-"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Minus); return (int)Tokens.MINUS; }
+"*"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Multiplication); return (int)Tokens.STAR; }
+"//" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.IntegerDivision); return (int)Tokens.SLASHSLASH; }
+"/"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Division); return (int)Tokens.DIVIDE; }
+"%"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.ModulusRemainder); return (int)Tokens.PERCENTAGE; }
 
-"<=" { yylval.op = new op_type_node(Operators.LessEqual); return (int)Tokens.LESSEQUAL; }
-">=" { yylval.op = new op_type_node(Operators.GreaterEqual); return (int)Tokens.GREATEREQUAL; }
-"<"  { yylval.op = new op_type_node(Operators.Less); return (int)Tokens.LESS; }
-">"  { yylval.op = new op_type_node(Operators.Greater); return (int)Tokens.GREATER; }
-"==" { yylval.op = new op_type_node(Operators.Equal); return (int)Tokens.EQUAL; }
-"!=" { yylval.op = new op_type_node(Operators.NotEqual); return (int)Tokens.NOTEQUAL; }
-"="  { yylval.op = new op_type_node(Operators.Assignment); currentLexLocation = CurrentLexLocation; return (int)Tokens.ASSIGN; }
+"<=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LessEqual); return (int)Tokens.LESSEQUAL; }
+">=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.GreaterEqual); return (int)Tokens.GREATEREQUAL; }
+"<"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Less); return (int)Tokens.LESS; }
+">"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Greater); return (int)Tokens.GREATER; }
+"==" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Equal); return (int)Tokens.EQUAL; }
+"!=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.NotEqual); return (int)Tokens.NOTEQUAL; }
+"="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Assignment); return (int)Tokens.ASSIGN; }
 
-"#{" { currentLexLocation = CurrentLexLocation; return (int)Tokens.INDENT; }
-"#}" { currentLexLocation = CurrentLexLocation; return (int)Tokens.UNINDENT; }
-"{"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.LBRACE; }
-"}"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.RBRACE; }
-"["  { currentLexLocation = CurrentLexLocation; return (int)Tokens.LBRACKET; }
-"]"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.RBRACKET; }
+"#{" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.INDENT; }
+"#}" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.UNINDENT; }
+"#;" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.END_OF_LINE; }
 
-"->" { currentLexLocation = CurrentLexLocation; return (int)Tokens.ARROW; }
+"{"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.LBRACE; }
+"}"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.RBRACE; }
+"["  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.LBRACKET; }
+"]"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.RBRACKET; }
 
-"."  { currentLexLocation = CurrentLexLocation; return (int)Tokens.DOT; }
-","  { currentLexLocation = CurrentLexLocation; return (int)Tokens.COMMA; }
-":"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.COLON; }
-";"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.SEMICOLON; }
-"("  { currentLexLocation = CurrentLexLocation; return (int)Tokens.LPAR; }
-")"  { currentLexLocation = CurrentLexLocation; return (int)Tokens.RPAR; }
+"->" { yylval = new SLangParserYacc.ValueType(); yylval.ti = new token_info(yytext); return (int)Tokens.ARROW; }
 
-"##" {
-  parserTools.AddErrorFromResource("WRONG_INDENT", new LexLocation(CurrentLexLocation.StartLine + 1, 0, CurrentLexLocation.StartLine + 1, 0));
+"."  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.DOT; }
+","  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.COMMA; }
+":"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.COLON; }
+";"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.SEMICOLON; }
+"("  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.LPAR; }
+")"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.RPAR; }
+"**" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.STARSTAR; }
+
+"#!" {
+  parserTools.AddErrorFromResource("WRONG_INDENT", 
+    new LexLocation(CurrentLexLocation.StartLine + 1, 0, CurrentLexLocation.StartLine + 1, 0));
 	return (int)Tokens.EOF;
+}
+
+"#b" {
+  parserTools.AddErrorFromResource("PROGRAM_BEGIN_WITH_INDENT", 
+    CurrentLexLocation);
+	return (int)Tokens.EOF;
+}
+
+"#$" {
+  return (int)Tokens.END_OF_FILE;
 }
 
 [^ \r\n] {
@@ -148,7 +177,13 @@ ID {Alpha}{AlphaDigit}*
 }
 
 %{
-  yylloc = new LexLocation(tokLin, tokCol, tokELin, tokECol);
+  prevLexLocation = yylloc;
+  if (currentLexLocation != null)
+    yylloc = currentLexLocation;
+  else
+	  yylloc = CurrentLexLocation;
+  
+  currentLexLocation = null;
 %}
 
 %%
@@ -162,8 +197,22 @@ public LexLocation CurrentLexLocation
 
 public override void yyerror(string format, params object[] args)
 {
-	string errorMsg = parserTools.CreateErrorString(yytext, args);
-	parserTools.AddError(errorMsg,CurrentLexLocation);
+    string expected = parserTools.ExpectedToken(last_line_needed_colon == prevLexLocation.StartLine, args);
+    LexLocation lexLocation = parserTools.GetLexLocation(
+      yytext, expected, prevLexLocation, CurrentLexLocation);
+    
+    if (yytext == "#{" && expected == "END_OF_LINE") {
+      parserTools.AddErrorFromResource("WRONG_INDENT", lexLocation);
+    }
+    else {
+      string errorMsg = parserTools.CreateErrorString(yytext, expected);
+      parserTools.AddError(errorMsg, lexLocation);
+    }
+}
+
+protected override bool yywrap()
+{
+  return true;
 }
 
 // ==========================================================================

@@ -7,6 +7,7 @@
 
 %namespace SLangParser
 
+HRLINE   [\-\u2014\u2500]{4,}
 Alpha         [[:IsLetter:]_]
 NonZeroDigit  [1-9]
 Digit         0|{NonZeroDigit}
@@ -35,6 +36,11 @@ ID            {Alpha}{AlphaDigit}*
 %}
 
 %%
+
+{HRLINE} {
+  yylval = new SLangParserYacc.ValueType();
+  return (int)Tokens.HR;
+}
 
 {INTNUM} {
   yylval = new SLangParserYacc.ValueType();

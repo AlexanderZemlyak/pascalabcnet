@@ -2,7 +2,7 @@
 
 {$savepcu false}
 
-uses LightPT,TasksOlymp1;
+uses LightPT, TasksOlymp1;
 
 initialization
   ServerAddr := ReadAllText('server.dat');

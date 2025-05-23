@@ -14,7 +14,7 @@ namespace SLangParser
 {
     public static class StringResources
     {
-        private static string prefix = "SPYTHONPARSER_";
+        private static string prefix = "SLANGPARSER_";
         public static string Get(string Id)
         {
             string ret = PascalABCCompiler.StringResources.Get(prefix + Id);

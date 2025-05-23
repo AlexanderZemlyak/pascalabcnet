@@ -1,4 +1,14 @@
-﻿begin
+﻿uses DSLExample;
+
+procedure LogMessage(msg: string);
+begin
+  println(msg);
+end;
+
+begin
+  CheckTaskT('задача23');
+  LogMessage('Начало выполнения основной задачи');
+  {
   var n := 20000;
   var i := 1;
   var s := 0.0;
@@ -14,4 +24,5 @@
   end;
   Println(s);
   Println(Milliseconds)
+  }
 end.

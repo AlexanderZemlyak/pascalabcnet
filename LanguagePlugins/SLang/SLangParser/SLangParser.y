@@ -12,6 +12,8 @@
 		this.parserTools = parserTools;
 		this.is_unit_to_be_parsed = isUnitToBeParsed;
 	}
+
+	public List<String> procedureNames = new List<String>();
 %}
 
 %using PascalABCCompiler.SyntaxTree;
@@ -38,7 +40,6 @@
 	public type_definition td;
 }
 
-/* Ключевые слова, включая DSL: TASK, INPUT, CHECK, TESTS, OUTPUT */
 %token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA
 %token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE
 %token <ti> TASK INPUT CHECK TESTS OUTPUT
@@ -73,8 +74,12 @@
 %type <op> assign_type
 
 %type <stn> task_definition input_section check_section tests_section output_section
-%type <stn> task_switch case_stmt task_switch_list case_list case_item case_label_list task_switch_item
-%type <ex> case_label
+%type <stn> task_switch_item
+
+%token <ti> END_TASK
+%token <ti> HR
+%type <ob> optional_colon
+%type <stn> task_end_stmt
 
 %start program
 
@@ -93,32 +98,81 @@ sect	= section
 act		= actual
 */
 
-/* ---------------------- ГЛАВНОЕ ПРАВИЛО program ---------------------- */
 %%
 program
-	: stmt_list optional_semicolon END_OF_FILE
-		{
-			if (!is_unit_to_be_parsed) {
-				var stl = $1 as statement_list;
-				stl.left_logical_bracket = new token_info("");
-				stl.right_logical_bracket = new token_info("");
-				var bl = new block(new declarations(), stl, @$);
-				root = $$ = NewProgramModule(null, null, new uses_list(), bl, $2, @$);
-				root.source_context = bl.source_context;
-			}
-			else {
-				var interface_part = new interface_node(new declarations(), new uses_list(), null, null);
-				var initialization_part = new initfinal_part(null, $1 as statement_list, null, null, null, @$);
+    : stmt_list optional_semicolon END_OF_FILE
+        {
+            var stmt_list = $1 as statement_list;
 
-				root = $$ = new unit_module(
-					new unit_name(new ident(Path.GetFileNameWithoutExtension(parserTools.currentFileName)),
-					UnitHeaderKeyword.Unit, @$), interface_part, null,
-					initialization_part.initialization_sect,
-					initialization_part.finalization_sect, null, @$);
-			}
+            var interface_part = new interface_node(
+                new declarations(), new uses_list(), null, null);
 
-		}
-	;
+            var strType = new named_type_reference(new ident("str"));
+            var pname   = new ident_list("taskName");
+            var ptyped  = new typed_parameters(pname, strType,
+                                               parametr_kind.none, null);
+            var formals = new formal_parameters(ptyped, @$);
+
+            statement selector = null;
+
+            foreach (var tn in procedureNames)
+            {
+                var cond = new bin_expr(
+                               new ident("taskName"),
+                               new string_const(tn, @$),
+                               Operators.Equal, @$);
+
+                var call = new procedure_call(
+                               new ident(tn, @$),true, @$);
+
+                selector = selector == null
+                         ? new if_node(cond, call, null, @$)
+                         : new if_node(cond, call, selector, @$);
+            }
+
+            var exitCall = new procedure_call(
+                               new ident("exit", @$), true, @$);
+
+            selector = new if_node(
+                           new ident("true", @$),
+                           selector,              
+                           exitCall, @$);        
+
+            var body = new statement_list(selector, @$);
+
+            var head = new procedure_header(
+                           formals,
+                           new procedure_attributes_list(
+                               new List<procedure_attribute>()),
+                           new method_name(null, null,
+                                           new ident("CheckTaskT"), null),
+                           null, @$);
+
+            var def  = new procedure_definition(
+                           head,
+                           new block(null, body, @$),
+                           @$);
+
+            stmt_list.Add(
+                new declarations_as_statement(new declarations(def, @$), @$));
+
+            var initialization_part = new initfinal_part(
+                                           null, stmt_list,
+                                           null, null, null, @$);
+
+            root = $$ = new unit_module(
+                new unit_name(
+                    new ident(Path.GetFileNameWithoutExtension(
+                                  parserTools.currentFileName)),
+                    UnitHeaderKeyword.Unit, @$),
+                interface_part,
+                null,
+                initialization_part.initialization_sect,
+                initialization_part.finalization_sect,
+                null, @$);
+        }
+    ;
+
 
 task_definition
 	: TASK task_id COLON block {
@@ -131,7 +185,7 @@ task_definition
 	;
 
 input_section
-	: INPUT COLON block
+	: INPUT optional_colon block
 		{
 			$$ = new input_section($3 as statement_list);
 		}
@@ -142,33 +196,31 @@ input_section
 	;
 
 check_section
-	: CHECK COLON block
+	: CHECK optional_colon block
 		{
 				$$ = new check_section($3 as statement_list);
 		}
-	| /* пусто */
+	|
 		{ $$ = null; }
 	;
 
 tests_section
-	: TESTS COLON block
+	: TESTS optional_colon block
 		{
 				$$ = new tests_section($3 as statement_list);
 		}
-	| /* пусто */
+	|
 		{ $$ = null; }
 	;
 
 output_section
-	: OUTPUT COLON block
+	: OUTPUT optional_colon block
 		{
 				$$ = new output_section($3 as statement_list);
 		}
-	| /* пусто */
+	|
 		{ $$ = null; }
 	;
-
-/* ---------------------- НИЖЕ - СТАРЫЕ ПРАВИЛА stmt_list, if_stmt, etc. ---------------------- */
 
 stmt_list
 	: stmt
@@ -236,132 +288,43 @@ stmt
 		{
 			$$ = $1;
 		}
-	| task_switch
+	| task_switch_item
 		{
 			$$ = $1;
 		}
+	| task_end_stmt
 	;
+
+task_end_stmt
+    : END_TASK        { $$ = new empty_statement(); }
+    | HR              { $$ = new empty_statement(); }
+    ;
 
 	// MARK: - Task node
-
-task_switch 
-	: TASK task_id block
-		{
-			var file_type = new named_type_reference(new ident("str"));
-			var file_name = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
-			var file_name_param = new formal_parameters(file_name, @$);
-
-			var func_name = new ident("CheckTaskT");
-
-			var proc_head = new procedure_header(
-				file_name_param as formal_parameters,
-				new procedure_attributes_list(new List<procedure_attribute>()),
-				new method_name(null,null, func_name, null),
-				null,
-				@$
-			);
-
-			var selector = new ident("task_selector");
-			var case_node = new case_node(selector, NewCaseItem(new empty_statement(), null), null, @$);
-
-			var proc_def = new procedure_definition(proc_head, new block(null, $3 as statement_list, @3), @$);
-
-			$$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
-		}
-	| task_switch_list
-		{
-			$$ = $1;
-		}
-	;
-
-task_switch_list
-	: task_switch_item 
-		{
-			$$ = new statement_list($1 as statement, @$);
-		}
-	| task_switch_list task_switch_item
-		{
-			($1 as statement_list).Add($2 as statement, @$);
-            $$ = $1;
-		}
-	;
 
 task_switch_item
     : TASK task_id block
         {
-            var file_type  = new named_type_reference(new ident("str"));
+            procedureNames.Add($2.name);
 
-            var file_name  = new typed_parameters(new ident_list($2), file_type, parametr_kind.none, null);
-            var file_param = new formal_parameters(file_name, @$);
-
-            var func_name  = new ident("CheckTaskT");
-
-            var proc_head  = new procedure_header(
-                                file_param,
-                                new procedure_attributes_list(new List<procedure_attribute>()),
-                                new method_name(null, null, func_name, null),
-                                null,
-                                @$);
-
-            var case_node  = new case_node($2, NewCaseItem(new empty_statement(), null), null, @$);
-
-            var proc_def   = new procedure_definition(
-                                proc_head,
-                                new block(null, $3 as statement_list, @3),
-                                @$);
-
-            $$ = new declarations_as_statement(new declarations(proc_def, @$), @$);
+            $$ = BuildTaskProc($2.name,
+                               $3 as statement_list,
+                               @3,
+                               @$);
         }
     ;
 
-case_stmt
-	: TASK case_list
+task_id 
+	: ident
 		{
-			$$ = new case_node(new ident("selector"), $2 as case_variants, null, @$);
-		}
-	| TASK
-		{
-			$$ = new case_node(new ident("selector"), NewCaseItem(new empty_statement(), null), null, @$);
+			$$ = new ident($1.name);
 		}
 	;
 
-case_list
-	: case_item
-		{
-			if ($1 is empty_statement)
-				$$ = NewCaseItem($1, null);
-			else $$ = NewCaseItem($1, @$);
-		}
-	| case_list case_item
-		{
-			$$ = AddCaseItem($1 as case_variants, $2, @$);
-		}
-	;
-
-case_item
-	: case_label_list stmt
-		{
-			$$ = new case_variant($1 as expression_list, $2 as statement, @$);
-		}
-	;
-
-case_label_list
-	: case_label
-	 {
-			$$ = new expression_list($1, @$);
-		}
-	| case_label_list COMMA case_label
-	 {
-			$$ = ($1 as expression_list).Add($3, @$);
-		}
-	;
-
-case_label
-	: const_value
-		{ $$ = $1; }
-	;
-
-task_id : ident { $$ = new ident($1.name); };
+optional_colon
+    : COLON { $$ = $1; }
+    |       { $$ = null; }
+    ;
 
 import_clause
 	: IMPORT ident_as_ident_list
@@ -954,3 +917,34 @@ public case_variants AddCaseItem(case_variants case_list, syntax_tree_node case_
 	nci.source_context = loc;
 	return nci;
 }
+// *** вставьте в %code‐блок grammar-файла либо в partial-класс парсера ***
+private declarations_as_statement BuildTaskProc(string taskName,
+                                               statement_list body,
+                                               LexLocation bodyLoc,
+                                               LexLocation wholeLoc)
+{
+    // идентификатор функции
+    var id = new ident(taskName, wholeLoc);
+
+    // header:  Задача задача23  (без параметров, без возвращаемого типа)
+    var head = new procedure_header(
+        /* parameters     */ null,
+        /* attrs          */ new procedure_attributes_list(new List<procedure_attribute>()),
+        /* method_name    */ new method_name(null, null, id, null),
+        /* where-section  */ null,
+        /* location       */ wholeLoc
+    );
+
+    // тело блока
+    var blk  = new block(null, body, bodyLoc);
+
+    // сама процедура
+    var def  = new procedure_definition(head, blk, wholeLoc);
+
+    // оборачиваем в decl-statement,
+    // чтобы потом его легко положить в любые stmt-list
+    return new declarations_as_statement(
+               new declarations(def, wholeLoc),
+               wholeLoc);
+}
+
