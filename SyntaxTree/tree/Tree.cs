@@ -57854,7 +57854,7 @@ namespace PascalABCCompiler.SyntaxTree
 	///
 	///</summary>
 	[Serializable]
-	public partial class input_section : statement
+	public partial class input_section : statement_list
 	{
 
 		///<summary>
@@ -57879,6 +57879,33 @@ namespace PascalABCCompiler.SyntaxTree
 		///</summary>
 		public input_section(statement_list _stmts,SourceContext sc)
 		{
+			this._stmts=_stmts;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public input_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._stmts=_stmts;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public input_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts,SourceContext sc)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
 			this._stmts=_stmts;
 			source_context = sc;
 			FillParentsInDirectChilds();
@@ -57915,6 +57942,30 @@ namespace PascalABCCompiler.SyntaxTree
 				copy.attributes = (attribute_list)attributes.Clone();
 				copy.attributes.Parent = copy;
 			}
+			if (subnodes != null)
+			{
+				foreach (statement elem in subnodes)
+				{
+					if (elem != null)
+					{
+						copy.Add((statement)elem.Clone());
+						copy.Last().Parent = copy;
+					}
+					else
+						copy.Add(null);
+				}
+			}
+			if (left_logical_bracket != null)
+			{
+				copy.left_logical_bracket = (token_info)left_logical_bracket.Clone();
+				copy.left_logical_bracket.Parent = copy;
+			}
+			if (right_logical_bracket != null)
+			{
+				copy.right_logical_bracket = (token_info)right_logical_bracket.Clone();
+				copy.right_logical_bracket.Parent = copy;
+			}
+			copy.expr_lambda_body = expr_lambda_body;
 			if (stmts != null)
 			{
 				copy.stmts = (statement_list)stmts.Clone();
@@ -57934,6 +57985,16 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			if (attributes != null)
 				attributes.Parent = this;
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					if (child != null)
+						child.Parent = this;
+			}
+			if (left_logical_bracket != null)
+				left_logical_bracket.Parent = this;
+			if (right_logical_bracket != null)
+				right_logical_bracket.Parent = this;
 			if (stmts != null)
 				stmts.Parent = this;
 		}
@@ -57943,6 +58004,13 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			FillParentsInDirectChilds();
 			attributes?.FillParentsInAllChilds();
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					child?.FillParentsInAllChilds();
+			}
+			left_logical_bracket?.FillParentsInAllChilds();
+			right_logical_bracket?.FillParentsInAllChilds();
 			stmts?.FillParentsInAllChilds();
 		}
 
@@ -57953,7 +58021,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3;
 			}
 		}
 		///<summary>
@@ -57963,7 +58031,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3 + (subnodes == null ? 0 : subnodes.Count);
 			}
 		}
 		///<summary>
@@ -57978,7 +58046,19 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						return left_logical_bracket;
+					case 1:
+						return right_logical_bracket;
+					case 2:
 						return stmts;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						return subnodes[index_counter];
+					}
 				}
 				return null;
 			}
@@ -57989,8 +58069,23 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						left_logical_bracket = (token_info)value;
+						break;
+					case 1:
+						right_logical_bracket = (token_info)value;
+						break;
+					case 2:
 						stmts = (statement_list)value;
 						break;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						subnodes[index_counter]= (statement)value;
+						return;
+					}
 				}
 			}
 		}
@@ -58011,7 +58106,7 @@ namespace PascalABCCompiler.SyntaxTree
 	///
 	///</summary>
 	[Serializable]
-	public partial class check_section : statement
+	public partial class check_section : statement_list
 	{
 
 		///<summary>
@@ -58036,6 +58131,33 @@ namespace PascalABCCompiler.SyntaxTree
 		///</summary>
 		public check_section(statement_list _stmts,SourceContext sc)
 		{
+			this._stmts=_stmts;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public check_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._stmts=_stmts;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public check_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts,SourceContext sc)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
 			this._stmts=_stmts;
 			source_context = sc;
 			FillParentsInDirectChilds();
@@ -58072,6 +58194,30 @@ namespace PascalABCCompiler.SyntaxTree
 				copy.attributes = (attribute_list)attributes.Clone();
 				copy.attributes.Parent = copy;
 			}
+			if (subnodes != null)
+			{
+				foreach (statement elem in subnodes)
+				{
+					if (elem != null)
+					{
+						copy.Add((statement)elem.Clone());
+						copy.Last().Parent = copy;
+					}
+					else
+						copy.Add(null);
+				}
+			}
+			if (left_logical_bracket != null)
+			{
+				copy.left_logical_bracket = (token_info)left_logical_bracket.Clone();
+				copy.left_logical_bracket.Parent = copy;
+			}
+			if (right_logical_bracket != null)
+			{
+				copy.right_logical_bracket = (token_info)right_logical_bracket.Clone();
+				copy.right_logical_bracket.Parent = copy;
+			}
+			copy.expr_lambda_body = expr_lambda_body;
 			if (stmts != null)
 			{
 				copy.stmts = (statement_list)stmts.Clone();
@@ -58091,6 +58237,16 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			if (attributes != null)
 				attributes.Parent = this;
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					if (child != null)
+						child.Parent = this;
+			}
+			if (left_logical_bracket != null)
+				left_logical_bracket.Parent = this;
+			if (right_logical_bracket != null)
+				right_logical_bracket.Parent = this;
 			if (stmts != null)
 				stmts.Parent = this;
 		}
@@ -58100,6 +58256,13 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			FillParentsInDirectChilds();
 			attributes?.FillParentsInAllChilds();
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					child?.FillParentsInAllChilds();
+			}
+			left_logical_bracket?.FillParentsInAllChilds();
+			right_logical_bracket?.FillParentsInAllChilds();
 			stmts?.FillParentsInAllChilds();
 		}
 
@@ -58110,7 +58273,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3;
 			}
 		}
 		///<summary>
@@ -58120,7 +58283,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3 + (subnodes == null ? 0 : subnodes.Count);
 			}
 		}
 		///<summary>
@@ -58135,7 +58298,19 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						return left_logical_bracket;
+					case 1:
+						return right_logical_bracket;
+					case 2:
 						return stmts;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						return subnodes[index_counter];
+					}
 				}
 				return null;
 			}
@@ -58146,8 +58321,23 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						left_logical_bracket = (token_info)value;
+						break;
+					case 1:
+						right_logical_bracket = (token_info)value;
+						break;
+					case 2:
 						stmts = (statement_list)value;
 						break;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						subnodes[index_counter]= (statement)value;
+						return;
+					}
 				}
 			}
 		}
@@ -58168,7 +58358,7 @@ namespace PascalABCCompiler.SyntaxTree
 	///
 	///</summary>
 	[Serializable]
-	public partial class tests_section : statement
+	public partial class tests_section : statement_list
 	{
 
 		///<summary>
@@ -58193,6 +58383,33 @@ namespace PascalABCCompiler.SyntaxTree
 		///</summary>
 		public tests_section(statement_list _stmts,SourceContext sc)
 		{
+			this._stmts=_stmts;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public tests_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._stmts=_stmts;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public tests_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts,SourceContext sc)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
 			this._stmts=_stmts;
 			source_context = sc;
 			FillParentsInDirectChilds();
@@ -58229,6 +58446,30 @@ namespace PascalABCCompiler.SyntaxTree
 				copy.attributes = (attribute_list)attributes.Clone();
 				copy.attributes.Parent = copy;
 			}
+			if (subnodes != null)
+			{
+				foreach (statement elem in subnodes)
+				{
+					if (elem != null)
+					{
+						copy.Add((statement)elem.Clone());
+						copy.Last().Parent = copy;
+					}
+					else
+						copy.Add(null);
+				}
+			}
+			if (left_logical_bracket != null)
+			{
+				copy.left_logical_bracket = (token_info)left_logical_bracket.Clone();
+				copy.left_logical_bracket.Parent = copy;
+			}
+			if (right_logical_bracket != null)
+			{
+				copy.right_logical_bracket = (token_info)right_logical_bracket.Clone();
+				copy.right_logical_bracket.Parent = copy;
+			}
+			copy.expr_lambda_body = expr_lambda_body;
 			if (stmts != null)
 			{
 				copy.stmts = (statement_list)stmts.Clone();
@@ -58248,6 +58489,16 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			if (attributes != null)
 				attributes.Parent = this;
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					if (child != null)
+						child.Parent = this;
+			}
+			if (left_logical_bracket != null)
+				left_logical_bracket.Parent = this;
+			if (right_logical_bracket != null)
+				right_logical_bracket.Parent = this;
 			if (stmts != null)
 				stmts.Parent = this;
 		}
@@ -58257,6 +58508,13 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			FillParentsInDirectChilds();
 			attributes?.FillParentsInAllChilds();
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					child?.FillParentsInAllChilds();
+			}
+			left_logical_bracket?.FillParentsInAllChilds();
+			right_logical_bracket?.FillParentsInAllChilds();
 			stmts?.FillParentsInAllChilds();
 		}
 
@@ -58267,7 +58525,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3;
 			}
 		}
 		///<summary>
@@ -58277,7 +58535,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3 + (subnodes == null ? 0 : subnodes.Count);
 			}
 		}
 		///<summary>
@@ -58292,7 +58550,19 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						return left_logical_bracket;
+					case 1:
+						return right_logical_bracket;
+					case 2:
 						return stmts;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						return subnodes[index_counter];
+					}
 				}
 				return null;
 			}
@@ -58303,8 +58573,23 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						left_logical_bracket = (token_info)value;
+						break;
+					case 1:
+						right_logical_bracket = (token_info)value;
+						break;
+					case 2:
 						stmts = (statement_list)value;
 						break;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						subnodes[index_counter]= (statement)value;
+						return;
+					}
 				}
 			}
 		}
@@ -58325,7 +58610,7 @@ namespace PascalABCCompiler.SyntaxTree
 	///
 	///</summary>
 	[Serializable]
-	public partial class output_section : statement
+	public partial class output_section : statement_list
 	{
 
 		///<summary>
@@ -58350,6 +58635,33 @@ namespace PascalABCCompiler.SyntaxTree
 		///</summary>
 		public output_section(statement_list _stmts,SourceContext sc)
 		{
+			this._stmts=_stmts;
+			source_context = sc;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public output_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
+			this._stmts=_stmts;
+			FillParentsInDirectChilds();
+		}
+
+		///<summary>
+		///Конструктор с параметрами.
+		///</summary>
+		public output_section(List<statement> _subnodes,token_info _left_logical_bracket,token_info _right_logical_bracket,bool _expr_lambda_body,statement_list _stmts,SourceContext sc)
+		{
+			this._subnodes=_subnodes;
+			this._left_logical_bracket=_left_logical_bracket;
+			this._right_logical_bracket=_right_logical_bracket;
+			this._expr_lambda_body=_expr_lambda_body;
 			this._stmts=_stmts;
 			source_context = sc;
 			FillParentsInDirectChilds();
@@ -58386,6 +58698,30 @@ namespace PascalABCCompiler.SyntaxTree
 				copy.attributes = (attribute_list)attributes.Clone();
 				copy.attributes.Parent = copy;
 			}
+			if (subnodes != null)
+			{
+				foreach (statement elem in subnodes)
+				{
+					if (elem != null)
+					{
+						copy.Add((statement)elem.Clone());
+						copy.Last().Parent = copy;
+					}
+					else
+						copy.Add(null);
+				}
+			}
+			if (left_logical_bracket != null)
+			{
+				copy.left_logical_bracket = (token_info)left_logical_bracket.Clone();
+				copy.left_logical_bracket.Parent = copy;
+			}
+			if (right_logical_bracket != null)
+			{
+				copy.right_logical_bracket = (token_info)right_logical_bracket.Clone();
+				copy.right_logical_bracket.Parent = copy;
+			}
+			copy.expr_lambda_body = expr_lambda_body;
 			if (stmts != null)
 			{
 				copy.stmts = (statement_list)stmts.Clone();
@@ -58405,6 +58741,16 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			if (attributes != null)
 				attributes.Parent = this;
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					if (child != null)
+						child.Parent = this;
+			}
+			if (left_logical_bracket != null)
+				left_logical_bracket.Parent = this;
+			if (right_logical_bracket != null)
+				right_logical_bracket.Parent = this;
 			if (stmts != null)
 				stmts.Parent = this;
 		}
@@ -58414,6 +58760,13 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			FillParentsInDirectChilds();
 			attributes?.FillParentsInAllChilds();
+			if (subnodes != null)
+			{
+				foreach (var child in subnodes)
+					child?.FillParentsInAllChilds();
+			}
+			left_logical_bracket?.FillParentsInAllChilds();
+			right_logical_bracket?.FillParentsInAllChilds();
 			stmts?.FillParentsInAllChilds();
 		}
 
@@ -58424,7 +58777,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3;
 			}
 		}
 		///<summary>
@@ -58434,7 +58787,7 @@ namespace PascalABCCompiler.SyntaxTree
 		{
 			get
 			{
-				return 1;
+				return 3 + (subnodes == null ? 0 : subnodes.Count);
 			}
 		}
 		///<summary>
@@ -58449,7 +58802,19 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						return left_logical_bracket;
+					case 1:
+						return right_logical_bracket;
+					case 2:
 						return stmts;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						return subnodes[index_counter];
+					}
 				}
 				return null;
 			}
@@ -58460,8 +58825,23 @@ namespace PascalABCCompiler.SyntaxTree
 				switch(ind)
 				{
 					case 0:
+						left_logical_bracket = (token_info)value;
+						break;
+					case 1:
+						right_logical_bracket = (token_info)value;
+						break;
+					case 2:
 						stmts = (statement_list)value;
 						break;
+				}
+				Int32 index_counter=ind - 3;
+				if(subnodes != null)
+				{
+					if(index_counter < subnodes.Count)
+					{
+						subnodes[index_counter]= (statement)value;
+						return;
+					}
 				}
 			}
 		}

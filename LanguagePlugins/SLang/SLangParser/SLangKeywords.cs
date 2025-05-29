@@ -7,7 +7,7 @@ namespace SLangParser
     public class SLangKeywords : BaseKeywords
     {
 
-        protected override string FileName => "keywordsmap.pys";
+        protected override string FileName => "keywordsmap.slang";
 
         public SLangKeywords() : base(true)
         {

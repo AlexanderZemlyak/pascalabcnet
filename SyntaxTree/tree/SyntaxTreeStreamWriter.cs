@@ -7456,7 +7456,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void write_input_section(input_section _input_section)
 		{
-			write_statement(_input_section);
+			write_statement_list(_input_section);
 			if (_input_section.stmts == null)
 			{
 				bw.Write((byte)0);
@@ -7477,7 +7477,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void write_check_section(check_section _check_section)
 		{
-			write_statement(_check_section);
+			write_statement_list(_check_section);
 			if (_check_section.stmts == null)
 			{
 				bw.Write((byte)0);
@@ -7498,7 +7498,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void write_tests_section(tests_section _tests_section)
 		{
-			write_statement(_tests_section);
+			write_statement_list(_tests_section);
 			if (_tests_section.stmts == null)
 			{
 				bw.Write((byte)0);
@@ -7519,7 +7519,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void write_output_section(output_section _output_section)
 		{
-			write_statement(_output_section);
+			write_statement_list(_output_section);
 			if (_output_section.stmts == null)
 			{
 				bw.Write((byte)0);

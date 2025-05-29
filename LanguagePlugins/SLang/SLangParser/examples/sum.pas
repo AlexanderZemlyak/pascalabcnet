@@ -7,6 +7,8 @@ end;
 
 begin
   CheckTaskT('задача23');
+  CheckTaskT('задача1');
+  CheckTaskT('задача2');
   LogMessage('Начало выполнения основной задачи');
   {
   var n := 20000;

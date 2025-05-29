@@ -22,7 +22,7 @@ namespace Languages.SLang
 
             filesExtensions: new string[] { ".slang" },
             caseSensitive: false,
-            systemUnitNames: new string[] { "SLangSystem", "SLangHidden", "LightPT" }
+            systemUnitNames: new string[] { "SLangSystem", "SLangHidden", "LightPT", "PABCSystem" }
             )
         { }
 

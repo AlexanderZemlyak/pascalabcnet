@@ -36,6 +36,16 @@
 				<Begin>"</Begin>
 				<End>"</End>
 			</Span>
+
+	 <KeyWords name="SLangBlocks" bold="true" italic="false" color="#A626A4">
+	         <Key word="Задача"/>
+	         <Key word="Ввод"/>
+	         <Key word="Проверка"/>
+	         <Key word="Тесты"/>
+	         <Key word="Вывод"/>
+	         <Key word="Конец"/>
+	         <Key word="КонецЗадачи"/>
+    </KeyWords>
 			
 	<KeyWords name = "KeyWords" bold = "true" italic = "false" color = "#ff7700">
 		<Key word = "del" />

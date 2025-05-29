@@ -19,6 +19,8 @@ namespace Languages.SLang.Frontend.Converters
         private declarations decls;
 
         public HashSet<string> variablesUsedAsGlobal = new HashSet<string>();
+        
+        private static bool IsHelperIdentifier(string name) => !string.IsNullOrEmpty(name) && name[0] == '!';
 
         public NameCorrectVisitor(Dictionary<string, HashSet<string>> par) : base(par) { }
 
@@ -91,6 +93,9 @@ namespace Languages.SLang.Frontend.Converters
 
         public override void visit(named_type_reference _named_type_reference)
         {
+            if (IsHelperIdentifier(_named_type_reference.names[0].name))
+                return;
+
             ident id = _named_type_reference.names[0];
             NameKind nameKind = symbolTable[id.name];
             switch (nameKind)
@@ -119,6 +124,9 @@ namespace Languages.SLang.Frontend.Converters
 
         public override void visit(ident _ident)
         {
+            if (IsHelperIdentifier(_ident.name))
+                return;
+
             SourceContext sc = _ident.source_context;
             NameKind nameKind = symbolTable[_ident.name];
             switch (nameKind)

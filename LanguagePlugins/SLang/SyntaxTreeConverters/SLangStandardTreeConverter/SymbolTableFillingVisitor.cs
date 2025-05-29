@@ -270,6 +270,8 @@ namespace Languages.SLang.Frontend.Converters
                     AddAlias(name, name, "SLangHidden");
                 foreach (string name in moduleNameToSymbols["LightPT"])
                     AddAlias(name, name, "LightPT");
+                foreach (string name in moduleNameToSymbols["PABCSystem"])
+                    AddAlias(name, name, "PABCSystem");
             }
 
             public string AliasToRealName(string alias)

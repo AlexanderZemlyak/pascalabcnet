@@ -4732,7 +4732,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void read_input_section(input_section _input_section)
 		{
-			read_statement(_input_section);
+			read_statement_list(_input_section);
 			_input_section.stmts = _read_node() as statement_list;
 		}
 
@@ -4744,7 +4744,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void read_check_section(check_section _check_section)
 		{
-			read_statement(_check_section);
+			read_statement_list(_check_section);
 			_check_section.stmts = _read_node() as statement_list;
 		}
 
@@ -4756,7 +4756,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void read_tests_section(tests_section _tests_section)
 		{
-			read_statement(_tests_section);
+			read_statement_list(_tests_section);
 			_tests_section.stmts = _read_node() as statement_list;
 		}
 
@@ -4768,7 +4768,7 @@ namespace PascalABCCompiler.SyntaxTree
 
 		public void read_output_section(output_section _output_section)
 		{
-			read_statement(_output_section);
+			read_statement_list(_output_section);
 			_output_section.stmts = _read_node() as statement_list;
 		}
 

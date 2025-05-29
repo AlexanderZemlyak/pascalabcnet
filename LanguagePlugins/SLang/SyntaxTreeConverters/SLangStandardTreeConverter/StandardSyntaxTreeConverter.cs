@@ -11,6 +11,9 @@ namespace Languages.SLang.Frontend.Converters
 
         protected override syntax_tree_node ApplyConversions(syntax_tree_node root)
         {
+            var ftsv = new FlattenTaskSectionsVisitor();
+            ftsv.ProcessNode(root);
+
             // кидает ошибки за использование 
             // нереализованных конструкций языка
             var ucv = new UnsupportedConstructsVisitor();

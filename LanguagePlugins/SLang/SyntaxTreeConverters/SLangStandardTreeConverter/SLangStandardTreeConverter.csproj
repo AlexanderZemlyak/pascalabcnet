@@ -36,6 +36,7 @@
       <Compile Include="AddForwardDeclarationsVisitor.cs" />
       <Compile Include="CompoundComparisonDesugarVisitor.cs" />
       <Compile Include="EraseSLangOnlyNodesVisitor.cs" />
+      <Compile Include="FlattenTaskSectionsVisitor.cs" />
       <Compile Include="FunctionsWithNamedParametersDesugarVisitor.cs" />
       <Compile Include="ImportToUsesVisitor.cs" />
       <Compile Include="ListDesugarVisitor.cs" />
