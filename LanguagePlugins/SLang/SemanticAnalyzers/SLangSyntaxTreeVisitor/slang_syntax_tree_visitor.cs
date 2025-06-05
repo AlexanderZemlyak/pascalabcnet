@@ -9,7 +9,6 @@ using PascalABCCompiler.Errors;
 
 namespace SLangSyntaxTreeVisitor
 {
-    // Возможно, стоит заменить на декоратор или стратегию вместо наследования EVA
     public class slang_syntax_tree_visitor : syntax_tree_visitor
     {
         syntax_tree_visitor mainVisitor;
@@ -38,7 +37,6 @@ namespace SLangSyntaxTreeVisitor
                         if ((left.type.name == "string" && right.type.name == "integer") || (left.type.name == "integer" && right.type.name == "string"))
                         {
                             AddError(left.location, "SLANGSEMANTIC_NOT_ALLOWED_{0}_DIFF_TYPES_{1}_{2}", '+', left.type, right.type); ;
-                            //base.AddError(left.location, "SLANGSEMANTIC_NOT_ALLOWED_{0}_DIFF_TYPES_{1}_{2}", Operators.Plus, left.type, right.type); ;
                             return;
                         }
                     }

@@ -1,230 +1,390 @@
 ﻿{$HiddenIdents}
 unit SLangSystem;
 
+// MARK: - Interfaces
+
 interface
 
-uses PABCSystem;
+uses PABCSystem, LightPT;
 
-// Basic IO methods
+// MARK: - Типы
 
-function input(): string;
+/// Целый тип для проверки ввода-вывода
+function ТипЦел: System.Type;
+/// Вещественный тип для проверки ввода-вывода
+function ТипВещ: System.Type;
+/// Строковый тип для проверки ввода-вывода
+function ТипСтрока: System.Type;
+/// Логический тип для проверки ввода-вывода
+function ТипБул: System.Type;
+/// Символьный тип для проверки ввода-вывода
+function ТипСимвол: System.Type;
 
-function input(s: string): string;
+// MARK: - Случайные значения
 
-type 
-    !print = record
-    public
-        sep: string;
-        &end:string;
-        static function Get(sep:string := ' '; &end: string := #10): !Print;
-        begin
-          Result.sep := sep;
-          Result.&end := &end;
-        end;
-        procedure print(params args: array of object);
-        begin
-          for var i := 0 to args.length - 2 do
-            Write(args[i], sep);
-          if args.length <> 0 then 
-            Write(args[^1]);
-          Write(&end);
-        end;
-    end;
+function Случайное(a,b: integer): integer;
+function Случайное(n: integer): integer;
+function Случайное: real;
+function Случайное(a,b: real): real;
+function СлучайноеВещественное(a,b: real; digits: integer := 1): real;
+function СлучайныйСимвол(a,b: char): char;
+function Случайное(diap: IntRange): integer;
+function Случайное(diap: RealRange): real;
+function СлучайныйСимвол(diap: CharRange): char;
 
-procedure print(params args: array of object);
+// MARK: - Случайные пары и тройки
 
-// Basic type conversion methods
+function Случайные2(a,b: integer): (integer,integer);
+function Случайные2(a,b: real): (real,real);
+function Случайные2(a,b: char): (char,char);
+function Случайные2(diap: IntRange): (integer,integer);
+function Случайные2(diap: RealRange): (real,real);
+function Случайные2(diap: CharRange): (char,char);
 
-function int(val: string): integer;
-function &type(obj: object): System.Type;
+function Случайные3(a,b: integer): (integer,integer,integer);
+function Случайные3(a,b: real): (real,real,real);
+function Случайные3(a,b: char): (char,char,char);
+function Случайные3(diap: IntRange): (integer,integer,integer);
+function Случайные3(diap: RealRange): (real,real,real);
+function Случайные3(diap: CharRange): (char,char,char);
 
-//function int(val: string): integer;
-function int(b: boolean): integer;
+// MARK: - Случайные массивы и матрицы
 
-function str(val: object): string;
+function МассивСлучайныхЦелых(n,a,b: integer): array of integer;
+function МассивСлучайныхЦелых(n: integer): array of integer;
+function МассивСлучайныхВещественных(n: integer; a,b: real; digits: integer := 1): array of real;
+function МассивСлучайныхВещественных(n: integer; digits: integer := 1): array of real;
 
-function float(val: string): real;
+function МатрицаСлучайныхЦелых(m,n,a,b: integer): array[,] of integer;
+function МатрицаСлучайныхЦелых(m,n: integer): array[,] of integer;
+function МатрицаСлучайныхВещественных(m,n: integer; a,b: real; digits: integer := 2): array[,] of real;
+function МатрицаСлучайныхВещественных(m,n: integer): array[,] of real;
 
-function float(x: integer): real;
+// MARK: - Ввод (чтение)
 
-// Basic sequence functions
+function ВводЦелого(prompt: string): integer;
+function ВводЦелогоLn(prompt: string): integer;
+function Ввод2Целых(prompt: string): (integer,integer);
+function Ввод2ЦелыхLn(prompt: string): (integer,integer);
+function Ввод3Целых(prompt: string): (integer,integer,integer);
+function Ввод3ЦелыхLn(prompt: string): (integer,integer,integer);
+function Ввод4Целых(prompt: string): (integer,integer,integer,integer);
+function Ввод4ЦелыхLn(prompt: string): (integer,integer,integer,integer);
 
-function range(s: integer; e: integer; step: integer): sequence of integer;
+function ВводВещественного(prompt: string): real;
+function ВводВещественногоLn(prompt: string): real;
+function Ввод2Вещественных(prompt: string): (real,real);
+function Ввод2ВещественныхLn(prompt: string): (real,real);
+function Ввод3Вещественных(prompt: string): (real,real,real);
+function Ввод3ВещественныхLn(prompt: string): (real,real,real);
+function Ввод4Вещественных(prompt: string): (real,real,real,real);
+function Ввод4ВещественныхLn(prompt: string): (real,real,real,real);
 
-function range(e: integer): sequence of integer;
+function ВводСимвола(prompt: string): char;
+function ВводСимволаLn(prompt: string): char;
+function ВводСтроки(prompt: string): string;
+function ВводСтрокиLn(prompt: string): string;
 
-function range(s: integer; e: integer): sequence of integer;
+// MARK: - Вывод (печать)
 
-//function all<T>(seq: sequence of T): boolean;
+procedure Печать(params args: array of object);
+procedure ПечатьСтроку(params args: array of object);
+procedure Печать(o: object);
+procedure Печать(s: string);
+procedure Печать(c: char);
 
-//function any<T>(seq: sequence of T): boolean;
+procedure ЦветСообщение(msg: string; color: MessageColorT);
+procedure ЦветСообщение(msg: string);
 
-// Standard Math functions
+// MARK: - Проверки ввода/вывода
 
-function abs(x: integer): integer;
+procedure ПроверитьДанные(ВходИсходный: array of System.Type := nil; 
+                           ВыходИсходный: array of System.Type := nil; 
+                           Вход: array of System.Type := nil);
 
-function abs(x: real): real;
+procedure ПроверитьВводТипы(a: array of System.Type);
+procedure ПроверитьВводПустой;
+procedure ПроверитьВводИсходный;
+procedure ПроверитьКоличествоВвода(n: integer);
+procedure ПроверитьКоличествоВвода2(i: integer);
 
-// function floor(x: real): real;
+procedure ПроверитьВывод(params res: array of object);
+procedure ПроверитьВывод(lst: ObjectList);
+procedure ПроверитьВыводБезСообщения(params res: array of object);
+procedure ПроверитьВыводБезСообщения(lst: ObjectList);
 
-//Standard functions with Lists
+procedure ПроверитьВыводПоследующий(params res: array of object);
+procedure ПроверитьВыводПоследующий(lst: ObjectList);
+procedure ПроверитьВыводПоследующийБезСообщения(params res: array of object);
+procedure ПроверитьВыводПоследующийБезСообщения(lst: ObjectList);
 
-function len<T>(lst: PABCSystem.List<T>): integer;
+function целое(i: integer): integer;
+function вещественное(i: integer): real;
+function символ(i: integer): char;
+function булево(i: integer): boolean;
 
-function sorted<T>(lst: PABCSystem.List<T>): PABCSystem.List<T>;
+function Цел(i: integer): integer;
+function Вещ(i: integer): real;
+function Стр(i: integer): string;
+function Лог(i: integer): boolean;
+function Сим(i: integer): char;
 
-function sum(lst: PABCSystem.List<integer>): integer;
+function Цел(): integer;
+function Вещ(): real;
+function Стр(): string;
+function Лог(): boolean;
+function Сим(): char;
 
-function sum(lst: PABCSystem.List<real>): real;
+function Цел2(): (integer,integer);
+function Вещ2(): (real,real);
 
-function !assign<T>(var a: T; b: T): T;
+function МассивЦелых(n: integer): array of integer;
+function МассивВещественных(n: integer): array of real;
+function МассивЛогических(n: integer): array of boolean;
+function МассивСимволов(n: integer): array of char;
+function МассивСтрок(n: integer): array of string;
 
-function !pow(x, n: integer): integer;
+// MARK: - Проверка последовательностей
 
-function !pow(x, n: biginteger): biginteger;
+procedure ПроверитьВыводПоследовательность(seq: sequence of integer);
+procedure ПроверитьВыводПоследовательность(seq: sequence of real);
+procedure ПроверитьВыводПоследовательность(seq: sequence of string);
+procedure ПроверитьВыводПоследовательность(seq: sequence of char);
+procedure ПроверитьВыводПоследовательность(seq: sequence of boolean);
+procedure ПроверитьВыводПоследовательность(seq: ObjectList);
 
-function !pow(x: integer; y: real): real;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of integer);
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of real);
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of string);
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of char);
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of boolean);
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: ObjectList);
 
-function !pow(x: real; y: real): real;
+// MARK: - Вспомогательные DSL
 
-function bigint(x: integer): biginteger;
+function ТолькоЧисла(): integer;
+function ТолькоЧислаИБулевы(): integer;
 
-function !pow_recursion(x, n: integer): integer;
+// MARK: - Генерация тестовых данных
 
-function !pow_recursion(x, n: biginteger): biginteger;
+function ТестЦел(a: integer := 1; b: integer := 10): TestCell;
+function ТестВещ(a: real := 1; b: real := 10; разрядов: integer := 0): TestCell;
+function ТестСимвол(a: char := 'а'; b: char := 'я'): TestCell;
+function ТестБулево: TestCell;
 
-type 
-    
-    list<T> = PABCSystem.List<T>;
-    biginteger = PABCSystem.BigInteger;
+procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
+procedure ДобавитьТестовыеДанные(params data: array of integer);
+procedure ДобавитьТестовыеДанные(params data: array of real);
+
+// MARK: - Implementations
 
 implementation
 
-function input(): string;
+
+// MARK: - Типы
+
+/// Целый тип для проверки ввода-вывода
+function ТипЦел := typeof(integer);
+/// Вещественный тип для проверки ввода-вывода
+function ТипВещ := typeof(real);
+/// Строковый тип для проверки ввода-вывода
+function ТипСтрока := typeof(string);
+/// Логический тип для проверки ввода-вывода
+function ТипБул := typeof(boolean);
+/// Символьный тип для проверки ввода-вывода
+function ТипСимвол := typeof(char);
+
+// MARK: - Random
+
+function Случайное(a,b: integer): integer := Random(a,b);
+function Случайное(n: integer): integer := Random(n);
+function Случайное: real := Random;
+function Случайное(a,b: real): real := Random(a,b);
+function СлучайноеВещественное(a,b: real; digits: integer): real := RandomReal(a,b,digits);
+function СлучайныйСимвол(a,b: char): char := Random(a,b);
+function Случайное(diap: IntRange): integer := Random(diap);
+function Случайное(diap: RealRange): real := Random(diap);
+function СлучайныйСимвол(diap: CharRange): char := Random(diap);
+
+// MARK: - пары/тройки
+
+function Случайные2(a,b: integer): (integer,integer) := Random2(a,b);
+function Случайные2(a,b: real): (real,real) := Random2(a,b);
+function Случайные2(a,b: char): (char,char) := Random2(a,b);
+function Случайные2(diap: IntRange): (integer,integer) := Random2(diap);
+function Случайные2(diap: RealRange): (real,real) := Random2(diap);
+function Случайные2(diap: CharRange): (char,char) := Random2(diap);
+
+function Случайные3(a,b: integer): (integer,integer,integer) := Random3(a,b);
+function Случайные3(a,b: real): (real,real,real) := Random3(a,b);
+function Случайные3(a,b: char): (char,char,char) := Random3(a,b);
+function Случайные3(diap: IntRange): (integer,integer,integer) := Random3(diap);
+function Случайные3(diap: RealRange): (real,real,real) := Random3(diap);
+function Случайные3(diap: CharRange): (char,char,char) := Random3(diap);
+
+// MARK: - массивы/матрицы
+
+function МассивСлучайныхЦелых(n,a,b: integer): array of integer := ArrRandomInteger(n,a,b);
+function МассивСлучайныхЦелых(n: integer): array of integer := ArrRandomInteger(n);
+function МассивСлучайныхВещественных(n: integer; a,b: real; digits: integer): array of real :=
+  ArrRandomReal(n,a,b,digits);
+function МассивСлучайныхВещественных(n: integer; digits: integer): array of real :=
+  ArrRandomReal(n,digits);
+
+function МатрицаСлучайныхЦелых(m,n,a,b: integer): array[,] of integer := MatrRandomInteger(m,n,a,b);
+function МатрицаСлучайныхЦелых(m,n: integer): array[,] of integer := LightPT.MatrRandomInteger(m,n);
+function МатрицаСлучайныхВещественных(m,n: integer; a,b: real; digits: integer): array[,] of real :=
+  MatrRandomReal(m,n,a,b,digits);
+function МатрицаСлучайныхВещественных(m,n: integer): array[,] of real := LightPT.MatrRandomReal(m,n);
+
+// MARK: - Реализация: ввод/вывод
+
+function ВводЦелого(prompt: string): integer := ReadInteger(prompt);
+function ВводЦелогоLn(prompt: string): integer := ReadlnInteger(prompt);
+function Ввод2Целых(prompt: string): (integer,integer) := ReadInteger2(prompt);
+function Ввод2ЦелыхLn(prompt: string): (integer,integer) := ReadlnInteger2(prompt);
+function Ввод3Целых(prompt: string): (integer,integer,integer) := ReadInteger3(prompt);
+function Ввод3ЦелыхLn(prompt: string): (integer,integer,integer) := ReadlnInteger3(prompt);
+function Ввод4Целых(prompt: string): (integer,integer,integer,integer) := ReadInteger4(prompt);
+function Ввод4ЦелыхLn(prompt: string): (integer,integer,integer,integer) := ReadlnInteger4(prompt);
+
+function ВводВещественного(prompt: string): real := ReadReal(prompt);
+function ВводВещественногоLn(prompt: string): real := ReadlnReal(prompt);
+function Ввод2Вещественных(prompt: string): (real,real) := ReadReal2(prompt);
+function Ввод2ВещественныхLn(prompt: string): (real,real) := ReadlnReal2(prompt);
+function Ввод3Вещественных(prompt: string): (real,real,real) := ReadReal3(prompt);
+function Ввод3ВещественныхLn(prompt: string): (real,real,real) := ReadlnReal3(prompt);
+function Ввод4Вещественных(prompt: string): (real,real,real,real) := ReadReal4(prompt);
+function Ввод4ВещественныхLn(prompt: string): (real,real,real,real) := ReadlnReal4(prompt);
+
+function ВводСимвола(prompt: string): char := ReadChar(prompt);
+function ВводСимволаLn(prompt: string): char := ReadlnChar(prompt);
+function ВводСтроки(prompt: string): string := ReadString(prompt);
+function ВводСтрокиLn(prompt: string): string := ReadlnString(prompt);
+
+// MARK: - вывод
+procedure Печать(params args: array of object); begin Print(args) end;
+procedure ПечатьСтроку(params args: array of object); begin Println(args) end;
+
+procedure Печать(o: object); begin Print(o) end;
+procedure Печать(s: string); begin Print(s) end;
+procedure Печать(c: char); begin Print(c) end;
+
+procedure ЦветСообщение(msg: string; color: MessageColorT); begin ColoredMessage(msg,color) end;
+procedure ЦветСообщение(msg: string); begin ColoredMessage(msg) end;
+
+// MARK: - Реализация: проверки ввода/вывода
+
+procedure ПроверитьДанные(ВходИсходный: array of System.Type; 
+                           ВыходИсходный: array of System.Type; 
+                           Вход: array of System.Type );
 begin
-  PABCSystem.Print();
-  Result := PABCSystem.ReadlnString();
+  CheckData(InitialInput := ВходИсходный,
+            InitialOutput := ВыходИсходный,
+            Input := Вход);
 end;
 
-function input(s: string): string;
+procedure ПроверитьВводТипы(a: array of System.Type); begin CheckInputTypes(a) end;
+procedure ПроверитьВводПустой; begin CheckInputIsEmpty end;
+procedure ПроверитьВводИсходный; begin CheckInputIsInitial end;
+procedure ПроверитьКоличествоВвода(n: integer); begin CheckInputCount(n) end;
+procedure ПроверитьКоличествоВвода2(i: integer); begin CheckInput2Count(i) end;
+
+procedure ПроверитьВывод(params res: array of object); begin CheckOutput(res) end;
+procedure ПроверитьВывод(lst: ObjectList); begin CheckOutput(lst) end;
+procedure ПроверитьВыводБезСообщения(params res: array of object); begin CheckOutputSilent(res) end;
+procedure ПроверитьВыводБезСообщения(lst: ObjectList); begin CheckOutputSilent(lst) end;
+
+procedure ПроверитьВыводПоследующий(params res: array of object); begin CheckOutputAfterInitial(res) end;
+procedure ПроверитьВыводПоследующий(lst: ObjectList); begin CheckOutputAfterInitial(lst) end;
+procedure ПроверитьВыводПоследующийБезСообщения(params res: array of object);
+begin CheckOutputAfterInitialSilent(res) end;
+procedure ПроверитьВыводПоследующийБезСообщения(lst: ObjectList);
+begin CheckOutputAfterInitialSilent(lst) end;
+
+// MARK: - последовательности
+
+procedure ПроверитьВыводПоследовательность(seq: sequence of integer); begin CheckOutputSeq(seq) end;
+procedure ПроверитьВыводПоследовательность(seq: sequence of real);    begin CheckOutputSeq(seq) end;
+procedure ПроверитьВыводПоследовательность(seq: sequence of string);  begin CheckOutputSeq(seq) end;
+procedure ПроверитьВыводПоследовательность(seq: sequence of char);    begin CheckOutputSeq(seq) end;
+procedure ПроверитьВыводПоследовательность(seq: sequence of boolean); begin CheckOutputSeq(seq) end;
+procedure ПроверитьВыводПоследовательность(seq: ObjectList);       begin CheckOutputSeq(seq) end;
+
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of integer);
+begin CheckOutputSeqSilent(seq) end;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of real);
+begin CheckOutputSeqSilent(seq) end;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of string);
+begin CheckOutputSeqSilent(seq) end;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of char);
+begin CheckOutputSeqSilent(seq) end;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: sequence of boolean);
+begin CheckOutputSeqSilent(seq) end;
+procedure ПроверитьВыводПоследовательностьБезСообщения(seq: ObjectList);
+begin CheckOutputSeqSilent(seq) end;
+
+// MARK: - Проверка вводимых типов
+
+function целое(i: integer): integer := LightPT.Int(i);
+function вещественное(i: integer): real := LightPT.Re(i);
+function символ(i: integer): char := LightPT.Chr(i);
+function булево(i: integer): boolean := LightPT.Boo(i);
+
+function Цел(i: integer): integer := Int(i);
+function Вещ(i: integer): real := Re(i);
+function Стр(i: integer): string := Str(i);
+function Лог(i: integer): boolean := Boo(i);
+function Сим(i: integer): char := Chr(i);
+
+function Цел: integer := Int;
+function Вещ: real    := Re;
+function Стр: string  := Str;
+function Лог: boolean := Boo;
+function Сим: char    := Chr;
+
+function Цел2(): (integer,integer) := Int2;
+function Вещ2(): (real,real)       := Re2;
+
+function МассивЦелых(n: integer): array of integer := IntArr(n);
+function МассивВещественных(n: integer): array of real := ReArr(n);
+function МассивЛогических(n: integer): array of boolean := BooArr(n);
+function МассивСимволов(n: integer): array of char := ChrArr(n);
+function МассивСтрок(n: integer): array of string := StrArr(n);
+
+// MARK: - Реализация: вспомогательные DSL
+
+function ТолькоЧисла(): integer; begin FilterOnlyNumbers; Result := 0 end;
+function ТолькоЧислаИБулевы(): integer; begin FilterOnlyNumbersAndBools; Result := 0 end;
+
+// MARK: - Генерация тестовых данных
+
+function ТестЦел(a: integer; b: integer): TestCell;
 begin
-  PABCSystem.Print(s);
-  Result := PABCSystem.ReadlnString();
-end;
-  
-procedure print(params args: array of object);
-begin
-  !Print.Get().Print(args);
-end;
-
-function int(val: string): integer := integer.Parse(val);
-
-function int(b: boolean): integer;
-begin
-  if b then
-    Result := 1
-  else
-    Result := 0;
-end;
-
-function &type(obj: object): System.Type := obj.GetType();
-
-function int(obj: object): integer := Convert.ToInt32(obj);
-
-function str(val: object): string := val.ToString(); 
-
-function float(val: string): real := real.Parse(val);
-
-function float(x: integer): real := PABCSystem.Floor(x);
-
-function range(s: integer; e: integer; step: integer): sequence of integer;
-begin
-  Result := PABCSystem.Range(s, e - 1, step);
-end;
-
-function range(s: integer; e: integer): sequence of integer;
-begin
-  Result := PABCSystem.Range(s, e - 1);
-end;
-
-function range(e: integer): sequence of integer;
-begin
-  Result := PABCSystem.Range(0, e - 1);
-end;
-
-//function all<T>(seq: sequence of T): boolean := seq.All(x -> x);
-
-//function any<T>(seq: sequence of T): boolean := seq.Any(x -> x);
-
-function abs(x: integer): integer := if x >= 0 then x else -x;
-
-function abs(x: real): real := PABCSystem.Abs(x);
-
-function len<T>(lst: PABCSystem.List<T>): integer := lst.Count;
-
-function sorted<T>(lst: PABCSystem.List<T>): PABCSystem.List<T>;
-begin
-  var new_list := new PABCSystem.List<T>(lst);
-  new_list.sort();
-  Result := new_list;
-end;
-
-function sum(lst: PABCSystem.List<integer>): integer := lst.sum();
-function sum(lst: PABCSystem.List<real>): real := lst.sum();
-
-function !assign<T>(var a: T; b: T): T;
-begin
-  a := b;
-  Result := a;
-end;
-
-function !pow(x, n: biginteger): biginteger;
-begin
-  if (n < 0) then
-    raise new System.ArgumentException('возведение в степень не работает для целой отрицательной степени типа bigint.');
-  Result := !pow_recursion(x, n);
-end;
-
-function !pow_recursion(x, n: biginteger): biginteger;
-begin
-  
-  if (n = 0) then
-    Result := 1
-  else begin
-    Result := !pow_recursion(x, n div 2);
-    Result *= Result;
-    if ((n mod 2) = 1) then
-      Result *= x;
-  end;
+  Result := tInt(a, b);
 end;
 
-function !pow(x, n: integer): integer;
+function ТестВещ(a: real; b: real; разрядов: integer): TestCell;
 begin
-  if (n < 0) then
-    raise new System.ArgumentException('возведение в степень не работает для целой отрицательной степени, используйте привидение к типу с плавающей точкой.');
-  Result := !pow_recursion(x, n);
+  Result := tRe(a, b, разрядов);
 end;
 
-function !pow(x: integer; y: real): real := Power(x, y);
-
-function !pow(x: real; y: real): real := Power(x, y);
-
-function !pow_recursion(x, n: integer): integer;
+function ТестСимвол(a: char; b: char): TestCell;
 begin
-  
-  if (n = 0) then
-    Result := 1
-  else begin
-    Result := !pow_recursion(x, n div 2);
-    Result *= Result;
-    if ((n mod 2) = 1) then
-      Result *= x;
-  end;
+  Result := tChr(a, b);
 end;
 
-function bigint(x: integer): biginteger;
+function ТестБулево: TestCell;
 begin
-  Result := x;
+  Result := tBoo;
 end;
 
+procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
+begin GenerateTests(cnt, pattern.Take(cnt).ToArray) end;
+
+procedure ДобавитьТестовыеДанные(params data: array of integer);
+begin GenerateTests(data) end;
+
+procedure ДобавитьТестовыеДанные(params data: array of real);
+begin GenerateTests(data) end;
 end.

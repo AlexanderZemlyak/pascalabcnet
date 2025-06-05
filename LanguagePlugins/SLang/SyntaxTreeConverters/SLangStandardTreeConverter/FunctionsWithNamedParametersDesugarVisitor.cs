@@ -33,6 +33,11 @@ namespace Languages.SLang.Frontend.Converters
 
                 if (kvargs.expressions.Count() == 0)
                     Replace(_method_call, new method_call(_method_call.dereferencing_value, args, _method_call.source_context));
+                else if (args.expressions.Count() == 0) 
+                {
+                    _method_call.parameters = kvargs;
+                    return;
+                }
                 else
                 {
                     method_call mc = new method_call(new ident("!" + ((_method_call.dereferencing_value as dot_node).right as ident).name + ".Get"), kvargs, _method_call.source_context);

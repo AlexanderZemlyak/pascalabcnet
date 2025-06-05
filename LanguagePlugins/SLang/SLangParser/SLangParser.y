@@ -73,7 +73,7 @@
 %type <ob> optional_semicolon end_of_line
 %type <op> assign_type
 
-%type <stn> task_definition input_section check_section tests_section output_section
+%type <stn> input_section check_section tests_section output_section
 %type <stn> task_switch_item
 
 %token <ti> END_TASK
@@ -172,17 +172,6 @@ program
                 null, @$);
         }
     ;
-
-
-task_definition
-	: TASK task_id COLON block {
-	$$ = new task_stmt(
-		$2 as ident,
-		$4 as statement_list,
-		@$
-	);
-	}
-	;
 
 input_section
 	: INPUT optional_colon block
@@ -283,6 +272,10 @@ stmt
 	| pass_stmt
 		{
 			$$ = $1;
+		}
+	| proc_func_decl
+		{
+			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
 		}
 	| import_clause
 		{
@@ -685,7 +678,7 @@ variable
 	| LBRACKET expr_list RBRACKET
 		{
 			var acn = new array_const_new($2 as expression_list, '|', @$);
-//			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
+	// var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
 			$$ = acn;
 		}
 	// index property
@@ -746,6 +739,10 @@ proc_func_call
 	: variable LPAR optional_act_param_list RPAR
 		{
 			$$ = new method_call($1 as addressed_value, $3 as expression_list, @$);
+		}
+	| variable
+		{
+			$$ = new method_call($1 as addressed_value, null, @$);
 		}
 	;
 
@@ -886,7 +883,6 @@ optional_semicolon
 
 %%
 
-/* ---------------------- ВСПОМОГАТЕЛЬНЫЙ МЕТОД ---------------------- */
 public program_module NewProgramModule(program_name progName, Object optHeadCompDirs, uses_list mainUsesClose, syntax_tree_node progBlock, Object optPoint, LexLocation loc)
 {
 	var progModule = new program_module(progName, mainUsesClose, progBlock as block, null, loc);
@@ -917,16 +913,13 @@ public case_variants AddCaseItem(case_variants case_list, syntax_tree_node case_
 	nci.source_context = loc;
 	return nci;
 }
-// *** вставьте в %code‐блок grammar-файла либо в partial-класс парсера ***
 private declarations_as_statement BuildTaskProc(string taskName,
                                                statement_list body,
                                                LexLocation bodyLoc,
                                                LexLocation wholeLoc)
 {
-    // идентификатор функции
     var id = new ident(taskName, wholeLoc);
 
-    // header:  Задача задача23  (без параметров, без возвращаемого типа)
     var head = new procedure_header(
         /* parameters     */ null,
         /* attrs          */ new procedure_attributes_list(new List<procedure_attribute>()),
@@ -935,14 +928,10 @@ private declarations_as_statement BuildTaskProc(string taskName,
         /* location       */ wholeLoc
     );
 
-    // тело блока
     var blk  = new block(null, body, bodyLoc);
 
-    // сама процедура
     var def  = new procedure_definition(head, blk, wholeLoc);
 
-    // оборачиваем в decl-statement,
-    // чтобы потом его легко положить в любые stmt-list
     return new declarations_as_statement(
                new declarations(def, wholeLoc),
                wholeLoc);

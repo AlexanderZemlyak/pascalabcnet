@@ -4,7 +4,7 @@
 // ==========================================================================
 //  Version:  1.3.6
 //  Machine:  MACBOOK-PRO-16
-//  DateTime: 5/29/2025 1:13:01 AM
+//  DateTime: 6/1/2025 6:57:31 PM
 //  UserName: controldata
 // ==========================================================================
 
@@ -304,6 +304,10 @@ stmt
 		{
 			$$ = $1;
 		}
+	/* | proc_func_decl
+		{
+			$$ = new declarations_as_statement(new declarations($1 as procedure_definition, @$), @$);
+		} */
 	| import_clause
 		{
 			$$ = $1;
@@ -766,6 +770,10 @@ proc_func_call
 	: variable LPAR optional_act_param_list RPAR
 		{
 			$$ = new method_call($1 as addressed_value, $3 as expression_list, @$);
+		}
+	| variable
+		{
+			$$ = new method_call($1 as addressed_value, null, @$);
 		}
 	;
 

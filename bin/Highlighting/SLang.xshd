@@ -37,17 +37,64 @@
 				<End>"</End>
 			</Span>
 
-	 <KeyWords name="SLangBlocks" bold="true" italic="false" color="#A626A4">
-	         <Key word="Задача"/>
-	         <Key word="Ввод"/>
-	         <Key word="Проверка"/>
-	         <Key word="Тесты"/>
-	         <Key word="Вывод"/>
-	         <Key word="Конец"/>
-	         <Key word="КонецЗадачи"/>
+	<KeyWords name="SLangBlocks" bold="true" italic="false" color="#A626A4">
+    	<Key word="Задача"/>
+    	<Key word="Ввод"/>
+    	<Key word="Проверка"/>
+    	<Key word="Тесты"/>
+    	<Key word="Вывод"/>
+    	<Key word="Конец"/>
+    	<Key word="КонецЗадачи"/>
     </KeyWords>
-			
-	<KeyWords name = "KeyWords" bold = "true" italic = "false" color = "#ff7700">
+    
+    <KeyWords name="SLangSystem" bold="false" italic="false" color="#4078F2">
+        <Key word="ТипЦел"/><Key word="ТипВещ"/><Key word="ТипСтрока"/>
+        <Key word="ТипБул"/><Key word="ТипСимвол"/>
+
+        <Key word="Случайное"/><Key word="СлучайноеВещественное"/>
+        <Key word="СлучайныйСимвол"/>
+        <Key word="Случайные2"/><Key word="Случайные3"/>
+        <Key word="МассивСлучайныхЦелых"/><Key word="МассивСлучайныхВещественных"/>
+        <Key word="МатрицаСлучайныхЦелых"/><Key word="МатрицаСлучайныхВещественных"/>
+
+        <Key word="ВводЦелого"/><Key word="ВводЦелогоLn"/>
+        <Key word="Ввод2Целых"/><Key word="Ввод2ЦелыхLn"/>
+        <Key word="Ввод3Целых"/><Key word="Ввод3ЦелыхLn"/>
+        <Key word="Ввод4Целых"/><Key word="Ввод4ЦелыхLn"/>
+
+        <Key word="ВводВещественного"/><Key word="ВводВещественногоLn"/>
+        <Key word="Ввод2Вещественных"/><Key word="Ввод2ВещественныхLn"/>
+        <Key word="Ввод3Вещественных"/><Key word="Ввод3ВещественныхLn"/>
+        <Key word="Ввод4Вещественных"/><Key word="Ввод4ВещественныхLn"/>
+
+        <Key word="ВводСимвола"/><Key word="ВводСимволаLn"/>
+        <Key word="ВводСтроки"/><Key word="ВводСтрокиLn"/>
+
+        <Key word="Печать"/><Key word="ПечатьСтроку"/>
+        <Key word="ЦветСообщение"/>
+
+        <Key word="ПроверитьДанные"/><Key word="ПроверитьВводТипы"/>
+        <Key word="ПроверитьВводПустой"/><Key word="ПроверитьВводИсходный"/>
+        <Key word="ПроверитьКоличествоВвода"/><Key word="ПроверитьКоличествоВвода2"/>
+        <Key word="ПроверитьВывод"/><Key word="ПроверитьВыводБезСообщения"/>
+        <Key word="ПроверитьВыводПоследующий"/><Key word="ПроверитьВыводПоследующийБезСообщения"/>
+        <Key word="ПроверитьВыводПоследовательность"/>
+        <Key word="ПроверитьВыводПоследовательностьБезСообщения"/>
+
+        <Key word="целое"/><Key word="вещественное"/><Key word="символ"/><Key word="булево"/>
+        <Key word="Цел"/><Key word="Вещ"/><Key word="Стр"/><Key word="Лог"/><Key word="Сим"/>
+        <Key word="Цел2"/><Key word="Вещ2"/>
+
+        <Key word="МассивЦелых"/><Key word="МассивВещественных"/>
+        <Key word="МассивЛогических"/><Key word="МассивСимволов"/><Key word="МассивСтрок"/>
+
+        <Key word="ТолькоЧисла"/><Key word="ТолькоЧислаИБулевы"/>
+
+        <Key word="ТестЦел"/><Key word="ТестВещ"/><Key word="ТестСимвол"/><Key word="ТестБулево"/>
+        <Key word="СгенерироватьТесты"/><Key word="ДобавитьТестовыеДанные"/>
+    </KeyWords>
+
+	<KeyWords name = "KeyWords" bold = "true" italic = "false" color = "#A626A4">
 		<Key word = "del" />
 		<Key word = "from" />
 		<Key word = "import" />
@@ -71,91 +118,92 @@
 		<Key word = "((" />
 		<Key word = ".Where" />
 	</KeyWords> 
+    
+    <KeyWords name="Punctuation2" bold="false" italic="false" color="Black">
+	    <Key word=","/>
+    	<Key word="."/>
+    	<Key word=";"/>
+    	<Key word="("/>
+    	<Key word=")"/>
+    	<Key word="["/>
+    	<Key word="]"/>
+    	<Key word="{"/>
+    	<Key word="}"/>
+    	<Key word="+"/>
+    	<Key word="-"/>
+    	<Key word="//"/>
+    	<Key word="/"/>
+    	<Key word="*"/>
+    	<Key word="**"/>
+    	<Key word=":"/>
+    	<Key word="|"/>
+    	<Key word="&lt;"/>
+    	<Key word="&gt;"/>
+    	<Key word="&lt;="/>
+    	<Key word="&gt;="/>
+    	<Key word="^"/>
+    	<Key word="^="/>
+    	<Key word="="/>
+    	<Key word="%"/>
+    	<Key word="~"/>
+    	<Key word="&amp;"/>
+    	<Key word="&amp;="/>
+    	<Key word="&lt;&lt;="/>
+    	<Key word="&gt;&gt;="/>
+    	<Key word="+="/>
+    	<Key word="-="/>
+    	<Key word="/="/>
+    	<Key word="//="/>
+    	<Key word="*="/>
+    	<Key word="**="/>
+    	<Key word="|="/>
+    	<Key word="!="/>
+    	<Key word="=="/>
+    	<Key word="-&gt;"/>
+    </KeyWords>
 
-     <KeyWords name = "Punctuation2" bold = "true" italic = "false" color = "Black">
-        	<Key word = "," />
-		<Key word = "." />
-		<Key word = ";" />
-		<Key word = "(" />
-		<Key word = ")" />
-		<Key word = "[" />
-		<Key word = "]" />
-		<Key word = "{" />
-		<Key word = "}" />
-		<Key word = "+" />
-        <Key word = "-" />
-		<Key word = "//" />
-		<Key word = "/" />
-		<Key word = "*" />
-		<Key word = "**" />
-		<Key word = ":" />
-		<Key word = "|" />
-		<Key word = "&lt;" />
-		<Key word = "&gt;" />
-		<Key word = "&lt;=" />
-		<Key word = "&gt;=" />
-		<Key word = "^" />
-		<Key word = "^=" />
-		<Key word = "=" />
-		<Key word = "%" />
-		<Key word = "~" />
-		<Key word = "&amp;" />
-		<Key word = "&amp;=" />
-		<Key word = "&lt;&lt;=" />
-		<Key word = "&gt;&gt;=" />
-		<Key word = "+=" />
-        <Key word = "-=" />
-		<Key word = "/=" />
-		<Key word = "//=" />
-		<Key word = "*=" />
-		<Key word = "**=" />
-		<Key word = "|=" />
-		<Key word = "!=" />
-		<Key word = "==" />
-		<Key word = "-&gt;" />
-	</KeyWords>
-		  	
-	<KeyWords name = "OperatorKeywords" bold="true" italic="false" color = "#ff7700">
-		<Key word = "or" />
-		<Key word = "and" />
-		<Key word = "not" />
-		<Key word = "as" />
-		<Key word = "is" />
-		<Key word = "in" />
-	</KeyWords>
-		
-	<KeyWords name = "SelectionStatements" bold="true" italic="false" color = "#ff7700">
-		<Key word = "else" />
-		<Key word = "if" />
-		<Key word = "elif" />
-	</KeyWords>
-
-	<KeyWords name = "IterationStatements" bold="true" italic="false" color = "#ff7700">
-		<Key word = "while" />
-		<Key word = "for" />
-	</KeyWords>
+    <KeyWords name="OperatorKeywords" bold="true" italic="false" color="#A626A4">
+    	<Key word="or"/>
+    	<Key word="and"/>
+    	<Key word="not"/>
+    	<Key word="as"/>
+    	<Key word="is"/>
+    	<Key word="in"/>
+    </KeyWords>
+    
+    <KeyWords name="SelectionStatements" bold="true" italic="false" color="#A626A4">
+    	<Key word="else"/>
+    	<Key word="if"/>
+    	<Key word="elif"/>
+    </KeyWords>
+    
+    <KeyWords name="IterationStatements" bold="true" italic="false" color="#A626A4">
+    	<Key word="while"/>
+    	<Key word="for"/>
+    </KeyWords>
 					
-	<KeyWords name = "ExceptionHandlingStatements" bold="true" italic="false" color = "#ff7700">
-		<Key word = "except" />
-		<Key word = "finally" />
-		<Key word = "try" />
-		<Key word = "assert" />
+	<KeyWords name="ExceptionHandlingStatements" bold="true" italic="false" color="#A626A4">
+		<Key word="except"/>
+		<Key word="finally"/>
+		<Key word="try"/>
+		<Key word="assert"/>
 	</KeyWords>
-
-	<KeyWords name = "RaiseStatement" bold="true" italic="false" color = "#ff7700">
-		<Key word = "raise" />
+	
+	<KeyWords name="RaiseStatement" bold="true" italic="false" color="#A626A4">
+		<Key word="raise"/>
 	</KeyWords>
-
-	<KeyWords name = "JumpProcedures" bold="true" italic="false" color = "#ff7700">
-		<Key word = "break" />
-		<Key word = "continue" />
+	
+	<KeyWords name="JumpProcedures" bold="true" italic="false" color="#A626A4">
+		<Key word="break"/>
+		<Key word="continue"/>
 	</KeyWords>
-
-	<KeyWords name = "InternalConstant" bold = "false" italic = "false" color = "#ff7700">
-		<Key word = "True" />
-		<Key word = "False" />
-		<Key word = "None" />	
-	</KeyWords> 
+	
+	<!-- ===== Встроенные логические/None – спокойный сине-бирюзовый ===== -->
+	<KeyWords name="InternalConstant" bold="false" italic="false" color="#A626A4">
+		<Key word="True"/>
+		<Key word="False"/>
+		<Key word="None"/>
+	</KeyWords>
 
 	<KeyWords name = "Builtins" bold="false" italic="false"  color = "#900090"> <!--python original is color="#900090"-->
 		<Key word = "ArithmeticError" />
@@ -284,7 +332,7 @@
 		<Key word = "zip" />
 	</KeyWords>
 		  
-	<KeyWords name = "ReferenceTypes" bold="true" italic="false" color = "#ff7700">
+	<KeyWords name = "ReferenceTypes" bold="true" italic="false" color = "#A626A4">
 		<Key word = "class" />
 		<Key word = "lambda" />
 		<Key word = "def" />

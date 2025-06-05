@@ -26,9 +26,6 @@ namespace Languages.SLang
             )
         { }
 
-        /// <summary>
-        /// TODO: требуется проверка и настройка работы  EVA
-        /// </summary>
         public override void SetSemanticConstants()
         {
             SemanticRulesConstants.ClassBaseType = SystemLibrary.object_type;

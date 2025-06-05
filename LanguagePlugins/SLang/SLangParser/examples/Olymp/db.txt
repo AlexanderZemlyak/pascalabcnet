@@ -1,1 +1,10 @@
 Olymp2 Olymp2-Task01 2025-03-23 21:04:58Z BadSolution NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 12:52:51Z IOError InputCount(0,3)
+Olymp2 Olymp2-Task02 2025-05-30 12:54:43Z Solved NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 12:56:50Z Solved NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 12:57:25Z BadSolution NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 13:08:51Z NotUnderControl NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 15:22:47Z Solved NoInfo
+Olymp2 Olymp2-Task02 2025-05-30 15:24:56Z Solved NoInfo
+Olymp2 Olymp2-Task02 2025-06-01 17:54:18Z Solved NoInfo
+Olymp2 Olymp2-Task03 2025-06-03 00:45:16Z Solved NoInfo
