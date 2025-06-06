@@ -155,3 +155,4 @@ bin/SLanguageInfo.dll
 PascalABCNET.sln.DotSettings.user
 *.lnk
 .vscode/settings.json
+LanguagePlugins/SLang/SLangParser/examples/MyOlymp/db.txt
