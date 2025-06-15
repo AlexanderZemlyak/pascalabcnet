@@ -381,7 +381,9 @@ begin
 end;
 
 procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
-begin GenerateTests(cnt, pattern.Take(cnt).ToArray) end;
+begin
+  GenerateTests(cnt, pattern.ToArray);
+end;
 
 procedure СгенерироватьТесты(params a: array of integer);
 begin GenerateTests(a) end;
