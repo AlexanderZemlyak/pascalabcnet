@@ -108,7 +108,7 @@ procedure ПроверитьВводИсходный;
 procedure ПроверитьКоличествоВвода(n: integer);
 procedure ПроверитьКоличествоВвода2(i: integer);
 
-procedure ПроверитьВывод(params res: array of object);
+procedure ПроверитьВывод(params arr: array of object);
 procedure ПроверитьВывод(lst: ObjectList);
 procedure ПроверитьВыводБезСообщения(params res: array of object);
 procedure ПроверитьВыводБезСообщения(lst: ObjectList);
@@ -174,13 +174,29 @@ function ТестБулево: TestCell;
 
 procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
 procedure СгенерироватьТесты(params a: array of integer);
+procedure СгенерироватьТесты(params a: array of real);
+procedure СгенерироватьТесты(params a: array of string);
+procedure СгенерироватьТесты(params a: array of char);
+procedure СгенерироватьТесты(params a: array of boolean);
+procedure СгенерироватьТесты<T1,T2>(params a: array of (T1,T2));
+procedure СгенерироватьТесты<T1,T2,T3>(params a: array of (T1,T2,T3));
 procedure ДобавитьТестовыеДанные(params data: array of integer);
 procedure ДобавитьТестовыеДанные(params data: array of real);
+function GetValue(kv: KeyValuePair<string, integer>): integer;
+function GetKey(kv: KeyValuePair<string, integer>): string;
 
 // MARK: - Implementations
 
 implementation
 
+function GetValue(kv: KeyValuePair<string, integer>): integer;
+begin
+  Result := kv.Value;
+end;
+function GetKey(kv: KeyValuePair<string, integer>): string;
+begin
+  Result := kv.Key;
+end;
 
 // MARK: - Типы
 
@@ -291,7 +307,7 @@ procedure ПроверитьВводИсходный; begin CheckInputIsInitial 
 procedure ПроверитьКоличествоВвода(n: integer); begin CheckInputCount(n) end;
 procedure ПроверитьКоличествоВвода2(i: integer); begin CheckInput2Count(i) end;
 
-procedure ПроверитьВывод(params res: array of object); begin CheckOutput(res) end;
+procedure ПроверитьВывод(params arr: array of object); begin CheckOutput(arr) end;
 procedure ПроверитьВывод(lst: ObjectList); begin CheckOutput(lst) end;
 procedure ПроверитьВыводБезСообщения(params res: array of object); begin CheckOutputSilent(res) end;
 procedure ПроверитьВыводБезСообщения(lst: ObjectList); begin CheckOutputSilent(lst) end;
@@ -381,11 +397,20 @@ begin
 end;
 
 procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
-begin
-  GenerateTests(cnt, pattern.ToArray);
-end;
-
+begin GenerateTests(cnt, pattern.ToArray) end;
 procedure СгенерироватьТесты(params a: array of integer);
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты(params a: array of real);
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты(params a: array of string);
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты(params a: array of char);
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты(params a: array of boolean);
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты<T1,T2>(params a: array of (T1,T2));
+begin GenerateTests(a) end;
+procedure СгенерироватьТесты<T1,T2,T3>(params a: array of (T1,T2,T3));
 begin GenerateTests(a) end;
 
 procedure ДобавитьТестовыеДанные(params data: array of integer);

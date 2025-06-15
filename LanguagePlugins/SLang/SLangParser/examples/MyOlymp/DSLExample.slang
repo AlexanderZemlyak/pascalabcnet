@@ -124,19 +124,19 @@
     ПроверитьДанные(Вход = ТипЦел * n)
     a = МассивЦелых(n)
   Проверка
-    mod0 = [0] # = []
-    mod1 = [0] # = []
-    mod2 = [0] # = []
+    mod0: list[int] = []
+    mod1: list[int] = []
+    mod2: list[int] = []
     for x in a:
       if x % 3 == 0:
-        mod0.Append(x)
+        mod0.append(x)
       elif x % 3 == 1:
-        mod1.Append(x)
+        mod1.append(x)
       else:
-        mod2.Append(x)
-    mod0.Sort
-    mod1.Sort
-    mod2.Sort
+        mod2.append(x)
+    Sort(mod0)
+    Sort(mod1)
+    Sort(mod2)
     результат = mod0 + mod1 + mod2
   Тесты
     СгенерироватьТесты(10, ТестЦел * n)
@@ -151,28 +151,11 @@
     ПроверитьДанные(Вход = [ТипСтрока])
     s = Стр()
   Проверка
-    слова = s.ToWords
-    макс1 = 0
-    макс2 = 1
-#    d = Dictionary.New 
-#    for w in слова:
-#      if d.ContainsKey(w):
-#        d[w] = d[w] + 1
-#      else:
-#        d[w] = 1
-#    макс1 = ''; макс2 = ''
-#    v1 = -1; v2 = -1
-#    for k in d.Keys:
-#      if (d[k] > v1) or ((d[k] == v1) and (k < макс1)):
-#        макс2 = макс1; v2 = v1
-#        макс1 = k; v1 = d[k]
-#      elif (d[k] > v2) or ((d[k] == v2) and (k < макс2)):
-#        макс2 = k; v2 = d[k]
-    результат = [макс1, макс2]
-#  Тесты
-#    СгенерироватьТесты("d c b a d", "d c b a d b")
+    d = s.ToWords.EachCount.OrderByDescending(GetValue).ThenBy(GetKey);
+  Тесты
+    СгенерироватьТесты('d c b a d', 'd c b a d b')
   Вывод
-    ПроверитьВывод(результат)
+    ПроверитьВывод(d.Take(2).Select(GetKey))
 Конец
 
 # Задача 9 (скользящее среднее, окно = 3)
@@ -181,18 +164,22 @@
   Ввод
     ПроверитьДанные(Вход = ТипВещ * 10)
     a = МассивВещественных(10)
-  Проверка
-    b = Copy(a)
-    for i in range(1, a.Length - 2 + 1):
-      pass
-#      b[i] = a[i-1 : i+2].Average
   Тесты
-    ДобавитьТестовыеДанные(1.2, 3.3, 2.4, 5.1, 4.5, 7.2, 6.9, 9.0, 8.4, 10.5)
-    ДобавитьТестовыеДанные(2.4, 4.2, 3.6, 6.0, 5.4, 8.1, 7.5, 10.8, 9.3, 12.6)
+    TestCount = 2
+    GenerateTestData = wtopa
+  Проверка
+    b = a
+    for i in range(1, a.Length - 2 + 1):
+      b[i] = (a[i-1] + a[i] + a[i+1]) / 3
   Вывод
     ПроверитьВывод(b)
 Конец
 
+def wtopa(tnum: int):
+    a = [1.2, 3.3, 2.4, 5.1, 4.5, 7.2, 6.9, 9.0, 8.4, 10.5]
+    if tnum == 1:
+      a = [2.4, 4.2,3.6, 6.0, 5.4, 8.1, 7.5, 10.8, 9.3, 12.6]
+    InputList.AddTestData(a)
 
 def Gen(t: int):
   k = Случайное(2, 4)

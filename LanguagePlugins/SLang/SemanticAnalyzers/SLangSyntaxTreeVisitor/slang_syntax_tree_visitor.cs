@@ -190,7 +190,7 @@ namespace SLangSyntaxTreeVisitor
                         {
                             if (!containersNamesMapping[tName].ContainsKey(id.name))
                             {
-                                AddError(left.location, "SLANGSEMANTIC_TYPE_{0}_HAS_NO_{1}_METHOD", ConvertTypeNameToSLangTypeName(left.type), id.name);
+                                // AddError(left.location, "SLANGSEMANTIC_TYPE_{0}_HAS_NO_{1}_METHOD", ConvertTypeNameToSLangTypeName(left.type), id.name);
                             }
                             else
                             {
