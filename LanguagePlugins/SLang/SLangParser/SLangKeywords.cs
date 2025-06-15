@@ -24,7 +24,7 @@ namespace SLangParser
             CreateNewKeyword("and", Tokens.AND);
             CreateNewKeyword("or", Tokens.OR);
             CreateNewKeyword("not", Tokens.NOT);
-            CreateNewKeyword("import", Tokens.IMPORT, KeywordKind.Uses);
+            CreateNewKeyword("import", Tokens.IMPORT);
             CreateNewKeyword("from", Tokens.FROM);
             CreateNewKeyword("global", Tokens.GLOBAL);
             CreateNewKeyword("True", Tokens.TRUE);
@@ -33,6 +33,10 @@ namespace SLangParser
             CreateNewKeyword("pass", Tokens.PASS);
             CreateNewKeyword("class", Tokens.CLASS, isTypeKeyword: true);
             CreateNewKeyword("lambda", Tokens.LAMBDA);
+            CreateNewKeyword("exit", Tokens.EXIT);
+            CreateNewKeyword("new", Tokens.NEW, KeywordKind.New);
+            CreateNewKeyword("is", Tokens.IS);
+            CreateNewKeyword("decltype", Tokens.DECLTYPE);
             CreateNewKeyword("Задача", Tokens.TASK);
             CreateNewKeyword("Ввод", Tokens.INPUT, KeywordKind.New);
             CreateNewKeyword("Проверка", Tokens.CHECK);
@@ -40,7 +44,6 @@ namespace SLangParser
             CreateNewKeyword("Вывод", Tokens.OUTPUT);
             CreateNewKeyword("Конец", Tokens.END_TASK);
             CreateNewKeyword("КонецЗадачи", Tokens.END_TASK);
-
         }
 
         protected override int GetIdToken() => (int)Tokens.ID;

@@ -1,8 +1,8 @@
-﻿using PascalABCCompiler.Parsers;
-using PascalABCCompiler.ParserTools.Directives;
+﻿using PascalABCCompiler.ParserTools.Directives;
 using PascalABCCompiler.SyntaxTree;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -20,9 +20,26 @@ namespace PascalABCCompiler.Parsers
 
         public abstract string ParameterDelimiter { get; }
 
+        public abstract string ResultVariableName { get; }
+
+        public abstract string GenericTypesStartBracket { get; }
+        public abstract string GenericTypesEndBracket { get; }
+
+        public abstract string ReturnTypeDelimiter { get; }
+
         public abstract bool CaseSensitive { get; }
 
         public abstract bool IncludeDotNetEntities { get; }
+
+        public abstract bool AddStandardUnitNamesToUserScope { get; }
+
+        public abstract bool AddStandardNetNamespacesToUserScope { get; }
+
+        public abstract bool UsesFunctionsOverlappingSourceContext { get; }
+
+        public virtual Dictionary<string, string> SpecialModulesAliases => null;
+
+        public virtual void RenameOrExcludeSpecialNames(SymInfo[] symInfos) { }
 
         // перенести сюда реализацию  EVA
         public abstract string ConstructHeader(string meth, IProcScope scope, int tabCount);
@@ -148,7 +165,7 @@ namespace PascalABCCompiler.Parsers
             StringBuilder sb = new StringBuilder();
             sb.Append(mi.Name);
             if (mi.GetGenericArguments().Length > 0)
-                sb.Append("<>");
+                sb.Append(GenericTypesStartBracket + GenericTypesEndBracket);
             return sb.ToString();
         }
 
@@ -191,6 +208,15 @@ namespace PascalABCCompiler.Parsers
             {
                 return sc.Name + (((sc as ITypeScope).TemplateArguments != null && !sc.Name.EndsWith("<>") && sc.Name != "class") ? "<>" : "") + ".";
             }
+
+            if (sc is IInterfaceUnitScope && SpecialModulesAliases != null)
+            {
+                var p = SpecialModulesAliases.FirstOrDefault(kv => kv.Value == sc.Name);
+
+                if (!p.Equals(default(KeyValuePair<string, string>)))
+                    return p.Key + ".";
+            }
+
             return sc.Name + ".";
         }
 
@@ -203,6 +229,15 @@ namespace PascalABCCompiler.Parsers
             {
                 return sc.Name + (((sc as ITypeScope).TemplateArguments != null && !sc.Name.EndsWith("<>")) ? "<>" : "");
             }
+
+            if (sc is IInterfaceUnitScope && SpecialModulesAliases != null)
+            {
+                var p = SpecialModulesAliases.FirstOrDefault(kv => kv.Value == sc.Name);
+
+                if (!p.Equals(default(KeyValuePair<string, string>)))
+                    return p.Key + ".";
+            }
+
             return sc.Name;
         }
 
@@ -270,14 +305,14 @@ namespace PascalABCCompiler.Parsers
             StringBuilder sb = new StringBuilder();
             if (template_args != null)
             {
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < template_args.Length; i++)
                 {
                     sb.Append(template_args[i]);
                     if (i < template_args.Length - 1)
                         sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
             }
             return sb.ToString();
         }
@@ -292,17 +327,17 @@ namespace PascalABCCompiler.Parsers
             if (instances != null && instances.Length > 0)
             {
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                int ind = s.IndexOf('<');
+                int ind = s.IndexOf(GenericTypesStartBracket);
                 if (ind != -1) sb.Append(s.Substring(0, ind));
                 else
                     sb.Append(s);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < instances.Length; i++)
                 {
                     sb.Append(GetSimpleDescriptionWithoutNamespace(instances[i]));
                     if (i < instances.Length - 1) sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 s = sb.ToString();
             }
             return s;
@@ -331,27 +366,27 @@ namespace PascalABCCompiler.Parsers
                 if (gen_insts == null || gen_insts.Length == 0)
                 {
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    sb.Append('<');
+                    sb.Append(GenericTypesStartBracket);
                     for (int i = 0; i < generic_params.Length; i++)
                     {
                         sb.Append(generic_params[i]);
                         if (i < generic_params.Length - 1)
                             sb.Append(',');
                     }
-                    sb.Append('>');
+                    sb.Append(GenericTypesEndBracket);
                     return sb.ToString();
                 }
                 else
                 {
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    sb.Append('<');
+                    sb.Append(GenericTypesStartBracket);
                     for (int i = 0; i < gen_insts.Length; i++)
                     {
                         sb.Append(GetSimpleDescriptionWithoutNamespace(gen_insts[i]));
                         if (i < gen_insts.Length - 1)
                             sb.Append(", ");
                     }
-                    sb.Append('>');
+                    sb.Append(GenericTypesEndBracket);
                     return sb.ToString();
                 }
             }
@@ -593,12 +628,12 @@ namespace PascalABCCompiler.Parsers
                 }
                 string name = GetShortTypeName(t);
                 StringBuilder sb = new StringBuilder();
-                int ind = name.IndexOf('<');
+                int ind = name.IndexOf(GenericTypesStartBracket);
                 if (ind == -1)
                     return name;
                 sb.Append(name.Substring(0, ind));
                 Type[] args = t.GetGenericArguments();
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < args.Length; i++)
                 {
                     if (args[i].IsGenericParameter)
@@ -620,7 +655,7 @@ namespace PascalABCCompiler.Parsers
                     if (i < args.Length - 1)
                         sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 return sb.ToString();
             }
             return GetFullTypeName(t, no_alias);

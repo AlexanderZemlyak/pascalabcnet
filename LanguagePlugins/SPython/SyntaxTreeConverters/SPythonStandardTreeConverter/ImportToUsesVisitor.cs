@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using PascalABCCompiler.SyntaxTree;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Security.Cryptography;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
 
 namespace Languages.SPython.Frontend.Converters
 {
@@ -15,11 +9,7 @@ namespace Languages.SPython.Frontend.Converters
 
         public ImportToUsesVisitor() { }
 
-        private Dictionary<string, string> specialModulesAliases = new Dictionary<string, string>
-        {
-            { "time", "time1" },
-            { "random", "random1" },
-        };
+        private Dictionary<string, string> specialModulesAliases = Facade.LanguageProvider.Instance.SelectLanguageByName("SPython").LanguageInformation.SpecialModulesAliases;
 
         private string GetNameToImport(string nameToImport)
         {

@@ -1,39 +1,22 @@
-﻿using System;
+﻿using PascalABCCompiler.SyntaxTree;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using AssignTupleDesugarAlgorithm;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
 
 namespace Languages.SLang.Frontend.Converters
 {
     internal class NameCorrectVisitor : SymbolTableFillingVisitor
     {
-        private declarations decls;
-
         public HashSet<string> variablesUsedAsGlobal = new HashSet<string>();
-        
-        private static bool IsHelperIdentifier(string name) => !string.IsNullOrEmpty(name) && name[0] == '!';
 
-        public NameCorrectVisitor(Dictionary<string, HashSet<string>> par) : base(par) { }
+        public NameCorrectVisitor(Dictionary<string, HashSet<string>> namesFromUsedUnits, HashSet<string> definedFunctionsNames) : base(namesFromUsedUnits) 
+        {
+            foreach (string definedFunctionName in definedFunctionsNames)
+            {
+                symbolTable.Add(definedFunctionName, NameKind.ForwardDeclaredFunction);
+            }
+        }
 
         public override void Enter(syntax_tree_node stn)
         {
-            if (stn is program_module pm)
-            {
-                decls = pm.program_block.defs;
-            }
-            if (stn is interface_node intn)
-            {
-                decls = intn.interface_definitions;
-            }
             if (stn is ident && stn.Parent is dot_node dn && dn.right == stn)
             {
                 visitNode = false;
@@ -81,10 +64,10 @@ namespace Languages.SLang.Frontend.Converters
                         break;
                     case NameKind.Unknown:
                         throw new SLangSyntaxVisitorError("UNKNOWN_NAME_{0}",
-                        _global_statement.source_context, _ident.name);
+                        _ident.source_context, _ident.name);
                     default:
                         throw new SLangSyntaxVisitorError("SCOPE_CONTAINS_NAME_{0}",
-                        _global_statement.source_context, _ident.name);
+                        _ident.source_context, _ident.name);
                 }
             }
 
@@ -93,11 +76,15 @@ namespace Languages.SLang.Frontend.Converters
 
         public override void visit(named_type_reference _named_type_reference)
         {
-            if (IsHelperIdentifier(_named_type_reference.names[0].name))
-                return;
-
             ident id = _named_type_reference.names[0];
-            NameKind nameKind = symbolTable[id.name];
+            string name = id.name;
+
+            if (name == "int" || name == "str" || name == "bool" || name == "float")
+            {
+                return;
+            }
+
+            NameKind nameKind = symbolTable[name];
             switch (nameKind)
             {
                 case NameKind.ModuleAlias:
@@ -109,13 +96,6 @@ namespace Languages.SLang.Frontend.Converters
                     _named_type_reference.names[1].name = symbolTable.AliasToRealName(_named_type_reference.names[1].name);
                     break;
 
-                // Сомнительно
-                case NameKind.GlobalVariable:
-                    if (symbolTable.IsInFunctionBody &&
-                    !variablesUsedAsGlobal.Contains(id.name))
-                        variablesUsedAsGlobal.Add(id.name);
-                    break;
-
                 case NameKind.Unknown:
                     throw new SLangSyntaxVisitorError("UNKNOWN_NAME_{0}",
                     id.source_context, id.name);
@@ -124,9 +104,6 @@ namespace Languages.SLang.Frontend.Converters
 
         public override void visit(ident _ident)
         {
-            if (IsHelperIdentifier(_ident.name))
-                return;
-
             SourceContext sc = _ident.source_context;
             NameKind nameKind = symbolTable[_ident.name];
             switch (nameKind)
@@ -146,22 +123,62 @@ namespace Languages.SLang.Frontend.Converters
                         variablesUsedAsGlobal.Add(_ident.name);
                     break;
 
+                case NameKind.ForwardDeclaredFunction:
+                    if (!symbolTable.IsInFunctionBody)
+                        throw new SLangSyntaxVisitorError("FUNCTION_{0}_USED_BEFORE_DECLARATION",
+                                                            sc, _ident.name);
+                    break;
+
                 case NameKind.Unknown:
-                    throw new SLangSyntaxVisitorError("UNKNOWN_NAME_{0}"
-                    , sc, _ident.name);
+                    throw new SLangSyntaxVisitorError("UNKNOWN_NAME_{0}", 
+                                                        sc, _ident.name);
+            }
+        }
+
+        // кидает ошибки если инициализировать пустой коллекцией
+        // не указывая типа переменной
+        private void CheckInitializationWithEmptyCollection(assign _assign)
+        {
+            // a = []
+            // a = !empty_list()
+            // a = {}
+            // a = !empty_dict()
+            // a = set()
+            if (_assign.from is method_call mc &&
+                mc.dereferencing_value is ident id &&
+                mc.parameters == null)
+            {
+                if (id.name == "!empty_list")
+                {
+                    throw new SLangSyntaxVisitorError("IMPOSSIBLE_TO_INFER_LIST_TYPE",
+                        _assign.from.source_context);
+                }
+                else if (id.name == "!empty_dict")
+                {
+                    throw new SLangSyntaxVisitorError("IMPOSSIBLE_TO_INFER_DICT_TYPE",
+                        _assign.from.source_context);
+                }
+                if (id.name == "set")
+                {
+                    throw new SLangSyntaxVisitorError("IMPOSSIBLE_TO_INFER_SET_TYPE",
+                        _assign.from.source_context);
+                }
             }
         }
 
         public override void visit(assign _assign)
         {
-            if (_assign.to is ident _ident)
+            if (_assign.operator_type == Operators.Assignment && _assign.to is ident _ident)
             {
-                if (!symbolTable.IsVisibleForAssignment(_ident.name))
+                if (!symbolTable.IsVisibleToAssign(_ident.name))
                 {
+                    // инициализация новой переменной с присвоением
                     if (symbolTable.IsOutermostScope())
                         symbolTable.Add(_ident.name, NameKind.GlobalVariable);
                     else
                         symbolTable.Add(_ident.name, NameKind.LocalVariable);
+
+                    CheckInitializationWithEmptyCollection(_assign);
 
                     var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
 

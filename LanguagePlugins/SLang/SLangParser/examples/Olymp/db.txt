@@ -8,3 +8,9 @@ Olymp2 Olymp2-Task02 2025-05-30 15:22:47Z Solved NoInfo
 Olymp2 Olymp2-Task02 2025-05-30 15:24:56Z Solved NoInfo
 Olymp2 Olymp2-Task02 2025-06-01 17:54:18Z Solved NoInfo
 Olymp2 Olymp2-Task03 2025-06-03 00:45:16Z Solved NoInfo
+Olymp2 Olymp2-Task06 2025-06-15 15:12:02Z IOError OutputType(1,integer,string)
+Olymp2 Olymp2-Task06 2025-06-15 15:15:48Z IOError OutputType(1,integer,char)
+Olymp2 Olymp2-Task06 2025-06-15 15:16:14Z BadSolution NoInfo
+Olymp2 Olymp2-Task06 2025-06-15 15:17:02Z BadSolution NoInfo
+Olymp2 Olymp2-Task06 2025-06-15 15:17:12Z IOError OutputType(1,integer,char)
+Olymp2 Olymp2-Task06 2025-06-15 15:18:32Z Solved NoInfo

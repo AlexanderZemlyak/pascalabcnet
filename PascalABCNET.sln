@@ -135,7 +135,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangSyntaxTreeVisitor", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangParser", "LanguagePlugins\SLang\SLangParser\SLangParser.csproj", "{5E089C76-32A6-406A-857C-B15ACDFDB051}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLanguageInfo", "LanguagePlugins\SLang\SLanguageInfo\SLanguageInfo.csproj", "{D508E0CC-13AC-49B3-91D1-4465EB320453}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangLanguageInfo", "LanguagePlugins\SLang\SLangLanguageInfo\SLangLanguageInfo.csproj", "{D508E0CC-13AC-49B3-91D1-4465EB320453}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLangStandardTreeConverter", "LanguagePlugins\SLang\SyntaxTreeConverters\SLangStandardTreeConverter\SLangStandardTreeConverter.csproj", "{9B39B142-6F3A-4CD7-BEFC-6C17564539D4}"
 EndProject

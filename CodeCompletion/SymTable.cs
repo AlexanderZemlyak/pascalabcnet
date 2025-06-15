@@ -1,17 +1,14 @@
-// Copyright (c) Ivan Bondarev, Stanislav Mikhalkovich (for details please see \doc\copyright.txt)
+﻿// Copyright (c) Ivan Bondarev, Stanislav Mikhalkovich (for details please see \doc\copyright.txt)
 // This code is distributed under the GNU LGPL (for details please see \doc\license.txt)
+using PascalABCCompiler;
+using PascalABCCompiler.Parsers;
+using PascalABCCompiler.SyntaxTree;
+using PascalABCCompiler.TreeRealization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using SymbolTable;
-using PascalABCCompiler.TreeRealization;
-using PascalABCCompiler.SyntaxTree;
-using PascalABCCompiler.Parsers;
 using System.Linq;
-using PascalABCCompiler;
-using PascalABCCompiler.TreeConverter;
+using System.Reflection;
 
 namespace CodeCompletion
 {
@@ -711,11 +708,24 @@ namespace CodeCompletion
             return this.FindScopeByLocation(line, column);
         }
 
-        //naiti scope po location
-        //algoritm lokalizueztsja scope v glubinu poka ne naidetsja istinnyj scope, soderzhashij mesto gde nahodimsja
         public virtual SymScope FindScopeByLocation(int line, int column)
         {
+            SymScope minScope = null;
+
+            // задает нужна ли модификация алгоритма с обходом всех кандидатов   EVA
+            bool findMinScope = CodeCompletionController.CurrentParser.LanguageInformation.UsesFunctionsOverlappingSourceContext;
+
+            SymScope foundScope = FindScopeByLocation(line, column, ref minScope, findMinScope);
+
+            return findMinScope ? minScope : foundScope;
+        }
+
+        //naiti scope po location
+        //algoritm lokalizueztsja scope v glubinu poka ne naidetsja istinnyj scope, soderzhashij mesto gde nahodimsja
+        public virtual SymScope FindScopeByLocation(int line, int column, ref SymScope minScope, bool findMinScope)
+        {
             SymScope res = null;
+
             cur_line = line;
             cur_col = column;
             if (members == null) return null;
@@ -733,19 +743,53 @@ namespace CodeCompletion
                         if (this is TypeScope && ss.loc.end_line_num > loc.end_line_num)
                             continue;
                         res = ss;
-                        SymScope tmp = ss.FindScopeByLocation(line, column);
+                        
+                        SymScope tmp = ss.FindScopeByLocation(line, column, ref minScope, findMinScope);
                         if (tmp != null)
-                            return tmp;
-                        else
+                        {
+                            res = tmp;
+                        }
+
+                        if (!findMinScope)
                             return res;
+
+                        UpdateMinScopeIfNeeded(ref minScope, res);
                     }
                     else if (!(ss is CompiledScope))
                     {
-                        SymScope tmp = ss.FindScopeByLocation(line, column);
-                        if (tmp != null) return tmp;
+                        SymScope tmp = ss.FindScopeByLocation(line, column, ref minScope, findMinScope);
+                        if (tmp != null)
+                        {
+                            res = tmp;
+
+                            if (!findMinScope)
+                                return res;
+                            
+                            UpdateMinScopeIfNeeded(ref minScope, res);
+                        }
                     }
                 }
             return res;
+        }
+
+        /// <summary>
+        /// Сравнивает minScope и scopeToCompare, если второй занимает меньше строк или minScope = null, то minScope = scopeToCompare.
+        /// scopeToCompare не должен быть равен null
+        /// </summary>
+        /// <returns></returns>
+        private static SymScope UpdateMinScopeIfNeeded(ref SymScope minScope, SymScope scopeToCompare)
+        {
+            if (minScope != null)
+            {
+                if (scopeToCompare.loc.end_line_num - scopeToCompare.loc.begin_line_num <= minScope.loc.end_line_num - minScope.loc.begin_line_num)
+                    minScope = scopeToCompare;
+            }
+            else
+            {
+                minScope = scopeToCompare;
+            }
+
+            return minScope;
         }
 
         //poluchenie vseh imen posle tochki
@@ -893,14 +937,20 @@ namespace CodeCompletion
                         List<SymScope> lst = o as List<SymScope>;
                         foreach (SymScope s in lst)
                         {
-                            if (s.si.name == name)
+                            // Добавил второе условие с addit_name, чтобы работали подсказки для anotherName при использовании from ... import name as anotherName EVA
+                            if (s.si.name == name || s.si.addit_name == name)
+                            {
                                 ss = s;
+                                // изменил на возврат первого совпадения для стандартных типов в SPython пока они не в фиктивном модуле, а в SPythonSystem EVA
+                                break;
+                            }
+                                
                         }
                     }
                 if (ss == null) return null;
                 TypeScope ts = ss as TypeScope;
                 if (CodeCompletionController.CurrentParser.LanguageInformation.CaseSensitive)
-                    if (ss.si.name != name)
+                    if (ss.si.name != name && ss.si.addit_name != name)
                         return null;
                 if (ss.loc != null && loc != null && check_for_def && cur_line != -1 && cur_col != -1)
                 {
@@ -1793,9 +1843,9 @@ namespace CodeCompletion
             def_proc.ClearNames();
         }
 
-        public override SymScope FindScopeByLocation(int line, int column)
+        public override SymScope FindScopeByLocation(int line, int column, ref SymScope minScope, bool findMinScope)
         {
-            return def_proc.FindScopeByLocation(line, column);
+            return def_proc.FindScopeByLocation(line, column, ref minScope, findMinScope);
         }
 
         public override string GetDescriptionWithoutDoc()
@@ -3589,8 +3639,23 @@ namespace CodeCompletion
 
         public override TypeScope GetInstance(List<TypeScope> gen_args, bool exact = false)
         {
+
             if ((elementType is UnknownScope || elementType is TemplateParameterScope) && gen_args.Count > 0)
-               return new ArrayScope(gen_args[gen_args.Count-1], Rank > 1?indexes:null);
+            {
+                InstanceCreationContext info = new InstanceCreationContext(this, gen_args, exact);
+
+                if (instance_cache.TryGetValue(info, out var instance))
+                {
+                    return instance;
+                }
+
+                var arrayScope = new ArrayScope(gen_args[gen_args.Count - 1], Rank > 1 ? indexes : null);
+
+                instance_cache[info] = arrayScope;
+
+                return arrayScope;
+            }
+            
             return this;
         }
 
@@ -4102,6 +4167,41 @@ namespace CodeCompletion
         }
     }
 
+    internal struct InstanceCreationContext : IEquatable<InstanceCreationContext>
+    {
+        public TypeScope originalType;
+        public List<TypeScope> genericArguments;
+        public bool exact;
+
+        public InstanceCreationContext(TypeScope originalType, List<TypeScope> genericArguments, bool exact)
+        {
+            this.originalType = originalType;
+            this.genericArguments = genericArguments;
+            this.exact = exact;
+        }
+
+        private struct ScopeComparer : IEqualityComparer<TypeScope>
+        {
+            public bool Equals(TypeScope t1, TypeScope t2) => t1.IsEqual(t2);
+
+            public int GetHashCode(TypeScope t) => t.GetDescription().GetHashCode();
+        }
+
+        public bool Equals(InstanceCreationContext otherInfo)
+        {
+
+            return this.originalType.IsEqual(otherInfo.originalType) &&
+                this.genericArguments.SequenceEqual(otherInfo.genericArguments, new ScopeComparer()) &&
+                this.exact == otherInfo.exact;
+        }
+
+        public override int GetHashCode()
+        {
+            return string.Join("", genericArguments.Select(arg => arg.si != null ? arg.GetDescription() : "")
+                .Concat(new string[] { originalType.GetDescription(), exact.ToString() })).GetHashCode();
+        }
+    }
+
     //opisanie tipa (klassa, zapisi) ot nego est nasledniki. sdelal ih dlja udobstva.
     public class TypeScope : SymScope, ITypeScope
     {
@@ -4122,7 +4222,7 @@ namespace CodeCompletion
         public bool is_final;
         public bool aliased = false;
         internal bool lazy_instance = false;
-        private static Dictionary<TypeScope, List<TypeScope>> instance_cache = new Dictionary<TypeScope, List<TypeScope>>();
+        internal static Dictionary<InstanceCreationContext, TypeScope> instance_cache = new Dictionary<InstanceCreationContext, TypeScope>();
 
         public TypeScope() { }
         public TypeScope(SymbolKind kind, SymScope topScope, SymScope baseScope)
@@ -4475,7 +4575,16 @@ namespace CodeCompletion
 
         public virtual TypeScope GetInstance(List<TypeScope> gen_args, bool exact = false)
         {
+
+            InstanceCreationContext info = new InstanceCreationContext(this, gen_args, exact);
+
+            if (instance_cache.TryGetValue(info, out var instance))
+            {
+                return instance;
+            }
+
             TypeScope ts = new TypeScope(this.kind, this.topScope, this.baseScope);
+
             ts.original_type = this;
             ts.loc = this.loc;
             ts.other_partials = this.other_partials;
@@ -4590,6 +4699,9 @@ namespace CodeCompletion
                     new_ps.nextProc = procs[ps.nextProc] as ProcScope;
                 }
             }
+
+            instance_cache[info] = ts;
+
             return ts;
         }
 
@@ -4947,7 +5059,7 @@ namespace CodeCompletion
                         UnitDocCache.AddDescribeToComplete(ss);
                 }
             }
-            // SSM 10/07/24 ������� ��� ����� �� ������������ ����������� ����� �������� ������
+            // SSM 10/07/24 добавил это чтобы не показывались статические члены базового класса
             if (this.documentation != null && this.documentation.Contains("!#") && baseScope is CompiledScope)
                 return lst.ToArray();
 
@@ -5784,9 +5896,17 @@ namespace CodeCompletion
 
         public override TypeScope GetInstance(List<TypeScope> gen_args, bool exact = false)
         {
-            Type t = this.ctn;
             if (!ctn.IsGenericType)
                 return this;
+
+            InstanceCreationContext info = new InstanceCreationContext(this, gen_args, exact);
+
+            if (instance_cache.TryGetValue(info, out var instance))
+            {
+                return instance;
+            }
+
+            Type t = this.ctn;
             if (!ctn.IsGenericTypeDefinition)
             {
                 t = PascalABCCompiler.NetHelper.NetHelper.FindType(this.ctn.Namespace + "." + this.ctn.Name);
@@ -5885,6 +6005,9 @@ namespace CodeCompletion
                 for (int i = 0; i < this.implemented_interfaces.Count; i++)
                     sc.implemented_interfaces.Add(this.implemented_interfaces[i].GetInstance(gen_args));
             sc.si.description = sc.GetDescription();
+
+            instance_cache[info] = sc;
+
             return sc;
         }
 

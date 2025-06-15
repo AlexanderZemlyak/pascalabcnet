@@ -1,10 +1,8 @@
 ﻿// Copyright (c) Ivan Bondarev, Stanislav Mikhalkovich (for details please see \doc\copyright.txt)
 // This code is distributed under the GNU LGPL (for details please see \doc\license.txt)
 
-using System.Collections;
 using System.Collections.Generic;
 using PascalABCCompiler.Parsers;
-using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.SyntaxTreeConverters;
 using PascalABCCompiler.TreeConverter;
 
@@ -46,6 +44,8 @@ namespace Languages.Facade
         /// Постпреобразования синтаксического дерева (синтаксический сахар и др.)
         /// </summary>
         List<ISyntaxTreeConverter> SyntaxTreeConverters { get; }
+
+        bool ApplySyntaxTreeConvertersForIntellisense { get; }
 
         /// <summary>
         /// Преобразователь из синтаксического дерева в семантическое

@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Xml.Linq;
-using System.Xml.Serialization;
 using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
 
 namespace Languages.SLang.Frontend.Converters
 {
@@ -37,8 +29,8 @@ namespace Languages.SLang.Frontend.Converters
             }
             if (stn is procedure_definition || stn is function_lambda_definition)
             {
-                symbolTable.IsInFunctionBody = true;
                 symbolTable.OpenLocalScope();
+                symbolTable.IsInFunctionBody = true;
             }
             
             base.Enter(stn);
@@ -59,10 +51,26 @@ namespace Languages.SLang.Frontend.Converters
             base.Exit(stn);
         }
 
+        private bool IsForwardDeclaration(procedure_header _procedure_header)
+        {
+            foreach (procedure_attribute attr in _procedure_header.proc_attributes.proc_attributes)
+                if (attr.attribute_type is proc_attribute.attr_forward)
+                    return true;
+
+            return false;
+        }
+
         public override void visit(procedure_header _procedure_header)
         {
             string procedure_name = _procedure_header.name.meth_name.name;
-            symbolTable.Add(procedure_name, NameKind.GlobalFunction);
+            if (IsForwardDeclaration(_procedure_header))
+            {
+                symbolTable.Add(procedure_name, NameKind.ForwardDeclaredFunction);
+            }
+            else
+            {
+                symbolTable.Add(procedure_name, NameKind.GlobalFunction);
+            }
             base.visit(_procedure_header);
         }
 
@@ -83,6 +91,15 @@ namespace Languages.SLang.Frontend.Converters
         {
             symbolTable.OpenLocalScope();
             symbolTable.Add(_foreach_stmt.identifier.name, NameKind.LocalVariable);
+
+            if (_foreach_stmt.ext is ident_list _ident_list)
+            {
+                foreach (ident _ident in _ident_list.idents)
+                {
+                    symbolTable.Add(_ident.name, NameKind.LocalVariable);
+                }
+            }
+
             base.visit(_foreach_stmt);
             symbolTable.CloseLocalScope();
         }
@@ -171,37 +188,32 @@ namespace Languages.SLang.Frontend.Converters
         protected enum NameKind
         {
             // Имя отсутствует в текущем контексте
-            Unknown             = 0b_0000_0000,
+            Unknown                 = 0b_0000_0000,
             // Ключевые слова языка
-            Keyword             = 0b_0000_0001,
+            Keyword                 = 0b_0000_0001,
             // Имя глобальной переменной
-            GlobalVariable      = 0b_0000_0010,
+            GlobalVariable          = 0b_0000_0010,
             // Имя глобальной функции
-            GlobalFunction      = 0b_0000_0100,
+            GlobalFunction          = 0b_0000_0100,
             // Имя подключённого модуля или его псевдоним 
-            ModuleAlias         = 0b_0000_1000,
+            ModuleAlias             = 0b_0000_1000,
             // Имя, подключённое из модуля, или его псевдоним 
-            ImportedNameAlias   = 0b_0001_0000,
+            ImportedNameAlias       = 0b_0001_0000,
             // Локальня переменная
-            LocalVariable       = 0b_0010_0000,
+            LocalVariable           = 0b_0010_0000,
+            // Имя глобальной forward-объявленной функции 
+            ForwardDeclaredFunction = 0b_0100_0000,
         }
 
         protected class SymbolTable
         {
             private Dictionary<string, NameKind> nameTypes = new Dictionary<string, NameKind>();
+            private HashSet<string> forwardDeclaredFunctions = new HashSet<string>();
 
             static string[] Keywords = {
-                    "integer"
-                    , "real"
-                    , "string"
-                    , "boolean"
-
-                    , "true"
-                    , "false"
-
-                    , "break"
-                    , "continue"
-                    , "exit"
+                "int", "float", "str", "bool", // standard types
+                "break", "continue", "exit", "halt", // standard ops
+                "true", "false" // constants
             };
 
             private void FillKeywords()
@@ -247,6 +259,8 @@ namespace Languages.SLang.Frontend.Converters
             // module alias -> module real name
             private Dictionary<string, string> modulesAliases = new Dictionary<string, string>();
 
+            private List<string> StandardLibraries = new List<string> { "SLangSystem", "SLangHidden", "LightPT", "PABCSystem"};
+
             // alias of function or global variable from module -> real name and module real name
             private Dictionary<string, Tuple<string, string>> aliasToRealNameAndModuleName = new Dictionary<string, Tuple<string, string>>();
 
@@ -264,14 +278,12 @@ namespace Languages.SLang.Frontend.Converters
 
             private void AddAliasesFromStandartLibraries()
             {
-                foreach (string name in moduleNameToSymbols["SLangSystem"])
-                    AddAlias(name, name, "SLangSystem");
-                foreach (string name in moduleNameToSymbols["SLangHidden"])
-                    AddAlias(name, name, "SLangHidden");
-                foreach (string name in moduleNameToSymbols["LightPT"])
-                    AddAlias(name, name, "LightPT");
-                foreach (string name in moduleNameToSymbols["PABCSystem"])
-                    AddAlias(name, name, "PABCSystem");
+                foreach (string standardLibrary in StandardLibraries)
+                {
+                    if (moduleNameToSymbols.ContainsKey(standardLibrary))
+                        foreach (string name in moduleNameToSymbols[standardLibrary])
+                            AddAlias(name, name, standardLibrary);
+                }
             }
 
             public string AliasToRealName(string alias)
@@ -292,7 +304,7 @@ namespace Languages.SLang.Frontend.Converters
                 NamesAddedByGlobal.Add(name);
             }
 
-            public bool IsVisibleForAssignment(string name)
+            public bool IsVisibleToAssign(string name)
             {
                 NameKind kind = this[name];
                 if (kind == NameKind.Unknown) return false;
@@ -309,6 +321,8 @@ namespace Languages.SLang.Frontend.Converters
                         return NameKind.LocalVariable;
                     if (nameTypes.ContainsKey(name))
                         return nameTypes[name];
+                    if (forwardDeclaredFunctions.Contains(name))
+                        return NameKind.ForwardDeclaredFunction;
                     return NameKind.Unknown; 
                 }
             }
@@ -323,6 +337,9 @@ namespace Languages.SLang.Frontend.Converters
                     case NameKind.GlobalVariable:
                     case NameKind.GlobalFunction:
                         AddGlobalName(name, nameType);
+                        break;
+                    case NameKind.ForwardDeclaredFunction:
+                        forwardDeclaredFunctions.Add(name);
                         break;
                     default:
                         throw new NotImplementedException();

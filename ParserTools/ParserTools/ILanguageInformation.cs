@@ -129,7 +129,11 @@ namespace PascalABCCompiler.Parsers
     	//char GetParameterDelimiter();
     	string GetCompiledTypeRepresentation(Type t, System.Reflection.MemberInfo mi, ref int line, ref int col);
         bool IsKeyword(string value);
-        
+
+        void RenameOrExcludeSpecialNames(SymInfo[] symInfos);
+
+        Dictionary<string, string> SpecialModulesAliases { get; }
+
         BaseKeywords KeywordsStorage
         {
             get;
@@ -152,11 +156,32 @@ namespace PascalABCCompiler.Parsers
         {
             get;
         }
+        string ResultVariableName
+        {
+            get;
+        }
         bool CaseSensitive
         {
             get;
         }
         bool IncludeDotNetEntities
+        {
+            get;
+        }
+        bool AddStandardUnitNamesToUserScope
+        {
+            get;
+        }
+
+        bool AddStandardNetNamespacesToUserScope
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Может ли source context функций быть вложен в source context других функций
+        /// </summary>
+        bool UsesFunctionsOverlappingSourceContext
         {
             get;
         }

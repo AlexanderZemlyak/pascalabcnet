@@ -14,6 +14,9 @@ PROGRAM_BEGIN_WITH_INDENT=Программа не может начинатьс�
 UNEXPECTED_TOKEN_{0}=Неизвестный символ {0}
 UNSUPPORTED_CONSTRUCTION_{0}=Конструкция {0} не поддерживается текущей версией компилятора
 LINE_WITHOUT_INDENT=Ожидалось начало блока кода с отступом
+ILL_FORMED_FSTRING_{0}=Неверный формат строки {0}
+FSTRING_UNNKOWN_FORMAT_{0}=Неизвестный формат {0}
+FSTRING_NESTED_EXPRESSION_{0}_PARSING_FAILURE=Ошибка в выражении '{0}'
 
 IDENTIFIER=идентификатор
 EOF1=конец файла

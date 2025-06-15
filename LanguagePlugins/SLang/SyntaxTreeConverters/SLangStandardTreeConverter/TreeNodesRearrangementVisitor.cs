@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
+﻿using PascalABCCompiler.SyntaxTree;
+using System.Collections.Generic;
 
 namespace Languages.SLang.Frontend.Converters
 {
@@ -59,7 +56,7 @@ namespace Languages.SLang.Frontend.Converters
             procedure_header _procedure_header = new procedure_header(mainFunctionName);
             block _block = new block(null, mainBody, mainBody.source_context);
             //block _block = new block(null, new statement_list(), _statement_list.source_context);
-            mainFunction = new procedure_definition(_procedure_header, _block);
+            mainFunction = new procedure_definition(_procedure_header, _block, false, _block.source_context);
         }
 
         public override void Exit(syntax_tree_node stn)
@@ -92,8 +89,8 @@ namespace Languages.SLang.Frontend.Converters
             foreach (declaration decl in _declarations_as_statement.defs.defs)
             {
                 suffix.Add(decl);
-                ReplaceStatement(_declarations_as_statement, new empty_statement());
             }
+            ReplaceStatement(_declarations_as_statement, new empty_statement());
         }
     }
 }

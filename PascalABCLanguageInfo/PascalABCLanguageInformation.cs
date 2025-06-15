@@ -128,6 +128,14 @@ namespace Languages.Pascal.Frontend.Data
             }
         }
 
+        public override string ResultVariableName => "Result";
+
+        public override string GenericTypesStartBracket => "<";
+
+        public override string GenericTypesEndBracket => ">";
+
+        public override string ReturnTypeDelimiter => ":";
+
         public override bool CaseSensitive
         {
             get
@@ -143,6 +151,12 @@ namespace Languages.Pascal.Frontend.Data
                 return true;
             }
         }
+
+        public override bool AddStandardUnitNamesToUserScope => true;
+
+        public override bool AddStandardNetNamespacesToUserScope => true;
+
+        public override bool UsesFunctionsOverlappingSourceContext => false;
 
         public override string GetDescription(IBaseScope scope)
         {
@@ -217,7 +231,7 @@ namespace Languages.Pascal.Frontend.Data
             return "";
         }
 
-        public string GetDescriptionForModule(IInterfaceUnitScope scope)
+        private string GetDescriptionForModule(IInterfaceUnitScope scope)
         {
             return (scope.IsNamespaceUnit ? "namespace " : "unit ") + scope.Name;
         }
@@ -302,6 +316,8 @@ namespace Languages.Pascal.Frontend.Data
         {
             switch (keyw)
             {
+                case KeywordKind.ObjectType: return "object";
+                case KeywordKind.StringType: return "string";
                 case KeywordKind.ByteType: return "byte";
                 case KeywordKind.SByteType: return "shortint";
                 case KeywordKind.ShortType: return "smallint";
@@ -341,7 +357,7 @@ namespace Languages.Pascal.Frontend.Data
             }
             if (t.Target.ReturnType != null)
             {
-                sb.Append(": " + GetSimpleDescription(t.Target.ReturnType));
+                sb.Append(ReturnTypeDelimiter + " " + GetSimpleDescription(t.Target.ReturnType));
             }
             return sb.ToString();
         }
@@ -398,14 +414,14 @@ namespace Languages.Pascal.Frontend.Data
                     sb.Append(ctn.Namespace + "." + ctn.Name.Substring(0, gen_pos));
                 else
                     sb.Append(ctn.Namespace + "." + ctn.Name);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < len; i++)
                 {
                     sb.Append(gen_ps[i].Name);
                     if (i < len - 1)
                         sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 return sb.ToString();
             }
             if (ctn.IsArray)
@@ -538,7 +554,7 @@ namespace Languages.Pascal.Frontend.Data
                     sb.Append(prepare_member_name(t.Name.Substring(0, ind)));
                 else
                     sb.Append(t.Name);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 Type[] gen_args = t.GetGenericArguments();
                 for (int i = 0; i < gen_args.Length; i++)
                 {
@@ -546,7 +562,7 @@ namespace Languages.Pascal.Frontend.Data
                     if (i < gen_args.Length - 1)
                         sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
             }
             else
                 sb.Append(prepare_member_name(t.Name));
@@ -866,7 +882,7 @@ namespace Languages.Pascal.Frontend.Data
                 int len = ctn.GetGenericArguments().Length;
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append(ctn.Name.Substring(0, ctn.Name.IndexOf('`')));
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 if (!noalias)
                 {
                     Type[] gen_ps = ctn.GetGenericArguments();
@@ -877,7 +893,7 @@ namespace Languages.Pascal.Frontend.Data
                             sb.Append(", ");
                     }
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 /*sb.Append('<');
 				for (int i=0; i<len; i++)
 				{
@@ -947,18 +963,18 @@ namespace Languages.Pascal.Frontend.Data
             if (instances.Length > 0)
             {
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                int ind = s.IndexOf('<');
+                int ind = s.IndexOf(GenericTypesStartBracket);
                 if (ind != -1) sb.Append(s.Substring(0, ind));
                 else
                     sb.Append(s);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < instances.Length; i++)
                 {
                     sb.Append(GetSimpleDescriptionWithoutNamespace(instances[i]));
                     //sb.Append(instances[i].Name);
                     if (i < instances.Length - 1) sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 s = sb.ToString();
             }
 
@@ -1031,17 +1047,17 @@ namespace Languages.Pascal.Frontend.Data
                 if (instances != null && instances.Length > 0)
                 {
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    int ind = s.IndexOf('<');
+                    int ind = s.IndexOf(GenericTypesStartBracket);
                     if (ind != -1) sb.Append(s.Substring(0, ind));
                     else
                         sb.Append(s);
-                    sb.Append('<');
+                    sb.Append(GenericTypesStartBracket);
                     for (int i = 0; i < instances.Length; i++)
                     {
                         sb.Append(GetSimpleDescriptionWithoutNamespace(instances[i]));
                         if (i < instances.Length - 1) sb.Append(", ");
                     }
-                    sb.Append('>');
+                    sb.Append(GenericTypesEndBracket);
                     s = sb.ToString();
                 }
                 return s;
@@ -1386,13 +1402,13 @@ namespace Languages.Pascal.Frontend.Data
             if (mi.GetGenericArguments().Length > 0)
             {
                 Type[] tt = mi.GetGenericArguments();
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < tt.Length; i++)
                 {
                     sb.Append(tt[i].Name);
                     if (i < tt.Length - 1) sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
             }
             sb.Append('(');
             ParameterInfo[] pis = mi.GetParameters();
@@ -1432,7 +1448,7 @@ namespace Languages.Pascal.Frontend.Data
             string ret_inst_type = null;
             if (mi.ReturnType != typeof(void))
             {
-                sb.Append(": " + GetFullTypeName(mi.ReturnType));
+                sb.Append(ReturnTypeDelimiter + " " + GetFullTypeName(mi.ReturnType));
             }
             //if (scope.CompiledMethod.IsStatic) sb.Append("; static");
             if (mi.IsVirtual && !mi.IsFinal) sb.Append("; ");
@@ -1534,7 +1550,7 @@ namespace Languages.Pascal.Frontend.Data
 
             if (scope.CompiledMethod.GetGenericArguments().Length > 0)
             {
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = gen_ind; i < tt.Length; i++)
                 {
                     if (class_generic_table.ContainsKey(tt[i].Name))
@@ -1565,7 +1581,7 @@ namespace Languages.Pascal.Frontend.Data
                         sb.Append(tt[i].Name);
                     if (i < tt.Length - 1) sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
             }
             sb.Append('(');
 
@@ -1627,12 +1643,12 @@ namespace Languages.Pascal.Frontend.Data
                 if (ret_inst_type == null)
                 {
                     if (scope.ReturnType is ICompiledTypeScope)
-                        sb.Append(": " + GetFullTypeName((scope.ReturnType as ICompiledTypeScope).CompiledType, false));
+                        sb.Append(ReturnTypeDelimiter + " " + GetFullTypeName((scope.ReturnType as ICompiledTypeScope).CompiledType, false));
                     else
-                        sb.Append(": " + GetSimpleDescription(scope.ReturnType));
+                        sb.Append(ReturnTypeDelimiter + " " + GetSimpleDescription(scope.ReturnType));
                 }
                 else
-                    sb.Append(": " + ret_inst_type);
+                    sb.Append(ReturnTypeDelimiter + " " + ret_inst_type);
             }
             //if (scope.CompiledMethod.IsStatic) sb.Append("; static");
             if (scope.IsVirtual) sb.Append("; ");
@@ -1642,7 +1658,7 @@ namespace Languages.Pascal.Frontend.Data
             return sb.ToString();
         }
 
-        protected string GetDescriptionForNamespace(INamespaceScope scope)
+        private string GetDescriptionForNamespace(INamespaceScope scope)
         {
             return "namespace " + scope.Name;
         }
@@ -1664,8 +1680,8 @@ namespace Languages.Pascal.Frontend.Data
                 }
                 else
                 {
-                    sb.Append("(" + PascalABCCompiler.StringResources.Get("CODE_COMPLETION_EXTENSION") + ") ");
-                }
+                    sb.Append("(" + PascalABCCompiler.StringResources.Get("CODE_COMPLETION_EXTENSION")+ ") ");
+                }   
             }
 
             if (scope.IsStatic) sb.Append("static ");
@@ -1720,7 +1736,7 @@ namespace Languages.Pascal.Frontend.Data
             }
             sb.Append(')');
             if (scope.ReturnType != null && !scope.IsConstructor() && !(scope.ReturnType is IProcType && (scope.ReturnType as IProcType).Target == scope))
-                sb.Append(": " + GetSimpleDescription(scope.ReturnType));
+                sb.Append(ReturnTypeDelimiter + " " + GetSimpleDescription(scope.ReturnType));
             //if (scope.IsStatic) sb.Append("; static");
             if (scope.IsVirtual) sb.Append("; ");
             else if (scope.IsAbstract) sb.Append("; abstract");
@@ -1894,7 +1910,7 @@ namespace Languages.Pascal.Frontend.Data
             }
         }
 
-        protected string GetSimpleSynonimDescription(ITypeSynonimScope scope)
+        private string GetSimpleSynonimDescription(ITypeSynonimScope scope)
         {
             return scope.Name;
         }
@@ -1981,7 +1997,7 @@ namespace Languages.Pascal.Frontend.Data
                 }
             }
             if (scope.ReturnType != null)
-                sb.Append(": " + GetSimpleDescription(scope.ReturnType));
+                sb.Append(ReturnTypeDelimiter + " " + GetSimpleDescription(scope.ReturnType));
             sb.Append("; override;");
             return sb.ToString();
         }
@@ -2044,7 +2060,7 @@ namespace Languages.Pascal.Frontend.Data
             }
 
             if (scope.DefProc.ReturnType != null)
-                sb.Append(": " + GetSimpleDescription(scope.DefProc.ReturnType));
+                sb.Append(ReturnTypeDelimiter + " " + GetSimpleDescription(scope.DefProc.ReturnType));
             sb.Append(';');
             if (scope.DefProc.IsAbstract)
                 sb.Append("override;");
@@ -2083,7 +2099,7 @@ namespace Languages.Pascal.Frontend.Data
                     sb.AppendLine(lineText);
                     sb.AppendLine("begin end;");
                     sb.AppendLine("begin end.");
-                    program_module node = this.Parser.GetCompilationUnit("test.pas", sb.ToString(), null, null, ParseMode.Special) as program_module;
+                    program_module node = this.Parser.GetCompilationUnit("test.pas", sb.ToString(), null, null, ParseMode.Special, false) as program_module;
                     procedure_header header = (node.program_block.defs.defs[0] as procedure_definition).proc_header;
                     get_procedure_template(header, res, col);
                     return res.ToString();
@@ -2094,7 +2110,7 @@ namespace Languages.Pascal.Frontend.Data
                     sb.AppendLine(lineText);
                     sb.AppendLine("begin end;");
                     sb.AppendLine("begin end.");
-                    program_module node = this.Parser.GetCompilationUnit("test.pas", sb.ToString(), null, null, ParseMode.Special) as program_module;
+                    program_module node = this.Parser.GetCompilationUnit("test.pas", sb.ToString(), null, null, ParseMode.Special, false) as program_module;
                     if (node.program_block.defs != null && node.program_block.defs.defs.Count > 0 && node.program_block.defs.defs[0] is procedure_definition)
                     {
                         procedure_header header = (node.program_block.defs.defs[0] as procedure_definition).proc_header;

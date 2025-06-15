@@ -1,37 +1,22 @@
-﻿using System;
+﻿using PascalABCCompiler.SyntaxTree;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using AssignTupleDesugarAlgorithm;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
 
 namespace Languages.SPython.Frontend.Converters
 {
     internal class NameCorrectVisitor : SymbolTableFillingVisitor
     {
-        private declarations decls;
-
         public HashSet<string> variablesUsedAsGlobal = new HashSet<string>();
 
-        public NameCorrectVisitor(Dictionary<string, HashSet<string>> par) : base(par) { }
+        public NameCorrectVisitor(Dictionary<string, HashSet<string>> namesFromUsedUnits, HashSet<string> definedFunctionsNames) : base(namesFromUsedUnits) 
+        {
+            foreach (string definedFunctionName in definedFunctionsNames)
+            {
+                symbolTable.Add(definedFunctionName, NameKind.ForwardDeclaredFunction);
+            }
+        }
 
         public override void Enter(syntax_tree_node stn)
         {
-            if (stn is program_module pm)
-            {
-                decls = pm.program_block.defs;
-            }
-            if (stn is interface_node intn)
-            {
-                decls = intn.interface_definitions;
-            }
             if (stn is ident && stn.Parent is dot_node dn && dn.right == stn)
             {
                 visitNode = false;
@@ -92,7 +77,14 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(named_type_reference _named_type_reference)
         {
             ident id = _named_type_reference.names[0];
-            NameKind nameKind = symbolTable[id.name];
+            string name = id.name;
+
+            if (name == "int" || name == "str" || name == "bool" || name == "float")
+            {
+                return;
+            }
+
+            NameKind nameKind = symbolTable[name];
             switch (nameKind)
             {
                 case NameKind.ModuleAlias:
@@ -143,16 +135,50 @@ namespace Languages.SPython.Frontend.Converters
             }
         }
 
+        // кидает ошибки если инициализировать пустой коллекцией
+        // не указывая типа переменной
+        private void CheckInitializationWithEmptyCollection(assign _assign)
+        {
+            // a = []
+            // a = !empty_list()
+            // a = {}
+            // a = !empty_dict()
+            // a = set()
+            if (_assign.from is method_call mc &&
+                mc.dereferencing_value is ident id &&
+                mc.parameters == null)
+            {
+                if (id.name == "!empty_list")
+                {
+                    throw new SPythonSyntaxVisitorError("IMPOSSIBLE_TO_INFER_LIST_TYPE",
+                        _assign.from.source_context);
+                }
+                else if (id.name == "!empty_dict")
+                {
+                    throw new SPythonSyntaxVisitorError("IMPOSSIBLE_TO_INFER_DICT_TYPE",
+                        _assign.from.source_context);
+                }
+                if (id.name == "set")
+                {
+                    throw new SPythonSyntaxVisitorError("IMPOSSIBLE_TO_INFER_SET_TYPE",
+                        _assign.from.source_context);
+                }
+            }
+        }
+
         public override void visit(assign _assign)
         {
-            if (_assign.to is ident _ident)
+            if (_assign.operator_type == Operators.Assignment && _assign.to is ident _ident)
             {
                 if (!symbolTable.IsVisibleToAssign(_ident.name))
                 {
+                    // инициализация новой переменной с присвоением
                     if (symbolTable.IsOutermostScope())
                         symbolTable.Add(_ident.name, NameKind.GlobalVariable);
                     else
                         symbolTable.Add(_ident.name, NameKind.LocalVariable);
+
+                    CheckInitializationWithEmptyCollection(_assign);
 
                     var _var_statement = SyntaxTreeBuilder.BuildVarStatementNodeFromAssignNode(_assign);
 

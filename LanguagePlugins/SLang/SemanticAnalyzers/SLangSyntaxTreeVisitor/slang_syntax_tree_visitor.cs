@@ -5,10 +5,13 @@ using PascalABCCompiler.SystemLibrary;
 using PascalABCCompiler.TreeConverter;
 using PascalABCCompiler.TreeRealization;
 using PascalABCCompiler.Errors;
+using System.ComponentModel.Design;
+using System;
 
 
 namespace SLangSyntaxTreeVisitor
 {
+    // Возможно, стоит заменить на декоратор или стратегию вместо наследования EVA
     public class slang_syntax_tree_visitor : syntax_tree_visitor
     {
         syntax_tree_visitor mainVisitor;
@@ -49,7 +52,6 @@ namespace SLangSyntaxTreeVisitor
         {
             init_system_module(psystem_unit);
 
-            //esli zapustili v otladke, to vosstanovim mnozhestvo i procedury sozdanija diapasonov, inache ne budet rabotat
             if (debugging)
             {
                 List<SymbolInfo> si = SystemLibInitializer.CreateDiapason.SymbolInfo;
@@ -57,7 +59,6 @@ namespace SLangSyntaxTreeVisitor
                 si = SystemLibInitializer.TypedSetType.SymbolInfo;
             }
 
-            // SystemUnitAssigned = true; - убрали для SLang
             CreateSpecialFields(psystem_unit);
         }
 
@@ -84,21 +85,23 @@ namespace SLangSyntaxTreeVisitor
 
         private type_node ConvertTypeNameToSLangTypeName(type_node tn)
         {
-            if (tn is compiled_type_node cnt)
-            {
-                string new_name = tn.PrintableName;
-                new_name = new_name
-                    .Replace("<", "[")
-                    .Replace(">", "]")
-                    .Replace("List", "list")
-                    .Replace("integer", "int")
-                    .Replace("string", "str")
-                    .Replace("real", "float")
-                    .Replace("boolean", "bool")
-                    .Replace("System.Numerics.BigInteger", "bigint");
-                return new common_type_node(new_name, type_access_level.tal_public, null, null, cnt.location);
-            }
-            return tn;
+            string new_name = tn.PrintableName;
+            new_name = new_name
+                .Replace(",", ", ")
+                .Replace("<", "[")
+                .Replace(">", "]")
+                .Replace("List", "list")
+                .Replace("NewSet", "set")
+                .Replace("Dictionary", "dict")
+                .Replace("empty_list", "list[anytype]")
+                .Replace("empty_set", "set[anytype]")
+                .Replace("empty_dict", "dict[anytype]")
+                .Replace("integer", "int")
+                .Replace("string", "str")
+                .Replace("real", "float")
+                .Replace("boolean", "bool")
+                .Replace("System.Numerics.BigInteger", "bigint");
+            return new common_type_node(new_name, type_access_level.tal_public, null, null, tn.location);
         }
 
         public override void AddError(Error err, bool shouldReturn = false)
@@ -126,6 +129,115 @@ namespace SLangSyntaxTreeVisitor
 
         }
 
+        private Dictionary<string, Dictionary<string, string>> containersNamesMapping = new Dictionary<string, Dictionary<string, string>>
+        {
+            {"List",
+                new Dictionary<string, string> {
+                { "append", "Add" },
+                { "clear", "Clear" },
+                { "insert", "Insert" },
+                { "remove", "Remove" },
+                { "pop", "pop" },
+                { "index", "IndexOf" },
+                { "count", "!count" },
+                { "sort", "Sort" },
+                { "reverse", "Reverse" },
+                { "copy", "ToList" },
+                { "Select", "Select" },
+                { "Where", "Where" },
+            } },
+
+            {"NewSet",
+                new Dictionary<string, string> {
+                { "add", "add" },
+                { "remove", "remove" },
+                { "copy", "copy" },
+                { "Select", "Select" },
+                { "Where", "Where" },
+            } },
+
+            {"Dictionary",
+                new Dictionary<string, string> {
+                { "keys", "get_keys" },
+                { "values", "get_values" },
+                { "copy", "copy" },
+                { "Select", "Select" },
+                { "Where", "Where" },
+            } }
+        };
+
+
+        HashSet<method_call> visited_method_calls = new HashSet<method_call>();
+
+        public override void visit(method_call _method_call)
+        {
+            if (visited_method_calls.Contains(_method_call))
+            {
+                base.visit(_method_call);
+                return;
+            }
+            visited_method_calls.Add(_method_call);
+            if (_method_call.dereferencing_value is dot_node dn && dn.right is ident id)
+            {
+                try
+                {
+                    expression_node left = convert_strong(dn.left);
+                    //dn.left = new semantic_addr_value(left);
+                    if (left?.type != null) 
+                    foreach (string tName in containersNamesMapping.Keys)
+                    {
+                        if (left.type.name.StartsWith(tName))
+                        {
+                            if (!containersNamesMapping[tName].ContainsKey(id.name))
+                            {
+                                AddError(left.location, "SLANGSEMANTIC_TYPE_{0}_HAS_NO_{1}_METHOD", ConvertTypeNameToSLangTypeName(left.type), id.name);
+                            }
+                            else
+                            {
+                                id.name = containersNamesMapping[tName][id.name];
+                            }
+                        }
+                    }
+                }
+                catch (Error e)
+                {
+                    if (e.Message != "Ожидалось имя переменной")
+                        throw e; 
+                }
+            }
+            base.visit(_method_call);
+        }
+
+        public override void visit(assign _assign)
+        {
+
+            if (_assign.from is bin_expr be && 
+                _assign.to is ident il && 
+                be.left is ident ir &&
+                il.name == ir.name)
+            {
+                expression_node to = convert_strong(_assign.to);
+                SourceContext sc = _assign.source_context;
+
+                if (to.type.name.StartsWith("NewSet"))
+                {
+                    if (be.operation_type == Operators.LogicalAND)
+                    {
+                        var replace = new assign(new semantic_addr_value(to), be.right, Operators.AssignmentMultiplication, sc);
+                        base.visit(replace);
+                        return;
+                    }
+                    if (be.operation_type == Operators.LogicalOR)
+                    {
+                        var replace = new assign(new semantic_addr_value(to), be.right, Operators.AssignmentAddition, sc);
+                        base.visit(replace);
+                        return;
+                    }
+                }
+            }
+            base.visit(_assign);
+        }
+
         public override void visit(bin_expr _bin_expr) {
             expression_node left = convert_strong(_bin_expr.left);
             expression_node right = convert_strong(_bin_expr.right);
@@ -136,16 +248,18 @@ namespace SLangSyntaxTreeVisitor
             RunAdditionalChecks(new_bin_expr);
 
             switch (_bin_expr.operation_type) {
-                /*case Operators.Plus:
-                    if (left.type == right.type && left.type.name == "boolean")
-                    {
-                        var int_left = new method_call(new ident("int"), new expression_list(new semantic_addr_value(left, left.location)), left.location);
-                        var int_right = new method_call(new ident("int"), new expression_list(new semantic_addr_value(right, right.location)), right.location);
-                        var bti_bin_expr = new bin_expr(int_left, int_right, _bin_expr.operation_type, _bin_expr.source_context);
-                        visit(bti_bin_expr);
-                        return;
+                case Operators.LogicalOR:
+                    if (left.type.name.StartsWith("NewSet") && left.type.name == right.type.name) {
+                        new_bin_expr.operation_type = Operators.Plus;
                     }
-                    break;*/
+
+                    break;
+                case Operators.LogicalAND:
+                    if (left.type.name.StartsWith("NewSet") && left.type.name == right.type.name) {
+                        new_bin_expr.operation_type = Operators.Multiplication;
+                    }
+
+                    break;
                 case Operators.Division:
                     if (left.type == right.type && left.type.name == "string") {
                         var mcn = new method_call(
@@ -171,9 +285,6 @@ namespace SLangSyntaxTreeVisitor
                     break;
                 case Operators.ModulusRemainder:
                     if (left.type == right.type && left.type.name == "real") {
-                        //var divnode = new bin_expr(new semantic_addr_value(left, left.location), new semantic_addr_value(right, right.location), Operators.IntegerDivision, _bin_expr.source_context);
-                        //var multnode = new bin_expr(new semantic_addr_value(right, right.location), divnode, Operators.Multiplication);
-                        //var modnode = new bin_expr(new semantic_addr_value(left, left.location), multnode, Operators.Minus);
                         var exprlist = new expression_list();
                         exprlist.source_context = _bin_expr.source_context;
                         exprlist.Add(new semantic_addr_value(left, left.location));

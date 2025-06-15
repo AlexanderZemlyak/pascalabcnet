@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
+﻿using PascalABCCompiler.SyntaxTree;
+using System;
 
 namespace Languages.SPython.Frontend.Converters
 {

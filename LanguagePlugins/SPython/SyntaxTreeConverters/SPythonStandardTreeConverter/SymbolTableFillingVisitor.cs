@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Xml.Linq;
-using System.Xml.Serialization;
 using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
 
 namespace Languages.SPython.Frontend.Converters
 {
@@ -37,8 +29,8 @@ namespace Languages.SPython.Frontend.Converters
             }
             if (stn is procedure_definition || stn is function_lambda_definition)
             {
-                symbolTable.IsInFunctionBody = true;
                 symbolTable.OpenLocalScope();
+                symbolTable.IsInFunctionBody = true;
             }
             
             base.Enter(stn);
@@ -71,6 +63,8 @@ namespace Languages.SPython.Frontend.Converters
         public override void visit(procedure_header _procedure_header)
         {
             string procedure_name = _procedure_header.name.meth_name.name;
+            // Сейчас здесь не могут быть встречены forward-объявления функций
+            // но на будущее...
             if (IsForwardDeclaration(_procedure_header))
             {
                 symbolTable.Add(procedure_name, NameKind.ForwardDeclaredFunction);
@@ -99,6 +93,15 @@ namespace Languages.SPython.Frontend.Converters
         {
             symbolTable.OpenLocalScope();
             symbolTable.Add(_foreach_stmt.identifier.name, NameKind.LocalVariable);
+
+            if (_foreach_stmt.ext is ident_list _ident_list)
+            {
+                foreach (ident _ident in _ident_list.idents)
+                {
+                    symbolTable.Add(_ident.name, NameKind.LocalVariable);
+                }
+            }
+
             base.visit(_foreach_stmt);
             symbolTable.CloseLocalScope();
         }
@@ -210,7 +213,7 @@ namespace Languages.SPython.Frontend.Converters
             private HashSet<string> forwardDeclaredFunctions = new HashSet<string>();
 
             static string[] Keywords = {
-                "integer", "real", "string", "boolean", // standard types
+                "int", "float", "str", "bool", // standard types
                 "break", "continue", "exit", "halt",    // standard ops
                 "true", "false",                        // constants
             };
@@ -258,6 +261,8 @@ namespace Languages.SPython.Frontend.Converters
             // module alias -> module real name
             private Dictionary<string, string> modulesAliases = new Dictionary<string, string>();
 
+            private List<string> StandardLibraries = new List<string> { "SPythonSystem", "SPythonHidden", "SPythonSystemPys" };
+
             // alias of function or global variable from module -> real name and module real name
             private Dictionary<string, Tuple<string, string>> aliasToRealNameAndModuleName = new Dictionary<string, Tuple<string, string>>();
 
@@ -275,10 +280,12 @@ namespace Languages.SPython.Frontend.Converters
 
             private void AddAliasesFromStandartLibraries()
             {
-                foreach (string name in moduleNameToSymbols["SPythonSystem"])
-                    AddAlias(name, name, "SPythonSystem");
-                foreach (string name in moduleNameToSymbols["SPythonHidden"])
-                    AddAlias(name, name, "SPythonHidden");
+                foreach (string standardLibrary in StandardLibraries)
+                {
+                    if (moduleNameToSymbols.ContainsKey(standardLibrary))
+                        foreach (string name in moduleNameToSymbols[standardLibrary])
+                            AddAlias(name, name, standardLibrary);
+                }
             }
 
             public string AliasToRealName(string alias)

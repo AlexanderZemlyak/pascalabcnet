@@ -18,13 +18,15 @@ namespace Languages.SPython
             docParser: null,
 
             syntaxTreeConverters: new List<ISyntaxTreeConverter>() { new Frontend.Converters.StandardSyntaxTreeConverter(), new SyntaxSemanticVisitors.LambdaAnyConverter() },
-            // syntaxTreeToSemanticTreeConverter: new SPythonSyntaxTreeVisitor.spython_syntax_tree_visitor(LanguageProvider.Instance.MainLanguage.SyntaxTreeToSemanticTreeConverter),
+            applySyntaxTreeConvertersForIntellisense: true,
 
             filesExtensions: new string[] { ".pys" },
             caseSensitive: true,
-            systemUnitNames: new string[] { "SPythonSystem", "SPythonHidden" }
+            systemUnitNames: new string[] { "SPythonSystem", "SPythonHidden", "SPythonSystemPys" }
             )
-        { }
+        {
+            ((SPythonParser.SPythonLanguageParser)Parser).SyntaxTreeConvertersForIntellisense = SyntaxTreeConverters;
+        }
 
         /// <summary>
         /// TODO: требуется проверка и настройка работы  EVA

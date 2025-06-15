@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using PascalABCCompiler.SyntaxTree;
 using PascalABCCompiler.Parsers;
 using SLangParserYacc;
-using System;
-
-
+using PascalABCCompiler.SyntaxTreeConverters;
 
 namespace SLangParser
 {
 
     public class SLangLanguageParser : BaseParser
     {
+        public List<ISyntaxTreeConverter> SyntaxTreeConvertersForIntellisense { get; set; }
 
         public override void Reset()
         {
@@ -26,12 +25,12 @@ namespace SLangParser
 
         }
 
-        protected override syntax_tree_node BuildTreeInNormalMode(string FileName, string Text, List<string> DefinesList = null)
+        protected override syntax_tree_node BuildTreeInNormalMode(string FileName, string Text, bool compilingNotMainProgram, List<string> DefinesList = null)
         {
             Errors.Clear();
             Warnings.Clear();
 
-            syntax_tree_node root = Parse(Text, FileName, false, DefinesList);
+            syntax_tree_node root = Parse(Text, FileName, false, compilingNotMainProgram, DefinesList);
 
             if (Errors.Count > 0)
                 return null;
@@ -42,7 +41,7 @@ namespace SLangParser
             return root;
         }
 
-        public syntax_tree_node Parse(string Text, string fileName, bool buildTreeForFormatter = false, List<string> definesList = null)
+        public syntax_tree_node Parse(string Text, string fileName, bool buildTreeForFormatter = false, bool compilingNotMainProgram = false, List<string> definesList = null)
         {
 #if DEBUG
 #if _ERR
@@ -61,7 +60,7 @@ namespace SLangParser
 
             var scanner = new Scanner(Text, parserTools, LanguageInformation.KeywordsStorage, definesList);
 
-            SLangGPPGParser parser = new SLangGPPGParser(scanner, parserTools, CheckIfParsingUnit.Invoke());
+            SLangGPPGParser parser = new SLangGPPGParser(scanner, parserTools, compilingNotMainProgram);
 
             if (!parser.Parse())
                 if (Errors.Count == 0)
@@ -76,9 +75,19 @@ namespace SLangParser
 
         protected override syntax_tree_node BuildTreeInTypeExprMode(string FileName, string Text)
         {
-            Text = string.Concat("<<type>>", Environment.NewLine, Text);
+            Text = string.Concat("<<type>>", Text);
 
-            return Parse(Text, FileName) as expression;
+            var expr = Parse(Text, FileName) as expression;
+
+            if (expr == null)
+                return null;
+
+            foreach (ISyntaxTreeConverter converter in SyntaxTreeConvertersForIntellisense)
+            {
+                expr = (expression)converter.Convert(expr, true);
+            }
+
+            return expr;
         }
 
         protected override syntax_tree_node BuildTreeInExprMode(string FileName, string Text)
@@ -86,16 +95,26 @@ namespace SLangParser
             if (Text == string.Empty)
                 return null;
             
-            Text = string.Concat("<<expression>>", Environment.NewLine, Text);
+            Text = string.Concat("<<expression>>", Text);
 
-            return Parse(Text, FileName) as expression;
+            var expr = Parse(Text, FileName) as expression;
+
+            if (expr == null)
+                return null;
+
+            foreach (ISyntaxTreeConverter converter in SyntaxTreeConvertersForIntellisense)
+            {
+                expr = (expression)converter.Convert(expr, true);
+            }
+            
+            return expr;
         }
 
-        protected override syntax_tree_node BuildTreeInSpecialMode(string FileName, string Text)
+        protected override syntax_tree_node BuildTreeInSpecialMode(string FileName, string Text, bool compilingNotMainProgram)
         {
             Errors.Clear();
             
-            return Parse(Text, FileName);
+            return Parse(Text, FileName, compilingNotMainProgram);
         }
 
         protected override syntax_tree_node BuildTreeInFormatterMode(string FileName, string Text)
@@ -107,9 +126,19 @@ namespace SLangParser
 
         protected override syntax_tree_node BuildTreeInStatementMode(string FileName, string Text)
         {
-            Text = string.Concat("<<statement>>", Environment.NewLine, Text);
+            Text = string.Concat("<<statement>>", Text);
 
-            return Parse(Text, FileName) as statement;
+            var st = Parse(Text, FileName) as statement;
+
+            if (st == null)
+                return null;
+
+            foreach (ISyntaxTreeConverter converter in SyntaxTreeConvertersForIntellisense)
+            {
+                st = (statement)converter.Convert(st, true);
+            }
+
+            return st;
         }
     }
 }

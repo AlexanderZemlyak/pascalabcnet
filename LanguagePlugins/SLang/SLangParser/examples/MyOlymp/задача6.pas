@@ -2,29 +2,16 @@
   Задание 6. Даны целое число X и массив из 10 целых чисел. Выведите все пары индексов (i, j)
 такие, что i < j и сумма элементов на этих позициях равна X. Пары выводите в порядке
 возрастания i, а при равных i - в порядке возрастания j.
+Например 1 2 3 4 5 1 2 3 4 5
 }
-program FindPairsWithSum;
-
 const
   N = 10;
 
-var
-  A: array[1..N] of integer;
-  X, i, j: integer;
-
 begin
-  // Ввод значения X
-  Write('Введите значение X: ');
-  ReadLn(X);
-
-  // Ввод массива из 10 элементов 1 2 3 4 5 1 2 3 4 5
-  WriteLn('Введите 10 целых чисел:');
-  for i := 1 to N do
-    Read(A[i]);
-
-  // Поиск и вывод пар (i, j), таких что A[i] + A[j] = X и i < j
-  for i := 1 to N - 1 do
-    for j := i + 1 to N do
+  var X := ReadInteger;
+  var A := ReadArrInteger(N);
+  for var i := 0 to N - 2 do
+    for var j := i + 1 to N - 1 do
       if A[i] + A[j] = X then
-        WriteLn('(', i, ', ', j, ')');
+        Writeln(i, ' ', j);
 end.

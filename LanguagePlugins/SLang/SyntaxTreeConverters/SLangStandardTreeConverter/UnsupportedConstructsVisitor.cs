@@ -1,9 +1,5 @@
 ﻿using Languages.SLang.Frontend.Converters;
 using PascalABCCompiler.SyntaxTree;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Languages.Pascal.Frontend.Converters
 {

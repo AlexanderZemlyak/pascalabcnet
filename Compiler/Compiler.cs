@@ -747,7 +747,7 @@ namespace PascalABCCompiler
 
         public Dictionary<Tuple<string, string>, Tuple<string, int>> PCUFileNamesDictionary { get; } = new Dictionary<Tuple<string, string>, Tuple<string, int>>(); 
 
-        public Dictionary<Tuple<string, string>, string> GetUnitFileNameCache { get; } = new Dictionary<Tuple<string, string>, string>();
+        public Dictionary<Tuple<string, string>, List<string>> GetUnitFileNameCache { get; } = new Dictionary<Tuple<string, string>, List<string>>();
 
         public void AddWarnings(List<CompilerWarning> WarningList)
         {
@@ -779,6 +779,10 @@ namespace PascalABCCompiler
             get
             {
                 return sourceFilesProvider;
+            }
+            set
+            {
+                sourceFilesProvider = value;
             }
         }
 
@@ -839,8 +843,6 @@ namespace PascalABCCompiler
             // 29.07.2024  EVA
             CompilerOptions = new CompilerOptions();
 
-            SaveUnitCheckInParsers();
-
             SyntaxTreeToSemanticTreeConverter = new TreeConverter.SyntaxTreeToSemanticTreeConverter();
             CodeGeneratorsController = new CodeGenerators.Controller();
 
@@ -852,18 +854,6 @@ namespace PascalABCCompiler
             semanticTreeConvertersController.AddConverters();
 
             OnChangeCompilerState(this, CompilerState.Ready, null);
-        }
-
-        /// <summary>
-        /// Передаем парсерам возможность проверить, компилируется ли в данный момент модуль 
-        /// (нужно, если нет ключевого слова unit или подобного в языке)
-        /// </summary>
-        private void SaveUnitCheckInParsers()
-        {
-            foreach (var parser in LanguageProvider.Languages.Select(language => language.Parser))
-            {
-                parser.CheckIfParsingUnit = CurrentUnitIsNotMainProgram;
-            }
         }
 
         void semanticTreeConvertersController_ChangeState(SemanticTreeConvertersController.State State, ISemanticTreeConverter SemanticTreeConverter)
@@ -2599,12 +2589,8 @@ namespace PascalABCCompiler
                             foundDirIndex = dirIndex;
                             return Path.GetFullPath(foundFileName);
                         }
-
-                        foundDirIndex = 0;
-                        return null;
                     }
-
-                    if (File.Exists(fullFileName))
+                    else if (File.Exists(fullFileName))
                     {
                         foundDirIndex = dirIndex;
                         // Path.GetFullPath чтобы нормализовать
@@ -2714,9 +2700,26 @@ namespace PascalABCCompiler
         public string GetUnitFileName(string unitName, string usesPath, string currentPath, SyntaxTree.SourceContext sourceContext, bool caseSensitiveSearch)
         {
             var cacheKey = Tuple.Create(usesPath.ToLower(), currentPath?.ToLower());
-            
-            if (GetUnitFileNameCache.TryGetValue(cacheKey, out var unitFileName))
-                return unitFileName;
+
+            bool foundInCache = false;
+
+            if (GetUnitFileNameCache.TryGetValue(cacheKey, out var unitPaths))
+            {
+                if (caseSensitiveSearch)
+                {
+                    foreach (var unitPath in unitPaths)
+                    {
+                        if (Path.GetFileNameWithoutExtension(unitPath) == unitName)
+                        {
+                            return unitPath;
+                        }
+                    }
+                }
+                else
+                    return unitPaths[0];
+
+                foundInCache = true;
+            }
 
             // число приоритета меньше означает, что папка более важная
             var sourceFileName = FindSourceFileName(usesPath, currentPath, out var sourceFilePriority, caseSensitiveSearch);
@@ -2753,6 +2756,8 @@ namespace PascalABCCompiler
                     pcuFileExists = false;
             }
 
+            string unitFileName;
+
             if (pcuFileExists)
                 unitFileName = Path.Combine(currentPath, pcuFileName);
             else if (sourceFileExists)
@@ -2761,7 +2766,15 @@ namespace PascalABCCompiler
                 // значит в предыдущем блоке кода ошибка - проверка для удобства
                 throw new InvalidOperationException("Сброшено значение pcuFileExists и sourceFileExists. Такого здесь быть не должно."); 
 
-            GetUnitFileNameCache[cacheKey] = unitFileName;
+            if (foundInCache)
+            {
+                GetUnitFileNameCache[cacheKey].Add(unitFileName);
+            }
+            else
+            {
+                GetUnitFileNameCache[cacheKey] = new List<string>() { unitFileName };
+            }
+
             return unitFileName;
         }
 
@@ -3349,7 +3362,7 @@ namespace PascalABCCompiler
         private SyntaxTree.compilation_unit InternalParseText(ILanguage language, string fileName, string text, List<Error> errorList, List<CompilerWarning> warnings, List<string> definesList = null, bool calculateHealth = true)
         {
             OnChangeCompilerState(this, CompilerState.BeginParsingFile, fileName);
-            SyntaxTree.compilation_unit unitSyntaxTree = language.Parser.GetCompilationUnit(fileName, text, ErrorsList, warnings, Parsers.ParseMode.Normal, definesList);
+            SyntaxTree.compilation_unit unitSyntaxTree = language.Parser.GetCompilationUnit(fileName, text, ErrorsList, warnings, Parsers.ParseMode.Normal, CurrentUnitIsNotMainProgram(), definesList);
             OnChangeCompilerState(this, CompilerState.EndParsingFile, fileName);
 
             // Вычисляем сколько строк скомпилировали
@@ -3559,7 +3572,8 @@ namespace PascalABCCompiler
 
             foreach (ISyntaxTreeConverter converter in currentUnit.Language.SyntaxTreeConverters)
             {
-                currentUnit.SyntaxTree = (SyntaxTree.compilation_unit)converter.ConvertAfterUsedModulesCompilation(currentUnit.SyntaxTree, in artifacts);
+                OnChangeCompilerState(this, CompilerState.SyntaxTreeConversion, converter.Name);
+                currentUnit.SyntaxTree = (SyntaxTree.compilation_unit)converter.ConvertAfterUsedModulesCompilation(currentUnit.SyntaxTree, false, in artifacts);
             }
         }
 
@@ -3575,11 +3589,8 @@ namespace PascalABCCompiler
                     string unitName = Path.GetFileNameWithoutExtension(unit.UnitFileName);
 
                     currentUnit.NamesFromUsedUnits.Add(unitName, new HashSet<string>());
-                    bool skip_first = true;
-                    foreach (var names in (unit.SemanticTree as common_unit_node).scope.Symbols.DictCaseSensitive)
+                    foreach (var names in (unit.SemanticTree as common_unit_node).scope.Symbols.DictCaseSensitive.Skip(1))
                     {
-                        if (skip_first)
-                        { skip_first = false; continue; }
                         currentUnit.NamesFromUsedUnits[unitName].Add(names.Key);
                     }
                 }
@@ -3936,7 +3947,7 @@ namespace PascalABCCompiler
             foreach (ISyntaxTreeConverter converter in converters)
             {
                 OnChangeCompilerState(this, CompilerState.SyntaxTreeConversion, converter.Name);
-                syntaxTree = converter.Convert(syntaxTree) as SyntaxTree.compilation_unit;
+                syntaxTree = converter.Convert(syntaxTree, false) as SyntaxTree.compilation_unit;
             }
 
             return syntaxTree;

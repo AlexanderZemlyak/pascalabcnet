@@ -173,6 +173,7 @@ function ТестСимвол(a: char := 'а'; b: char := 'я'): TestCell;
 function ТестБулево: TestCell;
 
 procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
+procedure СгенерироватьТесты(params a: array of integer);
 procedure ДобавитьТестовыеДанные(params data: array of integer);
 procedure ДобавитьТестовыеДанные(params data: array of real);
 
@@ -381,6 +382,9 @@ end;
 
 procedure СгенерироватьТесты(cnt: integer; pattern: sequence of TestCell);
 begin GenerateTests(cnt, pattern.Take(cnt).ToArray) end;
+
+procedure СгенерироватьТесты(params a: array of integer);
+begin GenerateTests(a) end;
 
 procedure ДобавитьТестовыеДанные(params data: array of integer);
 begin GenerateTests(data) end;

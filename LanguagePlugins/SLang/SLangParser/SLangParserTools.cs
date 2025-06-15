@@ -9,6 +9,9 @@ using System.Text;
 using PascalABCCompiler.Errors;
 using PascalABCCompiler.ParserTools.Directives;
 using QUT.Gppg;
+using System.Text.RegularExpressions;
+using Languages.Facade;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SLangParser
 {
@@ -185,6 +188,108 @@ namespace SLangParser
             lt.source_context = sc;
             return lt;
         }
+        
+        private int num1 = 0;
+
+        public ident NewId(string prefix, SourceContext sc = null)
+        {
+            num1++;
+            return new ident(prefix + num1.ToString(),sc);
+        }
+
+        private expression RemoveBracesAndContent(string input, SourceContext sc)
+        {
+            var regex = new Regex(@"\{([^}]+)\}");
+            var parts = new List<expression>();
+
+            int lastIndex = 0;
+            foreach (Match m in regex.Matches(input))
+            {
+                var innerRegex = new Regex(@"^([^:]*)(?::(.*))?$");
+
+                SourceContext expr_sc = new SourceContext(sc.LeftSourceContext, sc.RightSourceContext);
+                expr_sc.begin_position.column_num += m.Index + 3;
+
+                var raw = m.Groups[1].Value;
+                var innerMatch = innerRegex.Match(raw);
+
+                if (!innerMatch.Success)
+                {
+                    AddErrorFromResource("ILL_FORMED_FSTRING_{0}", expr_sc, raw);
+                    return null;
+                }
+
+                string expr_text = innerMatch.Groups[1].Value;
+                string format = innerMatch.Groups[2].Success ? innerMatch.Groups[2].Value : null;
+
+                SourceContext format_sc = new SourceContext(sc.LeftSourceContext, sc.RightSourceContext);
+                format_sc.begin_position.column_num += m.Index + 4 + expr_text.Length;
+
+                if (format != null)
+                {
+                    var formatRegex = new Regex(@"^(x|X|d|b|\.(0|([1-9][0-9]*))f)$");
+                    var formatMatch = formatRegex.Match(format);
+                    if (!formatMatch.Success)
+                        AddErrorFromResource("FSTRING_UNNKOWN_FORMAT_{0}", format_sc, format);
+                    format = formatMatch.Value;
+                }
+
+                if (m.Index > lastIndex)
+                {
+                    var text = input.Substring(lastIndex, m.Index - lastIndex);
+                    if (text != "")
+                        parts.Add(new string_const(text, sc));
+                }
+
+                List<Error> errors = new List<Error>();
+                expression expr =
+                    LanguageProvider.Instance.SelectLanguageByExtension(currentFileName).Parser
+                    .GetExpression(currentFileName, expr_text, errors, new List<CompilerWarning>());
+
+                if (expr == null)
+                {
+                    AddErrorFromResource("FSTRING_NESTED_EXPRESSION_{0}_PARSING_FAILURE", expr_sc, expr_text);
+                    expr = new expression();
+                }
+
+                expr.source_context = expr_sc;
+                method_call mc;
+                if (format == null)
+                {
+                    mc = new method_call(new ident("str"), new expression_list(expr, sc), sc);
+                }
+                else
+                {
+                    mc = new method_call(new ident("!format"),
+                        new expression_list(new List<expression> { expr, new string_const(format, sc) }, sc), sc);
+                }
+                parts.Add(mc);
+                lastIndex = m.Index + m.Length;
+            }
+
+            if (lastIndex < input.Length)
+            {
+                var text = input.Substring(lastIndex);
+                if (text != "")
+                    parts.Add(new string_const(text, sc));
+            }
+
+            expression result = parts[parts.Count - 1];
+            for (int i = parts.Count - 2; i >= 0; i--)
+            {
+                result = new bin_expr(parts[i], result, Operators.Plus, sc);
+            }
+
+            return result;
+        }
+
+        public expression create_fstring(string text, SourceContext sc)
+        {
+            text = ReplaceSpecialSymbols(text.Substring(2, text.Length - 3));
+            expression res = RemoveBracesAndContent(text, sc);
+            res.source_context = sc;
+            return res;
+        }
 
         public LexLocation GetLexLocation(string found, string expected, LexLocation prev_loc, LexLocation curr_loc)
         {
@@ -224,15 +329,24 @@ namespace SLangParser
             return tokens.First();
         }
 
-        public string CreateErrorString(string yytext, string exp_token) {
-            if (yytext.Equals("#;") && exp_token.Equals("INDENT")) {
+        public const_node create_slang_int_const(string text, SourceContext sc) {
+
+            return create_int_const(text.Replace("_", ""), sc);
+        }
+
+        public string CreateErrorString(string yytext, string exp_token)
+        {
+            if (yytext.Equals("#;") && exp_token.Equals("INDENT"))
+            {
                 return StringResources.Get("LINE_WITHOUT_INDENT");
             }
-            
-            if (yytext.Equals("#{") && !exp_token.Equals("END_OF_LINE")) {
+
+            if (yytext.Equals("#{") && !exp_token.Equals("END_OF_LINE"))
+            {
                 yytext = "#;";
             }
-            if (exp_token.Equals("INDENT")) {
+            if (exp_token.Equals("INDENT"))
+            {
                 exp_token = "END_OF_LINE";
             }
 
@@ -244,9 +358,9 @@ namespace SLangParser
 
             var ExpectedString = StringResources.Get("EXPECTED{1}");
 
-            if (exp_token.Equals("STATEMENT") || 
-                exp_token.Equals("ID") || 
-                exp_token.Equals("INDENT") || 
+            if (exp_token.Equals("STATEMENT") ||
+                exp_token.Equals("ID") ||
+                exp_token.Equals("INDENT") ||
                 exp_token.Equals("UNINDENT") ||
                 exp_token.Equals("UNINDENT") ||
                 exp_token.Equals("END_OF_LINE") ||
@@ -262,7 +376,7 @@ namespace SLangParser
                 yytext = ConvertToHumanName(yytext);
                 return string.Format(prefix + ExpectedString, yytext, MaxTokHuman);
             }
-            
+
             return string.Format(prefix + ExpectedString, "'" + yytext + "'", MaxTokHuman);
         }
 
@@ -284,6 +398,13 @@ namespace SLangParser
         protected override string ExtractDirectiveTextWithoutSpecialSymbols(string directive)
         {
             throw new NotImplementedException();
+        }
+
+        public typecast_node NewAsIsExpr(syntax_tree_node term, op_typecast typecast_op, type_definition simple_or_template_type_reference, LexLocation loc)
+        {
+            var naie = new typecast_node((addressed_value)term, simple_or_template_type_reference, typecast_op, loc); 
+            
+            return naie;
         }
     }
 

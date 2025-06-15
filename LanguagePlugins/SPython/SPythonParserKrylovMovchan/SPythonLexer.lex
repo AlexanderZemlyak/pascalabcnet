@@ -11,9 +11,10 @@ Alpha         [[:IsLetter:]_]
 NonZeroDigit  [1-9]
 Digit         0|{NonZeroDigit}
 AlphaDigit {Alpha}|{Digit}
-INTNUM  ({NonZeroDigit}{Digit}*)|0
+INTNUM  ({NonZeroDigit}(_?{Digit})*)|0
 REALNUM ({INTNUM}?\.{INTNUM})|({INTNUM}\.)
 STRINGNUM (\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\")
+FSTRINGNUM f((\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\"))
 ID {Alpha}{AlphaDigit}*
 BIGINTNUM {INTNUM}bi
 
@@ -41,7 +42,7 @@ BIGINTNUM {INTNUM}bi
 {INTNUM} {
   yylval = new SPythonParserYacc.ValueType();
   currentLexLocation = CurrentLexLocation;
-  yylval.ex = parserTools.create_int_const(yytext,currentLexLocation);
+  yylval.ex = parserTools.create_spy_int_const(yytext,currentLexLocation);
   return (int)Tokens.INTNUM;
 }
 
@@ -64,6 +65,13 @@ BIGINTNUM {INTNUM}bi
   currentLexLocation = CurrentLexLocation;
   yylval.stn = parserTools.create_string_const(yytext,currentLexLocation);
   return (int)Tokens.STRINGNUM;
+}
+
+{FSTRINGNUM} {
+  yylval = new SPythonParserYacc.ValueType();
+  currentLexLocation = CurrentLexLocation;
+  yylval.ex = parserTools.create_fstring(yytext,currentLexLocation);
+  return (int)Tokens.FSTRINGNUM;
 }
 
 {ID}  {
@@ -105,6 +113,8 @@ BIGINTNUM {INTNUM}bi
   return res;
 }
 
+"//="  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentIntDivision); return (int)Tokens.INTDIVISIONEQUAL; }
+
 "+=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentAddition); return (int)Tokens.PLUSEQUAL; }
 "-=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentSubtraction); return (int)Tokens.MINUSEQUAL; }
 "*=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentMultiplication); return (int)Tokens.STAREQUAL; }
@@ -125,6 +135,25 @@ BIGINTNUM {INTNUM}bi
 "!=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.NotEqual); return (int)Tokens.NOTEQUAL; }
 "="  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Assignment); return (int)Tokens.ASSIGN; }
 
+//"~"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseNOT); return (int)Tokens.BINNOT; }
+"~"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalNOT); return (int)Tokens.BINNOT; }
+//"&"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseAND); return (int)Tokens.BINAND; }
+"&"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalAND); return (int)Tokens.BINAND; }
+//"|"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseOR); return (int)Tokens.BINOR; }
+"|"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalOR); return (int)Tokens.BINOR; }
+"<<" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseLeftShift); return (int)Tokens.SHL; }
+">>" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseRightShift); return (int)Tokens.SHR; }
+"^"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseXOR); return (int)Tokens.BINXOR; }
+
+//"&"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseAND); return (int)Tokens.BINAND; }
+"&="  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseAND); return (int)Tokens.BINANDEQUAL; }
+//"|"  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseOR); return (int)Tokens.BINOR; }
+"|="  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseOR); return (int)Tokens.BINOREQUAL; }
+"<<=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseLeftShift); return (int)Tokens.SHLEQUAL; }
+">>=" { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseRightShift); return (int)Tokens.SHREQUAL; }
+"^="  { yylval = new SPythonParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseXOR); return (int)Tokens.BINXOREQUAL; }
+
+
 "#{" { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.INDENT; }
 "#}" { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.UNINDENT; }
 "#;" { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.END_OF_LINE; }
@@ -143,6 +172,10 @@ BIGINTNUM {INTNUM}bi
 "("  { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.LPAR; }
 ")"  { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.RPAR; }
 "**" { yylval = new SPythonParserYacc.ValueType(); return (int)Tokens.STARSTAR; }
+
+\<\<expression\>\>  { return (int)Tokens.tkParseModeExpression; }
+\<\<statement\>\>   { return (int)Tokens.tkParseModeStatement;  }
+\<\<type\>\>        { return (int)Tokens.tkParseModeType;       }
 
 "#!" {
   parserTools.AddErrorFromResource("WRONG_INDENT", 

@@ -11,11 +11,13 @@ HRLINE   [\-\u2014\u2500]{4,}
 Alpha         [[:IsLetter:]_]
 NonZeroDigit  [1-9]
 Digit         0|{NonZeroDigit}
-AlphaDigit    {Alpha}|{Digit}
-INTNUM        ({NonZeroDigit}{Digit}*)|0
-REALNUM       ({INTNUM}?\.{INTNUM})|({INTNUM}\.)
-STRINGNUM     (\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\")
-ID            {Alpha}{AlphaDigit}*
+AlphaDigit {Alpha}|{Digit}
+INTNUM  ({NonZeroDigit}(_?{Digit})*)|0
+REALNUM ({INTNUM}?\.{INTNUM})|({INTNUM}\.)
+STRINGNUM (\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\")
+FSTRINGNUM f((\'([^\'\n\\]|\\.)*\')|(\"([^\"\n\\]|\\.)*\"))
+ID {Alpha}{AlphaDigit}*
+BIGINTNUM {INTNUM}bi
 
 %{
   private SLangKeywords keywords;
@@ -45,8 +47,15 @@ ID            {Alpha}{AlphaDigit}*
 {INTNUM} {
   yylval = new SLangParserYacc.ValueType();
   currentLexLocation = CurrentLexLocation;
-  yylval.ex = parserTools.create_int_const(yytext,currentLexLocation);
+  yylval.ex = parserTools.create_slang_int_const(yytext,currentLexLocation);
   return (int)Tokens.INTNUM;
+}
+
+{BIGINTNUM} { 
+  yylval = new SLangParserYacc.ValueType();
+  currentLexLocation = CurrentLexLocation;
+  yylval.ex = parserTools.create_bigint_const(yytext,currentLexLocation); 
+  return (int)Tokens.BIGINT; 
 }
 
 {REALNUM} {
@@ -61,6 +70,13 @@ ID            {Alpha}{AlphaDigit}*
   currentLexLocation = CurrentLexLocation;
   yylval.stn = parserTools.create_string_const(yytext,currentLexLocation);
   return (int)Tokens.STRINGNUM;
+}
+
+{FSTRINGNUM} {
+  yylval = new SLangParserYacc.ValueType();
+  currentLexLocation = CurrentLexLocation;
+  yylval.ex = parserTools.create_fstring(yytext,currentLexLocation);
+  return (int)Tokens.FSTRINGNUM;
 }
 
 {ID}  {
@@ -102,6 +118,8 @@ ID            {Alpha}{AlphaDigit}*
   return res;
 }
 
+"//="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentIntDivision); return (int)Tokens.INTDIVISIONEQUAL; }
+
 "+=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentAddition); return (int)Tokens.PLUSEQUAL; }
 "-=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentSubtraction); return (int)Tokens.MINUSEQUAL; }
 "*=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentMultiplication); return (int)Tokens.STAREQUAL; }
@@ -122,6 +140,25 @@ ID            {Alpha}{AlphaDigit}*
 "!=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.NotEqual); return (int)Tokens.NOTEQUAL; }
 "="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.Assignment); return (int)Tokens.ASSIGN; }
 
+//"~"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseNOT); return (int)Tokens.BINNOT; }
+"~"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalNOT); return (int)Tokens.BINNOT; }
+//"&"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseAND); return (int)Tokens.BINAND; }
+"&"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalAND); return (int)Tokens.BINAND; }
+//"|"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseOR); return (int)Tokens.BINOR; }
+"|"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.LogicalOR); return (int)Tokens.BINOR; }
+"<<" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseLeftShift); return (int)Tokens.SHL; }
+">>" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseRightShift); return (int)Tokens.SHR; }
+"^"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseXOR); return (int)Tokens.BINXOR; }
+
+//"&"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseAND); return (int)Tokens.BINAND; }
+"&="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseAND); return (int)Tokens.BINANDEQUAL; }
+//"|"  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.BitwiseOR); return (int)Tokens.BINOR; }
+"|="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseOR); return (int)Tokens.BINOREQUAL; }
+"<<=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseLeftShift); return (int)Tokens.SHLEQUAL; }
+">>=" { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseRightShift); return (int)Tokens.SHREQUAL; }
+"^="  { yylval = new SLangParserYacc.ValueType(); yylval.op = new op_type_node(Operators.AssignmentBitwiseXOR); return (int)Tokens.BINXOREQUAL; }
+
+
 "#{" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.INDENT; }
 "#}" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.UNINDENT; }
 "#;" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.END_OF_LINE; }
@@ -140,6 +177,10 @@ ID            {Alpha}{AlphaDigit}*
 "("  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.LPAR; }
 ")"  { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.RPAR; }
 "**" { yylval = new SLangParserYacc.ValueType(); return (int)Tokens.STARSTAR; }
+
+\<\<expression\>\>  { return (int)Tokens.tkParseModeExpression; }
+\<\<statement\>\>   { return (int)Tokens.tkParseModeStatement;  }
+\<\<type\>\>        { return (int)Tokens.tkParseModeType;       }
 
 "#!" {
   parserTools.AddErrorFromResource("WRONG_INDENT", 
@@ -163,6 +204,7 @@ ID            {Alpha}{AlphaDigit}*
 }
 
 %{
+  //yylloc = new LexLocation(tokLin, tokCol, tokELin, tokECol);
   prevLexLocation = yylloc;
   if (currentLexLocation != null)
     yylloc = currentLexLocation;

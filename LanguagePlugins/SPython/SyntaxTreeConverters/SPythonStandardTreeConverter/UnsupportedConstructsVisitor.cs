@@ -1,9 +1,5 @@
 ﻿using Languages.SPython.Frontend.Converters;
 using PascalABCCompiler.SyntaxTree;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Languages.Pascal.Frontend.Converters
 {
@@ -15,7 +11,7 @@ namespace Languages.Pascal.Frontend.Converters
         // procedure doesn't return value
         private bool isInProcedure = false;
 
-        public UnsupportedConstructsVisitor() { }
+        public UnsupportedConstructsVisitor() { } 
 
         public override void Enter(syntax_tree_node st)
         {

@@ -3,6 +3,7 @@ using PascalABCCompiler.ParserTools.Directives;
 using PascalABCCompiler.SyntaxTree;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -14,15 +15,68 @@ namespace Languages.SPython.Frontend.Data
 
         public override Dictionary<string, DirectiveInfo> ValidDirectives { get; protected set; }
 
-        public override string BodyStartBracket => throw new NotImplementedException();
+        public override string BodyStartBracket => null;
 
-        public override string BodyEndBracket => throw new NotImplementedException();
+        public override string BodyEndBracket => null;
 
         public override string ParameterDelimiter => ",";
+
+        public override string ResultVariableName => null;
+
+        public override string GenericTypesStartBracket => "[";
+
+        public override string GenericTypesEndBracket => "]";
+
+        public override string ReturnTypeDelimiter => "->";
 
         public override bool CaseSensitive => true;
 
         public override bool IncludeDotNetEntities => true;
+
+        public override bool AddStandardUnitNamesToUserScope => false;
+
+        public override bool AddStandardNetNamespacesToUserScope => false;
+
+        public override bool UsesFunctionsOverlappingSourceContext => true;
+
+        private readonly Dictionary<string, string> renamings = new Dictionary<string, string>
+        {
+            ["biginteger"] = "bigint"
+        };
+
+        private readonly HashSet<string> exclutions = new HashSet<string>
+        {
+            "__NewSetCreatorInternal"
+        };
+
+        private readonly Dictionary<string, string> specialModulesAliases = new Dictionary<string, string>
+        {
+            { "time", "time1" },
+            { "random", "random1" },
+        };
+
+        public override Dictionary<string, string> SpecialModulesAliases => specialModulesAliases;
+
+        public override void RenameOrExcludeSpecialNames(SymInfo[] symInfos)
+        {
+            for (var i = 0; i < symInfos.Length; i++)
+            {
+                if (symInfos[i] == null)
+                    continue;
+
+                if (renamings.TryGetValue(symInfos[i].name, out var newName))
+                {
+                    // копирование на всякий случай
+                    symInfos[i] = new SymInfo(symInfos[i]);
+                    symInfos[i].name = newName;
+                }
+                else if (exclutions.Contains(symInfos[i].name))
+                {
+                    symInfos[i] = new SymInfo(symInfos[i]);
+                    symInfos[i].not_include = true;
+                }
+            }
+        }
 
         public override string ConstructHeader(string meth, IProcScope scope, int tabCount)
         {
@@ -362,7 +416,8 @@ namespace Languages.SPython.Frontend.Data
             //return RemovePossibleKeywords(sb);
             if (sb.Length > 0 && sb[sb.Length - 1] == '?')
                 sb.Remove(sb.Length - 1, 1);
-            return sb.ToString();
+            
+            return sb.ToString().Trim();
         }
 
         private bool CheckForComment(string Text, int off, out int comment_position, out bool one_line_comment)
@@ -374,7 +429,7 @@ namespace Languages.SPython.Frontend.Data
             bool is_comm = false;
             while (i >= 0 && !is_comm && Text[i] != '\n' && Text[i] != '\r')
             {
-                if (Text[i] == '\'')
+                if (Text[i] == '\'' || Text[i] == '"')
                 {
                     if (kav.Count == 0) kav.Push('\'');
                     else kav.Pop();
@@ -384,7 +439,7 @@ namespace Languages.SPython.Frontend.Data
                     if (kav.Count == 0)
                     {
                         comment_position = i;
-                        while (i >= 0 && Text[i] != '\'')
+                        while (i >= 0 && Text[i] != '\'' && Text[i] != '"')
                             i--;
                         if (i >= 1 && Text[i - 1] == '$')
                             return false;
@@ -396,8 +451,8 @@ namespace Languages.SPython.Frontend.Data
                 {
                     return false;
                 }
-                else if (Text[i] == '/')
-                    if (i > 0 && Text[i - 1] == '/' && kav.Count == 0)
+                else if (Text[i] == '#')
+                    if (kav.Count == 0)
                     {
                         is_comm = true;
                         one_line_comment = true;
@@ -464,7 +519,7 @@ namespace Languages.SPython.Frontend.Data
                                 if (keyw == KeywordKind.Function || keyw == KeywordKind.Constructor || keyw == KeywordKind.Destructor)
                                     return "";
                             }
-                            else if (i >= 0 && Text[i] == '\'') return "";
+                            else if (i >= 0 && (Text[i] == '\'' || Text[i] == '"')) return "";
                             i = tmp;
                         }
                         sb.Insert(0, ch);//.Append(Text[i]);
@@ -506,6 +561,12 @@ namespace Languages.SPython.Frontend.Data
                             case ')':
                             case ']':
                             case '>':
+                                // Добавил это условие для питона EVA
+                                if (pressed_key == '(' && ch == ')' && !sb.ToString().Contains(".") && tokens.Count == 0)
+                                {
+                                    end = true;
+                                    break;
+                                }
                                 if (kav.Count == 0)
                                 {
                                     int j = i + 1;
@@ -586,7 +647,7 @@ namespace Languages.SPython.Frontend.Data
                                                 else
                                                     bound = 0;
                                             }
-                                            else if (i >= 0 && Text[i] == '\'') return "";
+                                            else if (i >= 0 && (Text[i] == '\'' || Text[i] == '"')) return "";
                                             i = tmp;
                                         }
                                     }
@@ -612,6 +673,7 @@ namespace Languages.SPython.Frontend.Data
                                 else sb.Insert(0, ch);
                                 break;
                             case '\'':
+                            case '"':
                                 if (kav.Count == 0)
                                     kav.Push(ch);
                                 else
@@ -709,7 +771,7 @@ namespace Languages.SPython.Frontend.Data
             if (pressed_key == ',' && (!on_brace || skobki.Count == 0))
                 return "";
             //return RemovePossibleKeywords(sb);
-            return sb.ToString();
+            return sb.ToString().Trim();
         }
 
         private bool isOperator(string Text, int i, out int next)
@@ -821,7 +883,7 @@ namespace Languages.SPython.Frontend.Data
                                 }
                             }
                         }
-                        else if (c == '\'' && !in_comment)
+                        else if ((c == '\'' || c == '"') && !in_comment)
                         {
                             in_kav = !in_kav;
                         }
@@ -833,10 +895,9 @@ namespace Languages.SPython.Frontend.Data
                         {
                             in_comment = false;
                         }
-                        else if (c == '/' && !in_kav && !in_comment)
+                        else if (c == '#' && !in_kav && !in_comment)
                         {
-                            if (j + 1 < Text.Length && Text[j + 1] == '/')
-                                break;
+                            break;
                         }
                         j++;
                     }
@@ -957,6 +1018,9 @@ namespace Languages.SPython.Frontend.Data
                 case ScopeKind.CompiledType: return GetDescriptionForCompiledType(scope as ICompiledTypeScope);
                 case ScopeKind.Procedure: return GetDescriptionForProcedure(scope as IProcScope);
                 case ScopeKind.ElementScope: return GetDescriptionForElementScope(scope as IElementScope);
+                case ScopeKind.TypeSynonim: return GetSynonimDescription(scope as ITypeSynonimScope);
+                case ScopeKind.Namespace: return GetDescriptionForNamespace(scope as INamespaceScope);
+
                 /*case ScopeKind.Array: return GetDescriptionForArray(scope as IArrayScope);
                 case ScopeKind.Enum: return GetDescriptionForEnum(scope as IEnumScope);
                 case ScopeKind.Set: return GetDescriptionForSet(scope as ISetScope);
@@ -995,10 +1059,11 @@ namespace Languages.SPython.Frontend.Data
             if (scope.IsConstructor())
                 sb.Append("constructor ");
             else
-            if (scope.ReturnType == null)
+                sb.Append("def ");
+            /*if (scope.ReturnType == null)
                 sb.Append("procedure ");
             else
-                sb.Append("function ");
+                sb.Append("function ");*/
             if (!scope.IsConstructor())
             {
                 if (extensionType != null)
@@ -1032,7 +1097,7 @@ namespace Languages.SPython.Frontend.Data
             }
             sb.Append(')');
             if (scope.ReturnType != null && !scope.IsConstructor() && !(scope.ReturnType is IProcType && (scope.ReturnType as IProcType).Target == scope))
-                sb.Append(": " + GetSimpleDescription(scope.ReturnType));
+                sb.Append(" " + ReturnTypeDelimiter + " " + GetSimpleDescription(scope.ReturnType));
             //if (scope.IsStatic) sb.Append("; static");
             if (scope.IsVirtual) sb.Append("; ");
             else if (scope.IsAbstract) sb.Append("; abstract");
@@ -1055,7 +1120,6 @@ namespace Languages.SPython.Frontend.Data
             {
                 case SymbolKind.Variable: sb.Append("var " + GetTopScopeName(scope.TopScope) + scope.Name + ((type_name != "") ? ": " + type_name : "")); break;
                 case SymbolKind.Parameter: sb.Append(kind_of_param(scope) + "parameter " + scope.Name + ": " + type_name + (scope.ConstantValue != null ? (":=" + scope.ConstantValue.ToString()) : "")); break;
- 
                 case SymbolKind.Field:
                     if (scope.IsStatic)
                         sb.Append("static ");
@@ -1098,7 +1162,6 @@ namespace Languages.SPython.Frontend.Data
                     case TypeCode.Boolean: return "bool";
                     case TypeCode.String: return "str";
                     case TypeCode.Char: return "char";
-                    case TypeCode.Int64: return "bigint";
                 }
                 /*if (ctn.IsPointer)
                     if (ctn.FullName == "System.Void*")
@@ -1129,14 +1192,14 @@ namespace Languages.SPython.Frontend.Data
                     sb.Append(ctn.Namespace + "." + ctn.Name.Substring(0, gen_pos));
                 else
                     sb.Append(ctn.Namespace + "." + ctn.Name);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < len; i++)
                 {
                     sb.Append(gen_ps[i].Name);
                     if (i < len - 1)
                         sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 return sb.ToString();
             }
             if (ctn.IsArray)
@@ -1181,7 +1244,6 @@ namespace Languages.SPython.Frontend.Data
                     case TypeCode.Boolean: return "bool";
                     case TypeCode.String: return "str";
                     case TypeCode.Char: return "char";
-                    case TypeCode.Int64: return "bigint";
                 }
                 /*if (ctn.IsPointer)
                     if (ctn.FullName == "System.Void*")
@@ -1206,7 +1268,7 @@ namespace Languages.SPython.Frontend.Data
                 int len = ctn.GetGenericArguments().Length;
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append(ctn.Name.Substring(0, ctn.Name.IndexOf('`')));
-                sb.Append('<');
+                sb.Append('[');
                 if (!noalias)
                 {
                     Type[] gen_ps = ctn.GetGenericArguments();
@@ -1217,7 +1279,7 @@ namespace Languages.SPython.Frontend.Data
                             sb.Append(", ");
                     }
                 }
-                sb.Append('>');
+                sb.Append(']');
                 return sb.ToString();
             }
             if (ctn.IsArray)
@@ -1242,6 +1304,11 @@ namespace Languages.SPython.Frontend.Data
                     if (scope is ITypeScope && (scope as ITypeScope).Aliased)
                         return scope.Name;
                     break;
+                case ScopeKind.TypeSynonim:
+                case ScopeKind.Type:
+                    if (scope.Name == "biginteger")
+                        return "bigint";
+                    break;
             }
             switch (scope.Kind)
             {
@@ -1249,7 +1316,11 @@ namespace Languages.SPython.Frontend.Data
                 case ScopeKind.CompiledType: return GetSimpleDescriptionForCompiledType(scope as ICompiledTypeScope, false);
                 case ScopeKind.Procedure: return GetSimpleDescriptionForProcedure(scope as IProcScope);
                 case ScopeKind.ElementScope: return GetSimpleDescriptionForElementScope(scope as IElementScope);
-
+                case ScopeKind.TypeSynonim: return GetSimpleSynonimDescription(scope as ITypeSynonimScope);
+                case ScopeKind.Array: return GetDescriptionForArray(scope as IArrayScope);
+                case ScopeKind.UnitInterface: return GetDescriptionForModule(scope as IInterfaceUnitScope);
+                case ScopeKind.Namespace: return GetDescriptionForNamespace(scope as INamespaceScope);
+                
                 /*case ScopeKind.Enum: return GetDescriptionForEnum(scope as IEnumScope);
                 case ScopeKind.Set: return GetDescriptionForSet(scope as ISetScope);
 
@@ -1257,13 +1328,56 @@ namespace Languages.SPython.Frontend.Data
                 case ScopeKind.CompiledProperty: return GetDescriptionForCompiledProperty(scope as ICompiledPropertyScope);
                 case ScopeKind.CompiledMethod: return GetDescriptionForCompiledMethod(scope as ICompiledMethodScope);
 
-                case ScopeKind.CompiledConstructor: return GetDescriptionForCompiledConstructor(scope as ICompiledConstructorScope);
-                case ScopeKind.UnitInterface: return GetDescriptionForModule(scope as IInterfaceUnitScope);*/
+                case ScopeKind.CompiledConstructor: return GetDescriptionForCompiledConstructor(scope as ICompiledConstructorScope);*/
             }
             return "";
         }
 
-        protected string GetSimpleDescriptionForCompiledType(ICompiledTypeScope scope, bool fullName)
+        private string GetDescriptionForModule(IInterfaceUnitScope scope)
+        {
+            var p = specialModulesAliases.FirstOrDefault(kv => kv.Value == scope.Name);
+
+            if (!p.Equals(default(KeyValuePair<string, string>)))
+                return "unit " + p.Key;
+
+            return "unit " + scope.Name;
+        }
+
+        private string GetDescriptionForNamespace(INamespaceScope scope)
+        {
+            return "namespace " + scope.Name;
+        }
+
+        private string GetSimpleSynonimDescription(ITypeSynonimScope scope)
+        {
+            return scope.Name;
+        }
+
+        protected string GetDescriptionForArray(IArrayScope scope)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("array");
+            ITypeScope[] inds = scope.Indexers;
+            if (!scope.IsDynamic)
+            {
+                sb.Append('[');
+                for (int i = 0; i < inds.Length; i++)
+                {
+                    sb.Append(GetSimpleDescription(inds[i]));
+                    if (i < inds.Length - 1) sb.Append(',');
+                }
+                sb.Append(']');
+            }
+            if (scope.ElementType != null)
+            {
+                string s = GetSimpleDescription(scope.ElementType);
+                if (s.Length > 0 && s[0] == '$') s = s.Substring(1, s.Length - 1);
+                sb.Append(" of " + s);
+            }
+            return sb.ToString();
+        }
+
+        private string GetSimpleDescriptionForCompiledType(ICompiledTypeScope scope, bool fullName)
         {
             if (scope.CompiledType.Name != null && scope.CompiledType.Name.Contains("Func`"))
             {
@@ -1304,17 +1418,17 @@ namespace Languages.SPython.Frontend.Data
                 if (instances != null && instances.Length > 0)
                 {
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    int ind = s.IndexOf('<');
+                    int ind = s.IndexOf(GenericTypesStartBracket);
                     if (ind != -1) sb.Append(s.Substring(0, ind));
                     else
                         sb.Append(s);
-                    sb.Append('<');
+                    sb.Append(GenericTypesStartBracket);
                     for (int i = 0; i < instances.Length; i++)
                     {
                         sb.Append(GetSimpleDescriptionWithoutNamespace(instances[i]));
                         if (i < instances.Length - 1) sb.Append(", ");
                     }
-                    sb.Append('>');
+                    sb.Append(GenericTypesEndBracket);
                     s = sb.ToString();
                 }
                 return s;
@@ -1329,6 +1443,7 @@ namespace Languages.SPython.Frontend.Data
                 case KeywordKind.DoubleType: return "float";
                 case KeywordKind.CharType: return "char";
                 case KeywordKind.BoolType: return "bool";
+                case KeywordKind.StringType: return "str";
             }
             return null;
         }
@@ -1368,7 +1483,7 @@ namespace Languages.SPython.Frontend.Data
 
         public override bool IsDefinitionIdentifierAfterKeyword(KeywordKind keyw)
         {
-            if (keyw == KeywordKind.Function || keyw == KeywordKind.Constructor)
+            if (keyw == KeywordKind.Function || keyw == KeywordKind.Constructor || keyw == KeywordKind.Punkt)
                 return true;
             return false;
         }
@@ -1398,7 +1513,7 @@ namespace Languages.SPython.Frontend.Data
             bool in_format_str = false;
             while (j <= i)
             {
-                if (Text[j] == '\'')
+                if (Text[j] == '\'' || Text[j] == '"')
                 {
                     if (kav_stack.Count == 0 && !in_keyw)
                     {
@@ -1427,13 +1542,13 @@ namespace Languages.SPython.Frontend.Data
             while (j >= 0)
             {
                 //if (Text[j] == '{') return PascalABCCompiler.Parsers.KeywordKind.Punkt;
-                if (!in_keyw && (Text[j] == '\'' || Text[j] == '\n'))
+                if (!in_keyw && (Text[j] == '\'' || Text[j] == '"' || Text[j] == '\n'))
                     break;
                 if (Text[j] == '}')
                     in_keyw = true;
                 else
-                if (Text[j] == '/' && !in_keyw)
-                    if (j > 0 && Text[j - 1] == '/') return PascalABCCompiler.Parsers.KeywordKind.Punkt;
+                if (Text[j] == '#' && !in_keyw)
+                    return PascalABCCompiler.Parsers.KeywordKind.Punkt;
                 j--;
             }
             //if (j>= 0 && Text[j] == '\'') return CodeCompletion.KeywordKind.kw_punkt;
@@ -1502,18 +1617,18 @@ namespace Languages.SPython.Frontend.Data
             if (instances.Length > 0)
             {
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                int ind = s.IndexOf('<');
+                int ind = s.IndexOf(GenericTypesStartBracket);
                 if (ind != -1) sb.Append(s.Substring(0, ind));
                 else
                     sb.Append(s);
-                sb.Append('<');
+                sb.Append(GenericTypesStartBracket);
                 for (int i = 0; i < instances.Length; i++)
                 {
                     sb.Append(GetSimpleDescriptionWithoutNamespace(instances[i]));
                     //sb.Append(instances[i].Name);
                     if (i < instances.Length - 1) sb.Append(", ");
                 }
-                sb.Append('>');
+                sb.Append(GenericTypesEndBracket);
                 s = sb.ToString();
             }
 

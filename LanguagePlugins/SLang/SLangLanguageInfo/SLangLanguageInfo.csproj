@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    
+    <RootNamespace>Languages.SLang</RootNamespace>
+    
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\LambdaAnySynToSemConverter\LambdaAnySynToSemConverter.csproj" />
+    <ProjectReference Include="..\..\..\LanguageIntegrator\LanguageIntegrator.csproj" />
+    <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
+    <ProjectReference Include="..\..\..\ParserTools\ParserTools.csproj" />
+    <ProjectReference Include="..\..\..\SyntaxTree\SyntaxTree.csproj" />
+    <ProjectReference Include="..\..\..\SyntaxVisitors\SyntaxVisitors.csproj" />
+    <ProjectReference Include="..\..\..\TreeConverter\TreeConverter.csproj" />
+    <ProjectReference Include="..\SemanticAnalyzers\SLangSyntaxTreeVisitor\SLangSyntaxTreeVisitor.csproj" />
+    <ProjectReference Include="..\SLangParser\SLangParser.csproj" />
+    <ProjectReference Include="..\SyntaxTreeConverters\SLangStandardTreeConverter\SLangStandardTreeConverter.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\bin\Highlighting\SLang.xshd">
+      <Link>SLang.xshd</Link>
+    </Content>
+    <Content Include="..\..\..\bin\Lib\SLangHidden.pas">
+      <Link>SLangHidden.pas</Link>
+    </Content>
+    <Content Include="..\..\..\bin\Lib\SLangSystem.pas">
+      <Link>SLangSystem.pas</Link>
+    </Content>
+  </ItemGroup>
+</Project>

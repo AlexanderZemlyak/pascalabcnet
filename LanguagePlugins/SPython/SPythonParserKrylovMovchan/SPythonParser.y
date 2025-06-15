@@ -41,36 +41,44 @@
 }
 
 %token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA EXIT NEW IS
-%token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE
-%token <ex> INTNUM REALNUM TRUE FALSE BIGINT
+%token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE DECLTYPE
+%token <ex> INTNUM REALNUM TRUE FALSE BIGINT FSTRINGNUM
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON ARROW
 %token <stn> STRINGNUM
-%token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL
+%token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL BINXOREQUAL SHLEQUAL SHREQUAL BINANDEQUAL BINOREQUAL INTDIVISIONEQUAL
 %token <op> PLUS MINUS STAR DIVIDE SLASHSLASH PERCENTAGE
 %token <id> ID
 %token <op> LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
-%token <op> AND OR NOT STARSTAR
+%token <op> AND OR NOT STARSTAR BINNOT BINXOR SHL SHR BINAND BINOR
+%token <ti> tkParseModeExpression tkParseModeStatement tkParseModeType
 
 %left OR
 %left AND
+%left NOT
 %left LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
+%left BINOR
+%left BINXOR
+%left BINAND
+%left SHL SHR
 %left PLUS MINUS
 %left STAR DIVIDE SLASHSLASH PERCENTAGE
-%left NOT
 %right STARSTAR
+%left BINNOT
 
-%type <id> ident dotted_ident func_name_ident
-%type <ex> expr proc_func_call const_value variable optional_condition act_param new_expr is_expr
+%type <id> ident dotted_ident func_name_ident type_decl_identifier
+%type <ex> expr proc_func_call const_value variable optional_condition act_param new_expr is_expr variable_as_type
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
 %type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif exit_stmt
 %type <stn> expr_list
 %type <stn> stmt_list block
 %type <stn> program param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
-%type <stn> ident_as_ident ident_as_ident_list
-%type <td> proc_func_header type_ref simple_type_identifier, template_type
-%type <stn> import_clause, template_type_params, template_param_list
+%type <stn> ident_as_ident ident_as_ident_list ident_list
+%type <td> proc_func_header type_ref simple_type_identifier template_type
+%type <stn> import_clause template_type_params template_param_list parts stmt_or_expression expr_mapping_list
 %type <ob> optional_semicolon end_of_line
 %type <op> assign_type
+%type <ex> expr_mapping 
+%type <ex> list_constant set_constant dict_constant generator_object generator_object_for_dict
 
 %start program
 
@@ -113,9 +121,54 @@ program
 					initialization_part.initialization_sect,
 					initialization_part.finalization_sect, null, @$);
 			}
-
+		}
+	| parts END_OF_FILE
+		{ 
+			root = $1; 
 		}
 	;
+
+parts
+    : tkParseModeExpression expr
+        { $$ = $2; }
+    | tkParseModeExpression DECLTYPE type_decl_identifier
+        { $$ = $3; }
+    | tkParseModeType variable_as_type
+		{ $$ = $2; }
+	| tkParseModeStatement stmt_or_expression
+        { $$ = $2; }
+    ;
+
+type_decl_identifier
+    : ident
+		{ 
+			$$ = $1; 
+		}
+    | ident  template_type_params           
+        { 
+			$$ = new template_type_name($1.name, $2 as ident_list, @$); 
+        }
+	;
+
+variable_as_type
+	: dotted_ident 
+		{ 
+			$$ = $1;
+		}
+	| dotted_ident template_type_params 
+		{ 
+			$$ = new ident_with_templateparams($1 as addressed_value, $2 as template_param_list, @$);   
+		}
+	;
+
+stmt_or_expression
+    : expr 
+        { $$ = new expression_as_statement($1,@$);}
+    | assign_stmt
+        { $$ = $1; }
+    | var_stmt
+        { $$ = $1; }
+    ;
 
 stmt_list
 	: stmt
@@ -274,6 +327,25 @@ ident_as_ident_list
 		}
     ;
 
+expr_mapping
+	: expr COLON expr 
+		{
+			expression_list el = new expression_list(new List<expression> { $1, $3 }, @$);
+			$$ = new tuple_node(el, @$);
+		}
+	;
+
+expr_mapping_list
+    : expr_mapping
+        {
+			$$ = new expression_list($1, @$);
+		}
+    | expr_mapping_list COMMA expr_mapping
+        {
+			$$ = ($1 as expression_list).Add($3, @$);
+		}
+    ;
+
 var_stmt
 	: variable COLON type_ref
 		{
@@ -305,19 +377,43 @@ assign_stmt
 assign_type
 	: PLUSEQUAL
 		{ 
-			$$ = $1; 
+			$$ = $1;
 		}
     | MINUSEQUAL
 		{ 
-			$$ = $1; 
+			$$ = $1;
 		}
     | STAREQUAL
 		{ 
-			$$ = $1; 
+			$$ = $1;
 		}
     | DIVEQUAL
 		{ 
-			$$ = $1; 
+			$$ = $1;
+		}
+	| BINXOREQUAL
+		{
+			$$ = $1;
+		}
+	| SHLEQUAL
+		{
+			$$ = $1;
+		}
+	| SHREQUAL
+		{
+			$$ = $1;
+		}
+	| BINANDEQUAL
+		{
+			$$ = $1;
+		}
+	| BINOREQUAL
+		{
+			$$ = $1;
+		}
+	| INTDIVISIONEQUAL
+		{
+			$$ = $1;
 		}
     ;
 
@@ -382,17 +478,50 @@ expr
 		{ 
 			$$ = new bin_expr($1, $3, $2.type, @$); 
 		}
+	| expr SHL	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr SHR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINAND	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINOR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINXOR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
 	| expr STARSTAR		expr
 		{
 			addressed_value method_name = new ident("!pow", @$);
 			expression_list el = new expression_list(new List<expression> { $1, $3 }, @$);
 			$$ = new method_call(method_name, el, @$);
 		}
+	| expr IN			expr
+		{
+			$$ = new bin_expr($1, $3, Operators.In, @$); 
+		}
+	| expr NOT IN			expr
+		{
+			// $$ = new bin_expr($1, $4, Operators.NotIn, @$); 
+			$$ = new un_expr(new bin_expr($1, $4, Operators.In, @$),Operators.LogicalNOT,@$);
+		}
 	| MINUS	expr
 		{ 
 			$$ = new un_expr($2, $1.type, @$); 
 		}
 	| NOT	expr
+		{ 
+			$$ = new un_expr($2, $1.type, @$); 
+		}
+	| BINNOT expr
 		{ 
 			$$ = new un_expr($2, $1.type, @$); 
 		}
@@ -453,6 +582,10 @@ const_value
 		{ 
 			$$ = $1 as literal; 
 		}
+	| FSTRINGNUM
+		{
+			$$ = $1;
+		}
 	| BIGINT
 		{ 
 			$$ = $1;
@@ -510,6 +643,28 @@ for_stmt
 	: FOR ident IN expr COLON block
 		{
 			$$ = new foreach_stmt($2, new no_type_foreach(), $4, $6 as statement, null, @$);
+		}
+	| FOR ident COMMA ident_list IN expr COLON block
+		{
+			($4 as ident_list).AddFirst($2);
+			var id = parserTools.NewId("#fe",@4);
+            var tttt = new assign_var_tuple($4 as ident_list, id, @$);
+            statement_list nine = $8 is statement_list ? $8 as statement_list : new statement_list($8 as statement, @8);
+            nine.Insert(0, tttt);
+			var fe = new foreach_stmt(id, new no_type_foreach(), $6, nine, null, @$);
+			fe.ext = $4 as ident_list;
+			$$ = fe;
+		}
+	;
+
+ident_list
+	: ident
+        {
+			$$ = new ident_list($1, @$);
+		}
+    | ident_list COMMA ident
+        {
+			$$ = ($1 as ident_list).Add($3, @$);
 		}
 	;
 
@@ -569,12 +724,17 @@ variable
 		{ 
 			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$); 
 		}
-	// list constant
-	| LBRACKET expr_list RBRACKET
+	| list_constant
 		{
-			var acn = new array_const_new($2 as expression_list, '|', @$);
-			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
-			$$ = new method_call(dn as addressed_value, null, @$);
+			$$ = $1;
+		}
+	| set_constant
+		{
+			$$ = $1;
+		}
+	| dict_constant
+		{
+			$$ = $1;
 		}
 	// index property
 	| variable LBRACKET expr RBRACKET
@@ -583,9 +743,67 @@ variable
 			$$ = new indexer($1 as addressed_value, el, @$);
 		}
 	// list generator
-	| LBRACKET expr FOR ident IN expr optional_condition RBRACKET
+	| LBRACKET generator_object RBRACKET
 		{
-			$$ = new list_generator($2, $4, $6, $7, @$);
+			dot_node dn = new dot_node($2 as addressed_value, (new ident("ToList")) as addressed_value, $2.source_context);
+			$$ = new method_call(dn as addressed_value, null, $2.source_context);
+		}
+	// set generator
+	| LBRACE generator_object RBRACE
+		{
+			dot_node dn = new dot_node($2 as addressed_value, (new ident("ToSet")) as addressed_value, $2.source_context);
+			$$ = new method_call(dn as addressed_value, null, $2.source_context);
+		}
+	// dict generator
+	| LBRACE generator_object_for_dict RBRACE
+		{
+			dot_node dn = new dot_node($2 as addressed_value, (new ident("ToDictionary")) as addressed_value, $2.source_context);
+			$$ = new method_call(dn as addressed_value, null, $2.source_context);
+		}
+	;
+
+generator_object
+	: expr FOR ident IN expr optional_condition
+		{
+			$$ = new generator_object($1, $3, $5, $6, @$);
+		}
+	;
+
+generator_object_for_dict
+	: expr_mapping FOR ident IN expr optional_condition
+		{
+			$$ = new generator_object($1, $3, $5, $6, @$);
+		}
+	;
+
+dict_constant
+	: LBRACE expr_mapping_list RBRACE
+		{
+			$$ = new method_call(new ident("Dict", @$), $2 as expression_list, @$);
+		}
+	| LBRACE RBRACE
+		{
+			$$ = new method_call(new ident("!empty_dict", @$), null, @$);
+		}
+	;
+
+set_constant
+	: LBRACE expr_list RBRACE
+		{
+			$$ = new pascal_set_constant($2 as expression_list, @$);
+		}
+	;
+
+list_constant
+	: LBRACKET expr_list RBRACKET
+		{
+			var acn = new array_const_new($2 as expression_list, '|', @$);
+			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
+			$$ = new method_call(dn as addressed_value, null, @$);
+		}
+	| LBRACKET RBRACKET
+		{
+			$$ = new method_call(new ident("!empty_list", @$), null, @$);
 		}
 	;
 
@@ -695,6 +913,17 @@ form_param_sect
 		{
 			$$ = new typed_parameters($1 as ident_list, $3, parametr_kind.none, null, @$);
 		}
+	// *args
+	| STAR param_name COLON type_ref
+		{
+			var at = new array_type(null, $4, @$); 
+			$$ = new typed_parameters($2 as ident_list, at, parametr_kind.params_parametr, null, @$); 
+		}
+	// **kwargs
+	| STARSTAR param_name COLON type_ref
+		{
+			$$ = new typed_parameters($2 as ident_list, $4, parametr_kind.kwargs_parameter, null, @$);
+		}
 	;
 
 form_param_list
@@ -745,6 +974,10 @@ optional_act_param_list
 	: act_param_list
 		{
 			$$ = $1;
+		}
+	| generator_object
+		{
+			$$ = new expression_list($1, @$);
 		}
 	|
         {

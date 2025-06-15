@@ -40,44 +40,51 @@
 	public type_definition td;
 }
 
-%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA
-%token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE
-%token <ti> TASK INPUT CHECK TESTS OUTPUT
-%token <ex> INTNUM REALNUM TRUE FALSE
+%token <ti> FOR IN WHILE IF ELSE ELIF DEF RETURN BREAK CONTINUE IMPORT FROM GLOBAL AS PASS CLASS LAMBDA EXIT NEW IS
+%token <ti> INDENT UNINDENT END_OF_FILE END_OF_LINE DECLTYPE
+%token <ex> INTNUM REALNUM TRUE FALSE BIGINT FSTRINGNUM
 %token <ti> LPAR RPAR LBRACE RBRACE LBRACKET RBRACKET DOT COMMA COLON SEMICOLON ARROW
 %token <stn> STRINGNUM
-%token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL
+%token <op> ASSIGN PLUSEQUAL MINUSEQUAL STAREQUAL DIVEQUAL BINXOREQUAL SHLEQUAL SHREQUAL BINANDEQUAL BINOREQUAL INTDIVISIONEQUAL
 %token <op> PLUS MINUS STAR DIVIDE SLASHSLASH PERCENTAGE
 %token <id> ID
 %token <op> LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
-%token <op> AND OR NOT STARSTAR
+%token <op> AND OR NOT STARSTAR BINNOT BINXOR SHL SHR BINAND BINOR
+%token <ti> tkParseModeExpression tkParseModeStatement tkParseModeType
+%token <ti> TASK INPUT CHECK TESTS OUTPUT
+%token <ti> END_TASK
+%token <ti> HR
 
 %left OR
 %left AND
+%left NOT
 %left LESS GREATER LESSEQUAL GREATEREQUAL EQUAL NOTEQUAL
+%left BINOR
+%left BINXOR
+%left BINAND
+%left SHL SHR
 %left PLUS MINUS
 %left STAR DIVIDE SLASHSLASH PERCENTAGE
-%left NOT
 %right STARSTAR
+%left BINNOT
 
-%type <id> ident dotted_ident func_name_ident task_id
-%type <ex> expr proc_func_call const_value variable optional_condition act_param
+%type <id> task_id
+%type <id> ident dotted_ident func_name_ident type_decl_identifier
+%type <ex> expr proc_func_call const_value variable optional_condition act_param new_expr is_expr variable_as_type
 %type <stn> act_param_list optional_act_param_list proc_func_decl return_stmt break_stmt continue_stmt global_stmt pass_stmt
-%type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif
+%type <stn> var_stmt assign_stmt if_stmt stmt proc_func_call_stmt while_stmt for_stmt optional_else optional_elif exit_stmt
 %type <stn> expr_list
 %type <stn> stmt_list block
 %type <stn> program param_name form_param_sect form_param_list optional_form_param_list dotted_ident_list
-%type <stn> ident_as_ident ident_as_ident_list
+%type <stn> ident_as_ident ident_as_ident_list ident_list
 %type <td> proc_func_header type_ref simple_type_identifier template_type
-%type <stn> import_clause template_type_params template_param_list
+%type <stn> import_clause template_type_params template_param_list parts stmt_or_expression expr_mapping_list
 %type <ob> optional_semicolon end_of_line
 %type <op> assign_type
-
+%type <ex> expr_mapping 
+%type <ex> list_constant set_constant dict_constant generator_object generator_object_for_dict
 %type <stn> input_section check_section tests_section output_section
 %type <stn> task_switch_item
-
-%token <ti> END_TASK
-%token <ti> HR
 %type <ob> optional_colon
 %type <stn> task_end_stmt
 
@@ -100,116 +107,132 @@ act		= actual
 
 %%
 program
-    : stmt_list optional_semicolon END_OF_FILE
-        {
-            var stmt_list = $1 as statement_list;
+	: stmt_list optional_semicolon END_OF_FILE
+		{
+			var stmt_list = $1 as statement_list;
 
-            var interface_part = new interface_node(
-                new declarations(), new uses_list(), null, null);
+                	var interface_part = new interface_node(
+                		new declarations(), new uses_list(), null, null);
 
-            var strType = new named_type_reference(new ident("str"));
-            var pname   = new ident_list("taskName");
-            var ptyped  = new typed_parameters(pname, strType,
-                                               parametr_kind.none, null);
-            var formals = new formal_parameters(ptyped, @$);
+			var strType = new named_type_reference(new ident("str"));
+			var pname = new ident_list("taskName");
+			var ptyped = new typed_parameters(pname, strType,
+				parametr_kind.none, null);
+			var formals = new formal_parameters(ptyped, @$);
 
-            statement selector = null;
+			statement selector = null;
 
-            foreach (var tn in procedureNames)
-            {
-                var cond = new bin_expr(
-                               new ident("taskName"),
-                               new string_const(tn, @$),
-                               Operators.Equal, @$);
+			foreach (var tn in procedureNames)
+			{
+                                var cond = new bin_expr(
+                                               new ident("taskName"),
+                                               new string_const(tn, @$),
+                                               Operators.Equal, @$);
+                
+                                var call = new procedure_call(
+                                               new ident(tn, @$),true, @$);
+                
+                                selector = selector == null
+                                         ? new if_node(cond, call, null, @$)
+                                         : new if_node(cond, call, selector, @$);
+			}
+                
+			var exitCall = new procedure_call(
+				new ident("exit", @$), true, @$);
+                
+			selector = new if_node(
+                                           new ident("true", @$),
+                                           selector,              
+                                           exitCall, @$);        
+                
+			var body = new statement_list(selector, @$);
+                
+			var head = new procedure_header(
+                                           formals,
+                                           new procedure_attributes_list(
+                                               new List<procedure_attribute>()),
+                                           new method_name(null, null,
+                                                           new ident("CheckTaskT"), null),
+                                           null, @$);
+                
+			var def  = new procedure_definition(
+                                           head,
+                                           new block(null, body, @$),
+                                           @$);
+                
+			stmt_list.Add(
+                                new declarations_as_statement(new declarations(def, @$), @$));
 
-                var call = new procedure_call(
-                               new ident(tn, @$),true, @$);
+			var initialization_part = new initfinal_part(
+                                                           null, stmt_list,
+                                                           null, null, null, @$);
 
-                selector = selector == null
-                         ? new if_node(cond, call, null, @$)
-                         : new if_node(cond, call, selector, @$);
-            }
+			root = $$ = new unit_module(
+                                new unit_name(
+                                    new ident(Path.GetFileNameWithoutExtension(
+                                                  parserTools.currentFileName)),
+                                    UnitHeaderKeyword.Unit, @$),
+                                interface_part,
+                                null,
+                                initialization_part.initialization_sect,
+                                initialization_part.finalization_sect,
+                                null, @$);
+                }
+	| parts END_OF_FILE
+		{ 
+			root = $1; 
+		}
+	;
 
-            var exitCall = new procedure_call(
-                               new ident("exit", @$), true, @$);
+parts
+	: tkParseModeExpression expr
+		{
+			$$ = $2;
+		}
+	| tkParseModeExpression DECLTYPE type_decl_identifier
+		{
+			$$ = $3;
+		}
+	| tkParseModeType variable_as_type
+		{
+			$$ = $2;
+		}
+	| tkParseModeStatement stmt_or_expression
+        	{
+        		$$ = $2;
+        	}
+	;
 
-            selector = new if_node(
-                           new ident("true", @$),
-                           selector,              
-                           exitCall, @$);        
-
-            var body = new statement_list(selector, @$);
-
-            var head = new procedure_header(
-                           formals,
-                           new procedure_attributes_list(
-                               new List<procedure_attribute>()),
-                           new method_name(null, null,
-                                           new ident("CheckTaskT"), null),
-                           null, @$);
-
-            var def  = new procedure_definition(
-                           head,
-                           new block(null, body, @$),
-                           @$);
-
-            stmt_list.Add(
-                new declarations_as_statement(new declarations(def, @$), @$));
-
-            var initialization_part = new initfinal_part(
-                                           null, stmt_list,
-                                           null, null, null, @$);
-
-            root = $$ = new unit_module(
-                new unit_name(
-                    new ident(Path.GetFileNameWithoutExtension(
-                                  parserTools.currentFileName)),
-                    UnitHeaderKeyword.Unit, @$),
-                interface_part,
-                null,
-                initialization_part.initialization_sect,
-                initialization_part.finalization_sect,
-                null, @$);
+type_decl_identifier
+    : ident
+		{ 
+			$$ = $1; 
+		}
+    | ident  template_type_params           
+        { 
+			$$ = new template_type_name($1.name, $2 as ident_list, @$); 
         }
+	;
+
+variable_as_type
+	: dotted_ident 
+		{ 
+			$$ = $1;
+		}
+	| dotted_ident template_type_params 
+		{ 
+			$$ = new ident_with_templateparams($1 as addressed_value, $2 as template_param_list, @$);   
+		}
+	;
+
+stmt_or_expression
+    : expr 
+        { $$ = new expression_as_statement($1,@$);}
+    | assign_stmt
+        { $$ = $1; }
+    | var_stmt
+        { $$ = $1; }
     ;
-
-input_section
-	: INPUT optional_colon block
-		{
-			$$ = new input_section($3 as statement_list);
-		}
-	|
-		{
-			$$ = null;
-		}
-	;
-
-check_section
-	: CHECK optional_colon block
-		{
-				$$ = new check_section($3 as statement_list);
-		}
-	|
-		{ $$ = null; }
-	;
-
-tests_section
-	: TESTS optional_colon block
-		{
-				$$ = new tests_section($3 as statement_list);
-		}
-	|
-		{ $$ = null; }
-	;
-
-output_section
-	: OUTPUT optional_colon block
-		{
-				$$ = new output_section($3 as statement_list);
-		}
-	|
-		{ $$ = null; }
-	;
 
 stmt_list
 	: stmt
@@ -249,10 +272,22 @@ stmt
 		{
 			$$ = $1;
 		}
-	| input_section { $$ = $1; }
-	| check_section { $$ = $1; }
-	| tests_section { $$ = $1; }
-	| output_section { $$ = $1; }
+	| input_section
+		{
+			$$ = $1;
+		}
+	| check_section
+		{
+			$$ = $1;
+		}
+	| tests_section
+		{
+			$$ = $1;
+		}
+	| output_section
+		{
+			$$ = $1;
+		}
 	| return_stmt
 		{
 			$$ = $1;
@@ -270,6 +305,10 @@ stmt
 			$$ = $1;
 		}
 	| pass_stmt
+		{
+			$$ = $1;
+		}
+	| exit_stmt
 		{
 			$$ = $1;
 		}
@@ -293,7 +332,7 @@ task_end_stmt
     | HR              { $$ = new empty_statement(); }
     ;
 
-	// MARK: - Task node
+// MARK: - Task node
 
 task_switch_item
     : TASK task_id block
@@ -315,9 +354,59 @@ task_id
 	;
 
 optional_colon
-    : COLON { $$ = $1; }
-    |       { $$ = null; }
-    ;
+	: COLON
+		{
+			$$ = $1;
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
+
+input_section
+	: INPUT optional_colon block
+		{
+			$$ = new input_section($3 as statement_list);
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
+
+check_section
+	: CHECK optional_colon block
+		{
+				$$ = new check_section($3 as statement_list);
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
+
+tests_section
+	: TESTS optional_colon block
+		{
+				$$ = new tests_section($3 as statement_list);
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
+
+output_section
+	: OUTPUT optional_colon block
+		{
+			$$ = new output_section($3 as statement_list);
+		}
+	|
+		{
+			$$ = null;
+		}
+	;
 
 import_clause
 	: IMPORT ident_as_ident_list
@@ -338,6 +427,13 @@ pass_stmt
 	: PASS
 		{
 			$$ = new empty_statement();
+		}
+	;
+
+exit_stmt
+	: EXIT LPAR optional_act_param_list RPAR
+		{
+			parserTools.AddErrorFromResource("UNSUPPORTED_CONSTRUCTION_{0}", @$, "exit");
 		}
 	;
 
@@ -399,6 +495,25 @@ ident_as_ident_list
 		}
 	;
 
+expr_mapping
+	: expr COLON expr 
+		{
+			expression_list el = new expression_list(new List<expression> { $1, $3 }, @$);
+			$$ = new tuple_node(el, @$);
+		}
+	;
+
+expr_mapping_list
+    : expr_mapping
+        {
+			$$ = new expression_list($1, @$);
+		}
+    | expr_mapping_list COMMA expr_mapping
+        {
+			$$ = ($1 as expression_list).Add($3, @$);
+		}
+    ;
+
 var_stmt
 	: variable COLON type_ref
 		{
@@ -440,7 +555,31 @@ assign_type
 		{
 			$$ = $1;
 		}
-	| DIVEQUAL
+    	| DIVEQUAL
+		{ 
+			$$ = $1;
+		}
+	| BINXOREQUAL
+		{
+			$$ = $1;
+		}
+	| SHLEQUAL
+		{
+			$$ = $1;
+		}
+	| SHREQUAL
+		{
+			$$ = $1;
+		}
+	| BINANDEQUAL
+		{
+			$$ = $1;
+		}
+	| BINOREQUAL
+		{
+			$$ = $1;
+		}
+	| INTDIVISIONEQUAL
 		{
 			$$ = $1;
 		}
@@ -509,11 +648,40 @@ expr
 		{
 			$$ = new bin_expr($1, $3, $2.type, @$);
 		}
+	| expr SHL	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr SHR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINAND	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINOR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
+	| expr BINXOR	expr
+		{ 
+			$$ = new bin_expr($1, $3, $2.type, @$); 
+		}
 	| expr STARSTAR expr
 		{
 			addressed_value method_name = new ident("!pow", @$);
 			expression_list el = new expression_list(new List<expression> { $1, $3 }, @$);
 			$$ = new method_call(method_name, el, @$);
+		}
+	| expr IN			expr
+		{
+			$$ = new bin_expr($1, $3, Operators.In, @$); 
+		}
+	| expr NOT IN			expr
+		{
+			// $$ = new bin_expr($1, $4, Operators.NotIn, @$); 
+			$$ = new un_expr(new bin_expr($1, $4, Operators.In, @$),Operators.LogicalNOT,@$);
 		}
 	| MINUS expr
 		{
@@ -523,6 +691,10 @@ expr
 		{
 			$$ = new un_expr($2, $1.type, @$);
 		}
+	| BINNOT expr
+		{ 
+			$$ = new un_expr($2, $1.type, @$); 
+		}
 	| variable
 		{
 			$$ = $1;
@@ -531,9 +703,31 @@ expr
 		{
 			$$ = $1;
 		}
+	| new_expr
+		{
+			$$ = $1;
+		}
+	| is_expr
+		{
+			$$ = $1;
+		}
 	| LPAR expr RPAR
 		{
 			$$ = new bracket_expr($2, @$);
+		}
+	;
+
+is_expr
+	: variable IS type_ref
+		{
+			$$ = parserTools.NewAsIsExpr($1, op_typecast.is_op, $3, @$);
+		}
+	;
+
+new_expr
+	: NEW type_ref LPAR optional_act_param_list RPAR
+		{
+			$$ = new new_expr($2, $4 as expression_list, false, null, @$);
 		}
 	;
 
@@ -557,6 +751,14 @@ const_value
 	| STRINGNUM
 		{
 			$$ = $1 as literal;
+		}
+	| FSTRINGNUM
+		{
+			$$ = $1;
+		}
+	| BIGINT
+		{ 
+			$$ = $1;
 		}
 	;
 
@@ -612,6 +814,28 @@ for_stmt
 		{
 			$$ = new foreach_stmt($2, new no_type_foreach(), $4, $6 as statement, null, @$);
 		}
+	| FOR ident COMMA ident_list IN expr COLON block
+		{
+			($4 as ident_list).AddFirst($2);
+			var id = parserTools.NewId("#fe",@4);
+			var tttt = new assign_var_tuple($4 as ident_list, id, @$);
+			statement_list nine = $8 is statement_list ? $8 as statement_list : new statement_list($8 as statement, @8);
+			nine.Insert(0, tttt);
+			var fe = new foreach_stmt(id, new no_type_foreach(), $6, nine, null, @$);
+			fe.ext = $4 as ident_list;
+			$$ = fe;
+		}
+	;
+
+ident_list
+	: ident
+        {
+			$$ = new ident_list($1, @$);
+		}
+    | ident_list COMMA ident
+        {
+			$$ = ($1 as ident_list).Add($3, @$);
+		}
 	;
 
 func_name_ident
@@ -621,18 +845,14 @@ func_name_ident
 		}
 	;
 
-// return `expr` ~ result := `expr`; exit;
 return_stmt
 	: RETURN expr
 		{
-			statement res_assign = new assign(new ident("result"), $2, Operators.Assignment, @$);
-			statement exit_call = new procedure_call(new ident("exit"), true, @$);
-			$$ = new statement_list(res_assign, @$);
-			($$ as statement_list).Add(exit_call, @$);
+			$$ = new return_statement($2, @$);
 		}
 	| RETURN
 		{
-			$$ = new procedure_call(new ident("exit", @$), true, @$);
+			$$ = new return_statement(null, @$);
 		}
 	;
 
@@ -674,12 +894,17 @@ variable
 		{
 			$$ = new dot_node($1 as addressed_value, $3 as addressed_value, @$);
 		}
-	// list constant
-	| LBRACKET expr_list RBRACKET
+	| list_constant
 		{
-			var acn = new array_const_new($2 as expression_list, '|', @$);
-	// var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
-			$$ = acn;
+			$$ = $1;
+		}
+	| set_constant
+		{
+			$$ = $1;
+		}
+	| dict_constant
+		{
+			$$ = $1;
 		}
 	// index property
 	| variable LBRACKET expr RBRACKET
@@ -688,9 +913,70 @@ variable
 			$$ = new indexer($1 as addressed_value, el, @$);
 		}
 	// list generator
-	| LBRACKET expr FOR ident IN expr optional_condition RBRACKET
+	| LBRACKET generator_object RBRACKET
+        		{
+        			// dot_node dn = new dot_node($2 as addressed_value, (new ident("ToList")) as addressed_value, $2.source_context);
+        			// $$ = new method_call(dn as addressed_value, null, $2.source_context);
+        			var acn = new array_const_new(new expression_list($2), '|', @$);
+                    // var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
+                    $$ = acn;
+        		}
+	// set generator
+	| LBRACE generator_object RBRACE
 		{
-			$$ = new list_generator($2, $4, $6, $7, @$);
+			dot_node dn = new dot_node($2 as addressed_value, (new ident("ToSet")) as addressed_value, $2.source_context);
+			$$ = new method_call(dn as addressed_value, null, $2.source_context);
+		}
+	// dict generator
+	| LBRACE generator_object_for_dict RBRACE
+		{
+			dot_node dn = new dot_node($2 as addressed_value, (new ident("ToDictionary")) as addressed_value, $2.source_context);
+			$$ = new method_call(dn as addressed_value, null, $2.source_context);
+		}
+	;
+
+generator_object
+	: expr FOR ident IN expr optional_condition
+		{
+			$$ = new generator_object($1, $3, $5, $6, @$);
+		}
+	;
+
+generator_object_for_dict
+	: expr_mapping FOR ident IN expr optional_condition
+		{
+			$$ = new generator_object($1, $3, $5, $6, @$);
+		}
+	;
+
+dict_constant
+	: LBRACE expr_mapping_list RBRACE
+		{
+			$$ = new method_call(new ident("Dict", @$), $2 as expression_list, @$);
+		}
+	| LBRACE RBRACE
+		{
+			$$ = new method_call(new ident("!empty_dict", @$), null, @$);
+		}
+	;
+
+set_constant
+	: LBRACE expr_list RBRACE
+		{
+			$$ = new pascal_set_constant($2 as expression_list, @$);
+		}
+	;
+
+list_constant
+	: LBRACKET expr_list RBRACKET
+		{
+			var acn = new array_const_new($2 as expression_list, '|', @$);
+//			var dn = new dot_node(acn as addressed_value, (new ident("ToList", @$)) as addressed_value, @$);
+			$$ = acn;
+		}
+	| LBRACKET RBRACKET
+		{
+			$$ = new method_call(new ident("!empty_list", @$), null, @$);
 		}
 	;
 
@@ -806,6 +1092,17 @@ form_param_sect
 		{
 			$$ = new typed_parameters($1 as ident_list, $3, parametr_kind.none, null, @$);
 		}
+	// *args
+	| STAR param_name COLON type_ref
+		{
+			var at = new array_type(null, $4, @$); 
+			$$ = new typed_parameters($2 as ident_list, at, parametr_kind.params_parametr, null, @$); 
+		}
+	// **kwargs
+	| STARSTAR param_name COLON type_ref
+		{
+			$$ = new typed_parameters($2 as ident_list, $4, parametr_kind.kwargs_parameter, null, @$);
+		}
 	;
 
 form_param_list
@@ -856,6 +1153,10 @@ optional_act_param_list
 	: act_param_list
 		{
 			$$ = $1;
+		}
+	| generator_object
+		{
+			$$ = new expression_list($1, @$);
 		}
 	|
 		{

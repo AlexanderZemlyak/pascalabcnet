@@ -1,4 +1,4 @@
-
+﻿
 
 
 # general ignore
@@ -77,7 +77,8 @@
 **/UniversalParserHelper.dll
 
 **/SPythonLanguageInfo.dll
-**/SPythonLanguageParser.dll
+**/SPythonParser.dll
+**/SPythonParser.dll.config
 **/SPythonStandardTreeConverter.dll
 **/SPythonSyntaxTreeVisitor.dll
 
@@ -136,6 +137,11 @@
 
 
 
+# NSIS
+!/Utils/NSIS2/Bin/*
+
+
+
 #TODO Метаданные .dll, наверное их забывает удалить после тестирования их генерации?
 /bin/mscorlib.txt
 /bin/System.Data.dll.txt
@@ -154,5 +160,6 @@ bin/SLangSyntaxTreeVisitor.dll
 bin/SLanguageInfo.dll
 PascalABCNET.sln.DotSettings.user
 *.lnk
-.vscode/settings.json
 LanguagePlugins/SLang/SLangParser/examples/MyOlymp/db.txt
+NodesGenerator.exe - Shortcut.lnk
+.vscode/settings.json

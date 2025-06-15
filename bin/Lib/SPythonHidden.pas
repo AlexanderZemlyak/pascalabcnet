@@ -3,7 +3,7 @@ unit SPythonHidden;
 
 interface
 
-uses PABCSystem;
+// uses PABCSystem;
 
 function !Floor(x : real) : integer;
 

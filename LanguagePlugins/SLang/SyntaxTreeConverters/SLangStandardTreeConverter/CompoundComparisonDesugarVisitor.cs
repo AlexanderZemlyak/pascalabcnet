@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Security.Cryptography.X509Certificates;
-using PascalABCCompiler.SyntaxTree;
-using SyntaxVisitors;
+﻿using PascalABCCompiler.SyntaxTree;
+using System.Collections.Generic;
 
 namespace Languages.SLang.Frontend.Converters
 {

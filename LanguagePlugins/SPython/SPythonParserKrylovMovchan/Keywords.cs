@@ -24,7 +24,7 @@ namespace SPythonParser
             CreateNewKeyword("and", Tokens.AND);
             CreateNewKeyword("or", Tokens.OR);
             CreateNewKeyword("not", Tokens.NOT);
-            CreateNewKeyword("import", Tokens.IMPORT, KeywordKind.Uses);
+            CreateNewKeyword("import", Tokens.IMPORT /*, KeywordKind.Uses*/);
             CreateNewKeyword("from", Tokens.FROM);
             CreateNewKeyword("global", Tokens.GLOBAL);
             CreateNewKeyword("True", Tokens.TRUE);
@@ -36,6 +36,7 @@ namespace SPythonParser
             CreateNewKeyword("exit", Tokens.EXIT);
             CreateNewKeyword("new", Tokens.NEW, KeywordKind.New);
             CreateNewKeyword("is", Tokens.IS);
+            CreateNewKeyword("decltype", Tokens.DECLTYPE);
         }
 
         protected override int GetIdToken() => (int)Tokens.ID;
