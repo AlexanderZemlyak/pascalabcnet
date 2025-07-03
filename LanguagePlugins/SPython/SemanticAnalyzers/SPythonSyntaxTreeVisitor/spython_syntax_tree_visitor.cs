@@ -92,6 +92,7 @@ namespace SPythonSyntaxTreeVisitor
                 .Replace(",", ", ")
                 .Replace("<", "[")
                 .Replace(">", "]")
+                .Replace("Tuple", "tuple")
                 .Replace("List", "list")
                 .Replace("NewSet", "set")
                 .Replace("Dictionary", "dict")
@@ -202,10 +203,8 @@ namespace SPythonSyntaxTreeVisitor
                         }
                     }
                 }
-                catch (Error e)
+                catch (ExpectedAnotherKindOfObject e)
                 {
-                    if (e.Message != "Ожидалось имя переменной")
-                        throw e; 
                 }
             }
             base.visit(_method_call);

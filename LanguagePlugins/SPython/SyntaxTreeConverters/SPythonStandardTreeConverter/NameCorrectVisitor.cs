@@ -79,7 +79,7 @@ namespace Languages.SPython.Frontend.Converters
             ident id = _named_type_reference.names[0];
             string name = id.name;
 
-            if (name == "int" || name == "str" || name == "bool" || name == "float")
+            if (name == "int" || name == "str" || name == "bool" || name == "float" || name == "set" || name == "list" || name == "dict")
             {
                 return;
             }
@@ -165,6 +165,11 @@ namespace Languages.SPython.Frontend.Converters
                 }
             }
         }
+
+        //public override void visit(assign_tuple _assign_tuple)
+        //{
+        //
+        //}
 
         public override void visit(assign _assign)
         {
