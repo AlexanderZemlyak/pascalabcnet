@@ -23,6 +23,10 @@ namespace Languages.SLang.Frontend.Data
 
         public override string ResultVariableName => null;
 
+        public override string ProcedureName => null;
+
+        public override string FunctionName => "def";
+
         public override string GenericTypesStartBracket => "[";
 
         public override string GenericTypesEndBracket => "]";
@@ -66,7 +70,6 @@ namespace Languages.SLang.Frontend.Data
 
                 if (renamings.TryGetValue(symInfos[i].name, out var newName))
                 {
-                    
                     symInfos[i] = new SymInfo(symInfos[i]);
                     symInfos[i].name = newName;
                 }
@@ -280,7 +283,6 @@ namespace Languages.SLang.Frontend.Data
                         case '(':
                         case '|':
                             if (ch == '|' && ((tokens.Count == 0) || (tokens.Peek() == ']') || (tokens.Peek() == ')') || (tokens.Peek() == ',')))
-                            
                             {
                                 if (kav.Count == 0)
                                 {
