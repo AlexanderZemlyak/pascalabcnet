@@ -32,5 +32,11 @@
     <Content Include="..\..\..\bin\Lib\SLangSystem.pas">
       <Link>SLangSystem.pas</Link>
     </Content>
+    <Content Include="..\..\..\bin\Lng\Rus\SLangSemantic.dat">
+      <Link>SLangSemantic.dat</Link>
+    </Content>
+    <Content Include="..\..\..\bin\Lng\Rus\SLangSyntaxTreeVisitorErrors.dat">
+      <Link>SLangSyntaxTreeVisitorErrors.dat</Link>
+    </Content>
   </ItemGroup>
 </Project>
