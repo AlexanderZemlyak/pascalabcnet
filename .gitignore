@@ -166,3 +166,6 @@ PascalABCNET.sln.DotSettings.user
 LanguagePlugins/SLang/SLangParser/examples/MyOlymp/db.txt
 NodesGenerator.exe - Shortcut.lnk
 .vscode/settings.json
+bin/System.Xml.Serialization.dll
+bin/slanglog.txt
+bin/SLangLanguageInfo.dll
